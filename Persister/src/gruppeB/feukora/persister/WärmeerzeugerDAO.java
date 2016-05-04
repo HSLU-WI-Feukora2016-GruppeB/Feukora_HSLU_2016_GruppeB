@@ -73,7 +73,23 @@ public interface WärmeerzeugerDAO {
 	 */
 	public List<Wärmeerzeuger> findWärmeerzeugerByBezeichnung(String bezeichnung);
 	
-	public List<Wärmeerzeuger> findWärmeerzeugerByVorname(String vorname);
+	/**
+	 * Liefert die Liste mit den Wärmeerzeugern für das übergebene Baujahr zurück, falls
+	 * es welche gibt. Sonst eine leere Liste.
+	 * 
+	 * @param baujahr
+	 * @return
+	 */
+	public List<Wärmeerzeuger> findWärmeerzeugerByBaujahr(Integer baujahr);
+	
+	/**
+	 * Liefert die Liste mit den Wärmeerzeugern für den übergebenen Brennstoff zurück, falls
+	 * es welche gibt. Sonst eine leere Liste.
+	 * 
+	 * @param brennstoff
+	 * @return
+	 */
+	public List<Wärmeerzeuger> findWärmeerzeugerByBrennstoff(String brennstoff);
 	
 	
 }
