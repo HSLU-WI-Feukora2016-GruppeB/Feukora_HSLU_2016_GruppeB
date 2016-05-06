@@ -1,4 +1,4 @@
-/**
+/*
  * ZWECK: Praxisprojekt Feukora
  * MODUL: Softwarekomponenten, HSLU - Wirtschaft
  */
@@ -65,7 +65,7 @@ public interface BrennerDAO {
 	List<Brenner> findAllBrenner();
 	
 	/**
-	 * Liefert die Liste mit Brenner für die übergebene Namen zurück, falls
+	 * Liefert die Liste mit Brenner für die übergebene Bezeichnung zurück, falls
 	 * welche gefunden werden. Sonst eine leere Liste.
 	 * 
 	 * @param name
@@ -90,7 +90,6 @@ public interface BrennerDAO {
 	 * @return
 	 */
 	public List<Brenner> findBrennerByBrennart(String brennart);
-	
 	
 }
 

@@ -1,4 +1,4 @@
-/**
+/*
  * ZWECK: Praxisprojekt Feukora
  * MODUL: Softwarekomponenten, HSLU - Wirtschaft
  */
@@ -11,71 +11,65 @@ import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-//import Wärmeerzeuger Modell-Klasse.
+//import Liegenschaft Modell-Klasse.
 import gruppeB.feukora.persister.generic.GenericPersisterImpl;
 import gruppeB.feukora.persister.util.JpaUtil;
 
 /**
  * Diese Klasse stellt die Implementierung von Methoden der Schnittstelle
- * WärmeerzeugerDAO zur Verfügung.
+ * LiegenschaftDAO zur Verfügung.
  * 
  * @version 1.0
  * @author Luca Raneri
  * 
  */
-public class WärmeerzeugerDAOImpl implements WärmeerzeugerDAO{
+public class LiegenschaftDAOImpl implements LiegenschaftDAO{
 
 	@Override
-	public void saveWärmeerzeuger(Wärmeerzeuger entity) throws Exception {
+	public void saveLiegenschaft(Liegenschaft entity) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public Wärmeerzeuger updateWärmeerzeuger(Wärmeerzeuger entity)
+	public Liegenschaft updateLiegenschaft(Liegenschaft entity)
 			throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void deleteWärmeerzeuger(Wärmeerzeuger entity) throws Exception {
+	public void deleteLiegenschaft(Liegenschaft entity) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void deleteWärmeerzeugerById(Integer id) throws Exception {
+	public void deleteLiegenschaftById(Integer id) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public Wärmeerzeuger findWärmeerzeugerById(Integer id) {
+	public Liegenschaft findLiegenschaftById(Integer id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Wärmeerzeuger> findAllWärmeerzeuger() {
+	public List<Liegenschaft> findAllLiegenschaft() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Wärmeerzeuger> findWärmeerzeugerByBezeichnung(String bezeichnung) {
+	public List<Liegenschaft> findLiegenschaftByHauswart(String hauswart) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Wärmeerzeuger> findWärmeerzeugerByBaujahr(Integer baujahr) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Wärmeerzeuger> findWärmeerzeugerByBrennstoff(String brennstoff) {
+	public List<Liegenschaft> findLiegenschaftByEigentümer(String eigentümer) {
 		// TODO Auto-generated method stub
 		return null;
 	}
