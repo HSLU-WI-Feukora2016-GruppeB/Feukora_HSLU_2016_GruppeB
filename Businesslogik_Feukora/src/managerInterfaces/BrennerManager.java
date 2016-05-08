@@ -1,4 +1,4 @@
-package entity_manager;
+package managerInterfaces;
 
 public interface BrennerManager {
 

@@ -1,4 +1,4 @@
-package terminkalender;
+package terminkalenderInterfaces;
 
 public interface TerminManager {
 
