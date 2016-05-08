@@ -68,7 +68,7 @@ public interface BrennerDAO {
 	 * Liefert die Liste mit Brenner für die übergebene Bezeichnung zurück, falls
 	 * welche gefunden werden. Sonst eine leere Liste.
 	 * 
-	 * @param name
+	 * @param bezeichnung
 	 * @return
 	 */
 	public List<Brenner> findBrennerByBezeichnung(String bezeichnung);

@@ -26,60 +26,60 @@ public interface PersonDAO {
 	public void savePerson(Person entity) throws Exception;
 	
 	/**
-	 * Updatet die übergebene User-Entity.
+	 * Updatet die übergebene Person-Entity.
 	 * 
 	 * @param entity
 	 * @return
 	 * @throws Exception
 	 */
-	public User updateUser(User entity) throws Exception;
+	public Person updatePerson(Person entity) throws Exception;
 	
 	/**
-	 * Löscht die übergebene User-Entity.
+	 * Löscht die übergebene Person-Entity.
 	 * 
 	 * @param entity
 	 * @throws Exception
 	 */
-	public void deleteUser(User entity) throws Exception;
+	public void deletePerson(Person entity) throws Exception;
 	
 	/**
-	 * Löscht die User-Entity für den übergebenen Id-Wert.
+	 * Löscht die Person-Entity für den übergebenen Id-Wert.
 	 * 
 	 * @param id
 	 * @throws Exception
 	 */
-	public void deleteUserById(Integer id) throws Exception;
+	public void deletePersonById(Integer id) throws Exception;
 	
 	/**
-	 * Liefert die User-Entity für den übergebenen Id-Wert zurück.
+	 * Liefert die Person-Entity für den übergebenen Id-Wert zurück.
 	 * 
 	 * @param id
 	 * @return
 	 */
-	public User findUserById(Integer id);
+	public Person findPersonById(Integer id);
 	
 	/**
-	 * Liefert alle User-Objekte zurück.
+	 * Liefert alle Person-Objekte zurück.
 	 * 
 	 * @return
 	 */
-	List<User> findAllUser();
+	List<Person> findAllPerson();
 	
 	/**
-	 * Liefert die Liste mit User für die übergebene Namen zurück, falls
+	 * Liefert die Liste mit Person für die übergebene Namen zurück, falls
 	 * welche gefunden werden. Sonst eine leere Liste.
 	 * 
 	 * @param name
 	 * @return
 	 */
-	public List<User> findUserByName(String name);
+	public List<Person> findPersonByName(String name);
 	
 	/**
-	 * Liefert die Liste mit den User für den übergebenen Vornamen zurück, falls
+	 * Liefert die Liste mit den Person für den übergebenen Vornamen zurück, falls
 	 * es welche gibt. Sonst eine leere Liste.
 	 * 
-	 * @param baujahr
+	 * @param vorname
 	 * @return
 	 */
-	public List<User> findUserByVorname(String nachname);
+	public List<Person> findPersonByVorname(String vorname);
 }

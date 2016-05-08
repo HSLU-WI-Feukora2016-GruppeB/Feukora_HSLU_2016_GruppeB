@@ -78,8 +78,8 @@ public interface UserDAO {
 	 * Liefert die Liste mit den User für den übergebenen Vornamen zurück, falls
 	 * es welche gibt. Sonst eine leere Liste.
 	 * 
-	 * @param nachname
+	 * @param vorname
 	 * @return
 	 */
-	public List<User> findUserByVorname(String nachname);
+	public List<User> findUserByVorname(String vorname);
 }

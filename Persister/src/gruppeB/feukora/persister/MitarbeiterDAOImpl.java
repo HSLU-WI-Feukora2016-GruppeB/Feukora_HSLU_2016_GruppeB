@@ -28,38 +28,32 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 
 	@Override
 	public void saveMitarbeiter(Mitarbeiter entity) throws Exception {
-		// TODO Auto-generated method stub
-		
+		new GenericPersisterImpl<Mitarbeiter>(Mitarbeiter.class).save(entity);
 	}
 
 	@Override
 	public Mitarbeiter updateMitarbeiter(Mitarbeiter entity) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return new GenericPersisterImpl<Mitarbeiter>(Mitarbeiter.class).update(entity);
 	}
 
 	@Override
 	public void deleteMitarbeiter(Mitarbeiter entity) throws Exception {
-		// TODO Auto-generated method stub
-		
+		new GenericPersisterImpl<Mitarbeiter>(Mitarbeiter.class).delete(entity);
 	}
 
 	@Override
 	public void deleteMitarbeiterById(Integer id) throws Exception {
-		// TODO Auto-generated method stub
-		
+		new GenericPersisterImpl<Dozent>(Dozent.class).deleteById(id);
 	}
 
 	@Override
 	public Mitarbeiter findMitarbeiterById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return new GenericPersisterImpl<Mitarbeiter>(Mitarbeiter.class).findById(id);
 	}
 
 	@Override
 	public List<Mitarbeiter> findAllMitarbeiter() {
-		// TODO Auto-generated method stub
-		return null;
+		return new GenericPersisterImpl<Dozent>(Dozent.class).findAll();
 	}
 
 	@Override
