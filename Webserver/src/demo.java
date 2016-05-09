@@ -5,5 +5,6 @@ public class demo {
 		
 		System.out.println("text");
 		System.out.println("text");
+		System.out.println("text");
 	}
 }
