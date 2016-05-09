@@ -1,3 +1,4 @@
+package entitäten;
 
 public enum RolleIntern {
 	
