@@ -18,6 +18,11 @@ public class Adresse {
 	@ManyTooOne
 	private Ort ort;
 	
+	/**
+	 * Konstruktor erstellt eine Adresse aus Ort und Strasse.
+	 * @param strasse
+	 * @param ort
+	 */
 	public Adresse(Strasse strasse, Ort ort){
 		super();
 		this.strasse = strasse;
