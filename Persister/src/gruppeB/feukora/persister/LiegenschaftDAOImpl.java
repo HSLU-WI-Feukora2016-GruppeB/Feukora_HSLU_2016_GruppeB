@@ -80,5 +80,4 @@ public class LiegenschaftDAOImpl implements LiegenschaftDAO{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }
