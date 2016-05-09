@@ -7,8 +7,12 @@ package entitäten;
  * @since 1.0
  *
  */
+@Entity
+@Data
 public class Brennstoff {
 	
+	@Id
+	@GeneratedValue
 	private int id;
 	private String brennerBezeichnung;
 

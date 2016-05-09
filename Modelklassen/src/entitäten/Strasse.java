@@ -8,7 +8,9 @@ package entitäten;
  *
  */
 public class Strasse {
-	
+	@Id
+	@GeneratedValue
+	private int id;
 	private String strasse;
 	private int hausnummer;
 	

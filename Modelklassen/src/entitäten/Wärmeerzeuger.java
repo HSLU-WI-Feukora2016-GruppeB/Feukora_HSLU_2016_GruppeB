@@ -8,7 +8,8 @@ package entitäten;
  *
  */
 public class Wärmeerzeuger {
-	
+	@Id
+	@GeneratedValue
 	private int id;
 	private Brennstoff brennstofftyp;
 	private Wärmeerzeugertyp wärmeerzeugerTyp;

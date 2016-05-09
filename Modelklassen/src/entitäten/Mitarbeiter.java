@@ -1,5 +1,4 @@
 package entitäten;
-import java.util.GregorianCalendar;
 
 /**
  * Ein Mitarbeiter ist eine Person welche nur Firmenintern zu tun hat,
@@ -10,7 +9,9 @@ import java.util.GregorianCalendar;
  *
  */
 public class Mitarbeiter{
-	
+	@Id
+	@GeneratedValue
+	private int id;
 	private String vorname;
 	private String nachname;
 	private Adresse adresse;

@@ -1,7 +1,7 @@
 package entitäten;
 /**
  * Klasse Adresse enthält Strasse und Ort
- * @author Olivia
+ * @author Olivia, Dominik
  * @version 1.0.0
  * @since 1.0.0
  *
@@ -13,6 +13,7 @@ public class Adresse {
 	@Id
 	@GeneratedValue
 	private int id;
+	//Attribute
 	@NotNull
 	private Strasse strasse;
 	@ManyTooOne

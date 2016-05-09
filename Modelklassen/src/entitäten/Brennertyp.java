@@ -1,5 +1,4 @@
 package entitäten;
-
 /**
  * Brennertyp definiert den Brenner.
  * @author Olivia
@@ -7,10 +6,13 @@ package entitäten;
  * @since 1.0
  *
  */
+@Entity
+@Data
 public class Brennertyp {
 	
+	@Id
+	@GeneratedValue
 	private int id;
 	private String brennerTyp;
 	
-
 }

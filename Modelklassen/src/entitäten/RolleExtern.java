@@ -8,6 +8,9 @@ package entitäten;
  *
  */
 public enum RolleExtern {
+	@Id
+	@GeneratedValue
+	private int id;
 	
 	VERWALTER, EIGENTÜMER, HAUSABWART;
 
