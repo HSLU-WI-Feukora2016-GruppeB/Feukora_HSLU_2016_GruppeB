@@ -74,7 +74,7 @@ public interface AuftragManager {
 	 */
 	public List<Auftrag> findByLiegenschaftOrt(String liegenschaftOrt);
 	
-	
+	//...
 	
 
 	
