@@ -1,22 +1,16 @@
 package entitäten;
 
+/**
+ * Ein Ort liefert Details zur Adresse.
+ * @author Olivia
+ * @version 1.0
+ * @since 1.0
+ *
+ */
 public class Ort {
 	
 	private int plz;
 	private String ort;
-	
-	public int getPlz() {
-		return plz;
-	}
-	public void setPlz(int plz) {
-		this.plz = plz;
-	}
-	public String getOrt() {
-		return ort;
-	}
-	public void setOrt(String ort) {
-		this.ort = ort;
-	}
 	
 	
 
