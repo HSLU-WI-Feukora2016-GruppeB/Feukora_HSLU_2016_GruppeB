@@ -1,15 +1,22 @@
 package entitäten;
 import java.util.GregorianCalendar;
 
-
+/**
+ * Ein Auftrag fasst alle wichtigen Informationen für den Auftrag zusammen. 
+ * Er wird normalerweise vom Sachbearbeiter erstellt und vom Feuerungskontrolleur durch
+ * die Kontroll-Messdaten ergänzt. 
+ * @author Olivia
+ * @version 1.0
+ * @since 1.0
+ */
 public class Auftrag {
 	
-	private Person person;
+	private Kontakt kunde;
+	private Mitarbeiter aufgenommenDurch;
 	private Liegenschaft liegenschaft;
-	private Auftrag auftrag;
+	private Mitarbeiter ausgeführtDurch;
 	private GregorianCalendar termin;
-	private boolean terminart;
-		//wenn true dann Service sonst nur Kontrolle
+	private boolean terminart;		//wenn true dann Service sonst nur Kontrolle
 	
 	public Person getPerson() {
 		return person;
