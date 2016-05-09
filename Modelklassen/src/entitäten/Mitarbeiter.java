@@ -1,10 +1,19 @@
 package entitäten;
+/**
+ * Klasse Adresse enthält Strasse und Ort
+ * @author Olivia, Dominik
+ * @version 1.0.0
+ * @since 1.0.0
+ *
+ */
 import java.util.Date;
 import java.util.GregorianCalendar;
 
 
 public class Mitarbeiter{
-	
+	@Id
+	@GeneratedValue
+	private int id;
 	private String vorname;
 	private String nachname;
 	private Adresse adresse;
