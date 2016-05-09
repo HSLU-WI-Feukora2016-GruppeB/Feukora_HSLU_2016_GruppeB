@@ -43,7 +43,7 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 
 	@Override
 	public void deleteMitarbeiterById(Integer id) throws Exception {
-		new GenericPersisterImpl<Dozent>(Dozent.class).deleteById(id);
+		new GenericPersisterImpl<Mitarbeiter>(Mitarbeiter.class).deleteById(id);
 	}
 
 	@Override
@@ -53,26 +53,60 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 
 	@Override
 	public List<Mitarbeiter> findAllMitarbeiter() {
-		return new GenericPersisterImpl<Dozent>(Dozent.class).findAll();
+		return new GenericPersisterImpl<Mitarbeiter>(Mitarbeiter.class).findAll();
 	}
 
 	@Override
 	public List<Mitarbeiter> findMitarbeiterByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		EntityManager em = JpaUtil.createEntityManager();
+
+		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery("Mitarbeiter.findByName",
+				Mitarbeiter.class);
+
+		tQuery.setParameter("name", name);
+
+		List<Mitarbeiter> mitarbeiterListe = tQuery.getResultList();
+
+		em.close();
+
+		return mitarbeiterListe != null ? mitarbeiterListe : new ArrayList<Mitarbeiter>();
 	}
 
 	@Override
-	public List<Mitarbeiter> findMitarbeiterByGanzerName(String name,
+	public List<Mitarbeiter> findMitarbeiterByNameUndVorname(String name,
 			String vorname) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		EntityManager em = JpaUtil.createEntityManager();
+
+		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery(
+				"Mitarbeiter.findByNameUndVorname", Mitarbeiter.class);
+
+		tQuery.setParameter("name", name);
+		tQuery.setParameter("vorname", vorname);
+
+		List<Mitarbeiter> mitarbeiterListe = tQuery.getResultList();
+
+		em.close();
+
+		return mitarbeiterListe != null ? mitarbeiterListe : new ArrayList<Mitarbeiter>();
 	}
 
 	@Override
 	public List<Mitarbeiter> findMitarbeiterByVorname(String vorname) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		EntityManager em = JpaUtil.createEntityManager();
+
+		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery("Mitarbeiter.findByVorname",
+				Mitarbeiter.class);
+
+		tQuery.setParameter("vorname", vorname);
+
+		List<Mitarbeiter> mitarbeiterListe = tQuery.getResultList();
+
+		em.close();
+
+		return mitarbeiterListe != null ? mitarbeiterListe : new ArrayList<Mitarbeiter>();
 	}
 
 	@Override

@@ -71,7 +71,7 @@ public interface LiegenschaftDAO {
 	 * @param hauswart
 	 * @return
 	 */
-	public List<Liegenschaft> findLiegenschaftByHauswart(String hauswart);
+	public List<Liegenschaft> findLiegenschaftByHauswart(Kontakt hauswart);
 	
 	/**
 	 * Liefert die Liste mit den Liegenschaften für die übergebenen Eigentümer zurück, falls
@@ -80,6 +80,15 @@ public interface LiegenschaftDAO {
 	 * @param eigentümer
 	 * @return
 	 */
-	public List<Liegenschaft> findLiegenschaftByEigentümer(String eigentümer);
+	public List<Liegenschaft> findLiegenschaftByEigentümer(Kontakt eigentümer);
+	
+	/**
+	 * Liefert die Liste mit den Liegenschaften für die übergebenen Adressen zurück, falls
+	 * es welche gibt. Sonst eine leere Liste.
+	 * 
+	 * @param adresse
+	 * @return
+	 */
+	public List<Liegenschaft> findLiegenschaftByAdresse(Adresse adresse);
 	
 }

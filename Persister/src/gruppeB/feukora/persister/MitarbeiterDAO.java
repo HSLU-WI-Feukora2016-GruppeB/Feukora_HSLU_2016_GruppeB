@@ -82,7 +82,7 @@ public interface MitarbeiterDAO {
 	 * @param vorname
 	 * @return
 	 */
-	public List<Mitarbeiter> findMitarbeiterByGanzerName(String name, String vorname);
+	public List<Mitarbeiter> findMitarbeiterByNameUndVorname(String name, String vorname);
 	
 	/**
 	 * Liefert die Liste mit den Mitarbeiter für den übergebenen Vornamen zurück,

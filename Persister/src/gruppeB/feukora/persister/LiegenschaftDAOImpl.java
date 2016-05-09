@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+
 //import Liegenschaft Modell-Klasse.
 import gruppeB.feukora.persister.generic.GenericPersisterImpl;
 import gruppeB.feukora.persister.util.JpaUtil;
@@ -63,13 +64,19 @@ public class LiegenschaftDAOImpl implements LiegenschaftDAO{
 	}
 
 	@Override
-	public List<Liegenschaft> findLiegenschaftByHauswart(String hauswart) {
+	public List<Liegenschaft> findLiegenschaftByHauswart(Kontakt hauswart) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Liegenschaft> findLiegenschaftByEigentümer(String eigentümer) {
+	public List<Liegenschaft> findLiegenschaftByEigentümer(Kontakt eigentümer) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Liegenschaft> findLiegenschaftByAdresse(Adresse adresse) {
 		// TODO Auto-generated method stub
 		return null;
 	}
