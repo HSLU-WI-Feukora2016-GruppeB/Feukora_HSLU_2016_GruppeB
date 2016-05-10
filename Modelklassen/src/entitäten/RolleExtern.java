@@ -1,5 +1,7 @@
 package entitäten;
 
+import java.io.Serializable;
+
 /**
  * RolleExtern liefert den Typ für einen Kontakt.
  * @author Olivia
@@ -7,11 +9,11 @@ package entitäten;
  * @since 1.0
  *
  */
-public enum RolleExtern {
-	@Id
-	@GeneratedValue
-	private int id;
-	
+public enum RolleExtern implements Serializable{
+	/*
+	 * Enum benötigt keine Annotationen ist über Mitarbeiter @Enumerated
+	 * geregelt
+	 */
 	VERWALTER, EIGENTÜMER, HAUSABWART;
 
 }

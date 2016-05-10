@@ -16,9 +16,9 @@ import javax.persistence.*;
 @NamedQueries({
 	@NamedQuery(name = "Auftrag.findByKontakt", query = "SELECT a FROM Auftrag a WHERE a.kontakt=:kontakt"),
 	@NamedQuery(name = "Auftrag.findByLiegenschaft", query = "SELECT a FROM Auftrag a WHERE a.liegenschaft=:liegenschaft"),
-	@NamedQuery(name = "Auftrag.findByTermin", query = "SELECT a FROM Auftrag a WHERE a.termin=:termin"),
-	@NamedQuery(name = "Auftrag.findByMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.mitarbeiter=:mitarbeiter")
-	
+	@NamedQuery(name = "Auftrag.findByAuftragsNummer", query = "SELECT a FROM Auftrag a WHERE a.auftragsNummer=:auftragsNummer"),
+	@NamedQuery(name = "Auftrag.findByMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.mitarbeiter=:mitarbeiter"),
+	@NamedQuery(name = "Auftrag.findByMessung", query = "SELECT a FROM Auftrag a WHERE a.messung=:messung")
 })
 public class Auftrag implements Serializable{
 	
@@ -33,10 +33,12 @@ public class Auftrag implements Serializable{
 	private Liegenschaft liegenschaft;
 	@ManyToOne
 	private Mitarbeiter ausgeführtDurch;
-	@ManyToOne
+	@OneToOne
+	private Messung messung;
+	
 	private GregorianCalendar termin;
-	@OneToMany
 	private boolean terminArt;		//wenn true dann Service sonst nur Kontrolle
+	
 	
 	//standardkonstruktor
 	public Auftrag(){

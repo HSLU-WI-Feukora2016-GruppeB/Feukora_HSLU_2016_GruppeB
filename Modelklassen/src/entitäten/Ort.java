@@ -18,7 +18,7 @@ public class Ort implements Serializable {
 
 	private static final long serialVersionUID = -873608046753875813L;
 	@Id
-	private int plz;	
+	private Integer plz;	
 	private String ort;
 	
 	//Standardkonstruktor*************************************************
