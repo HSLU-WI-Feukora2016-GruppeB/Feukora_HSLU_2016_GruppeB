@@ -1,28 +1,32 @@
 package entitäten;
-
 /**
- * Ein Ort liefert Details zur Adresse.
- * @author Olivia
- * @version 1.0
- * @since 1.0
+ * Klasse Adresse enthält Strasse und Ort
+ * @author Olivia, Dominik
+ * @version 1.0.0
+ * @since 1.0.0
  *
  */
-public class Ort {
+@Entity
+@Data
+public class Adresse {
+	
 	@Id
 	@GeneratedValue
 	private int id;
+	//Attribute
 	@NotNull
-	private int plz;
-	@NotNull	
-	private String ort;
+	private Strasse strasse;
+	@ManyTooOne
+	private Ort ort;
 	
-	
-	public Ort(int plz, String ort) {
+	/**
+	 * Konstruktor erstellt eine Adresse aus Ort und Strasse.
+	 * @param strasse
+	 * @param ort
+	 */
+	public Adresse(Strasse strasse, Ort ort){
 		super();
-		this.plz = plz;
+		this.strasse = strasse;
 		this.ort = ort;
-		
-	
-	
-
+	}
 }
