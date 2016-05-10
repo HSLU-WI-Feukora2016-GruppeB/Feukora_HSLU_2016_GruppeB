@@ -42,50 +42,57 @@ public class Auftrag implements Serializable{
 	public Auftrag(){
 		
 	}
-	
+
 	//getter&setter
 	public Integer getAuftragsNummer() {
 		return auftragsNummer;
 	}
+
 	public void setAuftragsNummer(Integer auftragsNummer) {
 		this.auftragsNummer = auftragsNummer;
 	}
+
 	public Kontakt getKunde() {
 		return kunde;
 	}
+
 	public void setKunde(Kontakt kunde) {
 		this.kunde = kunde;
 	}
-	public Mitarbeiter getAufgenommenDurch() {
-		return aufgenommenDurch;
-	}
-	public void setAufgenommenDurch(Mitarbeiter aufgenommenDurch) {
-		this.aufgenommenDurch = aufgenommenDurch;
-	}
+
 	public Liegenschaft getLiegenschaft() {
 		return liegenschaft;
 	}
+
 	public void setLiegenschaft(Liegenschaft liegenschaft) {
 		this.liegenschaft = liegenschaft;
 	}
+
 	public Mitarbeiter getAusgeführtDurch() {
 		return ausgeführtDurch;
 	}
+
 	public void setAusgeführtDurch(Mitarbeiter ausgeführtDurch) {
 		this.ausgeführtDurch = ausgeführtDurch;
 	}
+
 	public GregorianCalendar getTermin() {
 		return termin;
 	}
+
 	public void setTermin(GregorianCalendar termin) {
 		this.termin = termin;
 	}
+
 	public boolean isTerminArt() {
 		return terminArt;
 	}
+
 	public void setTerminArt(boolean terminArt) {
 		this.terminArt = terminArt;
 	}
+	
+	
 	
 	
 
