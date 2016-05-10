@@ -14,12 +14,10 @@ import javax.persistence.*;
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "Auftrag.findByKontaktName", query = "SELECT a FROM Auftrag a WHERE a.name=:name"),
-	@NamedQuery(name = "Auftrag.findByKontaktVorname", query = "SELECT a FROM Auftrag a WHERE a.vorname=:vorname"),
-	@NamedQuery(name = "Auftrag.findByLiegenschaftPostleitzahl", query = "SELECT a FROM Auftrag a WHERE a.adresse.ort.plz=:plz"),
-	@NamedQuery(name = "Auftrag.findByLiegenschaftOrt", query = "SELECT a FROM Auftrag a WHERE a.adresse.ort.ort=:ort"),
-	@NamedQuery(name = "Auftrag.findByTermin", query = "SELECT a FROM Auftrag a WHERE a.termin.termin=:termin"),
-	@NamedQuery(name = "Auftrag.findByAusführenderMitarbeiter", query = "SELECT a FROM Auftrag a WHERE :kompetenz MEMBER OF d.kernkompetenzen")
+	@NamedQuery(name = "Auftrag.findByKontakt", query = "SELECT a FROM Auftrag a WHERE a.kontakt=:kontakt"),
+	@NamedQuery(name = "Auftrag.findByLiegenschaft", query = "SELECT a FROM Auftrag a WHERE a.liegenschaft=:liegenschaft"),
+	@NamedQuery(name = "Auftrag.findByTermin", query = "SELECT a FROM Auftrag a WHERE a.termin=:termin"),
+	@NamedQuery(name = "Auftrag.findByMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.mitarbeiter=:mitarbeiter")
 	
 })
 public class Auftrag implements Serializable{
@@ -31,8 +29,6 @@ public class Auftrag implements Serializable{
 	
 	@ManyToOne
 	private Kontakt kunde;
-	@ManyToOne
-	private Mitarbeiter aufgenommenDurch;
 	@ManyToOne
 	private Liegenschaft liegenschaft;
 	@ManyToOne
