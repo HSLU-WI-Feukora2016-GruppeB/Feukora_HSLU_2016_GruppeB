@@ -1,5 +1,9 @@
 package managerInterfaces;
 
+import java.util.List;
+
+import entitäten.Auftrag;
+
 /**
  * Verwaltet einen Auftrag und alle Funktionen.
  * @author Olivia
