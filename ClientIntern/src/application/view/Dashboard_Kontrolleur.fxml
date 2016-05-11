@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="583.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.DashboardBOEventHandler">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="Datei">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Bearbeiten">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Hilfe">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <Pane prefHeight="568.0" prefWidth="640.0">
+         <children>
+            <ImageView fitHeight="552.0" fitWidth="640.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../../Pictures/WP/34e41d.jpg" />
+               </image>
+            </ImageView>
+            <VBox prefHeight="552.0" prefWidth="640.0">
+               <children>
+                  <VBox prefHeight="45.0" prefWidth="640.0" />
+                  <HBox prefHeight="150.0" prefWidth="642.0">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="50.0" />
+                        <Button fx:id="btnTerminUebersicht" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#handle" prefHeight="120.0" prefWidth="200.0" text="Terminübersicht" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Pictures/WP/ICON%20Feukora/clock.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Pane prefHeight="150.0" prefWidth="50.0" />
+                        <Button fx:id="btnMitarbeiterUebersicht" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#handle" prefHeight="120.0" prefWidth="200.0" text="Mitarbeiter Verwaltung">
+                           <graphic>
+                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Pictures/WP/ICON%20Feukora/people.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Pane prefHeight="200.0" prefWidth="50.0" />
+                        <Button fx:id="btnEigentuemerUebersicht" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#handle" prefHeight="120.0" prefWidth="200.0" text="Eigentümer Verwaltung">
+                           <graphic>
+                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Pictures/WP/ICON%20Feukora/two.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Pane prefHeight="200.0" prefWidth="50.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="150.0" prefWidth="640.0">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="50.0" />
+                        <Button fx:id="btnBrennerUebersicht" contentDisplay="TOP" mnemonicParsing="false" onAction="#handle" prefHeight="120.0" prefWidth="200.0" text="Brenner Verwaltung">
+                           <graphic>
+                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Pictures/WP/ICON%20Feukora/nature.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Pane prefHeight="200.0" prefWidth="50.0" />
+                        <Button fx:id="btnWaermeerzeugerUebersicht" contentDisplay="TOP" mnemonicParsing="false" onAction="#handle" prefHeight="120.0" prefWidth="200.0" text="Wärmeerzeuger Verwalten">
+                           <graphic>
+                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Pictures/WP/ICON%20Feukora/heating.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Pane prefHeight="200.0" prefWidth="50.0" />
+                        <Button fx:id="btnLiegenschaftUebersicht" contentDisplay="TOP" mnemonicParsing="false" onAction="#handle" prefHeight="120.0" prefWidth="200.0" text="Liegenschaft Verwaltung">
+                           <graphic>
+                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Pictures/WP/ICON%20Feukora/house.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Pane prefHeight="200.0" prefWidth="50.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="136.0" prefWidth="640.0">
+                     <children>
+                        <Pane prefHeight="136.0" prefWidth="100.0" />
+                        <Button fx:id="btnRapportUebersicht" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#handle" prefHeight="120.0" prefWidth="200.0" text="Rapporte Verwalten">
+                           <graphic>
+                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Pictures/WP/ICON%20Feukora/check.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Pane prefHeight="200.0" prefWidth="50.0" />
+                        <Button alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="120.0" prefWidth="200.0" text="Logout">
+                           <graphic>
+                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Pictures/WP/ICON%20Feukora/arrows.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Pane prefHeight="136.0" prefWidth="100.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+  </children>
+</VBox>

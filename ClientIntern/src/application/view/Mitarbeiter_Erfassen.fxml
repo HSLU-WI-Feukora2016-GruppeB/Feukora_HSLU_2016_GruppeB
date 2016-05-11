@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.MitarbeiterErfassen">
+   <children>
+      <ImageView fitHeight="480.0" fitWidth="640.0" pickOnBounds="true">
+         <image>
+            <Image url="@Bilder/Background/34e41d.jpg" />
+         </image>
+      </ImageView>
+      <BorderPane prefHeight="480.0" prefWidth="640.0">
+         <top>
+            <VBox prefHeight="31.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Mitarbeiter erfassen">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Label>
+                  <MenuBar>
+                    <menus>
+                      <Menu mnemonicParsing="false" text="Datei">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Close" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Bearbeiten">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Delete" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Hilfe">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+               </children>
+            </VBox>
+         </top>
+         <bottom>
+            <HBox prefHeight="34.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="34.0" prefWidth="391.0" />
+                  <Button fx:id="btnSpeichern" mnemonicParsing="false" onAction="#handle" text="Speichern" />
+                  <Pane prefHeight="34.0" prefWidth="6.0" />
+                  <Button fx:id="btnAbbrechen" mnemonicParsing="false" onAction="#handle" text="Abbrechen" />
+                  <Pane prefHeight="34.0" prefWidth="9.0" />
+               </children>
+            </HBox>
+         </bottom>
+         <left>
+            <Pane prefHeight="247.0" prefWidth="105.0" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <Pane prefHeight="247.0" prefWidth="105.0" styleClass="r" BorderPane.alignment="CENTER" />
+         </right>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label prefHeight="38.0" prefWidth="168.0" text="Name" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtVorname" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtPLZ" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtOrt" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label prefHeight="39.0" prefWidth="168.0" text="PLZ" GridPane.rowIndex="3" />
+                        <Label prefHeight="46.0" prefWidth="168.0" text="Ort" GridPane.rowIndex="4" />
+                        <Label prefHeight="37.0" prefWidth="168.0" text="Position" GridPane.rowIndex="5" />
+                        <Label prefHeight="43.0" prefWidth="168.0" text="Lohn" GridPane.rowIndex="6" />
+                        <TextField fx:id="txtPosition" prefHeight="25.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label prefHeight="39.0" prefWidth="168.0" text="Vorname" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtLohn" prefHeight="25.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="txtEmail" prefHeight="25.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <TextField fx:id="txtTelefonNr" prefHeight="25.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Label prefHeight="43.0" prefWidth="168.0" text="E-Mail" GridPane.rowIndex="7" />
+                        <Label prefHeight="43.0" prefWidth="168.0" text="Telefon Nr." GridPane.rowIndex="8" />
+                     </children>
+                  </GridPane>
+                  <HBox prefHeight="100.0" prefWidth="200.0" />
+                  <HBox prefHeight="37.0" prefWidth="390.0" />
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</Pane>
