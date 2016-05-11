@@ -59,7 +59,7 @@ public class Mitarbeiter implements Serializable{
 	}
 	
 	//getter&setter
-	public int getIdMitarbeiter() {
+	public Integer getIdMitarbeiter() {
 		return idMitarbeiter;
 	}
 

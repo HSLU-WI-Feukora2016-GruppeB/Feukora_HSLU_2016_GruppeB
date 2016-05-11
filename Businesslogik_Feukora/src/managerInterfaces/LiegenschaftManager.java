@@ -15,27 +15,27 @@ public interface LiegenschaftManager {
 	
 	/**
 	 * Speichert einen Liegenschaft.
-	 * @param entitaet
+	 * @param entity
 	 * @return
 	 * @throws Exception
 	 */
-	public Liegenschaft add(Liegenschaft entitaet) throws Exception;
+	public Liegenschaft add(Liegenschaft entity) throws Exception;
 	
 	/**
 	 * Passt die übergebene Liegenschaft an.
-	 * @param entitaet
+	 * @param entity
 	 * @return
 	 * @throws Exception
 	 */
-	public Liegenschaft update(Liegenschaft entitaet) throws Exception;
+	public Liegenschaft update(Liegenschaft entity) throws Exception;
 	
 	/**
 	 * Löscht die übergebene Liegenschaft.
-	 * @param entitaet
+	 * @param entity
 	 * @return
 	 * @throws Exception
 	 */
-	public void delete(Liegenschaft entitaet) throws Exception;
+	public void delete(Liegenschaft entity) throws Exception;
 
 	/**
 	 * Liefert die Liegenschaft die mit der Id angefragt wurde. 
@@ -48,7 +48,7 @@ public interface LiegenschaftManager {
 	 * Liefert alle Liegenschaften zurück.
 	 * @return
 	 */
-	public List<Liegenschaft> findAll();
+	public List<Liegenschaft> findAllLiegenschaft();
 	
 	/**
 	 * Liefert eine Liegenschaftsliste anhand des gesuchten Kontakts.

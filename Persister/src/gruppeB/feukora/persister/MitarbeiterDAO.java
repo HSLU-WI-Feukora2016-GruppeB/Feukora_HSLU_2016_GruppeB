@@ -6,7 +6,10 @@
 package gruppeB.feukora.persister;
 
 import java.util.List;
+
+import entitäten.Mitarbeiter;
 //import Mitarbeiter Modell-Klasse.
+import entitäten.RolleIntern;
 
 /**
  * Interface für Persistierung von Mitarbeiter-Entities.
@@ -43,14 +46,6 @@ public interface MitarbeiterDAO {
 	public void deleteMitarbeiter(Mitarbeiter entity) throws Exception;
 	
 	/**
-	 * Löscht die Mitarbeiter-Entity für den übergebenen Id-Wert.
-	 * 
-	 * @param id
-	 * @throws Exception
-	 */
-	public void deleteMitarbeiterById(Integer id) throws Exception;
-	
-	/**
 	 * Liefert die Mitarbeiter-Entity für den übergebenen Id-Wert zurück.
 	 * 
 	 * @param id
@@ -75,16 +70,6 @@ public interface MitarbeiterDAO {
 	public List<Mitarbeiter> findMitarbeiterByName(String name);
 	
 	/**
-	 * Liefert die Liste mit den Mitarbeiter für den übergebenen Vornamen mit Nachnamen zurück,
-	 * falls es welche gibt. Sonst eine leere Liste.
-	 * 
-	 * @param name
-	 * @param vorname
-	 * @return
-	 */
-	public List<Mitarbeiter> findMitarbeiterByNameUndVorname(String name, String vorname);
-	
-	/**
 	 * Liefert die Liste mit den Mitarbeiter für den übergebenen Vornamen zurück,
 	 * falls es welche gibt. Sonst eine leere Liste.
 	 * 
@@ -94,37 +79,11 @@ public interface MitarbeiterDAO {
 	public List<Mitarbeiter> findMitarbeiterByVorname(String vorname);
 	
 	/**
-	 * Liefert die Liste mit den Mitarbeiter für den übergebenen Vornamen zurück,
-	 * welche zurzeit einen Auftrag ausführen, falls es welche gibt. Sonst eine leere Liste.
+	 * Liefert die Liste mit Mitarbeiter für die übergebene Rolle zurück, falls
+	 * welche gefunden werden. Sonst eine leere Liste.
 	 * 
-	 * @param vorname
+	 * @param rolleIntern
 	 * @return
 	 */
-	public List<Mitarbeiter> findActiveMitarbeiterByVorname(String vorname);
-	
-	/**
-	 * Liefert die Liste mit den Mitarbeiter für den übergebenen Namen zurück,
-	 * welche zurzeit einen Auftrag ausführen, falls es welche gibt. Sonst eine leere Liste.
-	 * 
-	 * @param name
-	 * @return
-	 */
-	public List<Mitarbeiter> findActiveMitarbeiterByName(String name);
-	
-	/**
-	 * Liefert die Liste mit den Mitarbeiter für den übergebenen Vornamen mit Nachnamen zurück,
-	 * welche zurzeit einen Auftrag ausführen, falls es welche gibt. Sonst eine leere Liste.
-	 * 
-	 * @param name
-	 * @param vorname
-	 * @return
-	 */
-	public List<Mitarbeiter> findActiveMitarbeiterByGanzerName(String name, String vorname);
-	
-	/**
-	 * Liefert alle Mitarbeiter-Objekte zurück, welche zurzeit einen Auftrag ausführen.
-	 * 
-	 * @return
-	 */
-	List<Mitarbeiter> findAllActiveMitarbeiter();
+	public List<Mitarbeiter> findByRolleIntern(RolleIntern rolleIntern);
 }

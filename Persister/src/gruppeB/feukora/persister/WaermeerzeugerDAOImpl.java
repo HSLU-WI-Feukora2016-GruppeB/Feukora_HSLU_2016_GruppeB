@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+
+import entitäten.Waermeerzeuger;
 //import Wärmeerzeuger Modell-Klasse.
 import gruppeB.feukora.persister.generic.GenericPersisterImpl;
 import gruppeB.feukora.persister.util.JpaUtil;
@@ -23,10 +25,10 @@ import gruppeB.feukora.persister.util.JpaUtil;
  * @author Luca Raneri
  * 
  */
-public class WärmeerzeugerDAOImpl implements WärmeerzeugerDAO{
+public class WaermeerzeugerDAOImpl implements WaermeerzeugerDAO{
 
 	@Override
-	public void saveWärmeerzeuger(Wärmeerzeuger entity) throws Exception {
+	public void saveWaermeerzeuger(Waermeerzeuger entity) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}

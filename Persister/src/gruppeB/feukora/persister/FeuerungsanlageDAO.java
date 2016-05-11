@@ -47,14 +47,6 @@ public interface FeuerungsanlageDAO {
 	public void deleteFeuerungsanlage(Feuerungsanlage entity) throws Exception;
 	
 	/**
-	 * Löscht die Feuerungsanlage-Entity für den übergebenen Id-Wert.
-	 * 
-	 * @param id
-	 * @throws Exception
-	 */
-	public void deleteFeuerungsanlageById(Integer id) throws Exception;
-	
-	/**
 	 * Liefert die Feuerungsanlage-Entity für den übergebenen Id-Wert zurück.
 	 * 
 	 * @param id
@@ -96,13 +88,32 @@ public interface FeuerungsanlageDAO {
 	 */
 	public List<Feuerungsanlage> findFeuerungsanlageByBrennstoff(String brennstoff);
 
+	/**
+	 * Liefert die Liste mit den Feuerungsanlagen für die übergebenen Liegenschaften zurück, falls
+	 * es welche gibt. Sonst eine leere Liste.
+	 * 
+	 * @param liegenschaft
+	 * @return
+	 */
 	public List<Feuerungsanlage> findByLiegenschaft(Liegenschaft liegenschaft);
-	//toDO
 
+	/**
+	 * Liefert die Liste mit den Feuerungsanlagen für die übergebenen Brenner zurück, falls
+	 * es welche gibt. Sonst eine leere Liste.
+	 * 
+	 * @param brenner
+	 * @return
+	 */
 	public List<Feuerungsanlage> findByBrenner(Brenner brenner);
-	//toDO
 
+	/**
+	 * Liefert die Liste mit den Feuerungsanlagen für die übergebenen Waermeerzeuger zurück, falls
+	 * es welche gibt. Sonst eine leere Liste.
+	 * 
+	 * @param waermeerzeuger
+	 * @return
+	 */
 	public List<Feuerungsanlage> findByWaermeerzeuger(
 			Waermeerzeuger waermeerzeuger);
-	//toDO
+
 }

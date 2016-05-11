@@ -16,27 +16,27 @@ public interface WaermeerzeugerManager {
 
 	/**
 	 * Speichert einen Waermeerzeuger.
-	 * @param entitaet
+	 * @param entity
 	 * @return
 	 * @throws Exception
 	 */
-	public Waermeerzeuger add(Waermeerzeuger entitaet) throws Exception;
+	public Waermeerzeuger add(Waermeerzeuger entity) throws Exception;
 	
 	/**
 	 * Passt die übergebene Waermeerzeuger an.
-	 * @param entitaet
+	 * @param entity
 	 * @return
 	 * @throws Exception
 	 */
-	public Waermeerzeguer update(Waermeerzeuger entitaet) throws Exception;
+	public Waermeerzeuger update(Waermeerzeuger entity) throws Exception;
 	
 	/**
 	 * Löscht den übergebenen Waermeerzeuger.
-	 * @param entitaet
+	 * @param entity
 	 * @return
 	 * @throws Exception
 	 */
-	public void delete(Waermeerzeuger entitaet) throws Exception;
+	public void delete(Waermeerzeuger entity) throws Exception;
 
 	/**
 	 * Liefert den Waermeerzeuger der mit der Id angefragt wurde. 
@@ -49,7 +49,7 @@ public interface WaermeerzeugerManager {
 	 * Liefert alle Waermeerzeuger zurück.
 	 * @return
 	 */
-	public List<Waermeerzeuger> findAll();
+	public List<Waermeerzeuger> findAllWaermeerzeuger();
 	
 	/**
 	 * Liefert einen Waermeerzeuger anhand des gesuchten Waermeerzeuger-Typ.
