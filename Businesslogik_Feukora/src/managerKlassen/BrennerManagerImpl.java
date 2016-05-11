@@ -14,7 +14,7 @@ public class BrennerManagerImpl implements BrennerManager{
 	@Override
 	public Brenner add(Brenner entity) throws Exception {
 		if (entity.getId() == null) {
-			dozentDAO.saveDozent(entity);
+			brennerDAO.saveBrenner(entity);
 		} else {
 			throw new Exception(
 					"Entity im Datenbestand bereits vorhanden (Id = "
