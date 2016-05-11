@@ -26,7 +26,7 @@ public interface KontaktDAO {
 	 * @param entity
 	 * @throws Exception
 	 */
-	public void addKontakt(Kontakt entity) throws Exception;
+	public void saveKontakt(Kontakt entity) throws Exception;
 	
 	/**
 	 * Updatet die übergebene Kontakt-Entity.
@@ -94,5 +94,5 @@ public interface KontaktDAO {
 	 * @param rolle
 	 * @return
 	 */
-	public List<Kontakt> findKontaktByRolle(Rolle rolle);
+	public List<Kontakt> findKontaktByRolleExtern(RolleExtern rolleExtern);
 }

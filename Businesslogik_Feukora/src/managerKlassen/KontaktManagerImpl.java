@@ -24,7 +24,7 @@ public class KontaktManagerImpl implements KontaktManager{
 	public Kontakt add(Kontakt entity) throws Exception {
 		
 		if (entity.getId() == null) {
-			kontaktDAO.addKontakt(entity);
+			kontaktDAO.saveKontakt(entity);
 			return entity;
 		} else {
 			throw new Exception(
@@ -75,7 +75,7 @@ public class KontaktManagerImpl implements KontaktManager{
 
 	@Override
 	public List<Kontakt> findKontaktByRolleExtern(RolleExtern rolleExtern) {
-		return kontaktDAO.findKontaktByRolle(rolleExtern);
+		return kontaktDAO.findKontaktByRolleExtern(rolleExtern);
 	}
 
 }

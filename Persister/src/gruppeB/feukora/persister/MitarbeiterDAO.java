@@ -6,7 +6,10 @@
 package gruppeB.feukora.persister;
 
 import java.util.List;
+
+import entitäten.Mitarbeiter;
 //import Mitarbeiter Modell-Klasse.
+import entitäten.RolleIntern;
 
 /**
  * Interface für Persistierung von Mitarbeiter-Entities.
@@ -43,14 +46,6 @@ public interface MitarbeiterDAO {
 	public void deleteMitarbeiter(Mitarbeiter entity) throws Exception;
 	
 	/**
-	 * Löscht die Mitarbeiter-Entity für den übergebenen Id-Wert.
-	 * 
-	 * @param id
-	 * @throws Exception
-	 */
-	public void deleteMitarbeiterById(Integer id) throws Exception;
-	
-	/**
 	 * Liefert die Mitarbeiter-Entity für den übergebenen Id-Wert zurück.
 	 * 
 	 * @param id
@@ -73,16 +68,6 @@ public interface MitarbeiterDAO {
 	 * @return
 	 */
 	public List<Mitarbeiter> findMitarbeiterByName(String name);
-	
-	/**
-	 * Liefert die Liste mit den Mitarbeiter für den übergebenen Vornamen mit Nachnamen zurück,
-	 * falls es welche gibt. Sonst eine leere Liste.
-	 * 
-	 * @param name
-	 * @param vorname
-	 * @return
-	 */
-	public List<Mitarbeiter> findMitarbeiterByNameUndVorname(String name, String vorname);
 	
 	/**
 	 * Liefert die Liste mit den Mitarbeiter für den übergebenen Vornamen zurück,
@@ -127,4 +112,13 @@ public interface MitarbeiterDAO {
 	 * @return
 	 */
 	List<Mitarbeiter> findAllActiveMitarbeiter();
+
+	/**
+	 * Liefert die Liste mit Mitarbeiter für die übergebene Rolle zurück, falls
+	 * welche gefunden werden. Sonst eine leere Liste.
+	 * 
+	 * @param rolleIntern
+	 * @return
+	 */
+	public List<Mitarbeiter> findByRolleIntern(RolleIntern rolleIntern);
 }
