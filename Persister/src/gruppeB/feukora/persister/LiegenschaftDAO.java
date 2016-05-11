@@ -7,6 +7,8 @@ package gruppeB.feukora.persister;
 
 import java.util.List;
 
+import entitäten.Liegenschaft;
+
 /**
  * Interface für Persistierung von Liegenschaft-Entities.
  * 
@@ -22,7 +24,7 @@ public interface LiegenschaftDAO {
 	 * @param entity
 	 * @throws Exception
 	 */
-	public void saveLiegenschaft(Liegenschaft entity) throws Exception;
+	public void addLiegenschaft(Liegenschaft entity) throws Exception;
 	
 	/**
 	 * Updatet die übergebene Liegenschaft-Entity.
@@ -42,14 +44,6 @@ public interface LiegenschaftDAO {
 	public void deleteLiegenschaft(Liegenschaft entity) throws Exception;
 	
 	/**
-	 * Löscht die Liegenschaft-Entity für den übergebenen Id-Wert.
-	 * 
-	 * @param id
-	 * @throws Exception
-	 */
-	public void deleteLiegenschaftById(Integer id) throws Exception;
-	
-	/**
 	 * Liefert die Liegenschaft-Entity für den übergebenen Id-Wert zurück.
 	 * 
 	 * @param id
@@ -63,32 +57,32 @@ public interface LiegenschaftDAO {
 	 * @return
 	 */
 	List<Liegenschaft> findAllLiegenschaft();
-	
+
 	/**
-	 * Liefert die Liste mit den Liegenschaften für die übergebenen Hauswärte zurück, falls
+	 * Liefert die Liste mit den Liegenschaften für die übergebenen Kontakt zurück, falls
 	 * es welche gibt. Sonst eine leere Liste.
 	 * 
-	 * @param hauswart
+	 * @param kontakt
 	 * @return
 	 */
-	public List<Liegenschaft> findLiegenschaftByHauswart(Kontakt hauswart);
+	public List<Liegenschaft> findByKontakt(String kontakt);
 	
 	/**
-	 * Liefert die Liste mit den Liegenschaften für die übergebenen Eigentümer zurück, falls
+	 * Liefert die Liste mit den Liegenschaften für die übergebenen Ort zurück, falls
 	 * es welche gibt. Sonst eine leere Liste.
 	 * 
-	 * @param eigentümer
+	 * @param ort
 	 * @return
 	 */
-	public List<Liegenschaft> findLiegenschaftByEigentümer(Kontakt eigentümer);
-	
+	public List<Liegenschaft> findByOrt(String ort);
+
 	/**
-	 * Liefert die Liste mit den Liegenschaften für die übergebenen Adressen zurück, falls
+	 * Liefert die Liste mit den Liegenschaften für die übergebenen Strasse inkl. Nr. zurück, falls
 	 * es welche gibt. Sonst eine leere Liste.
 	 * 
-	 * @param adresse
+	 * @param strasseInklNr
 	 * @return
 	 */
-	public List<Liegenschaft> findLiegenschaftByAdresse(Adresse adresse);
+	public List<Liegenschaft> findByStrasse(String strasseInklNr);
 	
 }
