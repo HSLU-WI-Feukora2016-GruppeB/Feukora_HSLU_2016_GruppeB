@@ -25,32 +25,32 @@ public class BrennerManagerImpl implements BrennerManager{
 
 	@Override
 	public Brenner update(Brenner entity) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+
+		if (entity.getId() == null) {
+			return add(entity);
+		} else {
+			return brennerDAO.updateBrenner(entity);
+		}
 	}
 
 	@Override
 	public void delete(Brenner entity) throws Exception {
-		// TODO Auto-generated method stub
-		
+		brennerDAO.deleteBrenner(entity);
 	}
 
 	@Override
 	public List<Brenner> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return brennerDAO.findAllBrenner();
 	}
 
 	@Override
 	public List<Brenner> findByTyp(String brennerTyp) {
-		// TODO Auto-generated method stub
-		return null;
+		return brennerDAO.findBrennerByBrennertyp(brennerTyp);
 	}
 
 	@Override
 	public List<Brenner> findByArt(String brennerArt) {
-		// TODO Auto-generated method stub
-		return null;
+		return brennerDAO.findBrennerByBrennart(brennerArt);
 	}
 
 }
