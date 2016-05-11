@@ -100,7 +100,7 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 
 		@Override
 		public List<Liegenschaft> findAllLiegenschaft() throws Exception {
-			return liegenschaftManager.finAll
+			return liegenschaftManager.findAll
 		}
 
 		@Override
