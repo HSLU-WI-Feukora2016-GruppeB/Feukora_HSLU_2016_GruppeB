@@ -51,13 +51,6 @@ public interface LiegenschaftManager {
 	public List<Liegenschaft> findAll();
 	
 	/**
-	 * Liefert eine Liegenschaftsliste anhand des gesuchten Termindatums.
-	 * @param name
-	 * @return
-	 */
-	public List<Liegenschaft> findByTermin(GregorianCalender termin);
-	
-	/**
 	 * Liefert eine Liegenschaftsliste anhand des gesuchten Kontakts.
 	 * @param kontakt
 	 * @return
