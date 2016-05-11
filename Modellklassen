@@ -1,0 +1,24 @@
+tree de03bc83dba43dedd8b45e8cbf8834e4c2962429
+parent 08c31e750fff3bc99dea17a484f055c1232b8a2d
+parent 40580e5bd9b62f272e044b649d26dc0a7728ac0e
+author Olivia <Olivia@OliviasNetbook> 1462800809 +0200
+committer Olivia <Olivia@OliviasNetbook> 1462800809 +0200
+
+Merge remote-tracking branch 'origin/master'
+
+Conflicts:
+	Modelklassen/src/entitäten/Brenner.java
+	Modelklassen/src/entitäten/Brennerart.java
+	Modelklassen/src/entitäten/Brennertyp.java
+	Modelklassen/src/entitäten/Brennstoff.java
+	Modelklassen/src/entitäten/Feuerungsanlage.java
+	Modelklassen/src/entitäten/Kontakt.java
+	Modelklassen/src/entitäten/Messung.java
+	Modelklassen/src/entitäten/Mitarbeiter.java
+	Modelklassen/src/entitäten/Ort.java
+	Modelklassen/src/entitäten/RolleExtern.java
+	Modelklassen/src/entitäten/RolleIntern.java
+	Modelklassen/src/entitäten/Strasse.java
+	Modelklassen/src/entitäten/User.java
+	Modelklassen/src/entitäten/Wärmeerzeuger.java
+	Modelklassen/src/entitäten/Wärmeerzeugertyp.java
