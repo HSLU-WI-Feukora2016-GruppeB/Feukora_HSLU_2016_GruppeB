@@ -10,7 +10,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
 /**
- * Wärmeerzeuger erzeugt Wärme für Feuerungsanlage, zusammen mit Brenner
+ * Waermeerzeuger erzeugt Waerme für Feuerungsanlage, zusammen mit Brenner
  * @author Olivia
  * @version 1.0
  * @since 1.0
@@ -18,8 +18,8 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "Wärmeerzeuger.findByTyp", query = "SELECT w FROM Wärmeerzeuger w WHERE w.wärmeerzeugerTyp=:wärmeerzeugerTyp"),
-	@NamedQuery(name = "Wärmeerzeuger.findByBrennstoff", query = "SELECT w FROM Wärmeerzeuger w WHERE w.brennstoff=:brennstoff")
+	@NamedQuery(name = "Waermeerzeuger.findByTyp", query = "SELECT w FROM Waermeerzeuger w WHERE w.waermeerzeugerTyp=:waermeerzeugerTyp"),
+	@NamedQuery(name = "Waermeerzeuger.findByBrennstoff", query = "SELECT w FROM Waermeerzeuger w WHERE w.brennstoff=:brennstoff")
 })
 public class Waermeerzeuger implements Serializable{
 
@@ -27,25 +27,25 @@ public class Waermeerzeuger implements Serializable{
 	
 	@Id
 	@GeneratedValue
-	private int idWärmeerzeuger;
+	private Integer idWaermeerzeuger;
 	
 	@ManyToOne
 	private Brennstoff brennstoff;
 	@ManyToOne
-	private Wärmeerzeugertyp wärmeerzeugerTyp;
+	private Waermeerzeugertyp waermeerzeugerTyp;
 	
 	//standardkonstruktor
-	public Wärmeerzeuger(){
+	public Waermeerzeuger(){
 		
 	}
 
 	//getter&setter
-	public int getIdWärmeerzeuger() {
-		return idWärmeerzeuger;
+	public Integer getIdWaermeerzeuger() {
+		return idWaermeerzeuger;
 	}
 
-	public void setIdWärmeerzeuger(int idWärmeerzeuger) {
-		this.idWärmeerzeuger = idWärmeerzeuger;
+	public void setIdWaermeerzeuger(int idWaermeerzeuger) {
+		this.idWaermeerzeuger = idWaermeerzeuger;
 	}
 
 	public Brennstoff getBrennstoff() {
@@ -56,12 +56,12 @@ public class Waermeerzeuger implements Serializable{
 		this.brennstoff = brennstoff;
 	}
 
-	public Wärmeerzeugertyp getWärmeerzeugerTyp() {
-		return wärmeerzeugerTyp;
+	public Waermeerzeugertyp getWaermeerzeugerTyp() {
+		return waermeerzeugerTyp;
 	}
 
-	public void setWärmeerzeugerTyp(Wärmeerzeugertyp wärmeerzeugerTyp) {
-		this.wärmeerzeugerTyp = wärmeerzeugerTyp;
+	public void setWaermeerzeugerTyp(Waermeerzeugertyp waermeerzeugerTyp) {
+		this.waermeerzeugerTyp = waermeerzeugerTyp;
 	}
 	
 	

@@ -79,41 +79,6 @@ public interface MitarbeiterDAO {
 	public List<Mitarbeiter> findMitarbeiterByVorname(String vorname);
 	
 	/**
-	 * Liefert die Liste mit den Mitarbeiter für den übergebenen Vornamen zurück,
-	 * welche zurzeit einen Auftrag ausführen, falls es welche gibt. Sonst eine leere Liste.
-	 * 
-	 * @param vorname
-	 * @return
-	 */
-	public List<Mitarbeiter> findActiveMitarbeiterByVorname(String vorname);
-	
-	/**
-	 * Liefert die Liste mit den Mitarbeiter für den übergebenen Namen zurück,
-	 * welche zurzeit einen Auftrag ausführen, falls es welche gibt. Sonst eine leere Liste.
-	 * 
-	 * @param name
-	 * @return
-	 */
-	public List<Mitarbeiter> findActiveMitarbeiterByName(String name);
-	
-	/**
-	 * Liefert die Liste mit den Mitarbeiter für den übergebenen Vornamen mit Nachnamen zurück,
-	 * welche zurzeit einen Auftrag ausführen, falls es welche gibt. Sonst eine leere Liste.
-	 * 
-	 * @param name
-	 * @param vorname
-	 * @return
-	 */
-	public List<Mitarbeiter> findActiveMitarbeiterByGanzerName(String name, String vorname);
-	
-	/**
-	 * Liefert alle Mitarbeiter-Objekte zurück, welche zurzeit einen Auftrag ausführen.
-	 * 
-	 * @return
-	 */
-	List<Mitarbeiter> findAllActiveMitarbeiter();
-
-	/**
 	 * Liefert die Liste mit Mitarbeiter für die übergebene Rolle zurück, falls
 	 * welche gefunden werden. Sonst eine leere Liste.
 	 * 
