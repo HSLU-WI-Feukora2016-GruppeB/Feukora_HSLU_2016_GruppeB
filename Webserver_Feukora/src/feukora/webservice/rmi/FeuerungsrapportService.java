@@ -1,0 +1,458 @@
+/*
+ * ZWECK: Feukora Feuerungsrapport Webservice
+ * MODUL: Softwarekompomenten, HSLU-Wirtschaft
+ * 
+ * Copyright (c)
+ */
+package feukora.webservice.rmi;
+
+import java.util.List;
+
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.WebService;
+
+/**
+ * Interface für Feuerungsrapport-System als Webservice.
+ * 
+ * @author Dominik
+ * @version 1.0.0
+ * @since 1.0.0
+ * 
+ */
+@WebService
+public interface FeuerungsrapportService {
+	
+	//-----------------------------------------------------------------------------------------------
+	//												Auftrag
+	//-----------------------------------------------------------------------------------------------
+	/**
+	 * Speichert einen Auftrag.
+	 * @param entity
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Auftrag addAuftrag(@WebParam(name = "auftrag") Auftrag entity)throws Exception;
+	
+	/**
+	 * Passt den übergebenen Auftrag an.
+	 * @param entity
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Auftrag updateAuftrag(@WebParam(name = "auftrag") Auftrag entity)throws Exception;
+	
+	/**
+	 * Löscht den übergebenen Auftrag.
+	 * @param entity
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	void deleteAuftrag(@WebParam(name = "auftrag") Auftrag entity)throws Exception;
+	
+	/**
+	 * Liefert alle Aufträge zurück.
+	 * @return
+	 */
+	@WebParam
+	List<Auftrag> findAllAuftrag()throws Exception;
+	
+	/**
+	 * Liefert eine Auftragliste anhand des gesuchten Terminsdatums.
+	 * @param datum
+	 * @return
+	 */
+	@WebMethod
+	List<Auftrag> findAuftragByDatum(
+			@WebParam(name = "datum")GregorianCalender datum)throws Exception;
+
+	/**
+	 * Liefert eine Auftragsliste anhand des gesuchten Mitarbeiter.
+	 * @param mitarbeiter
+	 * @return
+	 */
+	@WebMethod
+	List<Auftrag> findAuftragByMitarbeiter(
+			@WebParam(name = "mitarbeiter")String mitarbeiter)throws Exception;
+	
+	/**
+	 * Liefert eine Auftragsliste anhand des gesuchten Kontakts.
+	 * @param kontakt
+	 * @return
+	 */
+	@WebMethod
+	List<Auftrag> findAuftragByKontakt(
+			@WebParam(name = "kontakt") String kontakt)throws Exception;
+	
+	/**
+	 * Liefert eine Auftragsliste anhand der gesuchten Liegenschaften.
+	 * @param liegenschaftOrt
+	 * @return
+	 */
+	@WebMethod
+	List<Auftrag> findAuftragByLiegenschaft(
+			@WebParam(name = "liegenschaft") String liegenschaft)throws Exception;
+
+	/**
+	 * Liefert eine Auftragsliste anhand der gesuchten Auftrags-Nummer.
+	 * @param auftragsNummer
+	 * @return
+	 */	
+	@WebMethod
+	List<Auftrag> findAuftragByAuftragsnummer(
+			@WebParam(name = "nummer") int auftragsNummer);
+	
+	//-----------------------------------------------------------------------------------------------
+	//												Brenner
+	//-----------------------------------------------------------------------------------------------	
+	/**
+	 * Speichert einen Brenner.
+	 * @param entity
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Brenner addBrenner(
+			@WebParam(name = "brenner")Brenner entity) throws Exception;
+	
+	/**
+	 * Passt einen Brenner an.
+	 * @param entity
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Brenner updateBrenner(
+			@WebParam(name = "brenner")Brenner entität) throws Exception;
+	
+	/**
+	 * Löscht den mitgegebenen Brenner.
+	 * @param entity
+	 * @throws Exception
+	 */
+	@WebMethod
+	void deleteBrenner(
+			@WebParam(name= "brenner")Brenner entity) throws Exception;
+	
+	/**
+	 * Liefert Liste aller Brenner.
+	 * @return
+	 */
+	@WebMethod
+	List<Brenner> findBrennerByAllBrenner() throws Exception;
+	
+	/**
+	 * Liefert alle Brenner des angefragten Typs.
+	 * @param brennerTyp
+	 * @return
+	 */
+	@WebMethod
+	List<Brenner> findBrennerByTyp(
+			@WebParam(name = "typ")String brennerTyp)throws Exception;
+	
+	/**
+	 * Liefert alle Brenner der angefragten Art.
+	 * @param brennerArt
+	 * @return
+	 */
+	@WebMethod
+	List<Brenner> findBrennerByArt(
+			@WebParam(name = "art")String brennerArt)throws Exception;
+	
+	//-----------------------------------------------------------------------------------------------
+	//												Feuerungsanlage
+	//-----------------------------------------------------------------------------------------------
+	/**
+	 * Speichert eine Feuerungsanlage.
+	 * @param entity
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Feuerungsanlage addFeuerungsanlage(
+			@WebParam(name = "feuerungsanlage")Feuerungsanlage entity) throws Exception;
+
+	/**
+	 * Passt eine Feuerungsanlage an.
+	 * @param entity
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Feuerungsanlage updateFeuerungsanlage(
+			@WebParam(name = "feuerungsanlage")Feuerungsanlage entity) throws Exception;
+	
+	/**
+	 * Löscht die mitgegebene Feuerungsanlage.
+	 * @param entity
+	 * @throws Exception
+	 */
+	@WebMethod
+	void deleteFeuerungsanlage(
+			@WebParam(name = "feuerungsanlage")Feuerungsanlage entity) throws Exception;
+	
+	/**
+	 * Liefert Liste aller Feuerungsanlagen.
+	 * @return
+	 */
+	@WebMethod
+	List<Feuerungsanlage> findAllFeuerungsanlage()throws Exception;
+	
+	/**
+	 * Liefert alle Feuerungsanlagen für die gesuchte Liegenschaft.
+	 * @param brennerTyp
+	 * @return
+	 */
+	@WebMethod
+	List<Feuerungsanlage> findFeuerungsanlageByLiegenschaft(
+			@WebParam(name = "liegenschaft")Liegenschaft liegenschaft)throws Exception;
+	
+	/**
+	 * Liefert alle Feuerungsanlagen für den gesuchten Brenner.
+	 * @param brennerArt
+	 * @return
+	 */
+	@WebMethod
+	List<Feuerungsanlage> findFeuerungsanlageByBrenner(
+			@WebParam(name = "brenner")Brenner brenner)throws Exception;
+	
+	/**
+	 * Liefert alle Feuerungsanlagen für den gesuchten Wärmeerzeuger.
+	 * @param brennerArt
+	 * @return
+	 */
+	@WebMethod
+	List<Feuerungsanlage> findFeuerungsanlageByWaermeerzeuger(
+			@WebParam(name = "waermeerzeuger")Waermeerzeuger waermeerzeuger)throws Exception;
+
+	//-----------------------------------------------------------------------------------------------
+	//												Kontakt
+	//-----------------------------------------------------------------------------------------------
+		
+	/**
+	 * Speichert einen Kontakt.
+	 * @param entity
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Kontakt addKontakt(
+			@WebParam(name = "kontakt")Kontakt entity) throws Exception;
+	/**
+	 * Passt einen Kontakt an.
+	 * @param entity
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Kontakt updateKontakt(
+			@WebParam(name = "kontakt")Kontakt entity) throws Exception;
+	
+	/**
+	 * Löscht den mitgegebenen Kontakt.
+	 * @param entity
+	 * @throws Exception
+	 */
+	@WebMethod
+	void deleteKontakt(
+			@WebParam(name = "kontakt")Kontakt entity) throws Exception;
+	
+	/**
+	 * Liefert Liste aller Kontakte.
+	 * @return
+	 */
+	@WebMethod
+	List<Kontakt> findAllKontakt()throws Exception;
+	
+	/**
+	 * Liefert alle Kontakt mit gesuchtem Namen.
+	 * @param name
+	 * @return
+	 */
+	@WebMethod
+	List<Kontakt> findKontaktByName(
+			@WebParam(name = "name")String name)throws Exception;
+	
+	/**
+	 * Liefert alle Kontakte mit gesuchtem Vornamen.
+	 * @param vorname
+	 * @return
+	 */
+	@WebMethod
+	List<Kontakt> findKontaktByVorname(
+			@WebParam(name = "vorname")String vorname)throws Exception;
+	
+	/**
+	 * Liefert alle Kontakte mit gesuchtem Ort.
+	 * @param ort
+	 * @return
+	 */
+	@WebMethod
+	List<Kontakt> findKontaktByOrt (
+			@WebParam(name = "ort")String ort)throws Exception;
+	
+	/**
+	 * Liefert alle Mitarbeiter mit gesuchter Rolle.
+	 * @param rolleIntern
+	 * @return
+	 */
+	@WebMethod
+	List<Kontakt> findKontaktByRolleExtern (
+			@WebParam(name = "rolleExtern")RolleExtern rolleExtern)throws Exception;
+	//-----------------------------------------------------------------------------------------------
+	//												Liegenschaft
+	//-----------------------------------------------------------------------------------------------
+	/**
+	 * Speichert die Liegenschaft.
+	 * 
+	 * @param entity
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Liegenschaft addLiegenschaft(
+			@WebParam(name = "liegenschaft") Liegenschaft liegenschaft)throws Exception;
+
+	/**
+	 * Updated die übergebene Entity
+	 * 
+	 * @param entity
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Liegenschaft updateiegenschaft(
+			@WebParam(name = "liegenschaft") Liegenschaft liegenschaft)throws Exception;
+
+	/**
+	 * Löscht die übergebene Entity.
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	void deleteLiegenschaft(
+			@WebParam(name = "liegenschaft") Liegenschaft liegenschaft)throws Exception;
+
+	/**
+	 * Sucht und liefert alle Entity-Objekte zurück
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	List<Liegenschaft> findAllLiegenschaft() throws Exception;
+	
+	/**
+	 * Liefert die Liste mit Liegenschaften für dem übergebenen Ort zurück, 
+	 * falls welche gefunden wurden, sonst eine leere Liste.
+	 * 
+	 * @param ort
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	List<Liegenschaft> findLiegenschaftByOrt(
+			@WebParam(name = "ort")String ort) throws Exception;
+	
+	/**
+	 * Liefert die Liste mit Liegenschaften für der übergebenen Postleitzahl zurück, 
+	 * falls welche gefunden wurden, sonst eine leere Liste.
+	 * 
+	 * @param postleitzahl
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	List<Liegenschaft> findLiegenschaftByStrasse(
+			@WebParam(name = "strasse") String strasse) throws Exception;
+	
+	/**
+	 * Liefert die Liste mit Liegenschaften für den übergebenen Kontakt (Eigentümer, Verwalter, Hauswart) zurück, 
+	 * falls welche gefunden wurden, sonst eine leere Liste.
+	 * 
+	 * @param kontakt
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Liegenschaft findLiegenschaftByKontakt(
+			@WebParam(name = "kontakt") String kontakt)throws Exception;
+	
+	//-----------------------------------------------------------------------------------------------
+	//												Wärmeerzeuger
+	//-----------------------------------------------------------------------------------------------
+	/**
+	 * Speichert einen Waermeerzeuger.
+	 * 
+	 * @param entitaet
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Waermeerzeuger addWaermeerzeuger(
+			@WebParam(name = "waermeerzeuger")Waermeerzeuger entitaet) throws Exception;
+	
+	/**
+	 * Passt die übergebene Waermeerzeuger an.
+	 * 
+	 * @param entitaet
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Waermeerzeguer updateWaermeerzeuger(
+			@WebParam(name = "waermeerzeuger")Waermeerzeuger entitaet) throws Exception;
+	
+	/**
+	 * Löscht den übergebenen Waermeerzeuger.
+	 * 
+	 * @param entitaet
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	void deleteWaermeerzeuger(
+			@WebParam(name = "waermeerzeuger")Waermeerzeuger entitaet) throws Exception;
+
+	/**
+	 * Liefert den Waermeerzeuger der mit der Id angefragt wurde. 
+	 * 
+	 * @param id
+	 * @return
+	 */
+	@WebMethod
+	Waermeerzeuger findWaermeerzeugerById(
+			@WebParam(name = "waermeerzeuger")Integer id)throws Exception;
+	
+	/**
+	 * Liefert alle Waermeerzeuger zurück.
+	 * 
+	 * @return
+	 */
+	@WebMethod
+	List<Waermeerzeuger> findAllWaermeerzeuger()throws Exception;
+	
+	/**
+	 * Liefert einen Waermeerzeuger anhand des gesuchten Waermeerzeuger-Typ.
+	 * 
+	 * @param waermeerzeugerTyp
+	 * @return
+	 */
+	@WebMethod
+	List<Waermeerzeuger> findWaermeerzeugerByTyp(
+			@WebParam(name = "waermeerzeuger")String waermeerzeugerTyp)throws Exception;
+
+	/**
+	 * Liefert eine Waermeerzeuger anhand des gesuchten Brennstoff.
+	 * 
+	 * @param brennstoff
+	 * @return
+	 */
+	@WebMethod
+	List<Waermeerzeuger> findWaermeerzeugerByBrennstoff(
+			@WebParam(name = "waermeerzeuger")String brennstoff)throws Exception;
+}
