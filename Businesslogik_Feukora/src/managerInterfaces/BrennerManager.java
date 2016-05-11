@@ -1,5 +1,10 @@
 package managerInterfaces;
 
+import java.util.List;
+
+import entitäten.Brenner;
+
+
 /**
  * Handelt Brenner Funktionalität.
  * @author Olivia
@@ -33,13 +38,6 @@ public interface BrennerManager {
 	public void delete(Brenner entität) throws Exception;
 	
 	/**
-	 * Liefert Brenner der gesuchten BrennerId.
-	 * @param id
-	 * @return
-	 */
-	public Brenner findById(int id);
-	
-	/**
 	 * Liefert Liste aller Brenner.
 	 * @return
 	 */
@@ -50,13 +48,13 @@ public interface BrennerManager {
 	 * @param brennerTyp
 	 * @return
 	 */
-	public Brenner findByBrennertyp(String brennerTyp);
+	public List<Brenner> findByTyp(String brennerTyp);
 	
 	/**
 	 * Liefert alle Brenner der angefragten Art.
 	 * @param brennerArt
 	 * @return
 	 */
-	public Brenner findByBrennerArt(String brennerArt);
+	public List<Brenner> findByArt(String brennerArt);
 	
 }

@@ -52,10 +52,10 @@ public interface AuftragManager {
 	
 	/**
 	 * Liefert eine Auftragliste anhand des gesuchten Terminsdatums.
-	 * @param name
+	 * @param datum
 	 * @return
 	 */
-	public List<Auftrag> findByTermin(GregorianCalender termin);
+	public List<Auftrag> findByDatum(GregorianCalender datum);
 	
 	/**
 	 * Liefert eine Auftragsliste anhand des gesuchten Mitarbeiter.
@@ -77,7 +77,7 @@ public interface AuftragManager {
 	 * @return
 	 */
 	public List<Auftrag> findByLiegenschaft(String liegenschaft);
-	
+
 	/**
 	 * Liefert eine Auftragsliste anhand der gesuchten Auftrags-Nummer.
 	 * @param auftragsNummer
@@ -91,6 +91,7 @@ public interface AuftragManager {
 	 * @return
 	 */		
 	public List<Auftrag> findByMessung(String messung);
+
 	
 
 	
