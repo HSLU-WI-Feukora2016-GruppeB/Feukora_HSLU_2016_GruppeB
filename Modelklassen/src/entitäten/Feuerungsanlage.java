@@ -20,7 +20,7 @@ import javax.persistence.NamedQuery;
 @NamedQueries({
 	@NamedQuery(name = "Feuerungsanlage.findByLiegenschaft", query = "SELECT f FROM Feuerungsanlage f WHERE f.liegenschaft=:liegenschaft"),
 	@NamedQuery(name = "Feuerungsanlage.findByBrenner", query = "SELECT f FROM Feuerungsanlage f WHERE f.brenner=:brenner"),
-	@NamedQuery(name = "Feuerungsanlage.findByLiegenschaft", query = "SELECT f FROM Feuerungsanlage f WHERE f.wärmeerzeuger=:wärmeerzeuger")
+	@NamedQuery(name = "Feuerungsanlage.findByWärmeerzeuger", query = "SELECT f FROM Feuerungsanlage f WHERE f.wärmeerzeuger=:wärmeerzeuger")
 })
 public class Feuerungsanlage implements Serializable{
 	

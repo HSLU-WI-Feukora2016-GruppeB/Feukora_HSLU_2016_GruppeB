@@ -1,0 +1,26 @@
+	//alle Querys aus den Modelklassen:
+	
+	@NamedQuery(name = "Auftrag.findByKontakt", query = "SELECT a FROM Auftrag a WHERE a.kontakt=:kontakt"),
+	@NamedQuery(name = "Auftrag.findByLiegenschaft", query = "SELECT a FROM Auftrag a WHERE a.liegenschaft=:liegenschaft"),
+	@NamedQuery(name = "Auftrag.findByAuftragsNummer", query = "SELECT a FROM Auftrag a WHERE a.auftragsNummer=:auftragsNummer"),
+	@NamedQuery(name = "Auftrag.findByMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.mitarbeiter=:mitarbeiter"),
+	@NamedQuery(name = "Auftrag.findByMessung", query = "SELECT a FROM Auftrag a WHERE a.messung=:messung")
+	@NamedQuery(name = "Brenner.findByTyp", query = "SELECT b FROM Brenner b WHERE b.brennerTyp=:brennerTyp"),
+	@NamedQuery(name = "Brenner.findByArt", query = "SELECT b FROM Brenner b WHERE b.brennerArt=:brennerArt")
+	@NamedQuery(name = "Feuerungsanlage.findByLiegenschaft", query = "SELECT f FROM Feuerungsanlage f WHERE f.liegenschaft=:liegenschaft"),
+	@NamedQuery(name = "Feuerungsanlage.findByBrenner", query = "SELECT f FROM Feuerungsanlage f WHERE f.brenner=:brenner"),
+	@NamedQuery(name = "Feuerungsanlage.findByWärmeerzeuger", query = "SELECT f FROM Feuerungsanlage f WHERE f.wärmeerzeuger=:wärmeerzeuger")
+	@NamedQuery(name = "Kontakt.findByName", query = "SELECT k FROM Kontakt k WHERE k.name=:name"),
+	@NamedQuery(name = "Kontakt.findByVorname", query = "SELECT k FROM Kontakt k WHERE k.vorname=:vorname"),
+	@NamedQuery(name = "Kontakt.findByOrt", query = "SELECT k FROM Kontakt k WHERE k.ort=:ort"),
+	@NamedQuery(name = "Kontakt.findByRolleExtern", query = "SELECT k FROM Kontakt k WHERE k.rolleExtern=:rolleExtern")
+	@NamedQuery(name = "Liegenschaft.findByKontakt", query = "SELECT l FROM Liegenschaft l WHERE l.kontakt=:kontakt"),
+	@NamedQuery(name = "Liegenschaft.findByOrt", query = "SELECT l FROM Liegenschaft l WHERE l.ort=:ort"),
+	@NamedQuery(name = "Liegenschaft.findByStrasse", query = "SELECT l FROM Liegenschaft l WHERE l.strasseInklNr=:strasseInklNr")
+	@NamedQuery(name = "Messung.findByMessDatum", query = "SELECT m FROM Messung m WHERE m.messDatum=:messDatum")
+	@NamedQuery(name = "Mitarbeiter.findByName", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.name=:name"),
+	@NamedQuery(name = "Mitarbeiter.findByVorname", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.vorname=:vorname"),
+	@NamedQuery(name = "Mitarbeiter.findByRolleIntern", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.rolleIntern=:rolleIntern")
+	@NamedQuery(name = "Wärmeerzeuger.findByTyp", query = "SELECT w FROM Wärmeerzeuger w WHERE w.wärmeerzeugerTyp=:wärmeerzeugerTyp"),
+	@NamedQuery(name = "Wärmeerzeuger.findByBrennstoff", query = "SELECT w FROM Wärmeerzeuger w WHERE w.brennstoff=:brennstoff")
+	

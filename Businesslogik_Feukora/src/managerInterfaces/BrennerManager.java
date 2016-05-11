@@ -1,5 +1,8 @@
 package managerInterfaces;
 
+import entitäten.Brenner;
+
+
 /**
  * Handelt Brenner Funktionalität.
  * @author Olivia
