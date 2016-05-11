@@ -58,27 +58,39 @@ public interface AuftragManager {
 	public List<Auftrag> findByTermin(GregorianCalender termin);
 	
 	/**
-	 * Liefert eine Auftragsliste anhand des gesuchten Kontrolleur-Namens.
-	 * @param kontrolleurName
+	 * Liefert eine Auftragsliste anhand des gesuchten Mitarbeiter.
+	 * @param mitarbeiter
 	 * @return
 	 */
-	public List<Auftrag> findByKontrolleurName(String kontrolleurName);
+	public List<Auftrag> findByMitarbeiter(String mitarbeiter);
 	
 	/**
-	 * Liefert eine Auftragsliste anhand des gesuchten Kontaktnamens.
-	 * @param kontaktName
+	 * Liefert eine Auftragsliste anhand des gesuchten Kontakts.
+	 * @param kontakt
 	 * @return
 	 */
-	public List<Auftrag> findByKontaktName(String kontaktName);
+	public List<Auftrag> findByKontakt(String kontakt);
 	
 	/**
-	 * Liefert eine Auftragsliste anhand des gesuchten Liegenschafts-Ortes.
+	 * Liefert eine Auftragsliste anhand der gesuchten Liegenschaften.
 	 * @param liegenschaftOrt
 	 * @return
 	 */
-	public List<Auftrag> findByLiegenschaftOrt(String liegenschaftOrt);
+	public List<Auftrag> findByLiegenschaft(String liegenschaft);
 	
-	//...
+	/**
+	 * Liefert eine Auftragsliste anhand der gesuchten Auftrags-Nummer.
+	 * @param auftragsNummer
+	 * @return
+	 */	
+	public List<Auftrag> findByAuftragsNummer(String auftragsNummer);
+	
+	/**
+	 * Liefert eine Auftragsliste anhand der Messung.
+	 * @param messung
+	 * @return
+	 */		
+	public List<Auftrag> findByMessung(String messung);
 	
 
 	

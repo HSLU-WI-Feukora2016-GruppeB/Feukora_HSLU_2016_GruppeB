@@ -28,6 +28,7 @@ public class Messung implements Serializable{
 	@GeneratedValue
 	private int idMessung;
 	
+	@Temporal(TemporalType.DATE)
 	private GregorianCalendar messDatum;
 	
 	private int russzahl;

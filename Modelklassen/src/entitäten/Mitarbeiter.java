@@ -48,7 +48,9 @@ public class Mitarbeiter implements Serializable{
 	@OneToOne
 	private User user;
 	private float lohn;
+	@Temporal(TemporalType.DATE)
 	private GregorianCalendar arbeitetSeit;
+	@Temporal(TemporalType.DATE)
 	private GregorianCalendar arbeitetBis;
 	
 	//standardkonstruktor

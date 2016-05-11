@@ -36,6 +36,7 @@ public class Auftrag implements Serializable{
 	@OneToOne
 	private Messung messung;
 	
+	@Temporal(TemporalType.DATE)
 	private GregorianCalendar termin;
 	private boolean terminArt;		//wenn true dann Service sonst nur Kontrolle
 	
