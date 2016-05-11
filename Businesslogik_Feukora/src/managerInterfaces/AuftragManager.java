@@ -15,27 +15,27 @@ public interface AuftragManager {
 	
 	/**
 	 * Speichert einen Auftrag.
-	 * @param entitaet
+	 * @param entity
 	 * @return
 	 * @throws Exception
 	 */
-	public Auftrag add(Auftrag entitaet) throws Exception;
+	public Auftrag add(Auftrag entity) throws Exception;
 	
 	/**
 	 * Passt den übergebenen Auftrag an.
-	 * @param entitaet
+	 * @param entity
 	 * @return
 	 * @throws Exception
 	 */
-	public Auftrag update(Auftrag entität) throws Exception;
+	public Auftrag update(Auftrag entity) throws Exception;
 	
 	/**
 	 * Löscht den übergebenen Auftrag.
-	 * @param entitaet
+	 * @param entity
 	 * @return
 	 * @throws Exception
 	 */
-	public void delete(Auftrag entitaet) throws Exception;
+	public void delete(Auftrag entity) throws Exception;
 
 	/**
 	 * Liefert den Auftrag der mit der Id angefragt wurde. 
