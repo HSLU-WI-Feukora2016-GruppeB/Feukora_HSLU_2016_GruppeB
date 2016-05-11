@@ -17,8 +17,7 @@ import javax.persistence.*;
 	@NamedQuery(name = "Auftrag.findByKontakt", query = "SELECT a FROM Auftrag a WHERE a.kontakt=:kontakt"),
 	@NamedQuery(name = "Auftrag.findByLiegenschaft", query = "SELECT a FROM Auftrag a WHERE a.liegenschaft=:liegenschaft"),
 	@NamedQuery(name = "Auftrag.findByAuftragsNummer", query = "SELECT a FROM Auftrag a WHERE a.auftragsNummer=:auftragsNummer"),
-	@NamedQuery(name = "Auftrag.findByMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.mitarbeiter=:mitarbeiter"),
-	@NamedQuery(name = "Auftrag.findByMessung", query = "SELECT a FROM Auftrag a WHERE a.messung=:messung")
+	@NamedQuery(name = "Auftrag.findByMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.mitarbeiter=:mitarbeiter")
 })
 public class Auftrag implements Serializable{
 	

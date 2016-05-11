@@ -20,22 +20,22 @@ public interface BrennerManager {
 	 * @return
 	 * @throws Exception
 	 */
-	public Brenner add(Brenner entität) throws Exception;
+	public Brenner add(Brenner entity) throws Exception;
 	
 	/**
 	 * Passt einen Brenner an.
-	 * @param entität
+	 * @param entity
 	 * @return
 	 * @throws Exception
 	 */
-	public Brenner update(Brenner entität) throws Exception;
+	public Brenner update(Brenner entity) throws Exception;
 	
 	/**
 	 * Löscht den mitgegebenen Brenner.
-	 * @param entität
+	 * @param entity
 	 * @throws Exception
 	 */
-	public void delete(Brenner entität) throws Exception;
+	public void delete(Brenner entity) throws Exception;
 	
 	/**
 	 * Liefert Liste aller Brenner.
