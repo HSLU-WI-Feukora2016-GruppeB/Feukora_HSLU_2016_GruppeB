@@ -52,17 +52,17 @@ public interface AuftragManager {
 	
 	/**
 	 * Liefert eine Auftragliste anhand des gesuchten Terminsdatums.
-	 * @param name
+	 * @param datum
 	 * @return
 	 */
-	public List<Auftrag> findByTermin(GregorianCalender termin);
+	public List<Auftrag> findByDatum(GregorianCalender datum);
 	
 	/**
 	 * Liefert eine Auftragsliste anhand des gesuchten Kontrolleur-Namens.
 	 * @param kontrolleurName
 	 * @return
 	 */
-	public List<Auftrag> findByKontrolleurName(String kontrolleurName);
+	public List<Auftrag> findByMitarbeiterName(String mitarbeiterName);
 	
 	/**
 	 * Liefert eine Auftragsliste anhand des gesuchten Kontaktnamens.
@@ -78,7 +78,7 @@ public interface AuftragManager {
 	 */
 	public List<Auftrag> findByLiegenschaftOrt(String liegenschaftOrt);
 	
-	//...
+	
 	
 
 	
