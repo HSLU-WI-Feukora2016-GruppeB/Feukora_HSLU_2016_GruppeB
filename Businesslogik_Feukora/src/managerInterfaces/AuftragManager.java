@@ -1,5 +1,6 @@
 package managerInterfaces;
 
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import entitäten.Auftrag;
@@ -55,7 +56,7 @@ public interface AuftragManager {
 	 * @param datum
 	 * @return
 	 */
-	public List<Auftrag> findByDatum(GregorianCalender datum);
+	public List<Auftrag> findByDatum(GregorianCalendar datum);
 	
 	/**
 	 * Liefert eine Auftragsliste anhand des gesuchten Mitarbeiter.
@@ -83,14 +84,8 @@ public interface AuftragManager {
 	 * @param auftragsNummer
 	 * @return
 	 */	
-	public List<Auftrag> findByAuftragsNummer(String auftragsNummer);
-	
-	/**
-	 * Liefert eine Auftragsliste anhand der Messung.
-	 * @param messung
-	 * @return
-	 */		
-	public List<Auftrag> findByMessung(String messung);
+	public List<Auftrag> findByAuftragsNummer(int auftragsNummer);
+
 
 	
 

@@ -5,8 +5,16 @@
 
 package gruppeB.feukora.persister;
 
+import java.util.GregorianCalendar;
 import java.util.List;
 //import Mitarbeiter Modell-Klasse.
+
+
+
+
+
+
+import entitäten.Auftrag;
 
 /**
  * Interface für Persistierung von Auftrag-Entities.
@@ -32,7 +40,7 @@ public interface AuftragDAO {
 	 * @return
 	 * @throws Exception
 	 */
-	public Auftrag updateAufrag(Auftrag entity) throws Exception;
+	public Auftrag updateAuftrag(Auftrag entity) throws Exception;
 	
 	/**
 	 * Löscht die übergebene Auftrag-Entity.
@@ -64,7 +72,7 @@ public interface AuftragDAO {
 	 * @return
 	 */
 	List<Auftrag> findAllAuftrag();
-	
+
 	/**
 	 * Liefert die Liste mit Aufträge für den übergebenen Mitarbeiter zurück, falls
 	 * welche gefunden werden. Sonst eine leere Liste.
@@ -72,6 +80,27 @@ public interface AuftragDAO {
 	 * @param mitarbeiter
 	 * @return
 	 */
+	public List<Auftrag> findByMitarbeiter(String mitarbeiter);
+		//toDO
+
+	public List<Auftrag> findByDatum(GregorianCalendar datum);
+		//toDO
+
+	public Auftrag findById(Integer id);
+		//toDO
+
+	public List<Auftrag> findAll();
+		//toDO
+
+	public List<Auftrag> findByKontakt(String kontakt);
+	//toDO
+
+	public List<Auftrag> findByLiegenschaft(String liegenschaft);
+		//toDO
+
+	public List<Auftrag> findByAuftragsNummer(int auftragsNummer);
+		//toDO
+
 	//public List<Auftrag> findAuftragByMitarbeiter(Mitarbeiter mitarbeiter);
 	
 	

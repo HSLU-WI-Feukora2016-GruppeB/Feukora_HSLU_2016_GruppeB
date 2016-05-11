@@ -1,10 +1,13 @@
 package managerKlassen;
 
+import entitäten.Auftrag;
+import gruppeB.feukora.persister.AuftragDAO;
+import gruppeB.feukora.persister.AuftragDAOImpl;
+
+import java.util.GregorianCalendar;
 import java.util.List;
 
-import managerInterfaces.Auftrag;
 import managerInterfaces.AuftragManager;
-import managerInterfaces.GregorianCalender;
 
 
 /**
@@ -21,20 +24,20 @@ public class AuftragManagerImpl implements AuftragManager {
 	@Override
 	public Auftrag add(Auftrag entity) throws Exception {
 
-		if (entity.getId() == null) {
+		if (entity.getAuftragsNummer() == null) {
 			auftragDAO.saveAuftrag(entity);
 			return entity;
 		} else {
 			throw new Exception(
 					"Entity im Datenbestand bereits vorhanden (Id = "
-							+ entity.getId().intValue() + ")");
+							+ entity.getAuftragsNummer().intValue() + ")");
 		}
 	}
 
 	@Override
 	public Auftrag update(Auftrag entity) throws Exception {
 
-		if (entity.getId() == null) {
+		if (entity.getAuftragsNummer() == null) {
 			return add(entity);
 		}
 
@@ -43,68 +46,44 @@ public class AuftragManagerImpl implements AuftragManager {
 	
 	@Override
 	public void delete(Auftrag entity) throws Exception {
-		AuftragDAO.deleteAuftrag(entity);
+		auftragDAO.deleteAuftrag(entity);
 
-	}
-
-	@Override
-	public Auftrag add(Auftrag entity) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Auftrag update(Auftrag entity) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
 	public Auftrag findById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return auftragDAO.findById(id);
 	}
 
 	@Override
 	public List<Auftrag> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return auftragDAO.findAll();
 	}
 
 	@Override
-	public List<Auftrag> findByDatum(GregorianCalender datum) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Auftrag> findByDatum(GregorianCalendar datum) {
+		return auftragDAO.findByDatum(datum);
 	}
 
 	@Override
 	public List<Auftrag> findByMitarbeiter(String mitarbeiter) {
-		// TODO Auto-generated method stub
-		return null;
+		return auftragDAO.findByMitarbeiter(mitarbeiter);
 	}
 
 	@Override
 	public List<Auftrag> findByKontakt(String kontakt) {
-		// TODO Auto-generated method stub
-		return null;
+		return auftragDAO.findByKontakt(kontakt);
 	}
 
 	@Override
 	public List<Auftrag> findByLiegenschaft(String liegenschaft) {
-		// TODO Auto-generated method stub
-		return null;
+		return auftragDAO.findByLiegenschaft(liegenschaft);
 	}
 
 	@Override
-	public List<Auftrag> findByAuftragsNummer(String auftragsNummer) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Auftrag> findByAuftragsNummer(int auftragsNummer) {
+		return auftragDAO.findByAuftragsNummer(auftragsNummer);
 	}
 
-	@Override
-	public List<Auftrag> findByMessung(String messung) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }
