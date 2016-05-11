@@ -6,7 +6,10 @@
 package gruppeB.feukora.persister;
 
 import java.util.List;
-//import Kontakt Modell-Klasse.
+
+import entitäten.Kontakt;
+
+import entitäten.RolleExtern;
 
 /**
  * Interface für Persistierung von Kontakt-Entities.
@@ -23,7 +26,7 @@ public interface KontaktDAO {
 	 * @param entity
 	 * @throws Exception
 	 */
-	public void saveKontakt(Kontakt entity) throws Exception;
+	public void addKontakt(Kontakt entity) throws Exception;
 	
 	/**
 	 * Updatet die übergebene Kontakt-Entity.
@@ -43,27 +46,19 @@ public interface KontaktDAO {
 	public void deleteKontakt(Kontakt entity) throws Exception;
 	
 	/**
-	 * Löscht die Kontakt-Entity für den übergebenen Id-Wert.
-	 * 
-	 * @param id
-	 * @throws Exception
-	 */
-	public void deleteKontaktById(Integer id) throws Exception;
-	
-	/**
 	 * Liefert die Kontakt-Entity für den übergebenen Id-Wert zurück.
 	 * 
 	 * @param id
 	 * @return
 	 */
-	public Kontakt findKontaktById(Integer id);
+	List<Kontakt> findKontaktById(Integer id);
 	
 	/**
 	 * Liefert alle Kontakt-Objekte zurück.
 	 * 
 	 * @return
 	 */
-	List<Kontakt> findAllKontakte();
+	List<Kontakt> findAll();
 	
 	/**
 	 * Liefert die Liste mit den Kontakten für die übergebene Namen zurück, falls
@@ -75,16 +70,6 @@ public interface KontaktDAO {
 	public List<Kontakt> findKontaktByName(String name);
 	
 	/**
-	 * Liefert die Liste mit den Kontakten für den übergebenen Vornamen mit Nachnamen zurück,
-	 * falls es welche gibt. Sonst eine leere Liste.
-	 * 
-	 * @param name
-	 * @param vorname
-	 * @return
-	 */
-	public List<Kontakt> findKontaktByNameUndVorname(String name, String vorname);
-	
-	/**
 	 * Liefert die Liste mit den Kontakten für den übergebenen Vornamen zurück,
 	 * falls es welche gibt. Sonst eine leere Liste.
 	 * 
@@ -92,6 +77,15 @@ public interface KontaktDAO {
 	 * @return
 	 */
 	public List<Kontakt> findKontaktByVorname(String vorname);
+
+	/**
+	 * Liefert die Liste mit den Kontakten für den übergebenen Ort zurück,
+	 * falls es welche gibt. Sonst eine leere Liste.
+	 * 
+	 * @param ort
+	 * @return
+	 */	
+	public List<Kontakt> findKontaktByOrt(String ort);
 	
 	/**
 	 * Liefert die Liste mit den Kontakten für die übergebene Rolle zurück,
@@ -100,5 +94,5 @@ public interface KontaktDAO {
 	 * @param rolle
 	 * @return
 	 */
-	//public List<Kontakt> findKontaktByRolle(Rolle rolle);
+	public List<Kontakt> findKontaktByRolle(Rolle rolle);
 }

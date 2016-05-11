@@ -14,25 +14,31 @@ public interface KontaktManager {
 	
 	/**
 	 * Speichert einen Kontakt.
-	 * @param entitaet
+	 * @param entity
 	 * @return
 	 * @throws Exception
 	 */
-	public Kontakt add(Kontakt entitaet) throws Exception;
+	public Kontakt add(Kontakt entity) throws Exception;
 	/**
 	 * Passt einen Kontakt an.
-	 * @param entitaet
+	 * @param entity
 	 * @return
 	 * @throws Exception
 	 */
-	public Kontakt update(Kontakt entitaet) throws Exception;
+	public Kontakt update(Kontakt entity) throws Exception;
 	
 	/**
 	 * Löscht den mitgegebenen Kontakt.
-	 * @param entitaet
+	 * @param entity
 	 * @throws Exception
 	 */
-	public void delete(Kontakt entitaet) throws Exception;
+	public void delete(Kontakt entity) throws Exception;
+
+	/**
+	 * Liefert Liste von Kontakten mit der mitgegebenen ID.
+	 * @return
+	 */
+	public List<Kontakt> findKontaktById(Integer id);
 	
 	/**
 	 * Liefert Liste aller Kontakte.
@@ -45,27 +51,27 @@ public interface KontaktManager {
 	 * @param name
 	 * @return
 	 */
-	public List<Kontakt> findByName(String name);
+	public List<Kontakt> findKontaktByName(String name);
 	
 	/**
 	 * Liefert alle Kontakte mit gesuchtem Vornamen.
 	 * @param vorname
 	 * @return
 	 */
-	public List<Kontakt> findByVorname(String vorname);
+	public List<Kontakt> findKontaktByVorname(String vorname);
 	
 	/**
 	 * Liefert alle Kontakte mit gesuchtem Ort.
 	 * @param ort
 	 * @return
 	 */
-	public List<Kontakt> findByOrt (String ort);
+	public List<Kontakt> findKontaktByOrt (String ort);
 	
 	/**
 	 * Liefert alle Mitarbeiter mit gesuchter Rolle.
 	 * @param rolleIntern
 	 * @return
 	 */
-	public List<Kontakt> findByRolleExtern (RolleExtern rolleExtern);
+	public List<Kontakt> findKontaktByRolleExtern (RolleExtern rolleExtern);
 
 }
