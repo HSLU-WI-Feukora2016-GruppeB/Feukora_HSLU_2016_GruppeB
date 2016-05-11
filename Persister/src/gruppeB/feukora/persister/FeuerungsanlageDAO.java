@@ -7,6 +7,11 @@ package gruppeB.feukora.persister;
 
 import java.util.List;
 
+import entitäten.Brenner;
+import entitäten.Feuerungsanlage;
+import entitäten.Liegenschaft;
+import entitäten.Waermeerzeuger;
+
 /**
  * Interface für Persistierung von Feuerungsanlage-Entities.
  * 
@@ -90,4 +95,14 @@ public interface FeuerungsanlageDAO {
 	 * @return
 	 */
 	public List<Feuerungsanlage> findFeuerungsanlageByBrennstoff(String brennstoff);
+
+	public List<Feuerungsanlage> findByLiegenschaft(Liegenschaft liegenschaft);
+	//toDO
+
+	public List<Feuerungsanlage> findByBrenner(Brenner brenner);
+	//toDO
+
+	public List<Feuerungsanlage> findByWaermeerzeuger(
+			Waermeerzeuger waermeerzeuger);
+	//toDO
 }

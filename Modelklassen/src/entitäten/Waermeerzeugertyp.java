@@ -13,7 +13,7 @@ import javax.persistence.Id;
  * @since 1.0
 **/
 @Entity
-public class Wärmeerzeugertyp implements Serializable{
+public class Waermeerzeugertyp implements Serializable{
 	
 	private static final long serialVersionUID = -1297911003197604574L;
 	

@@ -20,32 +20,32 @@ public interface FeuerungsanlageManager {
 
 	/**
 	 * Speichert eine Feuerungsanlage.
-	 * @param entität
+	 * @param entity
 	 * @return
 	 * @throws Exception
 	 */
-	public Feuerungsanlage add(Feuerungsanlage entität) throws Exception;
+	public Feuerungsanlage add(Feuerungsanlage entity) throws Exception;
 	
 	/**
 	 * Passt eine Feuerungsanlage an.
-	 * @param entität
+	 * @param entity
 	 * @return
 	 * @throws Exception
 	 */
-	public Feuerungsanlage update(Feuerungsanlage entität) throws Exception;
+	public Feuerungsanlage update(Feuerungsanlage entity) throws Exception;
 	
 	/**
 	 * Löscht die mitgegebene Feuerungsanlage.
-	 * @param entität
+	 * @param entity
 	 * @throws Exception
 	 */
-	public void delete(Feuerungsanlage entität) throws Exception;
+	public void delete(Feuerungsanlage entity) throws Exception;
 	
 	/**
 	 * Liefert Liste aller Feuerungsanlagen.
 	 * @return
 	 */
-	public List<Feuerungsanlage> findAll();
+	public List<Feuerungsanlage> findAllFeuerungsanlage();
 	
 	/**
 	 * Liefert alle Feuerungsanlagen für die gesuchte Liegenschaft.
@@ -62,7 +62,7 @@ public interface FeuerungsanlageManager {
 	public List<Feuerungsanlage> findByBrenner(Brenner brenner);
 	
 	/**
-	 * Liefert alle Feuerungsanlagen für den gesuchten Wärmeerzeuger.
+	 * Liefert alle Feuerungsanlagen für den gesuchten Waermeerzeuger.
 	 * @param brennerArt
 	 * @return
 	 */

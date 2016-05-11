@@ -21,7 +21,7 @@ import javax.persistence.NamedQuery;
 	@NamedQuery(name = "Wärmeerzeuger.findByTyp", query = "SELECT w FROM Wärmeerzeuger w WHERE w.wärmeerzeugerTyp=:wärmeerzeugerTyp"),
 	@NamedQuery(name = "Wärmeerzeuger.findByBrennstoff", query = "SELECT w FROM Wärmeerzeuger w WHERE w.brennstoff=:brennstoff")
 })
-public class Wärmeerzeuger implements Serializable{
+public class Waermeerzeuger implements Serializable{
 
 	private static final long serialVersionUID = 5006295626619515437L;
 	
