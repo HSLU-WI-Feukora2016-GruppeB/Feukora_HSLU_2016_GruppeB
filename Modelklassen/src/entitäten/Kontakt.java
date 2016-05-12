@@ -47,9 +47,7 @@ public class Kontakt implements Serializable{
 
 	private String email;
 
-	@ManyToOne
-	@Enumerated(EnumType.STRING)
-	private RolleExtern	rolleExtern;
+	private int	rolleExtern;
 	
 	//Standartkonstruktor
 	public Kontakt(){
@@ -113,11 +111,21 @@ public class Kontakt implements Serializable{
 		this.email = email;
 	}
 
-	public RolleExtern getRolleExtern() {
-		return rolleExtern;
+	public String getRolleExtern() {
+		
+		String rolleE = null;
+		
+		switch (this.rolleExtern){
+			case 1: rolleE = "Eigentümer";
+				break;
+			case 2: rolleE = "Verwaltung";
+				break;
+		}
+		
+		return rolleE;
 	}
 
-	public void setRolleExtern(RolleExtern rolleExtern) {
+	public void setRolleExtern(int rolleExtern) {
 		this.rolleExtern = rolleExtern;
 	}
 	

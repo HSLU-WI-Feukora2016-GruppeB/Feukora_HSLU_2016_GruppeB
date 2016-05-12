@@ -30,10 +30,8 @@ public class Brenner implements Serializable{
 	@GeneratedValue
 	private Integer idBrenner;
 	
-	@ManyToOne
-	private Brennerart brennerArt;
-	@ManyToOne
-	private Brennertyp brennerTyp;
+	private int brennerArt;
+	private String brennerTyp;
 	
 	private int baujahr;
 	

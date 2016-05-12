@@ -22,7 +22,7 @@ public class Brennstoff implements Serializable{
 	@GeneratedValue
 	private int id;
 	
-	private String brennerBezeichnung;
+	private String brennstoffBezeichnung;
 	
 	//standardkonstruktor
 	public Brennstoff(){
@@ -39,11 +39,11 @@ public class Brennstoff implements Serializable{
 	}
 
 	public String getBrennerBezeichnung() {
-		return brennerBezeichnung;
+		return brennstoffBezeichnung;
 	}
 
 	public void setBrennerBezeichnung(String brennerBezeichnung) {
-		this.brennerBezeichnung = brennerBezeichnung;
+		this.brennstoffBezeichnung = brennerBezeichnung;
 	}
 	
 	

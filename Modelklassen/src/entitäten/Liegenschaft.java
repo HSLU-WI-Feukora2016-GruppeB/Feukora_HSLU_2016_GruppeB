@@ -41,10 +41,11 @@ public class Liegenschaft implements Serializable{
 	 * diese wird jedoch im Hintergrund automatisch erstellt. 
 	 * Sie ist jedoch nicht weiter ersichtlich.
 	 */
-	@ManyToMany
-	private Kontakt kunde;	
-	@ManyToMany
-	private Kontakt hausabwart;
+	@ManyToOne
+	private Kontakt kontakt;	
+	
+	//hier wird per Text zb Hausmeisterinfo eingetragen
+	private String infoVorOrt;
 	
 	private String strasseInklNr;
 
@@ -65,20 +66,12 @@ public class Liegenschaft implements Serializable{
 		this.idLiegenschaft = idLiegenschaft;
 	}
 
-	public Kontakt getKunde() {
-		return kunde;
+	public Kontakt getKontakt() {
+		return kontakt;
 	}
 
-	public void setKunde(Kontakt kunde) {
-		this.kunde = kunde;
-	}
-
-	public Kontakt getHausabwart() {
-		return hausabwart;
-	}
-
-	public void setHausabwart(Kontakt hausabwart) {
-		this.hausabwart = hausabwart;
+	public void setKontakt(Kontakt kontakt) {
+		this.kontakt = kontakt;
 	}
 
 	public String getStrasseInklNr() {
@@ -95,6 +88,14 @@ public class Liegenschaft implements Serializable{
 
 	public void setOrtInklPlz(Ort ortInklPlz) {
 		this.ortInklPlz = ortInklPlz;
+	}
+
+	public String getInfoVorOrt() {
+		return infoVorOrt;
+	}
+
+	public void setInfoVorOrt(String infoVorOrt) {
+		this.infoVorOrt = infoVorOrt;
 	}
 	
 }

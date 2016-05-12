@@ -42,9 +42,7 @@ public class Mitarbeiter implements Serializable{
 	private Ort ort;
 	private int tel;
 	private String email;
-	@ManyToOne
-	@Enumerated(EnumType.STRING)
-	private RolleIntern rolleIntern;
+	private int rolleIntern;
 	@OneToOne
 	private User user;
 	private float lohn;
