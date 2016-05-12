@@ -8,6 +8,7 @@ package gruppeB.feukora.persister;
 import java.util.List;
 
 import entitäten.Mitarbeiter;
+//import Mitarbeiter Modell-Klasse.
 import entitäten.RolleIntern;
 
 /**
@@ -57,7 +58,7 @@ public interface MitarbeiterDAO {
 	 * 
 	 * @return
 	 */
-	public List<Mitarbeiter> findAllMitarbeiter();
+	List<Mitarbeiter> findAllMitarbeiter();
 	
 	/**
 	 * Liefert die Liste mit Mitarbeiter für die übergebene Namen zurück, falls
@@ -76,16 +77,6 @@ public interface MitarbeiterDAO {
 	 * @return
 	 */
 	public List<Mitarbeiter> findMitarbeiterByVorname(String vorname);
-	
-	/**
-	 * Liefert die Liste mit den Mitarbeiter für den übergebenen Vornamen und Namen zurück,
-	 * falls es welche gibt. Sonst eine leere Liste.
-	 * 
-	 * @param name
-	 * @param vorname
-	 * @return
-	 */
-	public List<Mitarbeiter> findMitarbeiterByNameUndVorname(String name, String vorname);
 	
 	/**
 	 * Liefert die Liste mit Mitarbeiter für die übergebene Rolle zurück, falls

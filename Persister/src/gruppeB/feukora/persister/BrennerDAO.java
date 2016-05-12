@@ -44,6 +44,7 @@ public interface BrennerDAO {
 	public void deleteBrenner(Brenner entity) throws Exception;
 	
 	/**
+<<<<<<< HEAD
 	 * Löscht die Brenner-Entity mit der übergebenen ID.
 	 * 
 	 * @param id
@@ -53,6 +54,17 @@ public interface BrennerDAO {
 	
 	/**
 	 * Liefert die Brenner-Entities für die übergebene ID zurück.
+=======
+	 * Löscht die Brenner-Entity für den übergebenen Id-Wert.
+	 * 
+	 * @param id
+	 * @throws Exception
+	 */
+	public void deleteBrennerById(Integer id) throws Exception;
+	
+	/**
+	 * Liefert die Brenner-Entity für den übergebenen Id-Wert zurück.
+>>>>>>> refs/remotes/origin/master
 	 * 
 	 * @param id
 	 * @return
@@ -67,12 +79,31 @@ public interface BrennerDAO {
 	List<Brenner> findAllBrenner();
 	
 	/**
+	 * Liefert die Liste mit Brenner für die übergebene Bezeichnung zurück, falls
+	 * welche gefunden werden. Sonst eine leere Liste.
+	 * 
+	 * @param bezeichnung
+	 * @return
+	 */
+	public List<Brenner> findBrennerByBezeichnung(String bezeichnung);
+	
+	/**
+	 * Liefert die Liste mit den Brenner für das übergebene Baujahr zurück, falls
+	 * es welche gibt. Sonst eine leere Liste.
+	 * 
+	 * @param baujahr
+	 * @return
+	 */
+	public List<Brenner> findBrennerByBaujahr(Integer baujahr);
+	
+	/**
 	 * Liefert die Liste mit den Brenner für die übergebenen Brennarten zurück, falls
 	 * es welche gibt. Sonst eine leere Liste.
 	 * 
 	 * @param brennart
 	 * @return
 	 */
+<<<<<<< HEAD
 	public List<Brenner> findBrennerByBrennart(String brennerArt);
 
 	/**
@@ -92,6 +123,9 @@ public interface BrennerDAO {
 	 * @return
 	 */
 	public List<Brenner> findBrennerByBaujahr(Integer baujahr);
+=======
+	public List<Brenner> findBrennerByBrennart(String brennart);
+>>>>>>> refs/remotes/origin/master
 	
 }
 

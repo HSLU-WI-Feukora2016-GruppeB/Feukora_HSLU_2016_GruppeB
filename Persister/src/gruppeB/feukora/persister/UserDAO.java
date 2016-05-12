@@ -6,7 +6,7 @@
 package gruppeB.feukora.persister;
 
 import java.util.List;
-import entitäten.User;
+//import User Modell-Klasse.
 
 /**
  * Interface für Persistierung von User-Entities.
