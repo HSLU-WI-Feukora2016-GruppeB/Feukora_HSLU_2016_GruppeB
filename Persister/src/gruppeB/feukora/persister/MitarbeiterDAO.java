@@ -57,7 +57,7 @@ public interface MitarbeiterDAO {
 	 * 
 	 * @return
 	 */
-	List<Mitarbeiter> findAllMitarbeiter();
+	public List<Mitarbeiter> findAllMitarbeiter();
 	
 	/**
 	 * Liefert die Liste mit Mitarbeiter für die übergebene Namen zurück, falls

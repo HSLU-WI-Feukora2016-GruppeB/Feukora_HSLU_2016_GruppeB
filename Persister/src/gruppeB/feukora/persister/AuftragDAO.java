@@ -81,31 +81,41 @@ public interface AuftragDAO {
 	 * @return
 	 */
 	public List<Auftrag> findByMitarbeiter(String mitarbeiter);
-		//toDO
 
+	/**
+	 * Liefert die Liste mit Aufträgen für die übergebenen Daten zurück, falls
+	 * welche gefunden werden. Sonst eine leere Liste.
+	 * 
+	 * @param datum
+	 * @return
+	 */
 	public List<Auftrag> findByDatum(GregorianCalendar datum);
-		//toDO
 
-	public Auftrag findById(Integer id);
-		//toDO
-
-	public List<Auftrag> findAll();
-		//toDO
-
+	/**
+	 * Liefert die Liste mit Aufträgen für die übergebenen Kontakt zurück, falls
+	 * welche gefunden werden. Sonst eine leere Liste.
+	 * 
+	 * @param kontakt
+	 * @return
+	 */
 	public List<Auftrag> findByKontakt(String kontakt);
-	//toDO
 
+	/**
+	 * Liefert die Liste mit Aufträgen für die übergebenen Liegenschaften zurück, falls
+	 * welche gefunden werden. Sonst eine leere Liste.
+	 * 
+	 * @param liegenschaft
+	 * @return
+	 */
 	public List<Auftrag> findByLiegenschaft(String liegenschaft);
-		//toDO
 
+	/**
+	 * Liefert die Liste mit Aufträgen für die übergebenen Auftragsnummern zurück, falls
+	 * welche gefunden werden. Sonst eine leere Liste.
+	 * 
+	 * @param auftragsNummer
+	 * @return
+	 */
 	public List<Auftrag> findByAuftragsNummer(int auftragsNummer);
-		//toDO
-
-	//public List<Auftrag> findAuftragByMitarbeiter(Mitarbeiter mitarbeiter);
 	
-	
-	//public List<Auftrag> findAuftragBy???();
-	
-	
-	//public List<Auftrag> findAuftragBy???();
 }

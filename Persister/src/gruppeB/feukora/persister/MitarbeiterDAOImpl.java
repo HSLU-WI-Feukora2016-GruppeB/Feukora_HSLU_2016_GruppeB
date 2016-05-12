@@ -11,12 +11,9 @@ import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-
-
-
 import entitäten.Mitarbeiter;
 import entitäten.RolleIntern;
-//import Mitarbeiter Modell-Klasse.
+
 import gruppeB.feukora.persister.generic.GenericPersisterImpl;
 import gruppeB.feukora.persister.util.JpaUtil;
 

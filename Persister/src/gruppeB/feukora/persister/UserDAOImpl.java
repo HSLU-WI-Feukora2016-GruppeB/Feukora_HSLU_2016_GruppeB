@@ -11,7 +11,9 @@ import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-//import User Modell-Klasse.
+import entitäten.Mitarbeiter;
+import entitäten.User;
+import entitäten.Waermeerzeuger;
 import gruppeB.feukora.persister.generic.GenericPersisterImpl;
 import gruppeB.feukora.persister.util.JpaUtil;
 
@@ -27,44 +29,49 @@ public class UserDAOImpl implements UserDAO{
 
 	@Override
 	public void saveUser(User entity) throws Exception {
-		// TODO Auto-generated method stub
-		
+		new GenericPersisterImpl<User>(User.class).save(entity);
 	}
 
 	@Override
 	public User updateUser(User entity) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return new GenericPersisterImpl<User>(User.class).update(entity);
 	}
 
 	@Override
 	public void deleteUser(User entity) throws Exception {
-		// TODO Auto-generated method stub
-		
+		new GenericPersisterImpl<User>(User.class).delete(entity);
 	}
 
 	@Override
 	public void deleteUserById(Integer id) throws Exception {
-		// TODO Auto-generated method stub
-		
+		new GenericPersisterImpl<User>(User.class).deleteById(id);
 	}
 
 	@Override
 	public User findUserById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return new GenericPersisterImpl<User>(User.class).findById(id);
 	}
 
 	@Override
 	public List<User> findAllUser() {
-		// TODO Auto-generated method stub
-		return null;
+		return new GenericPersisterImpl<User>(User.class).findAll();
 	}
 
 	@Override
 	public List<User> findUserByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		EntityManager em = JpaUtil.createEntityManager();
+
+		TypedQuery<User> tQuery = em.createNamedQuery("Mitarbeiter.findByName",
+				User.class);
+
+		tQuery.setParameter("name", name);
+
+		List<User> userListe = tQuery.getResultList();
+
+		em.close();
+
+		return userListe != null ? userListe : new ArrayList<User>();
 	}
 
 	@Override
@@ -72,5 +79,5 @@ public class UserDAOImpl implements UserDAO{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 }

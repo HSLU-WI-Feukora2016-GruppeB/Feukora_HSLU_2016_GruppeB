@@ -13,10 +13,12 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 
+//SimpleDateFormat für Kalender noch anpassen. Moment nicht sauber
+
 /**
  * Ein Mitarbeiter ist eine Person welche nur Firmenintern zu tun hat,
  * sie ist entweder Sachbearbeiter oder Feuerungskontrolleur.
- * @author Olivia
+ * @author Matthias
  * @version 1.0
  * @since 1.0
  *
@@ -25,8 +27,19 @@ import javax.persistence.OneToOne;
 @NamedQueries({
 	@NamedQuery(name = "Mitarbeiter.findByName", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.name=:name"),
 	@NamedQuery(name = "Mitarbeiter.findByVorname", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.vorname=:vorname"),
+<<<<<<< HEAD
 	@NamedQuery(name = "Mitarbeiter.findByNameUndVorname", query = "SELECT d FROM Mitarbeiter d WHERE ma.name=:name AND ma.vorname=:vorname"),
 	@NamedQuery(name = "Mitarbeiter.findByRolleIntern", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.rolleIntern=:rolleIntern")
+=======
+	@NamedQuery(name = "Mitarbeiter.findByRolleIntern", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.rolleIntern=:rolleIntern"),
+	@NamedQuery(name = "Mitarbeiter.findById", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.id=:id"),
+	@NamedQuery(name = "Mitarbeiter.findByStrasse", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.strasse=:strasse"),
+	@NamedQuery(name = "Mitarbeiter.findByOrt", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.ort=:ort"),
+	@NamedQuery(name = "Mitarbeiter.findByrolleIntern", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.rolleIntern=:rolleIntern"),
+	@NamedQuery(name = "Mitarbeiter.findByUser", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.user=:user"),
+	@NamedQuery(name = "Mitarbeiter.findByArbeitetSeit", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.arbeitetSeit=:arbeitetSeit"),
+	@NamedQuery(name = "Mitarbeiter.findByArbeitetBis", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.arbeitetBis=:arbeitetBis")
+>>>>>>> branch 'master' of ssh://Ranzilla@github.com/HSLU-WI-Feukora2016-GruppeB/Feukora_HSLU_2016_GruppeB.git
 })
 public class Mitarbeiter implements Serializable{
 	
@@ -38,14 +51,12 @@ public class Mitarbeiter implements Serializable{
 	
 	private String vorname;
 	private String name;
-	private String strasseInklNr;
+	private String strasse;
 	@ManyToOne
 	private Ort ort;
 	private int tel;
 	private String email;
-	@ManyToOne
-	@Enumerated(EnumType.STRING)
-	private RolleIntern rolleIntern;
+	private int rolleIntern;
 	@OneToOne
 	private User user;
 	private float lohn;
@@ -84,12 +95,12 @@ public class Mitarbeiter implements Serializable{
 		this.name = name;
 	}
 
-	public String getStrasseInklNr() {
-		return strasseInklNr;
+	public String getStrasse() {
+		return strasse;
 	}
 
-	public void setStrasseInklNr(String strasseInklNr) {
-		this.strasseInklNr = strasseInklNr;
+	public void setStrasse(String strasse) {
+		this.strasse = strasse;
 	}
 
 	public Ort getOrt() {
@@ -116,11 +127,22 @@ public class Mitarbeiter implements Serializable{
 		this.email = email;
 	}
 
-	public RolleIntern getRolleIntern() {
-		return rolleIntern;
+	public String getRolleIntern() {
+		
+		String rolleI = null;
+		
+		switch (this.rolleIntern){
+		case 1: rolleI = "Kontrolleur";
+			break;
+		case 2: rolleI = "Sachbearbeiter";
+			break;
+		case 3: rolleI = "Administrator";
+			break;
+		}
+		return rolleI;
 	}
 
-	public void setRolleIntern(RolleIntern rolleIntern) {
+	public void setRolleIntern(int rolleIntern) {
 		this.rolleIntern = rolleIntern;
 	}
 
@@ -154,6 +176,22 @@ public class Mitarbeiter implements Serializable{
 
 	public void setArbeitetBis(GregorianCalendar arbeitetBis) {
 		this.arbeitetBis = arbeitetBis;
+	}
+	
+	@Override
+	public String toString() {
+		return "Mitarbeiter: " + "\n"
+				+ "Vorname: \n" + vorname.toString() + "\n"
+				+ "Name: \n" + name.toString() + "\n"
+				+ "Strasse: \n" + strasse.toString() + "\n"
+				+ "Ort: \t \t \t" + ort + "\n"
+				+ "Telefon: \t \t \t" + tel + "\n"
+				+ "eMail: \n" + email.toString() + "\n"
+				+ "Rolle Intern: \t \t \t" + rolleIntern + "\n"
+				+ "User: \t \t \t" + user + "\n"
+				+ "Lohn: \t \t \t" + lohn + "\n"
+				+ "Arbeitet seit: \n" + arbeitetSeit.toString() + "\n"
+				+ "Arbeitet bis: \n" + arbeitetBis.toString() + "\n";
 	}
 
 }
