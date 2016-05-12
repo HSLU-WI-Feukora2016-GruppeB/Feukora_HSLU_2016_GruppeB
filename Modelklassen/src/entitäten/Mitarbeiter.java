@@ -175,7 +175,7 @@ public class Mitarbeiter implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "Kontakt: " + "\n"
+		return "Mitarbeiter: " + "\n"
 				+ "Vorname: \n" + vorname.toString() + "\n"
 				+ "Name: \n" + name.toString() + "\n"
 				+ "Strasse: \n" + strasse.toString() + "\n"
