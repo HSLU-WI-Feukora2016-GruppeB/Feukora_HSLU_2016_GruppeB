@@ -67,5 +67,7 @@ public interface BrennerDAO {
 	 */
 	public List<Brenner> findBrennerByBrennertyp(String brennerTyp);
 	
+	public List<Brenner> findBrennerByBaujahr(Integer baujahr);
+	
 }
 

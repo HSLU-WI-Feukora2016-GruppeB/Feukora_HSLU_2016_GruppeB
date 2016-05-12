@@ -11,7 +11,8 @@ import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-//import Brenner Modell-Klasse.
+import entitäten.Brenner;
+import entitäten.Mitarbeiter;
 import gruppeB.feukora.persister.generic.GenericPersisterImpl;
 import gruppeB.feukora.persister.util.JpaUtil;
 
@@ -27,38 +28,32 @@ public class BrennerDAOImpl implements BrennerDAO{
 
 	@Override
 	public void saveBrenner(Brenner entity) throws Exception {
-		// TODO Auto-generated method stub
-		
+		new GenericPersisterImpl<Mitarbeiter>(Mitarbeiter.class).save(entity);
 	}
 
 	@Override
 	public Brenner updateBrenner(Brenner entity) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return new GenericPersisterImpl<Brenner>(Brenner.class).update(entity);
 	}
 
 	@Override
 	public void deleteBrenner(Brenner entity) throws Exception {
-		// TODO Auto-generated method stub
-		
+		new GenericPersisterImpl<Brenner>(Brenner.class).delete(entity);
 	}
 
 	@Override
 	public void deleteBrennerById(Integer id) throws Exception {
-		// TODO Auto-generated method stub
-		
+		new GenericPersisterImpl<Brenner>(Brenner.class).deleteById(id);
 	}
 
 	@Override
 	public Brenner findBrennerById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return new GenericPersisterImpl<Brenner>(Brenner.class).findById(id);
 	}
 
 	@Override
 	public List<Brenner> findAllBrenner() {
-		// TODO Auto-generated method stub
-		return null;
+		return new GenericPersisterImpl<Brenner>(Brenner.class).findAll();
 	}
 
 	@Override

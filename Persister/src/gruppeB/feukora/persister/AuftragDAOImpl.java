@@ -29,38 +29,32 @@ public class AuftragDAOImpl implements AuftragDAO{
 
 	@Override
 	public void saveAuftrag(Auftrag entity) throws Exception {
-		// TODO Auto-generated method stub
-		
+		new GenericPersisterImpl<Mitarbeiter>(Mitarbeiter.class).save(entity);
 	}
 
 	@Override
 	public Auftrag updateAuftrag(Auftrag entity) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return new GenericPersisterImpl<Auftrag>(Auftrag.class).update(entity);
 	}
 
 	@Override
 	public void deleteAuftrag(Auftrag entity) throws Exception {
-		// TODO Auto-generated method stub
-		
+		new GenericPersisterImpl<Auftrag>(Auftrag.class).delete(entity);
 	}
 
 	@Override
 	public void deleteAuftragById(Integer id) throws Exception {
-		// TODO Auto-generated method stub
-		
+		new GenericPersisterImpl<Auftrag>(Auftrag.class).deleteById(id);
 	}
 
 	@Override
 	public Auftrag findAuftragById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return new GenericPersisterImpl<Auftrag>(Auftrag.class).findById(id);
 	}
 
 	@Override
 	public List<Auftrag> findAllAuftrag() {
-		// TODO Auto-generated method stub
-		return null;
+		return new GenericPersisterImpl<Auftrag>(Auftrag.class).findAll();
 	}
 
 	@Override
