@@ -11,7 +11,7 @@ public class Login extends Application {
 	public void start(Stage stage) {
 		try {
 			stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(
-					"extern/Login.fxml"))));
+					"extern.view/Login.fxml"))));
 		} catch (IOException e) {
 			// MainView.showError(e);
 			System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");

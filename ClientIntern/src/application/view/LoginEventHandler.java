@@ -30,6 +30,7 @@ public class LoginEventHandler implements EventHandler<ActionEvent>{
 
 	public void handle(ActionEvent event){
 
+		// life is good
 
 		String entername = txtusername.getText();
 		String enterpassword = txtpassword.getText();
