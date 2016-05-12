@@ -12,6 +12,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 
+
+
+import entitäten.Mitarbeiter;
+import entitäten.RolleIntern;
 //import Mitarbeiter Modell-Klasse.
 import gruppeB.feukora.persister.generic.GenericPersisterImpl;
 import gruppeB.feukora.persister.util.JpaUtil;
@@ -39,11 +43,6 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 	@Override
 	public void deleteMitarbeiter(Mitarbeiter entity) throws Exception {
 		new GenericPersisterImpl<Mitarbeiter>(Mitarbeiter.class).delete(entity);
-	}
-
-	@Override
-	public void deleteMitarbeiterById(Integer id) throws Exception {
-		new GenericPersisterImpl<Mitarbeiter>(Mitarbeiter.class).deleteById(id);
 	}
 
 	@Override
@@ -110,29 +109,9 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 	}
 
 	@Override
-	public List<Mitarbeiter> findActiveMitarbeiterByVorname(String vorname) {
+	public List<Mitarbeiter> findByRolleIntern(RolleIntern rolleIntern) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public List<Mitarbeiter> findActiveMitarbeiterByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Mitarbeiter> findActiveMitarbeiterByGanzerName(String name,
-			String vorname) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Mitarbeiter> findAllActiveMitarbeiter() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	
 }

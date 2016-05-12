@@ -25,6 +25,7 @@ import javax.persistence.OneToOne;
 @NamedQueries({
 	@NamedQuery(name = "Mitarbeiter.findByName", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.name=:name"),
 	@NamedQuery(name = "Mitarbeiter.findByVorname", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.vorname=:vorname"),
+	@NamedQuery(name = "Mitarbeiter.findByNameUndVorname", query = "SELECT d FROM Mitarbeiter d WHERE ma.name=:name AND ma.vorname=:vorname"),
 	@NamedQuery(name = "Mitarbeiter.findByRolleIntern", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.rolleIntern=:rolleIntern")
 })
 public class Mitarbeiter implements Serializable{

@@ -11,8 +11,9 @@ import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import entitäten.Kontakt;
+import entitäten.Liegenschaft;
 
-//import Liegenschaft Modell-Klasse.
 import gruppeB.feukora.persister.generic.GenericPersisterImpl;
 import gruppeB.feukora.persister.util.JpaUtil;
 
@@ -28,55 +29,43 @@ public class LiegenschaftDAOImpl implements LiegenschaftDAO{
 
 	@Override
 	public void saveLiegenschaft(Liegenschaft entity) throws Exception {
-		// TODO Auto-generated method stub
-		
+		new GenericPersisterImpl<Liegenschaft>(Liegenschaft.class).save(entity);
 	}
 
 	@Override
-	public Liegenschaft updateLiegenschaft(Liegenschaft entity)
-			throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public Liegenschaft updateLiegenschaft(Liegenschaft entity) throws Exception {
+		return new GenericPersisterImpl<Liegenschaft>(Liegenschaft.class).update(entity);
 	}
 
 	@Override
 	public void deleteLiegenschaft(Liegenschaft entity) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void deleteLiegenschaftById(Integer id) throws Exception {
-		// TODO Auto-generated method stub
-		
+		new GenericPersisterImpl<Liegenschaft>(Liegenschaft.class).delete(entity);
 	}
 
 	@Override
 	public Liegenschaft findLiegenschaftById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return new GenericPersisterImpl<Liegenschaft>(Liegenschaft.class).findById(id);
 	}
 
 	@Override
 	public List<Liegenschaft> findAllLiegenschaft() {
+		return new GenericPersisterImpl<Liegenschaft>(Liegenschaft.class).findAll();
+	}
+
+	@Override
+	public List<Liegenschaft> findByKontakt(String kontakt) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Liegenschaft> findLiegenschaftByHauswart(Kontakt hauswart) {
+	public List<Liegenschaft> findByOrt(String ort) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Liegenschaft> findLiegenschaftByEigentümer(Kontakt eigentümer) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Liegenschaft> findLiegenschaftByAdresse(Adresse adresse) {
+	public List<Liegenschaft> findByStrasse(String strasseInklNr) {
 		// TODO Auto-generated method stub
 		return null;
 	}

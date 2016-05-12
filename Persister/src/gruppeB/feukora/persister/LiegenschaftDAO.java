@@ -8,7 +8,7 @@ package gruppeB.feukora.persister;
 import java.util.List;
 
 import entitäten.Liegenschaft;
-
+import entitäten.Kontakt;
 /**
  * Interface für Persistierung von Liegenschaft-Entities.
  * 
@@ -24,7 +24,7 @@ public interface LiegenschaftDAO {
 	 * @param entity
 	 * @throws Exception
 	 */
-	public void addLiegenschaft(Liegenschaft entity) throws Exception;
+	public void saveLiegenschaft(Liegenschaft entity) throws Exception;
 	
 	/**
 	 * Updatet die übergebene Liegenschaft-Entity.
