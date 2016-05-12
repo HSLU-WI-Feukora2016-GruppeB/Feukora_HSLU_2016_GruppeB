@@ -4,6 +4,8 @@
  */
 package feukora.webservice.rmi.test;
 
+import java.util.ArrayList;
+
 import feukora.webservice.rmi.FeuerungsrapportService;
 import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
 
@@ -21,6 +23,7 @@ public class FeuerungsrapportServiceTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		service = new FeuerungsrapportServiceImpl();
+		
 	}
 
 	@AfterClass
@@ -31,17 +34,20 @@ public class FeuerungsrapportServiceTest {
 	public void setUp() throws Exception {
 		
 		//Entitäten
-		for (Modul m : service.findAllModul()) {
-			service.deleteModul(m);
+		for (Auftrag a : service.findAllAuftrag()) {
+			service.deleteAuftrag(m);
 		}
 
-		for (Student s : service.findAllStudent()) {
-			service.deleteStudent(s);
+		for (Brenner b : service.findAllBrenner()) {
+			service.deleteBrenner(s);
 		}
 
-		for (Dozent d : service.findAllDozent()) {
-			service.deleteDozent(d);
+		for (Feuerungsanlage f : service.findAllFeuerungsanlage()) {
+			service.deleteFeuerungsanlage(d);
 			
+	@After
+	public void tearDown() throws Exception {
+	}
 			/*
 			 * Mögliche Tests:
 			 * 
@@ -141,9 +147,41 @@ public class FeuerungsrapportServiceTest {
 
 				return dozentenListe;
 			}
-
+			//Init Methoden
+			public static List<Brenner> initBrenner() throws Exception{
+				List<Brennrart> lBrennerart = new ArrayList<>();
+				List<Brenntyp> lBrenntyp = new ArrayList<>();
+				List<Baujahr> lBaujahr= new ArrayList<>();
+				
+				
+			}
 			public static List<Modul> initModul() throws Exception {
 
+				/* drei Brennerarten erstellen*/
+				l.Brennerart.add(new Brennerart(1));
+				l.Brennerart.add(new Brennerart(2));
+				l.Brennerart.add(new Brennerart(3));
+				
+				/* fünf Brennertypen erstellen*/
+				lBrennertyp.add(new Brennertyp("Brennertyp1"));
+				lBrennertyp.add(new Brennertyp("Brennertyp2"));
+				lBrennertyp.add(new Brennertyp("Brennertyp3"));
+				lBrennertyp.add(new Brennertyp("Brennertyp4"));
+				lBrennertyp.add(new Brennertyp("Brennertyp5"));
+				/* zehn Baujahre erstellen*/
+				
+				lBaujahr.add(new Baujahr(1995));
+				lBaujahr.add(new Baujahr(1996));
+				lBaujahr.add(new Baujahr(1997));
+				lBaujahr.add(new Baujahr(1998));
+				lBaujahr.add(new Baujahr(1999));
+				lBaujahr.add(new Baujahr(2000));
+				lBaujahr.add(new Baujahr(2001));
+				lBaujahr.add(new Baujahr(2002));
+				lBaujahr.add(new Baujahr(2003));
+				lBaujahr.add(new Baujahr(2004));
+				lBaujahr.add(new Baujahr(2005));
+				
 				List<Kontakt> lKontakte = new ArrayList<>();
 				List<Adresse> lAdressen = new ArrayList<>();
 				List<Student> lStudenten = new ArrayList<>();
