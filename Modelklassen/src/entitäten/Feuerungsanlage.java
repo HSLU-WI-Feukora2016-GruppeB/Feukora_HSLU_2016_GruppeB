@@ -12,7 +12,7 @@ import javax.persistence.NamedQuery;
 /**
  * Eine Feuerungsanlage besteht aus einem Brenner 
  * und einem Wärmeerzeuger sie erzeugt Wärme für eine bestimmt Liegenschaft.
- * @author Olivia
+ * @author Matthias
  * @version 1.0
  * @since 1.0
  */
@@ -20,7 +20,8 @@ import javax.persistence.NamedQuery;
 @NamedQueries({
 	@NamedQuery(name = "Feuerungsanlage.findByLiegenschaft", query = "SELECT f FROM Feuerungsanlage f WHERE f.liegenschaft=:liegenschaft"),
 	@NamedQuery(name = "Feuerungsanlage.findByBrenner", query = "SELECT f FROM Feuerungsanlage f WHERE f.brenner=:brenner"),
-	@NamedQuery(name = "Feuerungsanlage.findByWärmeerzeuger", query = "SELECT f FROM Feuerungsanlage f WHERE f.wärmeerzeuger=:wärmeerzeuger")
+	@NamedQuery(name = "Feuerungsanlage.findByWaermeerzeuger", query = "SELECT f FROM Feuerungsanlage f WHERE f.waermeerzeuger=:waermeerzeuger"),
+	@NamedQuery(name = "Feuerungsanlage.findById", query = "SELECT f FROM Feuerungsanlage f WHERE f.idFeuerungsanlage=:idFeuerungsanlage")
 })
 public class Feuerungsanlage implements Serializable{
 	
@@ -35,7 +36,7 @@ public class Feuerungsanlage implements Serializable{
 	@ManyToOne
 	private Brenner brenner;
 	@ManyToOne
-	private Wärmeerzeuger wärmeerzeuger;
+	private Waermeerzeuger waermeerzeuger;
 	
 	//standardkonstruktor
 	public Feuerungsanlage(){
@@ -67,13 +68,20 @@ public class Feuerungsanlage implements Serializable{
 		this.brenner = brenner;
 	}
 
-	public Wärmeerzeuger getWärmeerzeuger() {
-		return wärmeerzeuger;
+	public Waermeerzeuger getWaermeerzeuger() {
+		return waermeerzeuger;
 	}
 
-	public void setWärmeerzeuger(Wärmeerzeuger wärmeerzeuger) {
-		this.wärmeerzeuger = wärmeerzeuger;
+	public void setWaermeerzeuger(Waermeerzeuger waermeerzeuger) {
+		this.waermeerzeuger = waermeerzeuger;
 	}
 	
+	@Override
+	public String toString() {
+		return "Kontakt: " + "\n"
+				+ "Liegenschaft: \t \t \t" + liegenschaft + "\n"
+				+ "Brenner: \t \t \t" + brenner + "\n"
+				+ "Waermeerzeuger: \t \t \t" + waermeerzeuger + "\n";
+	}
 
 }

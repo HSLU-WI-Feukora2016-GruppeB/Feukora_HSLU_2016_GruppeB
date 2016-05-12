@@ -14,7 +14,7 @@ import javax.persistence.NamedQuery;
 /**
  * Kontakt stellt eine Kontaktperson oder einen Kunden dar, sie ist entweder 
  * ein Hauseigentümer, Verwalter oder Hausmeister.
- * @author Olivia
+ * @author Matthias
  * @version 1.0
  * @since 1.0
  *
@@ -25,6 +25,9 @@ import javax.persistence.NamedQuery;
 	@NamedQuery(name = "Kontakt.findByVorname", query = "SELECT k FROM Kontakt k WHERE k.vorname=:vorname"),
 	@NamedQuery(name = "Kontakt.findByOrt", query = "SELECT k FROM Kontakt k WHERE k.ort=:ort"),
 	@NamedQuery(name = "Kontakt.findByRolleExtern", query = "SELECT k FROM Kontakt k WHERE k.rolleExtern=:rolleExtern")
+	@NamedQuery(name = "Kontakt.findById", query = "SELECT k FROM Kontakt k WHERE k.id=:id"),
+	@NamedQuery(name = "Kontakt.findByStrasse", query = "SELECT k FROM Kontakt k WHERE k.strasse=:strasse"),
+		
 })
 public class Kontakt implements Serializable{
 	
@@ -38,10 +41,10 @@ public class Kontakt implements Serializable{
 
 	private String nachname;
 
-	private String strasseInklNr;
+	private String strasse;
 
 	@ManyToOne
-	private Ort ortInklPlz;
+	private Ort ort;
 
 	private int tel;
 
@@ -79,20 +82,20 @@ public class Kontakt implements Serializable{
 		this.nachname = nachname;
 	}
 
-	public String getStrasseInklNr() {
-		return strasseInklNr;
+	public String getStrasse() {
+		return strasse;
 	}
 
-	public void setStrasseInklNr(String strasseInklNr) {
-		this.strasseInklNr = strasseInklNr;
+	public void setStrasse(String strasse) {
+		this.strasse = strasse;
 	}
 
 	public Ort getAdresse() {
-		return ortInklPlz;
+		return ort;
 	}
 
 	public void setAdresse(Ort adresse) {
-		this.ortInklPlz = adresse;
+		this.ort = adresse;
 	}
 
 	public int getTel() {
@@ -127,6 +130,18 @@ public class Kontakt implements Serializable{
 
 	public void setRolleExtern(int rolleExtern) {
 		this.rolleExtern = rolleExtern;
+	}
+	
+	@Override
+	public String toString() {
+		return "Kontakt: " + "\n"
+				+ "Vorname: \n" + vorname.toString() + "\n"
+				+ "Nachname: \n" + nachname.toString() + "\n"
+				+ "Strasse: \n" + strasse.toString() + "\n"
+				+ "Ort: \t \t \t" + ort + "\n"
+				+ "Telefon: \t \t \t" + tel + "\n"
+				+ "eMail: \n" + email.toString() + "\n"
+				+ "Rolle Extern: \t \t \t" + rolleExtern + "\n";
 	}
 	
 	
