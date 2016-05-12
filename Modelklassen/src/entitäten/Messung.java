@@ -161,14 +161,14 @@ public class Messung implements Serializable{
 		return "Messung:" + "\n"
 				+ "Messdatum: \t \t \t" + messDatum + "\n"
 				+ "Russzahl: \t \t \t" + russzahl + "\n"
-				+ "Kohlenstoff: \t \t" + kohlenstoff + "\n"
-				+ "Oelanteil: \t \t \t \t" + oelanteil + "\n"
-				+ "Stickstoffgehalt: \t \t t" + stickstoffgehalt + "\n"
+				+ "Kohlenstoff: \t \t \t" + kohlenstoff + "\n"
+				+ "Oelanteil: \t \t \t" + oelanteil + "\n"
+				+ "Stickstoffgehalt: \t \t \t" + stickstoffgehalt + "\n"
 				+ "Abgastemperatur: \t \t \t" + abgastemperatur + "\n"
-				+ "Waermeerzeugertemperatur: \t \t \t \t" + waermeerzeugertemperatur + "\n"
-				+ "Verbrennungstemperatur: \t \t \t \t" + verbrennungstemperatur + "\n"
-				+ "O2Gehalt: \t \t \t \t" + o2gehalt + "\n"
-				+ "Abgasverluste: \t \t \t \t" + abgasverluste + "\n";
+				+ "Waermeerzeugertemperatur: \t \t \t" + waermeerzeugertemperatur + "\n"
+				+ "Verbrennungstemperatur: \t \t \t" + verbrennungstemperatur + "\n"
+				+ "O2Gehalt: \t \t \t" + o2gehalt + "\n"
+				+ "Abgasverluste: \t \t \t" + abgasverluste + "\n";
 				
 	}
 	
