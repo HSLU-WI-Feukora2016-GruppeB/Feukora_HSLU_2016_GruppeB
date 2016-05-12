@@ -118,11 +118,11 @@ public class Auftrag implements Serializable{
 				+ "Auftragsnummer: \t \t \t" + auftragsNummer + "\n"
 				+ "Kontakt: \n" + kontakt.toString() + "\n"
 				+ "Liegenschaft: \n" + liegenschaft.toString() + "\n"
-				+ "Info vor Ort: \t \t \t \t" + infoVorOrt + "\n"
+				+ "Info vor Ort: \t \t \t" + infoVorOrt + "\n"
 				+ "Messung: \n" + messung.toString() + "\n"
 				+ "Kontrolleur: \n" + kontrolleur.toString() + "\n"
-				+ "Kontrolldatum: \t \t \t \t" + datum.toString() + "\n"
-				+ "Kontrollart: \t \t \t \t" + terminArt + "\n";
+				+ "Kontrolldatum: \t \t \t" + datum.toString() + "\n"
+				+ "Kontrollart: \t \t \t" + terminArt + "\n";
 	}
 	
 	
