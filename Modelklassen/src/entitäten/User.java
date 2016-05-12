@@ -5,14 +5,19 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 /**
  * Enthält Benutzerdaten für die Anmeldung.
- * @author Olivia
+ * @author Matthias
  * @version 1.0
  * @since 1.0
  */
 @Entity
+@NamedQueries({
+	@NamedQuery(name = "User.findByUsername", query = "SELECT us FROM Mitarbeiter us WHERE us.username=:username")
+})
 public class User implements Serializable{
 
 	private static final long serialVersionUID = -7225618836803933212L;
@@ -54,7 +59,13 @@ public class User implements Serializable{
 		this.password = password;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "User: " + "\n"
+				+ "Username: \n" + username.toString() + "\n"
+				+ "Passwort: \n" + password.toString() + "\n";
+	}
+
 	
 	
 }

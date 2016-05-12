@@ -78,7 +78,7 @@ public class Feuerungsanlage implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "Kontakt: " + "\n"
+		return "Feuerungsanlage: " + "\n"
 				+ "Liegenschaft: \t \t \t" + liegenschaft + "\n"
 				+ "Brenner: \t \t \t" + brenner + "\n"
 				+ "Waermeerzeuger: \t \t \t" + waermeerzeuger + "\n";

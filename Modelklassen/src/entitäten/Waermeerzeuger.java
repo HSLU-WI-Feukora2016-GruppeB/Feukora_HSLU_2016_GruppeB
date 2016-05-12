@@ -11,13 +11,14 @@ import javax.persistence.NamedQuery;
 
 /**
  * Waermeerzeuger erzeugt Waerme für Feuerungsanlage, zusammen mit Brenner
- * @author Olivia
+ * @author Matthias
  * @version 1.0
  * @since 1.0
  *
  */
 @Entity
 @NamedQueries({
+	@NamedQuery(name = "Waermeerzeuger.findById", query = "SELECT w FROM Waermeerzeuger w WHERE w.idWaermeerzeuger=:idWaermeerzeuger"),
 	@NamedQuery(name = "Waermeerzeuger.findByTyp", query = "SELECT w FROM Waermeerzeuger w WHERE w.waermeerzeugerTyp=:waermeerzeugerTyp"),
 	@NamedQuery(name = "Waermeerzeuger.findByBrennstoff", query = "SELECT w FROM Waermeerzeuger w WHERE w.brennstoff=:brennstoff")
 })
@@ -72,6 +73,13 @@ public class Waermeerzeuger implements Serializable{
 
 	public void setWaermeerzeugerTyp(String waermeerzeugerTyp) {
 		this.waermeerzeugerTyp = waermeerzeugerTyp;
+	}
+	
+	@Override
+	public String toString() {
+		return "Waermeerzeuger: " + "\n"
+				+ "Brennstoff: \t \t \t" + brennstoff + "\n"
+				+ "Waermeerzeuger Typ: \n" + waermeerzeugerTyp.toString() + "\n";
 	}
 	
 	
