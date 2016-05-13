@@ -23,8 +23,8 @@ import javax.persistence.NamedQuery;
 @NamedQueries({
 	@NamedQuery(name = "Liegenschaft.findById", query = "SELECT l FROM Liegenschaft l WHERE l.idLiegenschaft=:idLiegenschaft"),
 	@NamedQuery(name = "Liegenschaft.findByKontakt", query = "SELECT l FROM Liegenschaft l WHERE l.kontakt=:kontakt"),
-	@NamedQuery(name = "Liegenschaft.findByOrt", query = "SELECT l FROM Liegenschaft l WHERE l.ortInklPlz=:ortInklPlz"),
-	@NamedQuery(name = "Liegenschaft.findByStrasse", query = "SELECT l FROM Liegenschaft l WHERE l.strasseInklNr=:strasseInklNr"),
+	@NamedQuery(name = "Liegenschaft.findByOrt", query = "SELECT l FROM Liegenschaft l WHERE l.ort=:ort"),
+	@NamedQuery(name = "Liegenschaft.findByStrasse", query = "SELECT l FROM Liegenschaft l WHERE l.strasse=:strasse"),
 	@NamedQuery(name = "Liegenschaft.findByFeuerungsanlage", query = "SELECT l FROM Liegenschaft l WHERE l.feuerungsanlage=:feuerungsanlage")
 })
 public class Liegenschaft implements Serializable{
@@ -49,13 +49,13 @@ public class Liegenschaft implements Serializable{
 	//hier wird per Text zb Hausmeisterinfo eingetragen
 	private String infoVorOrt;
 	
-	private String strasseInklNr;
+	private String strasse;
 	
 	@ManyToOne
 	private Feuerungsanlage feuerungsanlage;
 
 	@ManyToOne
-	private Ort ortInklPlz;
+	private Ort ort;
 	
 	//standardkonstruktor
 	public Liegenschaft(){
@@ -80,11 +80,11 @@ public class Liegenschaft implements Serializable{
 	}
 
 	public String getStrasseInklNr() {
-		return strasseInklNr;
+		return strasse;
 	}
 
 	public void setStrasseInklNr(String strasseInklNr) {
-		this.strasseInklNr = strasseInklNr;
+		this.strasse = strasseInklNr;
 	}
 
 	public Feuerungsanlage getFeuerungsanlage() {
@@ -96,11 +96,11 @@ public class Liegenschaft implements Serializable{
 	}
 	
 	public Ort getOrtInklPlz() {
-		return ortInklPlz;
+		return ort;
 	}
 
 	public void setOrtInklPlz(Ort ortInklPlz) {
-		this.ortInklPlz = ortInklPlz;
+		this.ort = ortInklPlz;
 	}
 
 	public String getInfoVorOrt() {
@@ -117,8 +117,8 @@ public class Liegenschaft implements Serializable{
 				+ "Kontakt: \t \t \t" + kontakt + "\n"
 				+ "Info vo Ort: \n" + infoVorOrt.toString() + "\n"
 				+ "Feuerungsanlage: \n" + feuerungsanlage.toString() + "\n"
-				+ "Strasse mit Nummer: \n" + strasseInklNr.toString() + "\n"
-				+ "Ort mit PLZ: \n" + ortInklPlz.toString() + "\n";
+				+ "Strasse mit Nummer: \n" + strasse.toString() + "\n"
+				+ "Ort mit PLZ: \n" + ort.toString() + "\n";
 	}
 	
 }
