@@ -42,7 +42,7 @@ public class Auftrag implements Serializable{
 	private Messung messung;
 	
 	@ManyToOne
-	private Mitarbeiter kontrolleur;
+	private Mitarbeiter mitarbeiter;
 	
 	@Temporal(TemporalType.DATE)
 	private GregorianCalendar datum;
@@ -81,11 +81,11 @@ public class Auftrag implements Serializable{
 	}
 
 	public Mitarbeiter getAusgeführtDurch() {
-		return kontrolleur;
+		return mitarbeiter;
 	}
 
 	public void setAusgeführtDurch(Mitarbeiter ausgeführtDurch) {
-		this.kontrolleur = ausgeführtDurch;
+		this.mitarbeiter = ausgeführtDurch;
 	}
 
 	public GregorianCalendar getTermin() {
@@ -133,7 +133,7 @@ public class Auftrag implements Serializable{
 				+ "Liegenschaft: \n" + liegenschaft.toString() + "\n"
 				+ "Info vor Ort: \t \t \t \t" + infoVorOrt + "\n"
 				+ "Messung: \n" + messung.toString() + "\n"
-				+ "Kontrolleur: \n" + kontrolleur.toString() + "\n"
+				+ "Kontrolleur: \n" + mitarbeiter.toString() + "\n"
 				+ "Kontrolldatum: \t \t \t \t" + datum.toString()
 
 				//hier muss Datum noch Formatiert werden!
