@@ -16,11 +16,11 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "User.findById", query = "SELECT u FROM User u WHERE u.idUser=:idUser"),
-	@NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username=:username"),
-	@NamedQuery(name = "User.findByPassword", query = "SELECT u FROM User u WHERE u.password=:password")
+	@NamedQuery(name = "Benutzer.findById", query = "SELECT u FROM User u WHERE u.idUser=:idUser"),
+	@NamedQuery(name = "Benutzer.findByUsername", query = "SELECT u FROM User u WHERE u.username=:username"),
+	@NamedQuery(name = "Benutzer.findByPassword", query = "SELECT u FROM User u WHERE u.password=:password")
 })
-public class User implements Serializable{
+public class Benutzer implements Serializable{
 
 	private static final long serialVersionUID = -7225618836803933212L;
 	
@@ -32,7 +32,7 @@ public class User implements Serializable{
 	private String password;
 	
 	//Standardkonstruktor**************************************************
-	public User(){
+	public Benutzer(){
 		
 	}
 
