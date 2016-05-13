@@ -4,6 +4,9 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 import entitäten.Auftrag;
+import entitäten.Kontakt;
+import entitäten.Liegenschaft;
+import entitäten.Mitarbeiter;
 
 /**
  * Verwaltet einen Auftrag und alle Funktionen.
@@ -39,11 +42,11 @@ public interface AuftragManager {
 	public void delete(Auftrag entity) throws Exception;
 
 	/**
-	 * Liefert den Auftrag der mit der Id angefragt wurde. 
-	 * @param id
+	 * Liefert eine Auftragsliste anhand der gesuchten Auftrags-Nummer.
+	 * @param auftragsNummer
 	 * @return
-	 */
-	public Auftrag findById(Integer id);
+	 */	
+	public List<Auftrag> findByAuftragsNummer(Integer auftragsNummer);
 	
 	/**
 	 * Liefert alle Aufträge zurück.
@@ -63,28 +66,23 @@ public interface AuftragManager {
 	 * @param mitarbeiter
 	 * @return
 	 */
-	public List<Auftrag> findByMitarbeiter(String mitarbeiter);
+	public List<Auftrag> findByMitarbeiter(Mitarbeiter mitarbeiter);
 	
 	/**
 	 * Liefert eine Auftragsliste anhand des gesuchten Kontakts.
 	 * @param kontakt
 	 * @return
 	 */
-	public List<Auftrag> findByKontakt(String kontakt);
+	public List<Auftrag> findByKontakt(Kontakt kontakt);
 	
 	/**
 	 * Liefert eine Auftragsliste anhand der gesuchten Liegenschaften.
 	 * @param liegenschaftOrt
 	 * @return
 	 */
-	public List<Auftrag> findByLiegenschaft(String liegenschaft);
+	public List<Auftrag> findByLiegenschaft(Liegenschaft liegenschaft);
 
-	/**
-	 * Liefert eine Auftragsliste anhand der gesuchten Auftrags-Nummer.
-	 * @param auftragsNummer
-	 * @return
-	 */	
-	public List<Auftrag> findByAuftragsNummer(int auftragsNummer);
+	
 
 
 	

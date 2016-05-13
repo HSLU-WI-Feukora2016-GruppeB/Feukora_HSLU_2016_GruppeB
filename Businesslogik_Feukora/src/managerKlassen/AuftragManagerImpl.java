@@ -29,7 +29,7 @@ public class AuftragManagerImpl implements AuftragManager {
 			return entity;
 		} else {
 			throw new Exception(
-					"Entity im Datenbestand bereits vorhanden (Id = "
+					"Entity ist bereits in der Datenbank vorhanden (Id = "
 							+ entity.getAuftragsNummer().intValue() + ")");
 		}
 	}
@@ -51,13 +51,14 @@ public class AuftragManagerImpl implements AuftragManager {
 	}
 
 	@Override
-	public Auftrag findById(Integer id) {
-		return auftragDAO.findById(id);
+	public List<Auftrag> findByAuftragsNummer(Integer auftragsNummer) {
+		// TODO Auto-generated method stub
+		return null;
 	}
-
+	
 	@Override
 	public List<Auftrag> findAll() {
-		return auftragDAO.findAll();
+		return auftragDAO.findAllAuftrag();
 	}
 
 	@Override
@@ -80,10 +81,7 @@ public class AuftragManagerImpl implements AuftragManager {
 		return auftragDAO.findByLiegenschaft(liegenschaft);
 	}
 
-	@Override
-	public List<Auftrag> findByAuftragsNummer(int auftragsNummer) {
-		return auftragDAO.findByAuftragsNummer(auftragsNummer);
-	}
+	
 
 
 }

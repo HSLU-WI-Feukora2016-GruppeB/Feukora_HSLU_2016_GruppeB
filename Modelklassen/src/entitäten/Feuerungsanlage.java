@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 /**
  * Eine Feuerungsanlage besteht aus einem Brenner 
@@ -20,6 +21,7 @@ import javax.persistence.NamedQuery;
 @NamedQueries({
 	@NamedQuery(name = "Feuerungsanlage.findByBrenner", query = "SELECT f FROM Feuerungsanlage f WHERE f.brenner=:brenner"),
 	@NamedQuery(name = "Feuerungsanlage.findByWaermeerzeuger", query = "SELECT f FROM Feuerungsanlage f WHERE f.waermeerzeuger=:waermeerzeuger"),
+	@NamedQuery(name = "Feuerungsanlage.findByLiegenschaft", query = "SELECT f FROM Feuerungsanlage f WHERE f.liegenschaft=:liegenschaft"),
 	@NamedQuery(name = "Feuerungsanlage.findById", query = "SELECT f FROM Feuerungsanlage f WHERE f.idFeuerungsanlage=:idFeuerungsanlage")
 })
 public class Feuerungsanlage implements Serializable{
@@ -30,14 +32,25 @@ public class Feuerungsanlage implements Serializable{
 	@GeneratedValue
 	private Integer idFeuerungsanlage;
 	
+	@OneToMany
+	private Liegenschaft liegenschaft;
+	
 	@ManyToOne
 	private Brenner brenner;
+	
+
 	@ManyToOne
 	private Waermeerzeuger waermeerzeuger;
 	
-	//standardkonstruktor**************************************************
+	//konstruktor**************************************************
 	public Feuerungsanlage(){
 		
+	}
+	
+	public Feuerungsanlage(Liegenschaft liegenschaft, Brenner brenner, Waermeerzeuger waermeerzeuger){
+		this.liegenschaft = liegenschaft;
+		this.brenner = brenner;
+		this.waermeerzeuger = waermeerzeuger;
 	}
 
 	//getter&setter********************************************************
@@ -49,6 +62,14 @@ public class Feuerungsanlage implements Serializable{
 		this.idFeuerungsanlage = idFeuerungsanlage;
 	}
 
+	public Liegenschaft getLiegenschaft() {
+		return liegenschaft;
+	}
+
+	public void setLiegenschaft(Liegenschaft liegenschaft) {
+		this.liegenschaft = liegenschaft;
+	}
+	
 	public Brenner getBrenner() {
 		return brenner;
 	}

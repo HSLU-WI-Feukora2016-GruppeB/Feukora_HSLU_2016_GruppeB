@@ -25,7 +25,6 @@ import javax.persistence.NamedQuery;
 	@NamedQuery(name = "Liegenschaft.findByKontakt", query = "SELECT l FROM Liegenschaft l WHERE l.kontakt=:kontakt"),
 	@NamedQuery(name = "Liegenschaft.findByOrt", query = "SELECT l FROM Liegenschaft l WHERE l.ort=:ort"),
 	@NamedQuery(name = "Liegenschaft.findByStrasse", query = "SELECT l FROM Liegenschaft l WHERE l.strasse=:strasse"),
-	@NamedQuery(name = "Liegenschaft.findByFeuerungsanlage", query = "SELECT l FROM Liegenschaft l WHERE l.feuerungsanlage=:feuerungsanlage")
 })
 public class Liegenschaft implements Serializable{
 	
@@ -44,15 +43,14 @@ public class Liegenschaft implements Serializable{
 	private String strasse;
 	
 	@ManyToOne
-	private Feuerungsanlage feuerungsanlage;
-
-	@ManyToOne
 	private Ort ort;
 	
 	//standardkonstruktor**************************************************
 	public Liegenschaft(){
 		
 	}
+	
+	
 
 	//getter&setter********************************************************
 	public Integer getIdLiegenschaft() {
@@ -79,14 +77,6 @@ public class Liegenschaft implements Serializable{
 		this.strasse = strasseInklNr;
 	}
 
-	public Feuerungsanlage getFeuerungsanlage() {
-		return feuerungsanlage;
-	}
-
-	public void setFeuerungsanlage(Feuerungsanlage feuerungsanlage) {
-		this.feuerungsanlage = feuerungsanlage;
-	}
-	
 	public Ort getOrtInklPlz() {
 		return ort;
 	}
@@ -108,9 +98,8 @@ public class Liegenschaft implements Serializable{
 		return "Liegenschaft:" + "\n"
 				+ "Kontakt: \t \t \t" + kontakt + "\n"
 				+ "Info vo Ort: \n" + infoVorOrt.toString() + "\n"
-				+ "Feuerungsanlage: \n" + feuerungsanlage.toString() + "\n"
-				+ "Strasse mit Nummer: \n" + strasse.toString() + "\n"
-				+ "Ort mit PLZ: \n" + ort.toString() + "\n";
+				+ "Strasse: \n" + strasse.toString() + "\n"
+				+ "Ort: \n" + ort.toString() + "\n";
 	}
 	
 }

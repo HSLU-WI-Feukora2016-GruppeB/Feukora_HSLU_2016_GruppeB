@@ -31,9 +31,14 @@ public class Benutzer implements Serializable{
 	private String username;
 	private String password;
 	
-	//Standardkonstruktor**************************************************
+	//konstruktor**************************************************
 	public Benutzer(){
 		
+	}
+	
+	public Benutzer(String username, String password){
+		this.username = username;
+		this.password = password;
 	}
 
 	//getter&setter********************************************************

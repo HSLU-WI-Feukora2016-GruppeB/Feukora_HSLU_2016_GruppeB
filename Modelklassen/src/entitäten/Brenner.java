@@ -36,9 +36,15 @@ public class Brenner implements Serializable{
 	private String brennerTyp;
 	private int baujahr;
 	
-	//standardkonstruktor**************************************************
+	//konstruktor**************************************************
 	public Brenner(){
 		
+	}
+	
+	public Brenner(int brennerArt, String brennerTyp, int baujahr){
+		this.brennerArt = brennerArt;
+		this.brennerTyp = brennerTyp;
+		this.baujahr = baujahr;
 	}
 
 	//getter&setter********************************************************

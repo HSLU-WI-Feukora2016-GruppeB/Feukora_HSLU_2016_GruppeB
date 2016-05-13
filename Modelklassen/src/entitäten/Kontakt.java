@@ -52,9 +52,19 @@ public class Kontakt implements Serializable{
 
 	private int	rolleExtern;
 	
-	//Standartkonstruktor**************************************************
+	//konstruktor**************************************************
 	public Kontakt(){
 		
+	}
+	
+	public Kontakt(String vorname, String name, String strasse, Ort ort, int tel, String email, int rolleExtern){
+		this.vorname = vorname;
+		this.nachname = name;
+		this.strasse = strasse;
+		this.ort = ort;
+		this.tel = tel;
+		this.email = email;
+		this.rolleExtern = rolleExtern;
 	}
 
 	//getter&setter********************************************************

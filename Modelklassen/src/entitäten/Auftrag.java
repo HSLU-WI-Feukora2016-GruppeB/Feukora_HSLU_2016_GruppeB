@@ -57,9 +57,22 @@ public class Auftrag implements Serializable{
 	private int terminArt;		
 	
 	
-	//standardkonstruktor**************************************************
+	//konstruktor**************************************************
 	public Auftrag(){
 		
+	}
+	
+	public Auftrag(Kontakt kontakt, Liegenschaft liegenschaft,
+			String infoVorOrt, Messung messung1stufe1, Messung messung1stufe2,
+			Messung messung2stufe1, Messung messung2stufe2,
+			Mitarbeiter mitarbeiter, GregorianCalendar datum, int terminArt) {
+		this.kontakt = kontakt;
+		this.liegenschaft = liegenschaft;
+		this.infoVorOrt = infoVorOrt;
+		this.messung1stufe1 = messung1stufe1;
+		this.messung1stufe2 = messung1stufe2;
+		this.messung2stufe1 = messung2stufe1;
+		this.messung2stufe2 = messung2stufe2;
 	}
 
 	//getter&setter********************************************************
