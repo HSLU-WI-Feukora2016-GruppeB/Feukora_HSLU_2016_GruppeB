@@ -12,8 +12,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 //SimpleDateFormat für Kalender noch anpassen. Moment nicht sauber
 
@@ -177,7 +175,7 @@ public class Mitarbeiter implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "Kontakt: " + "\n"
+		return "Mitarbeiter: " + "\n"
 				+ "Vorname: \n" + vorname.toString() + "\n"
 				+ "Name: \n" + name.toString() + "\n"
 				+ "Strasse: \n" + strasse.toString() + "\n"

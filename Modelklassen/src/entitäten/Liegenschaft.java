@@ -14,16 +14,18 @@ import javax.persistence.NamedQuery;
  * Eine Liegenschaft stellt ein Haus oder eine Wohnung dar, 
  * sie hat jeweils einen oder mehrere Kontaktpersonen
  * um Kontakt aufzunehmen.
- * @author Olivia
+ * @author Matthias
  * @version 1.0
  * @since 1.0
  *
  */
 @Entity
 @NamedQueries({
+	@NamedQuery(name = "Liegenschaft.findById", query = "SELECT l FROM Liegenschaft l WHERE l.idLiegenschaft=:idLiegenschaft"),
 	@NamedQuery(name = "Liegenschaft.findByKontakt", query = "SELECT l FROM Liegenschaft l WHERE l.kontakt=:kontakt"),
-	@NamedQuery(name = "Liegenschaft.findByOrt", query = "SELECT l FROM Liegenschaft l WHERE l.ort=:ort"),
-	@NamedQuery(name = "Liegenschaft.findByStrasse", query = "SELECT l FROM Liegenschaft l WHERE l.strasseInklNr=:strasseInklNr")
+	@NamedQuery(name = "Liegenschaft.findByOrt", query = "SELECT l FROM Liegenschaft l WHERE l.ortInklPlz=:ortInklPlz"),
+	@NamedQuery(name = "Liegenschaft.findByStrasse", query = "SELECT l FROM Liegenschaft l WHERE l.strasseInklNr=:strasseInklNr"),
+	@NamedQuery(name = "Liegenschaft.findByFeuerungsanlage", query = "SELECT l FROM Liegenschaft l WHERE l.feuerungsanlage=:feuerungsanlage")
 })
 public class Liegenschaft implements Serializable{
 	
@@ -48,6 +50,9 @@ public class Liegenschaft implements Serializable{
 	private String infoVorOrt;
 	
 	private String strasseInklNr;
+	
+	@ManyToOne
+	private Feuerungsanlage feuerungsanlage;
 
 	@ManyToOne
 	private Ort ortInklPlz;
@@ -82,6 +87,14 @@ public class Liegenschaft implements Serializable{
 		this.strasseInklNr = strasseInklNr;
 	}
 
+	public Feuerungsanlage getFeuerungsanlage() {
+		return feuerungsanlage;
+	}
+
+	public void setFeuerungsanlage(Feuerungsanlage feuerungsanlage) {
+		this.feuerungsanlage = feuerungsanlage;
+	}
+	
 	public Ort getOrtInklPlz() {
 		return ortInklPlz;
 	}
@@ -96,6 +109,16 @@ public class Liegenschaft implements Serializable{
 
 	public void setInfoVorOrt(String infoVorOrt) {
 		this.infoVorOrt = infoVorOrt;
+	}
+	
+	@Override
+	public String toString(){
+		return "Liegenschaft:" + "\n"
+				+ "Kontakt: \t \t \t" + kontakt + "\n"
+				+ "Info vo Ort: \n" + infoVorOrt.toString() + "\n"
+				+ "Feuerungsanlage: \n" + feuerungsanlage.toString() + "\n"
+				+ "Strasse mit Nummer: \n" + strasseInklNr.toString() + "\n"
+				+ "Ort mit PLZ: \n" + ortInklPlz.toString() + "\n";
 	}
 	
 }
