@@ -54,7 +54,7 @@ public class Mitarbeiter implements Serializable{
 	private String email;
 	private int rolleIntern;
 	@OneToOne
-	private User user;
+	private Benutzer user;
 	private float lohn;
 	@Temporal(TemporalType.DATE)
 	private GregorianCalendar arbeitetSeit;
@@ -142,11 +142,11 @@ public class Mitarbeiter implements Serializable{
 		this.rolleIntern = rolleIntern;
 	}
 
-	public User getUsercredentials() {
+	public Benutzer getUsercredentials() {
 		return user;
 	}
 
-	public void setUsercredentials(User usercredentials) {
+	public void setUsercredentials(Benutzer usercredentials) {
 		this.user = usercredentials;
 	}
 
