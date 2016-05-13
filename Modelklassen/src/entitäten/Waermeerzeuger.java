@@ -33,7 +33,7 @@ import javax.persistence.TemporalType;
 	@NamedQuery(name = "Messung.findByO2gehalt", query = "SELECT m FROM Messung m WHERE m.o2gehalt=:o2gehalt"),
 	@NamedQuery(name = "Messung.findByAbgasverluste", query = "SELECT m FROM Messung m WHERE m.abgasverluste=:abgasverluste")
 })
-public class Messung implements Serializable{
+public class Waermeerzeuger implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -63,7 +63,7 @@ public class Messung implements Serializable{
 	private int abgasverluste;
 	
 	//standardkonstruktor
-	public Messung(){
+	public Waermeerzeuger(){
 		
 	}
 	
