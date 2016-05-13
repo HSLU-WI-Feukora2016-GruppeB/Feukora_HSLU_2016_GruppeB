@@ -12,7 +12,7 @@ import javax.persistence.NamedQuery;
 /**
  * Eine Feuerungsanlage besteht aus einem Brenner 
  * und einem Wärmeerzeuger sie erzeugt Wärme für eine bestimmt Liegenschaft.
- * @author Matthias
+ * @author Olivia
  * @version 1.0
  * @since 1.0
  */

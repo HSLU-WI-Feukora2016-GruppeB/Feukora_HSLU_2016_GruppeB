@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 /**
  * Klasse Adresse enthält PLZ und Ort, ist eine eigene Tabelle die integriert werden kann.
@@ -13,6 +15,10 @@ import javax.persistence.Id;
  *
  */
 @Entity
+@NamedQueries({
+	@NamedQuery(name = "Ort.findByPlz", query = "SELECT o FROM Ort o WHERE o.plz=:plz"),
+	@NamedQuery(name = "Ort.findByOrt", query = "SELECT o FROM Ort o WHERE o.plz=:plz")
+})
 public class Ort implements Serializable {
 	
 
@@ -27,6 +33,7 @@ public class Ort implements Serializable {
 	}
 	
 	//getter&setter*******************************************************
+	//keine setter da die Tabelle vorgegeben ist und nicht angepasst werden soll
 	public int getPlz() {
 		return plz;
 	}
@@ -35,6 +42,11 @@ public class Ort implements Serializable {
 		return ort;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Ort:" + "\n" 
+				+ "PLZ: \n" + plz.toString() + "\n"
+				+ "Ort: \t \t \t" + ort + "\n";
+	}
 	
 }

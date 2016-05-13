@@ -104,8 +104,20 @@ public class Auftrag implements Serializable{
 		this.infoVorOrt = infoVorOrt;
 	}
 	
-	public int getTerminArt() {
-		return terminArt;
+	public String getTerminArt() {
+		
+		String terminA = null;
+
+		switch (this.terminArt) {
+		case 1:
+			terminA = "Routinekontrolle";
+			break;
+		case 2:
+			terminA = "Abnahmekontrolle";
+			break;
+		}
+
+		return terminA;
 	}
 
 	public void setTerminArt(int terminArt) {
