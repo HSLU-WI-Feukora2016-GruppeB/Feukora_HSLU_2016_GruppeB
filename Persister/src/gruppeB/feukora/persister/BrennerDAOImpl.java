@@ -27,8 +27,12 @@ public class BrennerDAOImpl implements BrennerDAO{
 
 	@Override
 	public void saveBrenner(Brenner entity) throws Exception {
+<<<<<<< HEAD
+		new GenericPersisterImpl<Brenner>(Brenner.class).save(entity);
+=======
 		// TODO Auto-generated method stub
 		
+>>>>>>> refs/remotes/origin/master
 	}
 
 	@Override
@@ -62,12 +66,6 @@ public class BrennerDAOImpl implements BrennerDAO{
 	}
 
 	@Override
-	public List<Brenner> findBrennerByBezeichnung(String bezeichnung) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public List<Brenner> findBrennerByBaujahr(Integer baujahr) {
 		// TODO Auto-generated method stub
 		return null;
@@ -75,6 +73,12 @@ public class BrennerDAOImpl implements BrennerDAO{
 
 	@Override
 	public List<Brenner> findBrennerByBrennart(String brennart) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Brenner> findBrennerByBrennertyp(String brennerTyp) {
 		// TODO Auto-generated method stub
 		return null;
 	}
