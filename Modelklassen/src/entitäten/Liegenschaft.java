@@ -35,14 +35,6 @@ public class Liegenschaft implements Serializable{
 	@GeneratedValue
 	private Integer idLiegenschaft;
 	
-	/*
-	 * Je nach Handling ist es entweder ManyToMany oder OneToMany 
-	 * hier haben wir uns für ManyToMany entschieden 
-	 * somit entsteht eine assoziative Tabelle 
-	 * zwischen Kontakt und Liegenschaft, 
-	 * diese wird jedoch im Hintergrund automatisch erstellt. 
-	 * Sie ist jedoch nicht weiter ersichtlich.
-	 */
 	@ManyToOne
 	private Kontakt kontakt;	
 	
@@ -57,12 +49,12 @@ public class Liegenschaft implements Serializable{
 	@ManyToOne
 	private Ort ort;
 	
-	//standardkonstruktor
+	//standardkonstruktor**************************************************
 	public Liegenschaft(){
 		
 	}
 
-	//getter&setter
+	//getter&setter********************************************************
 	public Integer getIdLiegenschaft() {
 		return idLiegenschaft;
 	}

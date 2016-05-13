@@ -1,10 +1,9 @@
 package entitäten;
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import javax.persistence.*;
-
-//SimpleDateFormat für KAlender und toString noch implementieren
 
 /**
  * Ein Auftrag fasst alle wichtigen Informationen für den Auftrag zusammen. 
@@ -58,12 +57,12 @@ public class Auftrag implements Serializable{
 	private int terminArt;		
 	
 	
-	//standardkonstruktor
+	//standardkonstruktor**************************************************
 	public Auftrag(){
 		
 	}
 
-	//getter&setter
+	//getter&setter********************************************************
 	public Integer getAuftragsNummer() {
 		return auftragsNummer;
 	}
@@ -100,6 +99,15 @@ public class Auftrag implements Serializable{
 		return datum;
 	}
 
+	/**
+	 * Hilfsmethode für toString Methode der Klasse Messung. Ein Datum wird formatiert gedruckt.
+	 * @param messDatum
+	 * @return
+	 */
+	public String printDatum(GregorianCalendar datum) {
+		return datum.get(Calendar.DAY_OF_MONTH) + "/" + datum.get(Calendar.MONTH) + "/" + datum.get(Calendar.YEAR);
+	}
+	
 	public void setTermin(GregorianCalendar datum) {
 		this.datum = datum;
 	}
@@ -136,20 +144,20 @@ public class Auftrag implements Serializable{
 	@Override
 	public String toString(){
 		return "Auftrag:" + "\n"
-				+ "Auftragsnummer: \t \t \t" + auftragsNummer + "\n"
+				+ "Auftragsdatum: \t \t \t \t" + this.printDatum(this.datum)+ "\n"
+				+ "Auftragsnummer: \t \t \t" + auftragsNummer + "\n" + "\n"
+				
 				+ "Kontakt: \n" + kontakt.toString() + "\n"
 				+ "Liegenschaft: \n" + liegenschaft.toString() + "\n"
-				+ "Info vor Ort: \t \t \t \t" + infoVorOrt + "\n"
-				+ "Messung: \n" + messung1stufe1.toString() + "\n"
+				+ "Info vor Ort: \t \t \t \t" + infoVorOrt + "\n"+ "\n"
+				
+				+ "Messung: \n" 
+				+ messung1stufe1.toString() + "\n"
 				+ messung1stufe2.toString() + "\n"
 				+ messung2stufe1.toString() + "\n"
-				+ messung2stufe2.toString() + "\n"
-				+ "Kontrolleur: \n" + mitarbeiter.toString() + "\n"
-				+ "Kontrolldatum: \t \t \t \t" + datum.toString()
-
-				//hier muss Datum noch Formatiert werden!
+				+ messung2stufe2.toString() + "\n"+ "\n"
 				
-				+ "\n"
+				+ "Kontrolleur: \n" + mitarbeiter.toString() + "\n"
 				+ "Kontrollart: \t \t \t \t" + terminArt + "\n";
 	}
 	

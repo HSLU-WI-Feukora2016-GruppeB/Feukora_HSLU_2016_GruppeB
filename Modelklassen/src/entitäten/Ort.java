@@ -9,7 +9,8 @@ import javax.persistence.NamedQuery;
 
 /**
  * Klasse Adresse enthält PLZ und Ort, ist eine eigene Tabelle die integriert werden kann.
- * @author Olivia, Dominik
+ * Kein Setter vorhanden, da die Tabelle nicht verändert werden soll. Es gibt nur diese Orte und PLZ.
+ * @author Olivia
  * @version 1.0
  * @since 1.0
  *
@@ -33,7 +34,6 @@ public class Ort implements Serializable {
 	}
 	
 	//getter&setter*******************************************************
-	//keine setter da die Tabelle vorgegeben ist und nicht angepasst werden soll
 	public int getPlz() {
 		return plz;
 	}

@@ -11,7 +11,7 @@ import javax.persistence.NamedQuery;
 
 /**
  * Waermeerzeuger erzeugt Waerme für Feuerungsanlage, zusammen mit Brenner
- * @author Matthias
+ * @author Olivia
  * @version 1.0
  * @since 1.0
  *
@@ -36,12 +36,12 @@ public class Waermeerzeuger implements Serializable{
 	private int baujahr;
 
 	
-	//standardkonstruktor
+	//standardkonstruktor**************************************************
 	public Waermeerzeuger(){
 		
 	}
 
-	//getter&setter
+	//getter&setter********************************************************
 	public Integer getIdWaermeerzeuger() {
 		return idWaermeerzeuger;
 	}
@@ -88,7 +88,7 @@ public class Waermeerzeuger implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "Waermeerzeuger: " + "\n"
+		return "Wärmeerzeuger: " + "\n"
 				+ "Brennstoff: \t \t \t" + brennstoff + "(1=Öl/2=Erdgas/3=Flüssiggas)" + "\n"
 				+ "Waermeerzeugertyp: \t \t" + waermeerzeugerTyp
 				;

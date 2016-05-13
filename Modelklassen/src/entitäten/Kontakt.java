@@ -14,7 +14,7 @@ import javax.persistence.NamedQuery;
 /**
  * Kontakt stellt eine Kontaktperson oder einen Kunden dar, sie ist entweder 
  * ein Hauseigentümer, Verwalter oder Hausmeister.
- * @author Matthias
+ * @author Olivia
  * @version 1.0
  * @since 1.0
  *
@@ -52,12 +52,12 @@ public class Kontakt implements Serializable{
 
 	private int	rolleExtern;
 	
-	//Standartkonstruktor
+	//Standartkonstruktor**************************************************
 	public Kontakt(){
 		
 	}
 
-	//getter&setter
+	//getter&setter********************************************************
 	public Integer getId() {
 		return id;
 	}

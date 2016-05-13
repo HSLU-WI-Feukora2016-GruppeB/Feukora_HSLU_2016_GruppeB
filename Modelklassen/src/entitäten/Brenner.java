@@ -12,7 +12,7 @@ import javax.persistence.NamedQuery;
 /**
  * Brenner setzt sich aus Brennertyp und Brennerart zusammen, 
  * ein Wärmeerzeuger enthält einen Brenner.
- * @author Olivia
+ * @author Matthias
  * @version 1.0.0
  * @since 1.0.0
  *
@@ -36,12 +36,12 @@ public class Brenner implements Serializable{
 	private String brennerTyp;
 	private int baujahr;
 	
-	//standardkonstruktor
+	//standardkonstruktor**************************************************
 	public Brenner(){
 		
 	}
 
-	//getter&setter
+	//getter&setter********************************************************
 	public Integer getId() {
 		return idBrenner;
 	}

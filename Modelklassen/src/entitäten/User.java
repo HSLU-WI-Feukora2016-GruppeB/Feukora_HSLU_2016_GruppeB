@@ -10,7 +10,7 @@ import javax.persistence.NamedQuery;
 
 /**
  * Enthält Benutzerdaten für die Anmeldung.
- * @author Olivia
+ * @author Matthias
  * @version 1.0
  * @since 1.0
  */
@@ -31,12 +31,12 @@ public class User implements Serializable{
 	private String username;
 	private String password;
 	
-	//Standardkonstruktor
+	//Standardkonstruktor**************************************************
 	public User(){
 		
 	}
 
-	//getter&setter
+	//getter&setter********************************************************
 	public Integer getIdUser() {
 		return idUser;
 	}

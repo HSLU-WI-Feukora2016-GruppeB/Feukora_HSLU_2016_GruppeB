@@ -1,6 +1,7 @@
 package entitäten;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import javax.persistence.Entity;
@@ -14,8 +15,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-//SimpleDateFormat für Kalender noch anpassen. Moment nicht sauber
 
 /**
  * Ein Mitarbeiter ist eine Person welche nur Firmenintern zu tun hat,
@@ -62,12 +61,12 @@ public class Mitarbeiter implements Serializable{
 	@Temporal(TemporalType.DATE)
 	private GregorianCalendar arbeitetBis;
 	
-	//standardkonstruktor
+	//standardkonstruktor**************************************************
 	public Mitarbeiter(){
 		
 	}
 	
-	//getter&setter
+	//getter&setter********************************************************
 	public Integer getIdMitarbeiter() {
 		return idMitarbeiter;
 	}
@@ -162,6 +161,15 @@ public class Mitarbeiter implements Serializable{
 	public GregorianCalendar getArbeitetSeit() {
 		return arbeitetSeit;
 	}
+	
+	/**
+	 * Hilfsmethode für toString Methode der Klasse Messung. Ein Datum wird formatiert gedruckt.
+	 * @param messDatum
+	 * @return
+	 */
+	public String printArbeitetSeitDatum(GregorianCalendar arbeitetSeit) {
+		return arbeitetSeit.get(Calendar.DAY_OF_MONTH) + "/" + arbeitetSeit.get(Calendar.MONTH) + "/" + arbeitetSeit.get(Calendar.YEAR);
+	}
 
 	public void setArbeitetSeit(GregorianCalendar arbeitetSeit) {
 		this.arbeitetSeit = arbeitetSeit;
@@ -169,6 +177,10 @@ public class Mitarbeiter implements Serializable{
 
 	public GregorianCalendar getArbeitetBis() {
 		return arbeitetBis;
+	}
+	
+	public String printArbeitetBisDatum(GregorianCalendar arbeitetBis) {
+		return arbeitetBis.get(Calendar.DAY_OF_MONTH) + "/" + arbeitetBis.get(Calendar.MONTH) + "/" + arbeitetBis.get(Calendar.YEAR);
 	}
 
 	public void setArbeitetBis(GregorianCalendar arbeitetBis) {
@@ -187,8 +199,8 @@ public class Mitarbeiter implements Serializable{
 				+ "Rolle Intern: \t \t \t" + rolleIntern + "\n"
 				+ "User: \t \t \t" + user + "\n"
 				+ "Lohn: \t \t \t" + lohn + "\n"
-				+ "Arbeitet seit: \n" + arbeitetSeit.toString() + "\n"
-				+ "Arbeitet bis: \n" + arbeitetBis.toString() + "\n";
+				+ "Arbeitet seit: \n" + this.printArbeitetSeitDatum(this.arbeitetSeit) + "\n"
+				+ "Arbeitet bis: \n" + this.printArbeitetBisDatum(this.arbeitetBis) + "\n";
 	}
 
 }

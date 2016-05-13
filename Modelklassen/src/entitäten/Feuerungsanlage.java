@@ -18,7 +18,6 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "Feuerungsanlage.findByLiegenschaft", query = "SELECT f FROM Feuerungsanlage f WHERE f.liegenschaft=:liegenschaft"),
 	@NamedQuery(name = "Feuerungsanlage.findByBrenner", query = "SELECT f FROM Feuerungsanlage f WHERE f.brenner=:brenner"),
 	@NamedQuery(name = "Feuerungsanlage.findByWaermeerzeuger", query = "SELECT f FROM Feuerungsanlage f WHERE f.waermeerzeuger=:waermeerzeuger"),
 	@NamedQuery(name = "Feuerungsanlage.findById", query = "SELECT f FROM Feuerungsanlage f WHERE f.idFeuerungsanlage=:idFeuerungsanlage")
@@ -31,33 +30,23 @@ public class Feuerungsanlage implements Serializable{
 	@GeneratedValue
 	private Integer idFeuerungsanlage;
 	
-	//Liegenschaft wird auf Many Seite annotiert
-	private Liegenschaft liegenschaft;
 	@ManyToOne
 	private Brenner brenner;
 	@ManyToOne
 	private Waermeerzeuger waermeerzeuger;
 	
-	//standardkonstruktor
+	//standardkonstruktor**************************************************
 	public Feuerungsanlage(){
 		
 	}
 
-	//getter&setter
+	//getter&setter********************************************************
 	public Integer getIdFeuerungsanlage() {
 		return idFeuerungsanlage;
 	}
 
 	public void setIdFeuerungsanlage(Integer idFeuerungsanlage) {
 		this.idFeuerungsanlage = idFeuerungsanlage;
-	}
-
-	public Liegenschaft getLiegenschaft() {
-		return liegenschaft;
-	}
-
-	public void setLiegenschaft(Liegenschaft liegenschaft) {
-		this.liegenschaft = liegenschaft;
 	}
 
 	public Brenner getBrenner() {
@@ -78,8 +67,7 @@ public class Feuerungsanlage implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "Kontakt: " + "\n"
-				+ "Liegenschaft: \t \t \t" + liegenschaft + "\n"
+		return "Feuerungsanlage: " + "\n"
 				+ "Brenner: \t \t \t" + brenner + "\n"
 				+ "Waermeerzeuger: \t \t \t" + waermeerzeuger + "\n";
 	}

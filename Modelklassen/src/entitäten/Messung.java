@@ -1,6 +1,7 @@
 package entitäten;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import javax.persistence.Entity;
@@ -11,11 +12,9 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-// enthält GregorienKalender...
-
 /**
  * Messung enthält alle Messergebnisse die der Feuerungskontrolleur beim Wärmeerzeuger abliest.
- * @author Matthias
+ * @author Olivia
  * @version 1.0
  * @since 1.0
  *
@@ -96,9 +95,29 @@ public class Messung implements Serializable{
 	public GregorianCalendar getMessDatum() {
 		return messDatum;
 	}
-
+	
 	public void setMessDatum(GregorianCalendar messDatum) {
 		this.messDatum = messDatum;
+	}
+	
+	/**
+	 * Setter für ein MessDatumObjekt mithilfe von int Werten.
+	 * @param tag
+	 * @param monat
+	 * @param jahr
+	 */
+	public void setMessDatum(int tag, int monat, int jahr) {
+		GregorianCalendar gregCal = new GregorianCalendar(jahr, monat, tag);
+		this.messDatum = gregCal;
+	}
+	
+	/**
+	 * Hilfsmethode für toString Methode der Klasse Messung. Ein Datum wird formatiert gedruckt.
+	 * @param messDatum
+	 * @return
+	 */
+	public String printMessdatum(GregorianCalendar messDatum) {
+		return messDatum.get(Calendar.DAY_OF_MONTH) + "/" + messDatum.get(Calendar.MONTH) + "/" + messDatum.get(Calendar.YEAR);
 	}
 
 	public int getRusszahl() {
@@ -244,11 +263,13 @@ public class Messung implements Serializable{
 	public void setEinregulierungNichtMoeglich(boolean einregulierungNichtMoeglich) {
 		this.einregulierungNichtMoeglich = einregulierungNichtMoeglich;
 	}
+	
+	
 
 	@Override
 	public String toString(){
 		return "Messung:" + "\n"
-				+ "Messdatum: \t \t \t" + messDatum + "\n"
+				+ "Messdatum: \t \t \t" + this.printMessdatum(this.messDatum) + "\n"
 				+ "Russzahl: \t \t \t" + russzahl + "\n"
 				+ "Kohlenstoff: \t \t \t" + kohlenstoff + "\n"
 				+ "Oelanteil: \t \t \t" + oelanteil + "\n"
