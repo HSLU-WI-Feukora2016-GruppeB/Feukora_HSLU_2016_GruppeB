@@ -28,7 +28,7 @@ import javax.jws.WebService;
 public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 
 	
-	private AuftragRO AuftragManager
+	private AuftragRO AuftragManager;
 	private BrennerRO BrennerManager;
 	private FeuerungsanlageRO FeuerungsanlageManager;
 	private KontaktRO KontaktManager;

@@ -4,6 +4,8 @@
  */
 package feukora.webservice.rmi.test;
 
+import java.util.ArrayList;
+
 import feukora.webservice.rmi.FeuerungsrapportService;
 import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
 
@@ -21,6 +23,7 @@ public class FeuerungsrapportServiceTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		service = new FeuerungsrapportServiceImpl();
+		
 	}
 
 	@AfterClass
@@ -31,17 +34,20 @@ public class FeuerungsrapportServiceTest {
 	public void setUp() throws Exception {
 		
 		//Entitäten
-		for (Modul m : service.findAllModul()) {
-			service.deleteModul(m);
+		for (Auftrag a : service.findAllAuftrag()) {
+			service.deleteAuftrag(m);
 		}
 
-		for (Student s : service.findAllStudent()) {
-			service.deleteStudent(s);
+		for (Brenner b : service.findAllBrenner()) {
+			service.deleteBrenner(s);
 		}
 
-		for (Dozent d : service.findAllDozent()) {
-			service.deleteDozent(d);
+		for (Feuerungsanlage f : service.findAllFeuerungsanlage()) {
+			service.deleteFeuerungsanlage(d);
 			
+	@After
+	public void tearDown() throws Exception {
+	}
 			/*
 			 * Mögliche Tests:
 			 * 
@@ -142,73 +148,60 @@ public class FeuerungsrapportServiceTest {
 				return dozentenListe;
 			}
 
+			
 			public static List<Modul> initModul() throws Exception {
 
+				
+				
 				List<Kontakt> lKontakte = new ArrayList<>();
 				List<Adresse> lAdressen = new ArrayList<>();
 				List<Student> lStudenten = new ArrayList<>();
 				List<Dozent> lDozenten = new ArrayList<>();
 
-				/* zehn Kontakte erstellen */
-				lKontakte.add(new Kontakt("cbucher@hslu.ch", "079 000 00 01"));
-				lKontakte.add(new Kontakt("cerni@hslu.ch", "079 000 00 02"));
-				lKontakte.add(new Kontakt("aunold@hslu.ch", "079 000 00 03"));
-				lKontakte.add(new Kontakt("ckeiser@hslu.ch", "079 000 00 04"));
-				lKontakte.add(new Kontakt("obaskin@hslu.ch", "079 000 00 05"));
-				lKontakte.add(new Kontakt("dwalker@hslu.ch", "079 000 00 06"));
-				lKontakte.add(new Kontakt("swicki@hslu.ch", "079 000 00 07"));
+//				/* zehn Kontakte erstellen */
+//				lKontakte.add(new Kontakt("cbucher@hslu.ch", "079 000 00 01"));
+//				lKontakte.add(new Kontakt("cerni@hslu.ch", "079 000 00 02"));
 
-				lKontakte.add(new Kontakt("fzbinden@hslu.ch", "079 000 00 08"));
-				lKontakte.add(new Kontakt("jsucur@hslu.ch", "079 000 00 09"));
-				lKontakte.add(new Kontakt("emathis@hslu.ch", "079 000 00 10"));
+//
+//				/* zehn Adressen */
+//				lAdressen.add(new Adresse("Pilatusstrasse 1", "Luzern", 6000));
+//				lAdressen.add(new Adresse("Zentralstrasse 21", "Luzern", 6002));
 
-				/* zehn Adressen */
-				lAdressen.add(new Adresse("Pilatusstrasse 1", "Luzern", 6000));
-				lAdressen.add(new Adresse("Zentralstrasse 21", "Luzern", 6002));
-				lAdressen.add(new Adresse("Bundesstrasse 88", "Luzern", 6000));
-				lAdressen.add(new Adresse("Obergrundstrasse 68", "Luzern", 6004));
-				lAdressen.add(new Adresse("Hirschmattstrasse 11", "Luzern", 6000));
-				lAdressen.add(new Adresse("Theaterstrasse 22", "Luzern", 6000));
-				lAdressen.add(new Adresse("Spitalstrasse 34", "Luzern", 6003));
 
-				lAdressen.add(new Adresse("Bachstrasse 34", "Horw", 6048));
-				lAdressen.add(new Adresse("Kantonsstrasse 25", "Horw", 6048));
-				lAdressen.add(new Adresse("Berglistrasse 3", "Kriens", 6010));
+//				/* sieben Studenten */
+//				lStudenten.add(new Student("Bucher", "Christoph",
+//						new GregorianCalendar(2082, 10, 10), lKontakte.get(0),
+//						lAdressen.get(0), 1));
+//				lStudenten.add(new Student("Erni", "Camil", new GregorianCalendar(2081,
+//						8, 8), lKontakte.get(1), lAdressen.get(1), 1));
+//				lStudenten.add(new Student("Unold", "Andreas", new GregorianCalendar(
+//						2084, 7, 7), lKontakte.get(2), lAdressen.get(2), 1));
+//				lStudenten.add(new Student("Kaiser", "Christian",
+//						new GregorianCalendar(2085, 10, 2), lKontakte.get(3), lAdressen
+//								.get(4), 2));
+//				lStudenten.add(new Student("Baskin", "Oeskan", new GregorianCalendar(
+//						2083, 6, 6), lKontakte.get(4), lAdressen.get(4), 2));
+//				lStudenten.add(new Student("Walker", "Daniel", new GregorianCalendar(
+//						2082, 4, 11), lKontakte.get(5), lAdressen.get(5), 2));
+//				lStudenten.add(new Student("Wicki", "Swen", new GregorianCalendar(2086,
+//						9, 12), lKontakte.get(6), lAdressen.get(6), 2));
 
-				/* sieben Studenten */
-				lStudenten.add(new Student("Bucher", "Christoph",
-						new GregorianCalendar(2082, 10, 10), lKontakte.get(0),
-						lAdressen.get(0), 1));
-				lStudenten.add(new Student("Erni", "Camil", new GregorianCalendar(2081,
-						8, 8), lKontakte.get(1), lAdressen.get(1), 1));
-				lStudenten.add(new Student("Unold", "Andreas", new GregorianCalendar(
-						2084, 7, 7), lKontakte.get(2), lAdressen.get(2), 1));
-				lStudenten.add(new Student("Kaiser", "Christian",
-						new GregorianCalendar(2085, 10, 2), lKontakte.get(3), lAdressen
-								.get(4), 2));
-				lStudenten.add(new Student("Baskin", "Oeskan", new GregorianCalendar(
-						2083, 6, 6), lKontakte.get(4), lAdressen.get(4), 2));
-				lStudenten.add(new Student("Walker", "Daniel", new GregorianCalendar(
-						2082, 4, 11), lKontakte.get(5), lAdressen.get(5), 2));
-				lStudenten.add(new Student("Wicki", "Swen", new GregorianCalendar(2086,
-						9, 12), lKontakte.get(6), lAdressen.get(6), 2));
-
-				/* drei Dozenten */
-				lDozenten.add(new Dozent("Zbinden", "Fritz", lKontakte.get(7),
-						lAdressen.get(7)));
-				lDozenten.add(new Dozent("Sucur", "Jordan", lKontakte.get(8), lAdressen
-						.get(8)));
-				lDozenten.add(new Dozent("Mathis", "Erwin", lKontakte.get(9), lAdressen
-						.get(9)));
-
-				lDozenten.get(0).setKernkompetenzen(Arrays.asList("Datenbanken"));
-				lDozenten.get(1)
-						.setKernkompetenzen(
-								Arrays.asList("Datenbanken", "SW Entwicklung",
-										"Testen", "JSF"));
-				lDozenten.get(2).setKernkompetenzen(
-						Arrays.asList("Datenbanken", "SW Entwicklung",
-								"Projektmanagement", "ITIL"));
+//				/* drei Dozenten */
+//				lDozenten.add(new Dozent("Zbinden", "Fritz", lKontakte.get(7),
+//						lAdressen.get(7)));
+//				lDozenten.add(new Dozent("Sucur", "Jordan", lKontakte.get(8), lAdressen
+//						.get(8)));
+//				lDozenten.add(new Dozent("Mathis", "Erwin", lKontakte.get(9), lAdressen
+//						.get(9)));
+//
+//				lDozenten.get(0).setKernkompetenzen(Arrays.asList("Datenbanken"));
+//				lDozenten.get(1)
+//						.setKernkompetenzen(
+//								Arrays.asList("Datenbanken", "SW Entwicklung",
+//										"Testen", "JSF"));
+//				lDozenten.get(2).setKernkompetenzen(
+//						Arrays.asList("Datenbanken", "SW Entwicklung",
+//								"Projektmanagement", "ITIL"));
 
 				/* Ein Modul mit einem Dozenten und drei Studierenden */
 				Modul datenbanken = new Modul("Datenbanken", 1);
@@ -238,9 +231,9 @@ public class FeuerungsrapportServiceTest {
 				lModule.add(programmieren);
 
 				/* Speichern */
-				for (int i = 0; i < lStudenten.size(); i++) {
-					lStudenten.get(i).setId(
-							service.addStudent(lStudenten.get(i)).getId());
+				for (int i = 0; i < lBrenner.size(); i++) {
+					lBrenner.get(i).setId(
+							service.addBrenner(lBrenner.get(i)).getId());
 				}
 
 				for (int i = 0; i < lDozenten.size(); i++) {

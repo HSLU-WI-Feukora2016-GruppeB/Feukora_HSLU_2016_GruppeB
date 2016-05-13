@@ -29,8 +29,10 @@ public class Waermeerzeuger implements Serializable{
 	@GeneratedValue
 	private Integer idWaermeerzeuger;
 	
-	private int brennstoff;
-	private String waermeerzeugerTyp;
+	@ManyToOne
+	private Brennstoff brennstoff;
+	@ManyToOne
+	private Waermeerzeugertyp waermeerzeugerTyp;
 	
 	//standardkonstruktor
 	public Waermeerzeuger(){
@@ -46,31 +48,19 @@ public class Waermeerzeuger implements Serializable{
 		this.idWaermeerzeuger = idWaermeerzeuger;
 	}
 
-	public String getBrennstoff() {
-		
-		String brennS = null;
-		
-		switch (this.brennstoff){
-			case 1: brennS = "Öl";
-				break;
-			case 2: brennS = "Erdgas";
-				break;
-			case 3: brennS = "Flüssiggas";
-				break;
-		}
-		
-		return brennS;
+	public Brennstoff getBrennstoff() {
+		return brennstoff;
 	}
-		
-	public void setBrennstoff(int brennstoff) {
+
+	public void setBrennstoff(Brennstoff brennstoff) {
 		this.brennstoff = brennstoff;
 	}
 
-	public String getWaermeerzeugerTyp() {
+	public Waermeerzeugertyp getWaermeerzeugerTyp() {
 		return waermeerzeugerTyp;
 	}
 
-	public void setWaermeerzeugerTyp(String waermeerzeugerTyp) {
+	public void setWaermeerzeugerTyp(Waermeerzeugertyp waermeerzeugerTyp) {
 		this.waermeerzeugerTyp = waermeerzeugerTyp;
 	}
 	

@@ -14,7 +14,7 @@ import javax.persistence.NamedQuery;
 /**
  * Kontakt stellt eine Kontaktperson oder einen Kunden dar, sie ist entweder 
  * ein Hauseigentümer, Verwalter oder Hausmeister.
- * @author Matthias
+ * @author Olivia
  * @version 1.0
  * @since 1.0
  *
@@ -24,9 +24,7 @@ import javax.persistence.NamedQuery;
 	@NamedQuery(name = "Kontakt.findByName", query = "SELECT k FROM Kontakt k WHERE k.name=:name"),
 	@NamedQuery(name = "Kontakt.findByVorname", query = "SELECT k FROM Kontakt k WHERE k.vorname=:vorname"),
 	@NamedQuery(name = "Kontakt.findByOrt", query = "SELECT k FROM Kontakt k WHERE k.ort=:ort"),
-	@NamedQuery(name = "Kontakt.findByRolleExtern", query = "SELECT k FROM Kontakt k WHERE k.rolleExtern=:rolleExtern"),
-	@NamedQuery(name = "Kontakt.findById", query = "SELECT k FROM Kontakt k WHERE k.id=:id"),
-	@NamedQuery(name = "Kontakt.findByStrasse", query = "SELECT k FROM Kontakt k WHERE k.strasse=:strasse")
+	@NamedQuery(name = "Kontakt.findByRolleExtern", query = "SELECT k FROM Kontakt k WHERE k.rolleExtern=:rolleExtern")
 })
 public class Kontakt implements Serializable{
 	
@@ -40,16 +38,18 @@ public class Kontakt implements Serializable{
 
 	private String nachname;
 
-	private String strasse;
+	private String strasseInklNr;
 
 	@ManyToOne
-	private Ort ort;
+	private Ort ortInklPlz;
 
 	private int tel;
 
 	private String email;
 
-	private int	rolleExtern;
+	@ManyToOne
+	@Enumerated(EnumType.STRING)
+	private RolleExtern	rolleExtern;
 	
 	//Standartkonstruktor
 	public Kontakt(){
@@ -81,20 +81,20 @@ public class Kontakt implements Serializable{
 		this.nachname = nachname;
 	}
 
-	public String getStrasse() {
-		return strasse;
+	public String getStrasseInklNr() {
+		return strasseInklNr;
 	}
 
-	public void setStrasse(String strasse) {
-		this.strasse = strasse;
+	public void setStrasseInklNr(String strasseInklNr) {
+		this.strasseInklNr = strasseInklNr;
 	}
 
 	public Ort getAdresse() {
-		return ort;
+		return ortInklPlz;
 	}
 
 	public void setAdresse(Ort adresse) {
-		this.ort = adresse;
+		this.ortInklPlz = adresse;
 	}
 
 	public int getTel() {
@@ -113,34 +113,12 @@ public class Kontakt implements Serializable{
 		this.email = email;
 	}
 
-	public String getRolleExtern() {
-		
-		String rolleE = null;
-		
-		switch (this.rolleExtern){
-			case 1: rolleE = "Eigentümer";
-				break;
-			case 2: rolleE = "Verwaltung";
-				break;
-		}
-		
-		return rolleE;
+	public RolleExtern getRolleExtern() {
+		return rolleExtern;
 	}
 
-	public void setRolleExtern(int rolleExtern) {
+	public void setRolleExtern(RolleExtern rolleExtern) {
 		this.rolleExtern = rolleExtern;
-	}
-	
-	@Override
-	public String toString() {
-		return "Kontakt: " + "\n"
-				+ "Vorname: \n" + vorname.toString() + "\n"
-				+ "Nachname: \n" + nachname.toString() + "\n"
-				+ "Strasse: \n" + strasse.toString() + "\n"
-				+ "Ort: \t \t \t" + ort + "\n"
-				+ "Telefon: \t \t \t" + tel + "\n"
-				+ "eMail: \n" + email.toString() + "\n"
-				+ "Rolle Extern: \t \t \t" + rolleExtern + "\n";
 	}
 	
 	

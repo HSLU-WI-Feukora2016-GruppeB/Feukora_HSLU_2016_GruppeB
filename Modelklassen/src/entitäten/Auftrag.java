@@ -4,8 +4,6 @@ import java.util.GregorianCalendar;
 
 import javax.persistence.*;
 
-//SimpleDateFormat für KAlender und toString noch implementieren
-
 /**
  * Ein Auftrag fasst alle wichtigen Informationen für den Auftrag zusammen. 
  * Er wird normalerweise vom Sachbearbeiter erstellt und vom Feuerungskontrolleur durch
@@ -16,12 +14,10 @@ import javax.persistence.*;
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "Auftrag.findById", query = "SELECT a FROM Auftrag a WHERE a.auftragsnummer=:auftragsnummer"),
 	@NamedQuery(name = "Auftrag.findByKontakt", query = "SELECT a FROM Auftrag a WHERE a.kontakt=:kontakt"),
 	@NamedQuery(name = "Auftrag.findByLiegenschaft", query = "SELECT a FROM Auftrag a WHERE a.liegenschaft=:liegenschaft"),
-	@NamedQuery(name = "Auftrag.findByMessung", query = "SELECT a FROM Auftrag a WHERE a.messung=:messung"),
-	@NamedQuery(name = "Auftrag.findByMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.mitarbeiter=:mitarbeiter"),
-	@NamedQuery(name = "Auftrag.findByDatum", query = "SELECT a FROM Auftrag a WHERE a.datum=:datum")
+	@NamedQuery(name = "Auftrag.findByAuftragsNummer", query = "SELECT a FROM Auftrag a WHERE a.auftragsNummer=:auftragsNummer"),
+	@NamedQuery(name = "Auftrag.findByMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.mitarbeiter=:mitarbeiter")
 })
 public class Auftrag implements Serializable{
 	
@@ -31,23 +27,17 @@ public class Auftrag implements Serializable{
 	private Integer auftragsNummer;
 	
 	@ManyToOne
-	private Kontakt kontakt;
-	
+	private Kontakt kunde;
 	@ManyToOne
 	private Liegenschaft liegenschaft;
-	
-	private String infoVorOrt;
-	
+	@ManyToOne
+	private Mitarbeiter ausgeführtDurch;
 	@OneToOne
 	private Messung messung;
 	
-	@ManyToOne
-	private Mitarbeiter kontrolleur;
-	
 	@Temporal(TemporalType.DATE)
-	private GregorianCalendar datum;
-	
-	private int terminArt;		
+	private GregorianCalendar termin;
+	private boolean terminArt;		//wenn true dann Service sonst nur Kontrolle
 	
 	
 	//standardkonstruktor
@@ -65,11 +55,11 @@ public class Auftrag implements Serializable{
 	}
 
 	public Kontakt getKunde() {
-		return kontakt;
+		return kunde;
 	}
 
 	public void setKunde(Kontakt kunde) {
-		this.kontakt = kunde;
+		this.kunde = kunde;
 	}
 
 	public Liegenschaft getLiegenschaft() {
@@ -81,38 +71,31 @@ public class Auftrag implements Serializable{
 	}
 
 	public Mitarbeiter getAusgeführtDurch() {
-		return kontrolleur;
+		return ausgeführtDurch;
 	}
 
 	public void setAusgeführtDurch(Mitarbeiter ausgeführtDurch) {
-		this.kontrolleur = ausgeführtDurch;
+		this.ausgeführtDurch = ausgeführtDurch;
 	}
 
 	public GregorianCalendar getTermin() {
-		return datum;
+		return termin;
 	}
 
-	public void setTermin(GregorianCalendar datum) {
-		this.datum = datum;
+	public void setTermin(GregorianCalendar termin) {
+		this.termin = termin;
 	}
 
-	public String getInfoVorOrt() {
-		return infoVorOrt;
-	}
-
-	public void setInfoVorOrt(String infoVorOrt) {
-		this.infoVorOrt = infoVorOrt;
-	}
-	
-	public int getTerminArt() {
+	public boolean isTerminArt() {
 		return terminArt;
 	}
 
-	public void setTerminArt(int terminArt) {
+	public void setTerminArt(boolean terminArt) {
 		this.terminArt = terminArt;
 	}
 	
 	
+<<<<<<< HEAD
 	@Override
 	public String toString(){
 		return "Auftrag:" + "\n"
@@ -129,6 +112,8 @@ public class Auftrag implements Serializable{
 				+ "\n"
 				+ "Kontrollart: \t \t \t \t" + terminArt + "\n";
 	}
+=======
+>>>>>>> refs/remotes/origin/master
 	
 	
 
