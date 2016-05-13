@@ -19,7 +19,6 @@ import javax.persistence.*;
 	@NamedQuery(name = "Auftrag.findById", query = "SELECT a FROM Auftrag a WHERE a.auftragsnummer=:auftragsnummer"),
 	@NamedQuery(name = "Auftrag.findByKontakt", query = "SELECT a FROM Auftrag a WHERE a.kontakt=:kontakt"),
 	@NamedQuery(name = "Auftrag.findByLiegenschaft", query = "SELECT a FROM Auftrag a WHERE a.liegenschaft=:liegenschaft"),
-	@NamedQuery(name = "Auftrag.findByMessung", query = "SELECT a FROM Auftrag a WHERE a.messung=:messung"),
 	@NamedQuery(name = "Auftrag.findByMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.mitarbeiter=:mitarbeiter"),
 	@NamedQuery(name = "Auftrag.findByDatum", query = "SELECT a FROM Auftrag a WHERE a.datum=:datum")
 })
@@ -38,8 +37,17 @@ public class Auftrag implements Serializable{
 	
 	private String infoVorOrt;
 	
-	@OneToOne
-	private Messung messung;
+	@OneToMany
+	private Messung messung1stufe1;
+	
+	@OneToMany
+	private Messung messung1stufe2;
+	
+	@OneToMany
+	private Messung messung2stufe1;
+	
+	@OneToMany
+	private Messung messung2stufe2;
 	
 	@ManyToOne
 	private Mitarbeiter mitarbeiter;
@@ -132,7 +140,10 @@ public class Auftrag implements Serializable{
 				+ "Kontakt: \n" + kontakt.toString() + "\n"
 				+ "Liegenschaft: \n" + liegenschaft.toString() + "\n"
 				+ "Info vor Ort: \t \t \t \t" + infoVorOrt + "\n"
-				+ "Messung: \n" + messung.toString() + "\n"
+				+ "Messung: \n" + messung1stufe1.toString() + "\n"
+				+ messung1stufe2.toString() + "\n"
+				+ messung2stufe1.toString() + "\n"
+				+ messung2stufe2.toString() + "\n"
 				+ "Kontrolleur: \n" + mitarbeiter.toString() + "\n"
 				+ "Kontrolldatum: \t \t \t \t" + datum.toString()
 

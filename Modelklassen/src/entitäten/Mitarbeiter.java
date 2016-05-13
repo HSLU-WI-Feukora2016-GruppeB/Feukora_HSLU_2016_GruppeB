@@ -29,11 +29,11 @@ import javax.persistence.TemporalType;
 @NamedQueries({
 	@NamedQuery(name = "Mitarbeiter.findByName", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.name=:name"),
 	@NamedQuery(name = "Mitarbeiter.findByVorname", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.vorname=:vorname"),
+	@NamedQuery(name = "Mitarbeiter.findByNameVorname", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.vorname=:vorname AND ma.name=:name"),
 	@NamedQuery(name = "Mitarbeiter.findByRolleIntern", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.rolleIntern=:rolleIntern"),
 	@NamedQuery(name = "Mitarbeiter.findById", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.id=:id"),
 	@NamedQuery(name = "Mitarbeiter.findByStrasse", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.strasse=:strasse"),
 	@NamedQuery(name = "Mitarbeiter.findByOrt", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.ort=:ort"),
-	@NamedQuery(name = "Mitarbeiter.findByrolleIntern", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.rolleIntern=:rolleIntern"),
 	@NamedQuery(name = "Mitarbeiter.findByUser", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.user=:user"),
 	@NamedQuery(name = "Mitarbeiter.findByArbeitetSeit", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.arbeitetSeit=:arbeitetSeit"),
 	@NamedQuery(name = "Mitarbeiter.findByArbeitetBis", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.arbeitetBis=:arbeitetBis")

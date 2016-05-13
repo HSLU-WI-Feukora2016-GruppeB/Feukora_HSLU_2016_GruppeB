@@ -17,7 +17,7 @@ import javax.persistence.NamedQuery;
 @Entity
 @NamedQueries({
 	@NamedQuery(name = "Ort.findByPlz", query = "SELECT o FROM Ort o WHERE o.plz=:plz"),
-	@NamedQuery(name = "Ort.findByOrt", query = "SELECT o FROM Ort o WHERE o.plz=:plz")
+	@NamedQuery(name = "Ort.findByOrtBez", query = "SELECT o FROM Ort o WHERE o.ortBez=:ortBez")
 })
 public class Ort implements Serializable {
 	
@@ -25,7 +25,7 @@ public class Ort implements Serializable {
 	private static final long serialVersionUID = -873608046753875813L;
 	@Id
 	private Integer plz;	
-	private String ort;
+	private String ortBez;
 	
 	//Standardkonstruktor*************************************************
 	public Ort(){
@@ -39,14 +39,14 @@ public class Ort implements Serializable {
 	}
 
 	public String getOrt() {
-		return ort;
+		return ortBez;
 	}
 	
 	@Override
 	public String toString() {
 		return "Ort:" + "\n" 
 				+ "PLZ: \n" + plz.toString() + "\n"
-				+ "Ort: \t \t \t" + ort + "\n";
+				+ "Ort: \t \t \t" + ortBez + "\n";
 	}
 	
 }

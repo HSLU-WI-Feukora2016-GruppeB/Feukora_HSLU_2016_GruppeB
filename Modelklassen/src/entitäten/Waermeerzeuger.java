@@ -20,6 +20,7 @@ import javax.persistence.NamedQuery;
 @NamedQueries({
 	@NamedQuery(name = "Waermeerzeuger.findById", query = "SELECT w FROM Waermeerzeuger w WHERE w.idWaermeerzeuger=:idWaermeerzeuger"),
 	@NamedQuery(name = "Waermeerzeuger.findByTyp", query = "SELECT w FROM Waermeerzeuger w WHERE w.waermeerzeugerTyp=:waermeerzeugerTyp"),
+	@NamedQuery(name = "Waermeerzeuger.findByBaujahr", query = "SELECT w FROM Waermeerzeuger w WHERE w.baujahr=:baujahr"),
 	@NamedQuery(name = "Waermeerzeuger.findByBrennstoff", query = "SELECT w FROM Waermeerzeuger w WHERE w.brennstoff=:brennstoff")
 })
 public class Waermeerzeuger implements Serializable{
@@ -32,6 +33,7 @@ public class Waermeerzeuger implements Serializable{
 	
 	private int brennstoff;
 	private String waermeerzeugerTyp;
+	private int baujahr;
 
 	
 	//standardkonstruktor
@@ -76,6 +78,14 @@ public class Waermeerzeuger implements Serializable{
 		this.waermeerzeugerTyp = waermeerzeugerTyp;
 	}
 	
+	public int getBaujahr() {
+		return baujahr;
+	}
+
+	public void setBaujahr(int baujahr) {
+		this.baujahr = baujahr;
+	}
+	
 	@Override
 	public String toString() {
 		return "Waermeerzeuger: " + "\n"
@@ -83,6 +93,8 @@ public class Waermeerzeuger implements Serializable{
 				+ "Waermeerzeugertyp: \t \t" + waermeerzeugerTyp
 				;
 	}
+
+	
 	
 	
 
