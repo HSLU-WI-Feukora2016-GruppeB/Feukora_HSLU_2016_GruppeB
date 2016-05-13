@@ -112,6 +112,7 @@ public class Auftrag implements Serializable{
 		this.terminArt = terminArt;
 	}
 	
+	
 	@Override
 	public String toString(){
 		return "Auftrag:" + "\n"
@@ -121,7 +122,11 @@ public class Auftrag implements Serializable{
 				+ "Info vor Ort: \t \t \t \t" + infoVorOrt + "\n"
 				+ "Messung: \n" + messung.toString() + "\n"
 				+ "Kontrolleur: \n" + kontrolleur.toString() + "\n"
-				+ "Kontrolldatum: \t \t \t \t" + datum.toString() + "\n"
+				+ "Kontrolldatum: \t \t \t \t" + datum.toString()
+
+				//hier muss Datum noch Formatiert werden!
+				
+				+ "\n"
 				+ "Kontrollart: \t \t \t \t" + terminArt + "\n";
 	}
 	
