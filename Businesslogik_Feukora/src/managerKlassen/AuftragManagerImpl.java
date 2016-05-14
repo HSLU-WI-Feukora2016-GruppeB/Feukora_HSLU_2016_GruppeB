@@ -1,6 +1,9 @@
 package managerKlassen;
 
 import entitäten.Auftrag;
+import entitäten.Kontakt;
+import entitäten.Liegenschaft;
+import entitäten.Mitarbeiter;
 import gruppeB.feukora.persister.AuftragDAO;
 import gruppeB.feukora.persister.AuftragDAOImpl;
 
@@ -51,9 +54,14 @@ public class AuftragManagerImpl implements AuftragManager {
 	}
 
 	@Override
+	public void deleteById(Integer auftragsNummer) throws Exception {
+		auftragDAO.deleteAuftragById(auftragsNummer);
+		
+	}
+
+	@Override
 	public List<Auftrag> findByAuftragsNummer(Integer auftragsNummer) {
-		// TODO Auto-generated method stub
-		return null;
+		return auftragDAO.findByAuftragsNummer(auftragsNummer);
 	}
 	
 	@Override
@@ -67,17 +75,17 @@ public class AuftragManagerImpl implements AuftragManager {
 	}
 
 	@Override
-	public List<Auftrag> findByMitarbeiter(String mitarbeiter) {
+	public List<Auftrag> findByMitarbeiter(Mitarbeiter mitarbeiter) {
 		return auftragDAO.findByMitarbeiter(mitarbeiter);
 	}
 
 	@Override
-	public List<Auftrag> findByKontakt(String kontakt) {
+	public List<Auftrag> findByKontakt(Kontakt kontakt) {
 		return auftragDAO.findByKontakt(kontakt);
 	}
 
 	@Override
-	public List<Auftrag> findByLiegenschaft(String liegenschaft) {
+	public List<Auftrag> findByLiegenschaft(Liegenschaft liegenschaft) {
 		return auftragDAO.findByLiegenschaft(liegenschaft);
 	}
 

@@ -40,6 +40,14 @@ public interface AuftragManager {
 	 * @throws Exception
 	 */
 	public void delete(Auftrag entity) throws Exception;
+	
+	/**
+	 * Löscht den übergebenen Auftrag mithilfe der auftragsnummer.
+	 * @param auftragsNummer
+	 * @return
+	 * @throws Exception
+	 */
+	public void deleteById(Integer auftragsNummer) throws Exception;
 
 	/**
 	 * Liefert eine Auftragsliste anhand der gesuchten Auftrags-Nummer.
