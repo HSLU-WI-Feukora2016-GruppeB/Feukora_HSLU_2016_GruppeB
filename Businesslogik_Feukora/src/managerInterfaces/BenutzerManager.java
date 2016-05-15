@@ -51,12 +51,12 @@ public interface BenutzerManager {
 	public void deleteById(Integer id) throws Exception;
 
 	/**
-	 * Liefert eine Benutzerliste anhand der gesuchten Benutzerid.
+	 * Liefert einen Benutzer anhand der gesuchten Benutzerid.
 	 * 
 	 * @param id
 	 * @return
 	 */
-	public List<Benutzer> findById(Integer id);
+	public Benutzer findById(Integer id);
 
 	/**
 	 * Liefert alle Benutzer zurück.
@@ -71,7 +71,7 @@ public interface BenutzerManager {
 	 * @param username
 	 * @return
 	 */
-	public List<Auftrag> findByUsername(String username);
+	public List<Benutzer> findByUsername(String username);
 	
 	/**
 	 * Liefert eine Benutzerliste anhand des gesuchten Passworts.
@@ -79,6 +79,6 @@ public interface BenutzerManager {
 	 * @param password
 	 * @return
 	 */
-	public List<Auftrag> findByPassword(String password);
+	public List<Benutzer> findByPassword(String password);
 
 }

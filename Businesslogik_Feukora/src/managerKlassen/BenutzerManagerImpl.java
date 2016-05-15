@@ -14,56 +14,56 @@ public class BenutzerManagerImpl implements BenutzerManager {
 	@Override
 	public Benutzer add(Benutzer entity) throws Exception {
 
-		if (entity.getAuftragsNummer() == null) {
-			auftragDAO.saveAuftrag(entity);
+		if (entity.getIdUser() == null) {
+			benutzerDAO.saveBenutzer(entity);
 			return entity;
 		} else {
 			throw new Exception(
 					"Entity ist bereits in der Datenbank vorhanden (Id = "
-							+ entity.getAuftragsNummer().intValue() + ")");
+							+ entity.getIdUser().intValue() + ")");
 		}
 	}
 
 	@Override
 	public Benutzer update(Benutzer entity) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+
+		if(entity.getIdUser() == null){
+			return add(entity);
+		}
+		
+		return benutzerDAO.updateBenutzer(entity);	
 	}
 
 	@Override
 	public void delete(Benutzer entity) throws Exception {
-		// TODO Auto-generated method stub
+		benutzerDAO.deleteBenutzer(entity);
 		
 	}
 
 	@Override
 	public void deleteById(Integer id) throws Exception {
-		// TODO Auto-generated method stub
+		benutzerDAO.deleteBenutzerById(id);
 		
 	}
 
 	@Override
-	public List<Benutzer> findById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Benutzer findById(Integer id) {
+		return benutzerDAO.findBenutzerById(id);
 	}
 
 	@Override
 	public List<Benutzer> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return benutzerDAO.findAllBenutzer();
 	}
 
 	@Override
-	public List<Auftrag> findByUsername(String username) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Benutzer> findByUsername(String username) {
+		return benutzerDAO.findBenutzerByUsername(username);
 	}
 
 	@Override
-	public List<Auftrag> findByPassword(String password) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Benutzer> findByPassword(String password) {
+		return benutzerDAO.findBenutzerByPassword(password);
 	}
 
 }
