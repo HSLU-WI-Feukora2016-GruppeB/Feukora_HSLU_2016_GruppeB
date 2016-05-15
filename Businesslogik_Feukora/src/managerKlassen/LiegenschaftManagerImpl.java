@@ -2,7 +2,9 @@ package managerKlassen;
 
 import java.util.List;
 
+import entitäten.Kontakt;
 import entitäten.Liegenschaft;
+import entitäten.Ort;
 import gruppeB.feukora.persister.LiegenschaftDAO;
 import gruppeB.feukora.persister.LiegenschaftDAOImpl;
 import managerInterfaces.LiegenschaftManager;
@@ -23,7 +25,7 @@ public class LiegenschaftManagerImpl implements LiegenschaftManager {
 	public Liegenschaft add(Liegenschaft entity) throws Exception {
 		
 		if (entity.getIdLiegenschaft() == null) {
-			liegenschaftDAO.addLiegenschaft(entity);
+			liegenschaftDAO.saveLiegenschaft(entity);
 			return entity;
 		} else {
 			throw new Exception(
@@ -49,28 +51,33 @@ public class LiegenschaftManagerImpl implements LiegenschaftManager {
 	}
 
 	@Override
+	public void deleteById(Integer idLiegenschaft) throws Exception {
+		liegenschaftDAO.deleteLiegenschaftById(idLiegenschaft);
+	}
+
+	@Override
 	public Liegenschaft findById(Integer id) {
 		return liegenschaftDAO.findLiegenschaftById(id);
 	}
 
 	@Override
-	public List<Liegenschaft> findAllLiegenschaft() {
+	public List<Liegenschaft> findAll() {
 		return liegenschaftDAO.findAllLiegenschaft();
 	}
 
 	@Override
-	public List<Liegenschaft> findByKontakt(String kontakt) {
-		return liegenschaftDAO.findByKontakt(kontakt);
+	public List<Liegenschaft> findByStrasse(String strasse) {
+		return liegenschaftDAO.findLiegenschaftByStrasse(strasse);
 	}
 
 	@Override
-	public List<Liegenschaft> findByOrt(String ort) {
-		return liegenschaftDAO.findByOrt(ort);
+	public List<Liegenschaft> findByKontakt(Kontakt kontakt) {
+		return liegenschaftDAO.findLiegenschaftByKontakt(kontakt);
 	}
 
 	@Override
-	public List<Liegenschaft> findByStrasse(String strasseInklNr) {
-		return liegenschaftDAO.findByStrasse(strasseInklNr);
+	public List<Liegenschaft> findByOrt(Ort ort) {
+		return liegenschaftDAO.findLiegenschaftByOrt(ort);
 	}
 
 }

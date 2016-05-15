@@ -63,6 +63,6 @@ public interface WaermeerzeugerManager {
 	 * @param brennstoff
 	 * @return
 	 */
-	public List<Waermeerzeuger> findByBrennstoff(String brennstoff);
+	public List<Waermeerzeuger> findByBrennstoff(int brennstoff);
 
 }

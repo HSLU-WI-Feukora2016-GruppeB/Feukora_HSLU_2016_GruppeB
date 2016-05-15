@@ -54,7 +54,7 @@ public interface AuftragManager {
 	 * @param auftragsNummer
 	 * @return
 	 */	
-	public List<Auftrag> findByAuftragsNummer(Integer auftragsNummer);
+	public Auftrag findByAuftragsNummer(Integer auftragsNummer);
 	
 	/**
 	 * Liefert alle Aufträge zurück.

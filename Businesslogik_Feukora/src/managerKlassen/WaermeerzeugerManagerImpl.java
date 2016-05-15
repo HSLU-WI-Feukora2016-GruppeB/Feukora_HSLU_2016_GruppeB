@@ -63,7 +63,7 @@ public class WaermeerzeugerManagerImpl implements WaermeerzeugerManager {
 	}
 
 	@Override
-	public List<Waermeerzeuger> findByBrennstoff(String brennstoff) {
+	public List<Waermeerzeuger> findByBrennstoff(int brennstoff) {
 		return waermeerzeugerDAO.findWaermeerzeugerByBrennstoff(brennstoff);
 	}
 

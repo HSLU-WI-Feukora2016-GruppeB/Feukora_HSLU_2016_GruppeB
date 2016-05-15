@@ -50,11 +50,20 @@ public class FeuerungsanlageManagerImpl implements FeuerungsanlageManager {
 	@Override
 	public void delete(Feuerungsanlage entity) throws Exception {
 		feuerungsanlageDAO.deleteFeuerungsanlage(entity);
-		
 	}
 
 	@Override
-	public List<Feuerungsanlage> findAllFeuerungsanlage() {
+	public void deleteById(Integer idFeuerungsanlage) throws Exception {
+		feuerungsanlageDAO.deleteFeuerungsanlageById(idFeuerungsanlage);
+	}
+
+	@Override
+	public Feuerungsanlage findById(Integer idFeuerungsanlage) throws Exception {
+		return feuerungsanlageDAO.findFeuerungsanlageById(idFeuerungsanlage);
+	}
+
+	@Override
+	public List<Feuerungsanlage> findAll() {
 		return feuerungsanlageDAO.findAllFeuerungsanlage();
 	}
 

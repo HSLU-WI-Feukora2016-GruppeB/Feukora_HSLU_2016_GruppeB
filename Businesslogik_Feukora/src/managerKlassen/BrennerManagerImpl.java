@@ -25,32 +25,45 @@ public class BrennerManagerImpl implements BrennerManager{
 
 	@Override
 	public Brenner update(Brenner entity) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		if(entity.getId() == null){
+			return add(entity);
+		}
+		return brennerDAO.updateBrenner(entity);
 	}
 
 	@Override
 	public void delete(Brenner entity) throws Exception {
-		// TODO Auto-generated method stub
-		
+		brennerDAO.deleteBrenner(entity);
+	}
+
+	@Override
+	public void deleteById(Integer idBrenner) throws Exception {
+		brennerDAO.deleteBrennerById(idBrenner);
+	}
+
+	@Override
+	public Brenner findById(Integer id) {
+		return brennerDAO.findBrennerById(id);
 	}
 
 	@Override
 	public List<Brenner> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return brennerDAO.findAllBrenner();
 	}
 
 	@Override
 	public List<Brenner> findByTyp(String brennerTyp) {
-		// TODO Auto-generated method stub
-		return null;
+		return brennerDAO.findBrennerByBrennertyp(brennerTyp);
 	}
 
 	@Override
-	public List<Brenner> findByArt(String brennerArt) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Brenner> findByArt(int brennerArt) {
+		return brennerDAO.findBrennerByBrennerart(brennerArt);
+	}
+
+	@Override
+	public List<Brenner> findByBaujahr(int baujahr) {
+		return brennerDAO.findBrennerByBaujahr(baujahr);
 	}
 
 }

@@ -37,13 +37,14 @@ public class Messung implements Serializable{
 	@Temporal(TemporalType.DATE)
 	private GregorianCalendar messDatum;
 	
+	//messdaten
 	private int russzahl;
 	
-	private int kohlenstoff;
+	private int coGehalt;
 	
-	private int oelanteil;
+	private boolean oelanteil;
 	
-	private int stickstoffgehalt;
+	private int no2gehalt;
 	
 	private int abgastemperatur;
 	
@@ -55,8 +56,8 @@ public class Messung implements Serializable{
 	
 	private int abgasverluste;
 	
+	//beurteilung
 	private boolean beurteilungOk;
-	
 	
 	private boolean beurteilungNotOk;
 	
@@ -70,12 +71,10 @@ public class Messung implements Serializable{
 	
 	private boolean noMgNotOk;
 	
+	//weiteres vorgehen
 	private boolean einregulierungInnert30;
 	
 	private boolean einregulierungNichtMoeglich;
-	
-	
-	
 	
 	
 	//standardkonstruktor
@@ -129,27 +128,27 @@ public class Messung implements Serializable{
 	}
 
 	public int getKohlenstoff() {
-		return kohlenstoff;
+		return coGehalt;
 	}
 
 	public void setKohlenstoff(int kohlenstoff) {
-		this.kohlenstoff = kohlenstoff;
+		this.coGehalt = kohlenstoff;
 	}
 
-	public int getOelanteil() {
+	public boolean isOelanteil() {
 		return oelanteil;
 	}
 
-	public void setOelanteil(int oelanteil) {
+	public void setOelanteil(boolean oelanteil) {
 		this.oelanteil = oelanteil;
 	}
 
 	public int getStickstoffgehalt() {
-		return stickstoffgehalt;
+		return no2gehalt;
 	}
 
 	public void setStickstoffgehalt(int stickstoffgehalt) {
-		this.stickstoffgehalt = stickstoffgehalt;
+		this.no2gehalt = stickstoffgehalt;
 	}
 
 	public int getAbgastemperatur() {
@@ -264,16 +263,14 @@ public class Messung implements Serializable{
 		this.einregulierungNichtMoeglich = einregulierungNichtMoeglich;
 	}
 	
-	
-
 	@Override
 	public String toString(){
 		return "Messung:" + "\n"
 				+ "Messdatum: \t \t \t" + this.printMessdatum(this.messDatum) + "\n"
 				+ "Russzahl: \t \t \t" + russzahl + "\n"
-				+ "Kohlenstoff: \t \t \t" + kohlenstoff + "\n"
+				+ "Kohlenstoff: \t \t \t" + coGehalt + "\n"
 				+ "Oelanteil: \t \t \t" + oelanteil + "\n"
-				+ "Stickstoffgehalt: \t \t \t" + stickstoffgehalt + "\n"
+				+ "Stickstoffgehalt: \t \t \t" + no2gehalt + "\n"
 				+ "Abgastemperatur: \t \t \t" + abgastemperatur + "\n"
 				+ "Waermeerzeugertemperatur: \t \t \t" + waermeerzeugertemperatur + "\n"
 				+ "Verbrennungstemperatur: \t \t \t" + verbrennungstemperatur + "\n"

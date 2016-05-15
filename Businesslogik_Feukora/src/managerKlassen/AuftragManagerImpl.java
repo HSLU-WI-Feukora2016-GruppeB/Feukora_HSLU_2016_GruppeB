@@ -60,8 +60,8 @@ public class AuftragManagerImpl implements AuftragManager {
 	}
 
 	@Override
-	public List<Auftrag> findByAuftragsNummer(Integer auftragsNummer) {
-		return auftragDAO.findByAuftragsNummer(auftragsNummer);
+	public Auftrag findByAuftragsNummer(Integer auftragsNummer) {
+		return auftragDAO.findAuftragByAuftragsNummer(auftragsNummer);
 	}
 	
 	@Override

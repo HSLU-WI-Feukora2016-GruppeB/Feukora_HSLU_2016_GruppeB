@@ -38,6 +38,19 @@ public interface BrennerManager {
 	public void delete(Brenner entity) throws Exception;
 	
 	/**
+	 * Löscht den Brenner mithilfe seiner Id.
+	 * @param entity
+	 * @throws Exception
+	 */
+	public void deleteById(Integer idBrenner) throws Exception;
+	
+	/**
+	 * Liefert Brenner mithilfe seiner Id.
+	 * @return
+	 */
+	public Brenner findById(Integer id);
+	
+	/**
 	 * Liefert Liste aller Brenner.
 	 * @return
 	 */
@@ -55,6 +68,13 @@ public interface BrennerManager {
 	 * @param brennerArt
 	 * @return
 	 */
-	public List<Brenner> findByArt(String brennerArt);
+	public List<Brenner> findByArt(int brennerArt);
+	
+	/**
+	 * Liefert alle Brenner mit angefragtem Baujahr.
+	 * @param baujahr
+	 * @return
+	 */
+	public List<Brenner> findByBaujahr(int baujahr);
 	
 }

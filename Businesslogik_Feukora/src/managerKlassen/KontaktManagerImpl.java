@@ -1,11 +1,12 @@
 package managerKlassen;
 
-import java.util.List;
-
 import entitäten.Kontakt;
-import entitäten.RolleExtern;
+import entitäten.Ort;
 import gruppeB.feukora.persister.KontaktDAO;
 import gruppeB.feukora.persister.KontaktDAOImpl;
+
+import java.util.List;
+
 import managerInterfaces.KontaktManager;
 
 
@@ -49,33 +50,49 @@ public class KontaktManagerImpl implements KontaktManager{
 	}
 
 	@Override
-	public List<Kontakt> findKontaktById(Integer id){
+	public void deleteById(Integer idKontakt) throws Exception {
+		kontaktDAO.deleteKontaktById(idKontakt);
+		
+	}
+
+	@Override
+	public Kontakt findById(Integer id) {
 		return kontaktDAO.findKontaktById(id);
 	}
-	
+
 	@Override
 	public List<Kontakt> findAll() {
-		return kontaktDAO.findAll();
+		return kontaktDAO.findAllKontakte();
 	}
 
 	@Override
-	public List<Kontakt> findKontaktByName(String name) {
-		return kontaktDAO.findKontaktByName(name);
-	}
-
-	@Override
-	public List<Kontakt> findKontaktByVorname(String vorname) {
+	public List<Kontakt> findByVorname(String vorname) {
 		return kontaktDAO.findKontaktByVorname(vorname);
 	}
 
 	@Override
-	public List<Kontakt> findKontaktByOrt(String ort) {
+	public List<Kontakt> findByName(String name) {
+		return kontaktDAO.findKontaktByName(name);
+	}
+
+	@Override
+	public List<Kontakt> findByNameVorname(String name, String vorname) {
+		return kontaktDAO.findKontaktByNameVorname(name, vorname);
+	}
+
+	@Override
+	public List<Kontakt> findByOrt(Ort ort) {
 		return kontaktDAO.findKontaktByOrt(ort);
 	}
 
 	@Override
-	public List<Kontakt> findKontaktByRolleExtern(RolleExtern rolleExtern) {
+	public List<Kontakt> findByRolleExtern(int rolleExtern) {
 		return kontaktDAO.findKontaktByRolleExtern(rolleExtern);
+	}
+
+	@Override
+	public List<Kontakt> findByStrasse(String strasse) {
+		return kontaktDAO.findKontaktByStrasse(strasse);
 	}
 
 }

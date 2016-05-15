@@ -61,11 +61,17 @@ public class Brenner implements Serializable{
 		String brennerA = null;
 		
 		switch (this.brennerArt){
-			case 1: brennerA = "Gebläse";
+			case 1: brennerA = "Gebläsebrenner 1-stufig mit Heizöl";
 				break;
-			case 2: brennerA = "Athmosphärisch";
+			case 2: brennerA = "Gebläsebrenner 2-stufig mit Heizöl";
 				break;
-			case 3: brennerA = "Verdampfer";
+			case 3: brennerA = "Verdampfungsbrenner";
+				break;
+			case 4: brennerA = "Gebläsebrenner 1-stufig mit Gas";
+				break;
+			case 5: brennerA = "Gebläsebrenner 2-stufig mit Gas";
+				break;
+			case 6: brennerA = "Athmosphärischer Brenner";
 				break;
 		}
 		

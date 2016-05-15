@@ -2,7 +2,6 @@ package managerInterfaces;
 
 import java.util.List;
 
-import entitäten.Auftrag;
 import entitäten.Benutzer;
 
 /**

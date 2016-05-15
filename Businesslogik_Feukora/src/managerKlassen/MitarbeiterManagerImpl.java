@@ -3,7 +3,6 @@ package managerKlassen;
 import java.util.List;
 
 import entitäten.Mitarbeiter;
-import entitäten.RolleIntern;
 import gruppeB.feukora.persister.MitarbeiterDAO;
 import gruppeB.feukora.persister.MitarbeiterDAOImpl;
 import managerInterfaces.MitarbeiterManager;
@@ -65,7 +64,7 @@ public class MitarbeiterManagerImpl implements MitarbeiterManager {
 	}
 
 	@Override
-	public List<Mitarbeiter> findByRolleIntern(RolleIntern rolleIntern) {
+	public List<Mitarbeiter> findByRolleIntern(int rolleIntern) {
 		return mitarbeiterDAO.findByRolleIntern(rolleIntern);
 	}
 

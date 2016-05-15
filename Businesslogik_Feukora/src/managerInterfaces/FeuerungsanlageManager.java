@@ -42,10 +42,24 @@ public interface FeuerungsanlageManager {
 	public void delete(Feuerungsanlage entity) throws Exception;
 	
 	/**
+	 * Löscht die mitgegebene Feuerungsanlage mithilfe ihrer ID.
+	 * @param idFeuerungsanlage
+	 * @throws Exception
+	 */
+	public void deleteById(Integer idFeuerungsanlage) throws Exception;
+	
+	/**
+	 * Liefert die mitgegebene Feuerungsanlage mithilfe ihrer ID.
+	 * @param idFeuerungsanlage
+	 * @throws Exception
+	 */
+	public Feuerungsanlage findById(Integer idFeuerungsanlage) throws Exception;
+	
+	/**
 	 * Liefert Liste aller Feuerungsanlagen.
 	 * @return
 	 */
-	public List<Feuerungsanlage> findAllFeuerungsanlage();
+	public List<Feuerungsanlage> findAll();
 	
 	/**
 	 * Liefert alle Feuerungsanlagen für die gesuchte Liegenschaft.

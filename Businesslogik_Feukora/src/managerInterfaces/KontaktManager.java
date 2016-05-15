@@ -3,7 +3,7 @@ package managerInterfaces;
 import java.util.List;
 
 import entitäten.Kontakt;
-import entitäten.RolleExtern;
+import entitäten.Ort;
 
 /**
  * Liefert Funktionalität eines Kontaktes.
@@ -33,12 +33,19 @@ public interface KontaktManager {
 	 * @throws Exception
 	 */
 	public void delete(Kontakt entity) throws Exception;
+	
+	/**
+	 * Löscht den mitgegebenen Kontakt mithilfe seiner Id.
+	 * @param idKontakt
+	 * @throws Exception
+	 */
+	public void deleteById(Integer idKontakt) throws Exception;
 
 	/**
 	 * Liefert Liste von Kontakten mit der mitgegebenen ID.
 	 * @return
 	 */
-	public List<Kontakt> findKontaktById(Integer id);
+	public Kontakt findById(Integer id);
 	
 	/**
 	 * Liefert Liste aller Kontakte.
@@ -51,27 +58,42 @@ public interface KontaktManager {
 	 * @param name
 	 * @return
 	 */
-	public List<Kontakt> findKontaktByName(String name);
+	public List<Kontakt> findByName(String name);
 	
 	/**
 	 * Liefert alle Kontakte mit gesuchtem Vornamen.
 	 * @param vorname
 	 * @return
 	 */
-	public List<Kontakt> findKontaktByVorname(String vorname);
+	public List<Kontakt> findByVorname(String vorname);
+	
+	/**
+	 * Liefert alle Kontakte mit gesuchtem Vornamen.
+	 * @param name
+	 * @param vorname	 
+	 * @return
+	 */
+	public List<Kontakt> findByNameVorname(String name, String vorname);
 	
 	/**
 	 * Liefert alle Kontakte mit gesuchtem Ort.
 	 * @param ort
 	 * @return
 	 */
-	public List<Kontakt> findKontaktByOrt (String ort);
+	public List<Kontakt> findByOrt (Ort ort);
 	
 	/**
 	 * Liefert alle Mitarbeiter mit gesuchter Rolle.
 	 * @param rolleIntern
 	 * @return
 	 */
-	public List<Kontakt> findKontaktByRolleExtern (RolleExtern rolleExtern);
+	public List<Kontakt> findByRolleExtern (int rolleExtern);
+	
+	/**
+	 * Liefert alle Mitarbeiter mit gesuchter Strasse.
+	 * @param strasse
+	 * @return
+	 */
+	public List<Kontakt> findByStrasse (String strasse);
 
 }

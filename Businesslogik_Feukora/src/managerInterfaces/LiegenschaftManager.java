@@ -2,7 +2,9 @@ package managerInterfaces;
 
 import java.util.List;
 
+import entitäten.Kontakt;
 import entitäten.Liegenschaft;
+import entitäten.Ort;
 
 /**
  * Verwaltet eine Liegenschaft und alle Funktionen.
@@ -36,6 +38,14 @@ public interface LiegenschaftManager {
 	 * @throws Exception
 	 */
 	public void delete(Liegenschaft entity) throws Exception;
+	
+	/**
+	 * Löscht die übergebene Liegenschaft mithilfe ihrer ID.
+	 * @param idLiegenschaft
+	 * @return
+	 * @throws Exception
+	 */
+	public void deleteById(Integer idLiegenschaft) throws Exception;
 
 	/**
 	 * Liefert die Liegenschaft die mit der Id angefragt wurde. 
@@ -48,28 +58,28 @@ public interface LiegenschaftManager {
 	 * Liefert alle Liegenschaften zurück.
 	 * @return
 	 */
-	public List<Liegenschaft> findAllLiegenschaft();
+	public List<Liegenschaft> findAll();
 	
 	/**
 	 * Liefert eine Liegenschaftsliste anhand des gesuchten Kontakts.
 	 * @param kontakt
 	 * @return
 	 */
-	public List<Liegenschaft> findByKontakt(String kontakt);
+	public List<Liegenschaft> findByKontakt(Kontakt kontakt);
 
 	/**
 	 * Liefert eine Liegenschaftsliste anhand des gesuchten Orts.
 	 * @param ort
 	 * @return
 	 */
-	public List<Liegenschaft> findByOrt(String ort);
+	public List<Liegenschaft> findByOrt(Ort ort);
 	
 	/**
 	 * Liefert eine Liegenschaftsliste anhand der gesuchten Strasse.
 	 * @param strasseInklNr
 	 * @return
 	 */	
-	public List<Liegenschaft> findByStrasse(String strasseInklNr);
+	public List<Liegenschaft> findByStrasse(String strasse);
 
 	
 }

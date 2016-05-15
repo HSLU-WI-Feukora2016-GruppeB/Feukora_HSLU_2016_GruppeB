@@ -3,7 +3,6 @@ package managerInterfaces;
 import java.util.List;
 
 import entitäten.Mitarbeiter;
-import entitäten.RolleIntern;
 
 
 /**
@@ -64,6 +63,6 @@ public interface MitarbeiterManager {
 	 * @param rolleIntern
 	 * @return
 	 */
-	public List<Mitarbeiter> findByRolleIntern (RolleIntern rolleIntern);
+	public List<Mitarbeiter> findByRolleIntern (int rolleIntern);
 
 }
