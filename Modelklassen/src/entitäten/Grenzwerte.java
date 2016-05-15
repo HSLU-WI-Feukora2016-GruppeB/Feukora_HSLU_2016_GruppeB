@@ -12,7 +12,7 @@ public class Grenzwerte {
 	
 	private int maxRusszahl;
 	
-	private int maxKohlenstoff;
+	private int maxCoGehalt;
 	
 	private boolean hasOelanteil;
 	
@@ -29,7 +29,7 @@ public class Grenzwerte {
 	public Grenzwerte(int maxRusszahl, int maxKohlenstoff,
 			boolean hasOelanteil, int maxNo2mg, int maxAbgasverluste) {
 		this.maxRusszahl = maxRusszahl;
-		this.maxKohlenstoff = maxKohlenstoff;
+		this.maxCoGehalt = maxKohlenstoff;
 		this.hasOelanteil = hasOelanteil;
 		this.maxNo2mg = maxNo2mg;
 		this.maxAbgasverluste = maxAbgasverluste;
@@ -43,12 +43,12 @@ public class Grenzwerte {
 		this.maxRusszahl = maxRusszahl; 
 	}
 
-	public int getMaxKohlenstoff() {
-		return maxKohlenstoff;
+	public int getMaxCoGehalt() {
+		return maxCoGehalt;
 	}
 
-	public void setMaxKohlenstoff(int maxKohlenstoff) {
-		this.maxKohlenstoff = maxKohlenstoff;
+	public void setMaxCoGehalt(int coGehalt) {
+		this.maxCoGehalt = coGehalt;
 	}
 
 	public boolean isHasOelanteil() {

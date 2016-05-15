@@ -61,6 +61,7 @@ public class Messung implements Serializable{
 	
 	private boolean beurteilungNotOk;
 	
+	//true wenn nicht ok
 	private boolean russzahlNotOk;
 	
 	private boolean oelanteilenNotOk;
@@ -127,12 +128,12 @@ public class Messung implements Serializable{
 		this.russzahl = russzahl;
 	}
 
-	public int getKohlenstoff() {
+	public int getCoGehalt() {
 		return coGehalt;
 	}
 
-	public void setKohlenstoff(int kohlenstoff) {
-		this.coGehalt = kohlenstoff;
+	public void setCoGehalt(int coGehalt) {
+		this.coGehalt = coGehalt;
 	}
 
 	public boolean isOelanteil() {
@@ -143,12 +144,12 @@ public class Messung implements Serializable{
 		this.oelanteil = oelanteil;
 	}
 
-	public int getStickstoffgehalt() {
+	public int getNo2Gehalt() {
 		return no2gehalt;
 	}
 
-	public void setStickstoffgehalt(int stickstoffgehalt) {
-		this.no2gehalt = stickstoffgehalt;
+	public void setNo2Gehalt(int no2gehalt) {
+		this.no2gehalt = no2gehalt;
 	}
 
 	public int getAbgastemperatur() {

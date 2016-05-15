@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import entitäten.Grenzwerte;
+import entitäten.Messung;
 
 /**
  * Kontrolliert Messung anhand der jeweiligen Grenzwerte
@@ -23,7 +24,7 @@ public class GrenzwerteManagerImpl {
 	 * mit den jeweiligen Grenzwerten.
 	 * 
 	 * Alle Brenner mit Brennstoff Gas haben nur 3 Grenzwerte im gegensatz zu
-	 * den HEizölbrennern mit 5. 
+	 * den Heizölbrennern mit 5. 
 	 * Diese sollten default mit 0, null, resp false gefüllt werden 
 	 * damit sie übersprungen werden können.
 	 * 
@@ -73,8 +74,38 @@ public class GrenzwerteManagerImpl {
 		
 	}
 	
-	public void test(){
-		Grenzwerte gWerte = grenzwertMap.get(1).get(1);
+	public void checkGrenzwerte(Messung messung, int brennerTyp, int messStufe){
+		Grenzwerte gWerte = grenzwertMap.get(brennerTyp).get(messStufe);
+			
+		messung.setRusszahlNotOk(isRusszahlNOK(messung, gWerte));
+		
+		messung.setCoMgNotOk(isCoGehaltNOK(messung, gWerte));
+		
+		messung.setOelanteilenNotOk(isOelanteilNOK(messung, gWerte));
+		
+		messung.setNoMgNotOk(isNo2GehaltNOK(messung, gWerte));
+			
+		messung.setAbgasverlusteNotOk(isAbgasverlusteNOK(messung, gWerte));
+	}
+
+	private boolean isAbgasverlusteNOK(Messung messung, Grenzwerte gWerte) {
+		return messung.getAbgasverluste()<gWerte.getMaxAbgasverluste();
+	}
+
+	private boolean isNo2GehaltNOK(Messung messung, Grenzwerte gWerte) {
+		return messung.getNo2Gehalt()<gWerte.getMaxNo2mg();
+	}
+
+	private boolean isOelanteilNOK(Messung messung, Grenzwerte gWerte) {
+		return messung.isOelanteil()!=gWerte.isHasOelanteil();
+	}
+
+	private boolean isCoGehaltNOK(Messung messung, Grenzwerte gWerte) {
+		return messung.getCoGehalt()<gWerte.getMaxCoGehalt();
+	}
+
+	private boolean isRusszahlNOK(Messung messung, Grenzwerte gWerte) {
+		return messung.getRusszahl()<gWerte.getMaxRusszahl();
 	}
 
 }
