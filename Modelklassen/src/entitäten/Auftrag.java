@@ -36,16 +36,16 @@ public class Auftrag implements Serializable{
 	
 	private String infoVorOrt;
 	
-	@OneToMany
+	@OneToOne(cascade=CascadeType.ALL)
 	private Messung messung1stufe1;
 	
-	@OneToMany
+	@OneToOne(cascade=CascadeType.ALL)
 	private Messung messung1stufe2;
 	
-	@OneToMany
+	@OneToOne(cascade=CascadeType.ALL)
 	private Messung messung2stufe1;
 	
-	@OneToMany
+	@OneToOne(cascade=CascadeType.ALL)
 	private Messung messung2stufe2;
 	
 	@ManyToOne
@@ -98,6 +98,38 @@ public class Auftrag implements Serializable{
 
 	public void setLiegenschaft(Liegenschaft liegenschaft) {
 		this.liegenschaft = liegenschaft;
+	}
+
+	public Messung getMessung1stufe1() {
+		return messung1stufe1;
+	}
+
+	public void setMessung1stufe1(Messung messung1stufe1) {
+		this.messung1stufe1 = messung1stufe1;
+	}
+
+	public Messung getMessung1stufe2() {
+		return messung1stufe2;
+	}
+
+	public void setMessung1stufe2(Messung messung1stufe2) {
+		this.messung1stufe2 = messung1stufe2;
+	}
+
+	public Messung getMessung2stufe1() {
+		return messung2stufe1;
+	}
+
+	public void setMessung2stufe1(Messung messung2stufe1) {
+		this.messung2stufe1 = messung2stufe1;
+	}
+
+	public Messung getMessung2stufe2() {
+		return messung2stufe2;
+	}
+
+	public void setMessung2stufe2(Messung messung2stufe2) {
+		this.messung2stufe2 = messung2stufe2;
 	}
 
 	public Mitarbeiter getAusgeführtDurch() {

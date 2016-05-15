@@ -56,7 +56,11 @@ public class Brenner implements Serializable{
 		this.idBrenner = id;
 	}
 
-	public String getBrennerArt() {
+	public int getBrennerArt(){
+		return brennerArt;
+	}
+	
+	public String getBrennerArtString() {
 		
 		String brennerA = null;
 		

@@ -9,6 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  * Eine Feuerungsanlage besteht aus einem Brenner 
@@ -32,9 +33,6 @@ public class Feuerungsanlage implements Serializable{
 	@GeneratedValue
 	private Integer idFeuerungsanlage;
 	
-	@OneToMany
-	private Liegenschaft liegenschaft;
-	
 	@ManyToOne
 	private Brenner brenner;
 	
@@ -47,8 +45,7 @@ public class Feuerungsanlage implements Serializable{
 		
 	}
 	
-	public Feuerungsanlage(Liegenschaft liegenschaft, Brenner brenner, Waermeerzeuger waermeerzeuger){
-		this.liegenschaft = liegenschaft;
+	public Feuerungsanlage(Brenner brenner, Waermeerzeuger waermeerzeuger){
 		this.brenner = brenner;
 		this.waermeerzeuger = waermeerzeuger;
 	}
@@ -62,14 +59,6 @@ public class Feuerungsanlage implements Serializable{
 		this.idFeuerungsanlage = idFeuerungsanlage;
 	}
 
-	public Liegenschaft getLiegenschaft() {
-		return liegenschaft;
-	}
-
-	public void setLiegenschaft(Liegenschaft liegenschaft) {
-		this.liegenschaft = liegenschaft;
-	}
-	
 	public Brenner getBrenner() {
 		return brenner;
 	}

@@ -75,6 +75,10 @@ public class GrenzwerteManagerImpl {
 	}
 	
 	public void checkGrenzwerte(Messung messung, int brennerTyp, int messStufe){
+		if(messung==null){
+			return;
+		} 
+		
 		Grenzwerte gWerte = grenzwertMap.get(brennerTyp).get(messStufe);
 			
 		messung.setRusszahlNotOk(isRusszahlNOK(messung, gWerte));

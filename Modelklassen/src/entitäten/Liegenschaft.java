@@ -9,6 +9,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 
 /**
  * Eine Liegenschaft stellt ein Haus oder eine Wohnung dar, 
@@ -45,12 +46,46 @@ public class Liegenschaft implements Serializable{
 	@ManyToOne
 	private Ort ort;
 	
+	@OneToOne
+	private Feuerungsanlage feuerungsanlage;
+	
 	//standardkonstruktor**************************************************
 	public Liegenschaft(){
 		
 	}
 	
-	
+	public Liegenschaft(Kontakt kontakt, String infoVorOrt, String strasse,
+			Ort ort, Feuerungsanlage feuerungsanlage) {
+		this.kontakt = kontakt;
+		this.infoVorOrt = infoVorOrt;
+		this.strasse = strasse;
+		this.ort = ort;
+		this.feuerungsanlage = feuerungsanlage;
+	}
+
+	public String getStrasse() {
+		return strasse;
+	}
+
+	public void setStrasse(String strasse) {
+		this.strasse = strasse;
+	}
+
+	public Ort getOrt() {
+		return ort;
+	}
+
+	public void setOrt(Ort ort) {
+		this.ort = ort;
+	}
+
+	public Feuerungsanlage getFeuerungsanlage() {
+		return feuerungsanlage;
+	}
+
+	public void setFeuerungsanlage(Feuerungsanlage feuerungsanlage) {
+		this.feuerungsanlage = feuerungsanlage;
+	}
 
 	//getter&setter********************************************************
 	public Integer getIdLiegenschaft() {
@@ -67,22 +102,6 @@ public class Liegenschaft implements Serializable{
 
 	public void setKontakt(Kontakt kontakt) {
 		this.kontakt = kontakt;
-	}
-
-	public String getStrasseInklNr() {
-		return strasse;
-	}
-
-	public void setStrasseInklNr(String strasseInklNr) {
-		this.strasse = strasseInklNr;
-	}
-
-	public Ort getOrtInklPlz() {
-		return ort;
-	}
-
-	public void setOrtInklPlz(Ort ortInklPlz) {
-		this.ort = ortInklPlz;
 	}
 
 	public String getInfoVorOrt() {
