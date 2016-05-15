@@ -40,6 +40,14 @@ public class Waermeerzeuger implements Serializable{
 	public Waermeerzeuger(){
 		
 	}
+	
+	public Waermeerzeuger(int brennstoff, String waermeerzeugerTyp, int baujahr) {
+		super();
+		this.brennstoff = brennstoff;
+		this.waermeerzeugerTyp = waermeerzeugerTyp;
+		this.baujahr = baujahr;
+	}
+
 
 	//getter&setter********************************************************
 	public Integer getIdWaermeerzeuger() {

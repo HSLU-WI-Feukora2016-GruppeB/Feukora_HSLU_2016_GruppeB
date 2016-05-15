@@ -66,10 +66,23 @@ public class Mitarbeiter implements Serializable{
 		
 	}
 	
-	public Mitarbeiter(String vorname, String name){
-		//TODO
+	public Mitarbeiter(String vorname, String name, String strasse, Ort ort,
+			String tel, String email, int rolleIntern, Benutzer user,
+			float lohn, GregorianCalendar arbeitetSeit,
+			GregorianCalendar arbeitetBis) {
+		this.vorname = vorname;
+		this.name = name;
+		this.strasse = strasse;
+		this.ort = ort;
+		this.tel = tel;
+		this.email = email;
+		this.rolleIntern = rolleIntern;
+		this.user = user;
+		this.lohn = lohn;
+		this.arbeitetSeit = arbeitetSeit;
+		this.arbeitetBis = arbeitetBis;
 	}
-	
+
 	//getter&setter********************************************************
 	public Integer getIdMitarbeiter() {
 		return idMitarbeiter;

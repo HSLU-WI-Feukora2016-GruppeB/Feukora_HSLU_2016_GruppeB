@@ -175,28 +175,6 @@ public class Auftrag implements Serializable{
 		this.terminArt = terminArt;
 	}
 	
-	
-	@Override
-	public String toString(){
-		return "Auftrag:" + "\n"
-				+ "Auftragsdatum: \t \t \t \t" + this.printDatum(this.datum)+ "\n"
-				+ "Termin \t \t \t" + zeitSlot + "\n"
-				+ "Auftragsnummer: \t \t \t" + auftragsNummer + "\n" + "\n"
-				
-				+ "Kontakt: \n" + kontakt.toString() + "\n"
-				+ "Liegenschaft: \n" + liegenschaft.toString() + "\n"
-				+ "Info vor Ort: \t \t \t \t" + liegenschaft.getInfoVorOrt() + "\n"+ "\n"
-				
-				+ "Messung: \n" 
-				+ messung1stufe1.toString() + "\n"
-				+ messung1stufe2.toString() + "\n"
-				+ messung2stufe1.toString() + "\n"
-				+ messung2stufe2.toString() + "\n"+ "\n"
-				
-				+ "Kontrolleur: \n" + mitarbeiter.toString() + "\n"
-				+ "Kontrollart: \t \t \t \t" + terminArt + "\n";
-	}
-
 	public int getZeitSlot(){
 		return zeitSlot;
 	}
@@ -226,6 +204,28 @@ public class Auftrag implements Serializable{
 		this.zeitSlot = zeitSlot;
 	}
 	
+	
+	@Override
+	public String toString(){
+		return "Auftrag:" + "\n"
+				+ "Auftragsdatum: \t \t \t \t" + this.printDatum(this.datum)+ "\n"
+				+ "Termin \t \t \t" + zeitSlot + "\n"
+				+ "Auftragsnummer: \t \t \t" + auftragsNummer + "\n" + "\n"
+				
+				+ "Kontakt: \n" + kontakt.toString() + "\n"
+				+ "Liegenschaft: \n" + liegenschaft.toString() + "\n"
+				+ "Info vor Ort: \t \t \t \t" + liegenschaft.getInfoVorOrt() + "\n"+ "\n"
+				
+				+ "Messung: \n" 
+				+ messung1stufe1.toString() + "\n"
+				+ messung1stufe2.toString() + "\n"
+				+ messung2stufe1.toString() + "\n"
+				+ messung2stufe2.toString() + "\n"+ "\n"
+				
+				+ "Kontrolleur: \n" + mitarbeiter.toString() + "\n"
+				+ "Kontrollart: \t \t \t \t" + terminArt + "\n";
+	}
+
 	
 
 }
