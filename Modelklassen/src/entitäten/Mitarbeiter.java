@@ -50,7 +50,7 @@ public class Mitarbeiter implements Serializable{
 	private String strasse;
 	@ManyToOne
 	private Ort ort;
-	private int tel;
+	private String tel;
 	private String email;
 	private int rolleIntern;
 	@OneToOne
@@ -64,6 +64,10 @@ public class Mitarbeiter implements Serializable{
 	//standardkonstruktor**************************************************
 	public Mitarbeiter(){
 		
+	}
+	
+	public Mitarbeiter(String vorname, String name){
+		//TODO
 	}
 	
 	//getter&setter********************************************************
@@ -107,11 +111,11 @@ public class Mitarbeiter implements Serializable{
 		this.ort = ort;
 	}
 
-	public int getTel() {
+	public String getTel() {
 		return tel;
 	}
 
-	public void setTel(int tel) {
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 

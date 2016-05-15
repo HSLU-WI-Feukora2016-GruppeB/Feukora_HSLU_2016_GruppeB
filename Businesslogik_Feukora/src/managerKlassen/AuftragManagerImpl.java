@@ -108,6 +108,12 @@ public class AuftragManagerImpl implements AuftragManager {
 	}
 
 	@Override
+	public List<Auftrag> findByDateAndMitarbeiter(GregorianCalendar startdatum,
+			GregorianCalendar enddatum, Mitarbeiter mitarbeiter) {
+		return auftragDAO.findByDatumAndMitarbeiter(startdatum, enddatum, mitarbeiter);
+	}
+
+	@Override
 	public List<Auftrag> findByKontakt(Kontakt kontakt) {
 		return auftragDAO.findByKontakt(kontakt);
 	}

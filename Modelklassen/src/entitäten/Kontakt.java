@@ -46,7 +46,7 @@ public class Kontakt implements Serializable{
 	@ManyToOne
 	private Ort ort;
 
-	private int tel;
+	private String tel;
 
 	private String email;
 
@@ -57,7 +57,7 @@ public class Kontakt implements Serializable{
 		
 	}
 	
-	public Kontakt(String vorname, String name, String strasse, Ort ort, int tel, String email, int rolleExtern){
+	public Kontakt(String vorname, String name, String strasse, Ort ort, String tel, String email, int rolleExtern){
 		this.vorname = vorname;
 		this.nachname = name;
 		this.strasse = strasse;
@@ -108,11 +108,11 @@ public class Kontakt implements Serializable{
 		this.ort = adresse;
 	}
 
-	public int getTel() {
+	public String getTel() {
 		return tel;
 	}
 
-	public void setTel(int tel) {
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 

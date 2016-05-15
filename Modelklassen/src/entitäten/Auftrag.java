@@ -19,7 +19,8 @@ import javax.persistence.*;
 	@NamedQuery(name = "Auftrag.findByKontakt", query = "SELECT a FROM Auftrag a WHERE a.kontakt=:kontakt"),
 	@NamedQuery(name = "Auftrag.findByLiegenschaft", query = "SELECT a FROM Auftrag a WHERE a.liegenschaft=:liegenschaft"),
 	@NamedQuery(name = "Auftrag.findByMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.mitarbeiter=:mitarbeiter"),
-	@NamedQuery(name = "Auftrag.findByDatum", query = "SELECT a FROM Auftrag a WHERE a.datum=:datum")
+	@NamedQuery(name = "Auftrag.findByDatum", query = "SELECT a FROM Auftrag a WHERE a.datum=:datum"),
+	@NamedQuery(name = "Auftrag.findByDatumAndMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.datum>=:startdatum AND a.datum<=:enddatum AND a.mitarbeiter=:mitarbeiter")
 })
 public class Auftrag implements Serializable{
 	
@@ -33,8 +34,6 @@ public class Auftrag implements Serializable{
 	
 	@ManyToOne
 	private Liegenschaft liegenschaft;
-	
-	private String infoVorOrt;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	private Messung messung1stufe1;
@@ -54,6 +53,8 @@ public class Auftrag implements Serializable{
 	@Temporal(TemporalType.DATE)
 	private GregorianCalendar datum;
 	
+	private int zeitSlot;
+	
 	private int terminArt;		
 	
 	
@@ -63,16 +64,13 @@ public class Auftrag implements Serializable{
 	}
 	
 	public Auftrag(Kontakt kontakt, Liegenschaft liegenschaft,
-			String infoVorOrt, Messung messung1stufe1, Messung messung1stufe2,
-			Messung messung2stufe1, Messung messung2stufe2,
-			Mitarbeiter mitarbeiter, GregorianCalendar datum, int terminArt) {
+			Mitarbeiter mitarbeiter, GregorianCalendar datum, int zeitSlot, int terminArt) {
 		this.kontakt = kontakt;
 		this.liegenschaft = liegenschaft;
-		this.infoVorOrt = infoVorOrt;
-		this.messung1stufe1 = messung1stufe1;
-		this.messung1stufe2 = messung1stufe2;
-		this.messung2stufe1 = messung2stufe1;
-		this.messung2stufe2 = messung2stufe2;
+		this.mitarbeiter = mitarbeiter;
+		this.datum = datum;
+		this.zeitSlot = zeitSlot;
+		this.terminArt = terminArt;
 	}
 
 	//getter&setter********************************************************
@@ -157,14 +155,6 @@ public class Auftrag implements Serializable{
 		this.datum = datum;
 	}
 
-	public String getInfoVorOrt() {
-		return infoVorOrt;
-	}
-
-	public void setInfoVorOrt(String infoVorOrt) {
-		this.infoVorOrt = infoVorOrt;
-	}
-	
 	public String getTerminArt() {
 		
 		String terminA = null;
@@ -190,11 +180,12 @@ public class Auftrag implements Serializable{
 	public String toString(){
 		return "Auftrag:" + "\n"
 				+ "Auftragsdatum: \t \t \t \t" + this.printDatum(this.datum)+ "\n"
+				+ "Termin \t \t \t" + zeitSlot + "\n"
 				+ "Auftragsnummer: \t \t \t" + auftragsNummer + "\n" + "\n"
 				
 				+ "Kontakt: \n" + kontakt.toString() + "\n"
 				+ "Liegenschaft: \n" + liegenschaft.toString() + "\n"
-				+ "Info vor Ort: \t \t \t \t" + infoVorOrt + "\n"+ "\n"
+				+ "Info vor Ort: \t \t \t \t" + liegenschaft.getInfoVorOrt() + "\n"+ "\n"
 				
 				+ "Messung: \n" 
 				+ messung1stufe1.toString() + "\n"
@@ -204,6 +195,35 @@ public class Auftrag implements Serializable{
 				
 				+ "Kontrolleur: \n" + mitarbeiter.toString() + "\n"
 				+ "Kontrollart: \t \t \t \t" + terminArt + "\n";
+	}
+
+	public int getZeitSlot(){
+		return zeitSlot;
+	}
+	
+	public String getZeitSlotString() {
+		String termin = null;
+		
+		switch (this.zeitSlot) {
+		case 1:
+			termin = "8:00 - 10:00 Uhr";
+			break;
+		case 2:
+			termin = "10:00 - 12:00 Uhr";
+			break;
+		case 3:
+			termin = "13:00 - 15:00 Uhr";
+			break;
+		case 4:
+			termin = "15:00 - 17:00 Uhr";
+			break;
+		}
+		
+		return termin;
+	}
+
+	public void setZeitSlot(int zeitSlot) {
+		this.zeitSlot = zeitSlot;
 	}
 	
 	

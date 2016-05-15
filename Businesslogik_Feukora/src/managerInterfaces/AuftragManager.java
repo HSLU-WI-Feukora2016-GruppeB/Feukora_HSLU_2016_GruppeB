@@ -77,6 +77,17 @@ public interface AuftragManager {
 	public List<Auftrag> findByMitarbeiter(Mitarbeiter mitarbeiter);
 	
 	/**
+	 * Liefert eine Auftragsliste anhand des gesuchten Mitarbeiter 
+	 * für eine bestimmte Arbeitswoche.
+	 * @param startdatum
+	 * @param enddatum
+	 * @param mitarbeiter
+	 * @return
+	 */
+	public List<Auftrag> findByDateAndMitarbeiter(GregorianCalendar startdatum, GregorianCalendar enddatum,
+			Mitarbeiter mitarbeiter);
+	
+	/**
 	 * Liefert eine Auftragsliste anhand des gesuchten Kontakts.
 	 * @param kontakt
 	 * @return
