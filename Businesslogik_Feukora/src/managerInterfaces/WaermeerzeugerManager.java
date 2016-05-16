@@ -51,33 +51,33 @@ public interface WaermeerzeugerManager {
 	 * @param id
 	 * @return
 	 */
-	public Waermeerzeuger findById(Integer id);
+	public Waermeerzeuger findById(Integer idWaermeerzeuger)throws Exception;
 	
 	/**
 	 * Liefert alle Waermeerzeuger zurück.
 	 * @return
 	 */
-	public List<Waermeerzeuger> findAllWaermeerzeuger();
+	public List<Waermeerzeuger> findAllWaermeerzeuger()throws Exception;
 	
 	/**
 	 * Liefert einen Waermeerzeuger anhand des gesuchten Waermeerzeuger-Typ.
 	 * @param waermeerzeugerTyp
 	 * @return
 	 */
-	public List<Waermeerzeuger> findByTyp(String waermeerzeugerTyp);
+	public List<Waermeerzeuger> findByTyp(String waermeerzeugerTyp)throws Exception;
 
 	/**
 	 * Liefert eine Waermeerzeuger anhand des gesuchten Brennstoff.
 	 * @param brennstoff
 	 * @return
 	 */
-	public List<Waermeerzeuger> findByBrennstoff(int brennstoff);
+	public List<Waermeerzeuger> findByBrennstoff(int brennstoff)throws Exception;
 	
 	/**
 	 * Liefert eine Waermeerzeuger anhand des gesuchten Baujahrs.
 	 * @param baujahr
 	 * @return
 	 */
-	public List<Waermeerzeuger> findByBaujahr(int baujahr);
+	public List<Waermeerzeuger> findByBaujahr(int baujahr)throws Exception;
 
 }
