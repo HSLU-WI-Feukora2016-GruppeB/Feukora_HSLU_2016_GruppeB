@@ -58,7 +58,7 @@ public interface LiegenschaftManager {
 	 * Liefert alle Liegenschaften zurück.
 	 * @return
 	 */
-	public List<Liegenschaft> findAll()throws Exception throws Exception;
+	public List<Liegenschaft> findAll()throws Exception;
 	
 	/**
 	 * Liefert eine Liegenschaftsliste anhand des gesuchten Kontakts.
