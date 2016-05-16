@@ -220,7 +220,7 @@ public class AuftragDAOTest {
 		GregorianCalendar datum = new GregorianCalendar(2015, 07, 15);
 		int zeitSlot = 3;
 		int terminArt = 2;
-		Auftrag a1 = new Auftrag(kontakt, liegenschaft, mitarbeiter, datum, zeitSlot, terminArt);
+		Auftrag a1 = new Auftrag(kontakt, liegenschaft, messung1, messung2, messung3, messung4, mitarbeiter, datum, zeitSlot, terminArt);
 
 		//2. Auftragsobjekt a2
 		Ort ort2 = new Ort(6003, "Luzern");
@@ -245,7 +245,7 @@ public class AuftragDAOTest {
 		GregorianCalendar datum2 = new GregorianCalendar(2016, 11, 12);
 		int zeitSlot2 = 3;
 		int terminArt2 = 2;
-		Auftrag a2 = new Auftrag(kontakt, liegenschaft, mitarbeiter, datum, zeitSlot, terminArt);
+		Auftrag a2 = new Auftrag(kontakt2, liegenschaft2, messung5, messung6, messung7, messung8, mitarbeiter2, datum2, zeitSlot2, terminArt2);
 		
 		auftragDAO.saveAuftrag(a1);
 		auftragDAO.saveAuftrag(a2);
