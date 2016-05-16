@@ -58,7 +58,7 @@ public class WaermeerzeugerManagerImpl implements WaermeerzeugerManager {
 	}
 
 	@Override
-	public List<Waermeerzeuger> findAllWaermeerzeuger() {
+	public List<Waermeerzeuger> findAll() {
 		return waermeerzeugerDAO.findAllWaermeerzeuger();
 	}
 

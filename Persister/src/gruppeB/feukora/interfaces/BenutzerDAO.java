@@ -82,5 +82,5 @@ public interface BenutzerDAO {
 	 * @param username
 	 * @return
 	 */
-	public List<Benutzer> findBenutzerByUsernamePassword(String username) throws Exception;
+	public List<Benutzer> findBenutzerByUsernamePassword(String username, String password) throws Exception;
 }

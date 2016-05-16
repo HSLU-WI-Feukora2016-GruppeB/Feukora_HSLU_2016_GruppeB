@@ -110,7 +110,7 @@ public class AuftragDAOTest {
 		assertTrue(auftragsListe.size() == 3);
 
 		// 3. Auftragsobjekt a3 check ob es nicht doppelt hinzufügt
-		Ort ort = new Ort(8000, "Zürich");
+		Ort ort = 
 		Kontakt kontakt = new Kontakt("Manuel", "Muster", "Musterstrasse 24",
 				ort, "0448817585", "manuel.muster@stud.hslu.ch", 1);
 
