@@ -2,7 +2,7 @@ package rmi;
 
 import java.util.List;
 
-import managerInterfaces.Benutzer;
+import entitäten.Benutzer;
 
 /**
  * Das Interface stellt die CRUD-Funktionen für den Benutzer zur Verfügung.
