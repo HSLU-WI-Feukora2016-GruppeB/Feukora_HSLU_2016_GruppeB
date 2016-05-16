@@ -65,14 +65,14 @@ public class AuftragDAOTest {
 
 		//3. Auftragsobjekt a3
 		Ort ort = new Ort(8000, "Zürich");
-		Kontakt kontakt = new Kontakt("Manuel", "Muster", "Musterstrasse 24",
+		Kontakt manuel = new Kontakt("Manuel", "Muster", "Musterstrasse 24",
 				ort, "0448817585", "manuel.muster@stud.hslu.ch", 1);
 
 		Brenner brenner = new Brenner(1, "abc123", 2014);
 		Waermeerzeuger waermeerzeuger = new Waermeerzeuger(2, "cba321", 2003);
 		Feuerungsanlage feuerungsanlage = new Feuerungsanlage(brenner,
 				waermeerzeuger);
-		Liegenschaft liegenschaft = new Liegenschaft(kontakt,
+		Liegenschaft liegenschaft = new Liegenschaft(manuel,
 				"Hausmeister bei Langstrumpf klingeln", "Teststrasse 123", ort,
 				feuerungsanlage);
 
@@ -93,7 +93,7 @@ public class AuftragDAOTest {
 		int zeitSlot = 3;
 		int terminArt = 2;
 		
-		Auftrag a3 = new Auftrag(kontakt, liegenschaft, mitarbeiter, datum,
+		Auftrag a3 = new Auftrag(manuel, liegenschaft, mitarbeiter, datum,
 				zeitSlot, terminArt);
 
 		auftragDAO.saveAuftrag(a3);
@@ -110,15 +110,15 @@ public class AuftragDAOTest {
 		assertTrue(auftragsListe.size() == 3);
 
 		// 3. Auftragsobjekt a3 check ob es nicht doppelt hinzufügt
-		Ort ort = 
-		Kontakt kontakt = new Kontakt("Manuel", "Muster", "Musterstrasse 24",
+		Ort ort = new Ort(8001, "Zürich");
+		Kontakt manuelM = new Kontakt("Manuel", "Muster", "Musterstrasse 24",
 				ort, "0448817585", "manuel.muster@stud.hslu.ch", 1);
 
 		Brenner brenner = new Brenner(1, "abc123", 2014);
 		Waermeerzeuger waermeerzeuger = new Waermeerzeuger(2, "cba321", 2003);
 		Feuerungsanlage feuerungsanlage = new Feuerungsanlage(brenner,
 				waermeerzeuger);
-		Liegenschaft liegenschaft = new Liegenschaft(kontakt,
+		Liegenschaft liegenschaft = new Liegenschaft(manuelM,
 				"Hausmeister bei Langstrumpf klingeln", "Teststrasse 123", ort,
 				feuerungsanlage);
 
@@ -139,7 +139,7 @@ public class AuftragDAOTest {
 		int zeitSlot = 3;
 		int terminArt = 2;
 
-		Auftrag a3 = new Auftrag(kontakt, liegenschaft, mitarbeiter, datum,
+		Auftrag a3 = new Auftrag(manuelM, liegenschaft, mitarbeiter, datum,
 				zeitSlot, terminArt);
 
 		auftragDAO.saveAuftrag(a3);
@@ -152,7 +152,7 @@ public class AuftragDAOTest {
 		Waermeerzeuger waermeerzeugerU = new Waermeerzeuger(2, "abc321", 2003);
 		Feuerungsanlage feuerungsanlageU = new Feuerungsanlage(brenner,
 				waermeerzeuger);
-		Liegenschaft liegenschaftU = new Liegenschaft(kontakt,
+		Liegenschaft liegenschaftU = new Liegenschaft(manuelM,
 				"Türe ist offen", "Teststrasse 123", ort,
 				feuerungsanlage);
 
@@ -223,7 +223,7 @@ public class AuftragDAOTest {
 		Auftrag a1 = new Auftrag(kontakt, liegenschaft, messung1, messung2, messung3, messung4, mitarbeiter, datum, zeitSlot, terminArt);
 
 		//2. Auftragsobjekt a2
-		Ort ort2 = new Ort(6003, "Luzern");
+		Ort ort2 = new Ort(6002, "Bern");
 		Kontakt kontakt2 = new Kontakt("Ramon", "Müller", "Hirschengraben 40", ort, "0448817585", "olivia.wassmer@stud.hslu.ch", 1);
 		
 		Brenner brenner2 = new Brenner(1, "abc123", 2014);
