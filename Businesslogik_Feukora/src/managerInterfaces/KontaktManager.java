@@ -2,8 +2,8 @@ package managerInterfaces;
 
 import java.util.List;
 
-import entitäten.Kontakt;
-import entitäten.Ort;
+import entitys.Kontakt;
+import entitys.Ort;
 
 /**
  * Liefert Funktionalität eines Kontaktes.

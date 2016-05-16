@@ -2,7 +2,7 @@ package managerInterfaces;
 
 import java.util.List;
 
-import entitäten.Benutzer;
+import entitys.Benutzer;
 
 /**
 	 * Verwaltet einen Benutzer und alle Funktionen.

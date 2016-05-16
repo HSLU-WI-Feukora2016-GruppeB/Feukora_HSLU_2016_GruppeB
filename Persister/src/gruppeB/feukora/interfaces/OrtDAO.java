@@ -2,7 +2,7 @@ package gruppeB.feukora.interfaces;
 
 import java.util.List;
 
-import entitäten.Ort;
+import entitys.Ort;
 
 /**
  * Interface für Persistierung von Ort-Entities.

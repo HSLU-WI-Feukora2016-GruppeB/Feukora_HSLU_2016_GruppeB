@@ -14,7 +14,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import entitäten.*;
+import entitys.*;
 
 
 public class AuftragManagerTest {

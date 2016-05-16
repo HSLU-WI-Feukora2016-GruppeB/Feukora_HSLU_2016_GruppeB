@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import entitäten.Kontakt;
-import entitäten.Liegenschaft;
-import entitäten.Ort;
+import entitys.Kontakt;
+import entitys.Liegenschaft;
+import entitys.Ort;
 import gruppeB.feukora.interfaces.LiegenschaftDAO;
 import gruppeB.feukora.persister.generic.GenericPersisterImpl;
 import gruppeB.feukora.persister.util.JpaUtil;

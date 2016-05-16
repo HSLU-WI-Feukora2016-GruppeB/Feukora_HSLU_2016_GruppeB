@@ -2,10 +2,10 @@ package managerInterfaces;
 
 import java.util.List;
 
-import entitäten.Brenner;
-import entitäten.Feuerungsanlage;
-import entitäten.Liegenschaft;
-import entitäten.Waermeerzeuger;
+import entitys.Brenner;
+import entitys.Feuerungsanlage;
+import entitys.Liegenschaft;
+import entitys.Waermeerzeuger;
 
 
 

@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import entitäten.Mitarbeiter;
-import entitäten.Ort;
-import entitäten.Benutzer;
+import entitys.Benutzer;
+import entitys.Mitarbeiter;
+import entitys.Ort;
 import gruppeB.feukora.interfaces.MitarbeiterDAO;
 import gruppeB.feukora.persister.generic.GenericPersisterImpl;
 import gruppeB.feukora.persister.util.JpaUtil;

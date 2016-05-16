@@ -2,7 +2,7 @@ package managerKlassen;
 
 import java.util.List;
 
-import entitäten.Brenner;
+import entitys.Brenner;
 import gruppeB.feukora.interfaces.BrennerDAO;
 import gruppeB.feukora.persister.BrennerDAOImpl;
 import managerInterfaces.BrennerManager;

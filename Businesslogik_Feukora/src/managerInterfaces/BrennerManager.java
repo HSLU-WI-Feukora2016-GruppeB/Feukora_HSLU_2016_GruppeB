@@ -2,7 +2,7 @@ package managerInterfaces;
 
 import java.util.List;
 
-import entitäten.Brenner;
+import entitys.Brenner;
 
 
 /**

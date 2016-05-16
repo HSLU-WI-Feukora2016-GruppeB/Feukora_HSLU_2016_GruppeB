@@ -1,4 +1,4 @@
-package entitäten;
+package entitys;
 
 /**
  * Grenzwerte für die einzelnen Brennerarten, können sich ändern wenn die

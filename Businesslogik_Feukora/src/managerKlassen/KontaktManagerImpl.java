@@ -1,7 +1,7 @@
 package managerKlassen;
 
-import entitäten.Kontakt;
-import entitäten.Ort;
+import entitys.Kontakt;
+import entitys.Ort;
 import gruppeB.feukora.interfaces.KontaktDAO;
 import gruppeB.feukora.persister.KontaktDAOImpl;
 

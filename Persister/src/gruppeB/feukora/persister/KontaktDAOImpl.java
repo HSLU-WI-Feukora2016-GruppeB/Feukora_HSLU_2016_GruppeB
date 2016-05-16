@@ -11,8 +11,8 @@ import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import entitäten.Kontakt;
-import entitäten.Ort;
+import entitys.Kontakt;
+import entitys.Ort;
 import gruppeB.feukora.interfaces.KontaktDAO;
 import gruppeB.feukora.persister.generic.GenericPersisterImpl;
 import gruppeB.feukora.persister.util.JpaUtil;

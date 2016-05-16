@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import entitäten.Auftrag;
-import entitäten.Kontakt;
-import entitäten.Liegenschaft;
-import entitäten.Mitarbeiter;
+import entitys.Auftrag;
+import entitys.Kontakt;
+import entitys.Liegenschaft;
+import entitys.Mitarbeiter;
 import gruppeB.feukora.interfaces.AuftragDAO;
 import gruppeB.feukora.persister.generic.GenericPersisterImpl;
 import gruppeB.feukora.persister.util.JpaUtil;
@@ -148,6 +148,30 @@ public class AuftragDAOImpl implements AuftragDAO {
 		em.close();
 
 		return auftragsListe != null ? auftragsListe : new ArrayList<Auftrag>();
+	}
+
+	@Override
+	public Auftrag findAuftragByDateAndMitarbeiterAndZeitslot(
+			GregorianCalendar datum, Mitarbeiter mitarbeiter, int zeitSlot) {
+
+		EntityManager em = JpaUtil.createEntityManager();
+
+		TypedQuery<Auftrag> tQuery = em.createNamedQuery(
+				"Auftrag.findAuftragByDatumAndMitarbeiterAndZeitslot", Auftrag.class);
+
+		tQuery.setParameter("datum", datum.getTime());
+		tQuery.setParameter("mitarbeiter", mitarbeiter);
+		tQuery.setParameter("zeitSlot", zeitSlot);
+
+		Auftrag auftrag = tQuery.getSingleResult();
+		
+		em.close();
+		
+		if(auftrag==null){
+			return null;
+		} else {
+			return auftrag;
+		}
 	}
 
 }

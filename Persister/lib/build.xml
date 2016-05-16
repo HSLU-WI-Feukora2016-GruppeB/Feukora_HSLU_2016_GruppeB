@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="webservice-demo (referenz-projekt)" default="jar" basedir=".">
+
+	<property name="project-name" value="demo-modulverwaltung-persister" />
+	<property name="builder" value="jsucur" />
+	<property name="jar-file-name" value="${project-name}.jar" />
+	<property name="src.dir" value="src" />
+
+	<!-- Repository for jars -->
+	<property name="jars.repo.dir" value="C:/dev/ws_demo/lib" />
+
+	<!-- build directory from eclipse -->
+	<property name="build.dir" value="build" />
+
+	<!-- META-INF -->
+	<property name="metainf.dir" value="${build.dir}/META-INF" />
+
+	<!-- Distribution directory -->
+	<property name="dist.dir" value="dist" />
+
+	<!-- Directory with *.class and property files -->
+	<property name="productive-classes-directory" value="${build.dir}" />
+
+	<!-- set classpath -->
+	<property name="commonLibs.dir" value="${jars.repo.dir}" />
+
+	<fileset id="commonLibs" dir="${commonLibs.dir}">
+		<include name="*.jar" />
+	</fileset>
+
+	<path id="class-path">
+		<fileset refid="commonLibs">
+		</fileset>
+	</path>
+
+	<target name="clean" depends="">
+		<!-- Delete directories -->
+		<delete dir="${build.dir}" />
+		<delete dir="${dist.dir}" />
+	</target>
+
+	<target name="init" depends="clean">
+		<!-- Create directories -->
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${metainf.dir}" />
+	</target>
+
+	<target name="compile" depends="init" description="compile the source ">
+		<!-- Compile the java code from ${src.dir} into ${build.dir} -->
+		<javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" encoding="cp1252">
+			<classpath refid="class-path" />
+		</javac>
+	</target>
+
+
+	<target name="jar" depends="compile">
+
+		<!-- copy META-INF/persistence.xhtml -->
+		<copy file="${src.dir}/META-INF/persistence.xml" todir="${metainf.dir}" />
+
+		<jar destfile="${dist.dir}/${jar-file-name}">
+			<fileset dir="${build.dir}" />
+			<fileset dir="${src.dir}" includes="**/*.java" />
+		</jar>
+
+		<!-- Delete directories -->
+		<delete dir="${build.dir}" />
+
+		<!-- Copy jar-File to ${repo.dir} -->
+		<copy todir="${jars.repo.dir}">
+			<fileset dir="${dist.dir}" />
+		</copy>
+
+	</target>
+
+</project>

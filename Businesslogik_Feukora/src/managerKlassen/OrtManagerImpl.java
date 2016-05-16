@@ -2,7 +2,7 @@ package managerKlassen;
 
 import java.util.List;
 
-import entitäten.Ort;
+import entitys.Ort;
 import gruppeB.feukora.interfaces.OrtDAO;
 import gruppeB.feukora.persister.OrtDAOImpl;
 import managerInterfaces.OrtManager;

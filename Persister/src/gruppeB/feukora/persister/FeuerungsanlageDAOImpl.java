@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import entitäten.Brenner;
-import entitäten.Feuerungsanlage;
-import entitäten.Liegenschaft;
-import entitäten.Waermeerzeuger;
+import entitys.Brenner;
+import entitys.Feuerungsanlage;
+import entitys.Liegenschaft;
+import entitys.Waermeerzeuger;
 import gruppeB.feukora.interfaces.FeuerungsanlageDAO;
 import gruppeB.feukora.persister.generic.GenericPersisterImpl;
 import gruppeB.feukora.persister.util.JpaUtil;

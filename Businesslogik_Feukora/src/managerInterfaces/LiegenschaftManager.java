@@ -2,9 +2,9 @@ package managerInterfaces;
 
 import java.util.List;
 
-import entitäten.Kontakt;
-import entitäten.Liegenschaft;
-import entitäten.Ort;
+import entitys.Kontakt;
+import entitys.Liegenschaft;
+import entitys.Ort;
 
 /**
  * Verwaltet eine Liegenschaft und alle Funktionen.

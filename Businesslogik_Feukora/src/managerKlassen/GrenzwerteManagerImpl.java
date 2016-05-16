@@ -3,8 +3,8 @@ package managerKlassen;
 import java.util.HashMap;
 import java.util.Map;
 
-import entitäten.Grenzwerte;
-import entitäten.Messung;
+import entitys.Grenzwerte;
+import entitys.Messung;
 
 /**
  * Kontrolliert Messung anhand der jeweiligen Grenzwerte

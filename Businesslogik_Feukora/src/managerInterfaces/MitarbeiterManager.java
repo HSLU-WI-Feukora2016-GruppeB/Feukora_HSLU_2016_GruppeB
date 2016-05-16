@@ -3,9 +3,9 @@ package managerInterfaces;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import entitäten.Benutzer;
-import entitäten.Mitarbeiter;
-import entitäten.Ort;
+import entitys.Benutzer;
+import entitys.Mitarbeiter;
+import entitys.Ort;
 
 
 /**

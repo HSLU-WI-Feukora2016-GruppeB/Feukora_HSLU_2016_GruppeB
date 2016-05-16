@@ -6,10 +6,10 @@
 package webservice.gruppeB.persister;
 
 import static org.junit.Assert.*;
-import entitäten.Benutzer;
-import entitäten.Kontakt;
-import entitäten.Mitarbeiter;
-import entitäten.Ort;
+import entitys.Benutzer;
+import entitys.Kontakt;
+import entitys.Mitarbeiter;
+import entitys.Ort;
 import gruppeB.feukora.persister.BenutzerDAOImpl;
 
 import java.util.ArrayList;
