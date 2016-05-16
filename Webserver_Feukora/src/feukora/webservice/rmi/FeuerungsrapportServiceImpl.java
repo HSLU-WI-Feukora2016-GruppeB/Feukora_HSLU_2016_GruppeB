@@ -162,7 +162,7 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 		}
 
 		@Override
-		public List<Brenner> findBrennerByAllBrenner() throws Exception {
+		public List<Brenner> findAllBrenner() throws Exception {
 			return brennerManager.findAll(brenner);
 		}
 
@@ -317,6 +317,28 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 				throws Exception {
 			return liegenschaftManager.findByKontakt(kontakt);
 		}
+		//-----------------------------------------------------------------------------------------------
+		//												Messung
+		//-----------------------------------------------------------------------------------------------
+		
+		//-----------------------------------------------------------------------------------------------
+		//												Mitarbeiter
+		//-----------------------------------------------------------------------------------------------
+		
+		@Override
+		public Mitarbeiter findMitarbeiterByName(String name)
+				throws Exception {
+			return mitarbeiterManager.findMitarbeiterByName(name);
+		}
+		@Override
+		public Mitarbeiter findMitarbeiterByVorname (String vorname)
+				throws Exception {
+			return mitarbeiterManager.findMitarbeiterByVorname(vorname);
+		}
+			
+		//-----------------------------------------------------------------------------------------------
+		//												Ort
+		//-----------------------------------------------------------------------------------------------
 		
 		//-----------------------------------------------------------------------------------------------
 		//												Wärmeerzeuger

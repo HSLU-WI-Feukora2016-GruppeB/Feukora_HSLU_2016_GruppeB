@@ -381,7 +381,35 @@ public interface FeuerungsrapportService {
 	@WebMethod
 	Liegenschaft findLiegenschaftByKontakt(
 			@WebParam(name = "kontakt") String kontakt)throws Exception;
-	
+	//-----------------------------------------------------------------------------------------------
+	//												Messung
+	//-----------------------------------------------------------------------------------------------
+			
+	//-----------------------------------------------------------------------------------------------
+	//												Mitarbeiter
+	//-----------------------------------------------------------------------------------------------
+			/**
+			 * Liefert alle Mitarbeiter des angefragten Typs.
+			 * @param name
+			 * @return
+			 */
+			@WebMethod
+			Mitarbeiter findMitarbeiterByName(
+					@WebParam(name = "name") String name) throws Exception;
+			
+			/**
+			 * Liefert alle Mitarbeiter mit gesuchtem Vornamen.
+			 * @param vorname
+			 * @return
+			 */
+			@WebMethod
+			Mitarbeiter findMitarbeiterByVorname (
+					@WebParam(name = "vorname") String vorname)throws Exception;
+			
+				
+	//-----------------------------------------------------------------------------------------------
+	//												Ort
+	//-----------------------------------------------------------------------------------------------
 	//-----------------------------------------------------------------------------------------------
 	//												Wärmeerzeuger
 	//-----------------------------------------------------------------------------------------------
