@@ -6,7 +6,7 @@ import java.util.List;
 import entitäten.Benutzer;
 import entitäten.Mitarbeiter;
 import entitäten.Ort;
-import gruppeB.feukora.persister.MitarbeiterDAO;
+import gruppeB.feukora.interfaces.MitarbeiterDAO;
 import gruppeB.feukora.persister.MitarbeiterDAOImpl;
 import managerInterfaces.MitarbeiterManager;
 

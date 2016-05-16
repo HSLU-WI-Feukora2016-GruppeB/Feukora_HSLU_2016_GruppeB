@@ -3,7 +3,7 @@
  * MODUL: Softwarekomponenten, HSLU - Wirtschaft
  */
 
-package gruppeB.feukora.persister;
+package gruppeB.feukora.interfaces;
 
 import java.util.List;
 import entitäten.Benutzer;

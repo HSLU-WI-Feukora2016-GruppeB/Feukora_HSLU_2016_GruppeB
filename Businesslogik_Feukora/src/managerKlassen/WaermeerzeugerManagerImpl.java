@@ -3,7 +3,7 @@ package managerKlassen;
 import java.util.List;
 
 import entitäten.Waermeerzeuger;
-import gruppeB.feukora.persister.WaermeerzeugerDAO;
+import gruppeB.feukora.interfaces.WaermeerzeugerDAO;
 import gruppeB.feukora.persister.WaermeerzeugerDAOImpl;
 import managerInterfaces.WaermeerzeugerManager;
 

@@ -3,7 +3,7 @@ package managerKlassen;
 import java.util.List;
 
 import entitäten.Benutzer;
-import gruppeB.feukora.persister.BenutzerDAO;
+import gruppeB.feukora.interfaces.BenutzerDAO;
 import gruppeB.feukora.persister.BenutzerDAOImpl;
 import managerInterfaces.BenutzerManager;
 /**
