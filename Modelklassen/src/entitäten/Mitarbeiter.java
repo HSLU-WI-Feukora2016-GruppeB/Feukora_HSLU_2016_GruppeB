@@ -43,7 +43,7 @@ public class Mitarbeiter implements Serializable{
 	
 	@Id
 	@GeneratedValue
-	private int idMitarbeiter;
+	private Integer idMitarbeiter;
 	
 	private String vorname;
 	private String name;
