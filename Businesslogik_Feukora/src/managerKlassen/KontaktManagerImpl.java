@@ -2,7 +2,7 @@ package managerKlassen;
 
 import entitäten.Kontakt;
 import entitäten.Ort;
-import gruppeB.feukora.persister.KontaktDAO;
+import gruppeB.feukora.interfaces.KontaktDAO;
 import gruppeB.feukora.persister.KontaktDAOImpl;
 
 import java.util.List;

@@ -5,7 +5,7 @@ import java.util.List;
 import entitäten.Kontakt;
 import entitäten.Liegenschaft;
 import entitäten.Ort;
-import gruppeB.feukora.persister.LiegenschaftDAO;
+import gruppeB.feukora.interfaces.LiegenschaftDAO;
 import gruppeB.feukora.persister.LiegenschaftDAOImpl;
 import managerInterfaces.LiegenschaftManager;
 

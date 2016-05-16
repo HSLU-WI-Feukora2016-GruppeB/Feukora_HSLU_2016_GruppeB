@@ -4,7 +4,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 import entitäten.Messung;
-import gruppeB.feukora.persister.MessungDAO;
+import gruppeB.feukora.interfaces.MessungDAO;
 import gruppeB.feukora.persister.MessungDAOImpl;
 import managerInterfaces.MessungsManager;
 /**

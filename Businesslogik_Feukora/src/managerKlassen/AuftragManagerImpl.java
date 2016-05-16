@@ -5,7 +5,7 @@ import entitäten.Kontakt;
 import entitäten.Liegenschaft;
 import entitäten.Messung;
 import entitäten.Mitarbeiter;
-import gruppeB.feukora.persister.AuftragDAO;
+import gruppeB.feukora.interfaces.AuftragDAO;
 import gruppeB.feukora.persister.AuftragDAOImpl;
 
 import java.util.GregorianCalendar;

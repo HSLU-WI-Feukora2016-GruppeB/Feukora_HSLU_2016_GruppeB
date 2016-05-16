@@ -3,7 +3,7 @@
  * MODUL: Softwarekomponenten, HSLU - Wirtschaft
  */
 
-package gruppeB.feukora.persister;
+package gruppeB.feukora.interfaces;
 
 import java.util.List;
 import entitäten.Benutzer;
@@ -56,14 +56,14 @@ public interface BenutzerDAO {
 	 * @param id
 	 * @return
 	 */
-	public Benutzer findBenutzerById(Integer id);
+	public Benutzer findBenutzerById(Integer idUser) throws Exception;
 	
 	/**
 	 * Liefert alle Benutzer-Objekte zurück.
 	 * 
 	 * @return
 	 */
-	List<Benutzer> findAllBenutzer();
+	List<Benutzer> findAllBenutzer() throws Exception;
 	
 	/**
 	 * Liefert die Liste mit User für die übergebene Usernames zurück, falls
@@ -72,7 +72,7 @@ public interface BenutzerDAO {
 	 * @param username
 	 * @return
 	 */
-	public List<Benutzer> findBenutzerByUsername(String username);
+	public List<Benutzer> findBenutzerByUsername(String username) throws Exception;
 	
 	/**
 	 * Liefert die Liste mit den User für den übergebenen Passwörter zurück, falls
@@ -81,5 +81,5 @@ public interface BenutzerDAO {
 	 * @param password
 	 * @return
 	 */
-	public List<Benutzer> findBenutzerByPassword(String password);
+	public List<Benutzer> findBenutzerByPassword(String password) throws Exception;
 }

@@ -16,6 +16,7 @@ import entitäten.Auftrag;
 import entitäten.Kontakt;
 import entitäten.Liegenschaft;
 import entitäten.Mitarbeiter;
+import gruppeB.feukora.interfaces.AuftragDAO;
 import gruppeB.feukora.persister.generic.GenericPersisterImpl;
 import gruppeB.feukora.persister.util.JpaUtil;
 

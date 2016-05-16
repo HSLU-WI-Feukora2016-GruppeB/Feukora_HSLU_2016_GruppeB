@@ -1,4 +1,4 @@
-package gruppeB.feukora.persister;
+package gruppeB.feukora.interfaces;
 
 import java.util.*;
 

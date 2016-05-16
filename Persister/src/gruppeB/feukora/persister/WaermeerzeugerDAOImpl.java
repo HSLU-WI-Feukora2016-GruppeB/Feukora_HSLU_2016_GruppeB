@@ -12,6 +12,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import entitäten.Waermeerzeuger;
+import gruppeB.feukora.interfaces.WaermeerzeugerDAO;
 import gruppeB.feukora.persister.generic.GenericPersisterImpl;
 import gruppeB.feukora.persister.util.JpaUtil;
 

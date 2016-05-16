@@ -15,6 +15,7 @@ import javax.persistence.TypedQuery;
 import entitäten.Mitarbeiter;
 import entitäten.Ort;
 import entitäten.Benutzer;
+import gruppeB.feukora.interfaces.MitarbeiterDAO;
 import gruppeB.feukora.persister.generic.GenericPersisterImpl;
 import gruppeB.feukora.persister.util.JpaUtil;
 

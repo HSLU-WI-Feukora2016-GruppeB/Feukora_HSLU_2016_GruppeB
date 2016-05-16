@@ -6,7 +6,7 @@ import entitäten.Brenner;
 import entitäten.Feuerungsanlage;
 import entitäten.Liegenschaft;
 import entitäten.Waermeerzeuger;
-import gruppeB.feukora.persister.FeuerungsanlageDAO;
+import gruppeB.feukora.interfaces.FeuerungsanlageDAO;
 import gruppeB.feukora.persister.FeuerungsanlageDAOImpl;
 import managerInterfaces.FeuerungsanlageManager;
 

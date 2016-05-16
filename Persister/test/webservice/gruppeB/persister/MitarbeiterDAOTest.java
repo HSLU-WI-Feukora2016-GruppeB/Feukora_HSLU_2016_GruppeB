@@ -189,10 +189,10 @@ public class MitarbeiterDAOTest {
 		//TODO ort initialisieren
 		Ort ort = null;
 		
-		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findByOrt(ort);
+		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findMitarbeiterByOrt(ort);
 		assertTrue(mitarbeiterListe.size() == 1);
 		
-		mitarbeiterListe = mitarbeiterDAO.findByOrt(ort);
+		mitarbeiterListe = mitarbeiterDAO.findMitarbeiterByOrt(ort);
 	}
 	
 	

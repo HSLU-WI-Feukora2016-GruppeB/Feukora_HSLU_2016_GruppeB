@@ -3,7 +3,7 @@
  * MODUL: Softwarekomponenten, HSLU - Wirtschaft
  */
 
-package gruppeB.feukora.persister;
+package gruppeB.feukora.interfaces;
 
 import java.util.List;
 
@@ -57,7 +57,7 @@ public interface BrennerDAO {
 	 * @param id
 	 * @return
 	 */
-	public Brenner findBrennerById(Integer id);
+	public Brenner findBrennerById(Integer idBrenner);
 	
 	/**
 	 * Liefert alle Brenner-Objekte zurück.

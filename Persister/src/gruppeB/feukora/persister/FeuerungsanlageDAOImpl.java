@@ -14,8 +14,8 @@ import javax.persistence.TypedQuery;
 import entitäten.Brenner;
 import entitäten.Feuerungsanlage;
 import entitäten.Liegenschaft;
-
 import entitäten.Waermeerzeuger;
+import gruppeB.feukora.interfaces.FeuerungsanlageDAO;
 import gruppeB.feukora.persister.generic.GenericPersisterImpl;
 import gruppeB.feukora.persister.util.JpaUtil;
 

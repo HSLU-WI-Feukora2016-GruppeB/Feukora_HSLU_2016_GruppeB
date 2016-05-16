@@ -19,7 +19,7 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "Brenner.findById", query = "SELECT b FROM Brenner b WHERE b.brennerId=:brennerId"),
+	@NamedQuery(name = "Brenner.findById", query = "SELECT b FROM Brenner b WHERE b.idBrenner=:idBrenner"),
 	@NamedQuery(name = "Brenner.findByTyp", query = "SELECT b FROM Brenner b WHERE b.brennerTyp=:brennerTyp"),
 	@NamedQuery(name = "Brenner.findByArt", query = "SELECT b FROM Brenner b WHERE b.brennerArt=:brennerArt"),
 	@NamedQuery(name = "Brenner.findByBaujahr", query = "SELECT b FROM Brenner b WHERE b.baujahr=:baujahr")

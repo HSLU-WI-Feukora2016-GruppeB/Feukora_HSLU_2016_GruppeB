@@ -3,7 +3,7 @@
  * MODUL: Softwarekomponenten, HSLU-Wirtschaft
  */
 
-package gruppeB.feukora.persister.generic;
+package gruppeB.feukora.interfaces;
 
 import java.util.List;
 

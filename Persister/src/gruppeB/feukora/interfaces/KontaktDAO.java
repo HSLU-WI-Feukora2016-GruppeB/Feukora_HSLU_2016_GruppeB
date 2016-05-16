@@ -3,7 +3,7 @@
  * MODUL: Softwarekomponenten, HSLU - Wirtschaft
  */
 
-package gruppeB.feukora.persister;
+package gruppeB.feukora.interfaces;
 
 import java.util.List;
 
@@ -58,7 +58,7 @@ public interface KontaktDAO {
 	 * @param id
 	 * @return
 	 */
-	public Kontakt findKontaktById(Integer id);
+	public Kontakt findKontaktById(Integer idKontakt);
 	
 	/**
 	 * Liefert alle Kontakt-Objekte zurück.

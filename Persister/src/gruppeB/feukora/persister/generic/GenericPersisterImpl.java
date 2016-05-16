@@ -13,6 +13,7 @@ import javax.persistence.TypedQuery;
 
 import org.apache.log4j.Logger;
 
+import gruppeB.feukora.interfaces.GenericPersister;
 import gruppeB.feukora.persister.util.JpaUtil;
 
 /**
