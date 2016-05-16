@@ -3,16 +3,19 @@ package application.view.mitarbeiter;
 import java.util.ArrayList;
 import java.util.List;
 
+import entitys.Mitarbeiter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import rmi.MitarbeiterRO;
 
 /**
  * Dies ist die Dokumentation der Klasse MitarbeiterÜbersicht. Sie zeigt alle
@@ -26,10 +29,13 @@ import javafx.stage.Stage;
 public class MitarbeiterUebersicht {
 
 	@FXML
-	private Button btnNeu, btnBearbeiten, btnSchliessen;
+	private Button btnNeu, btnBearbeiten, btnSchliessen, btnSuchen;
 
 	@FXML
-	private TextField txtName, txtVorname, txtStrasse, txtOrt, lblRueckmeldung;
+	private TextField txtName, txtVorname, txtStrasse, txtOrt;
+
+	@FXML
+	private Label lblRueckmeldung;
 
 	@FXML
 	private BorderPane leaf;
@@ -37,29 +43,32 @@ public class MitarbeiterUebersicht {
 	@FXML
 	private TableView tabelle;
 
-	// MitarbeiterRO mitarbeiterRO;
-	// List<Mitarbeiter> list = mitarbeiterRO.findAllMitarbeit();
+	MitarbeiterRO mitarbeiterRO;
+	Mitarbeiter mitarbeiter;
+	// List<Mitarbeiter> list = mitarbeiterRO.findAllMitarbeiter();
 
 	private void initialize() {
 
-		// ObservableList<String> list2 = FXCollections.observableList(list);
+		// ObservableList<Mitarbeiter> list2 =
+		// FXCollections.observableList(list);
 		// tabelle.setItems(list2);
 	}
 
-	void MitarbeiterSuchen() {
+	public void MitarbeiterSuchen() {
 
 		String name = txtName.getText();
 		String vorname = txtVorname.getText();
-		String strasse = txtStrasse.getText();
-		String ort = txtOrt.getText();
 
-		if (strasse.isEmpty() || ort.isEmpty()) {
+		if (name.isEmpty() || vorname.isEmpty()) {
 
 			lblRueckmeldung.setText("Beide Felder müssen ausgefüllt werden!");
 
 		} else {
 
-			// ObservableList<String> list2 = FXCollections.observableList(list);
+			// List<Mitarbeiter> list =
+			// mitarbeiterRO.findByNameVorname(name,vorname);
+			// ObservableList<Mitarbeiter> list2 =
+			// FXCollections.observableList(list);
 			// tabelle.setItems(list2);
 
 		}
@@ -86,6 +95,7 @@ public class MitarbeiterUebersicht {
 	 * Diese Methode öffnet die Übersicht zur Bearbeitung von Mitarbeiter.
 	 */
 	public void bearbeitenMitarbeiter() {
+
 
 
 	}

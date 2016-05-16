@@ -19,6 +19,7 @@ public class MitarbeiterErfassen {
 
 	@FXML
 	private TextField txtName, txtVorname, txtOrt, txtRolle, txtLohn, txtEmail, txtTelefonNr, txtStrasse;
+
 	@FXML
 	private Label lblRueckmeldung;
 
@@ -30,9 +31,6 @@ public class MitarbeiterErfassen {
 	 */
 	public void mitarbeiterSpeichern() {
 
-		/*------------ Wir haben arbeitet seit und arbeitet bis (beides GregorianCalendar) noch nicht-----------*/
-
-		// Hole alle Werte von den Textfeldern
 		String name = txtName.getText();
 		String vorname = txtVorname.getText();
 		String strasse = txtStrasse.getText();
