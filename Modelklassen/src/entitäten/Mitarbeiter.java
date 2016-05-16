@@ -55,7 +55,7 @@ public class Mitarbeiter implements Serializable{
 	private int rolleIntern;
 	@OneToOne
 	private Benutzer user;
-	private float lohn;
+	private int lohn;
 	@Temporal(TemporalType.DATE)
 	private GregorianCalendar arbeitetSeit;
 	@Temporal(TemporalType.DATE)
@@ -68,7 +68,7 @@ public class Mitarbeiter implements Serializable{
 	
 	public Mitarbeiter(String vorname, String name, String strasse, Ort ort,
 			String tel, String email, int rolleIntern, Benutzer user,
-			float lohn, GregorianCalendar arbeitetSeit,
+			int lohn, GregorianCalendar arbeitetSeit,
 			GregorianCalendar arbeitetBis) {
 		this.vorname = vorname;
 		this.name = name;
@@ -171,7 +171,7 @@ public class Mitarbeiter implements Serializable{
 		return lohn;
 	}
 
-	public void setLohn(float lohn) {
+	public void setLohn(int lohn) {
 		this.lohn = lohn;
 	}
 

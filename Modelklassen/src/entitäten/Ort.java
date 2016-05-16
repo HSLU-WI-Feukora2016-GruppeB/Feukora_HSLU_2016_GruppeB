@@ -26,6 +26,8 @@ public class Ort implements Serializable {
 	private static final long serialVersionUID = -873608046753875813L;
 	@Id
 	private Integer plz;	
+	
+
 	private String ortBez;
 	
 	//Standardkonstruktor*************************************************
@@ -33,13 +35,26 @@ public class Ort implements Serializable {
 			
 	}
 	
+	public Ort(Integer plz, String ortBez){
+		this.ortBez = ortBez;
+		this.plz = plz;
+	}
+	
 	//getter&setter*******************************************************
 	public Integer getPlz() {
 		return plz;
 	}
+	
+	public void setPlz(Integer plz) {
+		this.plz = plz;
+	}
 
 	public String getOrt() {
 		return ortBez;
+	}
+	
+	public void setOrtBez(String ortBez) {
+		this.ortBez = ortBez;
 	}
 	
 	@Override

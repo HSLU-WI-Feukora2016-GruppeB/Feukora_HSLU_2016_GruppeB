@@ -58,7 +58,7 @@ public interface KontaktDAO {
 	 * @param id
 	 * @return
 	 */
-	public Kontakt findKontaktById(Integer id);
+	public Kontakt findKontaktById(Integer idKontakt);
 	
 	/**
 	 * Liefert alle Kontakt-Objekte zurück.

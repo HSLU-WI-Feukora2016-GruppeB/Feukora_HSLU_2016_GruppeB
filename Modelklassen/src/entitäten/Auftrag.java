@@ -5,6 +5,8 @@ import java.util.GregorianCalendar;
 
 import javax.persistence.*;
 
+import org.eclipse.jdt.annotation.Nullable;
+
 /**
  * Ein Auftrag fasst alle wichtigen Informationen für den Auftrag zusammen. 
  * Er wird normalerweise vom Sachbearbeiter erstellt und vom Feuerungskontrolleur durch
@@ -15,7 +17,7 @@ import javax.persistence.*;
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "Auftrag.findById", query = "SELECT a FROM Auftrag a WHERE a.auftragsnummer=:auftragsnummer"),
+	@NamedQuery(name = "Auftrag.findById", query = "SELECT a FROM Auftrag a WHERE a.auftragsNummer=:auftragsNummer"),
 	@NamedQuery(name = "Auftrag.findByKontakt", query = "SELECT a FROM Auftrag a WHERE a.kontakt=:kontakt"),
 	@NamedQuery(name = "Auftrag.findByLiegenschaft", query = "SELECT a FROM Auftrag a WHERE a.liegenschaft=:liegenschaft"),
 	@NamedQuery(name = "Auftrag.findByMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.mitarbeiter=:mitarbeiter"),
@@ -35,6 +37,7 @@ public class Auftrag implements Serializable{
 	@ManyToOne
 	private Liegenschaft liegenschaft;
 	
+	@Nullable
 	@OneToOne(cascade=CascadeType.ALL)
 	private Messung messung1stufe1;
 	
