@@ -56,9 +56,12 @@ public class Messung implements Serializable{
 	
 	private int abgasverluste;
 	
-	//beurteilung
-	private boolean beurteilungOk;
+	//weiteres vorgehen wird manuell entschieden
+	private boolean einregulierungInnert30;
 	
+	private boolean einregulierungNichtMoeglich;
+	
+	//beurteilung true wenn nicht ok
 	private boolean beurteilungNotOk;
 	
 	//true wenn nicht ok
@@ -71,12 +74,6 @@ public class Messung implements Serializable{
 	private boolean coMgNotOk;
 	
 	private boolean noMgNotOk;
-	
-	//weiteres vorgehen
-	private boolean einregulierungInnert30;
-	
-	private boolean einregulierungNichtMoeglich;
-	
 	
 	//standardkonstruktor
 	public Messung(){
@@ -212,14 +209,6 @@ public class Messung implements Serializable{
 		this.abgasverluste = abgasverluste;
 	}
 	
-	public boolean isBeurteilungOk() {
-		return beurteilungOk;
-	}
-
-	public void setBeurteilungOk(boolean beurteilungOk) {
-		this.beurteilungOk = beurteilungOk;
-	}
-
 	public boolean isBeurteilungNotOk() {
 		return beurteilungNotOk;
 	}
@@ -286,7 +275,10 @@ public class Messung implements Serializable{
 	
 	@Override
 	public String toString(){
-		return "Messung:" + "\n"
+		
+		String messung = "";
+		
+		messung += "Messung:" + "\n"
 				+ "Messdatum: \t \t \t" + this.printMessdatum(this.messDatum) + "\n"
 				+ "Russzahl: \t \t \t" + russzahl + "\n"
 				+ "Kohlenstoff: \t \t \t" + coGehalt + "\n"
@@ -296,19 +288,26 @@ public class Messung implements Serializable{
 				+ "Waermeerzeugertemperatur: \t \t \t" + waermeerzeugertemperatur + "\n"
 				+ "Verbrennungstemperatur: \t \t \t" + verbrennungstemperatur + "\n"
 				+ "O2Gehalt: \t \t \t" + o2gehalt + "\n"
-				+ "Abgasverluste: \t \t \t" + abgasverluste + "\n"
+				+ "Abgasverluste: \t \t \t" + abgasverluste + "\n";
+		
+		if(beurteilungNotOk){
+			messung+="Die Anlage wird beanstandet wegen Überschreibung von: \n"
+					+ "Russzahl \t" + russzahlNotOk + "\n"
+					+ "Ölanteilen: \t" + oelanteilenNotOk + "\n"
+					+ "CO in mg/m3: \t" + coMgNotOk + "\n"
+					+ "NO2 in mg/m3: \t" + noMgNotOk + "\n"
+					+ "Abgasverluste: \t" + abgasverlusteNotOk + "\n";
+		} else {
+			messung+="Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. \n";
+		}
 				
-				+ "Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig.: \n" + beurteilungOk + "\n"
-				+ "Die Anlage wird beanstandet wegen Überschreibung von: \n" + beurteilungNotOk + "\n"
-				+ "Russzahl \t" + russzahlNotOk + "\n"
-				+ "Ölanteilen: \t" + oelanteilenNotOk + "\n"
-				+ "CO in mg/m3: \t" + coMgNotOk + "\n"
-				+ "NO2 in mg/m3: \t" + noMgNotOk + "\n"
-				+ "Abgasverluste: \t" + abgasverlusteNotOk + "\n"
-				+ "Die Anlage muss innert 30 Tagen einreguliert werden. Die erfolgte Einregulierung ist durch den Brennermonteur mit der beiligenden Rückmeldekarte zu bestätigen: \n" + einregulierungInnert30 + "\n"
-				+ "Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich: \n" + einregulierungNichtMoeglich + "\n";
+		if(einregulierungInnert30){
+			messung+= "Die Anlage muss innert 30 Tagen einreguliert werden. Die erfolgte Einregulierung ist durch den Brennermonteur mit der beiligenden Rückmeldekarte zu bestätigen. \n";
+		} else {
+			messung+= "Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich \n";
+		}
 				
-				
+		return messung;	
 	}
 	
 	
