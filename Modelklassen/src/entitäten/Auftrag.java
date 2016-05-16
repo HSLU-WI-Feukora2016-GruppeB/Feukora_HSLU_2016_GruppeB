@@ -41,12 +41,15 @@ public class Auftrag implements Serializable{
 	@OneToOne(cascade=CascadeType.ALL)
 	private Messung messung1stufe1;
 	
+	@Nullable
 	@OneToOne(cascade=CascadeType.ALL)
 	private Messung messung1stufe2;
 	
+	@Nullable
 	@OneToOne(cascade=CascadeType.ALL)
 	private Messung messung2stufe1;
 	
+	@Nullable
 	@OneToOne(cascade=CascadeType.ALL)
 	private Messung messung2stufe2;
 	
