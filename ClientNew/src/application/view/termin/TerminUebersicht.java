@@ -218,29 +218,40 @@ public class TerminUebersicht extends Application {
 				 * T5Z4.setValue(auftrag54.getLiegenschaft.toString());
 				 */
 				
-				/* 
-				 * 
-				 * Alternative Olivia:
-				 * 
-				 * 
-				 * List<Auftrag> la = null;// = auftragRO.findByDateAndMitarbeiter(startdatum, enddatum, mitarbeiter);
-				 * 
-				 * 	for(Auftrag a : la){
-				 * 		int dayOfWeek = a.getTermin().get(Calendar.DAY_OF_WEEK);
-				 * 			int slot = a.getZeitSlot();
-				 * 	}
-				 * 
-				 * 
-				 * 	public Auftrag setTerminOnDay(int dayOfWeek, int slot){
-				 * 		if(dayOfWeek == 1{
-				 * 			for(int slot : )
-				 * 		}
-				 * 		return a;
-				 * 	}	
-				*/
+//	Alternative Olivia:
+//	List<Auftrag> la = null;// = auftragRO.findByDateAndMitarbeiter(startdatum, enddatum, mitarbeiter);
+//				for(Auftrag a : la){
+//					int dayOfWeek = a.getTermin().get(Calendar.DAY_OF_WEEK);
+//				  	int slot = a.getZeitSlot();
+//				  	setTerminOnDay(dayOfWeek, slot, a);
+//				}
+//				  
+//	>>wenn du das ohne jedes einzelne feld selber setzten willst musst 
+//				du ein 2 Dimensionales Array machen um die KAlender matrix 
+//				zu strukturieren dannkannst du es mit noh weniger code machen		 
+//	public void setTerminOnDay(int dayOfWeek, int slot, Auftrag auftrag){
+//				  		
+//		if(dayOfWeek ==Calendar.MONDAY){
+//			switch(slot){
+//				case 1:	T1Z1.setText(formatAuftragHeadline(auftrag));
+//					break;
+//				case 2:
+//			}
+//		}else if(dayOfWeek == Calendar.TUESDAY){
+//			switch()
+//		} //TODO usw.
+//	}	
+
 				
 				
-				}
+				
+	private String formatAuftragHeadline(Auftrag auftrag) {
+			return auftrag.getLiegenschaft().toString();
+	}
+
+
+
+
 			}
 	}
 
