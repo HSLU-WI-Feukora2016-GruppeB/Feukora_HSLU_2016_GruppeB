@@ -133,6 +133,32 @@ public class MitarbeiterDAOTest {
 		assertTrue(mitarbeiterDAO.findAllMitarbeiter().isEmpty());
 	}
 	
+	public void testDeleteMitarbeiterById()throws Exception {
+		
+	}
+	
+	public void testFindMitarbeiterByArbeitetBis() throws Exception {
+		
+	}
+	
+	public void testFindMitarbeiterByArbeitetSeit() throws Exception {
+		
+	}
+	
+	public void testFindMitarbeiterByBenutzer() throws Exception {
+		
+	}
+	
+	public void testFindMitarbeiterByRolleIntern() throws Exception {
+		
+	}
+	
+	public void testFindMitarbeiterByStrasse() throws Exception {
+		
+	}
+	
+	
+	
 	/**
 	 * Dieser Test testet die Suchfunktion "FindAllMitarbeiter". 
 	 * @throws Exception
