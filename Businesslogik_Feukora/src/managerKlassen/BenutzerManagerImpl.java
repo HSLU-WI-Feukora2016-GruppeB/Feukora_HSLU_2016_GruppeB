@@ -53,22 +53,22 @@ public class BenutzerManagerImpl implements BenutzerManager {
 	}
 
 	@Override
-	public Benutzer findById(Integer id) {
+	public Benutzer findById(Integer id) throws Exception {
 		return benutzerDAO.findBenutzerById(id);
 	}
 
 	@Override
-	public List<Benutzer> findAll() {
+	public List<Benutzer> findAll() throws Exception {
 		return benutzerDAO.findAllBenutzer();
 	}
 
 	@Override
-	public List<Benutzer> findByUsername(String username) {
+	public List<Benutzer> findByUsername(String username) throws Exception {
 		return benutzerDAO.findBenutzerByUsername(username);
 	}
 
 	@Override
-	public List<Benutzer> findByPassword(String password) {
+	public List<Benutzer> findByPassword(String password) throws Exception {
 		return benutzerDAO.findBenutzerByPassword(password);
 	}
 

@@ -64,7 +64,7 @@ public interface FeuerungsrapportService {
 	 * @throws Exception
 	 */
 	@WebMethod
-	void deleteById(
+	void deleteAuftragById(
 			@WebParam(name = "auftragsNummer" Integer auftragsNummer) throws Exception;
 	
 	/**
@@ -210,7 +210,7 @@ public interface FeuerungsrapportService {
 	 * @throws Exception
 	 */
 	@WebMethod
-	void deleteById(
+	void deleteBrennerById(
 			@WebParam(name = "idBrenner")Integer idBrenner) throws Exception;
 	
 	/**
@@ -253,7 +253,7 @@ public interface FeuerungsrapportService {
 	 * @return
 	 */
 	@WebMethod
-	List<Brenner> findByBaujahr(
+	List<Brenner> findBrennerByBaujahr(
 			@WebParam(name = "baujahr") int baujahr) throws Exception;
 	
 	//-----------------------------------------------------------------------------------------------
@@ -431,6 +431,16 @@ public interface FeuerungsrapportService {
 	@WebMethod
 	List<Kontakt> findKontaktByRolleExtern (
 			@WebParam(name = "rolleExtern")RolleExtern rolleExtern)throws Exception;
+	
+	
+	/**
+	 * Liefert alle Mitarbeiter mit gesuchter Strasse.
+	 * @param strasse
+	 * @return
+	 */
+	@WebMethod
+	List<Kontakt> findKontaktByStrasse( 
+			@WebParam(name = "strasse")String strasse)throws Exception;
 	//-----------------------------------------------------------------------------------------------
 	//												Liegenschaft
 	//-----------------------------------------------------------------------------------------------
@@ -466,6 +476,24 @@ public interface FeuerungsrapportService {
 	void deleteLiegenschaft(
 			@WebParam(name = "liegenschaft") Liegenschaft liegenschaft)throws Exception;
 
+	/**
+	 * Löscht die übergebene Liegenschaft mithilfe ihrer ID.
+	 * @param idLiegenschaft
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	void deleteLiegenschaftById(
+			@WebParam(name = "idLiegenschaft")Integer idLiegenschaft) throws Exception;
+	
+
+	/**
+	 * Liefert die Liegenschaft die mit der Id angefragt wurde. 
+	 * @param id
+	 * @return
+	 */
+	@WebMethod
+	Liegenschaft findLiegenschaftById(name = "idLiegenschaft" Integer idLiegenschaft)throws Exception;
 	/**
 	 * Sucht und liefert alle Entity-Objekte zurück
 	 * 
@@ -575,7 +603,7 @@ public interface FeuerungsrapportService {
 	 * @return
 	 */
 	@WebMethod
-	List<Messung> findByDatum(
+	List<Messung> findMessungByDatum(
 			@WebParam(name = "messDatum")GregorianCalendar messDatum)throws Exception;
 	
 	/**
@@ -584,7 +612,7 @@ public interface FeuerungsrapportService {
 	 * @return
 	 */
 	@WebMethod
-	List<Messung> findByBeurteilungNotOk(
+	List<Messung> findMessungByBeurteilungNotOk(
 			@WebParam(name = "beurteilungNotOK")boolean beurteilungNotOk)throws Exception;
 	//-----------------------------------------------------------------------------------------------
 	//												Mitarbeiter
@@ -607,7 +635,69 @@ public interface FeuerungsrapportService {
 			Mitarbeiter findMitarbeiterByVorname (
 					@WebParam(name = "vorname") String vorname)throws Exception;
 			
-				
+			/**
+			 * Liefert den Mitarbeiter zur mitgegebenen Id.
+			 * @param idMitarbeiter
+			 * @return
+			 */
+			@WebMethod
+			Mitarbeiter findMitarbeiterById(
+					@WebParam(name = "idMitarbeiter")Integer idMitarbeiter)throws Exception;
+			
+			/**
+			 * Liefert alle Mitarbeiter mit gesuchtem Vornamen.
+			 * @param name
+			 * @param vorname
+			 * @return
+			 */
+			@WebMethod
+			List<Mitarbeiter> findMitarbeiterByNameVorname(
+					@WebParam(name = "name")String name, @WebParam(name = "vorname")String vorname)throws Exception;
+			
+			/**
+			 * Liefert alle Mitarbeiter mit gesuchter Strasse.
+			 * @param strasse
+			 * @return
+			 */
+			@WebMethod
+			List<Mitarbeiter> findMitarbeiterByStrasse (
+					@WebParam(name = "strasse")String strasse)throws Exception;
+			
+			/**
+			 * Liefert alle Mitarbeiter mit gesuchtem Ort.
+			 * @param ort
+			 * @return
+			 */
+			@WebMethod
+			List<Mitarbeiter> findMitarbeiterByOrt (
+					@WebParam(name = "ort")Ort ort)throws Exception;
+			
+			/**
+			 * Liefert alle Mitarbeiter mit gesuchtem Benutzernamen.
+			 * @param username
+			 * @return
+			 */
+			@WebMethod
+			List<Mitarbeiter> findMitarbeiterByBenutzer (
+					@WebParam(name = "user")Benutzer user)throws Exception;
+			
+			/**
+			 * Liefert alle Mitarbeiter mit gesuchtem Arbeitsbeginn-Datum.
+			 * @param arbeitetSeit
+			 * @return
+			 */
+			@WebMethod
+			List<Mitarbeiter> findMitarbeiterByArbeitetSeit (
+					@WebParam(name = "arbeitetSeit")GregorianCalendar arbeitetSeit)throws Exception;
+
+			/**
+			 * Liefert alle Mitarbeiter mit gesuchtem Kündigungs-Datum.
+			 * @param arbeitetBis
+			 * @return
+			 */
+			@WebMethod
+			List<Mitarbeiter> findMitarbeiterByArbeitetBis (
+					@WebParam(name = "arbeitetBis")GregorianCalendar arbeitetBis)throws Exception;
 	//-----------------------------------------------------------------------------------------------
 	//												Ort
 	//-----------------------------------------------------------------------------------------------
@@ -720,6 +810,16 @@ public interface FeuerungsrapportService {
 			@WebParam(name = "waermeerzeuger")Waermeerzeuger entitaet) throws Exception;
 
 	/**
+	 * Löscht den übergebenen Waermeerzeuger mithilfe seiner Id.
+	 * @param idWaermeerzeuger
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	void deleteWaermeerzeugerById(
+			@WebParam(name = "idWaermeerzeuger")Integer idWaermeerzeuger) throws Exception;
+	
+	/**
 	 * Liefert den Waermeerzeuger der mit der Id angefragt wurde. 
 	 * 
 	 * @param id
@@ -727,7 +827,7 @@ public interface FeuerungsrapportService {
 	 */
 	@WebMethod
 	Waermeerzeuger findWaermeerzeugerById(
-			@WebParam(name = "waermeerzeuger")Integer id)throws Exception;
+			@WebParam(name = "idWaermeerzeuger")Integer id)throws Exception;
 	
 	/**
 	 * Liefert alle Waermeerzeuger zurück.
@@ -745,7 +845,7 @@ public interface FeuerungsrapportService {
 	 */
 	@WebMethod
 	List<Waermeerzeuger> findWaermeerzeugerByTyp(
-			@WebParam(name = "waermeerzeuger")String waermeerzeugerTyp)throws Exception;
+			@WebParam(name = "waermeerzeugerTyp")String waermeerzeugerTyp)throws Exception;
 
 	/**
 	 * Liefert eine Waermeerzeuger anhand des gesuchten Brennstoff.
@@ -755,5 +855,14 @@ public interface FeuerungsrapportService {
 	 */
 	@WebMethod
 	List<Waermeerzeuger> findWaermeerzeugerByBrennstoff(
-			@WebParam(name = "waermeerzeuger")String brennstoff)throws Exception;
+			@WebParam(name = "brennstoff")String brennstoff)throws Exception;
+	
+	/**
+	 * Liefert eine Waermeerzeuger anhand des gesuchten Baujahrs.
+	 * @param baujahr
+	 * @return
+	 */
+	@WebMethod
+	List<Waermeerzeuger> findWaermeerzeugerByBaujahr(
+			@WebParam(name = "baujahr")int baujahr) throws Exception;
 }

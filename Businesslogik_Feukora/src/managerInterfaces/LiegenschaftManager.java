@@ -52,34 +52,34 @@ public interface LiegenschaftManager {
 	 * @param id
 	 * @return
 	 */
-	public Liegenschaft findById(Integer id);
+	public Liegenschaft findById(Integer idLiegenschaft)throws Exception;
 	
 	/**
 	 * Liefert alle Liegenschaften zurück.
 	 * @return
 	 */
-	public List<Liegenschaft> findAll();
+	public List<Liegenschaft> findAll()throws Exception throws Exception;
 	
 	/**
 	 * Liefert eine Liegenschaftsliste anhand des gesuchten Kontakts.
 	 * @param kontakt
 	 * @return
 	 */
-	public List<Liegenschaft> findByKontakt(Kontakt kontakt);
+	public List<Liegenschaft> findByKontakt(Kontakt kontakt)throws Exception;
 
 	/**
 	 * Liefert eine Liegenschaftsliste anhand des gesuchten Orts.
 	 * @param ort
 	 * @return
 	 */
-	public List<Liegenschaft> findByOrt(Ort ort);
+	public List<Liegenschaft> findByOrt(Ort ort)throws Exception;
 	
 	/**
 	 * Liefert eine Liegenschaftsliste anhand der gesuchten Strasse.
 	 * @param strasseInklNr
 	 * @return
 	 */	
-	public List<Liegenschaft> findByStrasse(String strasse);
+	public List<Liegenschaft> findByStrasse(String strasse)throws Exception;
 
 	
 }
