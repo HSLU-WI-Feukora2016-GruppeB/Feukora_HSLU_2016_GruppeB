@@ -410,6 +410,78 @@ public interface FeuerungsrapportService {
 	//-----------------------------------------------------------------------------------------------
 	//												Ort
 	//-----------------------------------------------------------------------------------------------
+			/**
+			 * Speichert einen Ort.
+			 * 
+			 * @param entity
+			 * @return
+			 * @throws Exception
+			 */
+			@WebMethod
+			Ort addOrt(
+					@WebParam(name = "ort") Ort entity) throws Exception;
+
+			/**
+			 * Passt den übergebenen Ort an.
+			 * 
+			 * @param entity
+			 * @return
+			 * @throws Exception
+			 */
+			@WebMethod
+			Ort updateOrt(
+					@WebParam(name= "ort") Ort entity) throws Exception;
+
+			/**
+			 * Löscht den übergebenen Ort.
+			 * 
+			 * @param entity
+			 * @return
+			 * @throws Exception
+			 */
+			@WebMethod
+			void deleteOrt(
+					@WebParam(name = "ort") Ort entity) throws Exception;
+
+			/**
+			 * Löscht den übergebenen Ort mithilfe seiner Id.
+			 * 
+			 * @param plz
+			 * @return
+			 * @throws Exception
+			 */
+			@WebMethod
+			void deleteOrtById(
+					@WebParam(name = "plz") Integer plz) throws Exception;
+
+			/**
+			 * Liefert einen Ort anhand der gesuchten Id.
+			 * 
+			 * @param plz
+			 * @return
+			 */
+			@WebMethod
+			Ort findOrtById(
+					@WebParam(name = "plz")Integer plz) throws Exception;
+
+			/**
+			 * Liefert einen Ort anhand der gesuchten Ortsbezeichnung.
+			 * 
+			 * @param ortBez
+			 * @return
+			 */
+			@WebMethod
+			List<Ort> findOrtByOrtBez(
+					@WebParam (name = "ortBez")String ortBez) throws Exception;
+
+			/**
+			 * Liefert alle Benutzer zurück.
+			 * 
+			 * @return
+			 */
+			List<Ort> findAllOrt()throws Exception;
+
+			}	
 	//-----------------------------------------------------------------------------------------------
 	//												Wärmeerzeuger
 	//-----------------------------------------------------------------------------------------------
