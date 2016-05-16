@@ -2,7 +2,7 @@ package managerKlassen;
 
 import java.util.List;
 
-import entitäten.Benutzer;
+import entitys.Benutzer;
 import gruppeB.feukora.interfaces.BenutzerDAO;
 import gruppeB.feukora.persister.BenutzerDAOImpl;
 import managerInterfaces.BenutzerManager;
@@ -68,8 +68,8 @@ public class BenutzerManagerImpl implements BenutzerManager {
 	}
 
 	@Override
-	public List<Benutzer> findByPassword(String password) throws Exception {
-		return benutzerDAO.findBenutzerByPassword(password);
+	public List<Benutzer> findByUsernamePassword(String username, String password) throws Exception {
+		return benutzerDAO.findBenutzerByUsernamePassword(password);
 	}
 
 }

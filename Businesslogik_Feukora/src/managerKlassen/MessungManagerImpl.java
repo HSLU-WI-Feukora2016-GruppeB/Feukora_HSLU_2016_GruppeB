@@ -3,7 +3,7 @@ package managerKlassen;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import entitäten.Messung;
+import entitys.Messung;
 import gruppeB.feukora.interfaces.MessungDAO;
 import gruppeB.feukora.persister.MessungDAOImpl;
 import managerInterfaces.MessungsManager;

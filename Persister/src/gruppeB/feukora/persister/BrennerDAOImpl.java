@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import entitäten.Brenner;
+import entitys.Brenner;
 import gruppeB.feukora.interfaces.BrennerDAO;
 import gruppeB.feukora.persister.generic.GenericPersisterImpl;
 import gruppeB.feukora.persister.util.JpaUtil;

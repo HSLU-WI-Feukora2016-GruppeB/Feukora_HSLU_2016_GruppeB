@@ -2,9 +2,9 @@ package managerInterfaces;
 
 import java.util.List;
 
-import entitäten.Kontakt;
-import entitäten.Liegenschaft;
-import entitäten.Ort;
+import entitys.Kontakt;
+import entitys.Liegenschaft;
+import entitys.Ort;
 
 /**
  * Verwaltet eine Liegenschaft und alle Funktionen.
@@ -58,7 +58,7 @@ public interface LiegenschaftManager {
 	 * Liefert alle Liegenschaften zurück.
 	 * @return
 	 */
-	public List<Liegenschaft> findAll()throws Exception throws Exception;
+	public List<Liegenschaft> findAll()throws Exception;
 	
 	/**
 	 * Liefert eine Liegenschaftsliste anhand des gesuchten Kontakts.

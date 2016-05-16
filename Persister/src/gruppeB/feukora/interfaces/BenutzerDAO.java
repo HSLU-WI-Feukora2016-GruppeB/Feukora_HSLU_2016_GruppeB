@@ -6,7 +6,8 @@
 package gruppeB.feukora.interfaces;
 
 import java.util.List;
-import entitäten.Benutzer;
+
+import entitys.Benutzer;
 
 /**
  * Interface für Persistierung von Benutzer-Entities.
@@ -78,8 +79,8 @@ public interface BenutzerDAO {
 	 * Liefert die Liste mit den User für den übergebenen Passwörter zurück, falls
 	 * es welche gibt. Sonst eine leere Liste.
 	 * 
-	 * @param password
+	 * @param username
 	 * @return
 	 */
-	public List<Benutzer> findBenutzerByPassword(String password) throws Exception;
+	public List<Benutzer> findBenutzerByUsernamePassword(String username) throws Exception;
 }

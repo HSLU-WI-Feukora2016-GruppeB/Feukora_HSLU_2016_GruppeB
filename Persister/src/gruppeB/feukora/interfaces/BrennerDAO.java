@@ -7,7 +7,7 @@ package gruppeB.feukora.interfaces;
 
 import java.util.List;
 
-import entitäten.Brenner;
+import entitys.Brenner;
 
 /**
  * Interface für Persistierung von Brenner-Entities.

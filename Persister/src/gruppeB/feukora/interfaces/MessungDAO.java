@@ -8,7 +8,7 @@ package gruppeB.feukora.interfaces;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import entitäten.Messung;
+import entitys.Messung;
 
 /**
  * Interface für Persistierung von Messung-Entities.

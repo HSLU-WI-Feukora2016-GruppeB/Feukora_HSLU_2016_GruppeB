@@ -2,9 +2,9 @@ package gruppeB.feukora.interfaces;
 
 import java.util.List;
 
-import entitäten.Liegenschaft;
-import entitäten.Kontakt;
-import entitäten.Ort;
+import entitys.Kontakt;
+import entitys.Liegenschaft;
+import entitys.Ort;
 
 /**
  * Interface für Persistierung von Liegenschaft-Entities.

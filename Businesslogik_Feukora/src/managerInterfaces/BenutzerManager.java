@@ -2,7 +2,7 @@ package managerInterfaces;
 
 import java.util.List;
 
-import entitäten.Benutzer;
+import entitys.Benutzer;
 
 /**
 	 * Verwaltet einen Benutzer und alle Funktionen.
@@ -78,6 +78,7 @@ public interface BenutzerManager {
 	 * @param password
 	 * @return
 	 */
-	public List<Benutzer> findByPassword(String password)throws Exception;
+	public List<Benutzer> findByUsernamePassword(String username, String password)throws Exception;
+
 
 }

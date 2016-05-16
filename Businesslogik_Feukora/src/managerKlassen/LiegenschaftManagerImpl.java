@@ -2,9 +2,9 @@ package managerKlassen;
 
 import java.util.List;
 
-import entitäten.Kontakt;
-import entitäten.Liegenschaft;
-import entitäten.Ort;
+import entitys.Kontakt;
+import entitys.Liegenschaft;
+import entitys.Ort;
 import gruppeB.feukora.interfaces.LiegenschaftDAO;
 import gruppeB.feukora.persister.LiegenschaftDAOImpl;
 import managerInterfaces.LiegenschaftManager;

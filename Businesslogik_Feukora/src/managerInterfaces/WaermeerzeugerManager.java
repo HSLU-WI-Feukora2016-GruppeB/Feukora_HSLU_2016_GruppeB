@@ -2,7 +2,7 @@ package managerInterfaces;
 
 import java.util.List;
 
-import entitäten.Waermeerzeuger;
+import entitys.Waermeerzeuger;
 
 /**
  * Verwaltet einen Waermeerzeuger und alle Funktionen.

@@ -8,10 +8,10 @@ package gruppeB.feukora.interfaces;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import entitäten.Auftrag;
-import entitäten.Kontakt;
-import entitäten.Liegenschaft;
-import entitäten.Mitarbeiter;
+import entitys.Auftrag;
+import entitys.Kontakt;
+import entitys.Liegenschaft;
+import entitys.Mitarbeiter;
 
 /**
  * Interface für Persistierung von Auftrag-Entities.
@@ -119,5 +119,15 @@ public interface AuftragDAO {
 	 * @return
 	 */
 	public List<Auftrag> findByLiegenschaft(Liegenschaft liegenschaft);
+
+	/**
+	 * Liefert spezifischen Auftrag eines Mitarbeiters, zu bestimmten Datum, und Zeitslot.
+	 * @param datum
+	 * @param mitarbeiter
+	 * @param zeitSlot
+	 * @return
+	 */
+	public Auftrag findAuftragByDateAndMitarbeiterAndZeitslot(
+			GregorianCalendar datum, Mitarbeiter mitarbeiter, int zeitSlot);
 
 }

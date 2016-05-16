@@ -2,7 +2,7 @@ package gruppeB.feukora.interfaces;
 
 import java.util.*;
 
-import entitäten.Waermeerzeuger;
+import entitys.Waermeerzeuger;
 
 
 /**

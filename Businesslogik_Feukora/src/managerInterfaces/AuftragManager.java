@@ -3,10 +3,10 @@ package managerInterfaces;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import entitäten.Auftrag;
-import entitäten.Kontakt;
-import entitäten.Liegenschaft;
-import entitäten.Mitarbeiter;
+import entitys.Auftrag;
+import entitys.Kontakt;
+import entitys.Liegenschaft;
+import entitys.Mitarbeiter;
 
 /**
  * Verwaltet einen Auftrag und alle Funktionen.
@@ -84,8 +84,18 @@ public interface AuftragManager {
 	 * @param mitarbeiter
 	 * @return
 	 */
-	public List<Auftrag> findByDateAndMitarbeiter(GregorianCalendar startdatum, GregorianCalendar enddatum,
-			Mitarbeiter mitarbeiter)throws Exception;
+	public List<Auftrag> findByDateAndMitarbeiter(GregorianCalendar startdatum, GregorianCalendar enddatum, Mitarbeiter mitarbeiter) throws Exception;
+	
+	/**
+	 * Liefert eine Auftragsliste anhand des gesuchten Mitarbeiter 
+	 * für ein bestimmtes Datum und ZeitSlot.
+	 * @param startdatum
+	 * @param zeitSlot
+	 * @param mitarbeiter
+	 * @return
+	 */
+	public Auftrag findByDateAndMitarbeiterAndZeitslot(GregorianCalendar datum, 
+			Mitarbeiter mitarbeiter, int zeitSlot) throws Exception;
 	
 	/**
 	 * Liefert eine Auftragsliste anhand des gesuchten Kontakts.

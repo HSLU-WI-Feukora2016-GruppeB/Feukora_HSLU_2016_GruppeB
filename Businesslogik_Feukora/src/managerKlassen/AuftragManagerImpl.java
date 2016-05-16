@@ -1,10 +1,10 @@
 package managerKlassen;
 
-import entitäten.Auftrag;
-import entitäten.Kontakt;
-import entitäten.Liegenschaft;
-import entitäten.Messung;
-import entitäten.Mitarbeiter;
+import entitys.Auftrag;
+import entitys.Kontakt;
+import entitys.Liegenschaft;
+import entitys.Messung;
+import entitys.Mitarbeiter;
 import gruppeB.feukora.interfaces.AuftragDAO;
 import gruppeB.feukora.persister.AuftragDAOImpl;
 
@@ -111,6 +111,12 @@ public class AuftragManagerImpl implements AuftragManager {
 	public List<Auftrag> findByDateAndMitarbeiter(GregorianCalendar startdatum,
 			GregorianCalendar enddatum, Mitarbeiter mitarbeiter) {
 		return auftragDAO.findByDatumAndMitarbeiter(startdatum, enddatum, mitarbeiter);
+	}
+
+	@Override
+	public Auftrag findByDateAndMitarbeiterAndZeitslot(GregorianCalendar datum,
+			Mitarbeiter mitarbeiter, int zeitSlot) {
+		return auftragDAO.findAuftragByDateAndMitarbeiterAndZeitslot(datum, mitarbeiter, zeitSlot);
 	}
 
 	@Override

@@ -1,8 +1,8 @@
 package webservice.gruppeB.persister;
 
 import static org.junit.Assert.*;
-import entitäten.Mitarbeiter;
-import entitäten.Ort;
+import entitys.Mitarbeiter;
+import entitys.Ort;
 import gruppeB.feukora.persister.MitarbeiterDAOImpl;
 import gruppeB.feukora.persister.OrtDAOImpl;
 

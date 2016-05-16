@@ -2,8 +2,8 @@ package managerInterfaces;
 
 import java.util.List;
 
-import entitäten.Benutzer;
-import entitäten.Ort;
+import entitys.Benutzer;
+import entitys.Ort;
 
 /**
  * Verwaltet einen Ort und alle Funktionen.

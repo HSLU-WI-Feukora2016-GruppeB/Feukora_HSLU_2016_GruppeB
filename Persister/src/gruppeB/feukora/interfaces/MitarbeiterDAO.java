@@ -3,9 +3,9 @@ package gruppeB.feukora.interfaces;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import entitäten.Mitarbeiter;
-import entitäten.Ort;
-import entitäten.Benutzer;
+import entitys.Benutzer;
+import entitys.Mitarbeiter;
+import entitys.Ort;
 
 /**
  * Interface für Persistierung von Mitarbeiter-Entities.

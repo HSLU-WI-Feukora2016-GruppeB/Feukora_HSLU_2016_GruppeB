@@ -1,8 +1,3 @@
-/*
- * ZWECK: Praxisprojekt Feukora
- * MODUL: Softwarekomponenten, HSLU-Wirtschaft 
- */
-
 package gruppeB.feukora.persister.util;
 
 import javax.persistence.EntityManager;
@@ -25,7 +20,7 @@ public class JpaUtil {
 		try {
 			/* EntityManagerFactory erzeugen */
 			entityManagerFactory = Persistence
-					.createEntityManagerFactory("Feukora");
+					.createEntityManagerFactory("FeukoraTest");
 		} catch (Throwable e) {
 			/* TODO - Fehlerbehandlung … */
 			e.printStackTrace();

@@ -7,8 +7,8 @@ package gruppeB.feukora.interfaces;
 
 import java.util.List;
 
-import entitäten.Kontakt;
-import entitäten.Ort;
+import entitys.Kontakt;
+import entitys.Ort;
 
 /**
  * Interface für Persistierung von Kontakt-Entities.
