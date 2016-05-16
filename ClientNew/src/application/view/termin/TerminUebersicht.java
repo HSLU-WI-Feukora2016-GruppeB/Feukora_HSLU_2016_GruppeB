@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.Observable;
 
 import javax.imageio.ImageIO;
 
+import rmi.AuftragRO;
 import entitys.Auftrag;
 import entitys.Mitarbeiter;
 import javafx.application.Application;
@@ -25,11 +27,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -65,8 +65,10 @@ public class TerminUebersicht extends Application {
 	private DatePicker startDatum, endDatum;
 
 	private Stage TermStage = new Stage();
+	
+	
 
-	// AuftragRO auftragRO;
+	AuftragRO auftragRO;
 	// MitarbeiterRO mitarbeiterRo;
 
 	@Override
@@ -215,10 +217,35 @@ public class TerminUebersicht extends Application {
 				 * kontrolleur, 4);
 				 * T5Z4.setValue(auftrag54.getLiegenschaft.toString());
 				 */
+				
+				/* 
+				 * 
+				 * Alternative Olivia:
+				 * 
+				 * 
+				 * List<Auftrag> la = null;// = auftragRO.findByDateAndMitarbeiter(startdatum, enddatum, mitarbeiter);
+				 * 
+				 * 	for(Auftrag a : la){
+				 * 		int dayOfWeek = a.getTermin().get(Calendar.DAY_OF_WEEK);
+				 * 			int slot = a.getZeitSlot();
+				 * 	}
+				 * 
+				 * 
+				 * 	public Auftrag setTerminOnDay(int dayOfWeek, int slot){
+				 * 		if(dayOfWeek == 1{
+				 * 			for(int slot : )
+				 * 		}
+				 * 		return a;
+				 * 	}	
+				*/
+				
+				
+				}
 			}
-		}
 	}
 
+	
+	
 	/**
 	 * Diese Methode erstellt ein neues Terminobjekt.
 	 */
