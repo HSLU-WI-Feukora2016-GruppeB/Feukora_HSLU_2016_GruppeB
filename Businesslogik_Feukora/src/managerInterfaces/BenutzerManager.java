@@ -55,14 +55,14 @@ public interface BenutzerManager {
 	 * @param id
 	 * @return
 	 */
-	public Benutzer findById(Integer id);
+	public Benutzer findById(Integer id)throws Exception;
 
 	/**
 	 * Liefert alle Benutzer zurück.
 	 * 
 	 * @return
 	 */
-	public List<Benutzer> findAll();
+	public List<Benutzer> findAll()throws Exception;
 
 	/**
 	 * Liefert eine Benutzerliste anhand des gesuchten Usernames.
@@ -70,7 +70,7 @@ public interface BenutzerManager {
 	 * @param username
 	 * @return
 	 */
-	public List<Benutzer> findByUsername(String username);
+	public List<Benutzer> findByUsername(String username)throws Exception;
 	
 	/**
 	 * Liefert eine Benutzerliste anhand des gesuchten Passworts.
@@ -78,6 +78,6 @@ public interface BenutzerManager {
 	 * @param password
 	 * @return
 	 */
-	public List<Benutzer> findByPassword(String password);
+	public List<Benutzer> findByPassword(String password)throws Exception;
 
 }

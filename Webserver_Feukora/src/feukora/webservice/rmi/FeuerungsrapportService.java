@@ -6,6 +6,7 @@
  */
 package feukora.webservice.rmi;
 
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.jws.WebMethod;
@@ -33,7 +34,8 @@ public interface FeuerungsrapportService {
 	 * @throws Exception
 	 */
 	@WebMethod
-	Auftrag addAuftrag(@WebParam(name = "auftrag") Auftrag entity)throws Exception;
+	Auftrag addAuftrag(
+			@WebParam(name = "auftrag") Auftrag entity)throws Exception;
 	
 	/**
 	 * Passt den übergebenen Auftrag an.
@@ -42,7 +44,8 @@ public interface FeuerungsrapportService {
 	 * @throws Exception
 	 */
 	@WebMethod
-	Auftrag updateAuftrag(@WebParam(name = "auftrag") Auftrag entity)throws Exception;
+	Auftrag updateAuftrag(
+			@WebParam(name = "auftrag") Auftrag entity)throws Exception;
 	
 	/**
 	 * Löscht den übergebenen Auftrag.
@@ -51,7 +54,18 @@ public interface FeuerungsrapportService {
 	 * @throws Exception
 	 */
 	@WebMethod
-	void deleteAuftrag(@WebParam(name = "auftrag") Auftrag entity)throws Exception;
+	void deleteAuftrag(
+			@WebParam(name = "auftrag") Auftrag entity)throws Exception;
+	
+	/**
+	 * Löscht den übergebenen Auftrag mithilfe der auftragsnummer.
+	 * @param auftragsNummer
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	void deleteById(
+			@WebParam(name = "auftragsNummer" Integer auftragsNummer) throws Exception;
 	
 	/**
 	 * Liefert alle Aufträge zurück.
@@ -88,6 +102,19 @@ public interface FeuerungsrapportService {
 			@WebParam(name = "kontakt") String kontakt)throws Exception;
 	
 	/**
+	 * Liefert eine Auftragsliste anhand des gesuchten Mitarbeiter 
+	 * für eine bestimmte Arbeitswoche.
+	 * @param startdatum
+	 * @param enddatum
+	 * @param mitarbeiter
+	 * @return
+	 */
+	@WebMethod
+	List<Auftrag> findAuftragByDateAndMitarbeiter(
+			@WebParam(name = "startdatum")GregorianCalendar startdatum, @WebParam(name = "mitarbeiter")GregorianCalendar enddatum,
+			Mitarbeiter mitarbeiter);
+	
+	/**
 	 * Liefert eine Auftragsliste anhand der gesuchten Liegenschaften.
 	 * @param liegenschaftOrt
 	 * @return
@@ -104,7 +131,47 @@ public interface FeuerungsrapportService {
 	@WebMethod
 	List<Auftrag> findAuftragByAuftragsnummer(
 			@WebParam(name = "nummer") int auftragsNummer);
+	//-----------------------------------------------------------------------------------------------
+	//												Benutzer
+	//-----------------------------------------------------------------------------------------------
+
+	/**
+	 * Liefert einen Benutzer anhand der gesuchten Benutzerid.
+	 * 
+	 * @param id
+	 * @return
+	 */
+	@WebMethod
+	Benutzer findBenutzerById(
+			@WebParam(name = "idUser")Integer idUser)throws Exception;
+
+	/**
+	 * Liefert alle Benutzer zurück.
+	 * 
+	 * @return
+	 */
+	@WebMethod
+	List<Benutzer> findAllBenutzer()throws Exception;
+
+	/**
+	 * Liefert eine Benutzerliste anhand des gesuchten Usernames.
+	 * 
+	 * @param username
+	 * @return
+	 */
+	@WebMethod
+	List<Benutzer> findBenutzerByUsername(
+			@WebParam(name = "username")String username)throws Exception;
 	
+	/**
+	 * Liefert eine Benutzerliste anhand des gesuchten Passworts.
+	 * 
+	 * @param password
+	 * @return
+	 */
+	@WebMethod
+	List<Benutzer> findBenutzerByPassword(
+			@WebParam(name = "password")String password)throws Exception;
 	//-----------------------------------------------------------------------------------------------
 	//												Brenner
 	//-----------------------------------------------------------------------------------------------	
@@ -138,9 +205,27 @@ public interface FeuerungsrapportService {
 			@WebParam(name= "brenner")Brenner entity) throws Exception;
 	
 	/**
+	 * Löscht den Brenner mithilfe seiner Id.
+	 * @param entity
+	 * @throws Exception
+	 */
+	@WebMethod
+	void deleteById(
+			@WebParam(name = "idBrenner")Integer idBrenner) throws Exception;
+	
+	/**
+	 * Liefert Brenner mithilfe seiner Id.
+	 * @return
+	 */
+	@WebMethod
+	Brenner findBrennerById(
+			@WebParam(name = "idBrenner")Integer idBrenner)throws Exception;
+	
+	/**
 	 * Liefert Liste aller Brenner.
 	 * @return
 	 */
+	
 	@WebMethod
 	List<Brenner> findBrennerByAllBrenner() throws Exception;
 	
@@ -161,6 +246,15 @@ public interface FeuerungsrapportService {
 	@WebMethod
 	List<Brenner> findBrennerByArt(
 			@WebParam(name = "art")String brennerArt)throws Exception;
+	
+	/**
+	 * Liefert alle Brenner mit angefragtem Baujahr.
+	 * @param baujahr
+	 * @return
+	 */
+	@WebMethod
+	List<Brenner> findByBaujahr(
+			@WebParam(name = "baujahr") int baujahr) throws Exception;
 	
 	//-----------------------------------------------------------------------------------------------
 	//												Feuerungsanlage
@@ -193,6 +287,24 @@ public interface FeuerungsrapportService {
 	@WebMethod
 	void deleteFeuerungsanlage(
 			@WebParam(name = "feuerungsanlage")Feuerungsanlage entity) throws Exception;
+	
+	/**
+	 * Löscht die mitgegebene Feuerungsanlage mithilfe ihrer ID.
+	 * @param idFeuerungsanlage
+	 * @throws Exception
+	 */
+	@WebMethod
+	void deleteFeuerungsanlageById(
+			@WebParam(name = "idFeuerungsanlage")Integer idFeuerungsanlage) throws Exception;
+	
+	/**
+	 * Liefert die mitgegebene Feuerungsanlage mithilfe ihrer ID.
+	 * @param idFeuerungsanlage
+	 * @throws Exception
+	 */
+	@WebMethod
+	Feuerungsanlage findFeuerungsanlageById(
+			@WebParam(name = "idFeuerungsanlage")Integer idFeuerungsanlage) throws Exception;
 	
 	/**
 	 * Liefert Liste aller Feuerungsanlagen.
@@ -259,6 +371,23 @@ public interface FeuerungsrapportService {
 	@WebMethod
 	void deleteKontakt(
 			@WebParam(name = "kontakt")Kontakt entity) throws Exception;
+	
+	/**
+	 * Löscht den mitgegebenen Kontakt mithilfe seiner Id.
+	 * @param idKontakt
+	 * @throws Exception
+	 */
+	@WebMethod
+	void deleteKontaktById(
+			@WebParam(name = "idKontakt")Integer idKontakt) throws Exception;
+	
+	/**
+	 * Liefert Liste von Kontakten mit der mitgegebenen ID.
+	 * @return
+	 */
+	@WebMethod
+	public Kontakt findKontaktById(
+			@WebParam(name = "idKontakt"Integer idKontakt) throws Exception;
 	
 	/**
 	 * Liefert Liste aller Kontakte.
@@ -384,7 +513,79 @@ public interface FeuerungsrapportService {
 	//-----------------------------------------------------------------------------------------------
 	//												Messung
 	//-----------------------------------------------------------------------------------------------
-			
+	/**
+	 * Speichert eine Messung.
+	 * @param entity
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Messung addMessung(
+			@WebParam(name = "messung") Messung entity) throws Exception;
+	
+	/**
+	 * Passt die übergebene Messung an.
+	 * @param entity
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Messung updateMessung(
+			@WebParam( name = "messung")Messung entity) throws Exception;
+	
+	/**
+	 * Löscht die übergebene Messung.
+	 * @param entity
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	void deleteMessung(
+			@WebParam( name = "messung")Messung entity) throws Exception;
+	
+	/**
+	 * Löscht die übergebene Messung mithilfe ihrer Id.
+	 * @param idMessung
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	void deleteMessungById( 
+			@WebParam( name = "idMessung")Integer idMessung) throws Exception;
+
+	/**
+	 * Liefert eine Messungsliste anhand der gesuchten id.
+	 * @param idMessung
+	 * @return
+	 */	
+	@WebMethod
+	Messung findMessungById(
+			@WebParam(name = "idMessung")Integer idMessung) throws Exception;
+	
+	/**
+	 * Liefert alle Messungen zurück.
+	 * @return
+	 */
+	@WebMethod
+	List<Messung> findAllMessung()throws Exception;
+	
+	/**
+	 * Liefert eine Messungsliste anhand des gesuchten Messdatums.
+	 * @param datum
+	 * @return
+	 */
+	@WebMethod
+	List<Messung> findByDatum(
+			@WebParam(name = "messDatum")GregorianCalendar messDatum)throws Exception;
+	
+	/**
+	 * Liefert alle Messungen wessen Beurteilungen NICHT ok waren (ausserhalb Grenzwerte).
+	 * @param beurteilungNotOk
+	 * @return
+	 */
+	@WebMethod
+	List<Messung> findByBeurteilungNotOk(
+			@WebParam(name = "beurteilungNotOK")boolean beurteilungNotOk)throws Exception;
 	//-----------------------------------------------------------------------------------------------
 	//												Mitarbeiter
 	//-----------------------------------------------------------------------------------------------

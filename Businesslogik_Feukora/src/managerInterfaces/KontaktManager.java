@@ -45,27 +45,27 @@ public interface KontaktManager {
 	 * Liefert Liste von Kontakten mit der mitgegebenen ID.
 	 * @return
 	 */
-	public Kontakt findById(Integer id);
+	public Kontakt findById(Integer id)throws Exception; 
 	
 	/**
 	 * Liefert Liste aller Kontakte.
 	 * @return
 	 */
-	public List<Kontakt> findAll();
+	public List<Kontakt> findAll()throws Exception;
 	
 	/**
 	 * Liefert alle Kontakt mit gesuchtem Namen.
 	 * @param name
 	 * @return
 	 */
-	public List<Kontakt> findByName(String name);
+	public List<Kontakt> findByName(String name)throws Exception;
 	
 	/**
 	 * Liefert alle Kontakte mit gesuchtem Vornamen.
 	 * @param vorname
 	 * @return
 	 */
-	public List<Kontakt> findByVorname(String vorname);
+	public List<Kontakt> findByVorname(String vorname)throws Exception;
 	
 	/**
 	 * Liefert alle Kontakte mit gesuchtem Vornamen.
@@ -73,27 +73,27 @@ public interface KontaktManager {
 	 * @param vorname	 
 	 * @return
 	 */
-	public List<Kontakt> findByNameVorname(String name, String vorname);
+	public List<Kontakt> findByNameVorname(String name, String vorname)throws Exception;
 	
 	/**
 	 * Liefert alle Kontakte mit gesuchtem Ort.
 	 * @param ort
 	 * @return
 	 */
-	public List<Kontakt> findByOrt (Ort ort);
+	public List<Kontakt> findByOrt (Ort ort)throws Exception;
 	
 	/**
 	 * Liefert alle Mitarbeiter mit gesuchter Rolle.
 	 * @param rolleIntern
 	 * @return
 	 */
-	public List<Kontakt> findByRolleExtern (int rolleExtern);
+	public List<Kontakt> findByRolleExtern (int rolleExtern)throws Exception;
 	
 	/**
 	 * Liefert alle Mitarbeiter mit gesuchter Strasse.
 	 * @param strasse
 	 * @return
 	 */
-	public List<Kontakt> findByStrasse (String strasse);
+	public List<Kontakt> findByStrasse (String strasse)throws Exception;
 
 }

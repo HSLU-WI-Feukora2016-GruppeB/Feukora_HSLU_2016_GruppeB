@@ -52,27 +52,27 @@ public interface MessungsManager {
 	 * @param idMessung
 	 * @return
 	 */	
-	public Messung findById(Integer idMessung);
+	public Messung findById(Integer idMessung)throws Exception;
 	
 	/**
 	 * Liefert alle Messungen zurück.
 	 * @return
 	 */
-	public List<Messung> findAll();
+	public List<Messung> findAll() throws Exception;
 	
 	/**
 	 * Liefert eine Messungsliste anhand des gesuchten Messdatums.
 	 * @param datum
 	 * @return
 	 */
-	public List<Messung> findByDatum(GregorianCalendar messDatum);
+	public List<Messung> findByDatum(GregorianCalendar messDatum)throws Exception;
 	
 	/**
 	 * Liefert alle Messungen wessen Beurteilungen NICHT ok waren (ausserhalb Grenzwerte).
 	 * @param beurteilungNotOk
 	 * @return
 	 */
-	public List<Messung> findByBeurteilungNotOk(boolean beurteilungNotOk);
+	public List<Messung> findByBeurteilungNotOk(boolean beurteilungNotOk)throws Exception;
 	
 	
 }
