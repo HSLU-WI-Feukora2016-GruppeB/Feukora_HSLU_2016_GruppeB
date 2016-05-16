@@ -7,6 +7,9 @@ import java.util.List;
 
 import managerInterfaces.AuftragManager;
 import entitäten.Auftrag;
+import entitäten.Kontakt;
+import entitäten.Liegenschaft;
+import entitäten.Mitarbeiter;
 
 public class AuftragROImpl extends UnicastRemoteObject implements AuftragRO {
 
@@ -81,7 +84,7 @@ public class AuftragROImpl extends UnicastRemoteObject implements AuftragRO {
 	public List<Auftrag> findByLiegenschaft(Liegenschaft liegenschaft)
 			throws Exception {
 		return auftragManager.findByLiegenschaft(liegenschaft);
+		
 	}
-
 		
 	}

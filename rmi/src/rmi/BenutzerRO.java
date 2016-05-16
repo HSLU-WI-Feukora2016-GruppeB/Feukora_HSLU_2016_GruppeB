@@ -21,7 +21,7 @@ public interface BenutzerRO {
 	public Benutzer add(Benutzer entity) throws Exception;
 
 	/**
-	 * Update des Benutzers
+	 * Aenderung des Benutzers
 	 * @param entity
 	 * @throws Exception
 	 */

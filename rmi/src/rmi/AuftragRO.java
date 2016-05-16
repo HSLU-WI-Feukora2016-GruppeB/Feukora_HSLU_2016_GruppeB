@@ -1,20 +1,24 @@
 package rmi;
 
+import java.rmi.Remote;
 import java.util.GregorianCalendar;
 import java.util.List;
 
 import entitäten.Auftrag;
+import entitäten.Kontakt;
+import entitäten.Liegenschaft;
+import entitäten.Mitarbeiter;
 
 
 /**
  * Das Interface stellt die CRUD-Funktionen für den Auftrag zur Verfügung.
  * 
- * @author Berri
+ * @author Matthias
  * @version 1.0
  * @since 1.0
  */
 
-public interface AuftragRO {
+public interface AuftragRO extends Remote {
 	
 	/** 
 	 * Speichert die Aenderung im Auftrag.
@@ -24,7 +28,7 @@ public interface AuftragRO {
 	public Auftrag add(Auftrag entity) throws Exception;
 	
 	/**
-	 * Update des Auftrags.
+	 * Aenderung des Auftrags.
 	 * @param entity
 	 * @throws Exception
 	 */
