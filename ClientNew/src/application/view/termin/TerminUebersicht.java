@@ -16,8 +16,8 @@ import java.util.Observable;
 
 import javax.imageio.ImageIO;
 
-import entitäten.Auftrag;
-import entitäten.Mitarbeiter;
+import entitys.Auftrag;
+import entitys.Mitarbeiter;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

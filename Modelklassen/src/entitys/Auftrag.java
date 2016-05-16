@@ -8,9 +8,9 @@ import javax.persistence.*;
 import org.eclipse.jdt.annotation.Nullable;
 
 /**
- * Ein Auftrag fasst alle wichtigen Informationen für den Auftrag zusammen. 
+ * Ein Auftrag fasst alle wichtigen Informationen für den Auftrag zusammen.
  * Er wird normalerweise vom Sachbearbeiter erstellt und vom Feuerungskontrolleur durch
- * die Kontroll-Messdaten ergänzt. 
+ * die Kontroll-Messdaten ergänzt.
  * @author Olivia
  * @version 1.0
  * @since 1.0
@@ -25,50 +25,50 @@ import org.eclipse.jdt.annotation.Nullable;
 	@NamedQuery(name = "Auftrag.findByDatumAndMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.datum>=:startdatum AND a.datum<=:enddatum AND a.mitarbeiter=:mitarbeiter")
 })
 public class Auftrag implements Serializable{
-	
+
 	private static final long serialVersionUID = -1931313655942897483L;
 	@Id
 	@GeneratedValue
 	private Integer auftragsNummer;
-	
+
 	@ManyToOne
 	private Kontakt kontakt;
-	
+
 	@ManyToOne
 	private Liegenschaft liegenschaft;
-	
+
 	@Nullable
 	@OneToOne(cascade=CascadeType.ALL)
 	private Messung messung1stufe1;
-	
+
 	@Nullable
 	@OneToOne(cascade=CascadeType.ALL)
 	private Messung messung1stufe2;
-	
+
 	@Nullable
 	@OneToOne(cascade=CascadeType.ALL)
 	private Messung messung2stufe1;
-	
+
 	@Nullable
 	@OneToOne(cascade=CascadeType.ALL)
 	private Messung messung2stufe2;
-	
+
 	@ManyToOne
 	private Mitarbeiter mitarbeiter;
-	
+
 	@Temporal(TemporalType.DATE)
 	private GregorianCalendar datum;
-	
+
 	private int zeitSlot;
-	
-	private int terminArt;		
-	
-	
+
+	private int terminArt;
+
+
 	//konstruktor**************************************************
 	public Auftrag(){
-		
+
 	}
-	
+
 	public Auftrag(Kontakt kontakt, Liegenschaft liegenschaft,
 			Mitarbeiter mitarbeiter, GregorianCalendar datum, int zeitSlot, int terminArt) {
 		this.kontakt = kontakt;
@@ -156,13 +156,13 @@ public class Auftrag implements Serializable{
 	public String printDatum(GregorianCalendar datum) {
 		return datum.get(Calendar.DAY_OF_MONTH) + "/" + datum.get(Calendar.MONTH) + "/" + datum.get(Calendar.YEAR);
 	}
-	
+
 	public void setTermin(GregorianCalendar datum) {
 		this.datum = datum;
 	}
 
 	public String getTerminArt() {
-		
+
 		String terminA = null;
 
 		switch (this.terminArt) {
@@ -180,14 +180,14 @@ public class Auftrag implements Serializable{
 	public void setTerminArt(int terminArt) {
 		this.terminArt = terminArt;
 	}
-	
+
 	public int getZeitSlot(){
 		return zeitSlot;
 	}
-	
+
 	public String getZeitSlotString() {
 		String termin = null;
-		
+
 		switch (this.zeitSlot) {
 		case 1:
 			termin = "8:00 - 10:00 Uhr";
@@ -202,36 +202,36 @@ public class Auftrag implements Serializable{
 			termin = "15:00 - 17:00 Uhr";
 			break;
 		}
-		
+
 		return termin;
 	}
 
 	public void setZeitSlot(int zeitSlot) {
 		this.zeitSlot = zeitSlot;
 	}
-	
-	
+
+
 	@Override
 	public String toString(){
 		return "Auftrag:" + "\n"
 				+ "Auftragsdatum: \t \t \t \t" + this.printDatum(this.datum)+ "\n"
-				+ "Termin \t \t \t" + get + "\n"
+				+ "Termin \t \t \t" + "\n"
 				+ "Auftragsnummer: \t \t \t" + auftragsNummer + "\n" + "\n"
-				
+
 				+ "Kontakt: \n" + kontakt.toString() + "\n"
 				+ "Liegenschaft: \n" + liegenschaft.toString() + "\n"
 				+ "Info vor Ort: \t \t \t \t" + liegenschaft.getInfoVorOrt() + "\n"+ "\n"
-				
-				+ "Messung: \n" 
+
+				+ "Messung: \n"
 				+ messung1stufe1.toString() + "\n"
 				+ messung1stufe2.toString() + "\n"
 				+ messung2stufe1.toString() + "\n"
 				+ messung2stufe2.toString() + "\n"+ "\n"
-				
+
 				+ "Kontrolleur: \n" + mitarbeiter.toString() + "\n"
 				+ "Kontrollart: \t \t \t \t" + terminArt + "\n";
 	}
 
-	
+
 
 }
