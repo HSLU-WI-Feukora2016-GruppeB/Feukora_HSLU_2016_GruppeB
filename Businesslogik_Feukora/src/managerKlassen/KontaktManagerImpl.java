@@ -12,7 +12,7 @@ import managerInterfaces.KontaktManager;
 
 /**
  * Stellt die Implementierung von Methoden der Schnittstelle KontaktManager zur Verfügung.
- * @author Matthias
+ * @author Olivia
  * @version 1.0
  * @since 1.0
  *

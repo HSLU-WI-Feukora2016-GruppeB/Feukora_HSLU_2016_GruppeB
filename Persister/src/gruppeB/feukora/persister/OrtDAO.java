@@ -1,8 +1,3 @@
-/*
- * ZWECK: Praxisprojekt Feukora
- * MODUL: Softwarekomponenten, HSLU - Wirtschaft
- */
-
 package gruppeB.feukora.persister;
 
 import java.util.List;
@@ -46,18 +41,18 @@ public interface OrtDAO {
 	/**
 	 * Löscht die Ort-Entity für den uebergebenen Id-Wert.
 	 * 
-	 * @param id
+	 * @param plz
 	 * @throws Exception
 	 */
-	public void deleteOrtById(Integer id) throws Exception;
+	public void deleteOrtById(Integer plz) throws Exception;
 	
 	/**
 	 * Liefert die Ort-Entity für die uebergebenen PLZ (id) zurück.
 	 * 
-	 * @param id
+	 * @param plz
 	 * @return
 	 */
-	public Ort findOrtById(Integer id);
+	public Ort findOrtById(Integer plz);
 	
 	/**
 	 * Liefert alle Ort-Objekte zurück.

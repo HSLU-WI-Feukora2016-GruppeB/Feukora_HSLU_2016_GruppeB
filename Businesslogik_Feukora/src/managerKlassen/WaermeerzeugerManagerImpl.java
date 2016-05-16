@@ -9,7 +9,7 @@ import managerInterfaces.WaermeerzeugerManager;
 
 /**
  * Stellt die Implementierung von Methoden der Schnittstelle Waermeerzeuger zur Verfügung.
- * @author Matthias
+ * @author Olivia
  * @version 1.0
  * @since 1.0
  *
@@ -48,6 +48,11 @@ public class WaermeerzeugerManagerImpl implements WaermeerzeugerManager {
 	}
 
 	@Override
+	public void deleteById(Integer idWaermeerzeuger) throws Exception {
+		waermeerzeugerDAO.deleteWaermeerzeugerById(idWaermeerzeuger);
+	}
+
+	@Override
 	public Waermeerzeuger findById(Integer id) {
 		return waermeerzeugerDAO.findWaermeerzeugerById(id);
 	}
@@ -65,6 +70,11 @@ public class WaermeerzeugerManagerImpl implements WaermeerzeugerManager {
 	@Override
 	public List<Waermeerzeuger> findByBrennstoff(int brennstoff) {
 		return waermeerzeugerDAO.findWaermeerzeugerByBrennstoff(brennstoff);
+	}
+
+	@Override
+	public List<Waermeerzeuger> findByBaujahr(int baujahr) {
+		return waermeerzeugerDAO.findWaermeerzeugerByBaujahr(baujahr);
 	}
 
 }

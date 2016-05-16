@@ -34,7 +34,7 @@ public class Ort implements Serializable {
 	}
 	
 	//getter&setter*******************************************************
-	public int getPlz() {
+	public Integer getPlz() {
 		return plz;
 	}
 

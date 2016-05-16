@@ -1,8 +1,11 @@
 package managerInterfaces;
 
+import java.util.GregorianCalendar;
 import java.util.List;
 
+import entitäten.Benutzer;
 import entitäten.Mitarbeiter;
+import entitäten.Ort;
 
 
 /**
@@ -39,6 +42,20 @@ public interface MitarbeiterManager {
 	public void delete(Mitarbeiter entity) throws Exception;
 	
 	/**
+	 * Löscht den mitgegebenen Mitarbeiter mithilfe seiner Id.
+	 * @param idMitarbeiter
+	 * @throws Exception
+	 */
+	public void deleteById(Integer idMitarbeiter) throws Exception;
+	
+	/**
+	 * Liefert den Mitarbeiter zur mitgegebenen Id.
+	 * @param idMitarbeiter
+	 * @return
+	 */
+	public Mitarbeiter findById(Integer idMitarbeiter);
+	
+	/**
 	 * Liefert Liste aller Mitarbeiter.
 	 * @return
 	 */
@@ -49,14 +66,22 @@ public interface MitarbeiterManager {
 	 * @param name
 	 * @return
 	 */
-	public List<Mitarbeiter> findMitarbeiterByName(String name);
+	public List<Mitarbeiter> findByName(String name);
 	
 	/**
 	 * Liefert alle Mitarbeiter mit gesuchtem Vornamen.
 	 * @param vorname
 	 * @return
 	 */
-	public List<Mitarbeiter> findMitarbeiterByVorname(String vorname);
+	public List<Mitarbeiter> findByVorname(String vorname);
+	
+	/**
+	 * Liefert alle Mitarbeiter mit gesuchtem Vornamen.
+	 * @param name
+	 * @param vorname
+	 * @return
+	 */
+	public List<Mitarbeiter> findByNameVorname(String name, String vorname);
 	
 	/**
 	 * Liefert alle Mitarbeiter mit gesuchter Rolle.
@@ -64,5 +89,39 @@ public interface MitarbeiterManager {
 	 * @return
 	 */
 	public List<Mitarbeiter> findByRolleIntern (int rolleIntern);
+	
+	/**
+	 * Liefert alle Mitarbeiter mit gesuchter Strasse.
+	 * @param strasse
+	 * @return
+	 */
+	public List<Mitarbeiter> findByStrasse (String strasse);
+	
+	/**
+	 * Liefert alle Mitarbeiter mit gesuchtem Ort.
+	 * @param ort
+	 * @return
+	 */
+	public List<Mitarbeiter> findByOrt (Ort ort);
+	
+	/**
+	 * Liefert alle Mitarbeiter mit gesuchtem Benutzernamen.
+	 * @param username
+	 * @return
+	 */
+	public List<Mitarbeiter> findByBenutzer (Benutzer user);
+	
+	/**
+	 * Liefert alle Mitarbeiter mit gesuchtem Arbeitsbeginn-Datum.
+	 * @param arbeitetSeit
+	 * @return
+	 */
+	public List<Mitarbeiter> findByArbeitetSeit (GregorianCalendar arbeitetSeit);
 
+	/**
+	 * Liefert alle Mitarbeiter mit gesuchtem Kündigungs-Datum.
+	 * @param arbeitetBis
+	 * @return
+	 */
+	public List<Mitarbeiter> findByArbeitetBis (GregorianCalendar arbeitetBis);
 }

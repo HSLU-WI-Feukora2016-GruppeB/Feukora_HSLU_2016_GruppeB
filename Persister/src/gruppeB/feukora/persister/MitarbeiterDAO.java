@@ -1,8 +1,3 @@
-/*
- * ZWECK: Praxisprojekt Feukora
- * MODUL: Softwarekomponenten, HSLU - Wirtschaft
- */
-
 package gruppeB.feukora.persister;
 
 import java.util.GregorianCalendar;
@@ -104,7 +99,7 @@ public interface MitarbeiterDAO {
 	 * @param rolleIntern
 	 * @return
 	 */
-	public List<Mitarbeiter> findByRolleIntern(int rolleIntern);
+	public List<Mitarbeiter> findMitarbeiterByRolleIntern(int rolleIntern);
 	
 	/**
 	 * Liefert die Liste mit Mitarbeiter für die übergebene Strasse zurück, falls
@@ -113,7 +108,7 @@ public interface MitarbeiterDAO {
 	 * @param strasse
 	 * @return
 	 */
-	public List<Mitarbeiter> findByStrasse(String strasse);
+	public List<Mitarbeiter> findMitarbeiterByStrasse(String strasse);
 	
 	/**
 	 * Liefert die Liste mit Mitarbeiter für die übergebenen Örtlichkeiten zurück, falls
@@ -122,7 +117,7 @@ public interface MitarbeiterDAO {
 	 * @param ort
 	 * @return
 	 */
-	public List<Mitarbeiter> findByOrt(Ort ort);
+	public List<Mitarbeiter> findMitarbeiterByOrt(Ort ort);
 	
 	/**
 	 * Liefert die Liste mit Mitarbeiter für die übergebene User zurück, falls
@@ -131,7 +126,7 @@ public interface MitarbeiterDAO {
 	 * @param user
 	 * @return
 	 */
-	public List<Mitarbeiter> findByBenutzer(Benutzer user);
+	public List<Mitarbeiter> findMitarbeiterByBenutzer(Benutzer user);
 	
 	/**
 	 * Liefert die Liste mit Mitarbeiter für die übergebene Startdaten zurück, falls
@@ -140,7 +135,7 @@ public interface MitarbeiterDAO {
 	 * @param arbeitetSeit
 	 * @return
 	 */
-	public List<Mitarbeiter> findByArbeitetSeit(GregorianCalendar arbeitetSeit);
+	public List<Mitarbeiter> findMitarbeiterByArbeitetSeit(GregorianCalendar arbeitetSeit);
 	
 	/**
 	 * Liefert die Liste mit Mitarbeiter für die übergebene Enddaten zurück, falls
@@ -149,5 +144,5 @@ public interface MitarbeiterDAO {
 	 * @param arbeitetBis
 	 * @return
 	 */
-	public List<Mitarbeiter> findByArbeitetBis(GregorianCalendar arbeitetBis);
+	public List<Mitarbeiter> findMitarbeiterByArbeitetBis(GregorianCalendar arbeitetBis);
 }

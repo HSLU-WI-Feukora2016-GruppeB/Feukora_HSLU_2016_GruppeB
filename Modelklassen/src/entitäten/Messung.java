@@ -32,7 +32,7 @@ public class Messung implements Serializable{
 	
 	@Id
 	@GeneratedValue
-	private int idMessung;
+	private Integer idMessung;
 	
 	@Temporal(TemporalType.DATE)
 	private GregorianCalendar messDatum;
@@ -101,11 +101,11 @@ public class Messung implements Serializable{
 
 
 	//getter&setter
-	public int getIdMessung() {
+	public Integer getIdMessung() {
 		return idMessung;
 	}
 
-	public void setIdMessung(int idMessung) {
+	public void setIdMessung(Integer idMessung) {
 		this.idMessung = idMessung;
 	}
 

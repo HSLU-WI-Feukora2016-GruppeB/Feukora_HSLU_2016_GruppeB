@@ -6,7 +6,13 @@ import entitäten.Benutzer;
 import gruppeB.feukora.persister.BenutzerDAO;
 import gruppeB.feukora.persister.BenutzerDAOImpl;
 import managerInterfaces.BenutzerManager;
-
+/**
+ * Stellt die Implementierung von Methoden der Schnittstelle BenutzerManager zur Verfügung.
+ * @author Olivia
+ * @version 1.0
+ * @since 1.0
+ *
+ */
 public class BenutzerManagerImpl implements BenutzerManager {
 
 	private BenutzerDAO benutzerDAO = new BenutzerDAOImpl();

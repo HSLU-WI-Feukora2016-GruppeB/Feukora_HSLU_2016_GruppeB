@@ -112,7 +112,7 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 	}
 
 	@Override
-	public List<Mitarbeiter> findByRolleIntern(int rolleIntern) {
+	public List<Mitarbeiter> findMitarbeiterByRolleIntern(int rolleIntern) {
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -129,7 +129,7 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 	}
 
 	@Override
-	public List<Mitarbeiter> findByStrasse(String strasse) {
+	public List<Mitarbeiter> findMitarbeiterByStrasse(String strasse) {
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -146,7 +146,7 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 	}
 
 	@Override
-	public List<Mitarbeiter> findByOrt(Ort ort) {
+	public List<Mitarbeiter> findMitarbeiterByOrt(Ort ort) {
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -163,7 +163,7 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 	}
 
 	@Override
-	public List<Mitarbeiter> findByBenutzer(Benutzer user) {
+	public List<Mitarbeiter> findMitarbeiterByBenutzer(Benutzer user) {
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -180,14 +180,14 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 	}
 
 	@Override
-	public List<Mitarbeiter> findByArbeitetSeit(GregorianCalendar arbeitetSeit) {
+	public List<Mitarbeiter> findMitarbeiterByArbeitetSeit(GregorianCalendar arbeitetSeit) {
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
 		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery("Mitarbeiter.findByArbeitetSeit",
 				Mitarbeiter.class);
 
-		tQuery.setParameter("arbeitetSeit", arbeitetSeit);
+		tQuery.setParameter("arbeitetSeit", arbeitetSeit.getTime());
 
 		List<Mitarbeiter> mitarbeiterListe = tQuery.getResultList();
 
@@ -197,14 +197,14 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 	}
 
 	@Override
-	public List<Mitarbeiter> findByArbeitetBis(GregorianCalendar arbeitetBis) {
+	public List<Mitarbeiter> findMitarbeiterByArbeitetBis(GregorianCalendar arbeitetBis) {
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
 		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery("Mitarbeiter.findByArbeitetBis",
 				Mitarbeiter.class);
 
-		tQuery.setParameter("arbeitetBis", arbeitetBis);
+		tQuery.setParameter("arbeitetBis", arbeitetBis.getTime());
 
 		List<Mitarbeiter> mitarbeiterListe = tQuery.getResultList();
 

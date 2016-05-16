@@ -7,21 +7,37 @@ import entitäten.Messung;
 import gruppeB.feukora.persister.MessungDAO;
 import gruppeB.feukora.persister.MessungDAOImpl;
 import managerInterfaces.MessungsManager;
-
+/**
+ * Stellt die Implementierung von Methoden der Schnittstelle MessungManager zur Verfügung.
+ * @author Olivia
+ * @version 1.0
+ * @since 1.0
+ *
+ */
 public class MessungManagerImpl implements MessungsManager {
 	
 	private MessungDAO messungDAO = new MessungDAOImpl();
 
 	@Override
 	public Messung add(Messung entity) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		if (entity.getIdMessung() == null) {
+			messungDAO.saveMessung(entity);
+			return entity;
+		} else {
+			throw new Exception(
+					"Entity im Datenbestand bereits vorhanden (Id = "
+							+ entity. getIdMessung().intValue() + ")");
+		}
 	}
 
 	@Override
 	public Messung update(Messung entity) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+
+		if (entity.getIdMessung() == null) {
+			return add(entity);
+		}
+
+		return messungDAO.updateMessung(entity);
 	}
 
 	@Override
@@ -50,23 +66,8 @@ public class MessungManagerImpl implements MessungsManager {
 	}
 
 	@Override
-	public List<Messung> findByBeurteilungOk(boolean beurteilungOk) {
-		return messungDAO.findByBeurteilungOk(beurteilungOk);
-	}
-
-	@Override
 	public List<Messung> findByBeurteilungNotOk(boolean beurteilungNotOk) {
 		return messungDAO.findByBeurteilungNotOk(beurteilungNotOk);
 	}
 	
-	/**
-	 * Kontrolliert ob die einzelnen Messdaten einer Messung den Grenzwerten entsprechen.
-	 * @param messung
-	 */
-	private void checkMessungByGrenzwerte(Messung entity) {
-		//TODO
-		entity.getAbgasverluste();
-		
-	}
-
 }

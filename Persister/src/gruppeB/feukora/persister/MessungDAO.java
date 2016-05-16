@@ -77,15 +77,6 @@ public interface MessungDAO {
 		public List<Messung> findByMessDatum(GregorianCalendar messDatum);
 		
 		/**
-		 * Liefert die Liste mit Messungen wessen Beurteilungen ok sind, falls
-		 * welche gefunden werden. Sonst eine leere Liste.
-		 * 
-		 * @param beurteilungOk
-		 * @return
-		 */
-		public List<Messung> findByBeurteilungOk(boolean beurteilungOk);
-		
-		/**
 		 * Liefert die Liste mit Messungen wessen Beurteilungen nicht ok sind, falls
 		 * welche gefunden werden. Sonst eine leere Liste.
 		 * 

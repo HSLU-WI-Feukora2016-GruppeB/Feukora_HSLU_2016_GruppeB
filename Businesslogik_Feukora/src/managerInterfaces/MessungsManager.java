@@ -68,13 +68,6 @@ public interface MessungsManager {
 	public List<Messung> findByDatum(GregorianCalendar messDatum);
 	
 	/**
-	 * Liefert alle Messungen wessen Beurteilungen ok waren (innerhalb Grenzwerte).
-	 * @param beurteilungOk
-	 * @return
-	 */
-	public List<Messung> findByBeurteilungOk(boolean beurteilungOk);
-	
-	/**
 	 * Liefert alle Messungen wessen Beurteilungen NICHT ok waren (ausserhalb Grenzwerte).
 	 * @param beurteilungNotOk
 	 * @return

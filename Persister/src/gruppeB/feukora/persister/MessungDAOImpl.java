@@ -75,23 +75,6 @@ public class MessungDAOImpl implements MessungDAO {
 	}
 
 	@Override
-	public List<Messung> findByBeurteilungOk(boolean beurteilungOk) {
-		
-		EntityManager em = JpaUtil.createEntityManager();
-
-		TypedQuery<Messung> tQuery = em.createNamedQuery("Messung.findByBeurteilungOk",
-				Messung.class);
-
-		tQuery.setParameter("beurteilungOk", beurteilungOk);
-
-		List<Messung> messungsListe = tQuery.getResultList();
-
-		em.close();
-
-		return messungsListe != null ? messungsListe : new ArrayList<Messung>();
-	}
-
-	@Override
 	public List<Messung> findByBeurteilungNotOk(boolean beurteilungNotOk) {
 		EntityManager em = JpaUtil.createEntityManager();
 

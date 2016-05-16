@@ -37,6 +37,14 @@ public interface WaermeerzeugerManager {
 	 * @throws Exception
 	 */
 	public void delete(Waermeerzeuger entity) throws Exception;
+	
+	/**
+	 * Löscht den übergebenen Waermeerzeuger mithilfe seiner Id.
+	 * @param idWaermeerzeuger
+	 * @return
+	 * @throws Exception
+	 */
+	public void deleteById(Integer idWaermeerzeuger) throws Exception;
 
 	/**
 	 * Liefert den Waermeerzeuger der mit der Id angefragt wurde. 
@@ -64,5 +72,12 @@ public interface WaermeerzeugerManager {
 	 * @return
 	 */
 	public List<Waermeerzeuger> findByBrennstoff(int brennstoff);
+	
+	/**
+	 * Liefert eine Waermeerzeuger anhand des gesuchten Baujahrs.
+	 * @param baujahr
+	 * @return
+	 */
+	public List<Waermeerzeuger> findByBaujahr(int baujahr);
 
 }

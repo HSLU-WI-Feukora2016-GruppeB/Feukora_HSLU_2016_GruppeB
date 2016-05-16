@@ -6,7 +6,13 @@ import entitäten.Brenner;
 import gruppeB.feukora.persister.BrennerDAO;
 import gruppeB.feukora.persister.BrennerDAOImpl;
 import managerInterfaces.BrennerManager;
-
+/**
+ * Stellt die Implementierung von Methoden der Schnittstelle BrennerManager zur Verfügung.
+ * @author Olivia
+ * @version 1.0
+ * @since 1.0
+ *
+ */
 public class BrennerManagerImpl implements BrennerManager{
 	
 	private BrennerDAO brennerDAO = new BrennerDAOImpl();
