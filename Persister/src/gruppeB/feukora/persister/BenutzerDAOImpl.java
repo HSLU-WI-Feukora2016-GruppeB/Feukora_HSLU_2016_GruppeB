@@ -57,13 +57,14 @@ public class BenutzerDAOImpl implements BenutzerDAO{
 	}
 
 	@Override
-	public List<Benutzer> findBenutzerByPassword(String password) {
+	public List<Benutzer> findBenutzerByUsernamePassword(String username, String password) {
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
-		TypedQuery<Benutzer> tQuery = em.createNamedQuery("Benutzer.findByPassword",
+		TypedQuery<Benutzer> tQuery = em.createNamedQuery("Benutzer.findByUsernamePassword",
 				Benutzer.class);
 
+		tQuery.setParameter("username", username);
 		tQuery.setParameter("password", password);
 
 		List<Benutzer> userListe = tQuery.getResultList();

@@ -79,8 +79,9 @@ public interface BenutzerDAO {
 	 * Liefert die Liste mit den User für den übergebenen Passwörter zurück, falls
 	 * es welche gibt. Sonst eine leere Liste.
 	 * 
+	 * @param username
 	 * @param password
 	 * @return
 	 */
-	public List<Benutzer> findBenutzerByPassword(String password) throws Exception;
+	public List<Benutzer> findBenutzerByUsernamePassword(String username, String password) throws Exception;
 }

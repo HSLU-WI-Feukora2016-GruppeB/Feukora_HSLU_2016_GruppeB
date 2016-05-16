@@ -100,8 +100,8 @@ public class BenutzerDAOTest {
 		return benutzerDAO.findAllBenutzer();
 	}
 
-	public List<Benutzer> findBenutzerByPassword(String password) {
-		return benutzerDAO.findBenutzerByPassword(password);
+	public List<Benutzer> findBenutzerByUsernamePassword(String username, String password) {
+		return benutzerDAO.findBenutzerByUsernamePassword(username, password);
 	}
 
 	public List<Benutzer> findBenutzerByUsername(String username) {

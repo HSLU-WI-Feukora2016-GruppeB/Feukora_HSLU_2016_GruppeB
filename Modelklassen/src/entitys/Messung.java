@@ -23,7 +23,6 @@ import javax.persistence.TemporalType;
 @NamedQueries({
 	@NamedQuery(name = "Messung.findById", query = "SELECT m FROM Messung m WHERE m.idMessung=:idMessung"),
 	@NamedQuery(name = "Messung.findByMessDatum", query = "SELECT m FROM Messung m WHERE m.messDatum=:messDatum"),
-	@NamedQuery(name = "Messung.findByBeurteilungOk", query = "SELECT m FROM Messung m WHERE m.beurteilungOk=:beurteilungOk"),
 	@NamedQuery(name = "Messung.findByBeurteilungNotOk", query = "SELECT m FROM Messung m WHERE m.beurteilungNotOk=:beurteilungNotOk")
 })
 public class Messung implements Serializable{

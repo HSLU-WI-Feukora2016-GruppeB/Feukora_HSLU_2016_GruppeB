@@ -39,7 +39,7 @@ public class Kontakt implements Serializable{
 
 	private String vorname;
 
-	private String nachname;
+	private String name;
 
 	private String strasse;
 
@@ -59,7 +59,7 @@ public class Kontakt implements Serializable{
 	
 	public Kontakt(String vorname, String name, String strasse, Ort ort, String tel, String email, int rolleExtern){
 		this.vorname = vorname;
-		this.nachname = name;
+		this.name = name;
 		this.strasse = strasse;
 		this.ort = ort;
 		this.tel = tel;
@@ -85,11 +85,11 @@ public class Kontakt implements Serializable{
 	}
 
 	public String getNachname() {
-		return nachname;
+		return name;
 	}
 
 	public void setNachname(String nachname) {
-		this.nachname = nachname;
+		this.name = nachname;
 	}
 
 	public String getStrasse() {
@@ -146,7 +146,7 @@ public class Kontakt implements Serializable{
 	public String toString() {
 		return "Kontakt: " + "\n"
 				+ "Vorname: \n" + vorname.toString() + "\n"
-				+ "Nachname: \n" + nachname.toString() + "\n"
+				+ "Nachname: \n" + name.toString() + "\n"
 				+ "Strasse: \n" + strasse.toString() + "\n"
 				+ "Ort: \t \t \t" + ort + "\n"
 				+ "Telefon: \t \t \t" + tel + "\n"

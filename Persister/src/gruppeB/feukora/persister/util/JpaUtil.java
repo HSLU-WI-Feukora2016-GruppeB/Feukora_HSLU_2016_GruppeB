@@ -20,7 +20,7 @@ public class JpaUtil {
 		try {
 			/* EntityManagerFactory erzeugen */
 			entityManagerFactory = Persistence
-					.createEntityManagerFactory("Feukora");
+					.createEntityManagerFactory("FeukoraTest");
 		} catch (Throwable e) {
 			/* TODO - Fehlerbehandlung … */
 			e.printStackTrace();

@@ -215,7 +215,7 @@ public class Auftrag implements Serializable{
 	public String toString(){
 		return "Auftrag:" + "\n"
 				+ "Auftragsdatum: \t \t \t \t" + this.printDatum(this.datum)+ "\n"
-				+ "Termin \t \t \t" + zeitSlot + "\n"
+				+ "Termin \t \t \t" + get + "\n"
 				+ "Auftragsnummer: \t \t \t" + auftragsNummer + "\n" + "\n"
 				
 				+ "Kontakt: \n" + kontakt.toString() + "\n"

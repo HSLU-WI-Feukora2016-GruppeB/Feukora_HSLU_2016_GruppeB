@@ -217,14 +217,14 @@ public class AuftragDAOTest {
 		GregorianCalendar bis = null;
 		Mitarbeiter mitarbeiter = new Mitarbeiter("Stirnimann", "Dominik", "Testibusstrasse 456", ort, "0441234567", "dominik.stirnimann@stud.hslu.ch", 3, benutzer, 1500, seit, bis);		
 		
-		GregorianCalendar datum = new GregorianCalendar(2016, 11, 12);
+		GregorianCalendar datum = new GregorianCalendar(2015, 07, 15);
 		int zeitSlot = 3;
 		int terminArt = 2;
 		Auftrag a1 = new Auftrag(kontakt, liegenschaft, mitarbeiter, datum, zeitSlot, terminArt);
 
 		//2. Auftragsobjekt a2
 		Ort ort2 = new Ort(6003, "Luzern");
-		Kontakt kontakt2 = new Kontakt("Olivia", "Wassmer", "Hirschengraben 40", ort, "0448817585", "olivia.wassmer@stud.hslu.ch", 1);
+		Kontakt kontakt2 = new Kontakt("Ramon", "Müller", "Hirschengraben 40", ort, "0448817585", "olivia.wassmer@stud.hslu.ch", 1);
 		
 		Brenner brenner2 = new Brenner(1, "abc123", 2014);
 		Waermeerzeuger waermeerzeuger2 = new Waermeerzeuger(2, "cba321", 2003);
@@ -246,6 +246,9 @@ public class AuftragDAOTest {
 		int zeitSlot2 = 3;
 		int terminArt2 = 2;
 		Auftrag a2 = new Auftrag(kontakt, liegenschaft, mitarbeiter, datum, zeitSlot, terminArt);
+		
+		auftragDAO.saveAuftrag(a1);
+		auftragDAO.saveAuftrag(a2);
 		
 		List<Auftrag> auftragsListe = new ArrayList<>();
 		auftragsListe.add(a1);
