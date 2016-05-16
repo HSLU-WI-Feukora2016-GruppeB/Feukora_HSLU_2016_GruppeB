@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
@@ -43,6 +44,9 @@ public class MitarbeiterUebersicht {
 	@FXML
 	private TableView tabelle;
 
+	@FXML
+	private TableColumn tblName, tblVorname, tblStrasse, tblPlz, tblOrt, tblEMail, tblTelefon, tblPosition, tblLohn;
+
 	MitarbeiterRO mitarbeiterRO;
 	Mitarbeiter mitarbeiter;
 	// List<Mitarbeiter> list = mitarbeiterRO.findAllMitarbeiter();
@@ -51,7 +55,19 @@ public class MitarbeiterUebersicht {
 
 		// ObservableList<Mitarbeiter> list2 =
 		// FXCollections.observableList(list);
-		// tabelle.setItems(list2);
+		/*tblName.setCellValueFactory(new PropertyValueFactory<>("name"));
+		tblName.setCellValueFactory(new PropertyValueFactory<>("vorname"));
+		tblName.setCellValueFactory(new PropertyValueFactory<>("strasse"));
+		tblName.setCellValueFactory(new PropertyValueFactory<>("plz"));
+		tblName.setCellValueFactory(new PropertyValueFactory<>("ort"));
+		tblName.setCellValueFactory(new PropertyValueFactory<>("rolleIntern"));
+		tblName.setCellValueFactory(new PropertyValueFactory<>("lohn"));
+		tblName.setCellValueFactory(new PropertyValueFactory<>("email"));
+		tblName.setCellValueFactory(new PropertyValueFactory<>("tel"));
+
+		tabelle.setItems(list2);
+        tabelle.getColumns().addAll(tblName, tblVorname, tblStrasse, tblPlz, tblOrt, tblEMail, tblTelefon, tblPosition, tblLohn);*/
+		// https://docs.oracle.com/javase/8/javafx/user-interface-tutorial/table-view.htm
 	}
 
 	public void MitarbeiterSuchen() {
@@ -82,7 +98,7 @@ public class MitarbeiterUebersicht {
 		try {
 			Stage MitarbeiterStage = new Stage();
 
-			MitarbeiterStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Mitarbeiter_Erfassen.fxml"))));
+			MitarbeiterStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("MitarbeiterErfassen.fxml"))));
 
 			MitarbeiterStage.show();
 		} catch (Exception e) {
@@ -96,7 +112,15 @@ public class MitarbeiterUebersicht {
 	 */
 	public void bearbeitenMitarbeiter() {
 
+		try {
+			Stage MitarbeiterStage = new Stage();
 
+			MitarbeiterStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("MitarbeiterErfassen.fxml"))));
+
+			MitarbeiterStage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 

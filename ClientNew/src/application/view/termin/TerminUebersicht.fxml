@@ -132,7 +132,7 @@
                               <TextField fx:id="txtDonnerstag" disable="true" GridPane.columnIndex="4" GridPane.rowIndex="5" />
                               <TextField fx:id="txtFreitag" disable="true" GridPane.columnIndex="5" GridPane.rowIndex="5" />
                               <Button fx:id="btnWocheAnzeigen" mnemonicParsing="false" onAction="#wocheAnzeigen" text="Anzeigen" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <Label fx:id="lblRueckmeldung" layoutX="10.0" layoutY="279.0" lineSpacing="2.0" prefHeight="49.0" prefWidth="150.0" text="   " textFill="#eb0c0c" textOverrun="CLIP" GridPane.columnIndex="2">
+                              <Label fx:id="lblRueckmeldung" layoutX="10.0" layoutY="279.0" lineSpacing="2.0" prefHeight="30.0" prefWidth="159.0" text="   " textFill="#eb0c0c" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="11.0" />
                                  </font></Label>
@@ -142,7 +142,10 @@
                         </GridPane>
                         <HBox prefHeight="33.0" prefWidth="966.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <children>
-                              <Pane prefHeight="50.0" prefWidth="399.0" />
+                              <Pane prefHeight="50.0" prefWidth="399.0">
+                                 <children>
+                                    <Label fx:id="lblDruckRueckmeldung" layoutX="238.0" layoutY="1.0" prefHeight="45.0" prefWidth="161.0" text="  " textFill="#e20e0e" textOverrun="CENTER_WORD_ELLIPSIS" />
+                                 </children></Pane>
                               <Button fx:id="btnAktuelleTerminliste" mnemonicParsing="false" onAction="#terminDrucken" text="Aktuelle Terminliste Drucken" />
                               <Button fx:id="btnNeuerTermin" mnemonicParsing="false" onAction="#neuerTermin" text="Neuer Termin erstellen" />
                               <Button fx:id="btnRapportÖffnen" mnemonicParsing="false" onAction="#rapportOeffnen" text="Rapport öffnen" />
