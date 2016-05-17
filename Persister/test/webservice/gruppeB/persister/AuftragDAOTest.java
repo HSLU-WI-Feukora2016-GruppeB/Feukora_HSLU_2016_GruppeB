@@ -11,6 +11,7 @@ import entitys.Messung;
 import entitys.Mitarbeiter;
 import entitys.Ort;
 import entitys.Waermeerzeuger;
+import gruppeB.feukora.interfaces.AuftragDAO;
 import gruppeB.feukora.persister.AuftragDAOImpl;
 import gruppeB.feukora.persister.BenutzerDAOImpl;
 import gruppeB.feukora.persister.BrennerDAOImpl;
@@ -60,26 +61,26 @@ public class AuftragDAOTest {
 	}
 
 	@Test
-	public void testFindAll(){
+	public void testFindAll() throws Exception{
 		
 		List<Auftrag> auftragsListe = auftragDAO.findAllAuftrag();
 		assertTrue(auftragsListe.size() == 3);
 	}
 	
+	@Test
+	public void testFindByDatum() throws Exception {
+		
+		GregorianCalendar d = new GregorianCalendar(2016, 9, 11);
+		List<Auftrag> al = auftragDAO.findByDatum(d);
+		
+		assertNotNull(al);
+		
+		assertTrue(al.size() == 1);
+	}
+
 //	@Test
-//	public void testFindByDatum() {
+//	public void testFindByLiegenschaft() throws Exception {
 //		
-//		GregorianCalendar date = new GregorianCalendar(2016, 9, 11);
-//		Auftrag auftrag = auftragDAO.findByDatum(date).get(0);
-//		
-//		assertNotNull(auftrag);
-//		
-//		assertTrue(auftragDAO.findByDatum(date).size() == 1);
-//	}
-//
-//	@Test
-//	public void testFindByLiegenschaft() {
-//
 //		Liegenschaft liegenschaft = liegenschaftDAO.findLiegenschaftByStrasse("Musterweg 456").get(0);
 //		assertNotNull(liegenschaft);
 //		
@@ -87,25 +88,22 @@ public class AuftragDAOTest {
 //		assertTrue(aList.size() == 2);
 //		
 //	}
+
+
+	
+//	@Test
+//	public void testSave() throws Exception {
 //
+//		deleteAll();
+//		init();
 //
-//	
-////	@Test
-////	public void testSave() throws Exception {
-////
-////		deleteAll();
-////		init();
-////
-////		//TODO
-////
-////	}
+//		//TODO
 //
+//	}
+
 //	@Test
 //	public void testUpdate() throws Exception {
 //
-//		deleteAllAuftrag();
-//		init();
-//		
 //		List<Auftrag> auftragsListe = auftragDAO.findAllAuftrag();
 //		assertTrue(auftragsListe.size() == 3);
 //
@@ -132,9 +130,6 @@ public class AuftragDAOTest {
 //	@Test
 //	public void testDelete() throws Exception {
 //
-//		deleteAllAuftrag();
-//		init();
-//
 //		List<Auftrag> auftragsListe = auftragDAO.findAllAuftrag();
 //		assertTrue(auftragsListe.size() == 3);
 //
@@ -148,9 +143,6 @@ public class AuftragDAOTest {
 //	@Test
 //	public void testDeleteById() throws Exception {
 //		
-//		deleteAllAuftrag();
-//		init();
-//
 //		List<Auftrag> auftragsListe = auftragDAO.findAllAuftrag();
 //		assertTrue(auftragsListe.size() == 3);
 //
@@ -162,9 +154,9 @@ public class AuftragDAOTest {
 //	
 
 	public static List<Auftrag> init() throws Exception {
-
-		AuftragDAOTest.deleteAllAuftrag();
 		
+		AuftragDAOTest.deleteAll();
+
 		List<Benutzer> lBenutzer = new ArrayList<>();
 		List<Brenner> lBrenner = new ArrayList<>();
 		List<Feuerungsanlage> lFeuerungsanlage = new ArrayList<>();
@@ -183,6 +175,7 @@ public class AuftragDAOTest {
 		lBenutzer.add(new Benutzer("dst", "101"));
 		lBenutzer.add(new Benutzer("mpe", "111"));
 		lBenutzer.add(new Benutzer("owa", "121"));
+		
 		
 		//3 Brenner erstellen
 		lBrenner.add(new Brenner(1, "abc123", 2013));
@@ -239,50 +232,51 @@ public class AuftragDAOTest {
 		lMitarbeiter.add(new Mitarbeiter("Olivia", "Wassmer", "Musterstrasse 1", lOrt.get(3), "1234567678", "o.w@feukora.ch", 1, lBenutzer.get(5), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
 		lMitarbeiter.add(new Mitarbeiter("Matthias", "Perrollaz", "Musterstrasse 2", lOrt.get(4), "1234557678", "m.p@feukora.ch", 2, lBenutzer.get(4), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
 		lMitarbeiter.add(new Mitarbeiter("Dominik", "Stirnimann", "Musterstrasse 3", lOrt.get(3), "1234367678", "d.s@feukora.ch", 1, lBenutzer.get(3), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
-		lMitarbeiter.add(new Mitarbeiter("Pascal", "Steiner", "Musterstrasse 4", lOrt.get(2), "1234567678", "d.st@feukora.ch", 1, lBenutzer.get(2), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
+		lMitarbeiter.add(new Mitarbeiter("Pascal", "Steiner", "Musterstrasse 4", lOrt.get(2), "1234567678", "p.st@feukora.ch", 1, lBenutzer.get(2), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
 		lMitarbeiter.add(new Mitarbeiter("Luca", "Raneri", "Musterstrasse 5", lOrt.get(1), "1234567178", "l.r@feukora.ch", 1, lBenutzer.get(1), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
 		lMitarbeiter.add(new Mitarbeiter("Alexandra", "Lengen", "Musterstrasse 1", lOrt.get(0), "1234563678", "a.l@feukora.ch", 1, lBenutzer.get(5), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
 		
 		//3 Aufträge erstellen
 		lAuftrag.add(new Auftrag(lKontakt.get(0), lLiegenschaft.get(0), lMessung.get(0), lMessung.get(1), lMessung.get(2), lMessung.get(3), lMitarbeiter.get(0), new GregorianCalendar(2016, 9, 11), 1, 1));
-		lAuftrag.add(new Auftrag(lKontakt.get(0), lLiegenschaft.get(0), lMessung.get(4), null, lMessung.get(5), null, lMitarbeiter.get(2), new GregorianCalendar(2016, 9, 18), 1, 1));
-		lAuftrag.add(new Auftrag(lKontakt.get(0), lLiegenschaft.get(0), lMessung.get(6), lMessung.get(7), lMessung.get(8), lMessung.get(9), lMitarbeiter.get(0), new GregorianCalendar(2016, 9, 11), 2, 2));
+		lAuftrag.add(new Auftrag(lKontakt.get(1), lLiegenschaft.get(1), lMessung.get(4), lMessung.get(2), lMessung.get(5), lMessung.get(3), lMitarbeiter.get(2), new GregorianCalendar(2016, 9, 18), 1, 1));
+		lAuftrag.add(new Auftrag(lKontakt.get(2), lLiegenschaft.get(2), lMessung.get(6), lMessung.get(7), lMessung.get(8), lMessung.get(9), lMitarbeiter.get(3), new GregorianCalendar(2016, 9, 11), 2, 2));
 		
-//		for(Benutzer b : lBenutzer){
-//			benutzerDAO.saveBenutzer(b);
-//		}
-//		
-//		for(Ort o : lOrt){
-//			ortDAO.saveOrt(o);
-//		}
-//		
-//		for(Brenner b : lBrenner){
-//			brennerDAO.saveBrenner(b);
-//		}
-//		
-//		for(Waermeerzeuger w : lWaermeerzeuger){
-//			waermeerzeugerDAO.saveWaermeerzeuger(w);
-//		}
-//		
-//		for(Feuerungsanlage f : lFeuerungsanlage){
-//			feuerungsanlageDAO.saveFeuerungsanlage(f);
-//		}
-//		
-//		for(Kontakt k : lKontakt){
-//			kontaktDAO.saveKontakt(k);
-//		}
-//		
-//		for(Liegenschaft l : lLiegenschaft){
-//			liegenschaftDAO.saveLiegenschaft(l);
-//		}
-//		
-//		for(Messung m : lMessung){
-//			messungDAO.saveMessung(m);
-//		}
-//		
-//		for(Mitarbeiter m : lMitarbeiter){
-//			mitarbeiterDAO.saveMitarbeiter(m);
-//		}
+		for(Benutzer b : lBenutzer){
+			benutzerDAO.saveBenutzer(b);
+		}
+		
+		for(Ort o : lOrt){
+			ortDAO.saveOrt(o);
+		}
+		
+		for(Brenner b : lBrenner){
+			brennerDAO.saveBrenner(b);
+		}
+		
+		for(Waermeerzeuger w : lWaermeerzeuger){
+			waermeerzeugerDAO.saveWaermeerzeuger(w);
+		}
+		
+		for(Feuerungsanlage f : lFeuerungsanlage){
+			feuerungsanlageDAO.saveFeuerungsanlage(f);
+		}
+		
+		for(Kontakt k : lKontakt){
+			kontaktDAO.saveKontakt(k);
+		}
+		
+		for(Liegenschaft l : lLiegenschaft){
+			liegenschaftDAO.saveLiegenschaft(l);
+		}
+		
+		/*Wird nicht benötigt, da Cascade.ALL bei Messung*/
+		for(Messung m : lMessung){
+			messungDAO.saveMessung(m);
+		}
+		
+		for(Mitarbeiter m : lMitarbeiter){
+			mitarbeiterDAO.saveMitarbeiter(m);
+		}
 		
 		for(Auftrag a : lAuftrag){
 			auftragDAO.saveAuftrag(a);

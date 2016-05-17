@@ -47,8 +47,8 @@ public class OrtDAOImpl implements OrtDAO{
 	}
 
 	@Override
-	public Ort findOrtById(Integer id) {
-		return new GenericPersisterImpl<Ort>(Ort.class).findById(id);
+	public Ort findOrtById(Integer idOrt) {
+		return new GenericPersisterImpl<Ort>(Ort.class).findById(idOrt);
 	}
 
 	@Override
@@ -65,6 +65,24 @@ public class OrtDAOImpl implements OrtDAO{
 				Ort.class);
 
 		tQuery.setParameter("ortBez", ortBez);
+
+		List<Ort> ortsListe = tQuery.getResultList();
+
+		em.close();
+
+		return ortsListe != null ? ortsListe : new ArrayList<Ort>();
+		
+	}
+
+	@Override
+	public List<Ort> findOrtByPlz(Integer plz) {
+		
+		EntityManager em = JpaUtil.createEntityManager();
+
+		TypedQuery<Ort> tQuery = em.createNamedQuery("Ort.findByPlz",
+				Ort.class);
+
+		tQuery.setParameter("plz", plz);
 
 		List<Ort> ortsListe = tQuery.getResultList();
 

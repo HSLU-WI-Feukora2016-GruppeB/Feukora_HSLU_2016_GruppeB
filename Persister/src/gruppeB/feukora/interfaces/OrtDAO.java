@@ -44,15 +44,23 @@ public interface OrtDAO {
 	 * @param plz
 	 * @throws Exception
 	 */
-	public void deleteOrtById(Integer plz) throws Exception;
+	public void deleteOrtById(Integer idOrt) throws Exception;
 	
 	/**
-	 * Liefert die Ort-Entity für die uebergebenen PLZ (id) zurück.
+	 * Liefert die Ort-Entity für die uebergebenen Id zurück.
+	 * 
+	 * @param idOrt
+	 * @return
+	 */
+	public Ort findOrtById(Integer idOrt);
+	
+	/**
+	 * Liefert die Ort-Entity für die uebergebenen PLZ zurück.
 	 * 
 	 * @param plz
 	 * @return
 	 */
-	public Ort findOrtById(Integer plz);
+	public List<Ort> findOrtByPlz(Integer plz);
 	
 	/**
 	 * Liefert alle Ort-Objekte zurück.

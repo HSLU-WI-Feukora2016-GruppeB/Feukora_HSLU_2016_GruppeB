@@ -10,6 +10,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -56,6 +57,7 @@ public class Mitarbeiter implements Serializable{
 	private String tel;
 	private String email;
 	private int rolleIntern;
+	@Nullable
 	@OneToOne
 	private Benutzer user;
 	private int lohn;

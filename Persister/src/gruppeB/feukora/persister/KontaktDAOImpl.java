@@ -43,13 +43,13 @@ public class KontaktDAOImpl implements KontaktDAO{
 	}
 
 	@Override
-	public void deleteKontaktById(Integer id) throws Exception {
-		new GenericPersisterImpl<Kontakt>(Kontakt.class).deleteById(id);
+	public void deleteKontaktById(Integer idKontakt) throws Exception {
+		new GenericPersisterImpl<Kontakt>(Kontakt.class).deleteById(idKontakt);
 	}
 
 	@Override
-	public Kontakt findKontaktById(Integer id) {
-		return new GenericPersisterImpl<Kontakt>(Kontakt.class).findById(id);
+	public Kontakt findKontaktById(Integer idKontakt) {
+		return new GenericPersisterImpl<Kontakt>(Kontakt.class).findById(idKontakt);
 	}
 
 	@Override

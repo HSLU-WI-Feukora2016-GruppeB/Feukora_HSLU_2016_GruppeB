@@ -24,7 +24,8 @@ import org.eclipse.jdt.annotation.Nullable;
 		@NamedQuery(name = "Auftrag.findByLiegenschaft", query = "SELECT a FROM Auftrag a WHERE a.liegenschaft=:liegenschaft"),
 		@NamedQuery(name = "Auftrag.findByMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.mitarbeiter=:mitarbeiter"),
 		@NamedQuery(name = "Auftrag.findByDatum", query = "SELECT a FROM Auftrag a WHERE a.datum=:datum"),
-		@NamedQuery(name = "Auftrag.findByDatumAndMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.datum>=:startdatum AND a.datum<=:enddatum AND a.mitarbeiter=:mitarbeiter") })
+		@NamedQuery(name = "Auftrag.findByDatumAndMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.datum>=:startdatum AND a.datum<=:enddatum AND a.mitarbeiter=:mitarbeiter"),
+		@NamedQuery(name = "Auftrag.findAuftragByDateAndMitarbeiterAndZeitslot", query = "SELECT a FROM Auftrag a WHERE a.datum=:datum AND a.mitarbeiter=:mitarbeiter AND a.zeitSlot=:zeitSlot")})
 public class Auftrag implements Serializable {
 
 	private static final long serialVersionUID = -1931313655942897483L;
@@ -39,19 +40,19 @@ public class Auftrag implements Serializable {
 	private Liegenschaft liegenschaft;
 
 	@Nullable
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne//(cascade = CascadeType.ALL)
 	private Messung messung1stufe1;
 
 	@Nullable
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne//(cascade = CascadeType.ALL)
 	private Messung messung1stufe2;
 
 	@Nullable
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne//(cascade = CascadeType.ALL)
 	private Messung messung2stufe1;
 
 	@Nullable
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne//(cascade = CascadeType.ALL)
 	private Messung messung2stufe2;
 
 	@ManyToOne
