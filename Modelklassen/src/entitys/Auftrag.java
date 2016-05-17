@@ -32,10 +32,10 @@ public class Auftrag implements Serializable {
 	@GeneratedValue
 	private Integer auftragsNummer;
 
-	@ManyToOne(cascade = CascadeType.PERSIST)
+	@ManyToOne
 	private Kontakt kontakt;
 
-	@ManyToOne(cascade = CascadeType.PERSIST)
+	@ManyToOne
 	private Liegenschaft liegenschaft;
 
 	@Nullable
@@ -54,7 +54,7 @@ public class Auftrag implements Serializable {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Messung messung2stufe2;
 
-	@ManyToOne(cascade = CascadeType.PERSIST)
+	@ManyToOne
 	private Mitarbeiter mitarbeiter;
 
 	@Temporal(TemporalType.DATE)

@@ -36,7 +36,7 @@ public class Liegenschaft implements Serializable{
 	@GeneratedValue
 	private Integer idLiegenschaft;
 	
-	@ManyToOne(cascade = CascadeType.PERSIST)
+	@ManyToOne
 	private Kontakt kontakt;	
 	
 	//hier wird per Text zb Hausmeisterinfo eingetragen
@@ -44,10 +44,10 @@ public class Liegenschaft implements Serializable{
 	
 	private String strasse;
 	
-	@ManyToOne(cascade = CascadeType.PERSIST)
+	@ManyToOne
 	private Ort ort;
 	
-	@OneToOne(cascade = CascadeType.PERSIST)
+	@OneToOne
 	private Feuerungsanlage feuerungsanlage;
 	
 	//standardkonstruktor**************************************************

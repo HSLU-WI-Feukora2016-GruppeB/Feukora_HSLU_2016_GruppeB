@@ -69,7 +69,7 @@ public class BenutzerManagerImpl implements BenutzerManager {
 
 	@Override
 	public List<Benutzer> findByUsernamePassword(String username, String password) throws Exception {
-		return benutzerDAO.findBenutzerByUsernamePassword(password);
+		return benutzerDAO.findBenutzerByUsernamePassword(username, password);
 	}
 
 }

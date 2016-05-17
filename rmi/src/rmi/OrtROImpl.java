@@ -3,8 +3,9 @@ package rmi;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
-import entitäten.Ort;
+import entitys.Ort;
 import managerInterfaces.OrtManager;
+import managerKlassen.OrtManagerImpl;
 
 public class OrtROImpl extends UnicastRemoteObject implements OrtRO  {
 

@@ -16834,3 +16834,1843 @@ Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert ve
 	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
 	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
 	... 62 more
+2016-05-17 10:25:45 ERROR GenericPersisterImpl:50 - Fehler beim Speichern der Entity vom Typ 'entitys.Feuerungsanlage': [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „brenner_pkey“
+  Detail: Schlüssel „(idbrenner)=(7)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO BRENNER (IDBRENNER, BAUJAHR, BRENNERART, BRENNERTYP) VALUES (?, ?, ?, ?)
+	bind => [4 parameters bound]
+Query: InsertObjectQuery(Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:45)
+	at gruppeB.feukora.persister.FeuerungsanlageDAOImpl.saveFeuerungsanlage(FeuerungsanlageDAOImpl.java:34)
+	at webservice.gruppeB.persister.AuftragDAOTest.init(AuftragDAOTest.java:255)
+	at webservice.gruppeB.persister.AuftragDAOTest.setUp(AuftragDAOTest.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „brenner_pkey“
+  Detail: Schlüssel „(idbrenner)=(7)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO BRENNER (IDBRENNER, BAUJAHR, BRENNERART, BRENNERTYP) VALUES (?, ?, ?, ?)
+	bind => [4 parameters bound]
+Query: InsertObjectQuery(Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:342)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:162)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:177)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:472)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:287)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:224)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsForClassWithChangeSet(CommitManager.java:191)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:136)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:3799)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1415)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „brenner_pkey“
+  Detail: Schlüssel „(idbrenner)=(7)“ existiert bereits.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 62 more
+2016-05-17 10:25:46 ERROR GenericPersisterImpl:50 - Fehler beim Speichern der Entity vom Typ 'entitys.Ort': [PLZ: 8000
+Ort: Zürich
+]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „ort_pkey“
+  Detail: Schlüssel „(plz)=(8000)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO ORT (PLZ, ORTBEZ) VALUES (?, ?)
+	bind => [2 parameters bound]
+Query: InsertObjectQuery(PLZ: 8000
+Ort: Zürich
+)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:45)
+	at gruppeB.feukora.persister.OrtDAOImpl.saveOrt(OrtDAOImpl.java:31)
+	at webservice.gruppeB.persister.AuftragDAOTest.init(AuftragDAOTest.java:243)
+	at webservice.gruppeB.persister.AuftragDAOTest.setUp(AuftragDAOTest.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „ort_pkey“
+  Detail: Schlüssel „(plz)=(8000)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO ORT (PLZ, ORTBEZ) VALUES (?, ?)
+	bind => [2 parameters bound]
+Query: InsertObjectQuery(PLZ: 8000
+Ort: Zürich
+)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:342)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:162)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:177)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:472)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:287)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:224)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:123)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:3799)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1415)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „ort_pkey“
+  Detail: Schlüssel „(plz)=(8000)“ existiert bereits.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 61 more
+2016-05-17 10:25:46 ERROR GenericPersisterImpl:50 - Fehler beim Speichern der Entity vom Typ 'entitys.Ort': [PLZ: 8000
+Ort: Zürich
+]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „ort_pkey“
+  Detail: Schlüssel „(plz)=(8000)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO ORT (PLZ, ORTBEZ) VALUES (?, ?)
+	bind => [2 parameters bound]
+Query: InsertObjectQuery(PLZ: 8000
+Ort: Zürich
+)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:45)
+	at gruppeB.feukora.persister.OrtDAOImpl.saveOrt(OrtDAOImpl.java:31)
+	at webservice.gruppeB.persister.AuftragDAOTest.init(AuftragDAOTest.java:243)
+	at webservice.gruppeB.persister.AuftragDAOTest.setUp(AuftragDAOTest.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „ort_pkey“
+  Detail: Schlüssel „(plz)=(8000)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO ORT (PLZ, ORTBEZ) VALUES (?, ?)
+	bind => [2 parameters bound]
+Query: InsertObjectQuery(PLZ: 8000
+Ort: Zürich
+)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:342)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:162)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:177)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:472)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:287)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:224)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:123)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:3799)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1415)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „ort_pkey“
+  Detail: Schlüssel „(plz)=(8000)“ existiert bereits.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 61 more
+2016-05-17 10:25:46 ERROR GenericPersisterImpl:50 - Fehler beim Speichern der Entity vom Typ 'entitys.Ort': [PLZ: 8000
+Ort: Zürich
+]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „ort_pkey“
+  Detail: Schlüssel „(plz)=(8000)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO ORT (PLZ, ORTBEZ) VALUES (?, ?)
+	bind => [2 parameters bound]
+Query: InsertObjectQuery(PLZ: 8000
+Ort: Zürich
+)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:45)
+	at gruppeB.feukora.persister.OrtDAOImpl.saveOrt(OrtDAOImpl.java:31)
+	at webservice.gruppeB.persister.AuftragDAOTest.init(AuftragDAOTest.java:243)
+	at webservice.gruppeB.persister.AuftragDAOTest.setUp(AuftragDAOTest.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „ort_pkey“
+  Detail: Schlüssel „(plz)=(8000)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO ORT (PLZ, ORTBEZ) VALUES (?, ?)
+	bind => [2 parameters bound]
+Query: InsertObjectQuery(PLZ: 8000
+Ort: Zürich
+)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:342)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:162)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:177)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:472)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:287)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:224)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:123)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:3799)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1415)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „ort_pkey“
+  Detail: Schlüssel „(plz)=(8000)“ existiert bereits.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 61 more
+2016-05-17 10:25:47 ERROR GenericPersisterImpl:50 - Fehler beim Speichern der Entity vom Typ 'entitys.Ort': [PLZ: 8000
+Ort: Zürich
+]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „ort_pkey“
+  Detail: Schlüssel „(plz)=(8000)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO ORT (PLZ, ORTBEZ) VALUES (?, ?)
+	bind => [2 parameters bound]
+Query: InsertObjectQuery(PLZ: 8000
+Ort: Zürich
+)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:45)
+	at gruppeB.feukora.persister.OrtDAOImpl.saveOrt(OrtDAOImpl.java:31)
+	at webservice.gruppeB.persister.AuftragDAOTest.init(AuftragDAOTest.java:243)
+	at webservice.gruppeB.persister.AuftragDAOTest.setUp(AuftragDAOTest.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „ort_pkey“
+  Detail: Schlüssel „(plz)=(8000)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO ORT (PLZ, ORTBEZ) VALUES (?, ?)
+	bind => [2 parameters bound]
+Query: InsertObjectQuery(PLZ: 8000
+Ort: Zürich
+)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:342)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:162)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:177)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:472)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:287)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:224)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:123)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:3799)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1415)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „ort_pkey“
+  Detail: Schlüssel „(plz)=(8000)“ existiert bereits.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 61 more
+2016-05-17 10:33:11 ERROR GenericPersisterImpl:50 - Fehler beim Speichern der Entity vom Typ 'entitys.Feuerungsanlage': [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „brenner_pkey“
+  Detail: Schlüssel „(idbrenner)=(7)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO BRENNER (IDBRENNER, BAUJAHR, BRENNERART, BRENNERTYP) VALUES (?, ?, ?, ?)
+	bind => [4 parameters bound]
+Query: InsertObjectQuery(Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:45)
+	at gruppeB.feukora.persister.FeuerungsanlageDAOImpl.saveFeuerungsanlage(FeuerungsanlageDAOImpl.java:34)
+	at webservice.gruppeB.persister.AuftragDAOTest.init(AuftragDAOTest.java:261)
+	at webservice.gruppeB.persister.AuftragDAOTest.setUp(AuftragDAOTest.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „brenner_pkey“
+  Detail: Schlüssel „(idbrenner)=(7)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO BRENNER (IDBRENNER, BAUJAHR, BRENNERART, BRENNERTYP) VALUES (?, ?, ?, ?)
+	bind => [4 parameters bound]
+Query: InsertObjectQuery(Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:342)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:162)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:177)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:472)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:287)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:224)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsForClassWithChangeSet(CommitManager.java:191)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:136)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:3799)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1415)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „brenner_pkey“
+  Detail: Schlüssel „(idbrenner)=(7)“ existiert bereits.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 62 more
+2016-05-17 11:00:29 ERROR GenericPersisterImpl:50 - Fehler beim Speichern der Entity vom Typ 'entitys.Feuerungsanlage': [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „brenner_pkey“
+  Detail: Schlüssel „(idbrenner)=(7)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO BRENNER (IDBRENNER, BAUJAHR, BRENNERART, BRENNERTYP) VALUES (?, ?, ?, ?)
+	bind => [4 parameters bound]
+Query: InsertObjectQuery(Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:45)
+	at gruppeB.feukora.persister.FeuerungsanlageDAOImpl.saveFeuerungsanlage(FeuerungsanlageDAOImpl.java:34)
+	at webservice.gruppeB.persister.AuftragDAOTest.init(AuftragDAOTest.java:269)
+	at webservice.gruppeB.persister.AuftragDAOTest.setUp(AuftragDAOTest.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „brenner_pkey“
+  Detail: Schlüssel „(idbrenner)=(7)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO BRENNER (IDBRENNER, BAUJAHR, BRENNERART, BRENNERTYP) VALUES (?, ?, ?, ?)
+	bind => [4 parameters bound]
+Query: InsertObjectQuery(Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:342)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:162)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:177)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:472)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:287)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:224)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsForClassWithChangeSet(CommitManager.java:191)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:136)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:3799)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1415)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „brenner_pkey“
+  Detail: Schlüssel „(idbrenner)=(7)“ existiert bereits.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 62 more
+2016-05-17 11:02:25 ERROR GenericPersisterImpl:50 - Fehler beim Speichern der Entity vom Typ 'entitys.Feuerungsanlage': [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „brenner_pkey“
+  Detail: Schlüssel „(idbrenner)=(7)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO BRENNER (IDBRENNER, BAUJAHR, BRENNERART, BRENNERTYP) VALUES (?, ?, ?, ?)
+	bind => [4 parameters bound]
+Query: InsertObjectQuery(Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:45)
+	at gruppeB.feukora.persister.FeuerungsanlageDAOImpl.saveFeuerungsanlage(FeuerungsanlageDAOImpl.java:34)
+	at webservice.gruppeB.persister.AuftragDAOTest.init(AuftragDAOTest.java:269)
+	at webservice.gruppeB.persister.AuftragDAOTest.setUp(AuftragDAOTest.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „brenner_pkey“
+  Detail: Schlüssel „(idbrenner)=(7)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO BRENNER (IDBRENNER, BAUJAHR, BRENNERART, BRENNERTYP) VALUES (?, ?, ?, ?)
+	bind => [4 parameters bound]
+Query: InsertObjectQuery(Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:342)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:162)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:177)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:472)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:287)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:224)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsForClassWithChangeSet(CommitManager.java:191)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:136)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:3799)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1415)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „brenner_pkey“
+  Detail: Schlüssel „(idbrenner)=(7)“ existiert bereits.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 62 more
+2016-05-17 11:08:17 ERROR GenericPersisterImpl:50 - Fehler beim Speichern der Entity vom Typ 'entitys.Feuerungsanlage': [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „brenner_pkey“
+  Detail: Schlüssel „(idbrenner)=(7)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO BRENNER (IDBRENNER, BAUJAHR, BRENNERART, BRENNERTYP) VALUES (?, ?, ?, ?)
+	bind => [4 parameters bound]
+Query: InsertObjectQuery(Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:45)
+	at gruppeB.feukora.persister.FeuerungsanlageDAOImpl.saveFeuerungsanlage(FeuerungsanlageDAOImpl.java:34)
+	at webservice.gruppeB.persister.AuftragDAOTest.init(AuftragDAOTest.java:268)
+	at webservice.gruppeB.persister.AuftragDAOTest.setUp(AuftragDAOTest.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „brenner_pkey“
+  Detail: Schlüssel „(idbrenner)=(7)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO BRENNER (IDBRENNER, BAUJAHR, BRENNERART, BRENNERTYP) VALUES (?, ?, ?, ?)
+	bind => [4 parameters bound]
+Query: InsertObjectQuery(Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:342)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:162)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:177)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:472)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:287)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:224)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsForClassWithChangeSet(CommitManager.java:191)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:136)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:3799)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1415)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „brenner_pkey“
+  Detail: Schlüssel „(idbrenner)=(7)“ existiert bereits.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 62 more
+2016-05-17 11:46:43 ERROR GenericPersisterImpl:50 - Fehler beim Speichern der Entity vom Typ 'entitys.Auftrag': [Auftrag:
+Auftragsdatum: 11/9/2016
+Termin 8:00 - 10:00 Uhr
+Auftragsnummer: 1
+
+Kontakt: 
+Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+
+Info vor Ort: Hausmeister bei Muster klingeln
+
+Messung: 
+Messung:
+Messdatum: 	 	 	3/7/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	120
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich 
+
+Messung:
+Messdatum: 	 	 	2/8/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich 
+
+Messung:
+Messdatum: 	 	 	5/10/2012
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	75
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich 
+
+Messung:
+Messdatum: 	 	 	7/4/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	111
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	99
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich 
+
+
+Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: PLZ: 3000
+Ort: Bern
+
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: PLZ: 5000
+Ort: Aarau
+.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:45)
+	at gruppeB.feukora.persister.AuftragDAOImpl.saveAuftrag(AuftragDAOImpl.java:35)
+	at webservice.gruppeB.persister.AuftragDAOTest.init(AuftragDAOTest.java:288)
+	at webservice.gruppeB.persister.AuftragDAOTest.setUp(AuftragDAOTest.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: PLZ: 5000
+Ort: Aarau
+.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+2016-05-17 11:53:18 ERROR GenericPersisterImpl:50 - Fehler beim Speichern der Entity vom Typ 'entitys.Auftrag': [Auftrag:
+Auftragsdatum: 18/9/2016
+Termin 8:00 - 10:00 Uhr
+Auftragsnummer: 13
+
+Kontakt: 
+Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+
+Info vor Ort: Hausmeister bei Muster klingeln
+
+Messung: 
+Messung:
+Messdatum: 	 	 	9/2/2014
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	200
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich 
+
+Keine Messung 1 Stufe 2 vorhanden! + 
+Messung:
+Messdatum: 	 	 	10/1/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	140
+Waermeerzeugertemperatur: 	 	 	99
+Verbrennungstemperatur: 	 	 	150
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich 
+
+Keine Messung 2 Stufe 2 vorhanden!Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: PLZ: 3000
+Ort: Bern
+
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+]
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „ort_pkey“
+  Detail: Schlüssel „(plz)=(5000)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO ORT (PLZ, ORTBEZ) VALUES (?, ?)
+	bind => [2 parameters bound]
+Query: InsertObjectQuery(PLZ: 5000
+Ort: Aarau
+)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:45)
+	at gruppeB.feukora.persister.AuftragDAOImpl.saveAuftrag(AuftragDAOImpl.java:35)
+	at webservice.gruppeB.persister.AuftragDAOTest.init(AuftragDAOTest.java:288)
+	at webservice.gruppeB.persister.AuftragDAOTest.setUp(AuftragDAOTest.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.3.v20120629-r11760): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „ort_pkey“
+  Detail: Schlüssel „(plz)=(5000)“ existiert bereits.
+Error Code: 0
+Call: INSERT INTO ORT (PLZ, ORTBEZ) VALUES (?, ?)
+	bind => [2 parameters bound]
+Query: InsertObjectQuery(PLZ: 5000
+Ort: Aarau
+)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1494)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:838)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:906)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:592)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:535)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1717)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:253)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:207)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:193)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:342)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:162)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:177)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:472)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:287)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:844)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:743)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2871)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1516)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1498)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1449)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:224)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsForClassWithChangeSet(CommitManager.java:191)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:136)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:3799)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1415)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitToDatabase(RepeatableWriteUnitOfWork.java:636)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1505)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+Caused by: org.postgresql.util.PSQLException: FEHLER: doppelter Schlüsselwert verletzt Unique-Constraint „ort_pkey“
+  Detail: Schlüssel „(plz)=(5000)“ existiert bereits.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2101)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1834)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:510)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:386)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:332)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:831)
+	... 62 more
+2016-05-17 12:13:47 ERROR GenericPersisterImpl:50 - Fehler beim Speichern der Entity vom Typ 'entitys.Auftrag': [Auftrag:
+Auftragsdatum: 11/9/2016
+Termin 8:00 - 10:00 Uhr
+Auftragsnummer: 1
+
+Kontakt: 
+Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+
+Info vor Ort: Hausmeister bei Muster klingeln
+
+Messung: 
+Messung:
+Messdatum: 	 	 	3/7/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	120
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich 
+
+Messung:
+Messdatum: 	 	 	2/8/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich 
+
+Messung:
+Messdatum: 	 	 	5/10/2012
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	75
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich 
+
+Messung:
+Messdatum: 	 	 	7/4/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	111
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	99
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich 
+
+
+Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: PLZ: 3000
+Ort: Bern
+
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:45)
+	at gruppeB.feukora.persister.AuftragDAOImpl.saveAuftrag(AuftragDAOImpl.java:35)
+	at webservice.gruppeB.persister.AuftragDAOTest.init(AuftragDAOTest.java:288)
+	at webservice.gruppeB.persister.AuftragDAOTest.setUp(AuftragDAOTest.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+2016-05-17 12:21:21 ERROR GenericPersisterImpl:50 - Fehler beim Speichern der Entity vom Typ 'entitys.Auftrag': [Auftrag:
+Auftragsdatum: 11/9/2016
+Termin 8:00 - 10:00 Uhr
+Auftragsnummer: 1
+
+Kontakt: 
+Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+
+Info vor Ort: Hausmeister bei Muster klingeln
+
+Messung: 
+Messung:
+Messdatum: 	 	 	3/7/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	120
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich 
+
+Messung:
+Messdatum: 	 	 	2/8/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich 
+
+Messung:
+Messdatum: 	 	 	5/10/2012
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	75
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich 
+
+Messung:
+Messdatum: 	 	 	7/4/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	111
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	99
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich 
+
+
+Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: PLZ: 3000
+Ort: Bern
+
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:45)
+	at gruppeB.feukora.persister.AuftragDAOImpl.saveAuftrag(AuftragDAOImpl.java:35)
+	at webservice.gruppeB.persister.AuftragDAOTest.init(AuftragDAOTest.java:288)
+	at webservice.gruppeB.persister.AuftragDAOTest.setUp(AuftragDAOTest.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+2016-05-17 12:22:08 ERROR GenericPersisterImpl:50 - Fehler beim Speichern der Entity vom Typ 'entitys.Auftrag': [Auftrag:
+Auftragsdatum: 11/9/2016
+Termin 8:00 - 10:00 Uhr
+Auftragsnummer: 1
+
+Kontakt: 
+Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+
+Info vor Ort: Hausmeister bei Muster klingeln
+
+Messung: 
+Messung:
+Messdatum: 	 	 	3/7/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	120
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich 
+
+Messung:
+Messdatum: 	 	 	2/8/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich 
+
+Messung:
+Messdatum: 	 	 	5/10/2012
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	75
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich 
+
+Messung:
+Messdatum: 	 	 	7/4/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	111
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	99
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich 
+
+
+Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: PLZ: 3000
+Ort: Bern
+
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:45)
+	at gruppeB.feukora.persister.AuftragDAOImpl.saveAuftrag(AuftragDAOImpl.java:35)
+	at webservice.gruppeB.persister.AuftragDAOTest.init(AuftragDAOTest.java:288)
+	at webservice.gruppeB.persister.AuftragDAOTest.setUp(AuftragDAOTest.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more

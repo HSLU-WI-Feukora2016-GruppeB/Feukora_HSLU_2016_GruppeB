@@ -3,7 +3,7 @@ package rmi;
 import java.rmi.Remote;
 import java.util.List;
 
-import entitäten.Ort;
+import entitys.Ort;
 
 
 /**
