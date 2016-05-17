@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -15,6 +16,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.eclipse.jdt.annotation.Nullable;
 
 /**
  * Ein Mitarbeiter ist eine Person welche nur Firmenintern zu tun hat,
@@ -48,16 +51,17 @@ public class Mitarbeiter implements Serializable{
 	private String vorname;
 	private String name;
 	private String strasse;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	private Ort ort;
 	private String tel;
 	private String email;
 	private int rolleIntern;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.PERSIST)
 	private Benutzer user;
 	private int lohn;
 	@Temporal(TemporalType.DATE)
 	private GregorianCalendar arbeitetSeit;
+	@Nullable
 	@Temporal(TemporalType.DATE)
 	private GregorianCalendar arbeitetBis;
 	
@@ -184,8 +188,15 @@ public class Mitarbeiter implements Serializable{
 	 * @param messDatum
 	 * @return
 	 */
-	public String printArbeitetSeitDatum(GregorianCalendar arbeitetSeit) {
-		return arbeitetSeit.get(Calendar.DAY_OF_MONTH) + "/" + arbeitetSeit.get(Calendar.MONTH) + "/" + arbeitetSeit.get(Calendar.YEAR);
+	public String formatDatum(GregorianCalendar datum) {
+		String cal = "";
+		
+		if(datum==null){
+			cal = "x";
+		} else {
+			cal = arbeitetSeit.get(Calendar.DAY_OF_MONTH) + "/" + arbeitetSeit.get(Calendar.MONTH) + "/" + arbeitetSeit.get(Calendar.YEAR);
+				}
+		return cal;
 	}
 
 	public void setArbeitetSeit(GregorianCalendar arbeitetSeit) {
@@ -196,10 +207,6 @@ public class Mitarbeiter implements Serializable{
 		return arbeitetBis;
 	}
 	
-	public String printArbeitetBisDatum(GregorianCalendar arbeitetBis) {
-		return arbeitetBis.get(Calendar.DAY_OF_MONTH) + "/" + arbeitetBis.get(Calendar.MONTH) + "/" + arbeitetBis.get(Calendar.YEAR);
-	}
-
 	public void setArbeitetBis(GregorianCalendar arbeitetBis) {
 		this.arbeitetBis = arbeitetBis;
 	}
@@ -210,14 +217,14 @@ public class Mitarbeiter implements Serializable{
 				+ "Vorname: \n" + vorname.toString() + "\n"
 				+ "Name: \n" + name.toString() + "\n"
 				+ "Strasse: \n" + strasse.toString() + "\n"
-				+ "Ort: \t \t \t" + ort + "\n"
-				+ "Telefon: \t \t \t" + tel + "\n"
+				+ "Ort: " + ort + "\n"
+				+ "Telefon: " + tel + "\n"
 				+ "eMail: \n" + email.toString() + "\n"
-				+ "Rolle Intern: \t \t \t" + rolleIntern + "\n"
-				+ "User: \t \t \t" + user + "\n"
-				+ "Lohn: \t \t \t" + lohn + "\n"
-				+ "Arbeitet seit: \n" + this.printArbeitetSeitDatum(this.arbeitetSeit) + "\n"
-				+ "Arbeitet bis: \n" + this.printArbeitetBisDatum(this.arbeitetBis) + "\n";
+				+ "Rolle Intern: " + rolleIntern + "\n"
+				+ "User: " + user + "\n"
+				+ "Lohn: " + lohn + "\n"
+				+ "Arbeitet seit: \n" + this.formatDatum(this.arbeitetSeit) + "\n"
+				+ "Arbeitet bis: \n" + this.formatDatum(this.arbeitetBis) + "\n";
 	}
 
 }

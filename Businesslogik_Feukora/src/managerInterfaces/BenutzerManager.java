@@ -78,6 +78,7 @@ public interface BenutzerManager {
 	 * @param password
 	 * @return
 	 */
-	public List<Benutzer> findByPassword(String password)throws Exception;
+	public List<Benutzer> findByUsernamePassword(String username, String password)throws Exception;
+
 
 }

@@ -2,6 +2,7 @@ package entitys;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -35,7 +36,7 @@ public class Liegenschaft implements Serializable{
 	@GeneratedValue
 	private Integer idLiegenschaft;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	private Kontakt kontakt;	
 	
 	//hier wird per Text zb Hausmeisterinfo eingetragen
@@ -43,10 +44,10 @@ public class Liegenschaft implements Serializable{
 	
 	private String strasse;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	private Ort ort;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.PERSIST)
 	private Feuerungsanlage feuerungsanlage;
 	
 	//standardkonstruktor**************************************************
