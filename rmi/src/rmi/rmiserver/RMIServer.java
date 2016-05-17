@@ -34,10 +34,8 @@ import rmi.WaermeerzeugerROImpl;
  */
 public class RMIServer {
 	
-	private static Registry reg;
-	private static int port;
-	
-	start();
+	public static void main(String[] args) {
+
 	
 	try {
 
@@ -54,7 +52,7 @@ public class RMIServer {
 	WaermeerzeugerRO wa = new WaermeerzeugerROImpl();
 	
 	// Registry-Instanz erzeugen bzw. starten 
-	reg = LocateRegistry.createRegistry(port);
+	Registry reg = LocateRegistry.createRegistry(60140);
 	
 	// Entferntes Objekt beim Namensdienst registrieren
 	if (reg != null) {
@@ -78,10 +76,10 @@ public class RMIServer {
 		
 		}
 	
-	stop();
-	
-	} catch (Exception e){  
-	e.printStackTrace();
+	} catch(RemoteException re){
+		re.printStackTrace();
+	}catch (Exception e){
+		e.printStackTrace();
 	}
 }
 }

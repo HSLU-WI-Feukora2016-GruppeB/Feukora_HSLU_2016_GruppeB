@@ -3,8 +3,9 @@ package rmi;
 import java.rmi.Remote;
 import java.util.List;
 
-import entitäten.Kontakt;
-import entitäten.Ort;
+import entitys.Kontakt;
+import entitys.Ort;
+
 
 
 /**

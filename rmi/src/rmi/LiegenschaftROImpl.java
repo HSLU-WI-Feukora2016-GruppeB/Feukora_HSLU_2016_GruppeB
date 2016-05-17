@@ -3,10 +3,11 @@ package rmi;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
-import entitäten.Kontakt;
-import entitäten.Liegenschaft;
-import entitäten.Ort;
+import entitys.Kontakt;
+import entitys.Liegenschaft;
+import entitys.Ort;
 import managerInterfaces.LiegenschaftManager;
+import managerKlassen.LiegenschaftManagerImpl;
 
 public class LiegenschaftROImpl extends UnicastRemoteObject implements LiegenschaftRO{
 

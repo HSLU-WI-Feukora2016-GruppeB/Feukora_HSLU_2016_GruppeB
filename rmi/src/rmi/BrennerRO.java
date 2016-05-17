@@ -3,7 +3,8 @@ package rmi;
 import java.rmi.Remote;
 import java.util.List;
 
-import entitäten.Brenner;
+import entitys.Brenner;
+
 
 /**
  * Das Interface stellt die CRUD-Funktionen für den Brenner zur Verfügung.

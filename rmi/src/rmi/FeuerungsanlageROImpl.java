@@ -4,11 +4,12 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
-import entitäten.Brenner;
-import entitäten.Feuerungsanlage;
-import entitäten.Liegenschaft;
-import entitäten.Waermeerzeuger;
+import entitys.Brenner;
+import entitys.Feuerungsanlage;
+import entitys.Liegenschaft;
+import entitys.Waermeerzeuger;
 import managerInterfaces.FeuerungsanlageManager;
+import managerKlassen.FeuerungsanlageManagerImpl;
 
 public class FeuerungsanlageROImpl extends UnicastRemoteObject implements FeuerungsanlageRO {
 

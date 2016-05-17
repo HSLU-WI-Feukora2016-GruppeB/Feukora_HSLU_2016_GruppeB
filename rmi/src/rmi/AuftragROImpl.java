@@ -5,11 +5,9 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import entitys.*;
 import managerInterfaces.AuftragManager;
-import entitäten.Auftrag;
-import entitäten.Kontakt;
-import entitäten.Liegenschaft;
-import entitäten.Mitarbeiter;
+import managerKlassen.AuftragManagerImpl;
 
 public class AuftragROImpl extends UnicastRemoteObject implements AuftragRO {
 
@@ -39,11 +37,6 @@ public class AuftragROImpl extends UnicastRemoteObject implements AuftragRO {
 	@Override
 	public List<Auftrag> findAll() throws Exception {
 		return auftragManager.findAll();
-	}
-
-	@Override
-	public Auftrag checkMessungByGrenzwert(Auftrag auftrag) throws Exception {
-		return auftragManager.checkMessungByGrenzwert(auftrag);
 	}
 
 	@Override

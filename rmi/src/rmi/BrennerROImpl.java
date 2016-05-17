@@ -4,8 +4,9 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
-import entitäten.Brenner;
+import entitys.Brenner;
 import managerInterfaces.BrennerManager;
+import managerKlassen.BrennerManagerImpl;
 
 public class BrennerROImpl extends UnicastRemoteObject implements BrennerRO{
 

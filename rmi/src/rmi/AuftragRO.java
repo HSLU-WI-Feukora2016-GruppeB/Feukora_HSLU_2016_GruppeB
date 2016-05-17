@@ -35,13 +35,6 @@ public interface AuftragRO extends Remote {
 	public Auftrag update(Auftrag entity) throws Exception;
 
 	/**
-	 * Test betreffend Grenzwert bei der Messung.
-	 * @param auftrag
-	 * @throws Exception
-	 */
-	public Auftrag checkMessungByGrenzwert(Auftrag auftrag) throws Exception;
-
-	/**
 	 * Löscht den Auftrag.
 	 * @param entity
 	 * @throws Exception

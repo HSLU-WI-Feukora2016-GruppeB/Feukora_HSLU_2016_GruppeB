@@ -59,7 +59,7 @@ public class TerminUebersicht extends Application {
 	private ComboBox<String> ddFK;
 
 	@FXML
-	private Label lblRueckmeldung;
+	private Label lblRueckmeldung, lblDruckRueckmeldung;
 
 	@FXML
 	private DatePicker startDatum, endDatum;
@@ -95,7 +95,7 @@ public class TerminUebersicht extends Application {
 	public void wocheAnzeigen() {
 
 		if (startDatum.getValue() == null || ddFK.getValue() == null) {
-			lblRueckmeldung.setText("Bitte Datumsfelder und Kontrolleur ausfüllen");
+			lblRueckmeldung.setText("Bitte Datumsfelder und \n" +"Kontrolleur ausfüllen");
 
 		} else {
 
@@ -301,7 +301,7 @@ public class TerminUebersicht extends Application {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		lblDruckRueckmeldung.setText("Screenhot auf Desktop \n"+ "wurde erstellt");
 	}
 
 	/**
