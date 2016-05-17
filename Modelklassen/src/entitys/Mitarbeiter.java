@@ -51,12 +51,12 @@ public class Mitarbeiter implements Serializable{
 	private String vorname;
 	private String name;
 	private String strasse;
-	@ManyToOne(cascade = CascadeType.PERSIST)
+	@ManyToOne
 	private Ort ort;
 	private String tel;
 	private String email;
 	private int rolleIntern;
-	@OneToOne(cascade = CascadeType.PERSIST)
+	@OneToOne
 	private Benutzer user;
 	private int lohn;
 	@Temporal(TemporalType.DATE)
