@@ -49,7 +49,7 @@ public class MitarbeiterUebersicht {
 
 	MitarbeiterRO mitarbeiterRO;
 	Mitarbeiter mitarbeiter;
-	// List<Mitarbeiter> list = mitarbeiterRO.findAllMitarbeiter();
+	//List<Mitarbeiter> list = mitarbeiterRO.findAllMitarbeiter();
 
 	private void initialize() {
 
