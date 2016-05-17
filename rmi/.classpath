@@ -4,5 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Businesslogik"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Modelklassen"/>
+	<classpathentry kind="lib" path="C:/Users/Berri/Dropbox/INM21 Projekt/Programmierung/Businesslogik_Interfaces.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

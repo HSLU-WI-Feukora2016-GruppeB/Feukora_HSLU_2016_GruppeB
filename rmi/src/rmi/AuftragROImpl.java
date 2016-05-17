@@ -6,10 +6,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 import managerInterfaces.AuftragManager;
-import entitäten.Auftrag;
-import entitäten.Kontakt;
-import entitäten.Liegenschaft;
-import entitäten.Mitarbeiter;
+import managerKlassen.AuftragManagerImpl;
 
 public class AuftragROImpl extends UnicastRemoteObject implements AuftragRO {
 
