@@ -2,6 +2,7 @@ package entitys;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -145,13 +146,13 @@ public class Kontakt implements Serializable{
 	@Override
 	public String toString() {
 		return "Kontakt: " + "\n"
-				+ "Vorname: \n" + vorname.toString() + "\n"
-				+ "Nachname: \n" + name.toString() + "\n"
-				+ "Strasse: \n" + strasse.toString() + "\n"
-				+ "Ort: \t \t \t" + ort + "\n"
-				+ "Telefon: \t \t \t" + tel + "\n"
-				+ "eMail: \n" + email.toString() + "\n"
-				+ "Rolle Extern: \t \t \t" + rolleExtern + "\n";
+				+ "Vorname: " + vorname.toString() + "\n"
+				+ "Nachname: " + name.toString() + "\n"
+				+ "Strasse: " + strasse.toString() + "\n"
+				+ ort + "\n"
+				+ "Telefon: " + tel + "\n"
+				+ "eMail: " + email.toString() + "\n"
+				+ "Rolle Extern: " + this.getRolleExtern() + "\n";
 	}
 	
 	

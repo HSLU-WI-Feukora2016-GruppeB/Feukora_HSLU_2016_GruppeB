@@ -2,6 +2,7 @@ package entitys;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,6 +11,9 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import org.eclipse.persistence.internal.descriptors.CascadeLockingPolicy;
+import org.eclipse.persistence.internal.descriptors.DescriptorIterator.CascadeCondition;
 
 /**
  * Eine Feuerungsanlage besteht aus einem Brenner 
@@ -35,7 +39,6 @@ public class Feuerungsanlage implements Serializable{
 	@ManyToOne
 	private Brenner brenner;
 	
-
 	@ManyToOne
 	private Waermeerzeuger waermeerzeuger;
 	

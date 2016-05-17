@@ -12,7 +12,7 @@ public class OrtROImpl extends UnicastRemoteObject implements OrtRO  {
 	
 	private OrtManager ortManager;
 	
-	private OrtROImpl() throws Exception {
+	public OrtROImpl() throws Exception {
 		ortManager = new OrtManagerImpl();
 	}
 

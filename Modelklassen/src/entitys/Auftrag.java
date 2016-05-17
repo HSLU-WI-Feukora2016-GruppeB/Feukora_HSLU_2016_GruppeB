@@ -1,4 +1,5 @@
 package entitys;
+
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -8,23 +9,23 @@ import javax.persistence.*;
 import org.eclipse.jdt.annotation.Nullable;
 
 /**
- * Ein Auftrag fasst alle wichtigen Informationen für den Auftrag zusammen.
- * Er wird normalerweise vom Sachbearbeiter erstellt und vom Feuerungskontrolleur durch
- * die Kontroll-Messdaten ergänzt.
+ * Ein Auftrag fasst alle wichtigen Informationen für den Auftrag zusammen. Er
+ * wird normalerweise vom Sachbearbeiter erstellt und vom Feuerungskontrolleur
+ * durch die Kontroll-Messdaten ergänzt.
+ * 
  * @author Olivia
  * @version 1.0
  * @since 1.0
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "Auftrag.findById", query = "SELECT a FROM Auftrag a WHERE a.auftragsNummer=:auftragsNummer"),
-	@NamedQuery(name = "Auftrag.findByKontakt", query = "SELECT a FROM Auftrag a WHERE a.kontakt=:kontakt"),
-	@NamedQuery(name = "Auftrag.findByLiegenschaft", query = "SELECT a FROM Auftrag a WHERE a.liegenschaft=:liegenschaft"),
-	@NamedQuery(name = "Auftrag.findByMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.mitarbeiter=:mitarbeiter"),
-	@NamedQuery(name = "Auftrag.findByDatum", query = "SELECT a FROM Auftrag a WHERE a.datum=:datum"),
-	@NamedQuery(name = "Auftrag.findByDatumAndMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.datum>=:startdatum AND a.datum<=:enddatum AND a.mitarbeiter=:mitarbeiter")
-})
-public class Auftrag implements Serializable{
+		@NamedQuery(name = "Auftrag.findById", query = "SELECT a FROM Auftrag a WHERE a.auftragsNummer=:auftragsNummer"),
+		@NamedQuery(name = "Auftrag.findByKontakt", query = "SELECT a FROM Auftrag a WHERE a.kontakt=:kontakt"),
+		@NamedQuery(name = "Auftrag.findByLiegenschaft", query = "SELECT a FROM Auftrag a WHERE a.liegenschaft=:liegenschaft"),
+		@NamedQuery(name = "Auftrag.findByMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.mitarbeiter=:mitarbeiter"),
+		@NamedQuery(name = "Auftrag.findByDatum", query = "SELECT a FROM Auftrag a WHERE a.datum=:datum"),
+		@NamedQuery(name = "Auftrag.findByDatumAndMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.datum>=:startdatum AND a.datum<=:enddatum AND a.mitarbeiter=:mitarbeiter") })
+public class Auftrag implements Serializable {
 
 	private static final long serialVersionUID = -1931313655942897483L;
 	@Id
@@ -38,19 +39,19 @@ public class Auftrag implements Serializable{
 	private Liegenschaft liegenschaft;
 
 	@Nullable
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
 	private Messung messung1stufe1;
 
 	@Nullable
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
 	private Messung messung1stufe2;
 
 	@Nullable
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
 	private Messung messung2stufe1;
 
 	@Nullable
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
 	private Messung messung2stufe2;
 
 	@ManyToOne
@@ -63,14 +64,14 @@ public class Auftrag implements Serializable{
 
 	private int terminArt;
 
-
-	//konstruktor**************************************************
-	public Auftrag(){
+	// konstruktor**************************************************
+	public Auftrag() {
 
 	}
 
 	public Auftrag(Kontakt kontakt, Liegenschaft liegenschaft,
-			Mitarbeiter mitarbeiter, GregorianCalendar datum, int zeitSlot, int terminArt) {
+			Mitarbeiter mitarbeiter, GregorianCalendar datum, int zeitSlot,
+			int terminArt) {
 		this.kontakt = kontakt;
 		this.liegenschaft = liegenschaft;
 		this.mitarbeiter = mitarbeiter;
@@ -78,8 +79,26 @@ public class Auftrag implements Serializable{
 		this.zeitSlot = zeitSlot;
 		this.terminArt = terminArt;
 	}
+	
+	public Auftrag(Kontakt kontakt, Liegenschaft liegenschaft,
+			@Nullable Messung messung1stufe1, @Nullable Messung messung1stufe2,
+			@Nullable Messung messung2stufe1, @Nullable Messung messung2stufe2,
+			Mitarbeiter mitarbeiter, GregorianCalendar datum, int zeitSlot,
+			int terminArt) {
+		super();
+		this.kontakt = kontakt;
+		this.liegenschaft = liegenschaft;
+		this.messung1stufe1 = messung1stufe1;
+		this.messung1stufe2 = messung1stufe2;
+		this.messung2stufe1 = messung2stufe1;
+		this.messung2stufe2 = messung2stufe2;
+		this.mitarbeiter = mitarbeiter;
+		this.datum = datum;
+		this.zeitSlot = zeitSlot;
+		this.terminArt = terminArt;
+	}
 
-	//getter&setter********************************************************
+	// getter&setter********************************************************
 	public Integer getAuftragsNummer() {
 		return auftragsNummer;
 	}
@@ -149,12 +168,15 @@ public class Auftrag implements Serializable{
 	}
 
 	/**
-	 * Hilfsmethode für toString Methode der Klasse Messung. Ein Datum wird formatiert gedruckt.
+	 * Hilfsmethode für toString Methode der Klasse Messung. Ein Datum wird
+	 * formatiert gedruckt.
+	 * 
 	 * @param messDatum
 	 * @return
 	 */
 	public String printDatum(GregorianCalendar datum) {
-		return datum.get(Calendar.DAY_OF_MONTH) + "/" + datum.get(Calendar.MONTH) + "/" + datum.get(Calendar.YEAR);
+		return datum.get(Calendar.DAY_OF_MONTH) + "/"
+				+ datum.get(Calendar.MONTH) + "/" + datum.get(Calendar.YEAR);
 	}
 
 	public void setTermin(GregorianCalendar datum) {
@@ -181,7 +203,7 @@ public class Auftrag implements Serializable{
 		this.terminArt = terminArt;
 	}
 
-	public int getZeitSlot(){
+	public int getZeitSlot() {
 		return zeitSlot;
 	}
 
@@ -210,28 +232,52 @@ public class Auftrag implements Serializable{
 		this.zeitSlot = zeitSlot;
 	}
 
-
+	
 	@Override
-	public String toString(){
-		return "Auftrag:" + "\n"
-				+ "Auftragsdatum: \t \t \t \t" + this.printDatum(this.datum)+ "\n"
-				+ "Termin \t \t \t" + "\n"
-				+ "Auftragsnummer: \t \t \t" + auftragsNummer + "\n" + "\n"
+	public String toString() {
+
+		String auftrag = "";
+
+		auftrag += "Auftrag:" + "\n" 
+				+ "Auftragsdatum: "	+ this.printDatum(this.datum) + "\n" 
+				+ "Termin " + this.getZeitSlotString() + "\n" 
+				+ "Auftragsnummer: " + auftragsNummer + "\n" + "\n"
 
 				+ "Kontakt: \n" + kontakt.toString() + "\n"
 				+ "Liegenschaft: \n" + liegenschaft.toString() + "\n"
-				+ "Info vor Ort: \t \t \t \t" + liegenschaft.getInfoVorOrt() + "\n"+ "\n"
+				+ "Info vor Ort: " + liegenschaft.getInfoVorOrt()
+				+ "\n" + "\n"
 
-				+ "Messung: \n"
-				+ messung1stufe1.toString() + "\n"
-				+ messung1stufe2.toString() + "\n"
-				+ messung2stufe1.toString() + "\n"
-				+ messung2stufe2.toString() + "\n"+ "\n"
+				+ "Messung: \n";
 
-				+ "Kontrolleur: \n" + mitarbeiter.toString() + "\n"
-				+ "Kontrollart: \t \t \t \t" + terminArt + "\n";
+		if (messung1stufe1==null) {
+			auftrag += "Keine Messung 1 Stufe 1 vorhanden! +\n";
+		} else {
+			auftrag += messung1stufe1.toString() + "\n";
+		}	
+			
+		if(messung1stufe2==null){
+			auftrag += "Keine Messung 1 Stufe 2 vorhanden! + \n";
+		} else {
+			auftrag += messung1stufe2.toString() + "\n";
+		}
+			
+		if(messung2stufe1==null){
+			auftrag += "Keine Messung 2 Stufe 1 vorhanden!";
+		} else {
+			auftrag += messung2stufe1.toString() + "\n";
+		}
+			
+		if(messung2stufe2 == null){
+			auftrag += "Keine Messung 2 Stufe 2 vorhanden!";
+		} else {
+			auftrag += messung2stufe2.toString() + "\n" + "\n";
+		}
+
+		auftrag += "Kontrolleur: \n" + mitarbeiter.toString() + "\n"
+				+ "Kontrollart: " + terminArt + "\n";
+		
+		return auftrag;
 	}
-
-
 
 }

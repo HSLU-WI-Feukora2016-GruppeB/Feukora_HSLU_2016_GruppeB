@@ -2,7 +2,9 @@ package entitys;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -27,7 +29,6 @@ public class Ort implements Serializable {
 	@Id
 	private Integer plz;	
 	
-
 	private String ortBez;
 	
 	//Standardkonstruktor*************************************************
@@ -59,9 +60,8 @@ public class Ort implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "Ort:" + "\n" 
-				+ "PLZ: \n" + plz.toString() + "\n"
-				+ "Ort: \t \t \t" + ortBez + "\n";
+		return  "PLZ: " + plz.toString() + "\n"
+				+ "Ort: " + ortBez + "\n";
 	}
 	
 }

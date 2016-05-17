@@ -57,7 +57,7 @@ public interface WaermeerzeugerManager {
 	 * Liefert alle Waermeerzeuger zurück.
 	 * @return
 	 */
-	public List<Waermeerzeuger> findAllWaermeerzeuger()throws Exception;
+	public List<Waermeerzeuger> findAll()throws Exception;
 	
 	/**
 	 * Liefert einen Waermeerzeuger anhand des gesuchten Waermeerzeuger-Typ.
