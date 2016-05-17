@@ -33,7 +33,9 @@ public class MitarbeiterBearbeiten {
 	static String rolle;
 	static String email;
 	static String telefon;
-	static Float lohn;
+	static String lohn2;
+
+	static Mitarbeiter ändern;
 
 	public void initialize() {
 		txtName.setText(name);
@@ -41,20 +43,22 @@ public class MitarbeiterBearbeiten {
 		txtStrasse.setText(strasse);
 		txtOrt.setText(ort);
 		txtRolle.setText(rolle);
-		txtLohn.setText(lohn);
+		txtLohn.setText(lohn2);
 		txtEmail.setText(email);
 		txtTelefonNr.setText(telefon);
 
 	}
 
 	public static void bekommeMitarbeiter(Mitarbeiter mabearbeitet) {
-
+ändern = mabearbeitet;
 		name = mabearbeitet.getName().toString();
 		vorname = mabearbeitet.getVorname();
 		strasse = mabearbeitet.getStrasse();
 		ort = mabearbeitet.getOrt().getOrt();
 		rolle = mabearbeitet.getRolleIntern().toString();
-		lohn = mabearbeitet.getLohn();
+		Integer lohn = (Integer) mabearbeitet.getLohn();
+		lohn2 = lohn.toString();
+
 		email = mabearbeitet.getEmail();
 		telefon = mabearbeitet.getTel().toString();
 	}
@@ -84,7 +88,7 @@ public class MitarbeiterBearbeiten {
 			// nicht vorhanden ist
 			try {
 				Integer.parseInt(rolle);
-				Float.parseFloat(lohn);
+				Integer.parseInt(lohn);
 				Integer.parseInt(telefonnr);
 			} catch (Exception e) {
 				lblRueckmeldung.setText("Parsen hat fehlgeschlagen");
@@ -93,7 +97,7 @@ public class MitarbeiterBearbeiten {
 			/*---------
 			Mitarbeiter newmitarbeiter = createMitarbeiter(String name, String vorname,String strasse,String ort,
 					int rolle, Float lohn, String email, int telefonnr);
-			//this.MitarbeiterRO.add(newmitarbeiter);
+			//this.MitarbeiterRO.update(newmitarbeiter);
 			*********/
 		}
 	}
