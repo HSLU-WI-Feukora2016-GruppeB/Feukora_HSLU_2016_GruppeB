@@ -5,8 +5,9 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import entitäten.Messung;
+import entitys.Messung;
 import managerInterfaces.MessungsManager;
+import managerKlassen.MessungManagerImpl;
 
 public class MessungROImpl extends UnicastRemoteObject implements MessungRO{
 
@@ -15,7 +16,7 @@ public class MessungROImpl extends UnicastRemoteObject implements MessungRO{
 	private MessungsManager messungsManager;
 	
 	public MessungROImpl() throws RemoteException {
-		messungsManager = new MessungsManagerImpl();
+		messungsManager = new MessungManagerImpl();
 	
 	}
 	

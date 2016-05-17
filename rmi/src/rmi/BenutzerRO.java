@@ -3,7 +3,8 @@ package rmi;
 import java.rmi.Remote;
 import java.util.List;
 
-import entitäten.Benutzer;
+import entitys.Benutzer;
+
 
 /**
  * Das Interface stellt die CRUD-Funktionen für den Benutzer zur Verfügung.

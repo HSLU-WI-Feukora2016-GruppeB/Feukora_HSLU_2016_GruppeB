@@ -4,9 +4,10 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
-import entitäten.Kontakt;
-import entitäten.Ort;
+import entitys.Kontakt;
+import entitys.Ort;
 import managerInterfaces.KontaktManager;
+import managerKlassen.KontaktManagerImpl;
 
 public class KontaktROImpl extends UnicastRemoteObject implements KontaktRO{
 

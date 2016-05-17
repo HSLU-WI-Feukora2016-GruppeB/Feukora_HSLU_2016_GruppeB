@@ -4,7 +4,7 @@ import java.rmi.Remote;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import entitäten.Messung;
+import entitys.Messung;
 
 
 

@@ -5,10 +5,11 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import entitäten.Benutzer;
-import entitäten.Mitarbeiter;
-import entitäten.Ort;
+import entitys.Benutzer;
+import entitys.Mitarbeiter;
+import entitys.Ort;
 import managerInterfaces.MitarbeiterManager;
+import managerKlassen.MitarbeiterManagerImpl;
 
 public class MitarbeiterROImpl extends UnicastRemoteObject implements MitarbeiterRO {
 
