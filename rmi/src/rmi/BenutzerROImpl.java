@@ -4,8 +4,9 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
-import entitäten.Benutzer;
+import entitys.Benutzer;
 import managerInterfaces.BenutzerManager;
+import managerKlassen.BenutzerManagerImpl;
 
 public class BenutzerROImpl extends UnicastRemoteObject implements BenutzerRO {
 
@@ -55,8 +56,8 @@ public class BenutzerROImpl extends UnicastRemoteObject implements BenutzerRO {
 	}
 
 	@Override
-	public List<Benutzer> findByPassword(String password) throws Exception {
-		return benutzerManager.findByPassword(password);
+	public List<Benutzer> findByUsernamePassword(String username, String password) throws Exception {
+		return benutzerManager.findByUsernamePassword(username, password);
 	}
 
 	

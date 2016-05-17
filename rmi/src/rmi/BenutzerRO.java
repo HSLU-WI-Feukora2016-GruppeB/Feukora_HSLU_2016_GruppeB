@@ -1,5 +1,6 @@
 package rmi;
 
+import java.rmi.Remote;
 import java.util.List;
 
 import entitäten.Benutzer;
@@ -11,7 +12,7 @@ import entitäten.Benutzer;
  * @version 1.0
  * @since 1.0
  */
-public interface BenutzerRO {
+public interface BenutzerRO extends Remote {
 	
 	/**
 	 * Speichert die Aenderung des Benutzers.
@@ -62,10 +63,10 @@ public interface BenutzerRO {
 	public List<Benutzer> findByUsername(String username)throws Exception;
 	
 	/**
-	 * Liefert eine Benutzerliste anhand des gesuchten Passworts.
-	 * @param password
+	 * Liefert eine Benutzerliste anhand des gesuchten Benutzernamens und Passworts.
+	 * @param username, password
 	 * @return
 	 */
-	public List<Benutzer> findByPassword(String password)throws Exception;
+	public List<Benutzer> findByUsernamePassword(String username, String password)throws Exception;
 
 }
