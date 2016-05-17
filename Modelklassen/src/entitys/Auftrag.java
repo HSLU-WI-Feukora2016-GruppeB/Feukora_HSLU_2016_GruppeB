@@ -19,7 +19,7 @@ import org.eclipse.jdt.annotation.Nullable;
  */
 @Entity
 @NamedQueries({
-		@NamedQuery(name = "Auftrag.findById", query = "SELECT a FROM Auftrag a WHERE a.auftragsNummer=:auftragsNummer"),
+		@NamedQuery(name = "Auftrag.findByAuftragsNummer", query = "SELECT a FROM Auftrag a WHERE a.auftragsNummer=:auftragsNummer"),
 		@NamedQuery(name = "Auftrag.findByKontakt", query = "SELECT a FROM Auftrag a WHERE a.kontakt=:kontakt"),
 		@NamedQuery(name = "Auftrag.findByLiegenschaft", query = "SELECT a FROM Auftrag a WHERE a.liegenschaft=:liegenschaft"),
 		@NamedQuery(name = "Auftrag.findByMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.mitarbeiter=:mitarbeiter"),

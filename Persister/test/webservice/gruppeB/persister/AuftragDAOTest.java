@@ -58,6 +58,7 @@ public class AuftragDAOTest {
 
 	@After
 	public void tearDown() throws Exception {
+		//AuftragDAOTest.deleteAll();
 	}
 
 	@Test
@@ -75,32 +76,31 @@ public class AuftragDAOTest {
 		
 		assertNotNull(al);
 		
-		assertTrue(al.size() == 1);
+		assertTrue(al.size() == 2);
 	}
 
-//	@Test
-//	public void testFindByLiegenschaft() throws Exception {
-//		
-//		Liegenschaft liegenschaft = liegenschaftDAO.findLiegenschaftByStrasse("Musterweg 456").get(0);
-//		assertNotNull(liegenschaft);
-//		
-//		List<Auftrag> aList = auftragDAO.findByLiegenschaft(liegenschaft);
-//		assertTrue(aList.size() == 2);
-//		
-//	}
+	@Test
+	public void testFindByLiegenschaft() throws Exception {
+		
+		Liegenschaft liegenschaft = liegenschaftDAO.findLiegenschaftByStrasse("Musterweg 456").get(0);
+		assertNotNull(liegenschaft);
+		
+		List<Auftrag> aList = auftragDAO.findByLiegenschaft(liegenschaft);
+		assertTrue(aList.size() == 2);
+		
+	}
 
 
 	
 //	@Test
 //	public void testSave() throws Exception {
 //
-//		deleteAll();
-//		init();
-//
 //		//TODO
 //
 //	}
 
+//	>>wirft noch arrayindex out of bounds weil index suche ich 1 und es hat nur 1 das geht nicht,
+//	>>andere get methode suchen fürs find
 //	@Test
 //	public void testUpdate() throws Exception {
 //
@@ -108,9 +108,9 @@ public class AuftragDAOTest {
 //		assertTrue(auftragsListe.size() == 3);
 //
 //		Ort o = ortDAO.findOrtById(5000);
-//		Kontakt k = kontaktDAO.findKontaktByOrt(o).get(0);
-//		Liegenschaft l = liegenschaftDAO.findLiegenschaftByKontakt(k).get(0);
-//		Auftrag a = auftragDAO.findByLiegenschaft(l).get(0);
+//		Kontakt k = kontaktDAO.findKontaktByOrt(o).get(1);
+//		Liegenschaft l = liegenschaftDAO.findLiegenschaftByKontakt(k).get(1);
+//		Auftrag a = auftragDAO.findByLiegenschaft(l).get(1);
 //		assertNotNull(a);
 //		
 //		Liegenschaft lnew = liegenschaftDAO.findAllLiegenschaft().get(1);
@@ -127,19 +127,21 @@ public class AuftragDAOTest {
 //
 //	}
 //
-//	@Test
-//	public void testDelete() throws Exception {
-//
-//		List<Auftrag> auftragsListe = auftragDAO.findAllAuftrag();
-//		assertTrue(auftragsListe.size() == 3);
-//
-//		auftragDAO.deleteAuftrag(auftragsListe.get(0));
-//
-//		auftragsListe = auftragDAO.findAllAuftrag();
-//		assertTrue(auftragsListe.size() == 2);
-//
-//	}
-//
+	@Test
+	public void testDelete() throws Exception {
+
+		List<Auftrag> auftragsListe = auftragDAO.findAllAuftrag();
+		assertTrue(auftragsListe.size() == 3);
+
+		auftragDAO.deleteAuftrag(auftragsListe.get(0));
+
+		auftragsListe = auftragDAO.findAllAuftrag();
+		assertTrue(auftragsListe.size() == 2);
+
+	}
+
+	
+//	>>wirft auch noch fehler irgendwas wegen dem idAuftragsnummer referenvariable
 //	@Test
 //	public void testDeleteById() throws Exception {
 //		
@@ -151,12 +153,11 @@ public class AuftragDAOTest {
 //		auftragsListe = auftragDAO.findAllAuftrag();
 //		assertTrue(auftragsListe.size() == 2);
 //	}
-//	
+	
 
 	public static List<Auftrag> init() throws Exception {
-		
 		AuftragDAOTest.deleteAll();
-
+		
 		List<Benutzer> lBenutzer = new ArrayList<>();
 		List<Brenner> lBrenner = new ArrayList<>();
 		List<Feuerungsanlage> lFeuerungsanlage = new ArrayList<>();
@@ -239,7 +240,7 @@ public class AuftragDAOTest {
 		//3 Aufträge erstellen
 		lAuftrag.add(new Auftrag(lKontakt.get(0), lLiegenschaft.get(0), lMessung.get(0), lMessung.get(1), lMessung.get(2), lMessung.get(3), lMitarbeiter.get(0), new GregorianCalendar(2016, 9, 11), 1, 1));
 		lAuftrag.add(new Auftrag(lKontakt.get(1), lLiegenschaft.get(1), lMessung.get(4), lMessung.get(2), lMessung.get(5), lMessung.get(3), lMitarbeiter.get(2), new GregorianCalendar(2016, 9, 18), 1, 1));
-		lAuftrag.add(new Auftrag(lKontakt.get(2), lLiegenschaft.get(2), lMessung.get(6), lMessung.get(7), lMessung.get(8), lMessung.get(9), lMitarbeiter.get(3), new GregorianCalendar(2016, 9, 11), 2, 2));
+		lAuftrag.add(new Auftrag(lKontakt.get(2), lLiegenschaft.get(1), lMessung.get(6), lMessung.get(7), lMessung.get(8), lMessung.get(9), lMitarbeiter.get(3), new GregorianCalendar(2016, 9, 11), 2, 2));
 		
 		for(Benutzer b : lBenutzer){
 			benutzerDAO.saveBenutzer(b);
@@ -287,33 +288,35 @@ public class AuftragDAOTest {
 
 	private static void deleteAll() throws Exception {
 
-		for(Ort o : ortDAO.findAllOrt()){
-			ortDAO.deleteOrt(o);
-		}
-		for(Benutzer b : benutzerDAO.findAllBenutzer()){
-			benutzerDAO.deleteBenutzer(b);
-		}
-		for(Brenner b : brennerDAO.findAllBrenner()){
-			brennerDAO.deleteBrenner(b);
+		deleteAllAuftrag();
+		
+		for(Liegenschaft l : liegenschaftDAO.findAllLiegenschaft()){
+			liegenschaftDAO.deleteLiegenschaft(l);
 		}
 		for(Feuerungsanlage f : feuerungsanlageDAO.findAllFeuerungsanlage()){
 			feuerungsanlageDAO.deleteFeuerungsanlage(f);
 		}
-		for(Kontakt k : kontaktDAO.findAllKontakte()){
-			kontaktDAO.deleteKontakt(k);
-		}
-		for(Liegenschaft l : liegenschaftDAO.findAllLiegenschaft()){
-			liegenschaftDAO.deleteLiegenschaft(l);
-		}
-		//Messung ist Cascadeall wird automatisch via Auftrag gelöscht
-		for(Mitarbeiter m : mitarbeiterDAO.findAllMitarbeiter()){
-			mitarbeiterDAO.deleteMitarbeiter(m);
+		for(Brenner b : brennerDAO.findAllBrenner()){
+			brennerDAO.deleteBrenner(b);
 		}
 		for(Waermeerzeuger w : waermeerzeugerDAO.findAllWaermeerzeuger()){
 			waermeerzeugerDAO.deleteWaermeerzeuger(w);
 		}
-		deleteAllAuftrag();
-		
+		for(Mitarbeiter m : mitarbeiterDAO.findAllMitarbeiter()){
+			mitarbeiterDAO.deleteMitarbeiter(m);
+		}
+		for(Benutzer b : benutzerDAO.findAllBenutzer()){
+			benutzerDAO.deleteBenutzer(b);
+		}
+		for(Kontakt k : kontaktDAO.findAllKontakte()){
+			kontaktDAO.deleteKontakt(k);
+		}
+		for(Ort o : ortDAO.findAllOrt()){
+			ortDAO.deleteOrt(o);
+		}
+		for(Messung m : messungDAO.findAllMessung()){
+			messungDAO.deleteMessung(m);
+		}
 	}
 
 	public static void deleteAllAuftrag() throws Exception {
