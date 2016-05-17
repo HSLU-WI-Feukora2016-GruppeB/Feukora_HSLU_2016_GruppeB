@@ -173,7 +173,7 @@ public class Mitarbeiter implements Serializable{
 		this.user = usercredentials;
 	}
 
-	public float getLohn() {
+	public int getLohn() {
 		return lohn;
 	}
 
