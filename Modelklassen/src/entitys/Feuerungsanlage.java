@@ -12,6 +12,9 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import org.eclipse.persistence.internal.descriptors.CascadeLockingPolicy;
+import org.eclipse.persistence.internal.descriptors.DescriptorIterator.CascadeCondition;
+
 /**
  * Eine Feuerungsanlage besteht aus einem Brenner 
  * und einem Wärmeerzeuger sie erzeugt Wärme für eine bestimmt Liegenschaft.
@@ -33,11 +36,10 @@ public class Feuerungsanlage implements Serializable{
 	@GeneratedValue
 	private Integer idFeuerungsanlage;
 	
-	@ManyToOne(cascade = CascadeType.PERSIST)
+	@ManyToOne
 	private Brenner brenner;
 	
-
-	@ManyToOne(cascade = CascadeType.PERSIST)
+	@ManyToOne
 	private Waermeerzeuger waermeerzeuger;
 	
 	//konstruktor**************************************************
