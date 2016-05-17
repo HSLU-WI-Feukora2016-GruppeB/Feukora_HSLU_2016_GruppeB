@@ -165,19 +165,8 @@ public class MitarbeiterDAOTest {
 	@Test
 	public void testFindAllMitarbeiter() throws Exception {
 		
-		Mitarbeiter m6  = new Mitarbeiter();
-		
-		try {
-			mitarbeiterDAO.saveMitarbeiter(m6);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		// Alle Mitarbeiter suchen
-		
 		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findAllMitarbeiter();
-		assertTrue(mitarbeiterListe.size() == 1);
+		assertTrue(mitarbeiterListe.size() == 2);
 	}
 	
 	@Test
@@ -194,19 +183,17 @@ public class MitarbeiterDAOTest {
 		String vorname = "Hans";
 		assertTrue(mitarbeiterDAO.findMitarbeiterByVorname(vorname).size() == 1);
 		
-		vorname = "Fronzak";
-		assertTrue(mitarbeiterDAO.findMitarbeiterByVorname(vorname).isEmpty());
+		String vorname2 = "Fronzak";
+		assertTrue(mitarbeiterDAO.findMitarbeiterByVorname(vorname2).isEmpty());
 	}
 	
 	@Test
 	public void testFindByNameVorname(){
 		
-		String name = "Fronzak";
-		String vorname = "Chris";
-		assertTrue(mitarbeiterDAO.findMitarbeiterByNameVorname(name, vorname).isEmpty());
+		String name = "Kwyat";
+		String vorname = "Daniil";
+		assertTrue(mitarbeiterDAO.findMitarbeiterByNameVorname(name, vorname).size() == 1);
 		
-//		vorname = "Adriano";
-//		assertTrue(mitarbeiterDAO.findMitarbeiterByNameVorname(name, vorname).isEmpty());
 	}
 	
 	@Test
@@ -258,8 +245,18 @@ public class MitarbeiterDAOTest {
 	
 	private static void deleteAll() throws Exception {
 
-		for (Mitarbeiter m : mitarbeiterDAO.findAllMitarbeiter()) {
+		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findAllMitarbeiter();
+		
+		for (Mitarbeiter m : mitarbeiterListe) {
 			mitarbeiterDAO.deleteMitarbeiter(m);
+		}
+		
+		for (Ort o : ortDAO.findAllOrt()){
+			ortDAO.deleteOrt(o);
+		}
+		
+		for (Benutzer b : benutzerDAO.findAllBenutzer()){
+			benutzerDAO.deleteBenutzer(b);
 		}
 	
 	
