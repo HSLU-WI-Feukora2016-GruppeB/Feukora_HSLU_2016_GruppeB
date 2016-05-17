@@ -16,7 +16,7 @@ public class FeuerungsanlageROImpl extends UnicastRemoteObject implements Feueru
 
 	private FeuerungsanlageManager feuerungsanlageManager;
 	
-	private FeuerungsanlageROImpl() throws RemoteException {
+	public FeuerungsanlageROImpl() throws RemoteException {
 		feuerungsanlageManager = new FeuerungsanlageManagerImpl();
 	}
 

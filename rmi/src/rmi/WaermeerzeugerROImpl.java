@@ -48,7 +48,7 @@ public class WaermeerzeugerROImpl extends UnicastRemoteObject implements Waermee
 
 	@Override
 	public List<Waermeerzeuger> findAllWaermeerzeuger() throws Exception {
-		return waermeerzeugerManager.findAllWaermeerzeuger();
+		return waermeerzeugerManager.findAll();
 	}
 
 	@Override
