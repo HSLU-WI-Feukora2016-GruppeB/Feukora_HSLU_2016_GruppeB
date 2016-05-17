@@ -65,8 +65,8 @@ public class TerminUebersicht extends Application {
 	private DatePicker startDatum, endDatum;
 
 	private Stage TermStage = new Stage();
-	
-	
+
+
 
 	AuftragRO auftragRO;
 	// MitarbeiterRO mitarbeiterRo;
@@ -217,7 +217,7 @@ public class TerminUebersicht extends Application {
 				 * kontrolleur, 4);
 				 * T5Z4.setValue(auftrag54.getLiegenschaft.toString());
 				 */
-				
+
 //	Alternative Olivia:
 //	List<Auftrag> la = null;// = auftragRO.findByDateAndMitarbeiter(startdatum, enddatum, mitarbeiter);
 //				for(Auftrag a : la){
@@ -225,12 +225,12 @@ public class TerminUebersicht extends Application {
 //				  	int slot = a.getZeitSlot();
 //				  	setTerminOnDay(dayOfWeek, slot, a);
 //				}
-//				  
-//	>>wenn du das ohne jedes einzelne feld selber setzten willst musst 
-//				du ein 2 Dimensionales Array machen um die KAlender matrix 
-//				zu strukturieren dannkannst du es mit noh weniger code machen		 
+//
+//	>>wenn du das ohne jedes einzelne feld selber setzten willst musst
+//				du ein 2 Dimensionales Array machen um die KAlender matrix
+//				zu strukturieren dannkannst du es mit noh weniger code machen
 //	public void setTerminOnDay(int dayOfWeek, int slot, Auftrag auftrag){
-//				  		
+//
 //		if(dayOfWeek ==Calendar.MONDAY){
 //			switch(slot){
 //				case 1:	T1Z1.setText(formatAuftragHeadline(auftrag));
@@ -239,15 +239,13 @@ public class TerminUebersicht extends Application {
 //			}
 //		}else if(dayOfWeek == Calendar.TUESDAY){
 //			switch()
-//		} //TODO usw.
-//	}	
+	} //TODO usw.	}
 
-				
-				
-				
-	private String formatAuftragHeadline(Auftrag auftrag) {
-			return auftrag.getLiegenschaft().toString();
-	}
+
+
+
+
+
 
 
 
@@ -255,8 +253,8 @@ public class TerminUebersicht extends Application {
 			}
 	}
 
-	
-	
+
+
 	/**
 	 * Diese Methode erstellt ein neues Terminobjekt.
 	 */
