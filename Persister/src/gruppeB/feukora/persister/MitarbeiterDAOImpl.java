@@ -83,7 +83,7 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 		EntityManager em = JpaUtil.createEntityManager();
 
 		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery(
-				"Mitarbeiter.findByNameUndVorname", Mitarbeiter.class);
+				"Mitarbeiter.findByNameVorname", Mitarbeiter.class);
 
 		tQuery.setParameter("name", name);
 		tQuery.setParameter("vorname", vorname);
