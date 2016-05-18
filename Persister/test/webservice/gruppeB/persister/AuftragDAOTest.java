@@ -99,8 +99,8 @@ public class AuftragDAOTest {
 //
 //	}
 
-//	>>wirft noch arrayindex out of bounds weil index suche ich 1 und es hat nur 1 das geht nicht,
-//	>>andere get methode suchen fürs find
+////	>>wirft noch arrayindex out of bounds weil index suche ich 1 und es hat nur 1 das geht nicht,
+////	>>andere get methode suchen fürs find
 //	@Test
 //	public void testUpdate() throws Exception {
 //
@@ -126,7 +126,7 @@ public class AuftragDAOTest {
 //		assertTrue(auftragsListe.size() == 3);
 //
 //	}
-//
+
 	@Test
 	public void testDelete() throws Exception {
 
