@@ -157,9 +157,9 @@ public class AuftragDAOImpl implements AuftragDAO {
 		EntityManager em = JpaUtil.createEntityManager();
 
 		TypedQuery<Auftrag> tQuery = em.createNamedQuery(
-				"Auftrag.findAuftragByDatumAndMitarbeiterAndZeitslot", Auftrag.class);
+				"Auftrag.findAuftragByDateAndMitarbeiterAndZeitslot", Auftrag.class);
 
-		tQuery.setParameter("datum", datum.getTime());
+		tQuery.setParameter("datum", datum);
 		tQuery.setParameter("mitarbeiter", mitarbeiter);
 		tQuery.setParameter("zeitSlot", zeitSlot);
 
