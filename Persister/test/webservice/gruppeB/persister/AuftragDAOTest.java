@@ -101,31 +101,31 @@ public class AuftragDAOTest {
 
 ////	>>wirft noch arrayindex out of bounds weil index suche ich 1 und es hat nur 1 das geht nicht,
 ////	>>andere get methode suchen fürs find
-//	@Test
-//	public void testUpdate() throws Exception {
-//
-//		List<Auftrag> auftragsListe = auftragDAO.findAllAuftrag();
-//		assertTrue(auftragsListe.size() == 3);
-//
-//		Ort o = ortDAO.findOrtById(5000);
-//		Kontakt k = kontaktDAO.findKontaktByOrt(o).get(1);
-//		Liegenschaft l = liegenschaftDAO.findLiegenschaftByKontakt(k).get(1);
-//		Auftrag a = auftragDAO.findByLiegenschaft(l).get(1);
-//		assertNotNull(a);
-//		
-//		Liegenschaft lnew = liegenschaftDAO.findAllLiegenschaft().get(1);
-//		a.setLiegenschaft(lnew);
-//		
-//		auftragDAO.updateAuftrag(a);
-//		
-//		Auftrag aDB = auftragDAO.findByLiegenschaft(lnew).get(0);
-//		assertNotNull(aDB);
-//		assertTrue(aDB.getLiegenschaft() != l);
-//		
-//		auftragsListe = auftragDAO.findAllAuftrag();
-//		assertTrue(auftragsListe.size() == 3);
-//
-//	}
+	@Test
+	public void testUpdate() throws Exception {
+
+		List<Auftrag> auftragsListe = auftragDAO.findAllAuftrag();
+		assertTrue(auftragsListe.size() == 3);
+
+		Ort o = ortDAO.findOrtByPlz(5000).get(0);
+		Kontakt k = kontaktDAO.findKontaktByOrt(o).get(0);
+		Liegenschaft l = liegenschaftDAO.findLiegenschaftByKontakt(k).get(0);
+		Auftrag a = auftragDAO.findByLiegenschaft(l).get(0);
+		assertNotNull(a);
+		
+		Liegenschaft lnew = liegenschaftDAO.findAllLiegenschaft().get(1);
+		a.setLiegenschaft(lnew);
+		
+		auftragDAO.updateAuftrag(a);
+		
+		Auftrag aDB = auftragDAO.findByLiegenschaft(lnew).get(0);
+		assertNotNull(aDB);
+		assertTrue(aDB.getLiegenschaft() != l);
+		
+		auftragsListe = auftragDAO.findAllAuftrag();
+		assertTrue(auftragsListe.size() == 3);
+
+	}
 
 	@Test
 	public void testDelete() throws Exception {
