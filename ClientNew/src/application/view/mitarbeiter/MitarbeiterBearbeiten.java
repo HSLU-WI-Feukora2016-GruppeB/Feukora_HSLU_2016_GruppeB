@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import rmi.MitarbeiterRO;
 import rmi.OrtRO;
 
 /**
@@ -21,8 +22,12 @@ import rmi.OrtRO;
 
 public class MitarbeiterBearbeiten {
 
+	OrtRO OrtRO;
+	MitarbeiterRO  MitarbeiterRO;
+
+
 	@FXML
-	private TextField txtName, txtVorname, txtOrt, txtRolle, txtLohn, txtEmail, txtTelefonNr, txtStrasse;
+	private TextField txtName, txtVorname, txtOrt, txtPLZ, txtRolle, txtLohn, txtEmail, txtTelefonNr, txtStrasse;
 
 	@FXML
 	private Label lblRueckmeldung;
@@ -56,8 +61,6 @@ public class MitarbeiterBearbeiten {
 	public static void bekommeMitarbeiter(Mitarbeiter mabearbeitet) {
 		maupdate = mabearbeitet;
 
-//		ändern = mabearbeitet;
-
 		name = mabearbeitet.getName().toString();
 		vorname = mabearbeitet.getVorname();
 		strasse = mabearbeitet.getStrasse();
@@ -79,6 +82,7 @@ public class MitarbeiterBearbeiten {
 		String vorname = txtVorname.getText();
 		String strasse = txtStrasse.getText();
 		String ort = txtOrt.getText();
+		String plz = txtPLZ.getText();
 		String rolle = txtRolle.getText();
 		String lohn = txtLohn.getText();
 		String email = txtEmail.getText();
@@ -95,19 +99,27 @@ public class MitarbeiterBearbeiten {
 			// nicht vorhanden ist
 
 			// Neue Variabeln für das Parsen
-			int rolleint = 0, lohnint = 0;
+			int rolleint = 0, lohnint = 0, plzint =0;
 
 			try {
-				Integer.parseInt(rolle);
-				Integer.parseInt(lohn);
+				rolleint = Integer.parseInt(rolle);
+				lohnint = Integer.parseInt(lohn);
+				plzint = Integer.parseInt(plz);
 			} catch (Exception e) {
 				lblRueckmeldung.setText("Parsen hat fehlgeschlagen");
 			}
 
 
-			Mitarbeiter updatemitarbeiter = createMitarbeiter(name, vorname,strasse, ort,
+			Mitarbeiter updatemitarbeiter = createMitarbeiter(name, vorname,strasse, ort, plzint,
 					rolleint,lohnint, email,telefonnr);
-			//this.MitarbeiterRO.update(updatemitarbeiter);
+			try {
+				//braucht es dieses this? überspeichere ich wirklich das alte Objekt?
+				//evtl lösung könnte sein das alte einfach löschen und ein neue erstellen
+				this.MitarbeiterRO.update(updatemitarbeiter);
+			} catch (Exception e) {
+				lblRueckmeldung.setText("Das überscheiben hat nicht funktioniert");
+				e.printStackTrace();
+			}
 
 		}
 	}
@@ -146,11 +158,11 @@ public class MitarbeiterBearbeiten {
 	 */
 
 
-	private Mitarbeiter createMitarbeiter(String name, String vorname, String strasse, String ort,
+	private Mitarbeiter createMitarbeiter(String name, String vorname, String strasse, String ort, int plz,
 			int rolle, int lohn, String email, String telefonnr){
 		//Exception werfen? bei Referenzprojekt hat ers gemacht
 
-
+		Ort ortschaft = new Ort();
 
 		maupdate.setName(name);
 		maupdate.setVorname(vorname);
@@ -160,10 +172,19 @@ public class MitarbeiterBearbeiten {
 		maupdate.setEmail(email);
 		maupdate.setTel(telefonnr);
 
-//		Ort ortschaft = OrtRO.findByOrtBez(ort);
+		try {
+			//zu erst auf liste speichern damit man nachher das zweite der Liste prüfen kann falls nicht übereinstimmt
+		 ortschaft = OrtRO.findByOrtPlz(plz).get(0);
+		} catch (Exception e) {
+			lblRueckmeldung.setText("PLZ nicht gefunden");
+		}
 
-
-//		maupdate.setOrt(ortschaft);
+		String ortvondb = ortschaft.getOrt();
+		if(ort.equals(ortvondb)){
+		maupdate.setOrt(ortschaft);
+		}else{
+			//prüfe zweites objekt auf der Liste
+		}
 
 
 		return maupdate;
