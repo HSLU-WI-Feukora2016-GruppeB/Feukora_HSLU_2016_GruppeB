@@ -81,7 +81,7 @@ public class LiegenschaftDAOTest {
 	 * @throws Exception
 	 */
 	@Test
-	public void testFindAll() throws Exception{
+	public void testFindAllLiegenschaft() throws Exception{
 		
 		List<Liegenschaft> liegenschaftsListe = liegenschaftDAO.findAllLiegenschaft();
 		assertTrue(liegenschaftsListe.size() == 3);
@@ -92,7 +92,7 @@ public class LiegenschaftDAOTest {
 	 * @throws Exception
 	 */
 	@Test
-	public void testDelete() throws Exception {
+	public void testDeleteLiegenschaft() throws Exception {
 
 		List<Liegenschaft> liegenschaftsListe = liegenschaftDAO.findAllLiegenschaft();
 		assertTrue(liegenschaftsListe.size() == 3);
