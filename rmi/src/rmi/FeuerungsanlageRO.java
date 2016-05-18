@@ -59,27 +59,27 @@ public interface FeuerungsanlageRO extends Remote {
 	 * Liefert Liste aller Feuerungsanlagen.
 	 * @return
 	 */
-	public List<Feuerungsanlage> findAll();
+	public List<Feuerungsanlage> findAll() throws Exception;
 	
 	/**
 	 * Liefert alle Feuerungsanlagen für die gesuchte Liegenschaft.
 	 * @param brennerTyp
 	 * @return
 	 */
-	public List<Feuerungsanlage> findByLiegenschaft(Liegenschaft liegenschaft);
+	public List<Feuerungsanlage> findByLiegenschaft(Liegenschaft liegenschaft) throws Exception;
 	
 	/**
 	 * Liefert alle Feuerungsanlagen für den gesuchten Brenner.
 	 * @param brennerArt
 	 * @return
 	 */
-	public List<Feuerungsanlage> findByBrenner(Brenner brenner);
+	public List<Feuerungsanlage> findByBrenner(Brenner brenner) throws Exception;
 	
 	/**
 	 * Liefert alle Feuerungsanlagen für den gesuchten Waermeerzeuger.
 	 * @param brennerArt
 	 * @return
 	 */
-	public List<Feuerungsanlage> findByWaermeerzeuger(Waermeerzeuger waermeerzeuger);
+	public List<Feuerungsanlage> findByWaermeerzeuger(Waermeerzeuger waermeerzeuger) throws Exception;
 
 }
