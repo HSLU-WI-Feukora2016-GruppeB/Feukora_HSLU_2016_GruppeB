@@ -50,25 +50,25 @@ public interface AuftragDAO {
 	/**
 	 * Löscht die Auftrag-Entity für den übergebenen Id-Wert.
 	 * 
-	 * @param id
+	 * @param idAuftrag
 	 * @throws Exception
 	 */
-	public void deleteAuftragById(Integer id) throws Exception;
+	public void deleteAuftragById(Integer idAuftrag) throws Exception;
 
 	/**
 	 * Liefert die Auftrag-Entity für den übergebenen Id-Wert zurück.
 	 * 
-	 * @param auftragsNummer
+	 * @param idAuftrag
 	 * @return
 	 */
-	public Auftrag findAuftragByAuftragsNummer(Integer auftragsNummer);
+	public Auftrag findAuftragById(Integer idAuftrag) throws Exception;
 
 	/**
 	 * Liefert alle Auftrag-Objekte zurück.
 	 * 
 	 * @return
 	 */
-	List<Auftrag> findAllAuftrag();
+	List<Auftrag> findAllAuftrag() throws Exception;
 
 	/**
 	 * Liefert die Liste mit Aufträge für den übergebenen Mitarbeiter zurück,
@@ -77,7 +77,7 @@ public interface AuftragDAO {
 	 * @param mitarbeiter
 	 * @return
 	 */
-	public List<Auftrag> findByMitarbeiter(Mitarbeiter mitarbeiter);
+	public List<Auftrag> findByMitarbeiter(Mitarbeiter mitarbeiter) throws Exception;
 
 	/**
 	 * Liefert die Liste mit Aufträgen für die übergebenen Daten zurück, falls
@@ -86,7 +86,7 @@ public interface AuftragDAO {
 	 * @param datum
 	 * @return
 	 */
-	public List<Auftrag> findByDatum(GregorianCalendar datum);
+	public List<Auftrag> findByDatum(GregorianCalendar datum) throws Exception;
 
 	/**
 	 * Liefert die Liste mit Aufträgen für die übergebene DAtumsspanne (Start  bis Ende) 
@@ -100,7 +100,7 @@ public interface AuftragDAO {
 	 */
 	public List<Auftrag> findByDatumAndMitarbeiter(
 			GregorianCalendar startdatum, GregorianCalendar enddatum,
-			Mitarbeiter mitarbeiter);
+			Mitarbeiter mitarbeiter) throws Exception;
 
 	/**
 	 * Liefert die Liste mit Aufträgen für die übergebenen Kontakt zurück, falls
@@ -109,7 +109,7 @@ public interface AuftragDAO {
 	 * @param kontakt
 	 * @return
 	 */
-	public List<Auftrag> findByKontakt(Kontakt kontakt);
+	public List<Auftrag> findByKontakt(Kontakt kontakt) throws Exception;
 
 	/**
 	 * Liefert die Liste mit Aufträgen für die übergebenen Liegenschaften
@@ -118,7 +118,7 @@ public interface AuftragDAO {
 	 * @param liegenschaft
 	 * @return
 	 */
-	public List<Auftrag> findByLiegenschaft(Liegenschaft liegenschaft);
+	public List<Auftrag> findByLiegenschaft(Liegenschaft liegenschaft) throws Exception;
 
 	/**
 	 * Liefert spezifischen Auftrag eines Mitarbeiters, zu bestimmten Datum, und Zeitslot.
@@ -128,6 +128,6 @@ public interface AuftragDAO {
 	 * @return
 	 */
 	public Auftrag findAuftragByDateAndMitarbeiterAndZeitslot(
-			GregorianCalendar datum, Mitarbeiter mitarbeiter, int zeitSlot);
+			GregorianCalendar datum, Mitarbeiter mitarbeiter, int zeitSlot) throws Exception;
 
 }

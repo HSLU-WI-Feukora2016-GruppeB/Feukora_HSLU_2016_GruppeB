@@ -55,7 +55,7 @@ public interface OrtRO extends Remote {
 	 * @param plz
 	 * @return
 	 */
-	public Ort findById(Integer plz) throws Exception;
+	public Ort findById(Integer idOrt) throws Exception;
 
 	/**
 	 * Liefert einen Ort anhand der gesuchten Ortsbezeichnung.
@@ -64,6 +64,14 @@ public interface OrtRO extends Remote {
 	 * @return
 	 */
 	public List<Ort> findByOrtBez(String ortBez) throws Exception;
+	
+	/**
+	 * Liefert einen Ort anhand der gesuchten Ortsbezeichnung.
+	 * 
+	 * @param ortBez
+	 * @return
+	 */
+	public List<Ort> findByOrtPlz(int plz) throws Exception;
 
 	/**
 	 * Liefert alle Benutzer zurück.

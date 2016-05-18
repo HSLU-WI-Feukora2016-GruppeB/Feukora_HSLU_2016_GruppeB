@@ -57,13 +57,18 @@ public class OrtManagerImpl implements OrtManager {
 	}
 
 	@Override
-	public Ort findById(Integer plz) {
-		return ortDAO.findOrtById(plz);
+	public Ort findById(Integer idOrt) {
+		return ortDAO.findOrtById(idOrt);
 	}
 
 	@Override
 	public List<Ort> findByOrtBez(String ortBez) {
 		return ortDAO.findOrtByBezeichnung(ortBez);
+	}
+
+	@Override
+	public List<Ort> findByPlz(int plz) throws Exception {
+		return ortDAO.findOrtByPlz(plz);
 	}
 
 }

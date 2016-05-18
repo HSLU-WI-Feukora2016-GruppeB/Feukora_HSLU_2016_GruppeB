@@ -39,8 +39,8 @@ public class OrtROImpl extends UnicastRemoteObject implements OrtRO  {
 	}
 
 	@Override
-	public Ort findById(Integer plz) throws Exception {
-		return ortManager.findById(plz);
+	public Ort findById(Integer idOrt) throws Exception {
+		return ortManager.findById(idOrt);
 	}
 
 	@Override
@@ -51,6 +51,11 @@ public class OrtROImpl extends UnicastRemoteObject implements OrtRO  {
 	@Override
 	public List<Ort> findAll() throws Exception {
 		return ortManager.findAll();
+	}
+
+	@Override
+	public List<Ort> findByOrtPlz(int plz) throws Exception {
+		return ortManager.findByPlz(plz);
 	}
 	
 	

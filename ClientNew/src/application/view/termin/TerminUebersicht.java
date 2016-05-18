@@ -18,6 +18,7 @@ import java.util.Observable;
 import javax.imageio.ImageIO;
 
 import rmi.AuftragRO;
+import rmi.MitarbeiterRO;
 import entitys.Auftrag;
 import entitys.Mitarbeiter;
 import javafx.application.Application;
@@ -65,27 +66,27 @@ public class TerminUebersicht extends Application {
 	private DatePicker startDatum, endDatum;
 
 	private Stage TermStage = new Stage();
-	
-	
 
 	AuftragRO auftragRO;
-	// MitarbeiterRO mitarbeiterRo;
+	MitarbeiterRO mitarbeiterRo;
 
 	@Override
 	public void start(Stage arg0) throws Exception {
 	}
 
 	@FXML
-	private void initialize() {
-
-		// MitarbeiterRO az;
-		// List<String> list = az.findAllMitarbeit();
-		List<String> list = new ArrayList<String>();
-		list.add("Olivia");
-		list.add("Dominik");
-		list.add("Matthias");
-		ObservableList<String> list2 = FXCollections.observableList(list);
-		ddFK.setItems(list2);
+	private void initialize() throws Exception {
+//
+//		List<Mitarbeiter> list = mitarbeiterRo.findAllMitarbeiter();
+//		List<String> list3 = new ArrayList();
+//		for (Mitarbeiter i : list) {
+//			String rolle = i.getRolleIntern();
+//			if (rolle.equalsIgnoreCase("Kontrolleur")) {
+//				list3.add(i.getName());
+//			}
+//		}
+//		ObservableList<String> list2 = FXCollections.observableList(list3);
+//		ddFK.setItems(list2);
 
 	}
 
@@ -95,7 +96,7 @@ public class TerminUebersicht extends Application {
 	public void wocheAnzeigen() {
 
 		if (startDatum.getValue() == null || ddFK.getValue() == null) {
-			lblRueckmeldung.setText("Bitte Datumsfelder und \n" +"Kontrolleur ausfüllen");
+			lblRueckmeldung.setText("Bitte Datumsfelder und \n" + "Kontrolleur ausfüllen");
 
 		} else {
 
@@ -217,46 +218,37 @@ public class TerminUebersicht extends Application {
 				 * kontrolleur, 4);
 				 * T5Z4.setValue(auftrag54.getLiegenschaft.toString());
 				 */
-				
-//	Alternative Olivia:
-//	List<Auftrag> la = null;// = auftragRO.findByDateAndMitarbeiter(startdatum, enddatum, mitarbeiter);
-//				for(Auftrag a : la){
-//					int dayOfWeek = a.getTermin().get(Calendar.DAY_OF_WEEK);
-//				  	int slot = a.getZeitSlot();
-//				  	setTerminOnDay(dayOfWeek, slot, a);
-//				}
-//				  
-//	>>wenn du das ohne jedes einzelne feld selber setzten willst musst 
-//				du ein 2 Dimensionales Array machen um die KAlender matrix 
-//				zu strukturieren dannkannst du es mit noh weniger code machen		 
-//	public void setTerminOnDay(int dayOfWeek, int slot, Auftrag auftrag){
-//				  		
-//		if(dayOfWeek ==Calendar.MONDAY){
-//			switch(slot){
-//				case 1:	T1Z1.setText(formatAuftragHeadline(auftrag));
-//					break;
-//				case 2:
-//			}
-//		}else if(dayOfWeek == Calendar.TUESDAY){
-//			switch()
-//		} //TODO usw.
-//	}	
 
-				
-				
-				
-	private String formatAuftragHeadline(Auftrag auftrag) {
-			return auftrag.getLiegenschaft().toString();
+				// Alternative Olivia:
+				// List<Auftrag> la = null;// =
+				// auftragRO.findByDateAndMitarbeiter(startdatum, enddatum,
+				// mitarbeiter);
+				// for(Auftrag a : la){
+				// int dayOfWeek = a.getTermin().get(Calendar.DAY_OF_WEEK);
+				// int slot = a.getZeitSlot();
+				// setTerminOnDay(dayOfWeek, slot, a);
+				// }
+				//
+				// >>wenn du das ohne jedes einzelne feld selber setzten willst
+				// musst
+				// du ein 2 Dimensionales Array machen um die KAlender matrix
+				// zu strukturieren dannkannst du es mit noh weniger code machen
+				// public void setTerminOnDay(int dayOfWeek, int slot, Auftrag
+				// auftrag){
+				//
+				// if(dayOfWeek ==Calendar.MONDAY){
+				// switch(slot){
+				// case 1: T1Z1.setText(formatAuftragHeadline(auftrag));
+				// break;
+				// case 2:
+				// }
+				// }else if(dayOfWeek == Calendar.TUESDAY){
+				// switch()
+			} // TODO usw. }
+
+		}
 	}
 
-
-
-
-			}
-	}
-
-	
-	
 	/**
 	 * Diese Methode erstellt ein neues Terminobjekt.
 	 */
@@ -301,7 +293,7 @@ public class TerminUebersicht extends Application {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		lblDruckRueckmeldung.setText("Screenhot auf Desktop \n"+ "wurde erstellt");
+		lblDruckRueckmeldung.setText("Screenhot auf Desktop \n" + "wurde erstellt");
 	}
 
 	/**

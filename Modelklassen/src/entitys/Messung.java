@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "Messung.findById", query = "SELECT m FROM Messung m WHERE m.idMessung=:idMessung"),
+	@NamedQuery(name = "Messung.findById", query = "SELECT m FROM Messung m WHERE m.id=:id"),
 	@NamedQuery(name = "Messung.findByMessDatum", query = "SELECT m FROM Messung m WHERE m.messDatum=:messDatum"),
 	@NamedQuery(name = "Messung.findByBeurteilungNotOk", query = "SELECT m FROM Messung m WHERE m.beurteilungNotOk=:beurteilungNotOk")
 })
@@ -31,7 +31,7 @@ public class Messung implements Serializable{
 	
 	@Id
 	@GeneratedValue
-	private Integer idMessung;
+	private Integer id;
 	
 	@Temporal(TemporalType.DATE)
 	private GregorianCalendar messDatum;
@@ -101,11 +101,11 @@ public class Messung implements Serializable{
 
 	//getter&setter
 	public Integer getIdMessung() {
-		return idMessung;
+		return id;
 	}
 
 	public void setIdMessung(Integer idMessung) {
-		this.idMessung = idMessung;
+		this.id = idMessung;
 	}
 
 	public GregorianCalendar getMessDatum() {

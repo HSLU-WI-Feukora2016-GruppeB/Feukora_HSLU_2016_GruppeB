@@ -10,6 +10,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -33,7 +34,7 @@ import org.eclipse.jdt.annotation.Nullable;
 	@NamedQuery(name = "Mitarbeiter.findByVorname", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.vorname=:vorname"),
 	@NamedQuery(name = "Mitarbeiter.findByNameVorname", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.vorname=:vorname AND ma.name=:name"),
 	@NamedQuery(name = "Mitarbeiter.findByRolleIntern", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.rolleIntern=:rolleIntern"),
-	@NamedQuery(name = "Mitarbeiter.findById", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.idMitarbeiter=:idMitarbeiter"),
+	@NamedQuery(name = "Mitarbeiter.findById", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.id=:id"),
 	@NamedQuery(name = "Mitarbeiter.findByStrasse", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.strasse=:strasse"),
 	@NamedQuery(name = "Mitarbeiter.findByOrt", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.ort=:ort"),
 	@NamedQuery(name = "Mitarbeiter.findByUser", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.user=:user"),
@@ -46,7 +47,7 @@ public class Mitarbeiter implements Serializable{
 	
 	@Id
 	@GeneratedValue
-	private Integer idMitarbeiter;
+	private Integer id;
 	
 	private String vorname;
 	private String name;
@@ -56,6 +57,7 @@ public class Mitarbeiter implements Serializable{
 	private String tel;
 	private String email;
 	private int rolleIntern;
+	@Nullable
 	@OneToOne
 	private Benutzer user;
 	private int lohn;
@@ -89,11 +91,11 @@ public class Mitarbeiter implements Serializable{
 
 	//getter&setter********************************************************
 	public Integer getIdMitarbeiter() {
-		return idMitarbeiter;
+		return id;
 	}
 
 	public void setIdMitarbeiter(int idMitarbeiter) {
-		this.idMitarbeiter = idMitarbeiter;
+		this.id = idMitarbeiter;
 	}
 
 	public String getVorname() {
@@ -171,7 +173,7 @@ public class Mitarbeiter implements Serializable{
 		this.user = usercredentials;
 	}
 
-	public float getLohn() {
+	public int getLohn() {
 		return lohn;
 	}
 

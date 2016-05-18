@@ -1,9 +1,20 @@
 package application.view.mitarbeiter;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.List;
 
+import entitys.Auftrag;
+import entitys.Benutzer;
+import entitys.Brenner;
+import entitys.Feuerungsanlage;
+import entitys.Kontakt;
+import entitys.Liegenschaft;
+import entitys.Messung;
 import entitys.Mitarbeiter;
+import entitys.Ort;
+import entitys.Waermeerzeuger;
+import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -11,11 +22,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import rmi.MitarbeiterRO;
 
 /**
@@ -27,7 +42,7 @@ import rmi.MitarbeiterRO;
  * @since 1.0
  */
 
-public class MitarbeiterUebersicht {
+public class MitarbeiterUebersicht{
 
 	@FXML
 	private Button btnNeu, btnBearbeiten, btnSchliessen, btnSuchen;
@@ -45,29 +60,70 @@ public class MitarbeiterUebersicht {
 	private TableView tabelle;
 
 	@FXML
-	private TableColumn tblName, tblVorname, tblStrasse, tblPlz, tblOrt, tblEMail, tblTelefon, tblPosition, tblLohn;
+	private TableColumn tblName, tblVorname, tblStrasse, tblEMail, tblTelefon, tblPosition;
 
 	MitarbeiterRO mitarbeiterRO;
-	Mitarbeiter mitarbeiter;
-	//List<Mitarbeiter> list = mitarbeiterRO.findAllMitarbeiter();
 
-	private void initialize() {
+	public static Mitarbeiter mastatic;
 
-		// ObservableList<Mitarbeiter> list2 =
-		// FXCollections.observableList(list);
-		/*tblName.setCellValueFactory(new PropertyValueFactory<>("name"));
-		tblName.setCellValueFactory(new PropertyValueFactory<>("vorname"));
-		tblName.setCellValueFactory(new PropertyValueFactory<>("strasse"));
-		tblName.setCellValueFactory(new PropertyValueFactory<>("plz"));
-		tblName.setCellValueFactory(new PropertyValueFactory<>("ort"));
-		tblName.setCellValueFactory(new PropertyValueFactory<>("rolleIntern"));
-		tblName.setCellValueFactory(new PropertyValueFactory<>("lohn"));
-		tblName.setCellValueFactory(new PropertyValueFactory<>("email"));
-		tblName.setCellValueFactory(new PropertyValueFactory<>("tel"));
+	@FXML
+	private void initialize() throws Exception {
+
+		List<Benutzer> lBenutzer = new ArrayList<>();
+		List<Mitarbeiter> lMitarbeiter = new ArrayList<>();
+		List<Ort> lOrt = new ArrayList<>();
+
+		// 6 Benutzer erstellen
+		lBenutzer.add(new Benutzer("ale", "123"));
+		lBenutzer.add(new Benutzer("lra", "456"));
+		lBenutzer.add(new Benutzer("pst", "789"));
+		lBenutzer.add(new Benutzer("dst", "101"));
+		lBenutzer.add(new Benutzer("mpe", "111"));
+		lBenutzer.add(new Benutzer("owa", "121"));
+
+		// 5 Orte
+		lOrt.add(new Ort(8000, "Zürich"));
+		lOrt.add(new Ort(6000, "Luzern"));
+		lOrt.add(new Ort(5000, "Aarau"));
+		lOrt.add(new Ort(3000, "Bern"));
+		lOrt.add(new Ort(1000, "Genf"));
+		lOrt.add(new Ort(2000, "Neuchâtel"));
+
+		// 6 Mitarbeiter erstellen
+		lMitarbeiter.add(new Mitarbeiter("Olivia", "Wassmer", "Musterstrasse 1", lOrt.get(3), "1234567678",
+				"o.w@feukora.ch", 1, lBenutzer.get(5), 5000, new GregorianCalendar(2016, 05, 1),
+				new GregorianCalendar(2018, 8, 11)));
+		lMitarbeiter.add(new Mitarbeiter("Matthias", "Perrollaz", "Musterstrasse 2", lOrt.get(4), "1234557678",
+				"m.p@feukora.ch", 2, lBenutzer.get(4), 5000, new GregorianCalendar(2016, 05, 1),
+				new GregorianCalendar(2018, 8, 11)));
+		lMitarbeiter.add(new Mitarbeiter("Dominik", "Stirnimann", "Musterstrasse 3", lOrt.get(3), "1234367678",
+				"d.s@feukora.ch", 1, lBenutzer.get(3), 5000, new GregorianCalendar(2016, 05, 1),
+				new GregorianCalendar(2018, 8, 11)));
+		lMitarbeiter.add(new Mitarbeiter("Pascal", "Steiner", "Musterstrasse 4", lOrt.get(2), "1234567678",
+				"d.st@feukora.ch", 1, lBenutzer.get(2), 5000, new GregorianCalendar(2016, 05, 1),
+				new GregorianCalendar(2018, 8, 11)));
+		lMitarbeiter.add(new Mitarbeiter("Luca", "Raneri", "Musterstrasse 5", lOrt.get(1), "1234567178",
+				"l.r@feukora.ch", 1, lBenutzer.get(1), 5000, new GregorianCalendar(2016, 05, 1),
+				new GregorianCalendar(2018, 8, 11)));
+		lMitarbeiter.add(new Mitarbeiter("Alexandra", "Lengen", "Musterstrasse 1", lOrt.get(0), "1234563678",
+				"a.l@feukora.ch", 1, lBenutzer.get(5), 5000, new GregorianCalendar(2016, 05, 1),
+				new GregorianCalendar(2018, 8, 11)));
+
+		// List<Mitarbeiter> list = mitarbeiterRO.findAllMitarbeiter();
+		List<Mitarbeiter> list = lMitarbeiter;
+
+		ObservableList<Mitarbeiter> list2 = FXCollections.observableList(list);
+		tblName.setCellValueFactory(new PropertyValueFactory<>("name"));
+		tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
+		tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
+		tblEMail.setCellValueFactory(new PropertyValueFactory<>("email"));
+		tblPosition.setCellValueFactory(new PropertyValueFactory<>("rolleIntern"));
+		tblTelefon.setCellValueFactory(new PropertyValueFactory<>("tel"));
 
 		tabelle.setItems(list2);
-        tabelle.getColumns().addAll(tblName, tblVorname, tblStrasse, tblPlz, tblOrt, tblEMail, tblTelefon, tblPosition, tblLohn);*/
-		// https://docs.oracle.com/javase/8/javafx/user-interface-tutorial/table-view.htm
+
+
+
 	}
 
 	public void MitarbeiterSuchen() {
@@ -81,11 +137,14 @@ public class MitarbeiterUebersicht {
 
 		} else {
 
-			// List<Mitarbeiter> list =
-			// mitarbeiterRO.findByNameVorname(name,vorname);
-			// ObservableList<Mitarbeiter> list2 =
-			// FXCollections.observableList(list);
-			// tabelle.setItems(list2);
+			try {
+				List<Mitarbeiter> list = mitarbeiterRO.findByNameVorname(name, vorname);
+				ObservableList<Mitarbeiter> list2 = FXCollections.observableList(list);
+				tabelle.setItems(list2);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 		}
 
@@ -95,6 +154,9 @@ public class MitarbeiterUebersicht {
 	 * Diese Methode öffnet die Übersicht zur Erfassung neuer Mitarbeiter.
 	 */
 	public void neuerMitarbeiter() {
+
+
+
 		try {
 			Stage MitarbeiterStage = new Stage();
 
@@ -112,15 +174,20 @@ public class MitarbeiterUebersicht {
 	 */
 	public void bearbeitenMitarbeiter() {
 
+		Mitarbeiter indSelected = (Mitarbeiter) tabelle.getSelectionModel().getSelectedItem();
+		MitarbeiterBearbeiten.bekommeMitarbeiter(indSelected);
+
 		try {
 			Stage MitarbeiterStage = new Stage();
 
-			MitarbeiterStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("MitarbeiterErfassen.fxml"))));
+			MitarbeiterStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("MitarbeiterBearbeiten.fxml"))));
 
 			MitarbeiterStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
+
 
 	}
 

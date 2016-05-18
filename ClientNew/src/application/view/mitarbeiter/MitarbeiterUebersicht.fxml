@@ -122,10 +122,7 @@
                             <TableColumn fx:id="tblName" prefWidth="115.0" text="Name" />
                             <TableColumn fx:id="tblVorname" prefWidth="199.0" text="Vorname" />
                               <TableColumn fx:id="tblStrasse" minWidth="0.0" prefWidth="89.0" text="Strasse" />
-                              <TableColumn fx:id="tblPlz" minWidth="0.0" prefWidth="89.0" text="PLZ" />
-                              <TableColumn fx:id="tblOrt" prefWidth="75.0" text="Ort" />
                               <TableColumn fx:id="tblPosition" prefWidth="75.0" text="Position" />
-                              <TableColumn fx:id="tblLohn" prefWidth="75.0" text="Lohn" />
                               <TableColumn fx:id="tblEMail" prefWidth="75.0" text="E-Mail" />
                               <TableColumn fx:id="tblTelefon" prefWidth="68.0" text="Telefon" />
                           </columns>

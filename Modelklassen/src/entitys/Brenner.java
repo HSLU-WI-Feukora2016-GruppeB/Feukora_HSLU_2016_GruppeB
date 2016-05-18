@@ -19,7 +19,7 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "Brenner.findById", query = "SELECT b FROM Brenner b WHERE b.idBrenner=:idBrenner"),
+	@NamedQuery(name = "Brenner.findById", query = "SELECT b FROM Brenner b WHERE b.id=:id"),
 	@NamedQuery(name = "Brenner.findByTyp", query = "SELECT b FROM Brenner b WHERE b.brennerTyp=:brennerTyp"),
 	@NamedQuery(name = "Brenner.findByArt", query = "SELECT b FROM Brenner b WHERE b.brennerArt=:brennerArt"),
 	@NamedQuery(name = "Brenner.findByBaujahr", query = "SELECT b FROM Brenner b WHERE b.baujahr=:baujahr")
@@ -30,7 +30,7 @@ public class Brenner implements Serializable{
 	
 	@Id
 	@GeneratedValue
-	private Integer idBrenner;
+	private Integer id;
 	
 	private int brennerArt;
 	private String brennerTyp;
@@ -49,11 +49,11 @@ public class Brenner implements Serializable{
 
 	//getter&setter********************************************************
 	public Integer getId() {
-		return idBrenner;
+		return id;
 	}
 
 	public void setId(Integer id) {
-		this.idBrenner = id;
+		this.id = id;
 	}
 
 	public int getBrennerArt(){

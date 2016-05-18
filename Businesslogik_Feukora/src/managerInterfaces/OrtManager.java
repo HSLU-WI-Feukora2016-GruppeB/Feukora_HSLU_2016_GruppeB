@@ -56,7 +56,7 @@ public void deleteById(Integer plz) throws Exception;
  * @param plz
  * @return
  */
-public Ort findById(Integer plz) throws Exception;
+public Ort findById(Integer idOrt) throws Exception;
 
 /**
  * Liefert einen Ort anhand der gesuchten Ortsbezeichnung.
@@ -65,6 +65,14 @@ public Ort findById(Integer plz) throws Exception;
  * @return
  */
 public List<Ort> findByOrtBez(String ortBez) throws Exception;
+
+/**
+ * Liefert einen Ort anhand der gesuchten Ortsbezeichnung.
+ * 
+ * @param plz
+ * @return
+ */
+public List<Ort> findByPlz(int plz) throws Exception;
 
 /**
  * Liefert alle Benutzer zurück.

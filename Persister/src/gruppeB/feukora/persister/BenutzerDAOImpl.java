@@ -25,7 +25,7 @@ import gruppeB.feukora.persister.util.JpaUtil;
  * 
  */
 public class BenutzerDAOImpl implements BenutzerDAO{
-
+	
 	@Override
 	public void saveBenutzer(Benutzer entity) throws Exception {
 		new GenericPersisterImpl<Benutzer>(Benutzer.class).save(entity);

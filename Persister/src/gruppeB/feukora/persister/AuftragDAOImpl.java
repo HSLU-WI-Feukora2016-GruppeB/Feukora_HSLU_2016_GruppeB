@@ -46,14 +46,14 @@ public class AuftragDAOImpl implements AuftragDAO {
 	}
 
 	@Override
-	public void deleteAuftragById(Integer id) throws Exception {
-		new GenericPersisterImpl<Auftrag>(Auftrag.class).deleteById(id);
+	public void deleteAuftragById(Integer idAuftrag) throws Exception {
+		new GenericPersisterImpl<Auftrag>(Auftrag.class).deleteById(idAuftrag);
 	}
 
 	@Override
-	public Auftrag findAuftragByAuftragsNummer(Integer auftragsNummer) {
+	public Auftrag findAuftragById(Integer idAuftrag) throws Exception {
 		return new GenericPersisterImpl<Auftrag>(Auftrag.class)
-				.findById(auftragsNummer);
+				.findById(idAuftrag);
 	}
 
 	@Override
@@ -62,7 +62,7 @@ public class AuftragDAOImpl implements AuftragDAO {
 	}
 
 	@Override
-	public List<Auftrag> findByMitarbeiter(Mitarbeiter mitarbeiter) {
+	public List<Auftrag> findByMitarbeiter(Mitarbeiter mitarbeiter) throws Exception {
 
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -79,7 +79,7 @@ public class AuftragDAOImpl implements AuftragDAO {
 	}
 
 	@Override
-	public List<Auftrag> findByDatum(GregorianCalendar datum) {
+	public List<Auftrag> findByDatum(GregorianCalendar datum) throws Exception {
 
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -96,7 +96,7 @@ public class AuftragDAOImpl implements AuftragDAO {
 	}
 
 	@Override
-	public List<Auftrag> findByKontakt(Kontakt kontakt) {
+	public List<Auftrag> findByKontakt(Kontakt kontakt)  throws Exception{
 
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -113,7 +113,7 @@ public class AuftragDAOImpl implements AuftragDAO {
 	}
 
 	@Override
-	public List<Auftrag> findByLiegenschaft(Liegenschaft liegenschaft) {
+	public List<Auftrag> findByLiegenschaft(Liegenschaft liegenschaft)  throws Exception{
 
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -132,7 +132,7 @@ public class AuftragDAOImpl implements AuftragDAO {
 	@Override
 	public List<Auftrag> findByDatumAndMitarbeiter(
 			GregorianCalendar startdatum, GregorianCalendar enddatum,
-			Mitarbeiter mitarbeiter) {
+			Mitarbeiter mitarbeiter)  throws Exception{
 
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -152,7 +152,7 @@ public class AuftragDAOImpl implements AuftragDAO {
 
 	@Override
 	public Auftrag findAuftragByDateAndMitarbeiterAndZeitslot(
-			GregorianCalendar datum, Mitarbeiter mitarbeiter, int zeitSlot) {
+			GregorianCalendar datum, Mitarbeiter mitarbeiter, int zeitSlot)  throws Exception{
 
 		EntityManager em = JpaUtil.createEntityManager();
 

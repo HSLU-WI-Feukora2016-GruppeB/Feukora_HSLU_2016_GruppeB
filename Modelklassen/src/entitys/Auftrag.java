@@ -19,18 +19,19 @@ import org.eclipse.jdt.annotation.Nullable;
  */
 @Entity
 @NamedQueries({
-		@NamedQuery(name = "Auftrag.findById", query = "SELECT a FROM Auftrag a WHERE a.auftragsNummer=:auftragsNummer"),
+		@NamedQuery(name = "Auftrag.findById", query = "SELECT a FROM Auftrag a WHERE a.id=:id"),
 		@NamedQuery(name = "Auftrag.findByKontakt", query = "SELECT a FROM Auftrag a WHERE a.kontakt=:kontakt"),
 		@NamedQuery(name = "Auftrag.findByLiegenschaft", query = "SELECT a FROM Auftrag a WHERE a.liegenschaft=:liegenschaft"),
 		@NamedQuery(name = "Auftrag.findByMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.mitarbeiter=:mitarbeiter"),
 		@NamedQuery(name = "Auftrag.findByDatum", query = "SELECT a FROM Auftrag a WHERE a.datum=:datum"),
-		@NamedQuery(name = "Auftrag.findByDatumAndMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.datum>=:startdatum AND a.datum<=:enddatum AND a.mitarbeiter=:mitarbeiter") })
+		@NamedQuery(name = "Auftrag.findByDatumAndMitarbeiter", query = "SELECT a FROM Auftrag a WHERE a.datum>=:startdatum AND a.datum<=:enddatum AND a.mitarbeiter=:mitarbeiter"),
+		@NamedQuery(name = "Auftrag.findAuftragByDateAndMitarbeiterAndZeitslot", query = "SELECT a FROM Auftrag a WHERE a.datum=:datum AND a.mitarbeiter=:mitarbeiter AND a.zeitSlot=:zeitSlot")})
 public class Auftrag implements Serializable {
 
 	private static final long serialVersionUID = -1931313655942897483L;
 	@Id
 	@GeneratedValue
-	private Integer auftragsNummer;
+	private Integer id;
 
 	@ManyToOne
 	private Kontakt kontakt;
@@ -39,19 +40,19 @@ public class Auftrag implements Serializable {
 	private Liegenschaft liegenschaft;
 
 	@Nullable
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne//(cascade = CascadeType.ALL)
 	private Messung messung1stufe1;
 
 	@Nullable
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne//(cascade = CascadeType.ALL)
 	private Messung messung1stufe2;
 
 	@Nullable
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne//(cascade = CascadeType.ALL)
 	private Messung messung2stufe1;
 
 	@Nullable
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne//(cascade = CascadeType.ALL)
 	private Messung messung2stufe2;
 
 	@ManyToOne
@@ -100,11 +101,11 @@ public class Auftrag implements Serializable {
 
 	// getter&setter********************************************************
 	public Integer getAuftragsNummer() {
-		return auftragsNummer;
+		return id;
 	}
 
 	public void setAuftragsNummer(Integer auftragsNummer) {
-		this.auftragsNummer = auftragsNummer;
+		this.id = auftragsNummer;
 	}
 
 	public Kontakt getKunde() {
@@ -241,7 +242,7 @@ public class Auftrag implements Serializable {
 		auftrag += "Auftrag:" + "\n" 
 				+ "Auftragsdatum: "	+ this.printDatum(this.datum) + "\n" 
 				+ "Termin " + this.getZeitSlotString() + "\n" 
-				+ "Auftragsnummer: " + auftragsNummer + "\n" + "\n"
+				+ "Auftragsnummer: " + id + "\n" + "\n"
 
 				+ "Kontakt: \n" + kontakt.toString() + "\n"
 				+ "Liegenschaft: \n" + liegenschaft.toString() + "\n"

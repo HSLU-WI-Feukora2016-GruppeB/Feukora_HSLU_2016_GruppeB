@@ -26,7 +26,7 @@ import org.eclipse.persistence.internal.descriptors.DescriptorIterator.CascadeCo
 @NamedQueries({
 	@NamedQuery(name = "Feuerungsanlage.findByBrenner", query = "SELECT f FROM Feuerungsanlage f WHERE f.brenner=:brenner"),
 	@NamedQuery(name = "Feuerungsanlage.findByWaermeerzeuger", query = "SELECT f FROM Feuerungsanlage f WHERE f.waermeerzeuger=:waermeerzeuger"),
-	@NamedQuery(name = "Feuerungsanlage.findById", query = "SELECT f FROM Feuerungsanlage f WHERE f.idFeuerungsanlage=:idFeuerungsanlage")
+	@NamedQuery(name = "Feuerungsanlage.findById", query = "SELECT f FROM Feuerungsanlage f WHERE f.id=:id")
 })
 public class Feuerungsanlage implements Serializable{
 	
@@ -34,7 +34,7 @@ public class Feuerungsanlage implements Serializable{
 	
 	@Id
 	@GeneratedValue
-	private Integer idFeuerungsanlage;
+	private Integer id;
 	
 	@ManyToOne
 	private Brenner brenner;
@@ -54,11 +54,11 @@ public class Feuerungsanlage implements Serializable{
 
 	//getter&setter********************************************************
 	public Integer getIdFeuerungsanlage() {
-		return idFeuerungsanlage;
+		return id;
 	}
 
 	public void setIdFeuerungsanlage(Integer idFeuerungsanlage) {
-		this.idFeuerungsanlage = idFeuerungsanlage;
+		this.id = idFeuerungsanlage;
 	}
 
 	public Brenner getBrenner() {
