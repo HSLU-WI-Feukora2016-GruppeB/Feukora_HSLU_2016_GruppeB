@@ -9,7 +9,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import entitys.Auftrag;
 import entitys.Brenner;
 import entitys.Feuerungsanlage;
 import entitys.Kontakt;
@@ -24,8 +23,10 @@ import gruppeB.feukora.persister.OrtDAOImpl;
 import gruppeB.feukora.persister.WaermeerzeugerDAOImpl;
 
 /**
+ * Diese Klasse ist für das Testen der LiegenschaftDAO-Implementierung zuständig.
+ * 
+ * @version 1.0
  * @author Luca Raneri
- *
  */
 public class LiegenschaftDAOTest {
 
@@ -45,12 +46,40 @@ public class LiegenschaftDAOTest {
 	public void tearDown() throws Exception {
 		
 	}
-	
-	@Test
-	public void testSaveLiegenschaft() throws Exception{
-		//TODO	
-	}
 
+	/**
+	 * Dieser Test tested die Methode {@link LiegenschaftDAOImpl#updateLiegenschaft(Liegenschaft)}.
+	 * @throws Exception
+	 */
+	@Test
+	public void testUpdate() throws Exception {
+
+		List<Liegenschaft> liegenschaftsListe = liegenschaftDAO.findAllLiegenschaft();
+		assertTrue(liegenschaftsListe.size() == 3);
+
+		Ort o = ortDAO.findOrtByPlz(5000).get(0);
+		Kontakt k = kontaktDAO.findKontaktByOrt(o).get(0);
+		Liegenschaft l = liegenschaftDAO.findLiegenschaftByKontakt(k).get(0);
+		assertNotNull(l);
+		
+		Kontakt kNew = kontaktDAO.findAllKontakte().get(1);
+		l.setKontakt(kNew);
+		
+		liegenschaftDAO.updateLiegenschaft(l);
+		
+		Liegenschaft aDB = liegenschaftDAO.findLiegenschaftByKontakt(kNew).get(0);
+		assertNotNull(aDB);
+		assertTrue(aDB.getKontakt() != k);
+		
+		liegenschaftsListe = liegenschaftDAO.findAllLiegenschaft();
+		assertTrue(liegenschaftsListe.size() == 3);
+
+	}
+	
+	/**
+	 * Dieser Test tested die Methode {@link LiegenschaftDAOImpl#findAllLiegenschaft()}.
+	 * @throws Exception
+	 */
 	@Test
 	public void testFindAll() throws Exception{
 		
@@ -58,6 +87,10 @@ public class LiegenschaftDAOTest {
 		assertTrue(liegenschaftsListe.size() == 3);
 	}
 	
+	/**
+	 * Dieser Test tested die Methode {@link LiegenschaftDAOImpl#deleteLiegenschaft(Liegenschaft)}.
+	 * @throws Exception
+	 */
 	@Test
 	public void testDelete() throws Exception {
 
@@ -70,7 +103,11 @@ public class LiegenschaftDAOTest {
 		assertTrue(liegenschaftsListe.size() == 2);
 
 	}
-
+	
+	/**
+	 * Dieser Test tested die Methode {@link LiegenschaftDAOImpl#findLiegenschaftByKontakt(Kontakt)}.
+	 * @throws Exception
+	 */
 	@Test
 	public void testFindLiegenschaftByKontakt() throws Exception {
 		
@@ -81,6 +118,10 @@ public class LiegenschaftDAOTest {
 		assertTrue(liegenschaftsListe.size() == 1);
 	}
 	
+	/**
+	 * Dieser Test tested die Methode {@link LiegenschaftDAOImpl#findLiegenschaftByOrt(Ort)}.
+	 * @throws Exception
+	 */
 	@Test
 	public void testFindLiegenschaftByOrt() throws Exception {
 		
@@ -91,6 +132,10 @@ public class LiegenschaftDAOTest {
 		assertTrue(liegenschaftsListe.size() == 1);
 	}
 	
+	/**
+	 * Dieser Test tested die Methode {@link LiegenschaftDAOImpl#findLiegenschaftByStrasse(String)}.
+	 * @throws Exception
+	 */
 	@Test
 	public void testFindLiegenschaftByStrasse() throws Exception {
 		
@@ -100,6 +145,10 @@ public class LiegenschaftDAOTest {
 		assertTrue(liegenschaftsListe.size() == 2);
 	}
 	
+	/**
+	 * Dieser Test tested die Methode {@link LiegenschaftDAOImpl#deleteLiegenschaftById(Integer)}.
+	 * @throws Exception
+	 */
 	@Test
 	public void testDeleteById() throws Exception {
 		
@@ -112,6 +161,11 @@ public class LiegenschaftDAOTest {
 		assertTrue(liegenschaftsListe.size() == 2);
 	}
 	
+	/**
+	 * Initialisiert die Objekte welche für die Tests verwendet werden.
+	 * @return
+	 * @throws Exception
+	 */
 	public static List<Liegenschaft> init() throws Exception {
 		LiegenschaftDAOTest.deleteAll();
 		
@@ -188,6 +242,10 @@ public class LiegenschaftDAOTest {
 		return lLiegenschaft;
 	}
 	
+	/**
+	 * Loescht alle Objekte aus der Datenbank.
+	 * @throws Exception
+	 */
 	private static void deleteAll() throws Exception {
 
 		deleteAllLiegenschaft();
@@ -213,6 +271,10 @@ public class LiegenschaftDAOTest {
 
 	}
 
+	/**
+	 * Loescht alle Liegenschafts-Objekte aus der Datenbank.
+	 * @throws Exception
+	 */
 	public static void deleteAllLiegenschaft() throws Exception {
 
 		for (Liegenschaft l : liegenschaftDAO.findAllLiegenschaft()) {

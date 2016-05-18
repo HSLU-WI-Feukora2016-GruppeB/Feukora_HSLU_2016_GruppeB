@@ -9266,3 +9266,6030 @@ Arbeitet bis:
 
 Kontrollart: 1
 
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:04:55 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:04:56 ERROR GenericPersisterImpl:50 - Fehler beim Speichern der Entity vom Typ 'entitys.Liegenschaft': [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Peter
+Nachname: Musti
+Strasse: TheStreet 1
+PLZ: 8000
+Ort: Zürich
+
+Telefon: 0000000000
+eMail: t.t@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+Added
+Strasse: 
+Test 456
+Ort: 
+PLZ: 8000
+Ort: Zürich
+
+]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	lalala33
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2017
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	lilalal
+.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:45)
+	at gruppeB.feukora.persister.LiegenschaftDAOImpl.saveLiegenschaft(LiegenschaftDAOImpl.java:28)
+	at webservice.gruppeB.persister.LiegenschaftDAOTest.testSaveLiegenschaft(LiegenschaftDAOTest.java:64)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	lalala33
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2017
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	lilalal
+.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:139 - Entity vom Typ Liegenschaft mit id = 161 wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:04:56 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:04:57 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:57 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:04:57 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:57 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:57 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:57 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:57 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:04:57 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:04:57 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:04:57 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:04:57 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:04:57 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:04:57 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:04:57 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:04:57 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:04:57 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:07:24 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:07:25 ERROR GenericPersisterImpl:50 - Fehler beim Speichern der Entity vom Typ 'entitys.Liegenschaft': [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Peter
+Nachname: Musti
+Strasse: TheStreet 1
+PLZ: 8000
+Ort: Zürich
+
+Telefon: 0000000000
+eMail: t.t@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+Added
+Strasse: 
+Test 456
+Ort: 
+PLZ: 8000
+Ort: Zürich
+
+]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	lalala33
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2017
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	lilalal
+.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:45)
+	at gruppeB.feukora.persister.LiegenschaftDAOImpl.saveLiegenschaft(LiegenschaftDAOImpl.java:28)
+	at webservice.gruppeB.persister.LiegenschaftDAOTest.testSaveLiegenschaft(LiegenschaftDAOTest.java:64)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	lalala33
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2017
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	lilalal
+.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:07:25 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:139 - Entity vom Typ Liegenschaft mit id = 161 wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:07:26 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:12:59 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:13:00 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:13:00 ERROR GenericPersisterImpl:50 - Fehler beim Speichern der Entity vom Typ 'entitys.Liegenschaft': [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Peter
+Nachname: Musti
+Strasse: TheStreet 1
+PLZ: 8000
+Ort: Zürich
+
+Telefon: 0000000000
+eMail: t.t@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+Added
+Strasse: 
+Test 456
+Ort: 
+PLZ: 8000
+Ort: Zürich
+
+]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	lalala33
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2017
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	lilalal
+.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:45)
+	at gruppeB.feukora.persister.LiegenschaftDAOImpl.saveLiegenschaft(LiegenschaftDAOImpl.java:28)
+	at webservice.gruppeB.persister.LiegenschaftDAOTest.testSaveLiegenschaft(LiegenschaftDAOTest.java:64)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	lalala33
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2017
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	lilalal
+.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:33 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:13:34 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:13:34 ERROR GenericPersisterImpl:50 - Fehler beim Speichern der Entity vom Typ 'entitys.Liegenschaft': [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Peter
+Nachname: Musti
+Strasse: TheStreet 1
+PLZ: 8000
+Ort: Zürich
+
+Telefon: 0000000000
+eMail: t.t@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+Added
+Strasse: 
+Test 456
+Ort: 
+PLZ: 8000
+Ort: Zürich
+
+]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	lalala33
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2017
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	lilalal
+.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:45)
+	at gruppeB.feukora.persister.LiegenschaftDAOImpl.saveLiegenschaft(LiegenschaftDAOImpl.java:28)
+	at webservice.gruppeB.persister.LiegenschaftDAOTest.testSaveLiegenschaft(LiegenschaftDAOTest.java:64)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	lalala33
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2017
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	lilalal
+.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 29 more
+2016-05-18 18:47:47 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:47:48 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:139 - Entity vom Typ Liegenschaft mit id = 133 wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 1000
+Ort: Genf
+
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Liegenschaft [Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Türe ist offen
+Strasse: 
+Musterweg 456
+Ort: 
+PLZ: 2000
+Ort: Neuchâtel
+
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Brenner: 	 	 	Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: 	 	 	Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+PLZ: 5000
+Ort: Aarau
+
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Heiri
+Nachname: Muster
+Strasse: Bernstrasse 1
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0688885577
+eMail: h.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Christof
+Nachname: Meyer
+Strasse: Gassweg 1
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0633335577
+eMail: ch.m@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Hanna
+Nachname: Putz
+Strasse: Malweg 5
+PLZ: 1000
+Ort: Genf
+
+Telefon: 0637777777
+eMail: h.p@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Martina
+Nachname: Zäh
+Strasse: Altstrasse 90
+PLZ: 3000
+Ort: Bern
+
+Telefon: 0633888877
+eMail: m.z@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Tina
+Nachname: Bär
+Strasse: Waserstrasse 4
+PLZ: 2000
+Ort: Neuchâtel
+
+Telefon: 0222235577
+eMail: t.b@gmail.com
+Rolle Extern: Eigentümer
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Kontakt [Kontakt: 
+Vorname: Rudolf
+Nachname: Santa
+Strasse: Zaubergass 7
+PLZ: 6000
+Ort: Luzern
+
+Telefon: 0699999997
+eMail: r.s@gmail.com
+Rolle Extern: Verwaltung
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 8000
+Ort: Zürich
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 6000
+Ort: Luzern
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 5000
+Ort: Aarau
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 3000
+Ort: Bern
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 1000
+Ort: Genf
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 2000
+Ort: Neuchâtel
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:105 - Entity vom Typ Ort [PLZ: 4000
+Ort: Basel
+]  wird gelöscht
+2016-05-18 18:47:49 INFO  GenericPersisterImpl:71 - Entity vom Typ Liegenschaft wird updatet: Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+PLZ: 4000
+Ort: Basel
+
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+PLZ: 3000
+Ort: Bern
+
+
