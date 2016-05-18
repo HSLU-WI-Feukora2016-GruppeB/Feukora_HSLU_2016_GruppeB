@@ -52,7 +52,7 @@ public class RMIServer {
 	WaermeerzeugerRO wa = new WaermeerzeugerROImpl();
 	
 	// Registry-Instanz erzeugen bzw. starten 
-	Registry reg = LocateRegistry.createRegistry(60140);
+	Registry reg = LocateRegistry.createRegistry(9999);
 	
 	// Entferntes Objekt beim Namensdienst registrieren
 	if (reg != null) {

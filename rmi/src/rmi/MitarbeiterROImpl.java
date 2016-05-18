@@ -60,7 +60,7 @@ public class MitarbeiterROImpl extends UnicastRemoteObject implements Mitarbeite
 	}
 
 	@Override
-	public List<Mitarbeiter> findByVorname(String vorname) throws Exception {		// TODO Auto-generated method stub
+	public List<Mitarbeiter> findByVorname(String vorname) throws Exception {		
 		return mitarbeiterManager.findByVorname(vorname);
 	}
 
