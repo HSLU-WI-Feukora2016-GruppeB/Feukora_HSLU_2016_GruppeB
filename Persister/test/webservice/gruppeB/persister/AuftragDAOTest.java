@@ -70,7 +70,7 @@ public class AuftragDAOTest {
 	}
 
 	/**
-	 * Testet ob die alle Objekte in der Datenbank gefunden werden.
+	 * Testet die Methode {@link AuftragDAOImpl#findAllAuftrag()}
 	 * @throws Exception
 	 */
 	@Test
@@ -81,7 +81,7 @@ public class AuftragDAOTest {
 	}
 	
 	/**
-	 * Testet ob der richtige Auftrag mithilfe des Datums gefunden wird.
+	 * Testet die Methode {@link AuftragDAOImpl#findByDatum(GregorianCalendar)}
 	 * @throws Exception
 	 */
 	@Test
@@ -96,7 +96,7 @@ public class AuftragDAOTest {
 	}
 
 	/**
-	 * 
+	 * Testet die Methode {@link AuftragDAOImpl#findByLiegenschaft(Liegenschaft)}
 	 * @throws Exception
 	 */
 	@Test
@@ -110,21 +110,29 @@ public class AuftragDAOTest {
 		
 	}
 	
-	@Test
-	public void testFindByDatumAndMitarbeiterAndZeitslot() throws Exception {
-		
-		GregorianCalendar d = new GregorianCalendar(2016, 9, 11);
-		Mitarbeiter m = mitarbeiterDAO.findMitarbeiterByNameVorname("Stirnimann", "Dominik").get(0);
-		int z = 2;
-		assertNotNull(d);
-		assertNotNull(m);
-		assertNotNull(z);
-		
-		Auftrag auftrag = auftragDAO.findAuftragByDateAndMitarbeiterAndZeitslot(d, m, z);
-		assertNotNull(auftrag);
-		
-	}
+//	/**
+//	 * Testet die Methode {@link AuftragDAOImpl#findAuftragByDateAndMitarbeiterAndZeitslot(GregorianCalendar, Mitarbeiter, int)}
+//	 * @throws Exception
+//	 */
+//	@Test
+//	public void testFindByDatumAndMitarbeiterAndZeitslot() throws Exception {
+//		
+//		GregorianCalendar d = new GregorianCalendar(2016, 9, 11);
+//		Mitarbeiter m = mitarbeiterDAO.findMitarbeiterByNameVorname("Stirnimann", "Dominik").get(0);
+//		int z = 2;
+//		assertNotNull(d);
+//		assertNotNull(m);
+//		assertNotNull(z);
+//		
+//		Auftrag auftrag = auftragDAO.findAuftragByDateAndMitarbeiterAndZeitslot(d, m, z);
+//		assertNotNull(auftrag);
+//		
+//	}
 	
+	/**
+	 * Testet die Methode {@link AuftragDAOImpl#updateAuftrag(Auftrag)}
+	 * @throws Exception
+	 */
 	@Test
 	public void testUpdate() throws Exception {
 
@@ -151,6 +159,10 @@ public class AuftragDAOTest {
 
 	}
 
+	/**
+	 * Testet die Methode {@link AuftragDAOImpl#deleteAuftrag(Auftrag)}
+	 * @throws Exception
+	 */
 	@Test
 	public void testDelete() throws Exception {
 
@@ -164,6 +176,10 @@ public class AuftragDAOTest {
 
 	}
 
+	/**
+	 * Testet die Methode {@link AuftragDAOImpl#deleteAuftragById(Integer)}
+	 * @throws Exception
+	 */
 	@Test
 	public void testDeleteById() throws Exception {
 		
@@ -177,6 +193,11 @@ public class AuftragDAOTest {
 	}
 	
 
+	/**
+	 * Initialisiert die Datenbank mit Testwerten
+	 * @return
+	 * @throws Exception
+	 */
 	public static List<Auftrag> init() throws Exception {
 		AuftragDAOTest.deleteAll();
 		
@@ -308,6 +329,10 @@ public class AuftragDAOTest {
 		return lAuftrag;
 	}
 
+	/**
+	 * Löscht alle initialisierten Daten aus der Datenbank.
+	 * @throws Exception
+	 */
 	private static void deleteAll() throws Exception {
 
 		deleteAllAuftrag();
@@ -341,6 +366,10 @@ public class AuftragDAOTest {
 		}
 	}
 
+	/**
+	 * Löscht alle Aufträge aus der Datenbank.
+	 * @throws Exception
+	 */
 	public static void deleteAllAuftrag() throws Exception {
 
 		for (Auftrag a : auftragDAO.findAllAuftrag()) {
