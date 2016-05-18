@@ -4,6 +4,7 @@ import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.util.List;
 
 import entitys.Mitarbeiter;
 import entitys.Ort;
@@ -30,7 +31,7 @@ public class MitarbeiterErfassen {
 	OrtRO OrtRO;
 
 	@FXML
-	private TextField txtName, txtVorname, txtOrt, txtRolle, txtLohn, txtEmail, txtTelefonNr, txtStrasse;
+	private TextField txtName, txtVorname, txtOrt, txtPLZ, txtRolle, txtLohn, txtEmail, txtTelefonNr, txtStrasse;
 
 	@FXML
 	private Label lblRueckmeldung;
@@ -76,6 +77,7 @@ public class MitarbeiterErfassen {
 		String vorname = txtVorname.getText();
 		String strasse = txtStrasse.getText();
 		String ort = txtOrt.getText();
+		String plz = txtPLZ.getText();
 		String rolle = txtRolle.getText();
 		String lohn = txtLohn.getText();
 		String email = txtEmail.getText();
@@ -92,17 +94,18 @@ public class MitarbeiterErfassen {
 			// nicht vorhanden ist
 
 			// Neue Variabeln für das Parsen
-			int rolleint = 0, lohnint = 0;
+			int rolleint = 0, lohnint = 0, plzint = 0;
 
 			try {
 				rolleint = Integer.parseInt(rolle);
 				lohnint = Integer.parseInt(lohn);
+				plzint = Integer.parseInt(plz);
 			} catch (Exception e) {
 				lblRueckmeldung.setText("Parsen hat fehlgeschlagen");
 			}
 
 
-			Mitarbeiter newmitarbeiter = createMitarbeiter(name,vorname,strasse,ort,
+			Mitarbeiter newmitarbeiter = createMitarbeiter(name,vorname,strasse,ort,plzint,
 					rolleint,lohnint,email,telefonnr);
 			try {
 				this.MitarbeiterRO.add(newmitarbeiter);
@@ -147,11 +150,12 @@ public class MitarbeiterErfassen {
 	 */
 
 
-	private Mitarbeiter createMitarbeiter(String name, String vorname, String strasse, String ort,
+	private Mitarbeiter createMitarbeiter(String name, String vorname, String strasse, String ort, int plz,
 			int rolle, int lohn, String email, String telefonnr){
 		//Exception werfen? bei Referenzprojekt hat ers gemacht
 
 		Mitarbeiter mitarbeiter = new Mitarbeiter();
+		Ort ortschaft = new Ort();
 
 		mitarbeiter.setName(name);
 		mitarbeiter.setVorname(vorname);
@@ -161,11 +165,19 @@ public class MitarbeiterErfassen {
 		mitarbeiter.setEmail(email);
 		mitarbeiter.setTel(telefonnr);
 
-	//	Ort ortschaft = OrtRO.findByOrtBez(ort).get(0);
+		try {
+			//zu erst auf liste speichern damit man nachher das zweite der Liste prüfen kann falls nicht übereinstimmt
+		 ortschaft = OrtRO.findByOrtPlz(plz).get(0);
+		} catch (Exception e) {
+			lblRueckmeldung.setText("PLZ nicht gefunden");
+		}
 
-
-		//mitarbeiter.setOrt(ortschaft);
-
+		String ortvondb = ortschaft.getOrt();
+		if(ort.equals(ortvondb)){
+		mitarbeiter.setOrt(ortschaft);
+		}else{
+			//prüfe zweites objekt auf der Liste
+		}
 
 		return mitarbeiter;
 	}
