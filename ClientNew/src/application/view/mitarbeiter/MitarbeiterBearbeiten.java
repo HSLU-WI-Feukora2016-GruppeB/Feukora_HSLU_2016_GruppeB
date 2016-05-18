@@ -55,6 +55,9 @@ public class MitarbeiterBearbeiten {
 
 	public static void bekommeMitarbeiter(Mitarbeiter mabearbeitet) {
 		maupdate = mabearbeitet;
+
+//		ändern = mabearbeitet;
+
 		name = mabearbeitet.getName().toString();
 		vorname = mabearbeitet.getVorname();
 		strasse = mabearbeitet.getStrasse();
@@ -157,10 +160,10 @@ public class MitarbeiterBearbeiten {
 		maupdate.setEmail(email);
 		maupdate.setTel(telefonnr);
 
-		Ort ortschaft = OrtRO.findByOrtBez(ort);
+//		Ort ortschaft = OrtRO.findByOrtBez(ort);
 
 
-		maupdate.setOrt(ortschaft);
+//		maupdate.setOrt(ortschaft);
 
 
 		return maupdate;
