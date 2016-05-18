@@ -54,8 +54,8 @@ public class OrtROImpl extends UnicastRemoteObject implements OrtRO  {
 	}
 
 	@Override
-	public List<Ort> findByOrtPlz(String plz) throws Exception {
-		return ortManager.findByOrtPlz(plz);
+	public List<Ort> findByOrtPlz(int plz) throws Exception {
+		return ortManager.findByPlz(plz);
 	}
 	
 	

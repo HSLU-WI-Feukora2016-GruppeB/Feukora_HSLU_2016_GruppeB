@@ -71,7 +71,7 @@ public interface OrtRO extends Remote {
 	 * @param ortBez
 	 * @return
 	 */
-	public List<Ort> findByOrtPlz(String plz) throws Exception;
+	public List<Ort> findByOrtPlz(int plz) throws Exception;
 
 	/**
 	 * Liefert alle Benutzer zurück.

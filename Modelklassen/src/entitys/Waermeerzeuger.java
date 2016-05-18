@@ -18,7 +18,7 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "Waermeerzeuger.findById", query = "SELECT w FROM Waermeerzeuger w WHERE w.idWaermeerzeuger=:idWaermeerzeuger"),
+	@NamedQuery(name = "Waermeerzeuger.findById", query = "SELECT w FROM Waermeerzeuger w WHERE w.id=:id"),
 	@NamedQuery(name = "Waermeerzeuger.findByTyp", query = "SELECT w FROM Waermeerzeuger w WHERE w.waermeerzeugerTyp=:waermeerzeugerTyp"),
 	@NamedQuery(name = "Waermeerzeuger.findByBaujahr", query = "SELECT w FROM Waermeerzeuger w WHERE w.baujahr=:baujahr"),
 	@NamedQuery(name = "Waermeerzeuger.findByBrennstoff", query = "SELECT w FROM Waermeerzeuger w WHERE w.brennstoff=:brennstoff")
@@ -29,7 +29,7 @@ public class Waermeerzeuger implements Serializable{
 	
 	@Id
 	@GeneratedValue
-	private Integer idWaermeerzeuger;
+	private Integer id;
 	
 	private int brennstoff;
 	private String waermeerzeugerTyp;
@@ -51,11 +51,11 @@ public class Waermeerzeuger implements Serializable{
 
 	//getter&setter********************************************************
 	public Integer getIdWaermeerzeuger() {
-		return idWaermeerzeuger;
+		return id;
 	}
 
 	public void setIdWaermeerzeuger(int idWaermeerzeuger) {
-		this.idWaermeerzeuger = idWaermeerzeuger;
+		this.id = idWaermeerzeuger;
 	}
 
 	public String getBrennstoff() {

@@ -54,7 +54,7 @@ public interface AuftragManager {
 	 * @param auftragsNummer
 	 * @return
 	 */	
-	public Auftrag findByAuftragsNummer(Integer auftragsNummer)throws Exception;
+	public Auftrag findById(Integer auftragsNummer)throws Exception;
 	
 	/**
 	 * Liefert alle Aufträge zurück.

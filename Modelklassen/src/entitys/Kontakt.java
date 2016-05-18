@@ -28,7 +28,7 @@ import javax.persistence.NamedQuery;
 	@NamedQuery(name = "Kontakt.findByNameVorname", query = "SELECT k FROM Kontakt k WHERE k.name=:name AND k.vorname=:vorname"),
 	@NamedQuery(name = "Kontakt.findByOrt", query = "SELECT k FROM Kontakt k WHERE k.ort=:ort"),
 	@NamedQuery(name = "Kontakt.findByRolleExtern", query = "SELECT k FROM Kontakt k WHERE k.rolleExtern=:rolleExtern"),
-	@NamedQuery(name = "Kontakt.findById", query = "SELECT k FROM Kontakt k WHERE k.idKontakt=:idKontakt"),
+	@NamedQuery(name = "Kontakt.findById", query = "SELECT k FROM Kontakt k WHERE k.id=:id"),
 	@NamedQuery(name = "Kontakt.findByStrasse", query = "SELECT k FROM Kontakt k WHERE k.strasse=:strasse")
 })
 public class Kontakt implements Serializable{
@@ -37,7 +37,7 @@ public class Kontakt implements Serializable{
 
 	@Id
 	@GeneratedValue
-	private Integer idKontakt;
+	private Integer id;
 
 	private String vorname;
 
@@ -71,11 +71,11 @@ public class Kontakt implements Serializable{
 
 	//getter&setter********************************************************
 	public Integer getId() {
-		return idKontakt;
+		return id;
 	}
 
 	public void setId(Integer id) {
-		this.idKontakt = id;
+		this.id = id;
 	}
 
 	public String getVorname() {

@@ -142,17 +142,17 @@ public class AuftragDAOTest {
 
 	
 //	>>wirft auch noch fehler irgendwas wegen dem idAuftragsnummer referenvariable
-//	@Test
-//	public void testDeleteById() throws Exception {
-//		
-//		List<Auftrag> auftragsListe = auftragDAO.findAllAuftrag();
-//		assertTrue(auftragsListe.size() == 3);
-//
-//		auftragDAO.deleteAuftragById(auftragsListe.get(0).getAuftragsNummer());
-//
-//		auftragsListe = auftragDAO.findAllAuftrag();
-//		assertTrue(auftragsListe.size() == 2);
-//	}
+	@Test
+	public void testDeleteById() throws Exception {
+		
+		List<Auftrag> auftragsListe = auftragDAO.findAllAuftrag();
+		assertTrue(auftragsListe.size() == 3);
+
+		auftragDAO.deleteAuftragById(auftragsListe.get(0).getAuftragsNummer());
+
+		auftragsListe = auftragDAO.findAllAuftrag();
+		assertTrue(auftragsListe.size() == 2);
+	}
 	
 
 	public static List<Auftrag> init() throws Exception {

@@ -47,7 +47,7 @@ public class AuftragROImpl extends UnicastRemoteObject implements AuftragRO {
 	@Override
 	public Auftrag findByAuftragsNummer(Integer auftragsNummer)
 			throws Exception {
-		return auftragManager.findByAuftragsNummer(auftragsNummer);
+		return auftragManager.findById(auftragsNummer);
 	}
 
 	@Override

@@ -23,7 +23,7 @@ import javax.persistence.OneToOne;
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "Liegenschaft.findById", query = "SELECT l FROM Liegenschaft l WHERE l.idLiegenschaft=:idLiegenschaft"),
+	@NamedQuery(name = "Liegenschaft.findById", query = "SELECT l FROM Liegenschaft l WHERE l.id=:id"),
 	@NamedQuery(name = "Liegenschaft.findByKontakt", query = "SELECT l FROM Liegenschaft l WHERE l.kontakt=:kontakt"),
 	@NamedQuery(name = "Liegenschaft.findByOrt", query = "SELECT l FROM Liegenschaft l WHERE l.ort=:ort"),
 	@NamedQuery(name = "Liegenschaft.findByStrasse", query = "SELECT l FROM Liegenschaft l WHERE l.strasse=:strasse"),
@@ -34,7 +34,7 @@ public class Liegenschaft implements Serializable{
 
 	@Id
 	@GeneratedValue
-	private Integer idLiegenschaft;
+	private Integer id;
 	
 	@ManyToOne
 	private Kontakt kontakt;	
@@ -90,11 +90,11 @@ public class Liegenschaft implements Serializable{
 
 	//getter&setter********************************************************
 	public Integer getIdLiegenschaft() {
-		return idLiegenschaft;
+		return id;
 	}
 
 	public void setIdLiegenschaft(Integer idLiegenschaft) {
-		this.idLiegenschaft = idLiegenschaft;
+		this.id = idLiegenschaft;
 	}
 
 	public Kontakt getKontakt() {
