@@ -50,7 +50,7 @@ public class MitarbeiterBearbeiten {
 	}
 
 	public static void bekommeMitarbeiter(Mitarbeiter mabearbeitet) {
-ändern = mabearbeitet;
+		ändern = mabearbeitet;
 		name = mabearbeitet.getName().toString();
 		vorname = mabearbeitet.getVorname();
 		strasse = mabearbeitet.getStrasse();
