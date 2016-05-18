@@ -1,10 +1,19 @@
 package application.view.mitarbeiter;
 
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+
+import entitys.Mitarbeiter;
+import entitys.Ort;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import rmi.MitarbeiterRO;
+import rmi.OrtRO;
 
 /**
  * Dies ist die Dokumentation der Klasse MitarbeiterErfassen. Hier können neue
@@ -17,6 +26,9 @@ import javafx.stage.Stage;
 
 public class MitarbeiterErfassen {
 
+	MitarbeiterRO  MitarbeiterRO;
+	OrtRO OrtRO;
+
 	@FXML
 	private TextField txtName, txtVorname, txtOrt, txtRolle, txtLohn, txtEmail, txtTelefonNr, txtStrasse;
 
@@ -26,10 +38,39 @@ public class MitarbeiterErfassen {
 	@FXML
 	private Pane leaf;
 
+	public void initialize(){
+		/* SecurityManager zusätzlich
+		System.setProperty("java.security.policy", "MitarbeiterRO.policy");
+
+		System.setSecurityManager(new SecurityManager());
+*/
+
+
+		String url = "rmi://192.168.43.4:10099/";
+		String MitarbeiterROName = "Mitarbeiter";
+		String OrtROName = "Ort";
+
+
+
+		try {
+			this.MitarbeiterRO = (MitarbeiterRO) Naming.lookup(url + MitarbeiterROName);
+			this.OrtRO = (OrtRO) Naming.lookup(url + OrtROName);
+			System.out.println("yeah au das fonzt");
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			e.printStackTrace();
+		}
+	}
+
 	/**
 	 * Diese Methode speichert einen Mitarbeier.
 	 */
 	public void mitarbeiterSpeichern() {
+
+
 
 		String name = txtName.getText();
 		String vorname = txtVorname.getText();
@@ -49,19 +90,26 @@ public class MitarbeiterErfassen {
 		} else {
 			// Parsen erst nach der Überprüfung da sonst die isEmpty() Methode
 			// nicht vorhanden ist
+
+			// Neue Variabeln für das Parsen
+			int rolleint = 0, lohnint = 0;
+
 			try {
-				Integer.parseInt(rolle);
-				Float.parseFloat(lohn);
-				Integer.parseInt(telefonnr);
+				rolleint = Integer.parseInt(rolle);
+				lohnint = Integer.parseInt(lohn);
 			} catch (Exception e) {
 				lblRueckmeldung.setText("Parsen hat fehlgeschlagen");
 			}
 
-			/*---------
-			Mitarbeiter newmitarbeiter = createMitarbeiter(String name, String vorname,String strasse,String ort,
-					int rolle, Float lohn, String email, int telefonnr);
-			//this.MitarbeiterRO.add(newmitarbeiter);
-			*********/
+
+			Mitarbeiter newmitarbeiter = createMitarbeiter(name,vorname,strasse,ort,
+					rolleint,lohnint,email,telefonnr);
+			try {
+				this.MitarbeiterRO.add(newmitarbeiter);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
 		}
 	}
 
@@ -98,9 +146,9 @@ public class MitarbeiterErfassen {
 	 * @return Ein neues Mitarbeiterobjekt
 	 */
 
-	/*-----------------
-	private Mitarbeiter createMitarbeiter(String name, String vorname, String strasse, String plz, String ort,
-			int rolle, Float lohn, String email, int telefonnr){
+
+	private Mitarbeiter createMitarbeiter(String name, String vorname, String strasse, String ort,
+			int rolle, int lohn, String email, String telefonnr){
 		//Exception werfen? bei Referenzprojekt hat ers gemacht
 
 		Mitarbeiter mitarbeiter = new Mitarbeiter();
@@ -108,20 +156,18 @@ public class MitarbeiterErfassen {
 		mitarbeiter.setName(name);
 		mitarbeiter.setVorname(vorname);
 		mitarbeiter.setRolleIntern(rolle);
-		mitarbeiter.setStrasseInklNr(strasse);
+		mitarbeiter.setStrasse(strasse);
 		mitarbeiter.setLohn(lohn);
 		mitarbeiter.setEmail(email);
 		mitarbeiter.setTel(telefonnr);
 
-		Ort ortschaft = new Ort();
-		ortschaft.setOrt(ort);
-		int plz = FindPlzbyOrt(ort);
-		ortschaft.setPlz(plz);
+	//	Ort ortschaft = OrtRO.findByOrtBez(ort).get(0);
 
-		mitarbeiter.setAdresse(ortschaft);
+
+		//mitarbeiter.setOrt(ortschaft);
 
 
 		return mitarbeiter;
 	}
-	************/
+
 }

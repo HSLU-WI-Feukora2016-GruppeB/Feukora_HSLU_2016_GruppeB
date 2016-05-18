@@ -89,15 +89,29 @@ public class AuftragDAOTest {
 		assertTrue(aList.size() == 2);
 		
 	}
-
-
 	
-//	@Test
-//	public void testSave() throws Exception {
-//
-//		//TODO
-//
-//	}
+	@Test
+	public void testSaveAuftrag() throws Exception {
+		
+		Benutzer b = new Benutzer("muster", "test");
+		Brenner br = new Brenner(1, "lalala33", 2017);
+		Waermeerzeuger w = new Waermeerzeuger(2, "lilalal", 2012);
+		Feuerungsanlage f = new Feuerungsanlage(br, w);
+		Ort o = new Ort(8000, "Zürich");
+		Kontakt k = new Kontakt("Peter", "Musti", "TheStreet 1", o, "0000000000", "t.t@gmail.com", 1);
+		Liegenschaft l = new Liegenschaft(k, "Added", "Test 456", o, f);
+		Messung m = new Messung(new GregorianCalendar(2077, 7, 3), 4, 8, false, 4, 500, 60, 120, 3, 5);
+		Mitarbeiter ma = new Mitarbeiter("Tini", "Little", "Kleinstrasse 1", o, "9999999999", "test@feukora.ch", 1, b, 5000, new GregorianCalendar(2099, 05, 1), new GregorianCalendar(2088, 8, 11));
+		Auftrag a = new Auftrag(k, l, m, m, m, m, ma, new GregorianCalendar(2066, 9, 11), 2, 2);
+		
+		try {
+			auftragDAO.saveAuftrag(a);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		List<Auftrag> auftragListe = auftragDAO.findAllAuftrag();
+		assertTrue(auftragListe.size() == 3);
+	}
 
 	@Test
 	public void testUpdate() throws Exception {
@@ -138,8 +152,6 @@ public class AuftragDAOTest {
 
 	}
 
-	
-//	>>wirft auch noch fehler irgendwas wegen dem idAuftragsnummer referenvariable
 	@Test
 	public void testDeleteById() throws Exception {
 		

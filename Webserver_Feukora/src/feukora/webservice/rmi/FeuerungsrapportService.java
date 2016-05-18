@@ -13,16 +13,18 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
-import entitäten.Auftrag;
-import entitäten.Benutzer;
-import entitäten.Brenner;
-import entitäten.Feuerungsanlage;
-import entitäten.Kontakt;
-import entitäten.Liegenschaft;
-import entitäten.Messung;
-import entitäten.Mitarbeiter;
-import entitäten.Ort;
-import entitäten.Waermeerzeuger;
+import entitys.*;
+
+//import entitäten.Auftrag;
+//import entitäten.Benutzer;
+//import entitäten.Brenner;
+////import entitäten.Feuerungsanlage;
+//import entitäten.Kontakt;
+//import entitäten.Liegenschaft;
+//import entitäten.Messung;
+//import entitäten.Mitarbeiter;
+//import entitäten.Ort;
+//import entitäten.Waermeerzeuger;
 
 /**
  * Interface für Feuerungsrapport-System als Webservice.
@@ -134,8 +136,8 @@ public interface FeuerungsrapportService {
 	@WebMethod
 	List<Auftrag> findAuftragByDateAndMitarbeiter(
 			@WebParam(name = "startdatum") GregorianCalendar startdatum,
-			@WebParam(name = "mitarbeiter") GregorianCalendar enddatum,
-			Mitarbeiter mitarbeiter);
+			@WebParam(name = "enddatum") GregorianCalendar enddatum,
+			@WebParam(name = "mitarbeiter") Mitarbeiter mitarbeiter) throws Exception;
 
 	/**
 	 * Liefert eine Auftragsliste anhand der gesuchten Liegenschaften.
@@ -199,7 +201,8 @@ public interface FeuerungsrapportService {
 	 * @return
 	 */
 	@WebMethod
-	List<Benutzer> findBenutzerByPassword(
+	List<Benutzer> findBenutzerByUsernamePassword(
+			@WebParam(name = "username") String username,
 			@WebParam(name = "password") String password) throws Exception;
 
 	// -----------------------------------------------------------------------------------------------
