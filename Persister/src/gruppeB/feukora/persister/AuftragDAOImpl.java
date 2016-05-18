@@ -139,8 +139,8 @@ public class AuftragDAOImpl implements AuftragDAO {
 		TypedQuery<Auftrag> tQuery = em.createNamedQuery(
 				"Auftrag.findByDatumAndMitarbeiter", Auftrag.class);
 
-		tQuery.setParameter("startdatum", startdatum.getTime());
-		tQuery.setParameter("enddatum", enddatum.getTime());
+		tQuery.setParameter("startdatum", startdatum);
+		tQuery.setParameter("enddatum", enddatum);
 		tQuery.setParameter("mitarbeiter", mitarbeiter);
 
 		List<Auftrag> auftragsListe = tQuery.getResultList();

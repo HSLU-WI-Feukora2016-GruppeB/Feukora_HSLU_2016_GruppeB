@@ -81,6 +81,21 @@ public class AuftragDAOTest {
 	}
 	
 	/**
+	 * Testet die Methode {@link AuftragDAOImpl#findByMitarbeiter(Mitarbeiter)
+	 * @throws Exception
+	 */
+	@Test
+	public void testFindByMitarbeiter() throws Exception {
+		
+		Mitarbeiter ma = mitarbeiterDAO.findMitarbeiterByName("Raneri").get(0);
+		List<Auftrag> al = auftragDAO.findByMitarbeiter(ma);
+		
+		assertNotNull(al);
+		
+		assertTrue(al.size() == 0);
+	}
+	
+	/**
 	 * Testet die Methode {@link AuftragDAOImpl#findByDatum(GregorianCalendar)}
 	 * @throws Exception
 	 */
@@ -96,6 +111,21 @@ public class AuftragDAOTest {
 	}
 
 	/**
+	 * Testet die Methode {@link AuftragDAOImpl#findByKontakt(Kontakt)
+	 * @throws Exception
+	 */
+	@Test
+	public void testFindByKontakt() throws Exception {
+		
+		Kontakt k = kontaktDAO.findKontaktByName("Meyer").get(0);
+		List<Auftrag> al = auftragDAO.findByKontakt(k);
+		
+		assertNotNull(al);
+		
+		assertTrue(al.size() == 1);
+	}
+	
+	/**
 	 * Testet die Methode {@link AuftragDAOImpl#findByLiegenschaft(Liegenschaft)}
 	 * @throws Exception
 	 */
@@ -110,24 +140,42 @@ public class AuftragDAOTest {
 		
 	}
 	
-//	/**
-//	 * Testet die Methode {@link AuftragDAOImpl#findAuftragByDateAndMitarbeiterAndZeitslot(GregorianCalendar, Mitarbeiter, int)}
-//	 * @throws Exception
-//	 */
-//	@Test
-//	public void testFindByDatumAndMitarbeiterAndZeitslot() throws Exception {
-//		
-//		GregorianCalendar d = new GregorianCalendar(2016, 9, 11);
-//		Mitarbeiter m = mitarbeiterDAO.findMitarbeiterByNameVorname("Stirnimann", "Dominik").get(0);
-//		int z = 2;
-//		assertNotNull(d);
-//		assertNotNull(m);
-//		assertNotNull(z);
-//		
-//		Auftrag auftrag = auftragDAO.findAuftragByDateAndMitarbeiterAndZeitslot(d, m, z);
-//		assertNotNull(auftrag);
-//		
-//	}
+
+	/**
+	 * Testet die Methode {@link AuftragDAOImpl#findByDatumAndMitarbeiter(GregorianCalendar, GregorianCalendar, Mitarbeiter)}
+	 */
+	@Test
+	public void testFindByDatumAndMitarbeiter() throws Exception {
+		GregorianCalendar ds = new GregorianCalendar(2016, 05, 1);
+		GregorianCalendar de = new GregorianCalendar(2018, 10, 11);
+		Mitarbeiter m = mitarbeiterDAO.findMitarbeiterByNameVorname("Stirnimann", "Dominik").get(0);
+
+		assertNotNull(ds);
+		assertNotNull(de);
+		assertNotNull(m);
+		
+		List<Auftrag> auftraege = auftragDAO.findByDatumAndMitarbeiter(ds, de, m);
+		assertTrue(auftraege.size() == 1);
+	}
+	 
+	/**
+	 * Testet die Methode {@link AuftragDAOImpl#findAuftragByDateAndMitarbeiterAndZeitslot(GregorianCalendar, Mitarbeiter, int)}
+	 * @throws Exception
+	 */
+	@Test
+	public void testFindByDatumAndMitarbeiterAndZeitslot() throws Exception {
+		
+		GregorianCalendar d = new GregorianCalendar(2016, 9, 18);
+		Mitarbeiter m = mitarbeiterDAO.findMitarbeiterByNameVorname("Stirnimann", "Dominik").get(0);
+		int z = 1;
+		assertNotNull(d);
+		assertNotNull(m);
+		assertNotNull(z);
+		
+		Auftrag auftrag = auftragDAO.findAuftragByDateAndMitarbeiterAndZeitslot(d, m, z);
+		assertNotNull(auftrag);
+		
+	}
 	
 	/**
 	 * Testet die Methode {@link AuftragDAOImpl#updateAuftrag(Auftrag)}
