@@ -1,11 +1,13 @@
 package application.view.mitarbeiter;
 
 import entitys.Mitarbeiter;
+import entitys.Ort;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import rmi.OrtRO;
 
 /**
  * Dies ist die Dokumentation der Klasse MitarbeiterErfassen. Hier können neue
@@ -15,6 +17,8 @@ import javafx.stage.Stage;
  * @version 4.0
  * @since 1.0
  */
+
+
 public class MitarbeiterBearbeiten {
 
 	@FXML
@@ -35,7 +39,7 @@ public class MitarbeiterBearbeiten {
 	static String telefon;
 	static String lohn2;
 
-	static Mitarbeiter ändern;
+	static Mitarbeiter maupdate;
 
 	public void initialize() {
 		txtName.setText(name);
@@ -50,7 +54,10 @@ public class MitarbeiterBearbeiten {
 	}
 
 	public static void bekommeMitarbeiter(Mitarbeiter mabearbeitet) {
-		ändern = mabearbeitet;
+		maupdate = mabearbeitet;
+
+//		ändern = mabearbeitet;
+
 		name = mabearbeitet.getName().toString();
 		vorname = mabearbeitet.getVorname();
 		strasse = mabearbeitet.getStrasse();
@@ -66,7 +73,7 @@ public class MitarbeiterBearbeiten {
 	/**
 	 * Diese Methode speichert einen Mitarbeier.
 	 */
-	public void mitarbeiterSpeichern() {
+	public void mitarbeiterUpdate() {
 
 		String name = txtName.getText();
 		String vorname = txtVorname.getText();
@@ -86,19 +93,22 @@ public class MitarbeiterBearbeiten {
 		} else {
 			// Parsen erst nach der Überprüfung da sonst die isEmpty() Methode
 			// nicht vorhanden ist
+
+			// Neue Variabeln für das Parsen
+			int rolleint = 0, lohnint = 0;
+
 			try {
 				Integer.parseInt(rolle);
 				Integer.parseInt(lohn);
-				Integer.parseInt(telefonnr);
 			} catch (Exception e) {
 				lblRueckmeldung.setText("Parsen hat fehlgeschlagen");
 			}
 
-			/*---------
-			Mitarbeiter newmitarbeiter = createMitarbeiter(String name, String vorname,String strasse,String ort,
-					int rolle, Float lohn, String email, int telefonnr);
-			//this.MitarbeiterRO.update(newmitarbeiter);
-			*********/
+
+			Mitarbeiter updatemitarbeiter = createMitarbeiter(name, vorname,strasse, ort,
+					rolleint,lohnint, email,telefonnr);
+			//this.MitarbeiterRO.update(updatemitarbeiter);
+
 		}
 	}
 
@@ -135,31 +145,29 @@ public class MitarbeiterBearbeiten {
 	 * @return Ein neues Mitarbeiterobjekt
 	 */
 
-	/*-----------------
-	private Mitarbeiter createMitarbeiter(String name, String vorname, String strasse, String plz, String ort,
-			int rolle, Float lohn, String email, int telefonnr){
+
+	private Mitarbeiter createMitarbeiter(String name, String vorname, String strasse, String ort,
+			int rolle, int lohn, String email, String telefonnr){
 		//Exception werfen? bei Referenzprojekt hat ers gemacht
 
-		Mitarbeiter mitarbeiter = new Mitarbeiter();
-
-		mitarbeiter.setName(name);
-		mitarbeiter.setVorname(vorname);
-		mitarbeiter.setRolleIntern(rolle);
-		mitarbeiter.setStrasseInklNr(strasse);
-		mitarbeiter.setLohn(lohn);
-		mitarbeiter.setEmail(email);
-		mitarbeiter.setTel(telefonnr);
-
-		Ort ortschaft = new Ort();
-		ortschaft.setOrt(ort);
-		int plz = FindPlzbyOrt(ort);
-		ortschaft.setPlz(plz);
-
-		mitarbeiter.setAdresse(ortschaft);
 
 
-		return mitarbeiter;
+		maupdate.setName(name);
+		maupdate.setVorname(vorname);
+		maupdate.setRolleIntern(rolle);
+		maupdate.setStrasse(strasse);
+		maupdate.setLohn(lohn);
+		maupdate.setEmail(email);
+		maupdate.setTel(telefonnr);
+
+//		Ort ortschaft = OrtRO.findByOrtBez(ort);
+
+
+//		maupdate.setOrt(ortschaft);
+
+
+		return maupdate;
 	}
-	************/
+
 
 }

@@ -184,6 +184,12 @@ public class Auftrag implements Serializable {
 		this.datum = datum;
 	}
 
+	/**
+	 * Gibt Terminarten für Termine:
+	 * 1 == Routinekontrolle
+	 * 2 == Abnahmekontrolle
+	 * @return
+	 */
 	public String getTerminArt() {
 
 		String terminA = null;
@@ -200,10 +206,24 @@ public class Auftrag implements Serializable {
 		return terminA;
 	}
 
+	/**
+	 * Setzt Terminarten für Termine:
+	 * 1 == Routinekontrolle
+	 * 2 == Abnahmekontrolle
+	 * @return
+	 */
 	public void setTerminArt(int terminArt) {
 		this.terminArt = terminArt;
 	}
 
+	/**
+	 * Gibt Zeitslots für Termine:
+	 * 1==8-10Uhr
+	 * 2==10-12Uhr
+	 * 3==13-15Uhr
+	 * 4==15-17Uhr
+	 * @return
+	 */
 	public int getZeitSlot() {
 		return zeitSlot;
 	}
@@ -229,6 +249,14 @@ public class Auftrag implements Serializable {
 		return termin;
 	}
 
+	/**
+	 * Setzt Zeitslots für Termine:
+	 * 1==8-10Uhr
+	 * 2==10-12Uhr
+	 * 3==13-15Uhr
+	 * 4==15-17Uhr
+	 * @return
+	 */
 	public void setZeitSlot(int zeitSlot) {
 		this.zeitSlot = zeitSlot;
 	}

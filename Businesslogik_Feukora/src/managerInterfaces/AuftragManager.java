@@ -10,39 +10,45 @@ import entitys.Mitarbeiter;
 
 /**
  * Verwaltet einen Auftrag und alle Funktionen.
+ * 
  * @author Olivia
  * @version 1.0
  * @since 1.0
  *
  */
 public interface AuftragManager {
-	
+
 	/**
-	 * Speichert einen Auftrag.
+	 * Speichert einen Auftrag. Und überprüft ob ein Mitarbeiter nur einen
+	 * Termin pro Zeitslot hat, ansonsten wird dieser verweigert.
+	 * 
 	 * @param entity
 	 * @return
 	 * @throws Exception
 	 */
 	public Auftrag add(Auftrag entity) throws Exception;
-	
+
 	/**
 	 * Passt den übergebenen Auftrag an.
+	 * 
 	 * @param entity
 	 * @return
 	 * @throws Exception
 	 */
 	public Auftrag update(Auftrag entity) throws Exception;
-	
+
 	/**
 	 * Löscht den übergebenen Auftrag.
+	 * 
 	 * @param entity
 	 * @return
 	 * @throws Exception
 	 */
 	public void delete(Auftrag entity) throws Exception;
-	
+
 	/**
 	 * Löscht den übergebenen Auftrag mithilfe der auftragsnummer.
+	 * 
 	 * @param auftragsNummer
 	 * @return
 	 * @throws Exception
@@ -51,70 +57,76 @@ public interface AuftragManager {
 
 	/**
 	 * Liefert eine Auftragsliste anhand der gesuchten Auftrags-Nummer.
+	 * 
 	 * @param auftragsNummer
 	 * @return
-	 */	
-	public Auftrag findById(Integer auftragsNummer)throws Exception;
-	
+	 */
+	public Auftrag findById(Integer auftragsNummer) throws Exception;
+
 	/**
 	 * Liefert alle Aufträge zurück.
+	 * 
 	 * @return
 	 */
-	public List<Auftrag> findAll()throws Exception;
-	
+	public List<Auftrag> findAll() throws Exception;
+
 	/**
 	 * Liefert eine Auftragliste anhand des gesuchten Terminsdatums.
+	 * 
 	 * @param datum
 	 * @return
 	 */
-	public List<Auftrag> findByDatum(GregorianCalendar datum)throws Exception;
-	
+	public List<Auftrag> findByDatum(GregorianCalendar datum) throws Exception;
+
 	/**
 	 * Liefert eine Auftragsliste anhand des gesuchten Mitarbeiter.
+	 * 
 	 * @param mitarbeiter
 	 * @return
 	 */
-	public List<Auftrag> findByMitarbeiter(Mitarbeiter mitarbeiter)throws Exception;
-	
+	public List<Auftrag> findByMitarbeiter(Mitarbeiter mitarbeiter)
+			throws Exception;
+
 	/**
-	 * Liefert eine Auftragsliste anhand des gesuchten Mitarbeiter 
-	 * für eine bestimmte Arbeitswoche.
+	 * Liefert eine Auftragsliste anhand des gesuchten Mitarbeiter für eine
+	 * bestimmte Arbeitswoche.
+	 * 
 	 * @param startdatum
 	 * @param enddatum
 	 * @param mitarbeiter
 	 * @return
 	 */
-	public List<Auftrag> findByDateAndMitarbeiter(GregorianCalendar startdatum, GregorianCalendar enddatum, Mitarbeiter mitarbeiter) throws Exception;
-	
+	public List<Auftrag> findByDateAndMitarbeiter(GregorianCalendar startdatum,
+			GregorianCalendar enddatum, Mitarbeiter mitarbeiter)
+			throws Exception;
+
 	/**
-	 * Liefert eine Auftragsliste anhand des gesuchten Mitarbeiter 
-	 * für ein bestimmtes Datum und ZeitSlot.
+	 * Liefert eine Auftragsliste anhand des gesuchten Mitarbeiter für ein
+	 * bestimmtes Datum und ZeitSlot.
+	 * 
 	 * @param startdatum
 	 * @param zeitSlot
 	 * @param mitarbeiter
 	 * @return
 	 */
-	public Auftrag findByDateAndMitarbeiterAndZeitslot(GregorianCalendar datum, 
+	public Auftrag findByDateAndMitarbeiterAndZeitslot(GregorianCalendar datum,
 			Mitarbeiter mitarbeiter, int zeitSlot) throws Exception;
-	
+
 	/**
 	 * Liefert eine Auftragsliste anhand des gesuchten Kontakts.
+	 * 
 	 * @param kontakt
 	 * @return
 	 */
-	public List<Auftrag> findByKontakt(Kontakt kontakt)throws Exception;
-	
+	public List<Auftrag> findByKontakt(Kontakt kontakt) throws Exception;
+
 	/**
 	 * Liefert eine Auftragsliste anhand der gesuchten Liegenschaften.
+	 * 
 	 * @param liegenschaftOrt
 	 * @return
 	 */
-	public List<Auftrag> findByLiegenschaft(Liegenschaft liegenschaft)throws Exception;
+	public List<Auftrag> findByLiegenschaft(Liegenschaft liegenschaft)
+			throws Exception;
 
-	
-
-
-	
-
-	
 }

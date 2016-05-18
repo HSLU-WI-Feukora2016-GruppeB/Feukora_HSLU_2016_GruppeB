@@ -34,17 +34,26 @@ public class AuftragManagerImpl implements AuftragManager {
 		if (entity.getAuftragsNummer() == null) {
 
 			checkMessungByGrenzwerte(entity);
+			checkTerminProMitarbeiter(entity);
 
-			// nach check Grenzwert wird das Auftragsobjekt gespeichert, und
-			// weil Messungen Cascade die auch gleich. Messungen müssen nicht
-			// nochmal separat gespeicheret werden.
 			auftragDAO.saveAuftrag(entity);
+		
 			return entity;
 
 		} else {
 			throw new Exception(
 					"Entity ist bereits in der Datenbank vorhanden (Id = "
 							+ entity.getAuftragsNummer().intValue() + ")");
+		}
+	}
+
+	private void checkTerminProMitarbeiter(Auftrag entity){
+		try{
+			return;
+			//TODO
+		} catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("Der Mitarbeiter hat an diesem Tag und zu dieser Zeit bereits einen Termin.");
 		}
 	}
 

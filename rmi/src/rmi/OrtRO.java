@@ -47,7 +47,7 @@ public interface OrtRO extends Remote {
 	 * @param plz
 	 * @throws Exception
 	 */
-	public void deleteById(Integer plz) throws Exception;
+	public void deleteById(Integer id) throws Exception;
 
 	/**
 	 * Liefert einen Ort anhand der gesuchten Id.
@@ -55,7 +55,7 @@ public interface OrtRO extends Remote {
 	 * @param plz
 	 * @return
 	 */
-	public Ort findById(Integer idOrt) throws Exception;
+	public Ort findById(Integer id) throws Exception;
 
 	/**
 	 * Liefert einen Ort anhand der gesuchten Ortsbezeichnung.
