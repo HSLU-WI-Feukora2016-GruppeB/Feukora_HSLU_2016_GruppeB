@@ -88,44 +88,44 @@ public class AuftragManagerImpl implements AuftragManager {
 	}
 
 	@Override
-	public Auftrag findByAuftragsNummer(Integer auftragsNummer) {
-		return auftragDAO.findAuftragByAuftragsNummer(auftragsNummer);
+	public Auftrag findById(Integer idAuftrag) throws Exception {
+		return auftragDAO.findAuftragById(idAuftrag);
 	}
 
 	@Override
-	public List<Auftrag> findAll() {
+	public List<Auftrag> findAll() throws Exception {
 		return auftragDAO.findAllAuftrag();
 	}
 
 	@Override
-	public List<Auftrag> findByDatum(GregorianCalendar datum) {
+	public List<Auftrag> findByDatum(GregorianCalendar datum) throws Exception {
 		return auftragDAO.findByDatum(datum);
 	}
 
 	@Override
-	public List<Auftrag> findByMitarbeiter(Mitarbeiter mitarbeiter) {
+	public List<Auftrag> findByMitarbeiter(Mitarbeiter mitarbeiter) throws Exception {
 		return auftragDAO.findByMitarbeiter(mitarbeiter);
 	}
 
 	@Override
 	public List<Auftrag> findByDateAndMitarbeiter(GregorianCalendar startdatum,
-			GregorianCalendar enddatum, Mitarbeiter mitarbeiter) {
+			GregorianCalendar enddatum, Mitarbeiter mitarbeiter) throws Exception {
 		return auftragDAO.findByDatumAndMitarbeiter(startdatum, enddatum, mitarbeiter);
 	}
 
 	@Override
 	public Auftrag findByDateAndMitarbeiterAndZeitslot(GregorianCalendar datum,
-			Mitarbeiter mitarbeiter, int zeitSlot) {
+			Mitarbeiter mitarbeiter, int zeitSlot) throws Exception {
 		return auftragDAO.findAuftragByDateAndMitarbeiterAndZeitslot(datum, mitarbeiter, zeitSlot);
 	}
 
 	@Override
-	public List<Auftrag> findByKontakt(Kontakt kontakt) {
+	public List<Auftrag> findByKontakt(Kontakt kontakt) throws Exception {
 		return auftragDAO.findByKontakt(kontakt);
 	}
 
 	@Override
-	public List<Auftrag> findByLiegenschaft(Liegenschaft liegenschaft) {
+	public List<Auftrag> findByLiegenschaft(Liegenschaft liegenschaft) throws Exception {
 		return auftragDAO.findByLiegenschaft(liegenschaft);
 	}
 

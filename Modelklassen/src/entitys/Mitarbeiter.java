@@ -34,7 +34,7 @@ import org.eclipse.jdt.annotation.Nullable;
 	@NamedQuery(name = "Mitarbeiter.findByVorname", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.vorname=:vorname"),
 	@NamedQuery(name = "Mitarbeiter.findByNameVorname", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.vorname=:vorname AND ma.name=:name"),
 	@NamedQuery(name = "Mitarbeiter.findByRolleIntern", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.rolleIntern=:rolleIntern"),
-	@NamedQuery(name = "Mitarbeiter.findById", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.idMitarbeiter=:idMitarbeiter"),
+	@NamedQuery(name = "Mitarbeiter.findById", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.id=:id"),
 	@NamedQuery(name = "Mitarbeiter.findByStrasse", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.strasse=:strasse"),
 	@NamedQuery(name = "Mitarbeiter.findByOrt", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.ort=:ort"),
 	@NamedQuery(name = "Mitarbeiter.findByUser", query = "SELECT ma FROM Mitarbeiter ma WHERE ma.user=:user"),
@@ -47,7 +47,7 @@ public class Mitarbeiter implements Serializable{
 	
 	@Id
 	@GeneratedValue
-	private Integer idMitarbeiter;
+	private Integer id;
 	
 	private String vorname;
 	private String name;
@@ -91,11 +91,11 @@ public class Mitarbeiter implements Serializable{
 
 	//getter&setter********************************************************
 	public Integer getIdMitarbeiter() {
-		return idMitarbeiter;
+		return id;
 	}
 
 	public void setIdMitarbeiter(int idMitarbeiter) {
-		this.idMitarbeiter = idMitarbeiter;
+		this.id = idMitarbeiter;
 	}
 
 	public String getVorname() {

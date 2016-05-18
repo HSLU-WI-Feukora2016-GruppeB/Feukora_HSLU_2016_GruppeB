@@ -46,14 +46,14 @@ public class AuftragDAOImpl implements AuftragDAO {
 	}
 
 	@Override
-	public void deleteAuftragById(Integer auftragsNummer) throws Exception {
-		new GenericPersisterImpl<Auftrag>(Auftrag.class).deleteById(auftragsNummer);
+	public void deleteAuftragById(Integer idAuftrag) throws Exception {
+		new GenericPersisterImpl<Auftrag>(Auftrag.class).deleteById(idAuftrag);
 	}
 
 	@Override
-	public Auftrag findAuftragByAuftragsNummer(Integer auftragsNummer) throws Exception {
+	public Auftrag findAuftragById(Integer idAuftrag) throws Exception {
 		return new GenericPersisterImpl<Auftrag>(Auftrag.class)
-				.findById(auftragsNummer);
+				.findById(idAuftrag);
 	}
 
 	@Override

@@ -50,18 +50,18 @@ public interface AuftragDAO {
 	/**
 	 * Löscht die Auftrag-Entity für den übergebenen Id-Wert.
 	 * 
-	 * @param auftragsNummer
+	 * @param idAuftrag
 	 * @throws Exception
 	 */
-	public void deleteAuftragById(Integer auftragsNummer) throws Exception;
+	public void deleteAuftragById(Integer idAuftrag) throws Exception;
 
 	/**
 	 * Liefert die Auftrag-Entity für den übergebenen Id-Wert zurück.
 	 * 
-	 * @param auftragsNummer
+	 * @param idAuftrag
 	 * @return
 	 */
-	public Auftrag findAuftragByAuftragsNummer(Integer auftragsNummer) throws Exception;
+	public Auftrag findAuftragById(Integer idAuftrag) throws Exception;
 
 	/**
 	 * Liefert alle Auftrag-Objekte zurück.

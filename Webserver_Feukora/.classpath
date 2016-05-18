@@ -13,7 +13,8 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/Dominik/Desktop/Programmierung/Businesslogik_Interfaces.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Dominik/Desktop/Programmierung/Modelklassen.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Modelklassen"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/RMI_Schnittstelle"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

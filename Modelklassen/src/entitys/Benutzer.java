@@ -12,7 +12,7 @@ import javax.persistence.*;
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "Benutzer.findById", query = "SELECT b FROM Benutzer b WHERE b.idUser=:idUser"),
+	@NamedQuery(name = "Benutzer.findById", query = "SELECT b FROM Benutzer b WHERE b.id=:id"),
 	@NamedQuery(name = "Benutzer.findByUsername", query = "SELECT b FROM Benutzer b WHERE b.username=:username"),
 	@NamedQuery(name = "Benutzer.findByUsernamePassword", query = "SELECT b FROM Benutzer b WHERE b.username=:username AND b.password=:password")
 })
@@ -22,7 +22,7 @@ public class Benutzer implements Serializable{
 	
 	@Id
 	@GeneratedValue
-	private Integer idUser;
+	private Integer id;
 	
 	private String username;
 	private String password;
@@ -39,11 +39,11 @@ public class Benutzer implements Serializable{
 
 	//getter&setter********************************************************
 	public Integer getIdUser() {
-		return idUser;
+		return id;
 	}
 
 	public void setIdUser(Integer idUser) {
-		this.idUser = idUser;
+		this.id = idUser;
 	}
 
 	public String getUsername() {
