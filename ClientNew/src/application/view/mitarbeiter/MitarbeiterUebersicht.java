@@ -120,6 +120,7 @@ public class MitarbeiterUebersicht{
 		tblPosition.setCellValueFactory(new PropertyValueFactory<>("rolleIntern"));
 		tblTelefon.setCellValueFactory(new PropertyValueFactory<>("tel"));
 
+
 		tabelle.setItems(list2);
 
 
