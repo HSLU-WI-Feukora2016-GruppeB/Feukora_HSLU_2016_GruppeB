@@ -9,16 +9,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import entitys.Auftrag;
-import entitys.Kontakt;
-import entitys.Liegenschaft;
 import entitys.Ort;
-import gruppeB.feukora.persister.AuftragDAOImpl;
 import gruppeB.feukora.persister.OrtDAOImpl;
 
 /**
  * Testet die Funktionalität von OrtDAO.
  * @author Matthias
+ * @author Luca Raneri
  * @version 1.0
  * @since 1.0
  *
@@ -34,6 +31,31 @@ public class OrtDAOTest {
 	
 	@After
 	public void tearDown() throws Exception {
+	}
+	
+	/**
+	 * Dieser Test tested die Methode {@link OrtDAOImpl#updateOrt(Ort)}. 
+	 * @throws Exception
+	 */
+	@Test
+	public void testUpdateOrt() throws Exception {
+		
+		List<Ort> ortsListe = ortDAO.findAllOrt();
+		assertTrue(ortsListe.size() == 7);
+		
+		Ort o = ortDAO.findOrtByBezeichnung("Zürich").get(0);
+		assertNotNull(0);
+		o.setOrtBez("Entenhausen");
+		
+		ortDAO.updateOrt(o);
+		
+		Ort aDB = ortDAO.findOrtByBezeichnung("Entenhausen").get(0);
+		assertNotNull(aDB);
+		assertTrue(aDB.getOrt() != "Zürich");
+		
+		ortsListe = ortDAO.findAllOrt();
+		assertTrue(ortsListe.size() == 7);
+		
 	}
 	
 	/**
@@ -54,8 +76,10 @@ public class OrtDAOTest {
 	@Test
 	public void testFindOrtByBezeichnung() throws Exception {
 		
-		Ort or = ortDAO.findOrtByBezeichnung("Luzern").get(0);
-		assertNotNull(or);
+		String bezeichnung = "Luzern";
+		
+		List<Ort> ortsListe = ortDAO.findOrtByBezeichnung(bezeichnung);
+		assertTrue(ortsListe.size() == 1);
 	
 	}
 	
@@ -101,28 +125,10 @@ public class OrtDAOTest {
 		List<Ort> ortsListe = ortDAO.findAllOrt();
 		assertTrue(ortsListe.size() == 7);
 
-		ortDAO.deleteOrtById(ortsListe.get(0).getPlz());
-		ortsListe = ortDAO.findAllOrt();
-		assertTrue(ortsListe.size() == 6);
-	}
-	
-	/**
-	 * Testet die Methode {@link OrtDAOImpl#updateOrt(Ort)}
-	 * @throws Exception
-	 */
-	@Test
-	public void testUpdate() throws Exception {
-
-		List<Ort> ortsListe = ortDAO.findAllOrt();
-		assertTrue(ortsListe.size() == 7);
-
-		Ort o = ortDAO.findOrtByPlz(5000).get(0);
-		
-		ortDAO.updateOrt(o);
+		ortDAO.deleteOrtById(ortsListe.get(0).getId());
 		
 		ortsListe = ortDAO.findAllOrt();
 		assertTrue(ortsListe.size() == 6);
-
 	}
 	
 	/**
@@ -161,10 +167,6 @@ public class OrtDAOTest {
 	private static void deleteAll() throws Exception {
 
 		deleteAllOrt();
-
-		for(Ort o : ortDAO.findAllOrt()){
-			ortDAO.deleteOrt(o);
-		}
 	}
 
 	/**
