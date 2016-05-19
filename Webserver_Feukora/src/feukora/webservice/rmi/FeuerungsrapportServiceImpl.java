@@ -97,12 +97,12 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 //			Properties props = new Properties();
 //
 //			InputStream is = FeuerungsrapportServiceImpl.class.getClassLoader()
-//					.getResourceAsStream("ws.properties");
+//					.getResourceAsStream("webserver.properties");
 //
 //			props.load(is);
 
-//			hostIp = props.getProperty("rmi.host_ip");
-//			rmiPort = Integer.parseInt(props.getProperty("rmi.port"));
+//			hostIp = props.getProperty("rmi.server_ip");
+//			rmiPort = Integer.parseInt(props.getProperty("rmi.server_port"));
 
 			// URLs definieren
 			String urlAuftragRO = "rmi://" + hostIp + ":" + rmiPort + "/"
@@ -557,17 +557,22 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	}
 
 	@Override
-	public void deleteOrtById(Integer plz) throws Exception {
+	public void deleteOrtById(Integer id) throws Exception {
 	}
 
 	@Override
-	public Ort findOrtById(Integer plz) throws Exception {
-		return ortRO.findById(plz);
+	public Ort findOrtById(Integer id) throws Exception {
+		return ortRO.findById(id);
 	}
 
 	@Override
 	public List<Ort> findOrtByOrtBez(String ortBez) throws Exception {
 		return ortRO.findByOrtBez(ortBez);
+	}
+
+	@Override
+	public List<Ort> findOrtByPlz(int plz) throws Exception {
+		return ortRO.findByOrtPlz(plz);
 	}
 
 	@Override

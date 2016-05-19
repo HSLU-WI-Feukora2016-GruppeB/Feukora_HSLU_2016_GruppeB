@@ -844,7 +844,7 @@ public interface FeuerungsrapportService {
 	 * @throws Exception
 	 */
 	@WebMethod
-	void deleteOrtById(@WebParam(name = "plz") Integer plz) throws Exception;
+	void deleteOrtById(@WebParam(name = "id") Integer idOrt) throws Exception;
 
 	/**
 	 * Liefert einen Ort anhand der gesuchten Id.
@@ -853,7 +853,7 @@ public interface FeuerungsrapportService {
 	 * @return
 	 */
 	@WebMethod
-	Ort findOrtById(@WebParam(name = "plz") Integer plz) throws Exception;
+	Ort findOrtById(@WebParam(name = "id") Integer idOrt) throws Exception;
 
 	/**
 	 * Liefert einen Ort anhand der gesuchten Ortsbezeichnung.
@@ -865,6 +865,16 @@ public interface FeuerungsrapportService {
 	List<Ort> findOrtByOrtBez(@WebParam(name = "ortBez") String ortBez)
 			throws Exception;
 
+	/**
+	 * Liefert einen Ort anhand der gesuchten Ortsbezeichnung.
+	 * 
+	 * @param plz
+	 * @return
+	 */
+	@WebMethod
+	List<Ort> findOrtByPlz(@WebParam(name = "plz") int idOrt)
+	throws Exception;
+	
 	/**
 	 * Liefert alle Benutzer zurück.
 	 * 
