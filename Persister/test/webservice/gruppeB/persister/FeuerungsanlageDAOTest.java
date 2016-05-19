@@ -94,44 +94,44 @@ public class FeuerungsanlageDAOTest {
 
 		Feuerungsanlage f = feuerungsanlageDAO.findAllFeuerungsanlage().get(0);
 		Brenner bNew = brennerDAO.findAllBrenner().get(2);
-		Feuerungsanlage fUpdated = f.setBrenner(bNew);
+		f.setBrenner(bNew);
 		
-		feuerungsanlageDAO.updateFeuerungsanlage(fUpdated);
+		feuerungsanlageDAO.updateFeuerungsanlage(f);
 		
 		assertTrue(feuerungsanlageDAO.findAllFeuerungsanlage().size() == 3);
 	}
 
-//	/**
-//	 * Testet die Methode {@link BrennerDAOImpl#deleteBrenner(Brenner)}
-//	 * @throws Exception
-//	 */
-//	@Test
-//	public void testDelete() throws Exception {
-//
-//		List<Brenner> bListe = brennerDAO.findAllBrenner();
-//		assertTrue(bListe.size() == 3);
-//
-//		brennerDAO.deleteBrenner(bListe.get(0));;
-//
-//		bListe = brennerDAO.findAllBrenner();
-//		assertTrue(bListe.size() == 2);
-//	}
-//
-//	/**
-//	 * Testet die Methode {@link BrennerDAOImpl#deleteBrennerById(Integer)}
-//	 * @throws Exception
-//	 */
-//	@Test
-//	public void testDeleteById() throws Exception {
-//		
-//		List<Brenner> bListe = brennerDAO.findAllBrenner();
-//		assertTrue(bListe.size() == 3);
-//
-//		brennerDAO.deleteBrennerById(bListe.get(0).getId());
-//
-//		bListe = brennerDAO.findAllBrenner();
-//		assertTrue(bListe.size() == 2);
-//	}
+	/**
+	 * Testet die Methode {@link FeuerungsanlageDAOImpl#deleteFeuerungsanlage(Feuerungsanlage)}
+	 * @throws Exception
+	 */
+	@Test
+	public void testDelete() throws Exception {
+
+		List<Feuerungsanlage> fListe = feuerungsanlageDAO.findAllFeuerungsanlage();
+		assertTrue(fListe.size() == 3);
+
+		feuerungsanlageDAO.deleteFeuerungsanlage(fListe.get(0));
+
+		fListe = feuerungsanlageDAO.findAllFeuerungsanlage();
+		assertTrue(fListe.size() == 2);
+	}
+
+	/**
+	 * Testet die Methode {@link FeuerungsanlageDAOImpl#deleteFeuerungsanlageById(Integer)}
+	 * @throws Exception
+	 */
+	@Test
+	public void testDeleteById() throws Exception {
+		
+		List<Feuerungsanlage> fListe = feuerungsanlageDAO.findAllFeuerungsanlage();
+		assertTrue(fListe.size() == 3);
+
+		feuerungsanlageDAO.deleteFeuerungsanlageById(fListe.get(0).getIdFeuerungsanlage());
+
+		fListe = feuerungsanlageDAO.findAllFeuerungsanlage();
+		assertTrue(fListe.size() == 2);
+	}
 	
 	/**
 	 * Initialisiert die Datenbank mit Testwerten
