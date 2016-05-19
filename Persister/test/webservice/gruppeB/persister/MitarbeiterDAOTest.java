@@ -2,11 +2,9 @@ package webservice.gruppeB.persister;
 
 import static org.junit.Assert.*;
 import entitys.Benutzer;
-
 import entitys.Mitarbeiter;
 import entitys.Ort;
 import gruppeB.feukora.persister.BenutzerDAOImpl;
-
 import gruppeB.feukora.persister.MitarbeiterDAOImpl;
 import gruppeB.feukora.persister.OrtDAOImpl;
 
@@ -30,13 +28,22 @@ public class MitarbeiterDAOTest {
 	private static OrtDAOImpl ortDAO = new OrtDAOImpl();
 	private static BenutzerDAOImpl benutzerDAO = new BenutzerDAOImpl();
 	
+	/**
+	 * Initialisiert die Datenbank mit Testwerten.
+	 * @throws Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 		MitarbeiterDAOTest.init();
 	}	
-		
+	
+	/**
+	 * Schliesst Test mit Datenbank ab.
+	 * @throws Exception
+	 */
 	@After
 	public void tearDown() throws Exception {
+		MitarbeiterDAOTest.deleteAll();
 	}
 	
 	/**

@@ -39,6 +39,7 @@ public class FeuerungsanlageDAOTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		FeuerungsanlageDAOTest.deleteAll();
 	}
 
 	/**

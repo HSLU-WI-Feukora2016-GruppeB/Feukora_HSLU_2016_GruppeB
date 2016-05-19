@@ -24,13 +24,22 @@ public class OrtDAOTest {
 
 	private static OrtDAOImpl ortDAO = new OrtDAOImpl();
 	
+	/**
+	 * Initialisiert die Datenbank mit Testwerten.
+	 * @throws Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 		OrtDAOTest.init();
 	}	
 	
+	/**
+	 * Schliesst Test mit Datenbank ab.
+	 * @throws Exception
+	 */
 	@After
 	public void tearDown() throws Exception {
+		OrtDAOTest.deleteAll();
 	}
 	
 	/**
