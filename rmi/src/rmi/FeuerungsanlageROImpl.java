@@ -11,6 +11,16 @@ import entitys.Waermeerzeuger;
 import managerInterfaces.FeuerungsanlageManager;
 import managerKlassen.FeuerungsanlageManagerImpl;
 
+/**
+ * Stellt die Implementierung von Methoden der Schnittstelle FeuerungsanlageRO zur
+ * Verfügung.
+ * 
+ * @author Matthias
+ * @version 1.0
+ * @since 1.0
+ *
+ */
+
 public class FeuerungsanlageROImpl extends UnicastRemoteObject implements FeuerungsanlageRO {
 
 	private static final long serialVersionUID = 798146631432048248L;

@@ -7,6 +7,16 @@ import entitys.Ort;
 import managerInterfaces.OrtManager;
 import managerKlassen.OrtManagerImpl;
 
+/**
+ * Stellt die Implementierung von Methoden der Schnittstelle OrtRO zur
+ * Verfügung.
+ * 
+ * @author Matthias
+ * @version 1.0
+ * @since 1.0
+ *
+ */
+
 public class OrtROImpl extends UnicastRemoteObject implements OrtRO  {
 
 	private static final long serialVersionUID = 8798146929222063776L;

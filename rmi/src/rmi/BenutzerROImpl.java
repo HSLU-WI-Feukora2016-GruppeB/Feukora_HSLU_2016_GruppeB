@@ -8,6 +8,16 @@ import entitys.Benutzer;
 import managerInterfaces.BenutzerManager;
 import managerKlassen.BenutzerManagerImpl;
 
+/**
+ * Stellt die Implementierung von Methoden der Schnittstelle BenutzerRO zur
+ * Verfügung.
+ * 
+ * @author Matthias
+ * @version 1.0
+ * @since 1.0
+ *
+ */
+
 public class BenutzerROImpl extends UnicastRemoteObject implements BenutzerRO {
 
 	private static final long serialVersionUID = -1920906288057625340L;

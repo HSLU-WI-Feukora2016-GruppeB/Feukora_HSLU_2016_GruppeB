@@ -9,6 +9,16 @@ import entitys.Ort;
 import managerInterfaces.LiegenschaftManager;
 import managerKlassen.LiegenschaftManagerImpl;
 
+/**
+ * Stellt die Implementierung von Methoden der Schnittstelle LiegenschaftenRO zur
+ * Verfügung.
+ * 
+ * @author Matthias
+ * @version 1.0
+ * @since 1.0
+ *
+ */
+
 public class LiegenschaftROImpl extends UnicastRemoteObject implements LiegenschaftRO{
 
 	private static final long serialVersionUID = 656212455655526403L;

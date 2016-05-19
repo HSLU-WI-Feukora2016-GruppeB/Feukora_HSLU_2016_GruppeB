@@ -9,6 +9,16 @@ import entitys.Ort;
 import managerInterfaces.KontaktManager;
 import managerKlassen.KontaktManagerImpl;
 
+/**
+ * Stellt die Implementierung von Methoden der Schnittstelle KontaktRO zur
+ * Verfügung.
+ * 
+ * @author Matthias
+ * @version 1.0
+ * @since 1.0
+ *
+ */
+
 public class KontaktROImpl extends UnicastRemoteObject implements KontaktRO{
 
 	private static final long serialVersionUID = -3510032604171544455L;

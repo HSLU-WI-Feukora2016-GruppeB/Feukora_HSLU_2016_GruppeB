@@ -8,7 +8,15 @@ import entitys.Waermeerzeuger;
 import managerInterfaces.WaermeerzeugerManager;
 import managerKlassen.WaermeerzeugerManagerImpl;
 
-
+/**
+ * Stellt die Implementierung von Methoden der Schnittstelle WaermeerzeugerRO zur
+ * Verfügung.
+ * 
+ * @author Matthias
+ * @version 1.0
+ * @since 1.0
+ *
+ */
 
 public class WaermeerzeugerROImpl extends UnicastRemoteObject implements WaermeerzeugerRO {
 

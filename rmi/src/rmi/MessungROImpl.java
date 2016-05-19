@@ -9,6 +9,16 @@ import entitys.Messung;
 import managerInterfaces.MessungsManager;
 import managerKlassen.MessungManagerImpl;
 
+/**
+ * Stellt die Implementierung von Methoden der Schnittstelle MessungRO zur
+ * Verfügung.
+ * 
+ * @author Matthias
+ * @version 1.0
+ * @since 1.0
+ *
+ */
+
 public class MessungROImpl extends UnicastRemoteObject implements MessungRO{
 
 	private static final long serialVersionUID = -4170197917321873446L;

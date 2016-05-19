@@ -11,6 +11,16 @@ import entitys.Ort;
 import managerInterfaces.MitarbeiterManager;
 import managerKlassen.MitarbeiterManagerImpl;
 
+/**
+ * Stellt die Implementierung von Methoden der Schnittstelle MitarbeiterRO zur
+ * Verfügung.
+ * 
+ * @author Matthias
+ * @version 1.0
+ * @since 1.0
+ *
+ */
+
 public class MitarbeiterROImpl extends UnicastRemoteObject implements MitarbeiterRO {
 
 	
