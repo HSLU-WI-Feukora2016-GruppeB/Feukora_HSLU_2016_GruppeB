@@ -63,8 +63,7 @@ public class Ort implements Serializable {
 	
 	@Override
 	public String toString() {
-		return  "PLZ: " + plz + "\n"
-				+ "Ort: " + ortBez + "\n";
+		return  plz + " " + ortBez;
 	}
 	
 }

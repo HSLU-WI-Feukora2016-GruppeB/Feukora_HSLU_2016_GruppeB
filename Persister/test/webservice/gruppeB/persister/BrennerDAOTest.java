@@ -51,7 +51,7 @@ private static BrennerDAOImpl brennerDAO = new BrennerDAOImpl();
 	@Test
 	public void testFindByBaujahr() throws Exception {
 		
-		int bj = 2012;
+		int bj = 2013;
 		List<Brenner> b = brennerDAO.findBrennerByBaujahr(bj);
 		
 		assertNotNull(b);
@@ -71,59 +71,71 @@ private static BrennerDAOImpl brennerDAO = new BrennerDAOImpl();
 		
 		assertTrue(b.size() == 2);
 	}
+	
+	/**
+	 * Testet die Methode {@link BrennerDAOImpl#findBrennerByBrennertyp(String)}
+	 * @throws Exception
+	 */
+	@Test
+	public void testFindByBrennertyp() throws Exception {
+		
+		String bt = "abc123";
+		List<Brenner> b = brennerDAO.findBrennerByBrennertyp(bt);
+		
+		assertTrue(b.size() == 1);
+	}
 
 	
-//	/**
-//	 * Testet die Methode {@link BrennerDAOImpl#}
-//	 * @throws Exception
-//	 */
-//	@Test
-//	public void testUpdate() throws Exception {
-//
-//		List<Brenner> bListe = brennerDAO.findAllBrenner();
-//		assertTrue(bListe.size() == 3);
-//
-//		String pNew = "testibus";
-//		Brenner bUpdated = bListe.get(1);
-//		bUpdated.setPassword(pNew);
-//		
-//		benutzerDAO.updateBenutzer(bUpdated);
-//		
-//		assertTrue(benutzerDAO.findAllBenutzer().size() == 6);
-//	}
-//
-//	/**
-//	 * Testet die Methode {@link BenutzerDAOImpl#deleteBenutzer(Benutzer)}
-//	 * @throws Exception
-//	 */
-//	@Test
-//	public void testDelete() throws Exception {
-//
-//		List<Benutzer> bListe = benutzerDAO.findAllBenutzer();
-//		assertTrue(bListe.size() == 6);
-//
-//		benutzerDAO.deleteBenutzer(bListe.get(0));;
-//
-//		bListe = benutzerDAO.findAllBenutzer();
-//		assertTrue(bListe.size() == 5);
-//
-//	}
-//
-//	/**
-//	 * Testet die Methode {@link BenutzerDAOImpl#deleteBenutzerById(Integer)}
-//	 * @throws Exception
-//	 */
-//	@Test
-//	public void testDeleteById() throws Exception {
-//		
-//		List<Benutzer> bListe = benutzerDAO.findAllBenutzer();
-//		assertTrue(bListe.size() == 6);
-//
-//		benutzerDAO.deleteBenutzerById(bListe.get(0).getIdUser());
-//
-//		bListe = benutzerDAO.findAllBenutzer();
-//		assertTrue(bListe.size() == 5);
-//	}
+	/**
+	 * Testet die Methode {@link BrennerDAOImpl#updateBrenner(Brenner)}
+	 * @throws Exception
+	 */
+	@Test
+	public void testUpdate() throws Exception {
+
+		List<Brenner> bListe = brennerDAO.findAllBrenner();
+		assertTrue(bListe.size() == 3);
+
+		String bNew = "testibus";
+		Brenner bUpdated = bListe.get(1);
+		bUpdated.setBrennerTyp(bNew);;
+		
+		brennerDAO.updateBrenner(bUpdated);
+		
+		assertTrue(brennerDAO.findAllBrenner().size() == 3);
+	}
+
+	/**
+	 * Testet die Methode {@link BrennerDAOImpl#deleteBrenner(Brenner)}
+	 * @throws Exception
+	 */
+	@Test
+	public void testDelete() throws Exception {
+
+		List<Brenner> bListe = brennerDAO.findAllBrenner();
+		assertTrue(bListe.size() == 3);
+
+		brennerDAO.deleteBrenner(bListe.get(0));;
+
+		bListe = brennerDAO.findAllBrenner();
+		assertTrue(bListe.size() == 2);
+	}
+
+	/**
+	 * Testet die Methode {@link BrennerDAOImpl#deleteBrennerById(Integer)}
+	 * @throws Exception
+	 */
+	@Test
+	public void testDeleteById() throws Exception {
+		
+		List<Brenner> bListe = brennerDAO.findAllBrenner();
+		assertTrue(bListe.size() == 3);
+
+		brennerDAO.deleteBrennerById(bListe.get(0).getId());
+
+		bListe = brennerDAO.findAllBrenner();
+		assertTrue(bListe.size() == 2);
+	}
 	
 	/**
 	 * Initialisiert die Datenbank mit Testwerten
@@ -153,8 +165,8 @@ private static BrennerDAOImpl brennerDAO = new BrennerDAOImpl();
 	 */
 	private static void deleteAll() throws Exception {
 
-		for(Benutzer b : benutzerDAO.findAllBenutzer()){
-			benutzerDAO.deleteBenutzer(b);
+		for(Brenner b : brennerDAO.findAllBrenner()){
+			brennerDAO.deleteBrenner(b);;
 		}
 	}
 
