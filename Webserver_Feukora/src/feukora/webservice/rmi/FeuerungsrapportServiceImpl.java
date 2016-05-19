@@ -19,17 +19,18 @@ import javax.jws.WebService;
 import rmi.*;
 import entitys.*;
 
-//import entitäten.Auftrag;
-//import entitäten.Benutzer;
-//import entitäten.Brenner;
-////import entitäten.Feuerungsanlage;
-//import entitäten.Kontakt;
-//import entitäten.Liegenschaft;
-//import entitäten.Messung;
-//import entitäten.Mitarbeiter;
-//import entitäten.Ort;
-//import entitäten.Waermeerzeuger;
-//import managerInterfaces.*;
+/* import entitäten.Auftrag;
+ * import entitäten.Benutzer;
+ * import entitäten.Brenner;
+ * import entitäten.Feuerungsanlage;
+ * import entitäten.Kontakt;
+ * import entitäten.Liegenschaft;
+ * import entitäten.Messung;
+ * import entitäten.Mitarbeiter;
+ * import entitäten.Ort;
+ * import entitäten.Waermeerzeuger;
+ * import managerInterfaces.*;
+ */
 
 /**
  * Diese Klasse implementiert die Konkreten Methoden des
@@ -54,16 +55,6 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	 private OrtRO ortRO;
 	 private WaermeerzeugerRO waermeerzeugerRO;
 
-//	private AuftragManager auftragManager;
-//	private BenutzerManager benutzerManager;
-//	private BrennerManager brennerManager;
-//	private FeuerungsanlageManager feuerungsanlageManager;
-//	private KontaktManager kontaktManager;
-//	private LiegenschaftManager liegenschaftManager;
-//	private MessungsManager messungManager;
-//	private MitarbeiterManager mitarbeiterManager;
-//	private OrtManager ortManager;
-//	private WaermeerzeugerManager waermeerzeugerManager;
 
 	public FeuerungsrapportServiceImpl() throws Exception {
 
@@ -138,7 +129,7 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 			ortRO = (OrtRO) Naming.lookup(urlOrtRO);
 			waermeerzeugerRO = (WaermeerzeugerRO) Naming.lookup(urlWaermeerzeugerRO);
 
-	} catch (Exception e) {
+		} catch (Exception e) {
 		throw e;
 		}
 	}
@@ -159,6 +150,7 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 
 	@Override
 	public void deleteAuftrag(Auftrag entity) throws Exception {
+		auftragRO.delete(entity);
 	}
 
 	@Override
