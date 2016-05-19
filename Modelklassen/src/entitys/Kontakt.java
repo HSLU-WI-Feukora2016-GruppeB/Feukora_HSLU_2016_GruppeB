@@ -98,12 +98,12 @@ public class Kontakt implements Serializable{
 		this.strasse = strasse;
 	}
 
-	public Ort getAdresse() {
+	public Ort getOrt() {
 		return ort;
 	}
 
-	public void setAdresse(Ort adresse) {
-		this.ort = adresse;
+	public void setOrt(Ort ort) {
+		this.ort = ort;
 	}
 
 	public String getTel() {
