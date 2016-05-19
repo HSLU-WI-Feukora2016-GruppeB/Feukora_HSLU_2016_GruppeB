@@ -21,20 +21,20 @@ public class OrtManagerImpl implements OrtManager {
 	@Override
 	public Ort add(Ort entity) throws Exception {
 
-		if (entity.getPlz() == null) {
+		if (entity.getPlz() == 0) {
 			ortDAO.saveOrt(entity);
 			return entity;
 		} else {
 			throw new Exception(
 					"Entity im Datenbestand bereits vorhanden (Id = "
-							+ entity.getPlz().intValue() + ")");
+							+ entity.getPlz() + ")");
 		}
 	}
 
 	@Override
 	public Ort update(Ort entity) throws Exception {
 
-		if (entity.getPlz() == null) {
+		if (entity.getPlz() == 0) {
 			return add(entity);
 		}
 
