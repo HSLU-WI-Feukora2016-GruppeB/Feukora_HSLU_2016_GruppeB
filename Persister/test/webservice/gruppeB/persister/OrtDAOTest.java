@@ -133,7 +133,7 @@ public class OrtDAOTest {
 	
 	/**
 	 * Initialisiert die Datenbank mit Testwerten
-	 * @return
+	 * @return lOrt
 	 * @throws Exception
 	 */
 	public static List<Ort> init() throws Exception {
@@ -143,7 +143,6 @@ public class OrtDAOTest {
 		List<Ort> lOrt = new ArrayList<>();
 		
 		
-		//5 Orte
 		lOrt.add(new Ort(8000, "Zürich"));
 		lOrt.add(new Ort(6000, "Luzern"));
 		lOrt.add(new Ort(5000, "Aarau"));
