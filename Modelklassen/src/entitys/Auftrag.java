@@ -124,6 +124,14 @@ public class Auftrag implements Serializable {
 		this.liegenschaft = liegenschaft;
 	}
 
+	public Mitarbeiter getMitarbeiter() {
+		return mitarbeiter;
+	}
+
+	public void setMitarbeiter(Mitarbeiter mitarbeiter) {
+		this.mitarbeiter = mitarbeiter;
+	}
+
 	public Messung getMessung1stufe1() {
 		return messung1stufe1;
 	}
