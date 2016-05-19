@@ -1,25 +1,12 @@
 package webservice.gruppeB.persister;
 
 import static org.junit.Assert.*;
-
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 import java.util.List;
-
-import entitys.Auftrag;
-import entitys.Benutzer;
-import entitys.Brenner;
-import entitys.Feuerungsanlage;
 import entitys.Kontakt;
-import entitys.Liegenschaft;
-import entitys.Messung;
-import entitys.Mitarbeiter;
 import entitys.Ort;
-import entitys.Waermeerzeuger;
-import gruppeB.feukora.persister.AuftragDAOImpl;
 import gruppeB.feukora.persister.KontaktDAOImpl;
 import gruppeB.feukora.persister.OrtDAOImpl;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
