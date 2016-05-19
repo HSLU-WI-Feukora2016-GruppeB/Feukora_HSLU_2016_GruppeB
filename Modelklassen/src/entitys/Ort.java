@@ -2,7 +2,6 @@ package entitys;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -45,7 +44,11 @@ public class Ort implements Serializable {
 	}
 	
 	//getter&setter*******************************************************
-	public Integer getPlz() {
+	public Integer getId() {
+		return id;
+	}
+	
+	public int getPlz() {
 		return plz;
 	}
 	

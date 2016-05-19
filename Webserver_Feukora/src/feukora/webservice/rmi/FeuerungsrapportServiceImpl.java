@@ -67,23 +67,23 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 
 	public FeuerungsrapportServiceImpl() throws Exception {
 
-		String AuftragROName = "AuftragRO";
-		String BenutzerROName = "BenutzerRO";
-		String BrennerROName = "BrennerRO";
-		String FeuerungsanlageROName = "FeuerungsanlageRO";
-		String KontaktROName = "KontaktRO";
-		String MessungsROName = "MessungsRO";
-		String MitarbeiterROName = "MitarbeiterRO";
-		String LiegenschaftROName = "LiegenschaftRO";
-		String OrtROName = "OrtRO";
-		String WaermeerzeugerROName = "WaermeerzeugerRO";
+		String AuftragROName = "Auftrag";
+		String BenutzerROName = "Benutzer";
+		String BrennerROName = "Brenner";
+		String FeuerungsanlageROName = "Feuerungsanlage";
+		String KontaktROName = "Kontakt";
+		String MessungsROName = "Messung";
+		String MitarbeiterROName = "Mitarbeiter";
+		String LiegenschaftROName = "Liegenschaft";
+		String OrtROName = "Ort";
+		String WaermeerzeugerROName = "Waermerzeuger";
 
 		/*
 		 * Host-IP und RMI-Port definieren (an sich würde man diese Angaben aus
 		 * der Property-Datei einlesen)
 		 */
 		String hostIp = "localhost";
-		int rmiPort = 9090;
+		int rmiPort = 10090;
 		
 		
 		Properties dbProperties = new Properties();
@@ -108,7 +108,7 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 			String urlAuftragRO = "rmi://" + hostIp + ":" + rmiPort + "/"
 					+ AuftragROName;
 			String urlBenutzerRO = "rmi://" + hostIp + ":" + rmiPort + "/"
-					+ AuftragROName;
+					+ BenutzerROName;
 			String urlBrennerRO = "rmi://" + hostIp + ":" + rmiPort + "/"
 					+ BrennerROName;
 			String urlFeuerungsanlageRO = "rmi://" + hostIp + ":" + rmiPort

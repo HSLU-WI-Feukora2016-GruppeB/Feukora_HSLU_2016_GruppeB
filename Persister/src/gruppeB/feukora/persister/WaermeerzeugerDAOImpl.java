@@ -95,7 +95,7 @@ public class WaermeerzeugerDAOImpl implements WaermeerzeugerDAO{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
-		TypedQuery<Waermeerzeuger> tQuery = em.createNamedQuery("Waermeerzeuger.findByWaermeerzeugerTyp",
+		TypedQuery<Waermeerzeuger> tQuery = em.createNamedQuery("Waermeerzeuger.findByTyp",
 				Waermeerzeuger.class);
 
 		tQuery.setParameter("waermeerzeugerTyp", waermeerzeugerTyp);
