@@ -116,9 +116,10 @@ public class MitarbeiterUebersicht{
 		tblName.setCellValueFactory(new PropertyValueFactory<>("name"));
 		tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
 		tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
+		tblTelefon.setCellValueFactory(new PropertyValueFactory<>("ort"));
 		tblEMail.setCellValueFactory(new PropertyValueFactory<>("email"));
 		tblPosition.setCellValueFactory(new PropertyValueFactory<>("rolleIntern"));
-		tblTelefon.setCellValueFactory(new PropertyValueFactory<>("tel"));
+		tblTelefon.setCellValueFactory(new PropertyValueFactory<>("telefon"));
 
 
 		tabelle.setItems(list2);

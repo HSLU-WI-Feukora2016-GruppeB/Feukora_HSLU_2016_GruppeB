@@ -1,8 +1,13 @@
 package application.view.mitarbeiter;
 
+
+import java.time.LocalDate;
+import java.util.GregorianCalendar;
+
 import entitys.Mitarbeiter;
 import entitys.Ort;
 import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -19,7 +24,6 @@ import rmi.OrtRO;
  * @since 1.0
  */
 
-
 public class MitarbeiterBearbeiten {
 
 	OrtRO OrtRO;
@@ -33,7 +37,12 @@ public class MitarbeiterBearbeiten {
 	private Label lblRueckmeldung;
 
 	@FXML
+	private DatePicker startDatum, endDatum;
+
+	@FXML
 	private Pane leaf;
+
+
 
 	static String name;
 	static String vorname;
@@ -43,6 +52,9 @@ public class MitarbeiterBearbeiten {
 	static String email;
 	static String telefon;
 	static String lohn2;
+	static GregorianCalendar startdatum, enddatum;
+
+
 
 	static Mitarbeiter maupdate;
 
@@ -55,6 +67,7 @@ public class MitarbeiterBearbeiten {
 		txtLohn.setText(lohn2);
 		txtEmail.setText(email);
 		txtTelefonNr.setText(telefon);
+		startDatum.setValue(gregToLocal(startdatum));
 
 	}
 
@@ -68,9 +81,10 @@ public class MitarbeiterBearbeiten {
 		rolle = mabearbeitet.getRolleIntern().toString();
 		Integer lohn = (Integer) mabearbeitet.getLohn();
 		lohn2 = lohn.toString();
-
 		email = mabearbeitet.getEmail();
 		telefon = mabearbeitet.getTel().toString();
+		startdatum = mabearbeitet.getArbeitetSeit();
+
 	}
 
 	/**
@@ -156,8 +170,6 @@ public class MitarbeiterBearbeiten {
 	 *
 	 * @return Ein neues Mitarbeiterobjekt
 	 */
-
-
 	private Mitarbeiter createMitarbeiter(String name, String vorname, String strasse, String ort, int plz,
 			int rolle, int lohn, String email, String telefonnr){
 		//Exception werfen? bei Referenzprojekt hat ers gemacht
@@ -188,6 +200,24 @@ public class MitarbeiterBearbeiten {
 
 
 		return maupdate;
+	}
+
+	/**
+	 * Diese Funkion wandelt das startdatum bekommeMitarbeiter() um
+	 * und wird dann wieder bei der initialize() aufgerufen
+	 *
+	 * @param startdatum
+	 * @return LocalDate
+	 */
+	private LocalDate gregToLocal(GregorianCalendar startdatum){
+		int starttag = startdatum.DAY_OF_MONTH;
+		int startmonat = startdatum.MONTH;
+		int startjahr = startdatum.YEAR;
+
+		LocalDate ldstartDatum = LocalDate.of(startjahr, startmonat, starttag);
+
+		return ldstartDatum;
+
 	}
 
 
