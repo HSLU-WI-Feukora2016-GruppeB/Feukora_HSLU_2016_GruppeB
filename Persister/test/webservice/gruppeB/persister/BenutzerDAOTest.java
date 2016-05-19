@@ -50,132 +50,56 @@ public class BenutzerDAOTest {
 		assertTrue(bListe.size() == 6);
 	}
 	
-//	/**
-//	 * Testet die Methode {@link AuftragDAOImpl#findByMitarbeiter(Mitarbeiter)
-//	 * @throws Exception
-//	 */
-//	@Test
-//	public void testFindByMitarbeiter() throws Exception {
-//		
-//		Mitarbeiter ma = mitarbeiterDAO.findMitarbeiterByName("Raneri").get(0);
-//		List<Auftrag> al = auftragDAO.findByMitarbeiter(ma);
-//		
-//		assertNotNull(al);
-//		
-//		assertTrue(al.size() == 0);
-//	}
-//	
-//	/**
-//	 * Testet die Methode {@link AuftragDAOImpl#findByDatum(GregorianCalendar)}
-//	 * @throws Exception
-//	 */
-//	@Test
-//	public void testFindByDatum() throws Exception {
-//		
-//		GregorianCalendar d = new GregorianCalendar(2016, 9, 11);
-//		List<Auftrag> al = auftragDAO.findByDatum(d);
-//		
-//		assertNotNull(al);
-//		
-//		assertTrue(al.size() == 2);
-//	}
-//
-//	/**
-//	 * Testet die Methode {@link AuftragDAOImpl#findByKontakt(Kontakt)
-//	 * @throws Exception
-//	 */
-//	@Test
-//	public void testFindByKontakt() throws Exception {
-//		
-//		Kontakt k = kontaktDAO.findKontaktByName("Meyer").get(0);
-//		List<Auftrag> al = auftragDAO.findByKontakt(k);
-//		
-//		assertNotNull(al);
-//		
-//		assertTrue(al.size() == 1);
-//	}
-//	
-//	/**
-//	 * Testet die Methode {@link AuftragDAOImpl#findByLiegenschaft(Liegenschaft)}
-//	 * @throws Exception
-//	 */
-//	@Test
-//	public void testFindByLiegenschaft() throws Exception {
-//		
-//		Liegenschaft liegenschaft = liegenschaftDAO.findLiegenschaftByStrasse("Musterweg 456").get(0);
-//		assertNotNull(liegenschaft);
-//		
-//		List<Auftrag> aList = auftragDAO.findByLiegenschaft(liegenschaft);
-//		assertTrue(aList.size() == 2);
-//		
-//	}
-//	
-//
-//	/**
-//	 * Testet die Methode {@link AuftragDAOImpl#findByDatumAndMitarbeiter(GregorianCalendar, GregorianCalendar, Mitarbeiter)}
-//	 */
-//	@Test
-//	public void testFindByDatumAndMitarbeiter() throws Exception {
-//		GregorianCalendar ds = new GregorianCalendar(2016, 05, 1);
-//		GregorianCalendar de = new GregorianCalendar(2018, 10, 11);
-//		Mitarbeiter m = mitarbeiterDAO.findMitarbeiterByNameVorname("Stirnimann", "Dominik").get(0);
-//
-//		assertNotNull(ds);
-//		assertNotNull(de);
-//		assertNotNull(m);
-//		
-//		List<Auftrag> auftraege = auftragDAO.findByDatumAndMitarbeiter(ds, de, m);
-//		assertTrue(auftraege.size() == 1);
-//	}
-//	 
-//	/**
-//	 * Testet die Methode {@link AuftragDAOImpl#findAuftragByDateAndMitarbeiterAndZeitslot(GregorianCalendar, Mitarbeiter, int)}
-//	 * @throws Exception
-//	 */
-//	@Test
-//	public void testFindByDatumAndMitarbeiterAndZeitslot() throws Exception {
-//		
-//		GregorianCalendar d = new GregorianCalendar(2016, 9, 18);
-//		Mitarbeiter m = mitarbeiterDAO.findMitarbeiterByNameVorname("Stirnimann", "Dominik").get(0);
-//		int z = 1;
-//		assertNotNull(d);
-//		assertNotNull(m);
-//		assertNotNull(z);
-//		
-//		Auftrag auftrag = auftragDAO.findAuftragByDateAndMitarbeiterAndZeitslot(d, m, z);
-//		assertNotNull(auftrag);
-//		
-//	}
-//	
-//	/**
-//	 * Testet die Methode {@link AuftragDAOImpl#updateAuftrag(Auftrag)}
-//	 * @throws Exception
-//	 */
-//	@Test
-//	public void testUpdate() throws Exception {
-//
-//		List<Auftrag> auftragsListe = auftragDAO.findAllAuftrag();
-//		assertTrue(auftragsListe.size() == 3);
-//
-//		Ort o = ortDAO.findOrtByPlz(5000).get(0);
-//		Kontakt k = kontaktDAO.findKontaktByOrt(o).get(0);
-//		Liegenschaft l = liegenschaftDAO.findLiegenschaftByKontakt(k).get(0);
-//		Auftrag a = auftragDAO.findByLiegenschaft(l).get(0);
-//		assertNotNull(a);
-//		
-//		Liegenschaft lnew = liegenschaftDAO.findAllLiegenschaft().get(1);
-//		a.setLiegenschaft(lnew);
-//		
-//		auftragDAO.updateAuftrag(a);
-//		
-//		Auftrag aDB = auftragDAO.findByLiegenschaft(lnew).get(0);
-//		assertNotNull(aDB);
-//		assertTrue(aDB.getLiegenschaft() != l);
-//		
-//		auftragsListe = auftragDAO.findAllAuftrag();
-//		assertTrue(auftragsListe.size() == 3);
-//
-//	}
+	/**
+	 * Testet die Methode {@link BenutzerDAOImpl#findBenutzerByUsername(String)}
+	 * @throws Exception
+	 */
+	@Test
+	public void testFindByUsername() throws Exception {
+		
+		String u = "mpe";
+		List<Benutzer> b = benutzerDAO.findBenutzerByUsername(u);
+		
+		assertNotNull(b);
+		
+		assertTrue(b.size() == 1);
+	}
+	
+	/**
+	 * Testet die Methode {@link BenutzerDAOImpl#findBenutzerByUsernamePassword(String, String)}
+	 * @throws Exception
+	 */
+	@Test
+	public void testFindByUsernamePassword() throws Exception {
+		
+		String u = "owa";
+		String p = "121";
+		List<Benutzer> b = benutzerDAO.findBenutzerByUsernamePassword(u, p);
+		
+		assertNotNull(b);
+		
+		assertTrue(b.size() == 1);
+	}
+
+	
+	/**
+	 * Testet die Methode {@link BenutzerDAOImpl#updateBenutzer(Benutzer)}
+	 * @throws Exception
+	 */
+	@Test
+	public void testUpdate() throws Exception {
+
+		List<Benutzer> bListe = benutzerDAO.findAllBenutzer();
+		assertTrue(bListe.size() == 6);
+
+		String pNew = "testibus";
+		Benutzer bUpdated = bListe.get(1);
+		bUpdated.setPassword(pNew);
+		
+		benutzerDAO.updateBenutzer(bUpdated);
+		
+		assertTrue(benutzerDAO.findAllBenutzer().size() == 6);
+	}
 
 	/**
 	 * Testet die Methode {@link BenutzerDAOImpl#deleteBenutzer(Benutzer)}
@@ -210,7 +134,6 @@ public class BenutzerDAOTest {
 		assertTrue(bListe.size() == 5);
 	}
 	
-
 	/**
 	 * Initialisiert die Datenbank mit Testwerten
 	 * @return

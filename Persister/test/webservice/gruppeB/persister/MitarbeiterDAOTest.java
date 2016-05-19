@@ -2,11 +2,11 @@ package webservice.gruppeB.persister;
 
 import static org.junit.Assert.*;
 import entitys.Benutzer;
-import entitys.Liegenschaft;
+
 import entitys.Mitarbeiter;
 import entitys.Ort;
 import gruppeB.feukora.persister.BenutzerDAOImpl;
-import gruppeB.feukora.persister.LiegenschaftDAOImpl;
+
 import gruppeB.feukora.persister.MitarbeiterDAOImpl;
 import gruppeB.feukora.persister.OrtDAOImpl;
 
@@ -96,13 +96,29 @@ public class MitarbeiterDAOTest {
 		assertTrue(mitarbeiterListe.size() == 5);
 	}
 	
+	/**
+	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#findMitarbeiterByArbeitetBis(GregorianCalendar)}.
+	 * @throws Exception
+	 */
+	@Test
 	public void testFindMitarbeiterByArbeitetBis() throws Exception {
-		//TODO -- Keine Ahnung.
+		
+		GregorianCalendar bis = new GregorianCalendar(2018, 8, 11);
+		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findMitarbeiterByArbeitetBis(bis);
+		assertEquals(6, mitarbeiterListe.size());
 		
 	}
 	
+	/**
+	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#findMitarbeiterByArbeitetSeit(GregorianCalendar)}.
+	 * @throws Exception
+	 */
+	@Test
 	public void testFindMitarbeiterByArbeitetSeit() throws Exception {
-		//TODO -- Keine Ahnung.
+		
+		GregorianCalendar seit = new GregorianCalendar(2016, 5, 1);
+		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findMitarbeiterByArbeitetSeit(seit);
+		assertEquals(6, mitarbeiterListe.size());
 		
 	}
 	

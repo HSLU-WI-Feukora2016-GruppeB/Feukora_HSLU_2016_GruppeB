@@ -123,7 +123,7 @@ public class MessungDAOTest {
 		List<Messung> m = messungDAO.findByMessDatum(d);
 		
 		assertNotNull(m);
-		assertTrue(m.size() == 1);
+		assertEquals(1,m.size());
 	}
 	
 	/**
@@ -133,8 +133,10 @@ public class MessungDAOTest {
 	@Test
 	public void testFindByBeurteilungNotOk() throws Exception{
 				
-		List<Messung> messungsListe = messungDAO.findByBeurteilungNotOk(false);
-		assertTrue(messungsListe.size() == 2);
+		List<Messung> m = messungDAO.findByBeurteilungNotOk(true);
+		
+		assertNotNull(m);
+		assertEquals(1,m.size());
 		
 	}
 	
@@ -171,6 +173,7 @@ public class MessungDAOTest {
 		lMessung.add(new Messung(new GregorianCalendar(2011, 8, 2), 4, 8, false, 4, 130, 55, 70, 3, 5));
 		lMessung.add(new Messung(new GregorianCalendar(2012, 10, 5), 4, 8, false, 4, 100, 60, 75, 3, 5));
 		lMessung.add(new Messung(new GregorianCalendar(2011, 4, 7), 4, 8, true, 4, 111, 22, 99, 3, 5));
+		lMessung.get(0).setBeurteilungNotOk(true);
 		
 		for(Messung m : lMessung){
 			messungDAO.saveMessung(m);

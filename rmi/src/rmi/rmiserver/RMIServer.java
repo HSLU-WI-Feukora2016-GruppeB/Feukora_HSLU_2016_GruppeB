@@ -38,6 +38,8 @@ public class RMIServer {
 
 	
 	try {
+		
+		//Port aus Propertydatei auslesen mit Classloader
 
 	//entfernte Objekte erzeugen
 	AuftragRO au = new AuftragROImpl();
