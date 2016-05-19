@@ -11,7 +11,6 @@ import entitys.Messung;
 import entitys.Mitarbeiter;
 import entitys.Ort;
 import entitys.Waermeerzeuger;
-import gruppeB.feukora.interfaces.AuftragDAO;
 import gruppeB.feukora.persister.AuftragDAOImpl;
 import gruppeB.feukora.persister.BenutzerDAOImpl;
 import gruppeB.feukora.persister.BrennerDAOImpl;
@@ -24,7 +23,6 @@ import gruppeB.feukora.persister.OrtDAOImpl;
 import gruppeB.feukora.persister.WaermeerzeugerDAOImpl;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 

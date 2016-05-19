@@ -9,6 +9,16 @@ import entitys.*;
 import managerInterfaces.AuftragManager;
 import managerKlassen.AuftragManagerImpl;
 
+/**
+ * Stellt die Implementierung von Methoden der Schnittstelle AuftragRO zur
+ * Verfügung.
+ * 
+ * @author Matthias
+ * @version 1.0
+ * @since 1.0
+ *
+ */
+
 public class AuftragROImpl extends UnicastRemoteObject implements AuftragRO {
 
 	private static final long serialVersionUID = 4989622193039156812L;
