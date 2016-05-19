@@ -1,8 +1,3 @@
-/*
- * ZWECK: Praxisprojekt Feukora
- * MODUL: Softwarekomponenten, HSLU - Wirtschaft
- */
-
 package gruppeB.feukora.persister;
 
 import java.util.GregorianCalendar;

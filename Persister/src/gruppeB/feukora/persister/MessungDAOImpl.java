@@ -1,8 +1,3 @@
-/*
- * ZWECK: Praxisprojekt Feukora
- * MODUL: Softwarekomponenten, HSLU - Wirtschaft
- */
-
 package gruppeB.feukora.persister;
 
 import java.util.GregorianCalendar;
@@ -16,7 +11,6 @@ import entitys.Messung;
 import gruppeB.feukora.interfaces.MessungDAO;
 import gruppeB.feukora.persister.generic.GenericPersisterImpl;
 import gruppeB.feukora.persister.util.JpaUtil;
-
 
 /**
  * Diese Klasse stellt die Implementierung von Methoden der Schnittstelle
