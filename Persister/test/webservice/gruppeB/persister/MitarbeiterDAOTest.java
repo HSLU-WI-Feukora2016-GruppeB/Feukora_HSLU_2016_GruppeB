@@ -2,9 +2,11 @@ package webservice.gruppeB.persister;
 
 import static org.junit.Assert.*;
 import entitys.Benutzer;
+import entitys.Liegenschaft;
 import entitys.Mitarbeiter;
 import entitys.Ort;
 import gruppeB.feukora.persister.BenutzerDAOImpl;
+import gruppeB.feukora.persister.LiegenschaftDAOImpl;
 import gruppeB.feukora.persister.MitarbeiterDAOImpl;
 import gruppeB.feukora.persister.OrtDAOImpl;
 
@@ -13,9 +15,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -23,21 +23,12 @@ import org.junit.Test;
  * 
  * @version 1.0
  * @author Luca Raneri
- * 
  */
 public class MitarbeiterDAOTest {
 
 	private static MitarbeiterDAOImpl mitarbeiterDAO = new MitarbeiterDAOImpl();
 	private static OrtDAOImpl ortDAO = new OrtDAOImpl();
 	private static BenutzerDAOImpl benutzerDAO = new BenutzerDAOImpl();
-	
-//	@BeforeClass
-//	public static void setUpBeforClass() throws Exception {
-//	}
-//
-//	@AfterClass
-//	public static void tearDownAfterClass() throws Exception {
-//	}
 	
 	@Before
 	public void setUp() throws Exception {
@@ -49,114 +40,111 @@ public class MitarbeiterDAOTest {
 	}
 	
 	/**
-	 * Dieser Test speichert einen Mitarbeiter.
-	 * @throws Exception
-	 */
-	@Test
-	public void testSaveMitarbeiter() throws Exception {
-		
-		Mitarbeiter m3 = new Mitarbeiter();
-		
-		try {
-			mitarbeiterDAO.saveMitarbeiter(m3);
-		} catch (Exception e) {
-			//TODO catch block
-			e.printStackTrace();
-		}
-		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findAllMitarbeiter();
-		assertTrue(mitarbeiterListe.size() == 3);
-	}
-	
-	/**
-	 * Dieser Test updatet einen Mitarbeiter.
+	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#updateMitarbeiter(Mitarbeiter)}.
 	 * @throws Exception
 	 */
 	@Test
 	public void testUpdateMitarbeiter() throws Exception {
 		
-		Mitarbeiter m2 = new Mitarbeiter();
-		
-		try {
-			mitarbeiterDAO.saveMitarbeiter(m2);
-		} catch (Exception e) {
-			//TODO catch block
-			e.printStackTrace();
-		}
 		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findAllMitarbeiter();
-		assertTrue(mitarbeiterListe.size() == 1);
+		assertTrue(mitarbeiterListe.size() == 6);
 		
-		m2.setTel("0791234567");
+		Mitarbeiter m = mitarbeiterDAO.findMitarbeiterByName("Raneri").get(0);
+		assertNotNull(m);
+		m.setName("Pagani");
 		
-		try {
-			mitarbeiterDAO.updateMitarbeiter(m2);
-		} catch (Exception e){
-			e.printStackTrace();
-		}
+		mitarbeiterDAO.updateMitarbeiter(m);
 		
-		String a = "0791234567";
-		String b = m2.getTel();
-		assertEquals(a, b);
+		Mitarbeiter aDB = mitarbeiterDAO.findMitarbeiterByName("Pagani").get(0);
+		assertNotNull(aDB);
+		assertTrue(aDB.getName() != "Raneri");
+		
+		mitarbeiterListe = mitarbeiterDAO.findAllMitarbeiter();
+		assertTrue(mitarbeiterListe.size() == 6);
 		
 	}
 	
 	/**
-	 * Dieser Test loescht einen Mitarbeiter.
+	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#deleteMitarbeiter(Mitarbeiter)}.
 	 * @throws Exception
 	 */
 	@Test
 	public void testDeleteMitarbeiter() throws Exception {
 		
-		Mitarbeiter m2  = new Mitarbeiter();
-		
-		try {
-			mitarbeiterDAO.saveMitarbeiter(m2);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
 		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findAllMitarbeiter();
-		assertTrue(mitarbeiterListe.size() == 1);
-		
-		// Mitarbeiter m2 löschen
-		try {
-			mitarbeiterDAO.deleteMitarbeiter(m2);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		assertTrue(mitarbeiterDAO.findAllMitarbeiter().isEmpty());
+		assertTrue(mitarbeiterListe.size() == 6);
+
+		mitarbeiterDAO.deleteMitarbeiter(mitarbeiterListe.get(0));
+
+		mitarbeiterListe = mitarbeiterDAO.findAllMitarbeiter();
+		assertTrue(mitarbeiterListe.size() == 5);
 	}
 	
 	/**
-	 * Dieser Test tested die Methode deletMitarbeiterById.
+	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#deleteMitarbeiterById(Integer)}.
 	 * @throws Exception
 	 */
+	@Test
 	public void testDeleteMitarbeiterById()throws Exception {
 		
+		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findAllMitarbeiter();
+		assertTrue(mitarbeiterListe.size() == 6);
+
+		mitarbeiterDAO.deleteMitarbeiterById(mitarbeiterListe.get(0).getIdMitarbeiter());
+
+		mitarbeiterListe = mitarbeiterDAO.findAllMitarbeiter();
+		assertTrue(mitarbeiterListe.size() == 5);
 	}
 	
 	public void testFindMitarbeiterByArbeitetBis() throws Exception {
+		//TODO -- Keine Ahnung.
 		
 	}
 	
 	public void testFindMitarbeiterByArbeitetSeit() throws Exception {
+		//TODO -- Keine Ahnung.
 		
 	}
 	
+	/**
+	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#findMitarbeiterByBenutzer(Benutzer)}.
+	 * @throws Exception
+	 */
+	@Test
 	public void testFindMitarbeiterByBenutzer() throws Exception {
 		
+		Benutzer benutzer = benutzerDAO.findBenutzerByUsername("lra").get(0);
+		assertNotNull(benutzer);
+		
+		List<Mitarbeiter> mitarbeitersListe = mitarbeiterDAO.findMitarbeiterByBenutzer(benutzer);
+		assertTrue(mitarbeitersListe.size() == 1);
 	}
 	
+	/**
+	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#findMitarbeiterByRolleIntern(int)}.
+	 * @throws Exception
+	 */
+	@Test
 	public void testFindMitarbeiterByRolleIntern() throws Exception {
 		
+		int rolleIntern = 1;
+		
+		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findMitarbeiterByRolleIntern(rolleIntern);
+		assertTrue(mitarbeiterListe.size() == 5);
 	}
 	
+	/**
+	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#findMitarbeiterByStrasse(String)}.
+	 * @throws Exception
+	 */
+	@Test
 	public void testFindMitarbeiterByStrasse() throws Exception {
 		
+		String strasse = "Musterstrasse 5";
+		
+		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findMitarbeiterByStrasse(strasse);
+		assertTrue(mitarbeiterListe.size() == 1);
 	}
-	
-	
 	
 	/**
 	 * Dieser Test testet die Suchfunktion "FindAllMitarbeiter". 
@@ -166,21 +154,21 @@ public class MitarbeiterDAOTest {
 	public void testFindAllMitarbeiter() throws Exception {
 		
 		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findAllMitarbeiter();
-		assertTrue(mitarbeiterListe.size() == 2);
+		assertTrue(mitarbeiterListe.size() == 6);
 	}
 	
 	@Test
 	public void testFindByName() {
 		
-		String name = "Noetig";
+		String name = "Raneri";
 		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findMitarbeiterByName(name);
-		assertTrue(mitarbeiterListe.size() == 2);
+		assertTrue(mitarbeiterListe.size() == 1);
 	}
 
 	@Test
 	public void testFindByVorname(){
 		
-		String vorname = "Hans";
+		String vorname = "Luca";
 		assertTrue(mitarbeiterDAO.findMitarbeiterByVorname(vorname).size() == 1);
 		
 		String vorname2 = "Fronzak";
@@ -190,78 +178,105 @@ public class MitarbeiterDAOTest {
 	@Test
 	public void testFindByNameVorname(){
 		
-		String name = "Kwyat";
-		String vorname = "Daniil";
+		String name = "Raneri";
+		String vorname = "Luca";
 		assertTrue(mitarbeiterDAO.findMitarbeiterByNameVorname(name, vorname).size() == 1);
 		
 	}
 	
+	/**
+	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#findMitarbeiterByOrt(Ort)}.
+	 * @throws Exception
+	 */
 	@Test
-	public void testFindByOrt() {
+	public void testFindMitarbeierByOrt() {
 		
-		Ort ort2 = new Ort(6045, "Meggen");
-		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findMitarbeiterByOrt(ort2);
-		assertTrue(mitarbeiterListe.size() == 1);
+		Ort ort = ortDAO.findOrtByPlz(1000).get(0);
+		assertNotNull(ort);
 		
+		List<Mitarbeiter> mitarbeitersListe = mitarbeiterDAO.findMitarbeiterByOrt(ort);
+		assertTrue(mitarbeitersListe.size() == 1);
 	}
 	
+	/**
+	 * Initialisiert die Datenbank mit Testwerten
+	 * @return
+	 * @throws Exception
+	 */
 	public static List<Mitarbeiter> init() throws Exception{
 		
 		MitarbeiterDAOTest.deleteAll();
 		
-		//1. Mitarbeiter Objekt m1
-		Ort ort1 = new Ort(6048, "Horw");
-		Benutzer user1 = new Benutzer("hnoetig","1234");
-		GregorianCalendar seit1 = new GregorianCalendar(2016,01,01);
-		GregorianCalendar bis1 = new GregorianCalendar(2016,12,31);
-		Mitarbeiter m1 = new Mitarbeiter("Hans", "Nötig", "Kantonsstrasse 21", ort1,
-				"0791231234", "hans.noetig@hotmail.com", 2, user1,
-				4200, seit1,
-				bis1);
+		List<Ort> lOrt = new ArrayList<>();
+		List<Mitarbeiter> lMitarbeiter = new ArrayList<>();
+		List<Benutzer> lBenutzer = new ArrayList<>();
 		
-		//2. Mitarbeiter Objekt m2
-		Ort ort2 = new Ort(6045, "Meggen");
-		Benutzer user2 = new Benutzer("DK","Like_a_boss!");
-		GregorianCalendar seit2 = new GregorianCalendar(2016,05,02);
-		GregorianCalendar bis2 = new GregorianCalendar(2017,12,31);
-		Mitarbeiter m2 = new Mitarbeiter("Daniil", "Kwyat", "Obermattstrasse 22b", ort2,
-				"0791001010", "daniil.kwyat@hotmail.com", 1, user2,
-				4400, seit2,
-				bis2);
+		//7 Orte
+		lOrt.add(new Ort(8000, "Zürich"));
+		lOrt.add(new Ort(6000, "Luzern"));
+		lOrt.add(new Ort(5000, "Aarau"));
+		lOrt.add(new Ort(3000, "Bern"));
+		lOrt.add(new Ort(1000, "Genf"));
+		lOrt.add(new Ort(2000, "Neuchâtel"));
+		lOrt.add(new Ort(4000, "Basel"));
 		
-		ortDAO.saveOrt(ort1);
-		ortDAO.saveOrt(ort2);
-		benutzerDAO.saveBenutzer(user1);
-		benutzerDAO.saveBenutzer(user2);
-		mitarbeiterDAO.saveMitarbeiter(m1);
-		mitarbeiterDAO.saveMitarbeiter(m2);
+		//6 Benutzer erstellen
+		lBenutzer.add(new Benutzer("ale", "123"));
+		lBenutzer.add(new Benutzer("lra", "456"));
+		lBenutzer.add(new Benutzer("pst", "789"));
+		lBenutzer.add(new Benutzer("dst", "101"));
+		lBenutzer.add(new Benutzer("mpe", "111"));
+		lBenutzer.add(new Benutzer("owa", "121"));
 		
-		List<Mitarbeiter> mitarbeiterListe = new ArrayList<>();
-		mitarbeiterListe.add(m1);
-		mitarbeiterListe.add(m2);
+		//6 Mitarbeiter erstellen
+		lMitarbeiter.add(new Mitarbeiter("Olivia", "Wassmer", "Musterstrasse 1", lOrt.get(3), "1234567678", "o.w@feukora.ch", 1, lBenutzer.get(5), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
+		lMitarbeiter.add(new Mitarbeiter("Matthias", "Perrollaz", "Musterstrasse 2", lOrt.get(4), "1234557678", "m.p@feukora.ch", 2, lBenutzer.get(4), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
+		lMitarbeiter.add(new Mitarbeiter("Dominik", "Stirnimann", "Musterstrasse 3", lOrt.get(3), "1234367678", "d.s@feukora.ch", 1, lBenutzer.get(3), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
+		lMitarbeiter.add(new Mitarbeiter("Pascal", "Steiner", "Musterstrasse 4", lOrt.get(2), "1234567678", "p.st@feukora.ch", 1, lBenutzer.get(2), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
+		lMitarbeiter.add(new Mitarbeiter("Luca", "Raneri", "Musterstrasse 5", lOrt.get(1), "1234567178", "l.r@feukora.ch", 1, lBenutzer.get(1), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
+		lMitarbeiter.add(new Mitarbeiter("Alexandra", "Lengen", "Musterstrasse 1", lOrt.get(0), "1234563678", "a.l@feukora.ch", 1, lBenutzer.get(5), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
 		
-		return mitarbeiterListe;
+		for(Ort o : lOrt){
+			ortDAO.saveOrt(o);
+		}
+		
+		for(Benutzer b : lBenutzer){
+			benutzerDAO.saveBenutzer(b);
+		}
+		
+		for(Mitarbeiter m : lMitarbeiter){
+			mitarbeiterDAO.saveMitarbeiter(m);
+		}
+				
+		return lMitarbeiter;
 	}
 	
+	/**
+	 * Löscht alle initialisierten Daten aus der Datenbank.
+	 * @throws Exception
+	 */
 	private static void deleteAll() throws Exception {
-
-		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findAllMitarbeiter();
 		
-		for (Mitarbeiter m : mitarbeiterListe) {
-			mitarbeiterDAO.deleteMitarbeiter(m);
-		}
-		
-		for (Ort o : ortDAO.findAllOrt()){
-			ortDAO.deleteOrt(o);
-		}
+		deleteAllMitarbeiter();
 		
 		for (Benutzer b : benutzerDAO.findAllBenutzer()){
 			benutzerDAO.deleteBenutzer(b);
 		}
 	
+		for (Ort o : ortDAO.findAllOrt()){
+			ortDAO.deleteOrt(o);
+		}
+	}
 	
+	/**
+	 * Löscht alle Mitarbeiter aus der Datenbank.
+	 * @throws Exception
+	 */
+	public static void deleteAllMitarbeiter() throws Exception {
+
+		for (Mitarbeiter m : mitarbeiterDAO.findAllMitarbeiter()) {
+			mitarbeiterDAO.deleteMitarbeiter(m);
+		}
+	}
 	
-	
-	
-	
-}}
+}

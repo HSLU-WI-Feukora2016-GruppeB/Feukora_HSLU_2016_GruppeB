@@ -51,16 +51,28 @@ public class AuftragDAOTest {
 	private static OrtDAOImpl ortDAO = new OrtDAOImpl();
 	private static WaermeerzeugerDAOImpl waermeerzeugerDAO = new WaermeerzeugerDAOImpl();
 
+	/**
+	 * Initialisiert die Datenbank mit Testwerten.
+	 * @throws Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 		AuftragDAOTest.init();
 	}
 
+	/**
+	 * Schliesst Test mit Datenbank ab.
+	 * @throws Exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 		//AuftragDAOTest.deleteAll();
 	}
 
+	/**
+	 * Testet die Methode {@link AuftragDAOImpl#findAllAuftrag()}
+	 * @throws Exception
+	 */
 	@Test
 	public void testFindAll() throws Exception{
 		
@@ -68,6 +80,25 @@ public class AuftragDAOTest {
 		assertTrue(auftragsListe.size() == 3);
 	}
 	
+	/**
+	 * Testet die Methode {@link AuftragDAOImpl#findByMitarbeiter(Mitarbeiter)
+	 * @throws Exception
+	 */
+	@Test
+	public void testFindByMitarbeiter() throws Exception {
+		
+		Mitarbeiter ma = mitarbeiterDAO.findMitarbeiterByName("Raneri").get(0);
+		List<Auftrag> al = auftragDAO.findByMitarbeiter(ma);
+		
+		assertNotNull(al);
+		
+		assertTrue(al.size() == 0);
+	}
+	
+	/**
+	 * Testet die Methode {@link AuftragDAOImpl#findByDatum(GregorianCalendar)}
+	 * @throws Exception
+	 */
 	@Test
 	public void testFindByDatum() throws Exception {
 		
@@ -79,6 +110,25 @@ public class AuftragDAOTest {
 		assertTrue(al.size() == 2);
 	}
 
+	/**
+	 * Testet die Methode {@link AuftragDAOImpl#findByKontakt(Kontakt)
+	 * @throws Exception
+	 */
+	@Test
+	public void testFindByKontakt() throws Exception {
+		
+		Kontakt k = kontaktDAO.findKontaktByName("Meyer").get(0);
+		List<Auftrag> al = auftragDAO.findByKontakt(k);
+		
+		assertNotNull(al);
+		
+		assertTrue(al.size() == 1);
+	}
+	
+	/**
+	 * Testet die Methode {@link AuftragDAOImpl#findByLiegenschaft(Liegenschaft)}
+	 * @throws Exception
+	 */
 	@Test
 	public void testFindByLiegenschaft() throws Exception {
 		
@@ -90,29 +140,47 @@ public class AuftragDAOTest {
 		
 	}
 	
-	@Test
-	public void testSaveAuftrag() throws Exception {
-		
-		Benutzer b = new Benutzer("muster", "test");
-		Brenner br = new Brenner(1, "lalala33", 2017);
-		Waermeerzeuger w = new Waermeerzeuger(2, "lilalal", 2012);
-		Feuerungsanlage f = new Feuerungsanlage(br, w);
-		Ort o = new Ort(8000, "Zürich");
-		Kontakt k = new Kontakt("Peter", "Musti", "TheStreet 1", o, "0000000000", "t.t@gmail.com", 1);
-		Liegenschaft l = new Liegenschaft(k, "Added", "Test 456", o, f);
-		Messung m = new Messung(new GregorianCalendar(2077, 7, 3), 4, 8, false, 4, 500, 60, 120, 3, 5);
-		Mitarbeiter ma = new Mitarbeiter("Tini", "Little", "Kleinstrasse 1", o, "9999999999", "test@feukora.ch", 1, b, 5000, new GregorianCalendar(2099, 05, 1), new GregorianCalendar(2088, 8, 11));
-		Auftrag a = new Auftrag(k, l, m, m, m, m, ma, new GregorianCalendar(2066, 9, 11), 2, 2);
-		
-		try {
-			auftragDAO.saveAuftrag(a);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		List<Auftrag> auftragListe = auftragDAO.findAllAuftrag();
-		assertTrue(auftragListe.size() == 3);
-	}
 
+	/**
+	 * Testet die Methode {@link AuftragDAOImpl#findByDatumAndMitarbeiter(GregorianCalendar, GregorianCalendar, Mitarbeiter)}
+	 */
+	@Test
+	public void testFindByDatumAndMitarbeiter() throws Exception {
+		GregorianCalendar ds = new GregorianCalendar(2016, 05, 1);
+		GregorianCalendar de = new GregorianCalendar(2018, 10, 11);
+		Mitarbeiter m = mitarbeiterDAO.findMitarbeiterByNameVorname("Stirnimann", "Dominik").get(0);
+
+		assertNotNull(ds);
+		assertNotNull(de);
+		assertNotNull(m);
+		
+		List<Auftrag> auftraege = auftragDAO.findByDatumAndMitarbeiter(ds, de, m);
+		assertTrue(auftraege.size() == 1);
+	}
+	 
+	/**
+	 * Testet die Methode {@link AuftragDAOImpl#findAuftragByDateAndMitarbeiterAndZeitslot(GregorianCalendar, Mitarbeiter, int)}
+	 * @throws Exception
+	 */
+	@Test
+	public void testFindByDatumAndMitarbeiterAndZeitslot() throws Exception {
+		
+		GregorianCalendar d = new GregorianCalendar(2016, 9, 18);
+		Mitarbeiter m = mitarbeiterDAO.findMitarbeiterByNameVorname("Stirnimann", "Dominik").get(0);
+		int z = 1;
+		assertNotNull(d);
+		assertNotNull(m);
+		assertNotNull(z);
+		
+		Auftrag auftrag = auftragDAO.findAuftragByDateAndMitarbeiterAndZeitslot(d, m, z);
+		assertNotNull(auftrag);
+		
+	}
+	
+	/**
+	 * Testet die Methode {@link AuftragDAOImpl#updateAuftrag(Auftrag)}
+	 * @throws Exception
+	 */
 	@Test
 	public void testUpdate() throws Exception {
 
@@ -139,6 +207,10 @@ public class AuftragDAOTest {
 
 	}
 
+	/**
+	 * Testet die Methode {@link AuftragDAOImpl#deleteAuftrag(Auftrag)}
+	 * @throws Exception
+	 */
 	@Test
 	public void testDelete() throws Exception {
 
@@ -152,6 +224,10 @@ public class AuftragDAOTest {
 
 	}
 
+	/**
+	 * Testet die Methode {@link AuftragDAOImpl#deleteAuftragById(Integer)}
+	 * @throws Exception
+	 */
 	@Test
 	public void testDeleteById() throws Exception {
 		
@@ -165,6 +241,11 @@ public class AuftragDAOTest {
 	}
 	
 
+	/**
+	 * Initialisiert die Datenbank mit Testwerten
+	 * @return
+	 * @throws Exception
+	 */
 	public static List<Auftrag> init() throws Exception {
 		AuftragDAOTest.deleteAll();
 		
@@ -296,6 +377,10 @@ public class AuftragDAOTest {
 		return lAuftrag;
 	}
 
+	/**
+	 * Löscht alle initialisierten Daten aus der Datenbank.
+	 * @throws Exception
+	 */
 	private static void deleteAll() throws Exception {
 
 		deleteAllAuftrag();
@@ -329,6 +414,10 @@ public class AuftragDAOTest {
 		}
 	}
 
+	/**
+	 * Löscht alle Aufträge aus der Datenbank.
+	 * @throws Exception
+	 */
 	public static void deleteAllAuftrag() throws Exception {
 
 		for (Auftrag a : auftragDAO.findAllAuftrag()) {

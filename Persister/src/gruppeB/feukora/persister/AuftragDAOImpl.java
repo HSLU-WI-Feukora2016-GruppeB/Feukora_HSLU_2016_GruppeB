@@ -139,8 +139,8 @@ public class AuftragDAOImpl implements AuftragDAO {
 		TypedQuery<Auftrag> tQuery = em.createNamedQuery(
 				"Auftrag.findByDatumAndMitarbeiter", Auftrag.class);
 
-		tQuery.setParameter("startdatum", startdatum.getTime());
-		tQuery.setParameter("enddatum", enddatum.getTime());
+		tQuery.setParameter("startdatum", startdatum);
+		tQuery.setParameter("enddatum", enddatum);
 		tQuery.setParameter("mitarbeiter", mitarbeiter);
 
 		List<Auftrag> auftragsListe = tQuery.getResultList();
@@ -157,9 +157,9 @@ public class AuftragDAOImpl implements AuftragDAO {
 		EntityManager em = JpaUtil.createEntityManager();
 
 		TypedQuery<Auftrag> tQuery = em.createNamedQuery(
-				"Auftrag.findAuftragByDatumAndMitarbeiterAndZeitslot", Auftrag.class);
+				"Auftrag.findAuftragByDateAndMitarbeiterAndZeitslot", Auftrag.class);
 
-		tQuery.setParameter("datum", datum.getTime());
+		tQuery.setParameter("datum", datum);
 		tQuery.setParameter("mitarbeiter", mitarbeiter);
 		tQuery.setParameter("zeitSlot", zeitSlot);
 

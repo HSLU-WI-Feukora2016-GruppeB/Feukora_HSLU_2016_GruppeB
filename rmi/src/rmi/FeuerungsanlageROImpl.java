@@ -49,23 +49,23 @@ public class FeuerungsanlageROImpl extends UnicastRemoteObject implements Feueru
 	}
 
 	@Override
-	public List<Feuerungsanlage> findAll() {
+	public List<Feuerungsanlage> findAll() throws Exception {
 		return feuerungsanlageManager.findAll();
 	}
 
 	@Override
-	public List<Feuerungsanlage> findByLiegenschaft(Liegenschaft liegenschaft) {
+	public List<Feuerungsanlage> findByLiegenschaft(Liegenschaft liegenschaft) throws Exception {
 		return feuerungsanlageManager.findByLiegenschaft(liegenschaft);
 	}
 
 	@Override
-	public List<Feuerungsanlage> findByBrenner(Brenner brenner) {
+	public List<Feuerungsanlage> findByBrenner(Brenner brenner) throws Exception {
 		return feuerungsanlageManager.findByBrenner(brenner);
 	}
 
 	@Override
 	public List<Feuerungsanlage> findByWaermeerzeuger(
-			Waermeerzeuger waermeerzeuger) {
+			Waermeerzeuger waermeerzeuger) throws Exception {
 		return feuerungsanlageManager.findByWaermeerzeuger(waermeerzeuger);
 	}
 }

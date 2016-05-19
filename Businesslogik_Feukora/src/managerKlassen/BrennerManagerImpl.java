@@ -48,7 +48,7 @@ public class BrennerManagerImpl implements BrennerManager{
 	}
 
 	@Override
-	public Brenner findById(Integer id) {
+	public Brenner findById(Integer id)  {
 		return brennerDAO.findBrennerById(id);
 	}
 

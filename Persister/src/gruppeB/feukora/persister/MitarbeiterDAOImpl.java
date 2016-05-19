@@ -83,7 +83,7 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 		EntityManager em = JpaUtil.createEntityManager();
 
 		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery(
-				"Mitarbeiter.findByNameUndVorname", Mitarbeiter.class);
+				"Mitarbeiter.findByNameVorname", Mitarbeiter.class);
 
 		tQuery.setParameter("name", name);
 		tQuery.setParameter("vorname", vorname);
@@ -188,7 +188,7 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery("Mitarbeiter.findByArbeitetSeit",
 				Mitarbeiter.class);
 
-		tQuery.setParameter("arbeitetSeit", arbeitetSeit.getTime());
+		tQuery.setParameter("arbeitetSeit", arbeitetSeit);
 
 		List<Mitarbeiter> mitarbeiterListe = tQuery.getResultList();
 
@@ -205,7 +205,7 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery("Mitarbeiter.findByArbeitetBis",
 				Mitarbeiter.class);
 
-		tQuery.setParameter("arbeitetBis", arbeitetBis.getTime());
+		tQuery.setParameter("arbeitetBis", arbeitetBis);
 
 		List<Mitarbeiter> mitarbeiterListe = tQuery.getResultList();
 
