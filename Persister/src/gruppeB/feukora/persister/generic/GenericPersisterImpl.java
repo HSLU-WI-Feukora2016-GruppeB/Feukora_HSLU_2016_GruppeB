@@ -1,8 +1,3 @@
-/*
- * ZWECK: Praxisprojekt Feukora
- * MODUL: Softwarekomponenten, HSLU-Wirtschaft
- */
-
 package gruppeB.feukora.persister.generic;
 
 import java.util.List;
