@@ -61,7 +61,7 @@ public class MessungDAOImpl implements MessungDAO {
 		TypedQuery<Messung> tQuery = em.createNamedQuery("Messung.findByMessDatum",
 				Messung.class);
 
-		tQuery.setParameter("messDatum", messDatum.getTime());
+		tQuery.setParameter("messDatum", messDatum);
 
 		List<Messung> messungsListe = tQuery.getResultList();
 
@@ -79,7 +79,7 @@ public class MessungDAOImpl implements MessungDAO {
 	public List<Messung> findByBeurteilungNotOk(boolean beurteilungNotOk) {
 		EntityManager em = JpaUtil.createEntityManager();
 
-		TypedQuery<Messung> tQuery = em.createNamedQuery("Messung.findByNotBeurteilungOk",
+		TypedQuery<Messung> tQuery = em.createNamedQuery("Messung.findByBeurteilungNotOk",
 				Messung.class);
 
 		tQuery.setParameter("beurteilungNotOk", beurteilungNotOk);
