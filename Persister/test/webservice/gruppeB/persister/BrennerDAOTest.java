@@ -98,7 +98,7 @@ private static BrennerDAOImpl brennerDAO = new BrennerDAOImpl();
 
 		String bNew = "testibus";
 		Brenner bUpdated = bListe.get(1);
-		bUpdated.setBrennerTyp(bNew);;
+		bUpdated.setBrennerTyp(bNew);
 		
 		brennerDAO.updateBrenner(bUpdated);
 		
