@@ -57,58 +57,58 @@ public class MitarbeiterManagerImpl implements MitarbeiterManager {
 	}
 
 	@Override
-	public Mitarbeiter findById(Integer idMitarbeiter) {
+	public Mitarbeiter findById(Integer idMitarbeiter) throws Exception{
 		return mitarbeiterDAO.findMitarbeiterById(idMitarbeiter);
 	}
 
 	@Override
-	public List<Mitarbeiter> findAllMitarbeiter() {
+	public List<Mitarbeiter> findAllMitarbeiter() throws Exception{
 		return mitarbeiterDAO.findAllMitarbeiter();
 	}
 
 	@Override
-	public List<Mitarbeiter> findByName(String name) {
+	public List<Mitarbeiter> findByName(String name)throws Exception {
 		return mitarbeiterDAO.findMitarbeiterByName(name);
 	}
 
 	@Override
-	public List<Mitarbeiter> findByVorname(String vorname) {
+	public List<Mitarbeiter> findByVorname(String vorname)throws Exception{
 		return mitarbeiterDAO.findMitarbeiterByVorname(vorname);
 	}
 
 	@Override
 	public List<Mitarbeiter> findByNameVorname(String name,
-			String vorname) {
+			String vorname) throws Exception{
 		return mitarbeiterDAO.findMitarbeiterByNameVorname(name, vorname);
 	}
 
 	@Override
-	public List<Mitarbeiter> findByRolleIntern(int rolleIntern) {
+	public List<Mitarbeiter> findByRolleIntern(int rolleIntern) throws Exception{
 		return mitarbeiterDAO.findMitarbeiterByRolleIntern(rolleIntern);
 	}
 
 	@Override
-	public List<Mitarbeiter> findByStrasse(String strasse) {
+	public List<Mitarbeiter> findByStrasse(String strasse) throws Exception{
 		return mitarbeiterDAO.findMitarbeiterByStrasse(strasse);
 	}
 
 	@Override
-	public List<Mitarbeiter> findByOrt(Ort ort) {
+	public List<Mitarbeiter> findByOrt(Ort ort) throws Exception{
 		return mitarbeiterDAO.findMitarbeiterByOrt(ort);
 	}
 
 	@Override
-	public List<Mitarbeiter> findByBenutzer(Benutzer user) {
+	public List<Mitarbeiter> findByBenutzer(Benutzer user) throws Exception{
 		return mitarbeiterDAO.findMitarbeiterByBenutzer(user);
 	}
 
 	@Override
-	public List<Mitarbeiter> findByArbeitetSeit(GregorianCalendar arbeitetSeit) {
+	public List<Mitarbeiter> findByArbeitetSeit(GregorianCalendar arbeitetSeit) throws Exception {
 		return mitarbeiterDAO.findMitarbeiterByArbeitetSeit(arbeitetSeit);
 	}
 
 	@Override
-	public List<Mitarbeiter> findByArbeitetBis(GregorianCalendar arbeitetBis) {
+	public List<Mitarbeiter> findByArbeitetBis(GregorianCalendar arbeitetBis) throws Exception{
 		return mitarbeiterDAO.findMitarbeiterByArbeitetBis(arbeitetBis);
 	}
 
