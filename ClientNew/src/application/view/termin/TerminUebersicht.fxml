@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -17,32 +21,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="leaf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.termin.TerminUebersicht">
+<Pane fx:id="leaf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.termin.TerminUebersicht">
    <children>
       <BorderPane prefHeight="616.0" prefWidth="966.0">
          <top>
             <VBox prefHeight="59.0" prefWidth="966.0" BorderPane.alignment="CENTER">
                <children>
                   <Label prefHeight="21.0" prefWidth="403.0" text="Terminübersicht - KontrolleurIn" />
-                  <MenuBar>
-                    <menus>
-                      <Menu mnemonicParsing="false" text="Datei">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="Close" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text="Bearbeiten">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="Delete" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text="Hilfe">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="About" />
-                        </items>
-                      </Menu>
-                    </menus>
-                  </MenuBar>
                </children>
             </VBox>
          </top>
@@ -132,7 +117,7 @@
                               <TextField fx:id="txtDonnerstag" disable="true" GridPane.columnIndex="4" GridPane.rowIndex="5" />
                               <TextField fx:id="txtFreitag" disable="true" GridPane.columnIndex="5" GridPane.rowIndex="5" />
                               <Button fx:id="btnWocheAnzeigen" mnemonicParsing="false" onAction="#wocheAnzeigen" text="Anzeigen" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <Label fx:id="lblRueckmeldung" layoutX="10.0" layoutY="279.0" lineSpacing="2.0" prefHeight="30.0" prefWidth="159.0" text="   " textFill="#eb0c0c" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                              <Label fx:id="lblRueckmeldung" layoutX="10.0" layoutY="279.0" lineSpacing="2.0" prefHeight="30.0" prefWidth="159.0" text="   " textFill="#eb0c0c" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="11.0" />
                                  </font></Label>
