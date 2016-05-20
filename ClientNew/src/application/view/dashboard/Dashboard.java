@@ -70,7 +70,7 @@ public class Dashboard {
 		try {
 
 			DashStage.setScene(new Scene(
-					FXMLLoader.load(getClass().getResource("/application/view/kontakt/KontaktErfassen.fxml"))));
+					FXMLLoader.load(getClass().getResource("/application/view/kontakt/KontaktUebersicht.fxml"))));
 
 			DashStage.show();
 

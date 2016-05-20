@@ -103,7 +103,7 @@ public class MitarbeiterBearbeiten {
 	public static void bekommeMitarbeiter(Mitarbeiter mabearbeitet) throws Exception{
 		maupdate = mabearbeitet;
 
-		name = mabearbeitet.getName().toString();
+		name = mabearbeitet.getName();
 		vorname = mabearbeitet.getVorname();
 		strasse = mabearbeitet.getStrasse();
 		ort = mabearbeitet.getOrt().getOrt();
