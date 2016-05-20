@@ -5,9 +5,10 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 /**
- * AllTests
- * @version 1.0
+ * AllTests Suite
  * @author Luca Raneri
+ * @version 1.0
+ * @since 1.0
  */
 @RunWith(Suite.class)
 @SuiteClasses({ AuftragDAOTest.class, BenutzerDAOTest.class,

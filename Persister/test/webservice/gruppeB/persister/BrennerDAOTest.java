@@ -12,6 +12,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Diese Klasse Testet BenutzerDAOImpl und ihre Funktionen.
+ * @author Olivia Wassmer
+ * @version 1.0
+ * @since 1.0
+ * 
+ */
 public class BrennerDAOTest {
 
 	private static BrennerDAOImpl brennerDAO = new BrennerDAOImpl();
