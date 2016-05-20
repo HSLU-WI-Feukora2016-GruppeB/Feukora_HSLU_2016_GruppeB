@@ -77,6 +77,12 @@ public class AuftragROImpl extends UnicastRemoteObject implements AuftragRO {
 			throws Exception {
 		return auftragManager.findByDateAndMitarbeiter(startdatum, enddatum, mitarbeiter);
 	}
+	
+	@Override
+	public Auftrag findByDateAndMitarbeiterAndZeitslot(GregorianCalendar datum,
+			Mitarbeiter mitarbeiter, int zeitSlot) throws Exception {
+		return auftragManager.findByDateAndMitarbeiterAndZeitslot(datum, mitarbeiter, zeitSlot);
+	}
 
 	@Override
 	public List<Auftrag> findByKontakt(Kontakt kontakt) throws Exception {
