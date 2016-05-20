@@ -71,7 +71,7 @@
                         <Image url="@Bilder/Background/electronic-circuit-board-1920x1080-wallpaper.jpg" />
                      </image>
                   </ImageView>
-                  <ScrollPane prefHeight="745.0" prefWidth="1234.0">
+                  <ScrollPane prefHeight="928.0" prefWidth="1234.0">
                      <content>
                         <VBox prefHeight="977.0" prefWidth="1209.0">
                            <children>
@@ -108,20 +108,20 @@
                                                       <Label text="Ort" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                                                       <Label prefHeight="17.0" prefWidth="80.0" text="Ort" GridPane.columnIndex="4" GridPane.rowIndex="2" />
                                                       <Label text="Strasse" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                                                      <TextField minHeight="30.0" prefHeight="30.0" prefWidth="302.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                                      <TextField GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                                                      <TextField minHeight="30.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                                                      <TextField GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                                                      <TextField GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                                                      <TextField fx:id="txtName" minHeight="30.0" prefHeight="30.0" prefWidth="302.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                      <TextField fx:id="txtVorname" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                      <TextField fx:id="txtOrt" minHeight="30.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                      <TextField fx:id="txtStrasse" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                                      <TextField fx:id="txtOrtL" GridPane.columnIndex="5" GridPane.rowIndex="2" />
                                                       <Label prefHeight="17.0" prefWidth="39.0" text="PLZ" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                                       <Label prefHeight="17.0" prefWidth="57.0" text="TelefonNr" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                                      <TextField minHeight="30.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                                                      <TextField minHeight="30.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                                      <TextField fx:id="txtPLZ" minHeight="30.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                                      <TextField fx:id="txtTelefonNr" minHeight="30.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                                                       <Label text="PLZ" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-                                                      <Label prefHeight="17.0" prefWidth="55.0" text="Info vor Ort" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                                                      <TextField GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                                                      <TextField />
-                                                      <TextField GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                                                      <Label prefHeight="17.0" prefWidth="118.0" text="Info vor Ort" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                                                      <TextField fx:id="txtPLZL" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                                                      <TextField fx:id="txtInfo" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                                                      <Label fx:id="lblRueckmeldung" text="Label Rueckmeldung!!!" GridPane.columnIndex="4" GridPane.rowIndex="5" />
                                                    </children>
                                                 </GridPane>
                                              </children>
@@ -164,9 +164,9 @@
                                              <children>
                                                 <Label text="Baujahr" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                                 <Label text="Brennstoff" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                                <TextField prefWidth="188.0" GridPane.columnIndex="2" />
-                                                <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                                <TextField GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtBrenner" prefWidth="188.0" GridPane.columnIndex="2" />
+                                                <TextField fx:id="txtBaujahr" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                <TextField fx:id="txtBrennstoff" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                                                 <Label prefHeight="17.0" prefWidth="69.0" text="Brenner" GridPane.columnIndex="1" />
                                              </children>
                                           </GridPane>
@@ -188,9 +188,9 @@
                                              <children>
                                                 <Label text="Brennstoff" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                                 <Label text="Baujahr" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                                <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                                <TextField GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                                                <TextField GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                                <TextField fx:id="txtWaermeerzeuger" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                <TextField fx:id="txtBaujahrW" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                <TextField fx:id="txtBrennstoffW" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                                                 <Label text="Wärmeerzeuger" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                              </children>
                                           </GridPane>
@@ -212,9 +212,9 @@
                                                 <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
                                             </rowConstraints>
                                              <children>
-                                                <ChoiceBox minHeight="30.0" prefHeight="30.0" prefWidth="368.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <ChoiceBox fx:id="cbKontrollart" minHeight="30.0" prefHeight="30.0" prefWidth="368.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                                 <Label text="Feuerungswärmleistung" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <TextField fx:id="txtLeistung" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                                              </children>
                                           </GridPane>
                                        </children>
@@ -266,18 +266,18 @@
                                                 <Label text="O2-Gehalt" GridPane.columnIndex="4" GridPane.rowIndex="3" />
                                                 <Label text="NOx" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                                                 <Label text="Wärmeerz. Temp." GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                                                <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                                 <Label text="Abgasverl." GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                                                <TextField GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                                                <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                                                <TextField GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                                                <TextField fx:id="txtM1S2Abgasverl" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                                                <TextField fx:id="txtM1S2Verbrenn" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtM1S2Abgastemperatur" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtM1S2CO" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtM1S2Russzahl" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtM1S2NOx" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                                <TextField fx:id="txtM1S2Waermeerz" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                                <TextField fx:id="txtM1S2O2" GridPane.columnIndex="4" GridPane.rowIndex="4" />
                                                 <Label text="Stufe  2" GridPane.columnIndex="1" />
                                                 <Label text="1. Messung" GridPane.columnIndex="5" />
+                                                <CheckBox fx:id="checkM1S2Oel" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                              </children>
                                           </GridPane>
                                           <GridPane style="-fx-border-color: #000000; -fx-background-color: #FFFFFF;" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -307,18 +307,18 @@
                                                 <Label text="O2-Gehalt" GridPane.columnIndex="4" GridPane.rowIndex="3" />
                                                 <Label text="NOx" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                                                 <Label text="Wärmeerz. Temp." GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                                                <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                                 <Label text="Abgasverl." GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                                                <TextField GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                                                <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                                                <TextField GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                                                <TextField fx:id="txtM2S1Abgasverl" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                                                <TextField fx:id="txtM2S1Verbrenn" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtM2S1Abgastemperatur" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtM2S1CO" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtM2S1Russzahl" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtM2S1Nox" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                                <TextField fx:id="txtM2S1Waermeerz" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                                <TextField fx:id="txtM2S1O2" GridPane.columnIndex="4" GridPane.rowIndex="4" />
                                                 <Label text="Stufe 1" GridPane.columnIndex="1" />
                                                 <Label text="2. Messung" GridPane.columnIndex="5" />
+                                                <CheckBox fx:id="checkM2S2Oel" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                              </children>
                                           </GridPane>
                                           <GridPane style="-fx-border-color: #000000; -fx-background-color: #FFFFFF;" GridPane.columnIndex="3" GridPane.rowIndex="3">
@@ -348,18 +348,18 @@
                                                 <Label text="O2-Gehalt" GridPane.columnIndex="4" GridPane.rowIndex="3" />
                                                 <Label text="NOx" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                                                 <Label text="Wärmeerz. Temp." GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                                                <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                                 <Label text="Abgasverl." GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                                                <TextField GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                                                <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                                                <TextField GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                                                <TextField fx:id="txtM2S2Abgasverl" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                                                <TextField fx:id="txtM2S2Verbrenn" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtM2S2Abgastemperatur" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtM2S2CO" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtM2S2Russzahl" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtM2S2Nox" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                                <TextField fx:id="txtM2S2Waermeerz" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                                <TextField fx:id="txtM2S2O2" GridPane.columnIndex="4" GridPane.rowIndex="4" />
                                                 <Label text="Stufe 2" GridPane.columnIndex="1" />
                                                 <Label text="2. Messung" GridPane.columnIndex="5" />
+                                                <CheckBox fx:id="checkM2S2Oel" mnemonicParsing="false" text="Ölanteile" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                              </children>
                                           </GridPane>
                                           <GridPane prefHeight="138.0" prefWidth="563.0" style="-fx-border-color: #000000; -fx-background-color: #FFFFFF;" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -389,18 +389,18 @@
                                                 <Label text="O2-Gehalt" GridPane.columnIndex="4" GridPane.rowIndex="3" />
                                                 <Label text="NOx" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                                                 <Label text="Wärmeerz. Temp." GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                                                <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                                 <Label text="Abgasverl." GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                                                <TextField GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                                                <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                                                <TextField GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                                                <TextField fx:id="txtM1S1Abgasverl" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                                                <TextField fx:id="txtM1S1Verbrenn" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtM1S1Abgastemperatur" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtM1S1CO" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtM1S1Russzahl" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtM1S1NOx" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                                <TextField fx:id="txtM1S1Waermeerz" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                                <TextField fx:id="txtM1S1O2" GridPane.columnIndex="4" GridPane.rowIndex="4" />
                                                 <Label text="Stufe 1" GridPane.columnIndex="1" />
                                                 <Label text="1. Messung" GridPane.columnIndex="5" />
+                                                <CheckBox fx:id="checkM1S1Oel" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                              </children>
                                           </GridPane>
                                        </children>
@@ -468,7 +468,7 @@
                                                     <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
                                                   </rowConstraints>
                                                    <children>
-                                                      <CheckBox mnemonicParsing="false" text="Anlage muss innert 30 Tagen einreguliert werden" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                      <CheckBox fx:id="checkboxreguliert" mnemonicParsing="false" text="Anlage muss innert 30 Tagen einreguliert werden" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                                       <CheckBox mnemonicParsing="false" text="Einregulierung auf einhalten der LRV-Grenzwerte nicht möglich" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                                    </children>
                                                 </GridPane>
