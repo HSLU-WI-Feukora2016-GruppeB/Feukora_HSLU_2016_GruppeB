@@ -35,6 +35,7 @@ import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
  * (WebService-Schnittstelle) auf Fehler.
  * 
  * @author Dominik
+ * @author Luca Raneri
  * @version 1.0.0
  * @since 1.0.0
  * 
@@ -42,82 +43,95 @@ import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
 
 public class FeuerungsrapportServiceTest {
 	
-		static FeuerungsrapportService fservice;
+	static FeuerungsrapportService fservice;
 
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		fservice = new FeuerungsrapportServiceImpl();
+		//FeuerungsrapportServiceTest.init();
+	}
 
-		@BeforeClass
-		public static void setUpBeforeClass() throws Exception {
-			fservice = new FeuerungsrapportServiceImpl();
-			FeuerungsrapportServiceTest.init();
-			
-		}
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
 
-		@AfterClass
-		public static void tearDownAfterClass() throws Exception {
-		}
-
-		@Before
-		public void setUp() throws Exception {
-		}	
-		@After
-		public void tearDown() throws Exception {
-		}
-				/*
-				 * Mögliche Tests:
-				 * 
-				 * 1. Datensatz einfügen-kontorlle ob dieser eingefügt wurde
-				 * 
-				 * 2. Datensatz löschen - kontrolle ob dieser gelöscht wurde. - 
-				 * Darf im Datenbestand nicht mehr vorhanden sein.,
-				 *
-				 *3. Abruf von Datensatz bsp. Liegenschaft durch 2 verschiede arten,
-				 *vergleich ob diese identisch sind oder nicht	
-				 *
-				 *4. Abruf von Datensatz aufgrund weiterem Kriterium welches mit ERD verknüpft ist.
-				 *Vergleich auf Grösse der Listen per Hardcoding
-				 *
-				 *
-				 */
-
-		@Test
-		public void testFindAllAuftrag() throws Exception{
-			List<Auftrag> auftragsListe = fservice.findAllAuftrag();
-			assertTrue(auftragsListe.size() == 3);
-		}
-		@Test
-		public void testFindAuftragByDatum() throws Exception {
-			
-			GregorianCalendar d = new GregorianCalendar(2016, 9, 11);
-			List<Auftrag> al = fservice.findAuftragByDatum(d);
-			
-			assertNotNull(al);
-			
-			assertTrue(al.size() == 2);
-		}
-
-		@Test
-		public void testFindLiegenschaftByStrasse() throws Exception {
-			
-			Liegenschaft liegenschaft = fservice.findLiegenschaftByStrasse("Musterweg 456").get(0);
-			assertNotNull(liegenschaft);
-		}
-		@Test
-		public void testFindAuftragByLiegenschaft() throws Exception {
-			List<Liegenschaft> liegenschaft = fservice.findLiegenschaftByStrasse("Musterweg 456");
-			assertNotNull(liegenschaft);
-			List<Auftrag> aList = fservice.findAuftragByLiegenschaft(liegenschaft.get(0));
-			assertTrue(aList.size() == 2);
-		}
+	@Before
+	public void setUp() throws Exception {
+		deleteAll();
+	}
 		
-//		@Test
-//		public void testTest() throws Exception{
-//			Liegenschaft liegenschaftByStrasse = fservice.findLiegenschaftByStrasse("Musterweg 456").get(0);
-//			assertNotNull(liegenschaftByStrasse);
-//			Liegenschaft liegenschaftByOrt = fservice.findLiegenschaftByOrt("Genf").get(0);
-//			assertNotNull(liegenschaftByOrt);
-//			
-//			assertEquals(liegenschaftByStrasse,liegenschaftByOrt);
-//		}
+	@After
+	public void tearDown() throws Exception {
+	}
+		
+		/*
+		* Mögliche Tests:
+		* 
+		* 1. Datensatz einfügen-kontorlle ob dieser eingefügt wurde
+		* 
+		* 2. Datensatz löschen - kontrolle ob dieser gelöscht wurde. - 
+		* Darf im Datenbestand nicht mehr vorhanden sein.,
+		*
+		*3. Abruf von Datensatz bsp. Liegenschaft durch 2 verschiede arten,
+		*vergleich ob diese identisch sind oder nicht	
+		*
+		*4. Abruf von Datensatz aufgrund weiterem Kriterium welches mit ERD verknüpft ist.
+		*Vergleich auf Grösse der Listen per Hardcoding
+		*
+		*
+		*/
+
+	//-------------------------------------------------------------------
+	// Auftrag
+	//-------------------------------------------------------------------
+	
+	@Test
+	public void testAddAuftrag() throws Exception{
+		initAuftrag();
+	}
+	
+	@Test
+	public void testUpdateAuftrag() throws Exception{
+		initAuftrag();
+	}
+	
+	@Test
+	public void testFindAuftragById() throws Exception{
+		
+	}
+	
+	@Test
+	public void testFindAllAuftrag() throws Exception{
+		List<Auftrag> auftragsListe = fservice.findAllAuftrag();
+		assertTrue(auftragsListe.size() == 3);
+	}
+	
+	@Test
+	public void testFindAuftragByDatum() throws Exception {
+			
+		GregorianCalendar d = new GregorianCalendar(2016, 9, 11);
+		List<Auftrag> al = fservice.findAuftragByDatum(d);
+		
+		assertNotNull(al);
+		
+		assertTrue(al.size() == 2);
+	}
+
+	@Test
+	public void testFindLiegenschaftByStrasse() throws Exception {
+		
+		Liegenschaft liegenschaft = fservice.findLiegenschaftByStrasse("Musterweg 456").get(0);
+		assertNotNull(liegenschaft);
+	}
+	
+	@Test
+	public void testFindAuftragByLiegenschaft() throws Exception {
+		
+		List<Liegenschaft> liegenschaft = fservice.findLiegenschaftByStrasse("Musterweg 456");
+		assertNotNull(liegenschaft);
+		List<Auftrag> aList = fservice.findAuftragByLiegenschaft(liegenschaft.get(0));
+		assertTrue(aList.size() == 2);
+	}
 		
 		@Test
 		public void testAddAuftrag() throws Exception {
@@ -192,7 +206,7 @@ public class FeuerungsrapportServiceTest {
 		}
 			
 	
-		public static List<Auftrag> init() throws Exception {
+		public static List<Auftrag> initAuftrag() throws Exception {
 			FeuerungsrapportServiceTest.deleteAll();
 			
 			List<Benutzer> lBenutzer = new ArrayList<>();
@@ -278,7 +292,9 @@ public class FeuerungsrapportServiceTest {
 			lAuftrag.add(new Auftrag(lKontakt.get(1), lLiegenschaft.get(1), lMessung.get(4), lMessung.get(2), lMessung.get(5), lMessung.get(3), lMitarbeiter.get(2), new GregorianCalendar(2016, 9, 18), 1, 1));
 			lAuftrag.add(new Auftrag(lKontakt.get(2), lLiegenschaft.get(1), lMessung.get(6), lMessung.get(7), lMessung.get(8), lMessung.get(9), lMitarbeiter.get(3), new GregorianCalendar(2016, 9, 11), 2, 2));
 			
-					
+			for(Benutzer b : lBenutzer)	{
+				fservice.add
+			}
 
 			for(Ort o : lOrt){
 				fservice.addOrt(o);

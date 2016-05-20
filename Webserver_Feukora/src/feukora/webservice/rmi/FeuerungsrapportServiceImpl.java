@@ -136,11 +136,6 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	}
 
 	@Override
-	public void deleteAuftrag(Auftrag auftrag) throws Exception {
-		//auftragRO.delete(entity);
-	}
-
-	@Override
 	public List<Auftrag> findAllAuftrag() throws Exception {
 		return auftragManager.findAll();
 	}
@@ -173,10 +168,6 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 			throws Exception {
 		return auftragManager.findByDatum(datum);
 	}
-	@Override
-	public void deleteAuftragById(Integer auftragsNummer) throws Exception {
-	}
-
 	@Override
 	public List<Auftrag> findAuftragByDateAndMitarbeiter(GregorianCalendar startdatum, 
 			GregorianCalendar enddatum, Mitarbeiter mitarbeiter) throws Exception {
@@ -225,10 +216,6 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	}
 
 	@Override
-	public void deleteBrenner(Brenner brenner) throws Exception {
-	}
-
-	@Override
 	public List<Brenner> findAllBrenner() throws Exception {
 		return brennerManager.findAll();
 	}
@@ -241,10 +228,6 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	@Override
 	public List<Brenner> findBrennerByArt(int brennerArt) throws Exception {
 		return brennerManager.findByArt(brennerArt);
-	}
-
-	@Override
-	public void deleteBrennerById(Integer idBrenner) throws Exception {
 	}
 
 	@Override
@@ -272,10 +255,6 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	}
 
 	@Override
-	public void deleteFeuerungsanlage(Feuerungsanlage feuerungsanlage) throws Exception {
-	}
-
-	@Override
 	public List<Feuerungsanlage> findAllFeuerungsanlage() throws Exception {
 		return feuerungsanlageManager.findAll();
 	}
@@ -299,10 +278,6 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	}
 
 	@Override
-	public void deleteFeuerungsanlageById(Integer idFeuerungsanlage) throws Exception {
-	}
-
-	@Override
 	public Feuerungsanlage findFeuerungsanlageById(Integer idFeuerungsanlage)
 			throws Exception {
 		return feuerungsanlageManager.findById(idFeuerungsanlage);
@@ -319,10 +294,6 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	@Override
 	public Kontakt updateKontakt(Kontakt kontakt) throws Exception {
 		return kontaktManager.update(kontakt);
-	}
-
-	@Override
-	public void deleteKontakt(Kontakt kontakt) throws Exception {
 	}
 
 	@Override
@@ -352,10 +323,6 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	}
 
 	@Override
-	public void deleteKontaktById(Integer idKontakt) throws Exception {
-	}
-
-	@Override
 	public Kontakt findKontaktById(Integer idKontakt) throws Exception {
 		return kontaktManager.findById(idKontakt);
 	}
@@ -377,14 +344,6 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	@Override
 	public Liegenschaft updateiegenschaft(Liegenschaft liegenschaft) throws Exception {
 		return liegenschaftManager.update(liegenschaft);
-	}
-
-	@Override
-	public void deleteLiegenschaft(Liegenschaft liegenschaft) throws Exception {
-	}
-
-	@Override
-	public void deleteLiegenschaftById(Integer idLiegenschaft) throws Exception {
 	}
 
 	@Override
@@ -427,14 +386,6 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	@Override
 	public Messung updateMessung(Messung messung) throws Exception {
 		return messungManager.update(messung);
-	}
-
-	@Override
-	public void deleteMessung(Messung messung) throws Exception {
-	}
-
-	@Override
-	public void deleteMessungById(Integer idMessung) throws Exception {
 	}
 
 	@Override
@@ -530,14 +481,6 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	}
 
 	@Override
-	public void deleteOrt(Ort ort) throws Exception {
-	}
-
-	@Override
-	public void deleteOrtById(Integer idOrt) throws Exception {
-	}
-
-	@Override
 	public Ort findOrtById(Integer idOrt) throws Exception {
 		return ortManager.findById(idOrt);
 	}
@@ -573,15 +516,6 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	}
 
 	@Override
-	public void deleteWaermeerzeuger(Waermeerzeuger waermeerzeuger) throws Exception {
-	}
-
-	@Override
-	public void deleteWaermeerzeugerById(Integer idWaermeerzeuger)
-			throws Exception {
-	}
-
-	@Override
 	public Waermeerzeuger findWaermeerzeugerById(Integer idWaermeerzeuger) throws Exception {
 		return waermeerzeugerManager.findById(idWaermeerzeuger);
 	}
@@ -607,5 +541,111 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	public List<Waermeerzeuger> findWaermeerzeugerByBaujahr(int baujahr)
 			throws Exception {
 		return waermeerzeugerManager.findByBaujahr(baujahr);
+	}
+	
+	//----------------------------------------------------------------------------
+	//Nur für Testzwecken
+    //----------------------------------------------------------------------------
+	@Override
+	public void deleteBenutzer(Benutzer benutzer) throws Exception {
+		benutzerManager.delete(benutzer);
+	}
+
+	@Override
+	public List<Kontakt> findAllKontakte() throws Exception {
+		return kontaktManager.findAll();
+	}
+
+	@Override
+	public List<Mitarbeiter> findAllMitarbeiter() throws Exception {
+		return mitarbeiterManager.findAllMitarbeiter();
+	}
+
+	@Override
+	public void deleteMessung(Messung messung) throws Exception {
+		messungManager.delete(messung);
+	}
+
+	@Override
+	public void deleteMessungById(Integer idMessung) throws Exception {
+	}
+
+	@Override
+	public void deleteMitarbeiter(Mitarbeiter mitarbeiter) throws Exception {
+		mitarbeiterManager.delete(mitarbeiter);		
+	}
+
+	@Override
+	public void deleteOrt(Ort ort) throws Exception {
+		ortManager.delete(ort);
+	}
+
+	@Override
+	public void deleteOrtById(Integer idOrt) throws Exception {
+	}
+
+	@Override
+	public void deleteWaermeerzeuger(Waermeerzeuger waermeerzeuger) throws Exception {
+		waermeerzeugerManager.delete(waermeerzeuger);
+	}
+
+	@Override
+	public void deleteWaermeerzeugerById(Integer idWaermeerzeuger)
+			throws Exception {
+	}
+
+	@Override
+	public void deleteAuftrag(Auftrag auftrag) throws Exception {
+		auftragManager.delete(auftrag);
+	}
+
+	@Override
+	public void deleteAuftragById(Integer auftragsNummer) throws Exception {
+	}
+
+	@Override
+	public void deleteBrenner(Brenner brenner) throws Exception {
+		brennerManager.delete(brenner);
+	}
+
+	@Override
+	public void deleteBrennerById(Integer idBrenner) throws Exception {
+	}
+
+	@Override
+	public void deleteFeuerungsanlage(Feuerungsanlage feuerungsanlage) throws Exception {
+		feuerungsanlageManager.delete(feuerungsanlage);
+	}
+
+	@Override
+	public void deleteFeuerungsanlageById(Integer idFeuerungsanlage) throws Exception {
+	}
+
+	@Override
+	public void deleteKontakt(Kontakt kontakt) throws Exception {
+		kontaktManager.delete(kontakt);
+	}
+
+	@Override
+	public void deleteKontaktById(Integer idKontakt) throws Exception {
+	}
+
+	@Override
+	public void deleteLiegenschaft(Liegenschaft liegenschaft) throws Exception {
+		liegenschaftManager.delete(liegenschaft);
+	}
+
+	@Override
+	public void deleteLiegenschaftById(Integer idLiegenschaft) throws Exception {
+	}
+
+	@Override
+	public Benutzer addBenutzer(Benutzer benutzer) throws Exception {
+		return benutzerManager.add(benutzer);
+	}
+
+	@Override
+	public Mitarbeiter addMitarbeiter(Mitarbeiter mitarbeiter) throws Exception {
+		return mitarbeiterManager.add(mitarbeiter);
 	}
 }
