@@ -22,13 +22,22 @@ public class WaermeerzeugerDAOTest {
 
 	private static WaermeerzeugerDAOImpl waermeerzeugerDAO = new WaermeerzeugerDAOImpl();
 
+	/**
+	 * Initialisiert die Datenbank mit Testwerten.
+	 * @throws Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 		WaermeerzeugerDAOTest.init();
 	}	
-		
+	
+	/**
+	 * Schliesst Test mit Datenbank ab.
+	 * @throws Exception
+	 */
 	@After
 	public void tearDown() throws Exception {
+		WaermeerzeugerDAOTest.deleteAll();
 	}
 	
 	/**

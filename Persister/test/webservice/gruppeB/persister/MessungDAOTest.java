@@ -5,26 +5,8 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
-
-import entitys.Benutzer;
-import entitys.Brenner;
-import entitys.Feuerungsanlage;
-import entitys.Kontakt;
-import entitys.Liegenschaft;
 import entitys.Messung;
-import entitys.Mitarbeiter;
-import entitys.Ort;
-import entitys.Waermeerzeuger;
-import gruppeB.feukora.persister.BenutzerDAOImpl;
-import gruppeB.feukora.persister.BrennerDAOImpl;
-import gruppeB.feukora.persister.FeuerungsanlageDAOImpl;
-import gruppeB.feukora.persister.KontaktDAOImpl;
-import gruppeB.feukora.persister.LiegenschaftDAOImpl;
 import gruppeB.feukora.persister.MessungDAOImpl;
-import gruppeB.feukora.persister.MitarbeiterDAOImpl;
-import gruppeB.feukora.persister.OrtDAOImpl;
-import gruppeB.feukora.persister.WaermeerzeugerDAOImpl;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,24 +19,24 @@ import org.junit.Test;
  */
 public class MessungDAOTest {
 
-	private static BenutzerDAOImpl benutzerDAO = new BenutzerDAOImpl();
-	private static BrennerDAOImpl brennerDAO = new BrennerDAOImpl();
-	private static FeuerungsanlageDAOImpl feuerungsanlageDAO = new FeuerungsanlageDAOImpl();
-	private static KontaktDAOImpl kontaktDAO = new KontaktDAOImpl();
-	private static LiegenschaftDAOImpl liegenschaftDAO = new LiegenschaftDAOImpl();
 	private static MessungDAOImpl messungDAO = new MessungDAOImpl();
-	private static MitarbeiterDAOImpl mitarbeiterDAO = new MitarbeiterDAOImpl();
-	private static OrtDAOImpl ortDAO = new OrtDAOImpl();
-	private static WaermeerzeugerDAOImpl waermeerzeugerDAO = new WaermeerzeugerDAOImpl();
 	
+	/**
+	 * Initialisiert die Datenbank mit Testwerten.
+	 * @throws Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 		MessungDAOTest.init();
 	}
 
+	/**
+	 * Schliesst Test mit Datenbank ab.
+	 * @throws Exception
+	 */
 	@After
 	public void tearDown() throws Exception {
-		
+		MessungDAOTest.deleteAll();
 	}
 	
 	/**
@@ -189,32 +171,6 @@ public class MessungDAOTest {
 	private static void deleteAll() throws Exception {
 
 		deleteAllMessungen();
-		
-		for(Liegenschaft l : liegenschaftDAO.findAllLiegenschaft()){
-			liegenschaftDAO.deleteLiegenschaft(l);
-		}
-		for(Feuerungsanlage f : feuerungsanlageDAO.findAllFeuerungsanlage()){
-			feuerungsanlageDAO.deleteFeuerungsanlage(f);
-		}
-		for(Brenner b : brennerDAO.findAllBrenner()){
-			brennerDAO.deleteBrenner(b);
-		}
-		for(Waermeerzeuger w : waermeerzeugerDAO.findAllWaermeerzeuger()){
-			waermeerzeugerDAO.deleteWaermeerzeuger(w);
-		}
-		for(Mitarbeiter m : mitarbeiterDAO.findAllMitarbeiter()){
-			mitarbeiterDAO.deleteMitarbeiter(m);
-		}
-		for(Benutzer b : benutzerDAO.findAllBenutzer()){
-			benutzerDAO.deleteBenutzer(b);
-		}
-		for(Kontakt k : kontaktDAO.findAllKontakte()){
-			kontaktDAO.deleteKontakt(k);
-		}
-		for(Ort o : ortDAO.findAllOrt()){
-			ortDAO.deleteOrt(o);
-		}
-
 	}
 
 	/**

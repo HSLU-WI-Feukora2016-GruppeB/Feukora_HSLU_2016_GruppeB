@@ -31,6 +31,7 @@ private static BrennerDAOImpl brennerDAO = new BrennerDAOImpl();
 	 */
 	@After
 	public void tearDown() throws Exception {
+		BrennerDAOTest.deleteAll();
 	}
 	
 	/**
