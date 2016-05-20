@@ -293,7 +293,7 @@ public class FeuerungsrapportServiceTest {
 			lAuftrag.add(new Auftrag(lKontakt.get(2), lLiegenschaft.get(1), lMessung.get(6), lMessung.get(7), lMessung.get(8), lMessung.get(9), lMitarbeiter.get(3), new GregorianCalendar(2016, 9, 11), 2, 2));
 			
 			for(Benutzer b : lBenutzer)	{
-				fservice.add
+				fservice.addBenutzer(b);
 			}
 
 			for(Ort o : lOrt){

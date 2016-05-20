@@ -29,7 +29,6 @@ public class FeuerungsrapportServiceAuftragTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		fservice = new FeuerungsrapportServiceImpl();
-		//FeuerungsrapportServiceTest.init();
 	}
 
 	@AfterClass
@@ -38,66 +37,122 @@ public class FeuerungsrapportServiceAuftragTest {
 
 	@Before
 	public void setUp() throws Exception {
-		deleteAll();
+		init();
 	}
 		
 	@After
 	public void tearDown() throws Exception {
-	}
-	
-	@Test
-	public void testAddAuftrag() {
-		fail("Not yet implemented");
+		deleteAll();
 	}
 
 	@Test
-	public void testUpdateAuftrag() {
-		fail("Not yet implemented");
+	public void testUpdateAuftrag() throws Exception {
+		List<Auftrag> auftragsListe = fservice.findAllAuftrag();
+		assertTrue(auftragsListe.size() == 3);
+
+		Ort o = fservice.findOrtByPlz(5000).get(0);
+		Kontakt k = fservice.findKontaktByOrt(o).get(0);
+		Liegenschaft l = fservice.findLiegenschaftByKontakt(k).get(0);
+		Auftrag a = fservice.findAuftragByLiegenschaft(l).get(0);
+		assertNotNull(a);
+		
+		Liegenschaft lnew = fservice.findAllLiegenschaft().get(1);
+		a.setLiegenschaft(lnew);
+		
+		fservice.updateAuftrag(a);
+		
+		Auftrag aDB = fservice.findAuftragByLiegenschaft(lnew).get(0);
+		assertNotNull(aDB);
+		assertTrue(aDB.getLiegenschaft() != l);
+		
+		auftragsListe = fservice.findAllAuftrag();
+		assertTrue(auftragsListe.size() == 3);
 	}
 
 	@Test
-	public void testDeleteAuftrag() {
-		fail("Not yet implemented");
+	public void testDeleteAuftrag() throws Exception {
+		
+		List<Auftrag> auftragsListe = fservice.findAllAuftrag();
+		assertTrue(auftragsListe.size() == 3);
+
+		fservice.deleteAuftrag(auftragsListe.get(0));
+
+		auftragsListe = fservice.findAllAuftrag();
+		assertTrue(auftragsListe.size() == 2);
 	}
 
 	@Test
-	public void testFindAllAuftrag() {
-		fail("Not yet implemented");
+	public void testFindAllAuftrag() throws Exception {
+		
+		List<Auftrag> auftragsListe = fservice.findAllAuftrag();
+		assertTrue(auftragsListe.size() == 3);
 	}
 
 	@Test
-	public void testFindAuftragByMitarbeiter() {
-		fail("Not yet implemented");
+	public void testFindAuftragByMitarbeiter() throws Exception {
+		
+		Mitarbeiter ma = fservice.findMitarbeiterByName("Raneri").get(0);
+		List<Auftrag> al = fservice.findAuftragByMitarbeiter(ma);
+		
+		assertNotNull(al);
+		assertTrue(al.size() == 0);
 	}
 
 	@Test
-	public void testFindAuftragByKontakt() {
-		fail("Not yet implemented");
+	public void testFindAuftragByKontakt() throws Exception {
+		
+		Kontakt k = fservice.findKontaktByName("Meyer").get(0);
+		List<Auftrag> al = fservice.findAuftragByKontakt(k);
+		
+		assertNotNull(al);
+		assertTrue(al.size() == 1);
 	}
 
 	@Test
-	public void testFindAuftragByLiegenschaft() {
-		fail("Not yet implemented");
+	public void testFindAuftragByLiegenschaft() throws Exception {
+		
+		Liegenschaft liegenschaft = fservice.findLiegenschaftByStrasse("Musterweg 456").get(0);
+		assertNotNull(liegenschaft);
+		
+		List<Auftrag> aList = fservice.findAuftragByLiegenschaft(liegenschaft);
+		assertTrue(aList.size() == 2);
 	}
 
 	@Test
-	public void testFindAuftragByAuftragsNummer() {
-		fail("Not yet implemented");
+	public void testFindAuftragByDatum() throws Exception {
+		
+		GregorianCalendar d = new GregorianCalendar(2016, 9, 11);
+		List<Auftrag> al = fservice.findAuftragByDatum(d);
+		
+		assertNotNull(al);
+		assertTrue(al.size() == 2);
 	}
 
 	@Test
-	public void testFindAuftragByDatum() {
-		fail("Not yet implemented");
+	public void testDeleteAuftragById() throws Exception {
+		
+		List<Auftrag> auftragsListe = fservice.findAllAuftrag();
+		assertTrue(auftragsListe.size() == 3);
+
+		fservice.deleteAuftragById(auftragsListe.get(0).getAuftragsNummer());
+
+		auftragsListe = fservice.findAllAuftrag();
+		assertTrue(auftragsListe.size() == 2);
 	}
 
 	@Test
-	public void testDeleteAuftragById() {
-		fail("Not yet implemented");
-	}
+	public void testFindAuftragByDateAndMitarbeiter() throws Exception {
+		
+		GregorianCalendar ds = new GregorianCalendar(2016, 05, 1);
+		GregorianCalendar de = new GregorianCalendar(2018, 10, 11);
+		Mitarbeiter m = fservice.findMitarbeiterByNameVorname("Stirnimann", "Dominik").get(0);
 
-	@Test
-	public void testFindAuftragByDateAndMitarbeiter() {
-		fail("Not yet implemented");
+		assertNotNull(ds);
+		assertNotNull(de);
+		assertNotNull(m);
+		
+		List<Auftrag> auftraege = fservice.findAuftragByDateAndMitarbeiter(ds, de, m);
+		assertTrue(auftraege.size() == 1);
 	}
 	
 	/**
