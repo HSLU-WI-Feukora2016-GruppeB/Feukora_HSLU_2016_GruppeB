@@ -55,14 +55,14 @@ public interface MitarbeiterDAO {
 	 * @param id
 	 * @return
 	 */
-	public Mitarbeiter findMitarbeiterById(Integer id);
+	public Mitarbeiter findMitarbeiterById(Integer id)throws Exception;
 	
 	/**
 	 * Liefert alle Mitarbeiter-Objekte zurück.
 	 * 
 	 * @return
 	 */
-	public List<Mitarbeiter> findAllMitarbeiter();
+	public List<Mitarbeiter> findAllMitarbeiter()throws Exception;
 	
 	/**
 	 * Liefert die Liste mit Mitarbeiter für die übergebene Namen zurück, falls
@@ -71,7 +71,7 @@ public interface MitarbeiterDAO {
 	 * @param name
 	 * @return
 	 */
-	public List<Mitarbeiter> findMitarbeiterByName(String name);
+	public List<Mitarbeiter> findMitarbeiterByName(String name)throws Exception;
 	
 	/**
 	 * Liefert die Liste mit den Mitarbeiter für den übergebenen Vornamen zurück,
@@ -80,7 +80,7 @@ public interface MitarbeiterDAO {
 	 * @param vorname
 	 * @return
 	 */
-	public List<Mitarbeiter> findMitarbeiterByVorname(String vorname);
+	public List<Mitarbeiter> findMitarbeiterByVorname(String vorname)throws Exception;
 	
 	/**
 	 * Liefert die Liste mit den Mitarbeiter für den übergebenen Vornamen und Namen zurück,
@@ -90,7 +90,7 @@ public interface MitarbeiterDAO {
 	 * @param vorname
 	 * @return
 	 */
-	public List<Mitarbeiter> findMitarbeiterByNameVorname(String name, String vorname);
+	public List<Mitarbeiter> findMitarbeiterByNameVorname(String name, String vorname)throws Exception;
 	
 	/**
 	 * Liefert die Liste mit Mitarbeiter für die übergebene Rolle zurück, falls
@@ -99,7 +99,7 @@ public interface MitarbeiterDAO {
 	 * @param rolleIntern
 	 * @return
 	 */
-	public List<Mitarbeiter> findMitarbeiterByRolleIntern(int rolleIntern);
+	public List<Mitarbeiter> findMitarbeiterByRolleIntern(int rolleIntern)throws Exception;
 	
 	/**
 	 * Liefert die Liste mit Mitarbeiter für die übergebene Strasse zurück, falls
@@ -108,7 +108,7 @@ public interface MitarbeiterDAO {
 	 * @param strasse
 	 * @return
 	 */
-	public List<Mitarbeiter> findMitarbeiterByStrasse(String strasse);
+	public List<Mitarbeiter> findMitarbeiterByStrasse(String strasse)throws Exception;
 	
 	/**
 	 * Liefert die Liste mit Mitarbeiter für die übergebenen Örtlichkeiten zurück, falls
@@ -117,7 +117,7 @@ public interface MitarbeiterDAO {
 	 * @param ort
 	 * @return
 	 */
-	public List<Mitarbeiter> findMitarbeiterByOrt(Ort ort);
+	public List<Mitarbeiter> findMitarbeiterByOrt(Ort ort)throws Exception;
 	
 	/**
 	 * Liefert die Liste mit Mitarbeiter für die übergebene User zurück, falls
@@ -126,7 +126,7 @@ public interface MitarbeiterDAO {
 	 * @param user
 	 * @return
 	 */
-	public List<Mitarbeiter> findMitarbeiterByBenutzer(Benutzer user);
+	public List<Mitarbeiter> findMitarbeiterByBenutzer(Benutzer user)throws Exception;
 	
 	/**
 	 * Liefert die Liste mit Mitarbeiter für die übergebene Startdaten zurück, falls
@@ -135,7 +135,7 @@ public interface MitarbeiterDAO {
 	 * @param arbeitetSeit
 	 * @return
 	 */
-	public List<Mitarbeiter> findMitarbeiterByArbeitetSeit(GregorianCalendar arbeitetSeit);
+	public List<Mitarbeiter> findMitarbeiterByArbeitetSeit(GregorianCalendar arbeitetSeit)throws Exception;
 	
 	/**
 	 * Liefert die Liste mit Mitarbeiter für die übergebene Enddaten zurück, falls
@@ -144,5 +144,5 @@ public interface MitarbeiterDAO {
 	 * @param arbeitetBis
 	 * @return
 	 */
-	public List<Mitarbeiter> findMitarbeiterByArbeitetBis(GregorianCalendar arbeitetBis);
+	public List<Mitarbeiter> findMitarbeiterByArbeitetBis(GregorianCalendar arbeitetBis)throws Exception;
 }

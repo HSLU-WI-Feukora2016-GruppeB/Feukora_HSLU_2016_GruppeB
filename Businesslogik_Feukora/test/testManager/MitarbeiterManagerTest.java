@@ -1,32 +1,31 @@
-package webservice.gruppeB.persister;
+package testManager;
 
 import static org.junit.Assert.*;
 import entitys.Benutzer;
 import entitys.Mitarbeiter;
 import entitys.Ort;
-import gruppeB.feukora.persister.BenutzerDAOImpl;
-import gruppeB.feukora.persister.MitarbeiterDAOImpl;
-import gruppeB.feukora.persister.OrtDAOImpl;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import managerInterfaces.BenutzerManager;
+import managerInterfaces.MitarbeiterManager;
+import managerInterfaces.OrtManager;
+import managerKlassen.BenutzerManagerImpl;
+import managerKlassen.MitarbeiterManagerImpl;
+import managerKlassen.OrtManagerImpl;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * Diese Klasse ist für das Testen der MitarbeiterDAO-Implementierung zuständig.
- * 
- * @version 1.0
- * @author Luca Raneri
- */
-public class MitarbeiterDAOTest {
 
-	private static MitarbeiterDAOImpl mitarbeiterDAO = new MitarbeiterDAOImpl();
-	private static OrtDAOImpl ortDAO = new OrtDAOImpl();
-	private static BenutzerDAOImpl benutzerDAO = new BenutzerDAOImpl();
+public class MitarbeiterManagerTest {
+
+	private static MitarbeiterManager mitarbeiterManager = new MitarbeiterManagerImpl();
+	private static OrtManager ortManager = new OrtManagerImpl();
+	private static BenutzerManager benutzerManager = new BenutzerManagerImpl();
 	
 	/**
 	 * Initialisiert die Datenbank mit Testwerten.
@@ -34,7 +33,7 @@ public class MitarbeiterDAOTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		MitarbeiterDAOTest.init();
+		MitarbeiterManagerTest.init();
 	}	
 	
 	/**
@@ -43,7 +42,7 @@ public class MitarbeiterDAOTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-		MitarbeiterDAOTest.deleteAll();
+		MitarbeiterManagerTest.deleteAll();
 	}
 	
 	/**
@@ -53,20 +52,20 @@ public class MitarbeiterDAOTest {
 	@Test
 	public void testUpdateMitarbeiter() throws Exception {
 		
-		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findAllMitarbeiter();
+		List<Mitarbeiter> mitarbeiterListe = mitarbeiterManager.findAllMitarbeiter();
 		assertTrue(mitarbeiterListe.size() == 6);
 		
-		Mitarbeiter m = mitarbeiterDAO.findMitarbeiterByName("Raneri").get(0);
+		Mitarbeiter m = mitarbeiterManager.findByName("Raneri").get(0);
 		assertNotNull(m);
 		m.setName("Pagani");
 		
-		mitarbeiterDAO.updateMitarbeiter(m);
+		mitarbeiterManager.update(m);
 		
-		Mitarbeiter aDB = mitarbeiterDAO.findMitarbeiterByName("Pagani").get(0);
+		Mitarbeiter aDB = mitarbeiterManager.findByName("Pagani").get(0);
 		assertNotNull(aDB);
 		assertTrue(aDB.getName() != "Raneri");
 		
-		mitarbeiterListe = mitarbeiterDAO.findAllMitarbeiter();
+		mitarbeiterListe = mitarbeiterManager.findAllMitarbeiter();
 		assertTrue(mitarbeiterListe.size() == 6);
 		
 	}
@@ -78,12 +77,12 @@ public class MitarbeiterDAOTest {
 	@Test
 	public void testDeleteMitarbeiter() throws Exception {
 		
-		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findAllMitarbeiter();
+		List<Mitarbeiter> mitarbeiterListe = mitarbeiterManager.findAllMitarbeiter();
 		assertTrue(mitarbeiterListe.size() == 6);
 
-		mitarbeiterDAO.deleteMitarbeiter(mitarbeiterListe.get(0));
+		mitarbeiterManager.delete(mitarbeiterListe.get(0));
 
-		mitarbeiterListe = mitarbeiterDAO.findAllMitarbeiter();
+		mitarbeiterListe = mitarbeiterManager.findAllMitarbeiter();
 		assertTrue(mitarbeiterListe.size() == 5);
 	}
 	
@@ -94,12 +93,12 @@ public class MitarbeiterDAOTest {
 	@Test
 	public void testDeleteMitarbeiterById()throws Exception {
 		
-		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findAllMitarbeiter();
+		List<Mitarbeiter> mitarbeiterListe = mitarbeiterManager.findAllMitarbeiter();
 		assertTrue(mitarbeiterListe.size() == 6);
 
-		mitarbeiterDAO.deleteMitarbeiterById(mitarbeiterListe.get(0).getIdMitarbeiter());
+		mitarbeiterManager.deleteById(mitarbeiterListe.get(0).getIdMitarbeiter());
 
-		mitarbeiterListe = mitarbeiterDAO.findAllMitarbeiter();
+		mitarbeiterListe = mitarbeiterManager.findAllMitarbeiter();
 		assertTrue(mitarbeiterListe.size() == 5);
 	}
 	
@@ -111,7 +110,7 @@ public class MitarbeiterDAOTest {
 	public void testFindMitarbeiterByArbeitetBis() throws Exception {
 		
 		GregorianCalendar bis = new GregorianCalendar(2018, 8, 11);
-		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findMitarbeiterByArbeitetBis(bis);
+		List<Mitarbeiter> mitarbeiterListe = mitarbeiterManager.findByArbeitetBis(bis);
 		assertEquals(6, mitarbeiterListe.size());
 		
 	}
@@ -124,7 +123,7 @@ public class MitarbeiterDAOTest {
 	public void testFindMitarbeiterByArbeitetSeit() throws Exception {
 		
 		GregorianCalendar seit = new GregorianCalendar(2016, 5, 1);
-		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findMitarbeiterByArbeitetSeit(seit);
+		List<Mitarbeiter> mitarbeiterListe = mitarbeiterManager.findByArbeitetSeit(seit);
 		assertEquals(6, mitarbeiterListe.size());
 		
 	}
@@ -136,10 +135,10 @@ public class MitarbeiterDAOTest {
 	@Test
 	public void testFindMitarbeiterByBenutzer() throws Exception {
 		
-		Benutzer benutzer = benutzerDAO.findBenutzerByUsername("lra").get(0);
+		Benutzer benutzer = benutzerManager.findByUsername("lra").get(0);
 		assertNotNull(benutzer);
 		
-		List<Mitarbeiter> mitarbeitersListe = mitarbeiterDAO.findMitarbeiterByBenutzer(benutzer);
+		List<Mitarbeiter> mitarbeitersListe = mitarbeiterManager.findByBenutzer(benutzer);
 		assertTrue(mitarbeitersListe.size() == 1);
 	}
 	
@@ -152,7 +151,7 @@ public class MitarbeiterDAOTest {
 		
 		int rolleIntern = 1;
 		
-		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findMitarbeiterByRolleIntern(rolleIntern);
+		List<Mitarbeiter> mitarbeiterListe = mitarbeiterManager.findByRolleIntern(rolleIntern);
 		assertTrue(mitarbeiterListe.size() == 5);
 	}
 	
@@ -165,7 +164,7 @@ public class MitarbeiterDAOTest {
 		
 		String strasse = "Musterstrasse 5";
 		
-		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findMitarbeiterByStrasse(strasse);
+		List<Mitarbeiter> mitarbeiterListe = mitarbeiterManager.findByStrasse(strasse);
 		assertTrue(mitarbeiterListe.size() == 1);
 	}
 	
@@ -176,7 +175,7 @@ public class MitarbeiterDAOTest {
 	@Test
 	public void testFindAllMitarbeiter() throws Exception {
 		
-		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findAllMitarbeiter();
+		List<Mitarbeiter> mitarbeiterListe = mitarbeiterManager.findAllMitarbeiter();
 		assertTrue(mitarbeiterListe.size() == 6);
 	}
 	
@@ -184,7 +183,7 @@ public class MitarbeiterDAOTest {
 	public void testFindByName() throws Exception{
 		
 		String name = "Raneri";
-		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findMitarbeiterByName(name);
+		List<Mitarbeiter> mitarbeiterListe = mitarbeiterManager.findByName(name);
 		assertTrue(mitarbeiterListe.size() == 1);
 	}
 
@@ -192,10 +191,10 @@ public class MitarbeiterDAOTest {
 	public void testFindByVorname()throws Exception{
 		
 		String vorname = "Luca";
-		assertTrue(mitarbeiterDAO.findMitarbeiterByVorname(vorname).size() == 1);
+		assertTrue(mitarbeiterManager.findByVorname(vorname).size() == 1);
 		
 		String vorname2 = "Fronzak";
-		assertTrue(mitarbeiterDAO.findMitarbeiterByVorname(vorname2).isEmpty());
+		assertTrue(mitarbeiterManager.findByVorname(vorname2).isEmpty());
 	}
 	
 	@Test
@@ -203,7 +202,7 @@ public class MitarbeiterDAOTest {
 		
 		String name = "Raneri";
 		String vorname = "Luca";
-		assertTrue(mitarbeiterDAO.findMitarbeiterByNameVorname(name, vorname).size() == 1);
+		assertTrue(mitarbeiterManager.findByNameVorname(name, vorname).size() == 1);
 		
 	}
 	
@@ -212,12 +211,12 @@ public class MitarbeiterDAOTest {
 	 * @throws Exception
 	 */
 	@Test
-	public void testFindMitarbeierByOrt() throws Exception{
+	public void testFindMitarbeierByOrt()throws Exception{
 		
-		Ort ort = ortDAO.findOrtByPlz(1000).get(0);
+		Ort ort = ortManager.findByPlz(1000).get(0);
 		assertNotNull(ort);
 		
-		List<Mitarbeiter> mitarbeitersListe = mitarbeiterDAO.findMitarbeiterByOrt(ort);
+		List<Mitarbeiter> mitarbeitersListe = mitarbeiterManager.findByOrt(ort);
 		assertTrue(mitarbeitersListe.size() == 1);
 	}
 	
@@ -228,7 +227,7 @@ public class MitarbeiterDAOTest {
 	 */
 	public static List<Mitarbeiter> init() throws Exception{
 		
-		MitarbeiterDAOTest.deleteAll();
+		MitarbeiterManagerTest.deleteAll();
 		
 		List<Ort> lOrt = new ArrayList<>();
 		List<Mitarbeiter> lMitarbeiter = new ArrayList<>();
@@ -260,15 +259,15 @@ public class MitarbeiterDAOTest {
 		lMitarbeiter.add(new Mitarbeiter("Alexandra", "Lengen", "Musterstrasse 1", lOrt.get(0), "1234563678", "a.l@feukora.ch", 1, lBenutzer.get(5), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
 		
 		for(Ort o : lOrt){
-			ortDAO.saveOrt(o);
+			ortManager.add(o);
 		}
 		
 		for(Benutzer b : lBenutzer){
-			benutzerDAO.saveBenutzer(b);
+			benutzerManager.add(b);
 		}
 		
 		for(Mitarbeiter m : lMitarbeiter){
-			mitarbeiterDAO.saveMitarbeiter(m);
+			mitarbeiterManager.add(m);
 		}
 				
 		return lMitarbeiter;
@@ -282,12 +281,12 @@ public class MitarbeiterDAOTest {
 		
 		deleteAllMitarbeiter();
 		
-		for (Benutzer b : benutzerDAO.findAllBenutzer()){
-			benutzerDAO.deleteBenutzer(b);
+		for (Benutzer b : benutzerManager.findAll()){
+			benutzerManager.delete(b);
 		}
 	
-		for (Ort o : ortDAO.findAllOrt()){
-			ortDAO.deleteOrt(o);
+		for (Ort o : ortManager.findAll()){
+			ortManager.delete(o);
 		}
 	}
 	
@@ -297,9 +296,9 @@ public class MitarbeiterDAOTest {
 	 */
 	public static void deleteAllMitarbeiter() throws Exception {
 
-		for (Mitarbeiter m : mitarbeiterDAO.findAllMitarbeiter()) {
-			mitarbeiterDAO.deleteMitarbeiter(m);
+		for (Mitarbeiter m : mitarbeiterManager.findAllMitarbeiter()) {
+			mitarbeiterManager.delete(m);
 		}
 	}
-	
+
 }
