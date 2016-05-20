@@ -48,17 +48,11 @@ public class AuftragManagerImpl implements AuftragManager {
 	}
 
 	private void checkTerminProMitarbeiter(Auftrag entity) throws Exception{
-		if (entity.getAuftragsNummer() == 0){
-            if(auftragDAO.findAuftragByDateAndMitarbeiterAndZeitslot(entity.getTermin(), entity.getMitarbeiter(), entity.getZeitSlot()) == null){
-                 
-                  throw new Exception("Der gewünschte Zeitslot ist bereits vergeben. (Id = " + entity.getAuftragsNummer() + ")");
-            }
-            else{
-            auftragDAO.saveAuftrag(entity);;
-            }
-      } else {
+		if(auftragDAO.findAuftragByDateAndMitarbeiterAndZeitslot(entity.getTermin(), entity.getMitarbeiter(), entity.getZeitSlot()) == null){
+			return;
+		}else{
             throw new Exception("Der gewünschte Termin ist bereits erfasst. (Id = " + entity.getAuftragsNummer() + ")");
-      }
+		}
 	}
 
 	@Override
@@ -67,7 +61,7 @@ public class AuftragManagerImpl implements AuftragManager {
 		if (entity.getAuftragsNummer() == null) {
 			return add(entity);
 		}
-//		checkTerminProMitarbeiter(entity);
+		//checkTerminProMitarbeiter(entity);
 //		checkMessungByGrenzwerte(entity);
 		
 		return auftragDAO.updateAuftrag(entity);
