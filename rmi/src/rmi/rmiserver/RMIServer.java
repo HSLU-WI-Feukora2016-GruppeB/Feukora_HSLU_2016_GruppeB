@@ -1,5 +1,6 @@
 package rmi.rmiserver;
 
+import java.io.IOException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -37,20 +38,26 @@ public class RMIServer {
 	
 	public static void main(String[] args) {
 
-	
+//		//Properties Objekt erstellen
+//		Properties dbProperties = new Properties();
+//		
+//		//Klassenloader holen
+//		ClassLoader cLoader = RMIServer.class.getClassLoader();
+//		
+//		//Properties laden
+//		try {
+//			dbProperties.load(cLoader.getResourceAsStream("rmi.properties"));
+//		} catch (IOException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		} 
+//		
+//		//Port auslesen
+//		String port = dbProperties.getProperty("port");
+		
 	try {
 	
-	//Properties Objekt erstellen
-	Properties dbProperties = new Properties();
-	
-	//Klassenloader holen
-	ClassLoader cLoader = RMIServer.class.getClassLoader();
-	
-	//Properties laden
-	dbProperties.load(cLoader.getResourceAsStream("rmi.properties")); 
-	
-	//Port auslesen
-	String port = dbProperties.getProperty("port");
+
 
 	//entfernte Objekte erzeugen
 	AuftragRO au = new AuftragROImpl();
@@ -65,7 +72,7 @@ public class RMIServer {
 	WaermeerzeugerRO wa = new WaermeerzeugerROImpl();
 	
 	// Registry-Instanz erzeugen bzw. starten 
-	Registry reg = LocateRegistry.getRegistry(port);
+	Registry reg = LocateRegistry.createRegistry(10099);
 	
 	// Entferntes Objekt beim Namensdienst registrieren
 	if (reg != null) {
