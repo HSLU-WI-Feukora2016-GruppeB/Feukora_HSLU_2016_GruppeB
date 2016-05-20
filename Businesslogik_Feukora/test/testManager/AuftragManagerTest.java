@@ -59,7 +59,8 @@ public class AuftragManagerTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		AuftragManagerTest.init();
+		//AuftragManagerTest.deleteAll();
+		init();
 	}
 
 	/**
@@ -68,6 +69,7 @@ public class AuftragManagerTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		AuftragManagerTest.deleteAll();
 	}
 
 	/**
@@ -155,7 +157,7 @@ public class AuftragManagerTest {
 		assertNotNull(de);
 		assertNotNull(m);
 		
-		List<Auftrag> auftraege = auftragManager.findByDatumAndMitarbeiter(ds, de, m);
+		List<Auftrag> auftraege = auftragManager.findByDateAndMitarbeiter(ds, de, m);
 		assertTrue(auftraege.size() == 1);
 	}
 	 
@@ -173,7 +175,7 @@ public class AuftragManagerTest {
 		assertNotNull(m);
 		assertNotNull(z);
 		
-		Auftrag auftrag = auftragManager.findAuftragByDateAndMitarbeiterAndZeitslot(d, m, z);
+		Auftrag auftrag = auftragManager.findByDateAndMitarbeiterAndZeitslot(d, m, z);
 		assertNotNull(auftrag);
 		
 	}
@@ -188,16 +190,16 @@ public class AuftragManagerTest {
 		List<Auftrag> auftragsListe = auftragManager.findAll();
 		assertTrue(auftragsListe.size() == 3);
 
-		Ort o = ortDAO.findOrtByPlz(5000).get(0);
-		Kontakt k = kontaktManager.findKontaktByOrt(o).get(0);
-		Liegenschaft l = liegenschaftManager.findLiegenschaftByKontakt(k).get(0);
+		Ort o = ortManager.findByPlz(5000).get(0);
+		Kontakt k = kontaktManager.findByOrt(o).get(0);
+		Liegenschaft l = liegenschaftManager.findByKontakt(k).get(0);
 		Auftrag a = auftragManager.findByLiegenschaft(l).get(0);
 		assertNotNull(a);
 		
-		Liegenschaft lnew = liegenschaftManager.findAllLiegenschaft().get(1);
+		Liegenschaft lnew = liegenschaftManager.findAll().get(1);
 		a.setLiegenschaft(lnew);
 		
-		auftragManager.updateAuftrag(a);
+		auftragManager.update(a);
 		
 		Auftrag aDB = auftragManager.findByLiegenschaft(lnew).get(0);
 		assertNotNull(aDB);
@@ -218,7 +220,7 @@ public class AuftragManagerTest {
 		List<Auftrag> auftragsListe = auftragManager.findAll();
 		assertTrue(auftragsListe.size() == 3);
 
-		auftragManager.deleteAuftrag(auftragsListe.get(0));
+		auftragManager.delete(auftragsListe.get(0));
 
 		auftragsListe = auftragManager.findAll();
 		assertTrue(auftragsListe.size() == 2);
@@ -235,7 +237,7 @@ public class AuftragManagerTest {
 		List<Auftrag> auftragsListe = auftragManager.findAll();
 		assertTrue(auftragsListe.size() == 3);
 
-		auftragManager.deleteAuftragById(auftragsListe.get(0).getAuftragsNummer());
+		auftragManager.deleteById(auftragsListe.get(0).getAuftragsNummer());
 
 		auftragsListe = auftragManager.findAll();
 		assertTrue(auftragsListe.size() == 2);
@@ -249,8 +251,8 @@ public class AuftragManagerTest {
 	public static List<Auftrag> init() throws Exception {
 		AuftragManagerTest.deleteAll();
 		
-		List<Benutzer> lBenutzer = new ArrayList<>();
 		List<Brenner> lBrenner = new ArrayList<>();
+		List<Benutzer> lBenutzer = new ArrayList<>();
 		List<Feuerungsanlage> lFeuerungsanlage = new ArrayList<>();
 		List<Kontakt> lKontakt = new ArrayList<>();
 		List<Liegenschaft> lLiegenschaft = new ArrayList<>();
@@ -268,7 +270,6 @@ public class AuftragManagerTest {
 		lBenutzer.add(new Benutzer("mpe", "111"));
 		lBenutzer.add(new Benutzer("owa", "121"));
 		
-		
 		//3 Brenner erstellen
 		lBrenner.add(new Brenner(1, "abc123", 2013));
 		lBrenner.add(new Brenner(2, "def456", 2014));
@@ -279,11 +280,6 @@ public class AuftragManagerTest {
 		lWaermeerzeuger.add(new Waermeerzeuger(2, "uiopü", 2011));
 		lWaermeerzeuger.add(new Waermeerzeuger(3, "asdfg", 2010));
 	
-		//3 Feuerungsanlagen
-		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(0), lWaermeerzeuger.get(0)));
-		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(1), lWaermeerzeuger.get(1)));
-		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(2), lWaermeerzeuger.get(2)));
-
 		//5 Orte
 		lOrt.add(new Ort(8000, "Zürich"));
 		lOrt.add(new Ort(6000, "Luzern"));
@@ -292,6 +288,11 @@ public class AuftragManagerTest {
 		lOrt.add(new Ort(1000, "Genf"));
 		lOrt.add(new Ort(2000, "Neuchâtel"));
 		lOrt.add(new Ort(4000, "Basel"));
+		
+		//3 Feuerungsanlagen
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(0), lWaermeerzeuger.get(0)));
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(1), lWaermeerzeuger.get(1)));
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(2), lWaermeerzeuger.get(2)));
 		
 		//4 Kontakte erstellen
 		lKontakt.add(new Kontakt("Martina", "Meyer", "Altstrasse 1", lOrt.get(2), "0633335577", "m.m@gmail.com", 2));
@@ -332,6 +333,18 @@ public class AuftragManagerTest {
 		lAuftrag.add(new Auftrag(lKontakt.get(0), lLiegenschaft.get(0), lMessung.get(0), lMessung.get(1), lMessung.get(2), lMessung.get(3), lMitarbeiter.get(0), new GregorianCalendar(2016, 9, 11), 1, 1));
 		lAuftrag.add(new Auftrag(lKontakt.get(1), lLiegenschaft.get(1), lMessung.get(4), lMessung.get(2), lMessung.get(5), lMessung.get(3), lMitarbeiter.get(2), new GregorianCalendar(2016, 9, 18), 1, 1));
 		lAuftrag.add(new Auftrag(lKontakt.get(2), lLiegenschaft.get(1), lMessung.get(6), lMessung.get(7), lMessung.get(8), lMessung.get(9), lMitarbeiter.get(3), new GregorianCalendar(2016, 9, 11), 2, 2));
+		
+//		BenutzerManager bM = new BenutzerManagerImpl();
+//		OrtManager oM = new OrtManagerImpl();
+//		BrennerManager brM = new BrennerManagerImpl();
+//		WaermeerzeugerManager wM = new WaermeerzeugerManagerImpl();
+//		FeuerungsanlageManager fM = new FeuerungsanlageManagerImpl();
+//		KontaktManager kM = new KontaktManagerImpl();
+//		LiegenschaftManager lM = new LiegenschaftManagerImpl();
+//		MessungsManager mM = new MessungManagerImpl();
+//		MitarbeiterManager miM = new MitarbeiterManagerImpl();
+//		AuftragManager aM = new AuftragManagerImpl();
+		
 		
 		for(Benutzer b : lBenutzer){
 			benutzerManager.add(b);
