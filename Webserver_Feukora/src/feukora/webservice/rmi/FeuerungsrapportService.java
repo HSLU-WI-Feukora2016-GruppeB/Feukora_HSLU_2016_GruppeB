@@ -583,7 +583,7 @@ public interface FeuerungsrapportService {
 	 * @throws Exception
 	 */
 	@WebMethod
-	Liegenschaft updateiegenschaft(
+	Liegenschaft updatLiegenschaft(
 			@WebParam(name = "liegenschaft") Liegenschaft liegenschaft)
 			throws Exception;
 
@@ -1086,4 +1086,15 @@ public interface FeuerungsrapportService {
 	@WebMethod
 	List<Waermeerzeuger> findWaermeerzeugerByBaujahr(
 			@WebParam(name = "baujahr") int baujahr) throws Exception;
+	
+	/**
+	 * Passt einen Benutzer an.
+	 * 
+	 * @param benutzer
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Benutzer updateBenutzer(@WebParam(name = "benutzer") Benutzer benutzer)
+			throws Exception;
 }

@@ -342,7 +342,7 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	}
 
 	@Override
-	public Liegenschaft updateiegenschaft(Liegenschaft liegenschaft) throws Exception {
+	public Liegenschaft updatLiegenschaft(Liegenschaft liegenschaft) throws Exception {
 		return liegenschaftManager.update(liegenschaft);
 	}
 
@@ -647,5 +647,10 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	@Override
 	public Mitarbeiter addMitarbeiter(Mitarbeiter mitarbeiter) throws Exception {
 		return mitarbeiterManager.add(mitarbeiter);
+	}
+
+	@Override
+	public Benutzer updateBenutzer(Benutzer benutzer) throws Exception {
+		return benutzerManager.update(benutzer);
 	}
 }

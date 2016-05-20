@@ -16,6 +16,7 @@ import org.junit.Test;
 /**
  * Diese Klasse ist für das Testen der MessungDAO-Implementierung zuständig.
  * @author Olivia Wassmer
+ * @author Luca Raneri
  * @version 1.0
  * @since 1.0
  */
@@ -50,6 +51,26 @@ public class MessungDAOTest {
 		
 		List<Messung> messungsListe = messungDAO.findAllMessung();
 		assertTrue(messungsListe.size() == 4);
+<<<<<<< HEAD
+	}
+	
+	/**
+	 * Dieser Test tested die Methode {@link MessungDAOImpl#deleteMessung(Messung)}.
+	 * @throws Exception
+	 */
+	@Test
+	public void testDelete() throws Exception {
+
+		List<Messung> messungsListe = messungDAO.findAllMessung();
+		assertTrue(messungsListe.size() == 4);
+
+		messungDAO.deleteMessung(messungsListe.get(0));
+
+		messungsListe = messungDAO.findAllMessung();
+		assertTrue(messungsListe.size() == 3);
+
+=======
+>>>>>>> refs/remotes/origin/master
 	}
 	
 	/**
