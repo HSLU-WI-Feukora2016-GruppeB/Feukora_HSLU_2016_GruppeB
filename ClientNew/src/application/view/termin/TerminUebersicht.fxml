@@ -27,7 +27,10 @@
          <top>
             <VBox prefHeight="59.0" prefWidth="966.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label prefHeight="21.0" prefWidth="403.0" text="Terminübersicht - KontrolleurIn" />
+                  <Label prefHeight="44.0" prefWidth="403.0" text="Terminübersicht - KontrolleurIn">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Label>
                </children>
             </VBox>
          </top>

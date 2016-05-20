@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -22,6 +23,15 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.kontakt.KontaktUebersicht">
   <children>
+      <VBox prefHeight="62.0" prefWidth="640.0">
+         <children>
+            <Label prefHeight="46.0" prefWidth="235.0" text="Kontakt Übersicht">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
       <BorderPane fx:id="leaf" prefHeight="382.0" prefWidth="640.0">
          <top>
             <Pane prefHeight="28.0" prefWidth="640.0" BorderPane.alignment="CENTER" />
@@ -35,7 +45,7 @@
          <bottom>
             <Pane prefHeight="47.0" prefWidth="640.0" BorderPane.alignment="CENTER">
                <children>
-                  <HBox layoutY="17.0" prefHeight="36.0" prefWidth="640.0">
+                  <HBox layoutY="5.0" prefHeight="48.0" prefWidth="640.0">
                      <children>
                         <Pane prefHeight="53.0" prefWidth="160.0" />
                         <Button fx:id="btnNeu" mnemonicParsing="false" onAction="#neuerKontakt" prefHeight="25.0" prefWidth="80.0" text="Hinzufügen" />
