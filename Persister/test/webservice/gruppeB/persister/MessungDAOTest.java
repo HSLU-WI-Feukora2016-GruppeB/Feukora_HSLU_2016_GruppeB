@@ -51,7 +51,7 @@ public class MessungDAOTest {
 		
 		List<Messung> messungsListe = messungDAO.findAllMessung();
 		assertTrue(messungsListe.size() == 4);
-<<<<<<< HEAD
+
 	}
 	
 	/**
@@ -69,8 +69,6 @@ public class MessungDAOTest {
 		messungsListe = messungDAO.findAllMessung();
 		assertTrue(messungsListe.size() == 3);
 
-=======
->>>>>>> refs/remotes/origin/master
 	}
 	
 	/**
@@ -126,23 +124,6 @@ public class MessungDAOTest {
 		
 		messungsListe = messungDAO.findAllMessung();
 		assertTrue(messungsListe.size() == 4);
-	}
-
-	/**
-	 * Dieser Test tested die Methode {@link MessungDAOImpl#deleteMessung(Messung).}
-	 * @throws Exception
-	 */
-	@Test
-	public void testDelete() throws Exception {
-	
-		List<Messung> messungsListe = messungDAO.findAllMessung();
-		assertTrue(messungsListe.size() == 4);
-	
-		messungDAO.deleteMessung(messungsListe.get(0));
-	
-		messungsListe = messungDAO.findAllMessung();
-		assertTrue(messungsListe.size() == 3);
-	
 	}
 
 	/**

@@ -8,6 +8,7 @@ import java.util.List;
 import entitys.Brenner;
 import entitys.Feuerungsanlage;
 import entitys.Waermeerzeuger;
+
 import gruppeB.feukora.persister.BrennerDAOImpl;
 import gruppeB.feukora.persister.FeuerungsanlageDAOImpl;
 import gruppeB.feukora.persister.WaermeerzeugerDAOImpl;
@@ -88,7 +89,6 @@ public class FeuerungsanlageDAOTest {
 		
 		assertTrue(fList.size() == 1);
 	}
-
 	
 	/**
 	 * Testet die Methode {@link FeuerungsanlageDAOImpl#updateFeuerungsanlage(Feuerungsanlage)}

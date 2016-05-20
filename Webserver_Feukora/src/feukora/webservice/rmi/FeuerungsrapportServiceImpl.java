@@ -552,11 +552,6 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	}
 
 	@Override
-	public List<Kontakt> findAllKontakte() throws Exception {
-		return kontaktManager.findAll();
-	}
-
-	@Override
 	public List<Mitarbeiter> findAllMitarbeiter() throws Exception {
 		return mitarbeiterManager.findAllMitarbeiter();
 	}

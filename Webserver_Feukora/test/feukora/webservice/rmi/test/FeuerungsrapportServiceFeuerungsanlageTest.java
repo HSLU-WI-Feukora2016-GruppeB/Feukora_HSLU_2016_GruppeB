@@ -2,6 +2,7 @@ package feukora.webservice.rmi.test;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.After;
@@ -12,6 +13,7 @@ import org.junit.Test;
 
 import entitys.Brenner;
 import entitys.Feuerungsanlage;
+import entitys.Waermeerzeuger;
 import feukora.webservice.rmi.FeuerungsrapportService;
 import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
 
@@ -52,54 +54,152 @@ public class FeuerungsrapportServiceFeuerungsanlageTest {
 		deleteAll();
 	}
 
+	/**
+	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#updateFeuerungsanlage(Feuerungsanlage)}.
+	 * @throws Exception
+	 */
 	@Test
-	public void testUpdateFeuerungsanlage() {
+	public void testUpdateFeuerungsanlage() throws Exception {
 		
-		List<Feuerungsanlage> fListe = feuerungsanlageDAO.findAllFeuerungsanlage();
+		List<Feuerungsanlage> fListe = fservice.findAllFeuerungsanlage();
 		assertTrue(fListe.size() == 3);
 
-		Feuerungsanlage f = feuerungsanlageDAO.findAllFeuerungsanlage().get(0);
-		Brenner bNew = brennerDAO.findAllBrenner().get(2);
+		Feuerungsanlage f = fservice.findAllFeuerungsanlage().get(0);
+		Brenner bNew = fservice.findAllBrenner().get(2);
 		f.setBrenner(bNew);
 		
-		feuerungsanlageDAO.updateFeuerungsanlage(f);
+		fservice.updateFeuerungsanlage(f);
 		
-		assertTrue(feuerungsanlageDAO.findAllFeuerungsanlage().size() == 3);
+		assertTrue(fservice.findAllFeuerungsanlage().size() == 3);
 	}
 
+	/**
+	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#findAllFeuerungsanlage()}.
+	 * @throws Exception
+	 */
 	@Test
-	public void testFindAllFeuerungsanlage() {
-		fail("Not yet implemented");
+	public void testFindAllFeuerungsanlage() throws Exception {
+		
+		List<Feuerungsanlage> fListe = fservice.findAllFeuerungsanlage();
+		assertTrue(fListe.size() == 3);
 	}
 
+	/**
+	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#findFeuerungsanlageByBrenner(Brenner)}.
+	 * @throws Exception
+	 */
 	@Test
-	public void testFindFeuerungsanlageByLiegenschaft() {
-		fail("Not yet implemented");
+	public void testFindFeuerungsanlageByBrenner() throws Exception {
+
+		Brenner b = fservice.findAllBrenner().get(0);
+		List<Feuerungsanlage> fList = fservice.findFeuerungsanlageByBrenner(b);
+		
+		assertNotNull(fList);
+		assertTrue(fList.size() == 1);
 	}
 
+	/**
+	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#findFeuerungsanlageByWaermeerzeuger(Waermeerzeuger)}.
+	 * @throws Exception
+	 */
 	@Test
-	public void testFindFeuerungsanlageByBrenner() {
-		fail("Not yet implemented");
+	public void testFindFeuerungsanlageByWaermeerzeuger() throws Exception {
+		
+		Waermeerzeuger w = fservice.findAllWaermeerzeuger().get(0);
+		List<Feuerungsanlage> fList = fservice.findFeuerungsanlageByWaermeerzeuger(w);
+		
+		assertTrue(fList.size() == 1);
 	}
 
+	/**
+	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#deleteFeuerungsanlage(Feuerungsanlage)}.
+	 * @throws Exception
+	 */
 	@Test
-	public void testFindFeuerungsanlageByWaermeerzeuger() {
-		fail("Not yet implemented");
+	public void testDeleteFeuerungsanlage() throws Exception {
+		
+		List<Feuerungsanlage> fListe = fservice.findAllFeuerungsanlage();
+		assertTrue(fListe.size() == 3);
+
+		fservice.deleteFeuerungsanlage(fListe.get(0));
+
+		fListe = fservice.findAllFeuerungsanlage();
+		assertTrue(fListe.size() == 2);
 	}
 
+	/**
+	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#deleteFeuerungsanlageById(Integer)}.
+	 * @throws Exception
+	 */
 	@Test
-	public void testFindFeuerungsanlageById() {
-		fail("Not yet implemented");
+	public void testDeleteFeuerungsanlageById() throws Exception {
+		
+		List<Feuerungsanlage> fListe = fservice.findAllFeuerungsanlage();
+		assertTrue(fListe.size() == 3);
+
+		fservice.deleteFeuerungsanlageById(fListe.get(0).getIdFeuerungsanlage());
+
+		fListe = fservice.findAllFeuerungsanlage();
+		assertTrue(fListe.size() == 2);
 	}
 
-	@Test
-	public void testDeleteFeuerungsanlage() {
-		fail("Not yet implemented");
+	/**
+	 * Initialisiert die Testwerte.
+	 * @return
+	 * @throws Exception
+	 */
+	public static List<Feuerungsanlage> init() throws Exception {
+		
+		deleteAll();
+		
+		List<Feuerungsanlage> lFeuerungsanlage = new ArrayList<>();
+		List<Brenner> lBrenner = new ArrayList<>();
+		List<Waermeerzeuger> lWaermeerzeuger = new ArrayList<>();
+		
+		// 3 Brenner erstellen
+		lBrenner.add(new Brenner(1, "abc123", 2013));
+		lBrenner.add(new Brenner(2, "def456", 2014));
+		lBrenner.add(new Brenner(1, "ghi789", 2015));
+
+		// 3 Waermeerzeuger erstellen
+		lWaermeerzeuger.add(new Waermeerzeuger(1, "qwertz", 2012));
+		lWaermeerzeuger.add(new Waermeerzeuger(2, "uiopü", 2011));
+		lWaermeerzeuger.add(new Waermeerzeuger(3, "asdfg", 2010));
+
+		// 3 Feuerungsanlagen
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(0),
+				lWaermeerzeuger.get(0)));
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(1),
+				lWaermeerzeuger.get(1)));
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(2), lWaermeerzeuger.get(2)));
+
+		for(Brenner b : lBrenner){
+			fservice.addBrenner(b);
+		}
+		for(Waermeerzeuger w : lWaermeerzeuger){
+			fservice.addWaermeerzeuger(w);
+		}
+		for(Feuerungsanlage f : lFeuerungsanlage){
+			fservice.addFeuerungsanlage(f);
+		}
+		
+		return lFeuerungsanlage;
 	}
 
-	@Test
-	public void testDeleteFeuerungsanlageById() {
-		fail("Not yet implemented");
-	}
+	/**
+	 * Löscht alle initialisierten Daten.
+	 * @throws Exception
+	 */
+	private static void deleteAll() throws Exception {
 
+		for(Feuerungsanlage f : fservice.findAllFeuerungsanlage()){
+			fservice.deleteFeuerungsanlage(f);
+		}
+		for(Brenner b : fservice.findAllBrenner()){
+			fservice.deleteBrenner(b);;
+		}
+		for(Waermeerzeuger w : fservice.findAllWaermeerzeuger()){
+			fservice.deleteWaermeerzeuger(w);;
+		}
+	}
 }
