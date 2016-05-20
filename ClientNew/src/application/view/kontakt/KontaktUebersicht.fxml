@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.mitarbeiter.MitarbeiterUebersicht">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.kontakt.KontaktUebersicht">
   <children>
     <MenuBar prefHeight="0.0" prefWidth="731.0" VBox.vgrow="NEVER">
       <menus>
@@ -74,9 +74,8 @@
                   <HBox prefHeight="53.0" prefWidth="640.0">
                      <children>
                         <Pane prefHeight="53.0" prefWidth="160.0" />
-                        <Button fx:id="btnNeu" mnemonicParsing="false" onAction="#neuerMitarbeiter" prefHeight="25.0" prefWidth="80.0" text="Hinzufügen" />
-                        <Button fx:id="btnBearbeiten" mnemonicParsing="false" onAction="#bearbeitenMitarbeiter" text="Bearbeiten" />
-                        <Button fx:id="btnLoeschen" mnemonicParsing="false" text="Löschen" />
+                        <Button fx:id="btnNeu" mnemonicParsing="false" onAction="#neuerKontakt" prefHeight="25.0" prefWidth="80.0" text="Hinzufügen" />
+                        <Button fx:id="btnBearbeiten" mnemonicParsing="false" onAction="#bearbeitenKontakt" text="Bearbeiten" />
                         <Button fx:id="btnSchliessen" mnemonicParsing="false" onAction="#abbrechen" text="Schliessen" />
                         <Pane prefHeight="53.0" prefWidth="135.0" />
                      </children>
@@ -110,7 +109,7 @@
                               <Label text="Name" />
                               <TextField fx:id="txtName" GridPane.rowIndex="1" />
                               <TextField fx:id="txtVorname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Button fx:id="btnSuchen" mnemonicParsing="false" onAction="#MitarbeiterSuchen" text="Suchen" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <Button fx:id="btnSuchen" mnemonicParsing="false" onAction="#kontaktSuchen" text="Suchen" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                               <Label fx:id="lblRueckmeldung" layoutX="229.0" layoutY="19.0" text="  " textFill="#e91212" GridPane.columnIndex="3" />
                            </children>
                         </GridPane>

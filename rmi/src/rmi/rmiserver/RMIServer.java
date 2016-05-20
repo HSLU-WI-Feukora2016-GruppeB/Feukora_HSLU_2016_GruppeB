@@ -38,22 +38,22 @@ public class RMIServer {
 	
 	public static void main(String[] args) {
 
-//		//Properties Objekt erstellen
-//		Properties dbProperties = new Properties();
-//		
-//		//Klassenloader holen
-//		ClassLoader cLoader = RMIServer.class.getClassLoader();
-//		
-//		//Properties laden
-//		try {
-//			dbProperties.load(cLoader.getResourceAsStream("rmi.properties"));
-//		} catch (IOException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		} 
-//		
-//		//Port auslesen
-//		String port = dbProperties.getProperty("port");
+		//Properties Objekt erstellen
+		Properties dbProperties = new Properties();
+		
+		//Klassenloader holen
+		ClassLoader cLoader = RMIServer.class.getClassLoader();
+		
+		//Properties laden
+		try {
+			dbProperties.load(cLoader.getResourceAsStream("rmi.properties"));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} 
+		
+		//Port auslesen
+		String port = dbProperties.getProperty("port");
 		
 	try {
 	
@@ -72,7 +72,7 @@ public class RMIServer {
 	WaermeerzeugerRO wa = new WaermeerzeugerROImpl();
 	
 	// Registry-Instanz erzeugen bzw. starten 
-	Registry reg = LocateRegistry.createRegistry(10099);
+	Registry reg = LocateRegistry.getRegistry(port);
 	
 	// Entferntes Objekt beim Namensdienst registrieren
 	if (reg != null) {

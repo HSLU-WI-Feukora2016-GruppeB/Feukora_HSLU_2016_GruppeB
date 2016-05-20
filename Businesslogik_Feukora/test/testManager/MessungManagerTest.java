@@ -1,4 +1,4 @@
-package webservice.gruppeB.persister;
+package testManager;
 
 import static org.junit.Assert.*;
 
@@ -6,23 +6,24 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import entitys.Messung;
-import gruppeB.feukora.persister.MessungDAOImpl;
+import managerInterfaces.MessungsManager;
+import managerKlassen.MessungManagerImpl;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import entitys.Messung;
+
 /**
- * Diese Klasse ist für das Testen der MessungDAO-Implementierung zuständig.
- * @author Olivia Wassmer
- * @author Luca Raneri
+ * Diese Klasse ist für das Testen der MessungsManager zuständig.
+ * @author Olivia
  * @version 1.0
  * @since 1.0
  */
-public class MessungDAOTest {
+public class MessungManagerTest {
 
-	private static MessungDAOImpl messungDAO = new MessungDAOImpl();
+private static MessungsManager messungManager = new MessungManagerImpl();
 	
 	/**
 	 * Initialisiert die Datenbank mit Testwerten.
@@ -30,7 +31,7 @@ public class MessungDAOTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		MessungDAOTest.init();
+		MessungManagerTest.init();
 	}
 
 	/**
@@ -39,62 +40,42 @@ public class MessungDAOTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-		MessungDAOTest.deleteAll();
+		MessungManagerTest.deleteAll();
 	}
 	
 	/**
-	 * Dieser Test tested die Methode {@link MessungDAOImpl#findAllMessung()}.
+	 * Dieser Test tested die Methode {@link MessungManagerImpl#findAll()}.
 	 * @throws Exception
 	 */
 	@Test
 	public void testFindAll() throws Exception{
 		
-		List<Messung> messungsListe = messungDAO.findAllMessung();
+		List<Messung> messungsListe = messungManager.findAll();
 		assertTrue(messungsListe.size() == 4);
-<<<<<<< HEAD
 	}
 	
 	/**
-	 * Dieser Test tested die Methode {@link MessungDAOImpl#deleteMessung(Messung)}.
-	 * @throws Exception
-	 */
-	@Test
-	public void testDelete() throws Exception {
-
-		List<Messung> messungsListe = messungDAO.findAllMessung();
-		assertTrue(messungsListe.size() == 4);
-
-		messungDAO.deleteMessung(messungsListe.get(0));
-
-		messungsListe = messungDAO.findAllMessung();
-		assertTrue(messungsListe.size() == 3);
-
-=======
->>>>>>> refs/remotes/origin/master
-	}
-	
-	/**
-	 * Dieser Test tested die Methode {@link MessungDAOImpl#findByMessDatum(GregorianCalendar)}.
+	 * Dieser Test tested die Methode {@link MessungManagerImpl#findByDatum(GregorianCalendar)}.
 	 * @throws Exception
 	 */
 	@Test
 	public void testFindByMessDatum() throws Exception{
 		
 		GregorianCalendar d = new GregorianCalendar(2011, 7, 3);
-		List<Messung> m = messungDAO.findByMessDatum(d);
+		List<Messung> m = messungManager.findByDatum(d);
 		
 		assertNotNull(m);
 		assertEquals(1,m.size());
 	}
 	
 	/**
-	 * Dieser Test tested die Methode {@link MessungDAOImpl#findByBeurteilungNotOk(boolean)}.
+	 * Dieser Test tested die Methode {@link MessungManagerImpl#findByBeurteilungNotOk(boolean)}.
 	 * @throws Exception
 	 */
 	@Test
 	public void testFindByBeurteilungNotOk() throws Exception{
 				
-		List<Messung> m = messungDAO.findByBeurteilungNotOk(true);
+		List<Messung> m = messungManager.findByBeurteilungNotOk(true);
 		
 		assertNotNull(m);
 		assertEquals(1,m.size());
@@ -102,62 +83,62 @@ public class MessungDAOTest {
 	}
 	
 	/**
-	 * Dieser Test tested die Methode {@link MessungDAOImpl#updateMessung(entitys.Messung)}.
+	 * Dieser Test tested die Methode {@link MessungManagerImpl#update(Messung)}.
 	 * @throws Exception
 	 */
 	@Test
 	public void testUpdate() throws Exception {
 	
-		List<Messung> messungsListe = messungDAO.findAllMessung();
+		List<Messung> messungsListe = messungManager.findAll();
 		assertTrue(messungsListe.size() == 4);
 		
 		GregorianCalendar altDatum = new GregorianCalendar(2011, 7, 3);
-		Messung m = messungDAO.findByMessDatum(altDatum).get(0);
+		Messung m = messungManager.findByDatum(altDatum).get(0);
 		assertNotNull(m);
 		
 		GregorianCalendar neuDatum = new GregorianCalendar(2016, 5, 18);
 		m.setMessDatum(neuDatum);
 		
-		messungDAO.updateMessung(m);
+		messungManager.update(m);
 		
-		Messung aDB = messungDAO.findByMessDatum(neuDatum).get(0);
+		Messung aDB = messungManager.findByDatum(neuDatum).get(0);
 		assertNotNull(aDB);
 		assertTrue(aDB.getMessDatum() != altDatum);
 		
-		messungsListe = messungDAO.findAllMessung();
+		messungsListe = messungManager.findAll();
 		assertTrue(messungsListe.size() == 4);
 	}
 
 	/**
-	 * Dieser Test tested die Methode {@link MessungDAOImpl#deleteMessung(Messung).}
+	 * Dieser Test tested die Methode {@link MessungManagerImpl#delete(Messung)}
 	 * @throws Exception
 	 */
 	@Test
 	public void testDelete() throws Exception {
 	
-		List<Messung> messungsListe = messungDAO.findAllMessung();
+		List<Messung> messungsListe = messungManager.findAll();
 		assertTrue(messungsListe.size() == 4);
 	
-		messungDAO.deleteMessung(messungsListe.get(0));
+		messungManager.delete(messungsListe.get(0));
 	
-		messungsListe = messungDAO.findAllMessung();
+		messungsListe = messungManager.findAll();
 		assertTrue(messungsListe.size() == 3);
 	
 	}
 
 	/**
-	 * Dieser Test tested die Methode {@link MessungDAOImpl#deleteMessungById(Integer)}.
+	 * Dieser Test tested die Methode {@link MessungManagerImpl#deleteById(Integer)}.
 	 * @throws Exception
 	 */
 	@Test
 	public void testDeleteById() throws Exception {
 		
-		List<Messung> messungsListe = messungDAO.findAllMessung();
+		List<Messung> messungsListe = messungManager.findAll();
 		assertTrue(messungsListe.size() == 4);
 
-		messungDAO.deleteMessungById(messungsListe.get(0).getIdMessung());
+		messungManager.deleteById(messungsListe.get(0).getIdMessung());
 
-		messungsListe = messungDAO.findAllMessung();
+		messungsListe = messungManager.findAll();
 		assertTrue(messungsListe.size() == 3);
 	}
 	
@@ -169,7 +150,7 @@ public class MessungDAOTest {
 	 */
 	public static List<Messung> init() throws Exception {
 		
-		MessungDAOTest.deleteAll();
+		MessungManagerTest.deleteAll();
 		
 		List<Messung> lMessung = new ArrayList<>();
 				
@@ -181,7 +162,7 @@ public class MessungDAOTest {
 		lMessung.get(0).setBeurteilungNotOk(true);
 		
 		for(Messung m : lMessung){
-			messungDAO.saveMessung(m);
+			messungManager.add(m);
 		}
 		
 		return lMessung;
@@ -202,8 +183,9 @@ public class MessungDAOTest {
 	 */
 	public static void deleteAllMessungen() throws Exception {
 
-		for (Messung m : messungDAO.findAllMessung()) {
-			messungDAO.deleteMessung(m);
+		for (Messung m : messungManager.findAll()) {
+			messungManager.delete(m);
 		}
 	}
+
 }

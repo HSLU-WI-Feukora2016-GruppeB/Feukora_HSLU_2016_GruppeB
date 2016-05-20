@@ -648,4 +648,9 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	public Mitarbeiter addMitarbeiter(Mitarbeiter mitarbeiter) throws Exception {
 		return mitarbeiterManager.add(mitarbeiter);
 	}
+
+	@Override
+	public Benutzer updateBenutzer(Benutzer benutzer) throws Exception {
+		return benutzerManager.update(benutzer);
+	}
 }
