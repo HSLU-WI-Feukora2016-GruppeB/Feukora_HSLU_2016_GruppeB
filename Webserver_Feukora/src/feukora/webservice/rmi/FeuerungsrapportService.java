@@ -1088,6 +1088,10 @@ public interface FeuerungsrapportService {
 	List<Waermeerzeuger> findWaermeerzeugerByBaujahr(
 			@WebParam(name = "baujahr") int baujahr) throws Exception;
 	
+	//------------------------------------------------------------------------
+	// Zusätzliche Methoden für Testzwecke.
+	//------------------------------------------------------------------------
+	
 	/**
 	 * Passt einen Benutzer an.
 	 * 
@@ -1098,4 +1102,37 @@ public interface FeuerungsrapportService {
 	@WebMethod
 	Benutzer updateBenutzer(@WebParam(name = "benutzer") Benutzer benutzer)
 			throws Exception;
+
+	/**
+	 * Passt einen Mitarbeiter an.
+	 * 
+	 * @param mitarbeiter
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Mitarbeiter updateMitarbeiter(@WebParam(name = "mitarbeiter") Mitarbeiter mitarbeiter)
+			throws Exception;
+
+	/**
+	 * Löscht den übergebenen Mitarbeiter mithilfe seiner Id.
+	 * 
+	 * @param idMitarbeiter
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	void deleteMitarbeiterById(@WebParam(name = "idMitarbeiter") Integer idMitarbeiter) throws Exception;
+
+	/**
+	 * Liefert alle Mitarbeiter mit gesuchter Rolle.
+	 * 
+	 * @param rolleIntern
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	List<Mitarbeiter> findMitarbeiterByRolleIntern(
+			@WebParam(name = "rolleIntern") int rolleIntern) throws Exception;
+
 }
