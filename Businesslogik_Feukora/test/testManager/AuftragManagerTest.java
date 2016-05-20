@@ -59,8 +59,8 @@ public class AuftragManagerTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		//AuftragManagerTest.deleteAll();
-		init();
+		AuftragManagerTest.deleteAll();
+		AuftragManagerTest.init();
 	}
 
 	/**
@@ -69,7 +69,7 @@ public class AuftragManagerTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-		AuftragManagerTest.deleteAll();
+		//AuftragManagerTest.deleteAll();
 	}
 
 	/**
@@ -295,8 +295,8 @@ public class AuftragManagerTest {
 		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(2), lWaermeerzeuger.get(2)));
 		
 		//4 Kontakte erstellen
-		lKontakt.add(new Kontakt("Martina", "Meyer", "Altstrasse 1", lOrt.get(2), "0633335577", "m.m@gmail.com", 2));
-		lKontakt.add(new Kontakt("Christoph", "Müller", "Neustrasse 1", lOrt.get(6), "0554445577", "c.m@gmail.com", 1));
+		lKontakt.add(new Kontakt("Martina", "Meyer", "Altstrasse 1", lOrt.get(3), "0633335577", "m.m@gmail.com", 2));
+		lKontakt.add(new Kontakt("Christoph", "Müller", "Neustrasse 1", lOrt.get(2), "0554445577", "c.m@gmail.com", 1));
 		lKontakt.add(new Kontakt("Heiri", "Muster", "Bernstrasse 1", lOrt.get(4), "0688885577", "h.m@gmail.com", 2));
 		lKontakt.add(new Kontakt("Christof", "Meyer", "Gassweg 1", lOrt.get(5), "0633335577", "ch.m@gmail.com", 2));
 		lKontakt.add(new Kontakt("Hanna", "Putz", "Malweg 5", lOrt.get(4), "0637777777", "h.p@gmail.com", 2));
@@ -327,23 +327,12 @@ public class AuftragManagerTest {
 		lMitarbeiter.add(new Mitarbeiter("Dominik", "Stirnimann", "Musterstrasse 3", lOrt.get(3), "1234367678", "d.s@feukora.ch", 1, lBenutzer.get(3), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
 		lMitarbeiter.add(new Mitarbeiter("Pascal", "Steiner", "Musterstrasse 4", lOrt.get(2), "1234567678", "p.st@feukora.ch", 1, lBenutzer.get(2), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
 		lMitarbeiter.add(new Mitarbeiter("Luca", "Raneri", "Musterstrasse 5", lOrt.get(1), "1234567178", "l.r@feukora.ch", 1, lBenutzer.get(1), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
-		lMitarbeiter.add(new Mitarbeiter("Alexandra", "Lengen", "Musterstrasse 1", lOrt.get(0), "1234563678", "a.l@feukora.ch", 1, lBenutzer.get(5), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
+		lMitarbeiter.add(new Mitarbeiter("Alexandra", "Lengen", "Musterstrasse 1", lOrt.get(5), "1234563678", "a.l@feukora.ch", 1, lBenutzer.get(5), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
 		
 		//3 Aufträge erstellen
 		lAuftrag.add(new Auftrag(lKontakt.get(0), lLiegenschaft.get(0), lMessung.get(0), lMessung.get(1), lMessung.get(2), lMessung.get(3), lMitarbeiter.get(0), new GregorianCalendar(2016, 9, 11), 1, 1));
 		lAuftrag.add(new Auftrag(lKontakt.get(1), lLiegenschaft.get(1), lMessung.get(4), lMessung.get(2), lMessung.get(5), lMessung.get(3), lMitarbeiter.get(2), new GregorianCalendar(2016, 9, 18), 1, 1));
 		lAuftrag.add(new Auftrag(lKontakt.get(2), lLiegenschaft.get(1), lMessung.get(6), lMessung.get(7), lMessung.get(8), lMessung.get(9), lMitarbeiter.get(3), new GregorianCalendar(2016, 9, 11), 2, 2));
-		
-//		BenutzerManager bM = new BenutzerManagerImpl();
-//		OrtManager oM = new OrtManagerImpl();
-//		BrennerManager brM = new BrennerManagerImpl();
-//		WaermeerzeugerManager wM = new WaermeerzeugerManagerImpl();
-//		FeuerungsanlageManager fM = new FeuerungsanlageManagerImpl();
-//		KontaktManager kM = new KontaktManagerImpl();
-//		LiegenschaftManager lM = new LiegenschaftManagerImpl();
-//		MessungsManager mM = new MessungManagerImpl();
-//		MitarbeiterManager miM = new MitarbeiterManagerImpl();
-//		AuftragManager aM = new AuftragManagerImpl();
 		
 		
 		for(Benutzer b : lBenutzer){

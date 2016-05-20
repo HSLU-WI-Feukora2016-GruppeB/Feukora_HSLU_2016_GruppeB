@@ -74,7 +74,7 @@ public class GrenzwerteManagerImpl {
 	public void checkGrenzwerte(Messung messung, int brennerTyp, int messStufe) {
 		if (messung == null) {
 			return;
-		}
+		} else {
 
 		Grenzwerte gWerte = grenzwertMap.get(brennerTyp).get(messStufe);
 
@@ -89,6 +89,7 @@ public class GrenzwerteManagerImpl {
 		messung.setAbgasverlusteNotOk(isAbgasverlusteNOK(messung, gWerte));
 		
 		messung.setBeurteilungNotOk(checkBeurteilung(messung));
+		}
 	}
 
 	private boolean checkBeurteilung(Messung messung) {

@@ -33,8 +33,8 @@ public class AuftragManagerImpl implements AuftragManager {
 
 		if (entity.getAuftragsNummer() == null) {
 
-			checkMessungByGrenzwerte(entity);
-			checkTerminProMitarbeiter(entity);
+			//checkMessungByGrenzwerte(entity);
+			//checkTerminProMitarbeiter(entity);
 
 			auftragDAO.saveAuftrag(entity);
 		
@@ -67,7 +67,9 @@ public class AuftragManagerImpl implements AuftragManager {
 		if (entity.getAuftragsNummer() == null) {
 			return add(entity);
 		}
-		checkMessungByGrenzwerte(entity);
+//		checkTerminProMitarbeiter(entity);
+//		checkMessungByGrenzwerte(entity);
+		
 		return auftragDAO.updateAuftrag(entity);
 	}
 
