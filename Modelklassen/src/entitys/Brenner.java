@@ -81,8 +81,12 @@ public class Brenner implements Serializable{
 		return brennerA;
 	}
 
-	public void setBrennerArt(int brennerArt) {
-		this.brennerArt = brennerArt;
+	public void setBrennerArt(int brennerArt) throws Exception {
+		if(brennerArt>1 && brennerArt<7){
+			this.brennerArt = brennerArt;
+		}else{
+			throw new Exception("Brennerart ungültig, Wert muss zwischen 1-6 liegen");
+		}
 	}
 
 	public String getBrennerTyp() {

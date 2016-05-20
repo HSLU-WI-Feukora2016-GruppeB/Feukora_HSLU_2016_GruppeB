@@ -136,8 +136,13 @@ public class Kontakt implements Serializable{
 		return rolleE;
 	}
 
-	public void setRolleExtern(int rolleExtern) {
-		this.rolleExtern = rolleExtern;
+	public void setRolleExtern(int rolleExtern) throws Exception {
+		if(rolleExtern==1 || rolleExtern==2){
+			this.rolleExtern = rolleExtern;
+		}else{
+			throw new Exception("Rolle ungültig, entweder 1 oder 2");
+		}
+		
 	}
 	
 	@Override

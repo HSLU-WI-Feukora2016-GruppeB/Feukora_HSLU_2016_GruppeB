@@ -219,9 +219,15 @@ public class Auftrag implements Serializable {
 	 * 1 == Routinekontrolle
 	 * 2 == Abnahmekontrolle
 	 * @return
+	 * @throws Exception 
 	 */
-	public void setTerminArt(int terminArt) {
-		this.terminArt = terminArt;
+	public void setTerminArt(int terminArt) throws Exception {
+		if(terminArt==1 || terminArt==2){
+			this.terminArt = terminArt;
+		} else {
+			throw new Exception("Terminart ungültig, 1 für Routinekontrolle, 2 für Abnahmekontrolle");
+		}
+		
 	}
 
 	/**
@@ -264,9 +270,15 @@ public class Auftrag implements Serializable {
 	 * 3==13-15Uhr
 	 * 4==15-17Uhr
 	 * @return
+	 * @throws Exception 
 	 */
-	public void setZeitSlot(int zeitSlot) {
-		this.zeitSlot = zeitSlot;
+	public void setZeitSlot(int zeitSlot) throws Exception {
+		if(zeitSlot<=4 && zeitSlot>=1){
+			this.zeitSlot = zeitSlot;
+		} else {
+			throw new Exception("Der Zeitslot ist ungültig, bitte Zahl zwischen 1-4");
+		}
+		
 	}
 
 	
