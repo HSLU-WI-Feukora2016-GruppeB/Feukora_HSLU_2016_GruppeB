@@ -14,8 +14,7 @@ import gruppeB.feukora.persister.OrtDAOImpl;
 
 /**
  * Testet die Funktionalität von OrtDAO.
- * @author Matthias
- * @author Luca Raneri
+ * @author Matthias Perrollaz
  * @version 1.0
  * @since 1.0
  *

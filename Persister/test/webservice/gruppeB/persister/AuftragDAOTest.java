@@ -31,7 +31,7 @@ import org.junit.Before;
 import org.junit.Test;
 /**
  * Testet die Funktionalität von AuftragDAO.
- * @author Olivia
+ * @author Olivia Wassmer
  * @version 1.0
  * @since 1.0
  *

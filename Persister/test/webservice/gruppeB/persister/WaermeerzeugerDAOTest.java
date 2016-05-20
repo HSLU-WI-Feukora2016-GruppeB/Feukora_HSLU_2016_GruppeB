@@ -14,9 +14,9 @@ import org.junit.Test;
 
 /**
  * Diese Klasse ist für das Testen der WaermeerzeugerDAO-Implementierung zuständig.
- * 
- * @version 1.0
  * @author Luca Raneri
+ * @version 1.0
+ * @since 1.0
  */
 public class WaermeerzeugerDAOTest {
 

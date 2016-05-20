@@ -16,6 +16,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Diese Klasse Testet BenutzerDAOImpl und ihre Funktionen.
+ * @author Luca Raneri
+ * @version 1.0
+ * @since 1.0
+ * 
+ */
 public class FeuerungsanlageDAOTest {
 
 	private static FeuerungsanlageDAOImpl feuerungsanlageDAO = new FeuerungsanlageDAOImpl();

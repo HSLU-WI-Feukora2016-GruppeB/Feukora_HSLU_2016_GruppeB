@@ -30,6 +30,7 @@ public interface FeuerungsrapportService {
 	// -----------------------------------------------------------------------------------------------
 	// Auftrag
 	// -----------------------------------------------------------------------------------------------
+	
 	/**
 	 * Speichert einen Auftrag.
 	 * 
@@ -163,6 +164,17 @@ public interface FeuerungsrapportService {
 	// -----------------------------------------------------------------------------------------------
 
 	/**
+	 * Speichert einen Benutzer.
+	 * 
+	 * @param benutzer
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Benutzer addBenutzer(@WebParam(name = "benutzer") Benutzer benutzer)
+			throws Exception;
+	
+	/**
 	 * Liefert einen Benutzer anhand der gesuchten Benutzer-Id.
 	 * 
 	 * @param idUser
@@ -204,6 +216,17 @@ public interface FeuerungsrapportService {
 	List<Benutzer> findBenutzerByUsernamePassword(
 			@WebParam(name = "username") String username,
 			@WebParam(name = "password") String password) throws Exception;
+	
+	/**
+	 * Löscht die übergebene Entity.
+	 * 
+	 * @param benutzer
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	void deleteBenutzer(@WebParam(name = "benutzer") Benutzer benutzer)
+			throws Exception;
 
 	// -----------------------------------------------------------------------------------------------
 	// Brenner
@@ -506,7 +529,7 @@ public interface FeuerungsrapportService {
 			throws Exception;
 
 	/**
-	 * Liefert alle Mitarbeiter mit gesuchter Rolle.
+	 * Liefert alle Kontakte mit gesuchter Rolle.
 	 * 
 	 * @param rolleExtern
 	 * @return
@@ -517,7 +540,7 @@ public interface FeuerungsrapportService {
 			@WebParam(name = "rolleExtern") int rolleExtern) throws Exception;
 
 	/**
-	 * Liefert alle Mitarbeiter mit gesuchter Strasse.
+	 * Liefert alle Kontakte mit gesuchter Strasse.
 	 * 
 	 * @param strasse
 	 * @return
@@ -526,6 +549,16 @@ public interface FeuerungsrapportService {
 	@WebMethod
 	List<Kontakt> findKontaktByStrasse(
 			@WebParam(name = "strasse") String strasse) throws Exception;
+	
+	/**
+	 * Liefert alle Kontakte zurück.
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	List<Kontakt> findAllKontakte() throws Exception;
+	
 
 	// -----------------------------------------------------------------------------------------------
 	// Liegenschaft
@@ -729,6 +762,27 @@ public interface FeuerungsrapportService {
 	// -----------------------------------------------------------------------------------------------
 	// Mitarbeiter
 	// -----------------------------------------------------------------------------------------------
+	
+	/**
+	 * Speichert einen Mitarbeiter.
+	 * 
+	 * @param mitarbeiter
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Mitarbeiter addMitarbeiter(@WebParam(name = "mitarbeiter") Mitarbeiter mitarbeiter)
+			throws Exception;
+	
+	/**
+	 * Liefert alle Mitarbeiter zurück.
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	List<Mitarbeiter> findAllMitarbeiter() throws Exception;
+	
 	/**
 	 * Liefert alle Mitarbeiter des angefragten Typs.
 	 * 
@@ -831,6 +885,17 @@ public interface FeuerungsrapportService {
 	@WebMethod
 	List<Mitarbeiter> findMitarbeiterByArbeitetBis(
 			@WebParam(name = "arbeitetBis") GregorianCalendar arbeitetBis)
+			throws Exception;
+	
+	/**
+	 * Löscht die übergebene Entity.
+	 * 
+	 * @param mitarbeiter
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	void deleteMitarbeiter(@WebParam(name = "mitarbeiter") Mitarbeiter mitarbeiter)
 			throws Exception;
 
 	// -----------------------------------------------------------------------------------------------

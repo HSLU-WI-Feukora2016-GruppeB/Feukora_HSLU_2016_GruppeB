@@ -18,9 +18,9 @@ import org.junit.Test;
 
 /**
  * Diese Klasse ist für das Testen der MitarbeiterDAO-Implementierung zuständig.
- * 
- * @version 1.0
  * @author Luca Raneri
+ * @version 1.0
+ * @since 1.0
  */
 public class MitarbeiterDAOTest {
 
@@ -170,7 +170,7 @@ public class MitarbeiterDAOTest {
 	}
 	
 	/**
-	 * Dieser Test testet die Suchfunktion "FindAllMitarbeiter". 
+	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#findAllMitarbeiter()}
 	 * @throws Exception
 	 */
 	@Test
@@ -180,6 +180,10 @@ public class MitarbeiterDAOTest {
 		assertTrue(mitarbeiterListe.size() == 6);
 	}
 	
+	/**
+	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#findMitarbeiterByName(name)}.
+	 * 
+	 */
 	@Test
 	public void testFindByName() throws Exception{
 		
@@ -188,6 +192,10 @@ public class MitarbeiterDAOTest {
 		assertTrue(mitarbeiterListe.size() == 1);
 	}
 
+	/**
+	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#findMitarbeiterByVorname(String)}.
+	 * 
+	 */
 	@Test
 	public void testFindByVorname()throws Exception{
 		
@@ -197,7 +205,10 @@ public class MitarbeiterDAOTest {
 		String vorname2 = "Fronzak";
 		assertTrue(mitarbeiterDAO.findMitarbeiterByVorname(vorname2).isEmpty());
 	}
-	
+	/**
+	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#findMitarbeiterByNameVorname(String, String)}.
+	 * 
+	 */	
 	@Test
 	public void testFindByNameVorname()throws Exception{
 		

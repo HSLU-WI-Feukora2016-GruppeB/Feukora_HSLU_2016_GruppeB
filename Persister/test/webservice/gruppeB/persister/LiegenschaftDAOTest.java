@@ -24,9 +24,9 @@ import gruppeB.feukora.persister.WaermeerzeugerDAOImpl;
 
 /**
  * Diese Klasse ist für das Testen der LiegenschaftDAO-Implementierung zuständig.
- * 
- * @version 1.0
  * @author Luca Raneri
+ * @version 1.0
+ * @since 1.0
  */
 public class LiegenschaftDAOTest {
 

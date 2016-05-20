@@ -13,7 +13,7 @@ import org.junit.Test;
 
 /**
  * Testet die Funktionalität von KontaktDAO.
- * @author Olivia
+ * @author Olivia Wassmer
  * @version 1.0
  * @since 1.0
  *
