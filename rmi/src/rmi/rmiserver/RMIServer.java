@@ -67,7 +67,6 @@ public class RMIServer {
 	// Registry-Instanz erzeugen bzw. starten 
 	Registry reg = LocateRegistry.getRegistry(port);
 	
-	
 	// Entferntes Objekt beim Namensdienst registrieren
 	if (reg != null) {
 		
