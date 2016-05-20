@@ -10,6 +10,7 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Properties;
@@ -19,24 +20,12 @@ import javax.jws.WebService;
 import rmi.*;
 import entitys.*;
 
-/* import entitäten.Auftrag;
- * import entitäten.Benutzer;
- * import entitäten.Brenner;
- * import entitäten.Feuerungsanlage;
- * import entitäten.Kontakt;
- * import entitäten.Liegenschaft;
- * import entitäten.Messung;
- * import entitäten.Mitarbeiter;
- * import entitäten.Ort;
- * import entitäten.Waermeerzeuger;
- * import managerInterfaces.*;
- */
-
 /**
  * Diese Klasse implementiert die Konkreten Methoden des
  * FeuerungsrapportInterface für die Feuerungskontrolle zur Verfügung.
  * 
  * @author Dominik
+ * @author Luca Raneri
  * @version 1.0.0
  * @since 1.0.0
  * 
@@ -44,30 +33,29 @@ import entitys.*;
 @WebService(endpointInterface = "feukora.webservice.rmi.FeuerungsrapportService")
 public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 
-	 private AuftragRO auftragRO;
-	 private BenutzerRO benutzerRO;
-	 private BrennerRO brennerRO;
-	 private FeuerungsanlageRO feuerungsanlageRO;
-	 private KontaktRO kontaktRO;
-	 private LiegenschaftRO liegenschaftRO;
-	 private MessungRO messungRO;
-	 private MitarbeiterRO mitarbeiterRO;
-	 private OrtRO ortRO;
-	 private WaermeerzeugerRO waermeerzeugerRO;
-
+	private AuftragRO auftragManager;
+	private BenutzerRO benutzerManager;
+	private BrennerRO brennerManager;
+	private FeuerungsanlageRO feuerungsanlageManager;
+	private KontaktRO kontaktManager;
+	private LiegenschaftRO liegenschaftManager;
+	private MessungRO messungManager;
+	private MitarbeiterRO mitarbeiterManager;
+	private OrtRO ortManager;
+	private WaermeerzeugerRO waermeerzeugerManager;
 
 	public FeuerungsrapportServiceImpl() throws Exception {
 
-		String AuftragROName = "Auftrag";
-		String BenutzerROName = "Benutzer";
-		String BrennerROName = "Brenner";
-		String FeuerungsanlageROName = "Feuerungsanlage";
-		String KontaktROName = "Kontakt";
-		String MessungsROName = "Messung";
-		String MitarbeiterROName = "Mitarbeiter";
-		String LiegenschaftROName = "Liegenschaft";
-		String OrtROName = "Ort";
-		String WaermeerzeugerROName = "Waermerzeuger";
+		String AuftragROName = "auftragRO";
+		String BenutzerROName = "benutzerRO";
+		String BrennerROName = "brennerRO";
+		String FeuerungsanlageROName = "feuerungsanlageRO";
+		String KontaktROName = "kontaktRO";
+		String MessungsROName = "messungRO";
+		String MitarbeiterROName = "mitarbeiterRO";
+		String LiegenschaftROName = "liegenschaftRO";
+		String OrtROName = "ortRO";
+		String WaermeerzeugerROName = "waermerzeugerRO";
 
 		/*
 		 * Host-IP und RMI-Port definieren (an sich würde man diese Angaben aus
@@ -75,25 +63,24 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 		 */
 		String hostIp = "localhost";
 		int rmiPort = 10090;
+				
+		//Properties dbProperties = new Properties();
 		
-		
-		Properties dbProperties = new Properties();
-		
-
 		// SecurityManager braucht nicht installiert zu werden, da Tomcat einen
 		// eigenen SecurityManager hat
+		
 		try {
 
 			/* Properties laden */
-//			Properties props = new Properties();
-//
-//			InputStream is = FeuerungsrapportServiceImpl.class.getClassLoader()
-//					.getResourceAsStream("webserver.properties");
-//
-//			props.load(is);
+			Properties props = new Properties();
 
-//			hostIp = props.getProperty("rmi.server_ip");
-//			rmiPort = Integer.parseInt(props.getProperty("rmi.server_port"));
+			InputStream is = FeuerungsrapportServiceImpl.class.getClassLoader()
+					.getResourceAsStream("webserver.properties");
+
+			props.load(is);
+
+			hostIp = props.getProperty("rmi.server_ip");
+			rmiPort = Integer.parseInt(props.getProperty("rmi.server_port"));
 
 			// URLs definieren
 			String urlAuftragRO = "rmi://" + hostIp + ":" + rmiPort + "/"
@@ -118,19 +105,19 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 					+ "/" + WaermeerzeugerROName;
 			
 			/* Lookup */
-			auftragRO = (AuftragRO) Naming.lookup(urlAuftragRO);
-			benutzerRO = (BenutzerRO) Naming.lookup(urlBenutzerRO);
-			brennerRO = (BrennerRO) Naming.lookup(urlBrennerRO);
-			feuerungsanlageRO = (FeuerungsanlageRO) Naming.lookup(urlFeuerungsanlageRO);
-			kontaktRO = (KontaktRO) Naming.lookup(urlKontaktRO);
-			messungRO = (MessungRO) Naming.lookup(urlMessungRO);
-			mitarbeiterRO = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
-			liegenschaftRO = (LiegenschaftRO) Naming.lookup(urlLiegenschaftRO);
-			ortRO = (OrtRO) Naming.lookup(urlOrtRO);
-			waermeerzeugerRO = (WaermeerzeugerRO) Naming.lookup(urlWaermeerzeugerRO);
+			auftragManager = (AuftragRO) Naming.lookup(urlAuftragRO);
+			benutzerManager = (BenutzerRO) Naming.lookup(urlBenutzerRO);
+			brennerManager = (BrennerRO) Naming.lookup(urlBrennerRO);
+			feuerungsanlageManager = (FeuerungsanlageRO) Naming.lookup(urlFeuerungsanlageRO);
+			kontaktManager = (KontaktRO) Naming.lookup(urlKontaktRO);
+			messungManager = (MessungRO) Naming.lookup(urlMessungRO);
+			mitarbeiterManager = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
+			liegenschaftManager = (LiegenschaftRO) Naming.lookup(urlLiegenschaftRO);
+			ortManager = (OrtRO) Naming.lookup(urlOrtRO);
+			waermeerzeugerManager = (WaermeerzeugerRO) Naming.lookup(urlWaermeerzeugerRO);
 
-		} catch (Exception e) {
-		throw e;
+		} catch (MalformedURLException | RemoteException | NotBoundException e) {
+			throw e;
 		}
 	}
 	
@@ -139,63 +126,62 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	// -----------------------------------------------------------------------------------------------
 
 	@Override
-	public Auftrag addAuftrag(Auftrag entity) throws Exception {
-		return auftragRO.add(entity);
+	public Auftrag addAuftrag(Auftrag auftrag) throws Exception {
+		return auftragManager.add(auftrag);
 	}
 
 	@Override
-	public Auftrag updateAuftrag(Auftrag entity) throws Exception {
-		return auftragRO.update(entity);
+	public Auftrag updateAuftrag(Auftrag auftrag) throws Exception {
+		return auftragManager.update(auftrag);
 	}
 
 	@Override
-	public void deleteAuftrag(Auftrag entity) throws Exception {
-		auftragRO.delete(entity);
+	public void deleteAuftrag(Auftrag auftrag) throws Exception {
+		//auftragRO.delete(entity);
 	}
 
 	@Override
 	public List<Auftrag> findAllAuftrag() throws Exception {
-		return auftragRO.findAll();
+		return auftragManager.findAll();
 	}
 
 	@Override
 	public List<Auftrag> findAuftragByMitarbeiter(Mitarbeiter mitarbeiter)
 			throws Exception {
-		return auftragRO.findByMitarbeiter(mitarbeiter);
+		return auftragManager.findByMitarbeiter(mitarbeiter);
 	}
 
 	@Override
 	public List<Auftrag> findAuftragByKontakt(Kontakt kontakt) throws Exception {
-		return auftragRO.findByKontakt(kontakt);
+		return auftragManager.findByKontakt(kontakt);
 	}
 
 	@Override
 	public List<Auftrag> findAuftragByLiegenschaft(Liegenschaft liegenschaft)
 			throws Exception {
-		return auftragRO.findByLiegenschaft(liegenschaft);
+		return auftragManager.findByLiegenschaft(liegenschaft);
 	}
 
 	@Override
 	public Auftrag findAuftragByAuftragsNummer(Integer auftragsNummer)
 			throws Exception {
-		return auftragRO.findByAuftragsNummer(auftragsNummer);
+		return auftragManager.findByAuftragsNummer(auftragsNummer);
 	}
 
 	@Override
 	public List<Auftrag> findAuftragByDatum(GregorianCalendar datum)
 			throws Exception {
-		return auftragRO.findByDatum(datum);
+		return auftragManager.findByDatum(datum);
 	}
 	@Override
 	public void deleteAuftragById(Integer auftragsNummer) throws Exception {
 	}
 
 	@Override
-	public List<Auftrag> findAuftragByDateAndMitarbeiter(
-			GregorianCalendar startdatum, GregorianCalendar enddatum,
-			Mitarbeiter mitarbeiter) throws Exception {
-		return auftragRO.findByDateAndMitarbeiter(startdatum, enddatum,
-				mitarbeiter);
+	public List<Auftrag> findAuftragByDateAndMitarbeiter(GregorianCalendar startdatum, 
+			GregorianCalendar enddatum, Mitarbeiter mitarbeiter) throws Exception {
+		
+		return auftragManager.findByDateAndMitarbeiter(startdatum, enddatum, mitarbeiter);
 	}
 
 	// -----------------------------------------------------------------------------------------------
@@ -204,24 +190,24 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 
 	@Override
 	public Benutzer findBenutzerById(Integer idUser) throws Exception {
-		return benutzerRO.findById(idUser);
+		return benutzerManager.findById(idUser);
 	}
 
 	@Override
 	public List<Benutzer> findAllBenutzer() throws Exception {
-		return benutzerRO.findAll();
+		return benutzerManager.findAll();
 	}
 
 	@Override
 	public List<Benutzer> findBenutzerByUsername(String username)
 			throws Exception {
-		return benutzerRO.findByUsername(username);
+		return benutzerManager.findByUsername(username);
 	}
 
 	@Override
 	public List<Benutzer> findBenutzerByUsernamePassword(String username, String password)
 			throws Exception {
-		return benutzerRO.findByUsernamePassword(username, password);
+		return benutzerManager.findByUsernamePassword(username, password);
 	}
 
 	// -----------------------------------------------------------------------------------------------
@@ -229,32 +215,32 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	// -----------------------------------------------------------------------------------------------
 
 	@Override
-	public Brenner addBrenner(Brenner entity) throws Exception {
-		return brennerRO.add(entity);
+	public Brenner addBrenner(Brenner brenner) throws Exception {
+		return brennerManager.add(brenner);
 	}
 
 	@Override
-	public Brenner updateBrenner(Brenner entity) throws Exception {
-		return brennerRO.update(entity);
+	public Brenner updateBrenner(Brenner brenner) throws Exception {
+		return brennerManager.update(brenner);
 	}
 
 	@Override
-	public void deleteBrenner(Brenner entity) throws Exception {
+	public void deleteBrenner(Brenner brenner) throws Exception {
 	}
 
 	@Override
 	public List<Brenner> findAllBrenner() throws Exception {
-		return brennerRO.findAll();
+		return brennerManager.findAll();
 	}
 
 	@Override
 	public List<Brenner> findBrennerByTyp(String brennerTyp) throws Exception {
-		return brennerRO.findByTyp(brennerTyp);
+		return brennerManager.findByTyp(brennerTyp);
 	}
 
 	@Override
 	public List<Brenner> findBrennerByArt(int brennerArt) throws Exception {
-		return brennerRO.findByArt(brennerArt);
+		return brennerManager.findByArt(brennerArt);
 	}
 
 	@Override
@@ -263,107 +249,106 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 
 	@Override
 	public Brenner findBrennerById(Integer idBrenner) throws Exception {
-		return brennerRO.findById(idBrenner);
+		return brennerManager.findById(idBrenner);
 	}
 
 	@Override
 	public List<Brenner> findBrennerByBaujahr(int baujahr) throws Exception {
-		return brennerRO.findByBaujahr(baujahr);
+		return brennerManager.findByBaujahr(baujahr);
 	}
 	// -----------------------------------------------------------------------------------------------
 	// Feuerungsanlage
 	// -----------------------------------------------------------------------------------------------
 	@Override
-	public Feuerungsanlage addFeuerungsanlage(Feuerungsanlage entity)
+	public Feuerungsanlage addFeuerungsanlage(Feuerungsanlage feuerungsanlage)
 			throws Exception {
-		return feuerungsanlageRO.add(entity);
+		return feuerungsanlageManager.add(feuerungsanlage);
 	}
 
 	@Override
-	public Feuerungsanlage updateFeuerungsanlage(Feuerungsanlage entity)
+	public Feuerungsanlage updateFeuerungsanlage(Feuerungsanlage feuerungsanlage)
 			throws Exception {
-		return feuerungsanlageRO.update(entity);
+		return feuerungsanlageManager.update(feuerungsanlage);
 	}
 
 	@Override
-	public void deleteFeuerungsanlage(Feuerungsanlage entity) throws Exception {
+	public void deleteFeuerungsanlage(Feuerungsanlage feuerungsanlage) throws Exception {
 	}
 
 	@Override
 	public List<Feuerungsanlage> findAllFeuerungsanlage() throws Exception {
-		return feuerungsanlageRO.findAll();
+		return feuerungsanlageManager.findAll();
 	}
 
 	@Override
 	public List<Feuerungsanlage> findFeuerungsanlageByLiegenschaft(
 			Liegenschaft liegenschaft) throws Exception {
-		return feuerungsanlageRO.findByLiegenschaft(liegenschaft);
+		return feuerungsanlageManager.findByLiegenschaft(liegenschaft);
 	}
 
 	@Override
 	public List<Feuerungsanlage> findFeuerungsanlageByBrenner(Brenner brenner)
 			throws Exception {
-		return feuerungsanlageRO.findByBrenner(brenner);
+		return feuerungsanlageManager.findByBrenner(brenner);
 	}
 
 	@Override
 	public List<Feuerungsanlage> findFeuerungsanlageByWaermeerzeuger(
 			Waermeerzeuger waermeerzeuger) throws Exception {
-		return feuerungsanlageRO.findByWaermeerzeuger(waermeerzeuger);
+		return feuerungsanlageManager.findByWaermeerzeuger(waermeerzeuger);
 	}
 
 	@Override
-	public void deleteFeuerungsanlageById(Integer idFeuerungsanlage)
-			throws Exception {
+	public void deleteFeuerungsanlageById(Integer idFeuerungsanlage) throws Exception {
 	}
 
 	@Override
 	public Feuerungsanlage findFeuerungsanlageById(Integer idFeuerungsanlage)
 			throws Exception {
-		return feuerungsanlageRO.findById(idFeuerungsanlage);
+		return feuerungsanlageManager.findById(idFeuerungsanlage);
 	}
 	// -----------------------------------------------------------------------------------------------
 	// Kontakt
 	// -----------------------------------------------------------------------------------------------
 
 	@Override
-	public Kontakt addKontakt(Kontakt entity) throws Exception {
-		return kontaktRO.add(entity);
+	public Kontakt addKontakt(Kontakt kontakt) throws Exception {
+		return kontaktManager.add(kontakt);
 	}
 
 	@Override
-	public Kontakt updateKontakt(Kontakt entity) throws Exception {
-		return kontaktRO.update(entity);
+	public Kontakt updateKontakt(Kontakt kontakt) throws Exception {
+		return kontaktManager.update(kontakt);
 	}
 
 	@Override
-	public void deleteKontakt(Kontakt entity) throws Exception {
+	public void deleteKontakt(Kontakt kontakt) throws Exception {
 	}
 
 	@Override
 	public List<Kontakt> findAllKontakt() throws Exception {
-		return kontaktRO.findAll();
+		return kontaktManager.findAll();
 	}
 
 	@Override
 	public List<Kontakt> findKontaktByName(String name) throws Exception {
-		return kontaktRO.findByName(name);
+		return kontaktManager.findByName(name);
 	}
 
 	@Override
 	public List<Kontakt> findKontaktByVorname(String vorname) throws Exception {
-		return kontaktRO.findByVorname(vorname);
+		return kontaktManager.findByVorname(vorname);
 	}
 
 	@Override
 	public List<Kontakt> findKontaktByOrt(Ort ort) throws Exception {
-		return kontaktRO.findByOrt(ort);
+		return kontaktManager.findByOrt(ort);
 	}
 
 	@Override
 	public List<Kontakt> findKontaktByRolleExtern(int rolleExtern)
 			throws Exception {
-		return kontaktRO.findByRolleExtern(rolleExtern);
+		return kontaktManager.findByRolleExtern(rolleExtern);
 	}
 
 	@Override
@@ -372,12 +357,12 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 
 	@Override
 	public Kontakt findKontaktById(Integer idKontakt) throws Exception {
-		return kontaktRO.findById(idKontakt);
+		return kontaktManager.findById(idKontakt);
 	}
 
 	@Override
 	public List<Kontakt> findKontaktByStrasse(String strasse) throws Exception {
-		return kontaktRO.findByStrasse(strasse);
+		return kontaktManager.findByStrasse(strasse);
 	}
 
 	// -----------------------------------------------------------------------------------------------
@@ -385,17 +370,17 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	// -----------------------------------------------------------------------------------------------
 
 	@Override
-	public Liegenschaft addLiegenschaft(Liegenschaft entity) throws Exception {
-		return liegenschaftRO.add(entity);
+	public Liegenschaft addLiegenschaft(Liegenschaft liegenschaft) throws Exception {
+		return liegenschaftManager.add(liegenschaft);
 	}
 
 	@Override
-	public Liegenschaft updateiegenschaft(Liegenschaft entity) throws Exception {
-		return liegenschaftRO.update(entity);
+	public Liegenschaft updateiegenschaft(Liegenschaft liegenschaft) throws Exception {
+		return liegenschaftManager.update(liegenschaft);
 	}
 
 	@Override
-	public void deleteLiegenschaft(Liegenschaft entity) throws Exception {
+	public void deleteLiegenschaft(Liegenschaft liegenschaft) throws Exception {
 	}
 
 	@Override
@@ -404,30 +389,30 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 
 	@Override
 	public List<Liegenschaft> findAllLiegenschaft() throws Exception {
-		return liegenschaftRO.findAll();
+		return liegenschaftManager.findAll();
 	}
 
 	@Override
 	public Liegenschaft findLiegenschaftById(Integer idLiegenschaft)
 			throws Exception {
-		return liegenschaftRO.findById(idLiegenschaft);
+		return liegenschaftManager.findById(idLiegenschaft);
 	}
 
 	@Override
 	public List<Liegenschaft> findLiegenschaftByKontakt(Kontakt kontakt)
 			throws Exception {
-		return liegenschaftRO.findByKontakt(kontakt);
+		return liegenschaftManager.findByKontakt(kontakt);
 	}
 
 	@Override
 	public List<Liegenschaft> findLiegenschaftByOrt(Ort ort) throws Exception {
-		return liegenschaftRO.findByOrt(ort);
+		return liegenschaftManager.findByOrt(ort);
 	}
 
 	@Override
 	public List<Liegenschaft> findLiegenschaftByStrasse(String strasse)
 			throws Exception {
-		return liegenschaftRO.findByStrasse(strasse);
+		return liegenschaftManager.findByStrasse(strasse);
 	}
 
 	// -----------------------------------------------------------------------------------------------
@@ -435,17 +420,17 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	// -----------------------------------------------------------------------------------------------
 
 	@Override
-	public Messung addMessung(Messung entity) throws Exception {
-		return messungRO.add(entity);
+	public Messung addMessung(Messung messung) throws Exception {
+		return messungManager.add(messung);
 	}
 
 	@Override
-	public Messung updateMessung(Messung entity) throws Exception {
-		return messungRO.update(entity);
+	public Messung updateMessung(Messung messung) throws Exception {
+		return messungManager.update(messung);
 	}
 
 	@Override
-	public void deleteMessung(Messung entity) throws Exception {
+	public void deleteMessung(Messung messung) throws Exception {
 	}
 
 	@Override
@@ -454,24 +439,24 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 
 	@Override
 	public Messung findMessungById(Integer idMessung) throws Exception {
-		return messungRO.findById(idMessung);
+		return messungManager.findById(idMessung);
 	}
 
 	@Override
 	public List<Messung> findAllMessung() throws Exception {
-		return messungRO.findAll();
+		return messungManager.findAll();
 	}
 
 	@Override
 	public List<Messung> findMessungByDatum(GregorianCalendar messDatum)
 			throws Exception {
-		return messungRO.findByDatum(messDatum);
+		return messungManager.findByDatum(messDatum);
 	}
 
 	@Override
 	public List<Messung> findMessungByBeurteilungNotOk(boolean beurteilungNotOk)
 			throws Exception {
-		return messungRO.findByBeurteilungNotOk(beurteilungNotOk);
+		return messungManager.findByBeurteilungNotOk(beurteilungNotOk);
 	}
 
 	// -----------------------------------------------------------------------------------------------
@@ -481,114 +466,114 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	@Override
 	public Mitarbeiter findMitarbeiterById(Integer idMitarbeiter)
 			throws Exception {
-		return mitarbeiterRO.findById(idMitarbeiter);
+		return mitarbeiterManager.findById(idMitarbeiter);
 	}
 
 	@Override
 	public List<Mitarbeiter> findMitarbeiterByName(String name) 
 			throws Exception {
-		return mitarbeiterRO.findByName(name);
+		return mitarbeiterManager.findByName(name);
 	}
 
 	@Override
 	public List<Mitarbeiter> findMitarbeiterByVorname(String vorname)
 			throws Exception {
-		return mitarbeiterRO.findByVorname(vorname);
+		return mitarbeiterManager.findByVorname(vorname);
 	}
 	
 	@Override
 	public List<Mitarbeiter> findMitarbeiterByNameVorname(String name,
 			String vorname) throws Exception {
-		return mitarbeiterRO.findByNameVorname(name, vorname);
+		return mitarbeiterManager.findByNameVorname(name, vorname);
 	}
 
 	@Override
 	public List<Mitarbeiter> findMitarbeiterByStrasse(String strasse)
 			throws Exception {
-		return mitarbeiterRO.findByStrasse(strasse);
+		return mitarbeiterManager.findByStrasse(strasse);
 	}
 
 	@Override
 	public List<Mitarbeiter> findMitarbeiterByOrt(Ort ort) throws Exception {
-		return mitarbeiterRO.findByOrt(ort);
+		return mitarbeiterManager.findByOrt(ort);
 	}
 
 	@Override
 	public List<Mitarbeiter> findMitarbeiterByBenutzer(Benutzer user)
 			throws Exception {
-		return mitarbeiterRO.findByBenutzer(user);
+		return mitarbeiterManager.findByBenutzer(user);
 	}
 
 	@Override
 	public List<Mitarbeiter> findMitarbeiterByArbeitetSeit(
 			GregorianCalendar arbeitetSeit) throws Exception {
-		return mitarbeiterRO.findByArbeitetSeit(arbeitetSeit);
+		return mitarbeiterManager.findByArbeitetSeit(arbeitetSeit);
 	}
 
 	@Override
 	public List<Mitarbeiter> findMitarbeiterByArbeitetBis(
 			GregorianCalendar arbeitetBis) throws Exception {
-		return mitarbeiterRO.findByArbeitetBis(arbeitetBis);
+		return mitarbeiterManager.findByArbeitetBis(arbeitetBis);
 	}
 
 	// -----------------------------------------------------------------------------------------------
 	// Ort
 	// -----------------------------------------------------------------------------------------------
 	@Override
-	public Ort addOrt(Ort entity) throws Exception {
-		return ortRO.add(entity);
+	public Ort addOrt(Ort ort) throws Exception {
+		return ortManager.add(ort);
 	}
 
 	@Override
-	public Ort updateOrt(Ort entity) throws Exception {
-		return ortRO.update(entity);
+	public Ort updateOrt(Ort ort) throws Exception {
+		return ortManager.update(ort);
 	}
 
 	@Override
-	public void deleteOrt(Ort entity) throws Exception {
+	public void deleteOrt(Ort ort) throws Exception {
 	}
 
 	@Override
-	public void deleteOrtById(Integer id) throws Exception {
+	public void deleteOrtById(Integer idOrt) throws Exception {
 	}
 
 	@Override
-	public Ort findOrtById(Integer id) throws Exception {
-		return ortRO.findById(id);
+	public Ort findOrtById(Integer idOrt) throws Exception {
+		return ortManager.findById(idOrt);
 	}
 
 	@Override
 	public List<Ort> findOrtByOrtBez(String ortBez) throws Exception {
-		return ortRO.findByOrtBez(ortBez);
+		return ortManager.findByOrtBez(ortBez);
 	}
 
 	@Override
 	public List<Ort> findOrtByPlz(int plz) throws Exception {
-		return ortRO.findByOrtPlz(plz);
+		return ortManager.findByOrtPlz(plz);
 	}
 
 	@Override
 	public List<Ort> findAllOrt() throws Exception {
-		return ortRO.findAll();
+		return ortManager.findAll();
 	}
 
 	// -----------------------------------------------------------------------------------------------
 	// Wärmeerzeuger
 	// -----------------------------------------------------------------------------------------------
 	@Override
-	public Waermeerzeuger addWaermeerzeuger(Waermeerzeuger entity)
+	public Waermeerzeuger addWaermeerzeuger(Waermeerzeuger waermeerzeuger)
 			throws Exception {
-		return waermeerzeugerRO.add(entity);
+		return waermeerzeugerManager.add(waermeerzeuger);
 	}
 
 	@Override
-	public Waermeerzeuger updateWaermeerzeuger(Waermeerzeuger entity)
+	public Waermeerzeuger updateWaermeerzeuger(Waermeerzeuger waermeerzeuger)
 			throws Exception {
-		return waermeerzeugerRO.update(entity);
+		return waermeerzeugerManager.update(waermeerzeuger);
 	}
 
 	@Override
-	public void deleteWaermeerzeuger(Waermeerzeuger entity) throws Exception {
+	public void deleteWaermeerzeuger(Waermeerzeuger waermeerzeuger) throws Exception {
 	}
 
 	@Override
@@ -597,30 +582,30 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	}
 
 	@Override
-	public Waermeerzeuger findWaermeerzeugerById(Integer id) throws Exception {
-		return waermeerzeugerRO.findById(id);
+	public Waermeerzeuger findWaermeerzeugerById(Integer idWaermeerzeuger) throws Exception {
+		return waermeerzeugerManager.findById(idWaermeerzeuger);
 	}
 
 	@Override
 	public List<Waermeerzeuger> findAllWaermeerzeuger() throws Exception {
-		return waermeerzeugerRO.findAllWaermeerzeuger();
+		return waermeerzeugerManager.findAllWaermeerzeuger();
 	}
 	
 	@Override
 	public List<Waermeerzeuger> findWaermeerzeugerByTyp(String waermeerzeugerTyp)
 			throws Exception {
-		return waermeerzeugerRO.findByTyp(waermeerzeugerTyp);
+		return waermeerzeugerManager.findByTyp(waermeerzeugerTyp);
 	}
 
 	@Override
 	public List<Waermeerzeuger> findWaermeerzeugerByBrennstoff(int brennstoff)
 			throws Exception {
-		return waermeerzeugerRO.findByBrennstoff(brennstoff);
+		return waermeerzeugerManager.findByBrennstoff(brennstoff);
 	}
 
 	@Override
 	public List<Waermeerzeuger> findWaermeerzeugerByBaujahr(int baujahr)
 			throws Exception {
-		return waermeerzeugerRO.findByBaujahr(baujahr);
+		return waermeerzeugerManager.findByBaujahr(baujahr);
 	}
 }
