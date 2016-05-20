@@ -32,6 +32,7 @@ import entitys.Waermeerzeuger;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -77,21 +78,6 @@ public class TerminUebersicht{
 
 	AuftragRO auftragRO;
 	MitarbeiterRO mitarbeiterRo;
-
-
-	List<Benutzer> lBenutzer = new ArrayList<>();
-	List<Brenner> lBrenner = new ArrayList<>();
-	List<Feuerungsanlage> lFeuerungsanlage = new ArrayList<>();
-	List<Kontakt> lKontakt = new ArrayList<>();
-	List<Liegenschaft> lLiegenschaft = new ArrayList<>();
-	List<Messung> lMessung = new ArrayList<>();
-	List<Mitarbeiter> lMitarbeiter = new ArrayList<>();
-	List<Ort> lOrt = new ArrayList<>();
-	List<Waermeerzeuger> lWaermeerzeuger = new ArrayList<>();
-	List<Auftrag> lAuftrag = new ArrayList<>();
-
-
-
 
 
 
@@ -157,7 +143,7 @@ public class TerminUebersicht{
 
 				// Montag
 				 // Auftrag auftrag11 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1,kontrolleur, 1);
-				  T1Z1.setText(lAuftrag.get(0).getLiegenschaft().toString());
+				 // T1Z1.setText(lAuftrag.get(0).getLiegenschaft().toString());
 //				  Auftrag auftrag12 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1,kontrolleur, 2);
 //				  T1Z2.setValue(auftrag12.getLiegenschaft.toString()); Auftrag
 //				 auftrag13 =
@@ -288,7 +274,7 @@ public class TerminUebersicht{
 	/**
 	 * Diese Methode zeit den Rapport zum angewählten Termin an.
 	 */
-	public void rapportOeffnen() {
+	public void rapportOeffnen(Event e) {
 
 	}
 

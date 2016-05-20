@@ -105,8 +105,8 @@
                               <Label text="Bis" GridPane.rowIndex="1" />
                               <DatePicker fx:id="startDatum" prefHeight="31.0" prefWidth="304.0" GridPane.columnIndex="1" />
                               <DatePicker fx:id="endDatum" disable="true" nodeOrientation="LEFT_TO_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <TextField fx:id="T1Z1" onAction="#wocheAnzeigen" prefHeight="64.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                              <TextField fx:id="T1Z2" onAction="#wocheAnzeigen" prefHeight="68.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <TextField fx:id="T1Z1" onMouseClicked="#rapportOeffnen" prefHeight="64.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <TextField fx:id="T1Z2" prefHeight="68.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                               <TextField fx:id="T1Z3" onAction="#wocheAnzeigen" prefHeight="56.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
                               <TextField fx:id="T1Z4" onAction="#wocheAnzeigen" prefHeight="52.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
                               <TextField fx:id="T2Z1" onAction="#wocheAnzeigen" prefHeight="66.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
