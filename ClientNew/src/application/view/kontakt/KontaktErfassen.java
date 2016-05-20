@@ -26,8 +26,8 @@ import rmi.OrtRO;
 
 public class KontaktErfassen {
 
-	KontaktRO  KontaktRO;
-	OrtRO OrtRO;
+	KontaktRO kontaktRO;
+	OrtRO ortRO;
 
 
 
@@ -79,7 +79,7 @@ public class KontaktErfassen {
 					ort, plzint, email, telnr);
 
 			try {
-				this.KontaktRO.add(newkontakt);
+				kontaktRO.add(newkontakt);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -140,7 +140,7 @@ public class KontaktErfassen {
 
 try {
 			//zu erst auf liste speichern damit man nachher das zweite der Liste prüfen kann falls nicht übereinstimmt
-		 ortsliste = OrtRO.findByOrtPlz(plz);
+		 ortsliste = ortRO.findByOrtPlz(plz);
 		} catch (Exception e) {
 			lblRueckmeldung.setText("PLZ nicht gefunden");
 		}
