@@ -14,7 +14,7 @@ import org.junit.Test;
 
 public class BrennerDAOTest {
 
-private static BrennerDAOImpl brennerDAO = new BrennerDAOImpl();
+	private static BrennerDAOImpl brennerDAO = new BrennerDAOImpl();
 	
 	/**
 	 * Initialisiert die Datenbank mit Testwerten.

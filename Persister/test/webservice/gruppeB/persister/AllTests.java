@@ -10,7 +10,7 @@ import org.junit.runners.Suite.SuiteClasses;
  * @author Luca Raneri
  */
 @RunWith(Suite.class)
-@SuiteClasses({ AuftragDAOTest.class, BenutzerDAOTest.class,
+@SuiteClasses({ AuftragDAOTest.class, BenutzerManagerTest.class,
 		BrennerDAOTest.class, FeuerungsanlageDAOTest.class,
 		KontaktDAOTest.class, LiegenschaftDAOTest.class, MessungDAOTest.class,
 		MitarbeiterDAOTest.class, OrtDAOTest.class, WaermeerzeugerDAOTest.class })
