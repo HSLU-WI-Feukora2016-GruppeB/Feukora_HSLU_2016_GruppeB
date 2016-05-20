@@ -28,7 +28,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-
+/**
+ * Diese Klasse ist für das Testen der LiegenschaftsManager zuständig.
+ * @author Olivia
+ * @version 1.0
+ * @since 1.0
+ */
 public class LiegenschaftManagerTest {
 
 	private static BrennerManager brennerDAO = new BrennerManagerImpl();

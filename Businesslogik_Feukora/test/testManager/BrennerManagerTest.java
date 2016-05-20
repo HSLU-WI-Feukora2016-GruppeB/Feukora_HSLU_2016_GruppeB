@@ -14,6 +14,12 @@ import org.junit.Test;
 
 import entitys.Brenner;
 
+/**
+ * Diese Klasse ist für das Testen der BrennerManager zuständig.
+ * @author Olivia
+ * @version 1.0
+ * @since 1.0
+ */
 public class BrennerManagerTest {
 
 	private static BrennerManager brennerManager = new BrennerManagerImpl();

@@ -20,7 +20,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-
+/**
+ * Diese Klasse ist für das Testen der MitarbeiterManager zuständig.
+ * @author Olivia
+ * @version 1.0
+ * @since 1.0
+ */
 public class MitarbeiterManagerTest {
 
 	private static MitarbeiterManager mitarbeiterManager = new MitarbeiterManagerImpl();
@@ -46,7 +51,7 @@ public class MitarbeiterManagerTest {
 	}
 	
 	/**
-	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#updateMitarbeiter(Mitarbeiter)}.
+	 * Dieser Test tested die Methode {@link MitarbeiterManagerImpl#update(Mitarbeiter)}.
 	 * @throws Exception
 	 */
 	@Test
@@ -71,7 +76,7 @@ public class MitarbeiterManagerTest {
 	}
 	
 	/**
-	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#deleteMitarbeiter(Mitarbeiter)}.
+	 * Dieser Test tested die Methode {@link MitarbeiterManagerImpl#delete(Mitarbeiter)}.
 	 * @throws Exception
 	 */
 	@Test
@@ -87,7 +92,7 @@ public class MitarbeiterManagerTest {
 	}
 	
 	/**
-	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#deleteMitarbeiterById(Integer)}.
+	 * Dieser Test tested die Methode {@link MitarbeiterManagerImpl#deleteById(Integer)}.
 	 * @throws Exception
 	 */
 	@Test
@@ -103,7 +108,7 @@ public class MitarbeiterManagerTest {
 	}
 	
 	/**
-	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#findMitarbeiterByArbeitetBis(GregorianCalendar)}.
+	 * Dieser Test tested die Methode {@link MitarbeiterManagerImpl#findByArbeitetBis(GregorianCalendar)}.
 	 * @throws Exception
 	 */
 	@Test
@@ -116,7 +121,7 @@ public class MitarbeiterManagerTest {
 	}
 	
 	/**
-	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#findMitarbeiterByArbeitetSeit(GregorianCalendar)}.
+	 * Dieser Test tested die Methode {@link MitarbeiterManagerImpl#findByArbeitetSeit(GregorianCalendar)}.
 	 * @throws Exception
 	 */
 	@Test
@@ -129,7 +134,7 @@ public class MitarbeiterManagerTest {
 	}
 	
 	/**
-	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#findMitarbeiterByBenutzer(Benutzer)}.
+	 * Dieser Test tested die Methode {@link MitarbeiterManagerImpl#findByBenutzer(Benutzer)}.
 	 * @throws Exception
 	 */
 	@Test
@@ -143,7 +148,7 @@ public class MitarbeiterManagerTest {
 	}
 	
 	/**
-	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#findMitarbeiterByRolleIntern(int)}.
+	 * Dieser Test tested die Methode {@link MitarbeiterManagerImpl#findByRolleIntern(int)}.
 	 * @throws Exception
 	 */
 	@Test
@@ -156,7 +161,7 @@ public class MitarbeiterManagerTest {
 	}
 	
 	/**
-	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#findMitarbeiterByStrasse(String)}.
+	 * Dieser Test tested die Methode {@link MitarbeiterManagerImpl#findByStrasse(String)}.
 	 * @throws Exception
 	 */
 	@Test
@@ -169,7 +174,7 @@ public class MitarbeiterManagerTest {
 	}
 	
 	/**
-	 * Dieser Test testet die Suchfunktion "FindAllMitarbeiter". 
+	 * Dieser Test testet die Methode {@link MitarbeiterManagerImpl#findAllMitarbeiter()}
 	 * @throws Exception
 	 */
 	@Test
@@ -179,6 +184,10 @@ public class MitarbeiterManagerTest {
 		assertTrue(mitarbeiterListe.size() == 6);
 	}
 	
+	/**
+	 * Testet die Methode {@link MitarbeiterManagerImpl#findByName(String)}
+	 * @throws Exception
+	 */
 	@Test
 	public void testFindByName() throws Exception{
 		
@@ -187,6 +196,10 @@ public class MitarbeiterManagerTest {
 		assertTrue(mitarbeiterListe.size() == 1);
 	}
 
+	/**
+	 * Testet die Methode {@link MitarbeiterManagerImpl#findByVorname(String)}
+	 * @throws Exception
+	 */
 	@Test
 	public void testFindByVorname()throws Exception{
 		
@@ -197,6 +210,10 @@ public class MitarbeiterManagerTest {
 		assertTrue(mitarbeiterManager.findByVorname(vorname2).isEmpty());
 	}
 	
+	/**
+	 * Testet die Methode {@link MitarbeiterManagerImpl#findByVorname(String)}
+	 * @throws Exception
+	 */
 	@Test
 	public void testFindByNameVorname()throws Exception{
 		
@@ -207,7 +224,7 @@ public class MitarbeiterManagerTest {
 	}
 	
 	/**
-	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#findMitarbeiterByOrt(Ort)}.
+	 * Dieser Test tested die Methode {@link MitarbeiterManagerImpl#findByOrt(Ort)}.
 	 * @throws Exception
 	 */
 	@Test

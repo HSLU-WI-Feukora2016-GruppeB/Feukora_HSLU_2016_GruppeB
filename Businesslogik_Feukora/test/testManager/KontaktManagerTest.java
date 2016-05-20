@@ -17,6 +17,12 @@ import org.junit.Test;
 import entitys.Kontakt;
 import entitys.Ort;
 
+/**
+ * Diese Klasse ist für das Testen der KontaktManager zuständig.
+ * @author Olivia
+ * @version 1.0
+ * @since 1.0
+ */
 public class KontaktManagerTest {
 
 	private static KontaktManager kontaktManager = new KontaktManagerImpl();

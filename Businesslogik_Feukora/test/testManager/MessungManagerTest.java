@@ -15,6 +15,12 @@ import org.junit.Test;
 
 import entitys.Messung;
 
+/**
+ * Diese Klasse ist für das Testen der MessungsManager zuständig.
+ * @author Olivia
+ * @version 1.0
+ * @since 1.0
+ */
 public class MessungManagerTest {
 
 private static MessungsManager messungManager = new MessungManagerImpl();

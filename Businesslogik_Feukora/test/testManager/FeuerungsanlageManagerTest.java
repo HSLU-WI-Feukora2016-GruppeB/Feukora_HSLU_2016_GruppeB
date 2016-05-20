@@ -20,7 +20,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Testet den FeuerungsanlageManagerImpl
+ * Testet die Funktionalität der FeuerungsanlageManager
  * @author Olivia
  * @since 1.0
  * @version 1.0
