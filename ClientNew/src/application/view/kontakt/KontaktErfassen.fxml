@@ -83,13 +83,13 @@
                         <TextField fx:id="txtEmail" GridPane.columnIndex="2" GridPane.rowIndex="6" />
                         <Label layoutX="21.0" layoutY="18.0" text="Strasse &amp; Nr" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label layoutX="21.0" layoutY="138.0" text="TelNr." GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <Label layoutX="21.0" layoutY="138.0" text="Rolle" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <TextField fx:id="txtTelnr" layoutX="285.0" layoutY="194.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                        <TextField fx:id="txtRolle" layoutX="285.0" layoutY="164.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                         <Label text="Vorname" GridPane.columnIndex="1" />
                         <Label text="Ort" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <TextField fx:id="txtVorname" GridPane.columnIndex="2" />
                         <TextField fx:id="txtOrt" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Label prefHeight="17.0" prefWidth="90.0" text="PLZ" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="txtPlz" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                      </children>
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />

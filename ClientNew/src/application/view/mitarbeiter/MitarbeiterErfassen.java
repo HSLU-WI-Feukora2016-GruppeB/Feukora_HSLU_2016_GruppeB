@@ -95,7 +95,7 @@ public class MitarbeiterErfassen {
 		LocalDate startdatum = startDatum.getValue();
 
 		// Überprüfung ob die Felder auch mit einem Wert belegt wurden
-		if (name.isEmpty() || vorname.isEmpty() || strasse.isEmpty() || ort.isEmpty() || ort.isEmpty()
+		if (name.isEmpty() || vorname.isEmpty() || strasse.isEmpty() || ort.isEmpty() || plz.isEmpty()
 				|| rolle.isEmpty() || email.isEmpty() || telefonnr.isEmpty() || enddatum.toString().isEmpty()
 				|| startdatum.toString().isEmpty()){
 
