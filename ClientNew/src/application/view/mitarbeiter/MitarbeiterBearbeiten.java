@@ -1,7 +1,14 @@
 package application.view.mitarbeiter;
 
 
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 import entitys.Mitarbeiter;
@@ -52,38 +59,64 @@ public class MitarbeiterBearbeiten {
 	static String email;
 	static String telefon;
 	static String lohn2;
-	static GregorianCalendar startdatum, enddatum;
+	static String plz;
+	static GregorianCalendar startdatum,enddatum;
 
 
 
 	static Mitarbeiter maupdate;
 
-	public void initialize() {
+	public void initialize(){
+
+
+		String url = "rmi://192.168.43.4:10099/";
+		String MitarbeiterROName = "Mitarbeiter";
+		String OrtROName = "Ort";
+
+		try {
+			this.MitarbeiterRO = (MitarbeiterRO) Naming.lookup(url + MitarbeiterROName);
+			this.OrtRO = (OrtRO) Naming.lookup(url + OrtROName);
+			System.out.println("yeah au das fonzt");
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			e.printStackTrace();
+		}
+
+
 		txtName.setText(name);
 		txtVorname.setText(vorname);
 		txtStrasse.setText(strasse);
 		txtOrt.setText(ort);
+		txtPLZ.setText(plz);
 		txtRolle.setText(rolle);
 		txtLohn.setText(lohn2);
 		txtEmail.setText(email);
 		txtTelefonNr.setText(telefon);
 		startDatum.setValue(gregToLocal(startdatum));
+		endDatum.setValue(gregToLocal(enddatum));
 
 	}
 
-	public static void bekommeMitarbeiter(Mitarbeiter mabearbeitet) {
+	public static void bekommeMitarbeiter(Mitarbeiter mabearbeitet) throws Exception{
 		maupdate = mabearbeitet;
 
 		name = mabearbeitet.getName().toString();
 		vorname = mabearbeitet.getVorname();
 		strasse = mabearbeitet.getStrasse();
 		ort = mabearbeitet.getOrt().getOrt();
+		plz = String.valueOf(mabearbeitet.getOrt().getPlz());
 		rolle = mabearbeitet.getRolleIntern().toString();
 		Integer lohn = (Integer) mabearbeitet.getLohn();
 		lohn2 = lohn.toString();
 		email = mabearbeitet.getEmail();
 		telefon = mabearbeitet.getTel().toString();
+
 		startdatum = mabearbeitet.getArbeitetSeit();
+
+		enddatum = mabearbeitet.getArbeitetBis();
 
 	}
 
@@ -101,14 +134,30 @@ public class MitarbeiterBearbeiten {
 		String lohn = txtLohn.getText();
 		String email = txtEmail.getText();
 		String telefonnr = txtTelefonNr.getText();
+		LocalDate enddatum = endDatum.getValue();
+		LocalDate startdatum = startDatum.getValue();
+
 
 		// Überprüfung ob die Felder auch mit einem Wert belegt wurden
 		if (name.isEmpty() || vorname.isEmpty() || strasse.isEmpty() || ort.isEmpty() || ort.isEmpty()
-				|| rolle.isEmpty() || email.isEmpty() || telefonnr.isEmpty()) {
+				|| rolle.isEmpty() || email.isEmpty() || telefonnr.isEmpty() ||
+				enddatum.toString().isEmpty() || startdatum.toString().isEmpty()) {
 
 			lblRueckmeldung.setText("Bitte alle Felder ausfüllen");
 
 		} else {
+
+			//Das arbeitet seit: in GregorianCalendar Format umwandeln
+			int starttag = startdatum.getDayOfMonth();
+			int startmonat = startdatum.getMonthValue();
+			int startjahr = startdatum.getYear();
+			GregorianCalendar gcalstart = new GregorianCalendar(startjahr, startmonat, starttag);
+
+			// Das arbeitet bis: in GregorianCalendar umwandeln
+			int endtag = enddatum.getDayOfMonth();
+			int endmonat = enddatum.getMonthValue();
+			int endjahr = enddatum.getYear();
+			GregorianCalendar gcalend = new GregorianCalendar(endjahr, endmonat, endtag);
 			// Parsen erst nach der Überprüfung da sonst die isEmpty() Methode
 			// nicht vorhanden ist
 
@@ -125,7 +174,7 @@ public class MitarbeiterBearbeiten {
 
 
 			Mitarbeiter updatemitarbeiter = createMitarbeiter(name, vorname,strasse, ort, plzint,
-					rolleint,lohnint, email,telefonnr);
+					rolleint,lohnint, email,telefonnr,gcalstart,gcalend);
 			try {
 				//braucht es dieses this? überspeichere ich wirklich das alte Objekt?
 				//evtl lösung könnte sein das alte einfach löschen und ein neue erstellen
@@ -171,7 +220,7 @@ public class MitarbeiterBearbeiten {
 	 * @return Ein neues Mitarbeiterobjekt
 	 */
 	private Mitarbeiter createMitarbeiter(String name, String vorname, String strasse, String ort, int plz,
-			int rolle, int lohn, String email, String telefonnr){
+			int rolle, int lohn, String email, String telefonnr, GregorianCalendar gcalstart, GregorianCalendar gcalend){
 		//Exception werfen? bei Referenzprojekt hat ers gemacht
 
 		Ort ortschaft = new Ort();
@@ -183,6 +232,8 @@ public class MitarbeiterBearbeiten {
 		maupdate.setLohn(lohn);
 		maupdate.setEmail(email);
 		maupdate.setTel(telefonnr);
+		maupdate.setArbeitetSeit(gcalstart);
+		maupdate.setArbeitetBis(gcalend);
 
 		try {
 			//zu erst auf liste speichern damit man nachher das zweite der Liste prüfen kann falls nicht übereinstimmt
@@ -209,16 +260,13 @@ public class MitarbeiterBearbeiten {
 	 * @param startdatum
 	 * @return LocalDate
 	 */
-	private LocalDate gregToLocal(GregorianCalendar startdatum){
-		int starttag = startdatum.DAY_OF_MONTH;
-		int startmonat = startdatum.MONTH;
-		int startjahr = startdatum.YEAR;
+	private LocalDate gregToLocal(GregorianCalendar changecal){
 
-		LocalDate ldstartDatum = LocalDate.of(startjahr, startmonat, starttag);
+		Date zwischendate = changecal.getTime();
 
+		LocalDate ldstartDatum = zwischendate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 		return ldstartDatum;
 
 	}
-
 
 }

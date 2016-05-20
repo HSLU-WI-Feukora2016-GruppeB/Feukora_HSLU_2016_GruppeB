@@ -54,6 +54,7 @@ public class MitarbeiterErfassen {
 */
 
 
+
 		String url = "rmi://192.168.43.4:10099/";
 		String MitarbeiterROName = "Mitarbeiter";
 		String OrtROName = "Ort";
@@ -71,6 +72,7 @@ public class MitarbeiterErfassen {
 		} catch (NotBoundException e) {
 			e.printStackTrace();
 		}
+
 	}
 
 
@@ -129,11 +131,13 @@ public class MitarbeiterErfassen {
 
 			Mitarbeiter newmitarbeiter = createMitarbeiter(name,vorname,strasse,ort,plzint,
 					rolleint,lohnint,email,telefonnr,gcalstart, gcalend);
+			System.out.println("vor addmitarbeiter");
 			try {
-				this.MitarbeiterRO.add(newmitarbeiter);
+				MitarbeiterRO.add(newmitarbeiter);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			System.out.println("nach addmitarbeiter");
 
 		}
 	}
