@@ -14,6 +14,7 @@ import org.junit.Test;
 /**
  * Diese Klasse ist für das Testen der MessungDAO-Implementierung zuständig.
  * @author Olivia Wassmer
+ * @author Luca Raneri
  * @version 1.0
  * @since 1.0
  */
@@ -78,7 +79,7 @@ public class MessungDAOTest {
 	}
 	
 	/**
-	 * Dieser Test tested die Methode {@link MessungDAOImpl#deleteMessung(Messung).}
+	 * Dieser Test tested die Methode {@link MessungDAOImpl#deleteMessung(Messung)}.
 	 * @throws Exception
 	 */
 	@Test

@@ -342,7 +342,7 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	}
 
 	@Override
-	public Liegenschaft updateiegenschaft(Liegenschaft liegenschaft) throws Exception {
+	public Liegenschaft updatLiegenschaft(Liegenschaft liegenschaft) throws Exception {
 		return liegenschaftManager.update(liegenschaft);
 	}
 

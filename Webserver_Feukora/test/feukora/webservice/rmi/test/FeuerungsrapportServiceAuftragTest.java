@@ -16,11 +16,10 @@ import feukora.webservice.rmi.FeuerungsrapportService;
 import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
 
 /**
- * Diese Klasse Testet die Funktionalität der Auftragmethoden im FeuerungsrapportServiceImpl.
+ * Diese Klasse Testet die Funktionalität der Auftragsmethoden im FeuerungsrapportServiceImpl.
  * 
  * @author Luca Raneri
  * @version 1.0
- * @since 1.0
  */
 public class FeuerungsrapportServiceAuftragTest {
 
@@ -35,16 +34,28 @@ public class FeuerungsrapportServiceAuftragTest {
 	public static void tearDownAfterClass() throws Exception {
 	}
 
+	/**
+	 * Initialisiert die Testwerten.
+	 * @throws Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 		init();
 	}
-		
+	
+	/**
+	 * Schliesst Test ab.
+	 * @throws Exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 		deleteAll();
 	}
 
+	/**
+	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#updateAuftrag(Auftrag)}.
+	 * @throws Exception
+	 */
 	@Test
 	public void testUpdateAuftrag() throws Exception {
 		List<Auftrag> auftragsListe = fservice.findAllAuftrag();
@@ -69,6 +80,10 @@ public class FeuerungsrapportServiceAuftragTest {
 		assertTrue(auftragsListe.size() == 3);
 	}
 
+	/**
+	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#deleteAuftrag(Auftrag)}.
+	 * @throws Exception
+	 */
 	@Test
 	public void testDeleteAuftrag() throws Exception {
 		
@@ -81,6 +96,10 @@ public class FeuerungsrapportServiceAuftragTest {
 		assertTrue(auftragsListe.size() == 2);
 	}
 
+	/**
+	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#findAllAuftrag()}.
+	 * @throws Exception
+	 */
 	@Test
 	public void testFindAllAuftrag() throws Exception {
 		
@@ -88,6 +107,10 @@ public class FeuerungsrapportServiceAuftragTest {
 		assertTrue(auftragsListe.size() == 3);
 	}
 
+	/**
+	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#findAuftragByMitarbeiter(Mitarbeiter)}.
+	 * @throws Exception
+	 */
 	@Test
 	public void testFindAuftragByMitarbeiter() throws Exception {
 		
@@ -98,6 +121,10 @@ public class FeuerungsrapportServiceAuftragTest {
 		assertTrue(al.size() == 0);
 	}
 
+	/**
+	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#findAuftragByKontakt(Kontakt)}.
+	 * @throws Exception
+	 */
 	@Test
 	public void testFindAuftragByKontakt() throws Exception {
 		
@@ -108,6 +135,10 @@ public class FeuerungsrapportServiceAuftragTest {
 		assertTrue(al.size() == 1);
 	}
 
+	/**
+	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#findAuftragByLiegenschaft(Liegenschaft)}.
+	 * @throws Exception
+	 */
 	@Test
 	public void testFindAuftragByLiegenschaft() throws Exception {
 		
@@ -118,6 +149,10 @@ public class FeuerungsrapportServiceAuftragTest {
 		assertTrue(aList.size() == 2);
 	}
 
+	/**
+	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#findAuftragByDatum(GregorianCalendar)}.
+	 * @throws Exception
+	 */
 	@Test
 	public void testFindAuftragByDatum() throws Exception {
 		
@@ -128,6 +163,10 @@ public class FeuerungsrapportServiceAuftragTest {
 		assertTrue(al.size() == 2);
 	}
 
+	/**
+	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#findAuftragByAuftragsNummer(Integer)}
+	 * @throws Exception
+	 */
 	@Test
 	public void testDeleteAuftragById() throws Exception {
 		
@@ -140,6 +179,10 @@ public class FeuerungsrapportServiceAuftragTest {
 		assertTrue(auftragsListe.size() == 2);
 	}
 
+	/**
+	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#findAuftragByDateAndMitarbeiter(GregorianCalendar, GregorianCalendar, Mitarbeiter)}.
+	 * @throws Exception
+	 */
 	@Test
 	public void testFindAuftragByDateAndMitarbeiter() throws Exception {
 		

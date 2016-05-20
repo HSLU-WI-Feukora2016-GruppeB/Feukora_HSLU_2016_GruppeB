@@ -583,7 +583,7 @@ public interface FeuerungsrapportService {
 	 * @throws Exception
 	 */
 	@WebMethod
-	Liegenschaft updateiegenschaft(
+	Liegenschaft updatLiegenschaft(
 			@WebParam(name = "liegenschaft") Liegenschaft liegenschaft)
 			throws Exception;
 
