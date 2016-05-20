@@ -9,7 +9,7 @@ import entitys.Ort;
 /**
  * Das Interface stellt die CRUD-Funktionen für den Ort zur Verfügung.
  * 
- * @author Matthias
+ * @author Matthias Perrollaz
  * @version 1.0
  * @since 1.0
  */

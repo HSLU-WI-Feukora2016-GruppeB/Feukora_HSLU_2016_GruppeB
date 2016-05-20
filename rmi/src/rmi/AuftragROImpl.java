@@ -13,7 +13,7 @@ import managerKlassen.AuftragManagerImpl;
  * Stellt die Implementierung von Methoden der Schnittstelle AuftragRO zur
  * Verfügung.
  * 
- * @author Matthias
+ * @author Matthias Perrollaz
  * @version 1.0
  * @since 1.0
  *

@@ -11,7 +11,7 @@ import entitys.Ort;
 /**
  * Das Interface stellt die CRUD-Funktionen für den Kontakt zur Verfügung.
  * 
- * @author Matthias
+ * @author Matthias Perrollaz
  * @version 1.0
  * @since 1.0
  */

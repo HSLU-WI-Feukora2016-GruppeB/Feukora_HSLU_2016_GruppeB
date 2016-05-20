@@ -491,6 +491,7 @@ public interface FeuerungsrapportService {
 	 * Liefert Liste aller Kontakte.
 	 * 
 	 * @return
+	 * @throws Exception
 	 */
 	@WebMethod
 	List<Kontakt> findAllKontakt() throws Exception;
@@ -550,14 +551,14 @@ public interface FeuerungsrapportService {
 	List<Kontakt> findKontaktByStrasse(
 			@WebParam(name = "strasse") String strasse) throws Exception;
 	
-	/**
-	 * Liefert alle Kontakte zurück.
-	 * 
-	 * @return
-	 * @throws Exception
-	 */
-	@WebMethod
-	List<Kontakt> findAllKontakte() throws Exception;
+//	/**
+//	 * Liefert alle Kontakte zurück.
+//	 * 
+//	 * @return
+//	 * @throws Exception
+//	 */
+//	@WebMethod
+//	List<Kontakt> findAllKontakte() throws Exception;
 	
 
 	// -----------------------------------------------------------------------------------------------
@@ -583,7 +584,7 @@ public interface FeuerungsrapportService {
 	 * @throws Exception
 	 */
 	@WebMethod
-	Liegenschaft updateiegenschaft(
+	Liegenschaft updatLiegenschaft(
 			@WebParam(name = "liegenschaft") Liegenschaft liegenschaft)
 			throws Exception;
 
@@ -1086,4 +1087,52 @@ public interface FeuerungsrapportService {
 	@WebMethod
 	List<Waermeerzeuger> findWaermeerzeugerByBaujahr(
 			@WebParam(name = "baujahr") int baujahr) throws Exception;
+	
+	//------------------------------------------------------------------------
+	// Zusätzliche Methoden für Testzwecke.
+	//------------------------------------------------------------------------
+	
+	/**
+	 * Passt einen Benutzer an.
+	 * 
+	 * @param benutzer
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Benutzer updateBenutzer(@WebParam(name = "benutzer") Benutzer benutzer)
+			throws Exception;
+
+	/**
+	 * Passt einen Mitarbeiter an.
+	 * 
+	 * @param mitarbeiter
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	Mitarbeiter updateMitarbeiter(@WebParam(name = "mitarbeiter") Mitarbeiter mitarbeiter)
+			throws Exception;
+
+	/**
+	 * Löscht den übergebenen Mitarbeiter mithilfe seiner Id.
+	 * 
+	 * @param idMitarbeiter
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	void deleteMitarbeiterById(@WebParam(name = "idMitarbeiter") Integer idMitarbeiter) throws Exception;
+
+	/**
+	 * Liefert alle Mitarbeiter mit gesuchter Rolle.
+	 * 
+	 * @param rolleIntern
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	List<Mitarbeiter> findMitarbeiterByRolleIntern(
+			@WebParam(name = "rolleIntern") int rolleIntern) throws Exception;
+
 }
