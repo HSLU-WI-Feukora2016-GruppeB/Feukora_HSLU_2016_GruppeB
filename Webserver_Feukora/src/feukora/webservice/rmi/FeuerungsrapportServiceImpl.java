@@ -17,19 +17,8 @@ import java.util.Properties;
 import javax.jws.WebService;
 
 import rmi.*;
+import rmi.rmiserver.RMIServer;
 import entitys.*;
-
-//import entitäten.Auftrag;
-//import entitäten.Benutzer;
-//import entitäten.Brenner;
-////import entitäten.Feuerungsanlage;
-//import entitäten.Kontakt;
-//import entitäten.Liegenschaft;
-//import entitäten.Messung;
-//import entitäten.Mitarbeiter;
-//import entitäten.Ort;
-//import entitäten.Waermeerzeuger;
-//import managerInterfaces.*;
 
 /**
  * Diese Klasse implementiert die Konkreten Methoden des
@@ -54,17 +43,6 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	 private OrtRO ortRO;
 	 private WaermeerzeugerRO waermeerzeugerRO;
 
-//	private AuftragManager auftragManager;
-//	private BenutzerManager benutzerManager;
-//	private BrennerManager brennerManager;
-//	private FeuerungsanlageManager feuerungsanlageManager;
-//	private KontaktManager kontaktManager;
-//	private LiegenschaftManager liegenschaftManager;
-//	private MessungsManager messungManager;
-//	private MitarbeiterManager mitarbeiterManager;
-//	private OrtManager ortManager;
-//	private WaermeerzeugerManager waermeerzeugerManager;
-
 	public FeuerungsrapportServiceImpl() throws Exception {
 
 		String AuftragROName = "Auftrag";
@@ -78,31 +56,42 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 		String OrtROName = "Ort";
 		String WaermeerzeugerROName = "Waermerzeuger";
 
-		/*
-		 * Host-IP und RMI-Port definieren (an sich würde man diese Angaben aus
-		 * der Property-Datei einlesen)
-		 */
 		String hostIp = "localhost";
 		int rmiPort = 10090;
 		
-		
-		Properties dbProperties = new Properties();
-		
-
-		// SecurityManager braucht nicht installiert zu werden, da Tomcat einen
-		// eigenen SecurityManager hat
+//		String hostIp;
+//		int rmiPort;
+//		
 		try {
-
-			/* Properties laden */
-//			Properties props = new Properties();
 //
+//			//Properties Objekt erstellen
+//			Properties wsProperties = new Properties();
+//			
+//			
 //			InputStream is = FeuerungsrapportServiceImpl.class.getClassLoader()
 //					.getResourceAsStream("webserver.properties");
 //
-//			props.load(is);
-
-//			hostIp = props.getProperty("rmi.server_ip");
-//			rmiPort = Integer.parseInt(props.getProperty("rmi.server_port"));
+//			wsProperties.load(is);
+//
+//			hostIp = wsProperties.getProperty("rmi.server_ip");
+//			rmiPort = Integer.parseInt(wsProperties.getProperty("rmi.server_port"));
+//			/* 2te Methode */
+//			//Klassenloader holen
+//			ClassLoader cLoader = FeuerungsrapportServiceImpl.class.getClassLoader();
+//			
+//			//Properties laden
+//			dbProperties.load(cLoader.getResourceAsStream("webserver.properties")); 
+//			
+//			//Ip auslesen
+//			String hostIp = dbProperties.getProperty("server_ip");
+//			
+//			//Port auslesen
+//			String rmiPort = dbProperties.getProperty("server_port");
+//			
+//			/* Properties laden */
+//			Properties props = new Properties();
+//
+//			
 
 			// URLs definieren
 			String urlAuftragRO = "rmi://" + hostIp + ":" + rmiPort + "/"

@@ -44,41 +44,17 @@ public class FeuerungsrapportServiceTest {
 	
 		static FeuerungsrapportService fservice;
 
-
-		@BeforeClass
-		public static void setUpBeforeClass() throws Exception {
-			fservice = new FeuerungsrapportServiceImpl();
-			FeuerungsrapportServiceTest.init();
-			
-		}
-
-		@AfterClass
-		public static void tearDownAfterClass() throws Exception {
-		}
-
 		@Before
 		public void setUp() throws Exception {
+			fservice = new FeuerungsrapportServiceImpl();
+			FeuerungsrapportServiceTest.init();
 		}	
+		
 		@After
 		public void tearDown() throws Exception {
+			
 		}
-				/*
-				 * Mögliche Tests:
-				 * 
-				 * 1. Datensatz einfügen-kontorlle ob dieser eingefügt wurde
-				 * 
-				 * 2. Datensatz löschen - kontrolle ob dieser gelöscht wurde. - 
-				 * Darf im Datenbestand nicht mehr vorhanden sein.,
-				 *
-				 *3. Abruf von Datensatz bsp. Liegenschaft durch 2 verschiede arten,
-				 *vergleich ob diese identisch sind oder nicht	
-				 *
-				 *4. Abruf von Datensatz aufgrund weiterem Kriterium welches mit ERD verknüpft ist.
-				 *Vergleich auf Grösse der Listen per Hardcoding
-				 *
-				 *
-				 */
-
+		
 		@Test
 		public void testFindAllAuftrag() throws Exception{
 			List<Auftrag> auftragsListe = fservice.findAllAuftrag();
@@ -119,28 +95,28 @@ public class FeuerungsrapportServiceTest {
 //			assertEquals(liegenschaftByStrasse,liegenschaftByOrt);
 //		}
 		
-		@Test
-		public void testAddAuftrag() throws Exception {
-			
-			Benutzer b = new Benutzer("muster", "test");
-			Brenner br = new Brenner(1, "lalala33", 2017);
-			Waermeerzeuger w = new Waermeerzeuger(2, "lilalal", 2012);
-			Feuerungsanlage f = new Feuerungsanlage(br, w);
-			Ort o = new Ort(8000, "Zürich");
-			Kontakt k = new Kontakt("Peter", "Musti", "TheStreet 1", o, "0000000000", "t.t@gmail.com", 1);
-			Liegenschaft l = new Liegenschaft(k, "Added", "Test 456", o, f);
-			Messung m = new Messung(new GregorianCalendar(2077, 7, 3), 4, 8, false, 4, 500, 60, 120, 3, 5);
-			Mitarbeiter ma = new Mitarbeiter("Tini", "Little", "Kleinstrasse 1", o, "9999999999", "test@feukora.ch", 1, b, 5000, new GregorianCalendar(2099, 05, 1), new GregorianCalendar(2088, 8, 11));
-			Auftrag a = new Auftrag(k, l, m, m, m, m, ma, new GregorianCalendar(2066, 9, 11), 2, 2);
-			
-			try {
-				fservice.addAuftrag(a);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			List<Auftrag> auftragListe = fservice.findAllAuftrag();
-			assertTrue(auftragListe.size() == 3);
-		}
+//		@Test
+//		public void testAddAuftrag() throws Exception {
+//			
+//			Benutzer b = new Benutzer("muster", "test");
+//			Brenner br = new Brenner(1, "lalala33", 2017);
+//			Waermeerzeuger w = new Waermeerzeuger(2, "lilalal", 2012);
+//			Feuerungsanlage f = new Feuerungsanlage(br, w);
+//			Ort o = new Ort(1234, "Zürich");
+//			Kontakt k = new Kontakt("Peter", "Musti", "TheStreet 1", o, "0000000000", "t.t@gmail.com", 1);
+//			Liegenschaft l = new Liegenschaft(k, "Added", "Test 456", o, f);
+//			Messung m = new Messung(new GregorianCalendar(2077, 7, 3), 4, 8, false, 4, 500, 60, 120, 3, 5);
+//			Mitarbeiter ma = new Mitarbeiter("Tini", "Little", "Kleinstrasse 1", o, "9999999999", "test@feukora.ch", 1, b, 5000, new GregorianCalendar(2099, 05, 1), new GregorianCalendar(2088, 8, 11));
+//			Auftrag a = new Auftrag(k, l, m, m, m, m, ma, new GregorianCalendar(2066, 9, 11), 2, 2);
+//			
+//			try {
+//				fservice.addAuftrag(a);
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
+//			List<Auftrag> auftragListe = fservice.findAllAuftrag();
+//			assertTrue(auftragListe.size() == 3);
+//		}
 
 		@Test
 		public void testUpdateAuftrag() throws Exception {
@@ -193,6 +169,7 @@ public class FeuerungsrapportServiceTest {
 			
 	
 		public static List<Auftrag> init() throws Exception {
+			
 			FeuerungsrapportServiceTest.deleteAll();
 			
 			List<Benutzer> lBenutzer = new ArrayList<>();

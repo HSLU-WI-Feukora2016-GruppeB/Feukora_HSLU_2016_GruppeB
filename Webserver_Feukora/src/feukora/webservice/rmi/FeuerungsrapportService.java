@@ -15,17 +15,6 @@ import javax.jws.WebService;
 
 import entitys.*;
 
-//import entitäten.Auftrag;
-//import entitäten.Benutzer;
-//import entitäten.Brenner;
-////import entitäten.Feuerungsanlage;
-//import entitäten.Kontakt;
-//import entitäten.Liegenschaft;
-//import entitäten.Messung;
-//import entitäten.Mitarbeiter;
-//import entitäten.Ort;
-//import entitäten.Waermeerzeuger;
-
 /**
  * Interface für Feuerungsrapport-System als Webservice.
  * 
