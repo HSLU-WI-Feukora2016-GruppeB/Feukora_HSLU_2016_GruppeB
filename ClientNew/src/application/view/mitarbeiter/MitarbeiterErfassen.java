@@ -173,7 +173,12 @@ public class MitarbeiterErfassen {
 
 		mitarbeiter.setName(name);
 		mitarbeiter.setVorname(vorname);
-		mitarbeiter.setRolleIntern(rolle);
+		try {
+			mitarbeiter.setRolleIntern(rolle);
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		mitarbeiter.setStrasse(strasse);
 		mitarbeiter.setLohn(lohn);
 		mitarbeiter.setEmail(email);

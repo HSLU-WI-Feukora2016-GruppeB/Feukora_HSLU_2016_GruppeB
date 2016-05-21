@@ -205,16 +205,17 @@
                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="91.0" minWidth="0.0" prefWidth="0.0" />
                                             </columnConstraints>
                                             <rowConstraints>
-                                                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
-                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="17.5" minHeight="10.0" prefHeight="17.5" vgrow="SOMETIMES" />
+                                              <RowConstraints maxHeight="40.5" minHeight="10.0" prefHeight="29.5" vgrow="SOMETIMES" />
+                                              <RowConstraints maxHeight="23.5" minHeight="10.0" prefHeight="18.5" vgrow="SOMETIMES" />
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                 <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
                                             </rowConstraints>
                                              <children>
-                                                <ChoiceBox fx:id="cbKontrollart" minHeight="30.0" prefHeight="30.0" prefWidth="368.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                                 <Label text="Feuerungswärmleistung" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                                 <TextField fx:id="txtLeistung" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <TextField fx:id="txtAuftragsart" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label text="Auftragsart" GridPane.columnIndex="1" />
                                              </children>
                                           </GridPane>
                                        </children>
