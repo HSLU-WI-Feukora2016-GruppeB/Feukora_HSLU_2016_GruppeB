@@ -8,7 +8,7 @@ import entitys.Messung;
 
 /**
  * Kontrolliert Messung anhand der jeweiligen Grenzwerte
- * 
+ *
  * @author Olivia
  * @version 1.0
  * @since 1.0
@@ -22,11 +22,11 @@ public class GrenzwerteManagerImpl {
 	 * innere Map. Die Innere Map hat einen Integer welchen die Messstufe
 	 * angibt, siehe Auftrag Messungsobjekte sowie ein Grenzwerte Objekt mit den
 	 * jeweiligen Grenzwerten.
-	 * 
+	 *
 	 * Alle Brenner mit Brennstoff Gas haben nur 3 Grenzwerte im gegensatz zu
 	 * den Heizölbrennern mit 5. Diese sollten default mit 0, null, resp false
 	 * gefüllt werden damit sie übersprungen werden können.
-	 * 
+	 *
 	 */
 	private static final Map<Integer, Map<Integer, Grenzwerte>> grenzwertMap = new HashMap<Integer, Map<Integer, Grenzwerte>>();
 
@@ -72,11 +72,12 @@ public class GrenzwerteManagerImpl {
 	}
 
 	public void checkGrenzwerte(Messung messung, int brennerTyp, int messStufe) {
-		if (messung == null) {
+
+		Grenzwerte gWerte = grenzwertMap.get(brennerTyp).get(messStufe);
+		if (messung == null || gWerte == null) {
 			return;
 		} else {
 
-		Grenzwerte gWerte = grenzwertMap.get(brennerTyp).get(messStufe);
 
 		messung.setRusszahlNotOk(isRusszahlNOK(messung, gWerte));
 
@@ -87,7 +88,7 @@ public class GrenzwerteManagerImpl {
 		messung.setNoMgNotOk(isNo2GehaltNOK(messung, gWerte));
 
 		messung.setAbgasverlusteNotOk(isAbgasverlusteNOK(messung, gWerte));
-		
+
 		messung.setBeurteilungNotOk(checkBeurteilung(messung));
 		}
 	}

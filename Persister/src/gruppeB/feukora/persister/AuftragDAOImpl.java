@@ -18,10 +18,10 @@ import gruppeB.feukora.persister.util.JpaUtil;
 /**
  * Diese Klasse stellt die Implementierung von Methoden der Schnittstelle
  * MitarbeiterDAO zur Verfügung.
- * 
+ *
  * @version 1.0
  * @author Luca Raneri
- * 
+ *
  */
 public class AuftragDAOImpl implements AuftragDAO {
 
@@ -158,14 +158,16 @@ public class AuftragDAOImpl implements AuftragDAO {
 		tQuery.setParameter("mitarbeiter", mitarbeiter);
 		tQuery.setParameter("zeitSlot", zeitSlot);
 
-		Auftrag auftrag = tQuery.getSingleResult();
-		
+		List<Auftrag> auftrag = tQuery.getResultList();
+
 		em.close();
-		
-		if(auftrag==null){
+
+		if(auftrag.isEmpty()){
 			return null;
+		} else if (auftrag.size()>1){
+			throw new Exception("Mehrere gleiche Termine vorhanden!");
 		} else {
-			return auftrag;
+		return auftrag.get(0);
 		}
 	}
 

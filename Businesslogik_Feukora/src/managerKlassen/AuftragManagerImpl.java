@@ -16,7 +16,7 @@ import managerInterfaces.AuftragManager;
 /**
  * Stellt die Implementierung von Methoden der Schnittstelle AuftragManager zur
  * Verfügung.
- * 
+ *
  * @author Olivia
  * @version 1.0
  * @since 1.0
@@ -33,11 +33,11 @@ public class AuftragManagerImpl implements AuftragManager {
 
 		if (entity.getAuftragsNummer() == null) {
 
-			//checkMessungByGrenzwerte(entity);
-			//checkTerminProMitarbeiter(entity);
+			checkMessungByGrenzwerte(entity);
+			checkTerminProMitarbeiter(entity);
 
 			auftragDAO.saveAuftrag(entity);
-		
+
 			return entity;
 
 		} else {
@@ -48,7 +48,8 @@ public class AuftragManagerImpl implements AuftragManager {
 	}
 
 	private void checkTerminProMitarbeiter(Auftrag entity) throws Exception{
-		if(auftragDAO.findAuftragByDateAndMitarbeiterAndZeitslot(entity.getTermin(), entity.getMitarbeiter(), entity.getZeitSlot()) == null){
+		Auftrag auftrag = auftragDAO.findAuftragByDateAndMitarbeiterAndZeitslot(entity.getTermin(), entity.getMitarbeiter(), entity.getZeitSlot());
+		if(auftrag == null || entity.getAuftragsNummer() == auftrag.getAuftragsNummer()){
 			return;
 		}else{
             throw new Exception("Der gewünschte Termin ist bereits erfasst. (Id = " + entity.getAuftragsNummer() + ")");
@@ -61,25 +62,25 @@ public class AuftragManagerImpl implements AuftragManager {
 		if (entity.getAuftragsNummer() == null) {
 			return add(entity);
 		}
-		//checkTerminProMitarbeiter(entity);
-//		checkMessungByGrenzwerte(entity);
-		
+		checkTerminProMitarbeiter(entity);
+		checkMessungByGrenzwerte(entity);
+
 		return auftragDAO.updateAuftrag(entity);
 	}
 
 	private void checkMessungByGrenzwerte(Auftrag auftrag) throws Exception{
-		Messung messung1 = auftrag.getMessung1stufe1();
 		int brennerArt = auftrag.getLiegenschaft().getFeuerungsanlage()
 				.getBrenner().getBrennerArt();
-	
+
+		Messung messung1 = auftrag.getMessung1stufe1();
 		grenzwerteManager.checkGrenzwerte(messung1, brennerArt, 1);
-	
+
 		Messung messung2 = auftrag.getMessung1stufe2();
 		grenzwerteManager.checkGrenzwerte(messung2, brennerArt, 2);
-	
+
 		Messung messung3 = auftrag.getMessung2stufe1();
 		grenzwerteManager.checkGrenzwerte(messung3, brennerArt, 3);
-	
+
 		Messung messung4 = auftrag.getMessung2stufe2();
 		grenzwerteManager.checkGrenzwerte(messung4, brennerArt, 4);
 	}

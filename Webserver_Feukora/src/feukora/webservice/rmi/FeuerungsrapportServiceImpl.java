@@ -1,10 +1,11 @@
+package feukora.webservice.rmi;
+
 /*
  * ZWECK: Feukora Feuerungsrapport Webservice
  * MODUL: Softwarekompomenten, HSLU-Wirtschaft
  * 
- * Copyright (c)
+ * Copyright (c) Dominik Stirnimann
  */
-package feukora.webservice.rmi;
 
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -26,7 +27,6 @@ import entitys.*;
  * FeuerungsrapportInterface für die Feuerungskontrolle zur Verfügung.
  * 
  * @author Dominik
- * @author Luca Raneri
  * @version 1.0.0
  * @since 1.0.0
  * 

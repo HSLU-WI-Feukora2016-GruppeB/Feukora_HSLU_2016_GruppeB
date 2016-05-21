@@ -1,10 +1,13 @@
+package feukora.webservice.rmi;
+
 /*
  * ZWECK: Feukora Feuerungsrapport Webservice
+ * 
  * MODUL: Softwarekompomenten, HSLU-Wirtschaft
  * 
- * Copyright (c)
+ * Copyright (c) Dominik Stirnimann
  */
-package feukora.webservice.rmi;
+
 
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -19,7 +22,6 @@ import entitys.*;
  * Interface für Feuerungsrapport-System als Webservice.
  * 
  * @author Dominik
- * @author Luca Raneri
  * @version 1.0.0
  * @since 1.0.0
  * 
@@ -551,14 +553,14 @@ public interface FeuerungsrapportService {
 	List<Kontakt> findKontaktByStrasse(
 			@WebParam(name = "strasse") String strasse) throws Exception;
 	
-//	/**
-//	 * Liefert alle Kontakte zurück.
-//	 * 
-//	 * @return
-//	 * @throws Exception
-//	 */
-//	@WebMethod
-//	List<Kontakt> findAllKontakte() throws Exception;
+	/**
+	 * Liefert alle Kontakte zurück.
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	List<Kontakt> findAllKontakte() throws Exception;
 	
 
 	// -----------------------------------------------------------------------------------------------
