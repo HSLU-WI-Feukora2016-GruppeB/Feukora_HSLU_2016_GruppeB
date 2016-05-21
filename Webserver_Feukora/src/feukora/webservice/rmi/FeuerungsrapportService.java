@@ -553,14 +553,14 @@ public interface FeuerungsrapportService {
 	List<Kontakt> findKontaktByStrasse(
 			@WebParam(name = "strasse") String strasse) throws Exception;
 	
-//	/**
-//	 * Liefert alle Kontakte zurück.
-//	 * 
-//	 * @return
-//	 * @throws Exception
-//	 */
-//	@WebMethod
-//	List<Kontakt> findAllKontakte() throws Exception;
+	/**
+	 * Liefert alle Kontakte zurück.
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	@WebMethod
+	List<Kontakt> findAllKontakte() throws Exception;
 	
 
 	// -----------------------------------------------------------------------------------------------
