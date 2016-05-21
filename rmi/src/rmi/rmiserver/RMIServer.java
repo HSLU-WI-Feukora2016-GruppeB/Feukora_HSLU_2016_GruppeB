@@ -55,8 +55,8 @@ public class RMIServer {
 		}
 
 		//Port auslesen
-		String port = dbProperties.getProperty("port");
-
+		String stringPort = dbProperties.getProperty("port");
+		Integer port = Integer.valueOf(stringPort);
 	try {
 
 
@@ -74,7 +74,7 @@ public class RMIServer {
 	WaermeerzeugerRO wa = new WaermeerzeugerROImpl();
 
 	// Registry-Instanz erzeugen bzw. starten
-	Registry reg = LocateRegistry.getRegistry(port);
+	Registry reg = LocateRegistry.createRegistry(port);
 
 	// Entferntes Objekt beim Namensdienst registrieren
 	if (reg != null) {

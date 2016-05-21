@@ -14,7 +14,7 @@ import gruppeB.feukora.persister.util.JpaUtil;
 /**
  * Diese Klasse stellt die CRUD-Methoden zur Verfügung, die in allen
  * Unterklassen vorkommen müssen.
- * 
+ *
  * @author Luca Raneri
  * @version 1.0
  * @param <T>
@@ -28,10 +28,10 @@ public class GenericPersisterImpl<T> implements GenericPersister<T> {
 	public GenericPersisterImpl(Class<T> type) {
 		this.classType = type;
 	}
-	
+
 	@Override
 	public void save(T entity) throws Exception {
-		
+
 		EntityManager em = JpaUtil.createEntityManager();
 
 		try {
@@ -54,7 +54,7 @@ public class GenericPersisterImpl<T> implements GenericPersister<T> {
 
 	@Override
 	public T update(T entity) throws Exception {
-		
+
 		EntityManager em = JpaUtil.createEntityManager();
 		em.getTransaction().begin();
 
@@ -85,7 +85,7 @@ public class GenericPersisterImpl<T> implements GenericPersister<T> {
 
 	@Override
 	public void delete(T entity) throws Exception {
-		
+
 		EntityManager em = JpaUtil.createEntityManager();
 		em.getTransaction().begin();
 
@@ -113,12 +113,12 @@ public class GenericPersisterImpl<T> implements GenericPersister<T> {
 
 		} finally {
 			em.close();
-		}	
+		}
 	}
 
 	@Override
 	public void deleteById(Integer id) throws Exception {
-		
+
 		EntityManager em = JpaUtil.createEntityManager();
 		String strQuery = "DELETE FROM " + classType.getSimpleName()
 				+ " entity WHERE entity.id = :id";
@@ -150,18 +150,18 @@ public class GenericPersisterImpl<T> implements GenericPersister<T> {
 
 	@Override
 	public T findById(Integer id) {
-		
+
 		return JpaUtil.createEntityManager().find(classType, id);
 	}
 
 	@Override
 	public List<T> findAll() {
-		
+
 		String sql = "SELECT entity FROM " + classType.getSimpleName()
 				+ " entity";
 		TypedQuery<T> q = JpaUtil.createEntityManager().createQuery(sql,
 				classType);
 		return q.getResultList();
 	}
-	
+
 }
