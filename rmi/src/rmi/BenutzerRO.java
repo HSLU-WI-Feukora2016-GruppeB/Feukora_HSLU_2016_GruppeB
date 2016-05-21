@@ -9,7 +9,7 @@ import entitys.Benutzer;
 /**
  * Das Interface stellt die CRUD-Funktionen für den Benutzer zur Verfügung.
  * 
- * @author Berri
+ * @author Matthias Perrollaz
  * @version 1.0
  * @since 1.0
  */

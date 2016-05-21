@@ -45,17 +45,17 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 	}
 
 	@Override
-	public Mitarbeiter findMitarbeiterById(Integer id) {
+	public Mitarbeiter findMitarbeiterById(Integer id) throws Exception{
 		return new GenericPersisterImpl<Mitarbeiter>(Mitarbeiter.class).findById(id);
 	}
 
 	@Override
-	public List<Mitarbeiter> findAllMitarbeiter() {
+	public List<Mitarbeiter> findAllMitarbeiter() throws Exception{
 		return new GenericPersisterImpl<Mitarbeiter>(Mitarbeiter.class).findAll();
 	}
 
 	@Override
-	public List<Mitarbeiter> findMitarbeiterByName(String name) {
+	public List<Mitarbeiter> findMitarbeiterByName(String name) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -73,7 +73,7 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 
 	@Override
 	public List<Mitarbeiter> findMitarbeiterByNameVorname(String name,
-			String vorname) {
+			String vorname) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -91,7 +91,7 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 	}
 
 	@Override
-	public List<Mitarbeiter> findMitarbeiterByVorname(String vorname) {
+	public List<Mitarbeiter> findMitarbeiterByVorname(String vorname) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -108,7 +108,7 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 	}
 
 	@Override
-	public List<Mitarbeiter> findMitarbeiterByRolleIntern(int rolleIntern) {
+	public List<Mitarbeiter> findMitarbeiterByRolleIntern(int rolleIntern) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -125,7 +125,7 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 	}
 
 	@Override
-	public List<Mitarbeiter> findMitarbeiterByStrasse(String strasse) {
+	public List<Mitarbeiter> findMitarbeiterByStrasse(String strasse)throws Exception {
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -142,7 +142,7 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 	}
 
 	@Override
-	public List<Mitarbeiter> findMitarbeiterByOrt(Ort ort) {
+	public List<Mitarbeiter> findMitarbeiterByOrt(Ort ort) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -159,7 +159,7 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 	}
 
 	@Override
-	public List<Mitarbeiter> findMitarbeiterByBenutzer(Benutzer user) {
+	public List<Mitarbeiter> findMitarbeiterByBenutzer(Benutzer user) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -176,7 +176,7 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 	}
 
 	@Override
-	public List<Mitarbeiter> findMitarbeiterByArbeitetSeit(GregorianCalendar arbeitetSeit) {
+	public List<Mitarbeiter> findMitarbeiterByArbeitetSeit(GregorianCalendar arbeitetSeit) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -193,7 +193,7 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 	}
 
 	@Override
-	public List<Mitarbeiter> findMitarbeiterByArbeitetBis(GregorianCalendar arbeitetBis) {
+	public List<Mitarbeiter> findMitarbeiterByArbeitetBis(GregorianCalendar arbeitetBis) throws Exception {
 		
 		EntityManager em = JpaUtil.createEntityManager();
 

@@ -12,7 +12,7 @@ import managerKlassen.WaermeerzeugerManagerImpl;
  * Stellt die Implementierung von Methoden der Schnittstelle WaermeerzeugerRO zur
  * Verfügung.
  * 
- * @author Matthias
+ * @author Matthias Perrollaz
  * @version 1.0
  * @since 1.0
  *

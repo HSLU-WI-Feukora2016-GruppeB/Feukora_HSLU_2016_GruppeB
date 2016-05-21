@@ -21,7 +21,7 @@ public class OrtManagerImpl implements OrtManager {
 	@Override
 	public Ort add(Ort entity) throws Exception {
 
-		if (entity.getPlz() == 0) {
+		if (entity.getId() == null) {
 			ortDAO.saveOrt(entity);
 			return entity;
 		} else {

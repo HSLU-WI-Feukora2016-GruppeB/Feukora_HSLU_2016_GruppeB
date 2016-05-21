@@ -37,6 +37,7 @@ public class BenutzerDAOTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		BenutzerDAOTest.deleteAll();
 	}
 	
 	/**

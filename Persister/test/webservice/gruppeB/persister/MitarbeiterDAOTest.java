@@ -2,11 +2,9 @@ package webservice.gruppeB.persister;
 
 import static org.junit.Assert.*;
 import entitys.Benutzer;
-
 import entitys.Mitarbeiter;
 import entitys.Ort;
 import gruppeB.feukora.persister.BenutzerDAOImpl;
-
 import gruppeB.feukora.persister.MitarbeiterDAOImpl;
 import gruppeB.feukora.persister.OrtDAOImpl;
 
@@ -20,9 +18,9 @@ import org.junit.Test;
 
 /**
  * Diese Klasse ist für das Testen der MitarbeiterDAO-Implementierung zuständig.
- * 
- * @version 1.0
  * @author Luca Raneri
+ * @version 1.0
+ * @since 1.0
  */
 public class MitarbeiterDAOTest {
 
@@ -30,13 +28,22 @@ public class MitarbeiterDAOTest {
 	private static OrtDAOImpl ortDAO = new OrtDAOImpl();
 	private static BenutzerDAOImpl benutzerDAO = new BenutzerDAOImpl();
 	
+	/**
+	 * Initialisiert die Datenbank mit Testwerten.
+	 * @throws Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 		MitarbeiterDAOTest.init();
 	}	
-		
+	
+	/**
+	 * Schliesst Test mit Datenbank ab.
+	 * @throws Exception
+	 */
 	@After
 	public void tearDown() throws Exception {
+		MitarbeiterDAOTest.deleteAll();
 	}
 	
 	/**
@@ -163,7 +170,7 @@ public class MitarbeiterDAOTest {
 	}
 	
 	/**
-	 * Dieser Test testet die Suchfunktion "FindAllMitarbeiter". 
+	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#findAllMitarbeiter()}
 	 * @throws Exception
 	 */
 	@Test
@@ -173,16 +180,24 @@ public class MitarbeiterDAOTest {
 		assertTrue(mitarbeiterListe.size() == 6);
 	}
 	
+	/**
+	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#findMitarbeiterByName(name)}.
+	 * 
+	 */
 	@Test
-	public void testFindByName() {
+	public void testFindByName() throws Exception{
 		
 		String name = "Raneri";
 		List<Mitarbeiter> mitarbeiterListe = mitarbeiterDAO.findMitarbeiterByName(name);
 		assertTrue(mitarbeiterListe.size() == 1);
 	}
 
+	/**
+	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#findMitarbeiterByVorname(String)}.
+	 * 
+	 */
 	@Test
-	public void testFindByVorname(){
+	public void testFindByVorname()throws Exception{
 		
 		String vorname = "Luca";
 		assertTrue(mitarbeiterDAO.findMitarbeiterByVorname(vorname).size() == 1);
@@ -190,9 +205,12 @@ public class MitarbeiterDAOTest {
 		String vorname2 = "Fronzak";
 		assertTrue(mitarbeiterDAO.findMitarbeiterByVorname(vorname2).isEmpty());
 	}
-	
+	/**
+	 * Dieser Test tested die Methode {@link MitarbeiterDAOImpl#findMitarbeiterByNameVorname(String, String)}.
+	 * 
+	 */	
 	@Test
-	public void testFindByNameVorname(){
+	public void testFindByNameVorname()throws Exception{
 		
 		String name = "Raneri";
 		String vorname = "Luca";
@@ -205,7 +223,7 @@ public class MitarbeiterDAOTest {
 	 * @throws Exception
 	 */
 	@Test
-	public void testFindMitarbeierByOrt() {
+	public void testFindMitarbeierByOrt() throws Exception{
 		
 		Ort ort = ortDAO.findOrtByPlz(1000).get(0);
 		assertNotNull(ort);

@@ -13,7 +13,7 @@ import entitys.Mitarbeiter;
 /**
  * Das Interface stellt die CRUD-Funktionen für den Auftrag zur Verfügung.
  *
- * @author Matthias
+ * @author Matthias Perrollaz
  * @version 1.0
  * @since 1.0
  */
@@ -99,4 +99,15 @@ public interface AuftragRO extends Remote {
 	 * @throws Exception
 	 */
 	public List<Auftrag> findByLiegenschaft(Liegenschaft liegenschaft) throws Exception;
+
+	/**
+	 * Liefert eine Auftragsliste anhand des Mitarbeiters, DAtums sowie Zeitslots.
+	 * @param datum
+	 * @param mitarbeiter
+	 * @param zeitSlot
+	 * @return
+	 * @throws Exception
+	 */
+	public Auftrag findByDateAndMitarbeiterAndZeitslot(GregorianCalendar datum,
+			Mitarbeiter mitarbeiter, int zeitSlot) throws Exception;
 }

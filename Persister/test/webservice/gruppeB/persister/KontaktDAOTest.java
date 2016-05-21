@@ -13,7 +13,7 @@ import org.junit.Test;
 
 /**
  * Testet die Funktionalität von KontaktDAO.
- * @author Olivia
+ * @author Olivia Wassmer
  * @version 1.0
  * @since 1.0
  *
@@ -29,7 +29,7 @@ public class KontaktDAOTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		AuftragDAOTest.init();
+		KontaktDAOTest.init();
 	}
 
 	/**
@@ -38,6 +38,7 @@ public class KontaktDAOTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		KontaktDAOTest.deleteAll();
 	}
 
 	/**

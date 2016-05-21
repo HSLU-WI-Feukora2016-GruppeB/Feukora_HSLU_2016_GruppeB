@@ -24,9 +24,9 @@ import gruppeB.feukora.persister.WaermeerzeugerDAOImpl;
 
 /**
  * Diese Klasse ist für das Testen der LiegenschaftDAO-Implementierung zuständig.
- * 
- * @version 1.0
  * @author Luca Raneri
+ * @version 1.0
+ * @since 1.0
  */
 public class LiegenschaftDAOTest {
 
@@ -37,14 +37,22 @@ public class LiegenschaftDAOTest {
 	private static OrtDAOImpl ortDAO = new OrtDAOImpl();
 	private static WaermeerzeugerDAOImpl waermeerzeugerDAO = new WaermeerzeugerDAOImpl();
 	
+	/**
+	 * Initialisiert die Datenbank mit Testwerten.
+	 * @throws Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 		LiegenschaftDAOTest.init();
 	}
 
+	/**
+	 * Schliesst Test mit Datenbank ab.
+	 * @throws Exception
+	 */
 	@After
 	public void tearDown() throws Exception {
-		
+		LiegenschaftDAOTest.deleteAll();
 	}
 
 	/**
@@ -250,9 +258,6 @@ public class LiegenschaftDAOTest {
 
 		deleteAllLiegenschaft();
 		
-		for(Liegenschaft l : liegenschaftDAO.findAllLiegenschaft()){
-			liegenschaftDAO.deleteLiegenschaft(l);
-		}
 		for(Feuerungsanlage f : feuerungsanlageDAO.findAllFeuerungsanlage()){
 			feuerungsanlageDAO.deleteFeuerungsanlage(f);
 		}

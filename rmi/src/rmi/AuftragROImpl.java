@@ -13,7 +13,7 @@ import managerKlassen.AuftragManagerImpl;
  * Stellt die Implementierung von Methoden der Schnittstelle AuftragRO zur
  * Verfügung.
  * 
- * @author Matthias
+ * @author Matthias Perrollaz
  * @version 1.0
  * @since 1.0
  *
@@ -76,6 +76,12 @@ public class AuftragROImpl extends UnicastRemoteObject implements AuftragRO {
 			GregorianCalendar enddatum, Mitarbeiter mitarbeiter)
 			throws Exception {
 		return auftragManager.findByDateAndMitarbeiter(startdatum, enddatum, mitarbeiter);
+	}
+	
+	@Override
+	public Auftrag findByDateAndMitarbeiterAndZeitslot(GregorianCalendar datum,
+			Mitarbeiter mitarbeiter, int zeitSlot) throws Exception {
+		return auftragManager.findByDateAndMitarbeiterAndZeitslot(datum, mitarbeiter, zeitSlot);
 	}
 
 	@Override

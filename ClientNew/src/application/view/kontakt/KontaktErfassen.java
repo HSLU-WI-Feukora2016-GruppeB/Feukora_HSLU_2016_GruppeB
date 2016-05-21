@@ -1,11 +1,19 @@
 package application.view.kontakt;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import entitys.Kontakt;
+import entitys.Ort;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import rmi.KontaktRO;
+import rmi.MitarbeiterRO;
+import rmi.OrtRO;
 
 /**
  * Dies ist die Dokumentation der Klasse KontaktErfassen. Hier werden neue
@@ -18,8 +26,13 @@ import javafx.stage.Stage;
 
 public class KontaktErfassen {
 
+	KontaktRO kontaktRO;
+	OrtRO ortRO;
+
+
+
 	@FXML
-	private TextField txtVorname, txtNachname, txtStrasse, txtOrt, txtPlz, txtRolle, txtTelnr, txtEmail;
+	private TextField txtVorname, txtNachname, txtStrasse, txtOrt, txtPlz, txtTelnr, txtEmail;
 
 	@FXML
 	private Button btnSpeichern, btnAbbrechen;
@@ -39,12 +52,12 @@ public class KontaktErfassen {
 		String vorname = txtVorname.getText();
 		String strasse = txtStrasse.getText();
 		String ort = txtOrt.getText();
-		String rolle = txtRolle.getText();
+		String plz = txtPlz.getText();
 		String email = txtEmail.getText();
 		String telnr = txtTelnr.getText();
 
 		// Überprüfung ob die Felder auch mit einem Wert belegt wurden
-		if (name.isEmpty() || vorname.isEmpty() || strasse.isEmpty() || ort.isEmpty() || rolle.isEmpty()
+		if (name.isEmpty() || vorname.isEmpty() || strasse.isEmpty() || ort.isEmpty() || plz.isEmpty()
 				|| email.isEmpty() || telnr.isEmpty()) {
 			lblRueckmeldung.setText(" Bitte alle Felder ausfüllen!");
 
@@ -53,19 +66,26 @@ public class KontaktErfassen {
 			// Parsen erst nach der Überprüfung da sonst die isEmpty() Methode
 			// nicht vorhanden ist
 			// muss ahncheinend auf keine neue Variable gespeichert werden
+			int plzint = 0;
 			try {
-				Integer.parseInt(rolle);
-				Integer.parseInt(telnr);
+
+				plzint = Integer.parseInt(plz);
 			} catch (Exception e) {
 				lblRueckmeldung.setText("Parsen hat fehlgeschlagen");
 			}
 
-			/*------
-			Kontakt newkontakt = creatKontakt(String name, String vorname, String strasse,
-					String ort, int rolle, String email, int telnr);
-			this.KontaktRO.add(newkontakt);
 
-			************/
+			Kontakt newkontakt = creatKontakt(name, vorname, strasse,
+					ort, plzint, email, telnr);
+
+			try {
+				kontaktRO.add(newkontakt);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+
 		}
 
 	}
@@ -102,30 +122,40 @@ public class KontaktErfassen {
 	 * @return Ein neues Kontaktobjekt
 	 */
 
-	/*---------
-	private Kontakt creatKontakt(String name, String vorname, String strasse, int plz,
-		String ort, int rolle, String email, int telnr){
+
+	private Kontakt creatKontakt(String name, String vorname, String strasse,
+		String ort,  int plz, String email, String telnr){
 
 	Kontakt kontakt = new Kontakt();
+	Ort ortschaft = new Ort();
+	List<Ort> ortsliste = new ArrayList<Ort>();
 
 	kontakt.setNachname(name);
 	kontakt.setVorname(vorname);
-	kontakt.setRolleExtern(rolle);
-	kontakt.setStrasseInklNr(strasse);
+
+	kontakt.setStrasse(strasse);
 	kontakt.setEmail(email);
 	kontakt.setTel(telnr);
 
 
-	Ort ortschaft = new Ort();
-	ortschaft.setOrt(ort);
-	int plz = FindPlzbyOrt(ort);
-	ortschaft.setPlz(plz);
+try {
+			//zu erst auf liste speichern damit man nachher das zweite der Liste prüfen kann falls nicht übereinstimmt
+		 ortsliste = ortRO.findByOrtPlz(plz);
+		} catch (Exception e) {
+			lblRueckmeldung.setText("PLZ nicht gefunden");
+		}
 
+		//durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die gleiche ist.
+		for(Ort o: ortsliste){
+			o = ortsliste.get(0);
+			if(ort.equals(o.getOrt())){
+				kontakt.setOrt(ortschaft);
+				}
+		}
 
-	kontakt.setAdresse(ortschaft);
 
 	return kontakt;
 	}
-	**************/
+
 
 }

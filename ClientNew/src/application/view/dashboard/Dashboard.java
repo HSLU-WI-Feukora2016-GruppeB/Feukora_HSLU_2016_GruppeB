@@ -41,7 +41,6 @@ public class Dashboard {
 			DashStage.setFullScreen(true);
 			DashStage.show();
 
-			((Stage) leaf.getScene().getWindow()).close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -59,7 +58,6 @@ public class Dashboard {
 
 			DashStage.show();
 
-			((Stage) leaf.getScene().getWindow()).close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -72,10 +70,10 @@ public class Dashboard {
 		try {
 
 			DashStage.setScene(new Scene(
-					FXMLLoader.load(getClass().getResource("/application/view/kontakt/KontaktErfassen.fxml"))));
+					FXMLLoader.load(getClass().getResource("/application/view/kontakt/KontaktUebersicht.fxml"))));
 
 			DashStage.show();
-			((Stage) leaf.getScene().getWindow()).close();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -91,7 +89,7 @@ public class Dashboard {
 					.load(getClass().getResource("/application/view/liegenschaft/LiegenschaftErfassen.fxml"))));
 
 			DashStage.show();
-			((Stage) leaf.getScene().getWindow()).close();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -107,7 +105,7 @@ public class Dashboard {
 					FXMLLoader.load(getClass().getResource("/application/view/rapport/RapportUebersicht.fxml"))));
 
 			DashStage.show();
-			((Stage) leaf.getScene().getWindow()).close();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

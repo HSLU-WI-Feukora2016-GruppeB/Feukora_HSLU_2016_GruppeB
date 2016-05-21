@@ -157,8 +157,13 @@ public class Mitarbeiter implements Serializable{
 		return rolleI;
 	}
 
-	public void setRolleIntern(int rolleIntern) {
-		this.rolleIntern = rolleIntern;
+	public void setRolleIntern(int rolleIntern) throws Exception {
+		if(rolleIntern==1 || rolleIntern==2 || rolleIntern==3){
+			this.rolleIntern = rolleIntern;
+		}else{
+			throw new Exception("RolleIntern ungültig, entweder 1, 2 oder 3");
+		}
+		
 	}
 
 	public Benutzer getUsercredentials() {

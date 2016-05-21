@@ -8,6 +8,7 @@ import java.util.List;
 import entitys.Brenner;
 import entitys.Feuerungsanlage;
 import entitys.Waermeerzeuger;
+
 import gruppeB.feukora.persister.BrennerDAOImpl;
 import gruppeB.feukora.persister.FeuerungsanlageDAOImpl;
 import gruppeB.feukora.persister.WaermeerzeugerDAOImpl;
@@ -16,6 +17,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Diese Klasse Testet BenutzerDAOImpl und ihre Funktionen.
+ * @author Luca Raneri
+ * @version 1.0
+ * @since 1.0
+ * 
+ */
 public class FeuerungsanlageDAOTest {
 
 	private static FeuerungsanlageDAOImpl feuerungsanlageDAO = new FeuerungsanlageDAOImpl();
@@ -39,6 +47,7 @@ public class FeuerungsanlageDAOTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		FeuerungsanlageDAOTest.deleteAll();
 	}
 
 	/**
@@ -80,7 +89,6 @@ public class FeuerungsanlageDAOTest {
 		
 		assertTrue(fList.size() == 1);
 	}
-
 	
 	/**
 	 * Testet die Methode {@link FeuerungsanlageDAOImpl#updateFeuerungsanlage(Feuerungsanlage)}

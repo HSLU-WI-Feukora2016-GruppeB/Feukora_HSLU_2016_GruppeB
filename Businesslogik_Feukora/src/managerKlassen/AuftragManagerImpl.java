@@ -33,8 +33,8 @@ public class AuftragManagerImpl implements AuftragManager {
 
 		if (entity.getAuftragsNummer() == null) {
 
-			checkMessungByGrenzwerte(entity);
-			checkTerminProMitarbeiter(entity);
+			//checkMessungByGrenzwerte(entity);
+			//checkTerminProMitarbeiter(entity);
 
 			auftragDAO.saveAuftrag(entity);
 		
@@ -47,13 +47,11 @@ public class AuftragManagerImpl implements AuftragManager {
 		}
 	}
 
-	private void checkTerminProMitarbeiter(Auftrag entity){
-		try{
+	private void checkTerminProMitarbeiter(Auftrag entity) throws Exception{
+		if(auftragDAO.findAuftragByDateAndMitarbeiterAndZeitslot(entity.getTermin(), entity.getMitarbeiter(), entity.getZeitSlot()) == null){
 			return;
-			//TODO
-		} catch(Exception e) {
-			e.printStackTrace();
-			System.out.println("Der Mitarbeiter hat an diesem Tag und zu dieser Zeit bereits einen Termin.");
+		}else{
+            throw new Exception("Der gewünschte Termin ist bereits erfasst. (Id = " + entity.getAuftragsNummer() + ")");
 		}
 	}
 
@@ -63,11 +61,13 @@ public class AuftragManagerImpl implements AuftragManager {
 		if (entity.getAuftragsNummer() == null) {
 			return add(entity);
 		}
-		checkMessungByGrenzwerte(entity);
+		//checkTerminProMitarbeiter(entity);
+//		checkMessungByGrenzwerte(entity);
+		
 		return auftragDAO.updateAuftrag(entity);
 	}
 
-	private void checkMessungByGrenzwerte(Auftrag auftrag) {
+	private void checkMessungByGrenzwerte(Auftrag auftrag) throws Exception{
 		Messung messung1 = auftrag.getMessung1stufe1();
 		int brennerArt = auftrag.getLiegenschaft().getFeuerungsanlage()
 				.getBrenner().getBrennerArt();

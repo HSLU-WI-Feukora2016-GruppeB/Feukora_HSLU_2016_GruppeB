@@ -1,5 +1,9 @@
 package application.view.mitarbeiter;
 
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -32,6 +36,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import rmi.MitarbeiterRO;
+import rmi.OrtRO;
 
 /**
  * Dies ist die Dokumentation der Klasse MitarbeiterÜbersicht. Sie zeigt alle
@@ -48,7 +53,7 @@ public class MitarbeiterUebersicht{
 	private Button btnNeu, btnBearbeiten, btnSchliessen, btnSuchen;
 
 	@FXML
-	private TextField txtName, txtVorname, txtStrasse, txtOrt;
+	private TextField txtName, txtVorname;
 
 	@FXML
 	private Label lblRueckmeldung;
@@ -60,14 +65,37 @@ public class MitarbeiterUebersicht{
 	private TableView tabelle;
 
 	@FXML
-	private TableColumn tblName, tblVorname, tblStrasse, tblEMail, tblTelefon, tblPosition;
+	private TableColumn tblName, tblVorname, tblStrasse, tblEMail, tblTelefon, tblPosition, tblOrt;
 
-	MitarbeiterRO mitarbeiterRO;
+	MitarbeiterRO MitarbeiterRO;
+	OrtRO OrtRO;
+
+
 
 	public static Mitarbeiter mastatic;
 
 	@FXML
 	private void initialize() throws Exception {
+
+
+//		String url = "rmi://192.168.43.4:10099/";
+//		String MitarbeiterROName = "Mitarbeiter";
+//		String OrtROName = "Ort";
+//
+//
+//
+//		try {
+//			this.MitarbeiterRO = (MitarbeiterRO) Naming.lookup(url + MitarbeiterROName);
+//			this.OrtRO = (OrtRO) Naming.lookup(url + OrtROName);
+//		} catch (MalformedURLException e) {
+//			e.printStackTrace();
+//		} catch (RemoteException e) {
+//			e.printStackTrace();
+//		} catch (NotBoundException e) {
+//			e.printStackTrace();
+//		}
+
+		System.out.println("RMI verbunden");
 
 		List<Benutzer> lBenutzer = new ArrayList<>();
 		List<Mitarbeiter> lMitarbeiter = new ArrayList<>();
@@ -91,13 +119,13 @@ public class MitarbeiterUebersicht{
 
 		// 6 Mitarbeiter erstellen
 		lMitarbeiter.add(new Mitarbeiter("Olivia", "Wassmer", "Musterstrasse 1", lOrt.get(3), "1234567678",
-				"o.w@feukora.ch", 1, lBenutzer.get(5), 5000, new GregorianCalendar(2016, 05, 1),
+				"o.w@feukora.ch", 1, lBenutzer.get(5), 5000, new GregorianCalendar(2016, 06, 6),
 				new GregorianCalendar(2018, 8, 11)));
 		lMitarbeiter.add(new Mitarbeiter("Matthias", "Perrollaz", "Musterstrasse 2", lOrt.get(4), "1234557678",
 				"m.p@feukora.ch", 2, lBenutzer.get(4), 5000, new GregorianCalendar(2016, 05, 1),
 				new GregorianCalendar(2018, 8, 11)));
 		lMitarbeiter.add(new Mitarbeiter("Dominik", "Stirnimann", "Musterstrasse 3", lOrt.get(3), "1234367678",
-				"d.s@feukora.ch", 1, lBenutzer.get(3), 5000, new GregorianCalendar(2016, 05, 1),
+				"d.s@feukora.ch", 1, lBenutzer.get(3), 5000, new GregorianCalendar(2016, 9, 15),
 				new GregorianCalendar(2018, 8, 11)));
 		lMitarbeiter.add(new Mitarbeiter("Pascal", "Steiner", "Musterstrasse 4", lOrt.get(2), "1234567678",
 				"d.st@feukora.ch", 1, lBenutzer.get(2), 5000, new GregorianCalendar(2016, 05, 1),
@@ -109,20 +137,28 @@ public class MitarbeiterUebersicht{
 				"a.l@feukora.ch", 1, lBenutzer.get(5), 5000, new GregorianCalendar(2016, 05, 1),
 				new GregorianCalendar(2018, 8, 11)));
 
-		// List<Mitarbeiter> list = mitarbeiterRO.findAllMitarbeiter();
-		List<Mitarbeiter> list = lMitarbeiter;
+				List<Mitarbeiter> list = lMitarbeiter;
 
+		try{
+		//List<Mitarbeiter> list = MitarbeiterRO.findAllMitarbeiter();
 		ObservableList<Mitarbeiter> list2 = FXCollections.observableList(list);
 		tblName.setCellValueFactory(new PropertyValueFactory<>("name"));
 		tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
 		tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
-		tblTelefon.setCellValueFactory(new PropertyValueFactory<>("ort"));
+		tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
 		tblEMail.setCellValueFactory(new PropertyValueFactory<>("email"));
 		tblPosition.setCellValueFactory(new PropertyValueFactory<>("rolleIntern"));
-		tblTelefon.setCellValueFactory(new PropertyValueFactory<>("telefon"));
+		tblTelefon.setCellValueFactory(new PropertyValueFactory<>("tel"));
 
 
 		tabelle.setItems(list2);
+
+
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+
+
 
 
 
@@ -140,7 +176,7 @@ public class MitarbeiterUebersicht{
 		} else {
 
 			try {
-				List<Mitarbeiter> list = mitarbeiterRO.findByNameVorname(name, vorname);
+				List<Mitarbeiter> list = MitarbeiterRO.findByNameVorname(name, vorname);
 				ObservableList<Mitarbeiter> list2 = FXCollections.observableList(list);
 				tabelle.setItems(list2);
 			} catch (Exception e) {
@@ -165,28 +201,33 @@ public class MitarbeiterUebersicht{
 			MitarbeiterStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("MitarbeiterErfassen.fxml"))));
 
 			MitarbeiterStage.show();
+			((Stage) leaf.getScene().getWindow()).close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 	}
 
+
+
 	/**
 	 * Diese Methode öffnet die Übersicht zur Bearbeitung von Mitarbeiter.
 	 */
 	public void bearbeitenMitarbeiter() {
-
+		try{
 		Mitarbeiter indSelected = (Mitarbeiter) tabelle.getSelectionModel().getSelectedItem();
 		MitarbeiterBearbeiten.bekommeMitarbeiter(indSelected);
 
-		try {
+
 			Stage MitarbeiterStage = new Stage();
 
 			MitarbeiterStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("MitarbeiterBearbeiten.fxml"))));
 
 			MitarbeiterStage.show();
+
+			((Stage) leaf.getScene().getWindow()).close();
 		} catch (Exception e) {
-			e.printStackTrace();
+			lblRueckmeldung.setText("Bitte Mitarbeiter auswählen");
 		}
 
 

@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <VBox prefHeight="583.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.dashboard.Dashboard">
@@ -63,10 +64,10 @@
             <VBox prefHeight="552.0" prefWidth="640.0">
                <children>
                   <VBox prefHeight="45.0" prefWidth="640.0" />
-                  <HBox prefHeight="150.0" prefWidth="642.0">
+                  <HBox prefHeight="182.0" prefWidth="640.0">
                      <children>
-                        <Pane prefHeight="200.0" prefWidth="50.0" />
-                        <Button fx:id="btnTerminUebersicht" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#terminVerwaltung" prefHeight="120.0" prefWidth="200.0" text="Terminübersicht" textAlignment="CENTER">
+                        <Pane prefHeight="141.0" prefWidth="50.0" />
+                        <Button fx:id="btnTerminUebersicht" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#terminVerwaltung" prefHeight="150.0" prefWidth="150.0" text="Terminkalender" textAlignment="CENTER">
                            <graphic>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -78,54 +79,10 @@
                               <Font size="13.0" />
                            </font>
                         </Button>
-                        <Pane prefHeight="150.0" prefWidth="50.0" />
-                        <Button fx:id="btnMitarbeiterUebersicht" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#mitarbeiterVerwaltung" prefHeight="120.0" prefWidth="200.0" text="Mitarbeiter Verwaltung">
-                           <graphic>
-                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../Pictures/WP/ICON%20Feukora/people.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Button>
-                        <Pane prefHeight="200.0" prefWidth="50.0" />
-                        <Button fx:id="btnEigentuemerUebersicht" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#kontaktVerwaltung" prefHeight="120.0" prefWidth="200.0" text="Kontakt Verwaltung">
-                           <graphic>
-                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../Pictures/WP/ICON%20Feukora/two.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Button>
-                        <Pane prefHeight="200.0" prefWidth="50.0" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="150.0" prefWidth="640.0">
-                     <children>
-                        <Pane prefHeight="200.0" prefWidth="50.0" />
-                        <Pane prefHeight="200.0" prefWidth="50.0" />
-                        <Pane prefHeight="200.0" prefWidth="50.0" />
-                        <Button fx:id="btnLiegenschaftUebersicht" contentDisplay="TOP" mnemonicParsing="false" onAction="#liegenschaftVerwaltung" prefHeight="120.0" prefWidth="200.0" text="Liegenschaft Verwaltung">
-                           <graphic>
-                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../Pictures/WP/ICON%20Feukora/house.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Button>
-                        <Pane prefHeight="200.0" prefWidth="50.0" />
-                        <Button fx:id="btnRapportUebersicht" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#rapportVerwalten" prefHeight="120.0" prefWidth="200.0" text="Rapporte Verwalten">
+                        <Pane prefHeight="200.0" prefWidth="40.0" />
+                        <Rectangle fx:id="logo" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" stroke="BLACK" strokeType="INSIDE" width="150.0" />
+                        <Pane prefHeight="200.0" prefWidth="40.0" />
+                        <Button fx:id="btnRapportUebersicht" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#rapportVerwalten" prefHeight="150.0" prefWidth="150.0" text="Aufträge">
                            <graphic>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -137,17 +94,17 @@
                               <Font size="13.0" />
                            </font>
                         </Button>
+                        <Pane prefHeight="200.0" prefWidth="50.0" />
                      </children>
                   </HBox>
-                  <HBox prefHeight="136.0" prefWidth="640.0">
+                  <HBox prefHeight="197.0" prefWidth="640.0">
                      <children>
-                        <Pane prefHeight="136.0" prefWidth="100.0" />
                         <Pane prefHeight="200.0" prefWidth="50.0" />
-                        <Button alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="120.0" prefWidth="200.0" text="Logout">
+                        <Button fx:id="btnLiegenschaftUebersicht" contentDisplay="TOP" mnemonicParsing="false" onAction="#liegenschaftVerwaltung" prefHeight="150.0" prefWidth="150.0" text="Liegenschaften">
                            <graphic>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../Pictures/WP/ICON%20Feukora/arrows.png" />
+                                    <Image url="@../../../../Pictures/WP/ICON%20Feukora/house.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -155,7 +112,44 @@
                               <Font size="13.0" />
                            </font>
                         </Button>
-                        <Pane prefHeight="136.0" prefWidth="100.0" />
+                        <Pane prefHeight="200.0" prefWidth="40.0" />
+                        <Button fx:id="btnEigentuemerUebersicht" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#kontaktVerwaltung" prefHeight="150.0" prefWidth="150.0" text="Kontakte">
+                           <graphic>
+                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Pictures/WP/ICON%20Feukora/two.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Pane prefHeight="150.0" prefWidth="40.0" />
+                        <Button fx:id="btnMitarbeiterUebersicht" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#mitarbeiterVerwaltung" prefHeight="150.0" prefWidth="150.0" text="Mitarbeiter">
+                           <graphic>
+                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Pictures/WP/ICON%20Feukora/people.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Pane prefHeight="150.0" prefWidth="50.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="136.0" prefWidth="640.0">
+                     <children>
+                        <Pane prefHeight="136.0" prefWidth="240.0" />
+                        <Button alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="70.0" prefWidth="150.0" text="Logout" textAlignment="CENTER">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Pane prefHeight="200.0" prefWidth="240.0" />
                      </children>
                   </HBox>
                </children>
