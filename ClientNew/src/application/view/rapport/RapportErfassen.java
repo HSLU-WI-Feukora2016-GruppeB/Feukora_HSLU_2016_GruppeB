@@ -28,6 +28,9 @@ import javafx.stage.Stage;
 
 public class RapportErfassen {
 
+	static Auftrag ausgewaehlterauftrag;
+
+
     @FXML
     private Button btnNeu;
 
@@ -64,6 +67,8 @@ public class RapportErfassen {
     @FXML
     private CheckBox checkboxreguliert;
 
+    @FXML
+    private Stage leaf;
 
 
     public void initialize(){
@@ -103,6 +108,7 @@ public class RapportErfassen {
 
     public static void bekommeAuftrag(Auftrag auftrag){
 
+    	ausgewaehlterauftrag = auftrag;
 
         //Kundenobjekt zerlegen
         kundenvorname = auftrag.getKunde().getVorname();
@@ -160,74 +166,153 @@ public class RapportErfassen {
 //        String leistung = txtLeistung.getText();
 //    	String kontrollart = cbKontrollart.getValue();
 
+
     	Messung messung1stufe1 = this.createMessung1Stufe1();
     	Messung messung1stufe2 = this.createMessung1Stufe2();
+    	Messung messung2stufe1 = this.createMessung2Stufe1();
+    	Messung messung2stufe2 = this.createMessung2Stufe2();
 
-    	Auftrag newauftrag = new Auftrag();
+    	ausgewaehlterauftrag.setMessung1stufe1(messung1stufe1);
+    	ausgewaehlterauftrag.setMessung1stufe2(messung1stufe2);
+    	ausgewaehlterauftrag.setMessung2stufe1(messung2stufe1);
+    	ausgewaehlterauftrag.setMessung2stufe2(messung2stufe2);
 
     }
 
 
+    /**
+     * Diese Methode liefert die 1 Stufe der 1 Messung in einem Messungsobjekt
+     *
+     * @return messung1stufe1
+     */
     public Messung createMessung1Stufe1(){
 
+    	String russzahl = txtM1S1Russzahl.getText();
+    	String cogehalt = txtM1S1CO.getText();
+    	String abgastemperatur =txtM1S1Abgastemperatur.getText();
+    	String verbrennungstemperatur = txtM1S1Verbrenn.getText();
+    	String no2gehalt = txtM1S1Nox.getText();
+    	String waermer = txtM1S1Waermeerz.getText();
+    	String o2gehalt = txtM1S1O2.getText();
+    	String abgasverluste = txtM1S1Abgasverl.getText();
+    	Boolean oelanteil = checkM1S1Oel.isSelected();
+    	Messung messung1stufe1 = this.messungpruefen(russzahl,cogehalt,abgastemperatur,verbrennungstemperatur, no2gehalt, waermer, o2gehalt, abgasverluste,oelanteil);
 
-
-    	String stringrusszahl = txtM1S1Russzahl.getText();
-    	String stringcogehalt = txtM1S1CO.getText();
-    	String stringabgastemperatur =txtM1S1Abgastemperatur.getText();
-    	String stringverbrennungstemparatur = txtM1S1Verbrenn.getText();
-    	String stringno2gehalt = txtM1S1Nox.getText();
-    	String stringwaermer = txtM1S1Waermeerz.getText();
-    	String stringo2gehalt = txtM1S1O2.getText();
-    	String stringabgasverluste = txtM1S1Abgasverl.getText();
-    	Boolean checkoel = checkM1S1Oel.isSelected();
-
-    	if(stringrusszahl.isEmpty() || stringcogehalt.isEmpty()||stringabgastemperatur.isEmpty() || stringverbrennungstemparatur.isEmpty()
-    			|| stringno2gehalt.isEmpty() || stringwaermer.isEmpty() || stringo2gehalt.isEmpty() || stringabgasverluste.isEmpty()){
-    		lblRueckmeldung.setText("Messung 1 Stufe 1 nicht alle Felder ausgefüllt!");
-    	}else{
-    		//Alles parsen
-
-    		int russzahl = Integer.parseInt(stringrusszahl);
-    		int coGehalt = Integer.parseInt(stringcogehalt);
-    		int abgastemparatur = Integer.parseInt(stringabgastemperatur);
-    		int verbrennungstemparatur = Integer.parseInt(stringverbrennungstemparatur);
-    		int no2gehalt = Integer.parseInt(stringno2gehalt);
-    		int waermeerzeugertemparatur = Integer.parseInt(stringwaermer);
-    		int o2gehalt = Integer.parseInt(stringo2gehalt);
-    		int abgasverluste = Integer.parseInt(stringabgasverluste);
-
-    		//heutiges Datum holen
-    		Date now = new LocalDate().now()
-    		GregorianCalendar messDatum = new GregorianCalendar().gett
-
-
-
-    	 Messung messung1stufe1 = new Messung(messDatum, russzahl, coGehalt, oelanteil, no2gehalt,
-    	    abgastemperatur, waermeerzeugertemperatur, verbrennungstemperatur, o2gehalt, abgasverluste);
-
-
-    	}
-
-
-
-
-
-        return messung1stufe1;
+    	return messung1stufe1;
     }
 
+    /**
+     * Diese Methode liefert die 2 Stufe der 1 Messung in einem Messungsobjekt
+     *
+     * @return messung1stufe1
+     */
     public Messung createMessung1Stufe2(){
-    	String stringrusszahl = txtM1S2Russzahl.getText();
-        String stringcogehalt = txtM1S2CO.getText();
-        String stringabgastemparatur = txtM1S2Abgastemperatur.getText();
-        String stringverbrennungsgefahr =  txtM1S2Verbrenn.getText();
-        String stringno2gehalt = txtM1S2Nox.getText();
-        String stringwaermer = txtM1S2Waermeerz
-        txtM1S2O2
-        txtM1S2Abgasverl
 
+    	String russzahl = txtM1S2Russzahl.getText();
+    	String cogehalt = txtM1S2CO.getText();
+    	String abgastemperatur =txtM1S2Abgastemperatur.getText();
+    	String verbrennungstemperatur = txtM1S2Verbrenn.getText();
+    	String no2gehalt = txtM1S2Nox.getText();
+    	String waermer = txtM1S2Waermeerz.getText();
+    	String o2gehalt = txtM1S2O2.getText();
+    	String abgasverluste = txtM1S2Abgasverl.getText();
+    	Boolean oelanteil = checkM1S2Oel.isSelected();
+    	Messung messung1stufe2 = this.messungpruefen(russzahl,cogehalt,abgastemperatur,verbrennungstemperatur, no2gehalt, waermer, o2gehalt, abgasverluste,oelanteil);
 
+    	return messung1stufe2;
     }
+
+    /**
+     * Diese Methode liefert die 1 Stufe der 2 Messung in einem Messungsobjekt
+     *
+     * @return messung1stufe1
+     */
+    public Messung createMessung2Stufe1(){
+
+    	String russzahl = txtM2S1Russzahl.getText();
+    	String cogehalt = txtM2S1CO.getText();
+    	String abgastemperatur =txtM2S1Abgastemperatur.getText();
+    	String verbrennungstemperatur = txtM2S1Verbrenn.getText();
+    	String no2gehalt = txtM2S1Nox.getText();
+    	String waermer = txtM2S1Waermeerz.getText();
+    	String o2gehalt = txtM2S1O2.getText();
+    	String abgasverluste = txtM2S1Abgasverl.getText();
+    	Boolean oelanteil = checkM2S1Oel.isSelected();
+    	Messung messung2stufe1 = this.messungpruefen(russzahl,cogehalt,abgastemperatur,verbrennungstemperatur, no2gehalt, waermer, o2gehalt, abgasverluste,oelanteil);
+
+    	return messung2stufe1;
+    }
+
+
+
+    /**
+     * Diese Methode liefert die 1 Stufe der 2 Messung in einem Messungsobjekt
+     *
+     * @return messung1stufe1
+     */
+    public Messung createMessung2Stufe2(){
+
+    	String russzahl = txtM2S2Russzahl.getText();
+    	String cogehalt = txtM2S2CO.getText();
+    	String abgastemperatur =txtM2S2Abgastemperatur.getText();
+    	String verbrennungstemperatur = txtM2S2Verbrenn.getText();
+    	String no2gehalt = txtM2S2Nox.getText();
+    	String waermer = txtM2S2Waermeerz.getText();
+    	String o2gehalt = txtM2S2O2.getText();
+    	String abgasverluste = txtM2S2Abgasverl.getText();
+    	Boolean oelanteil = checkM2S2Oel.isSelected();
+    	Messung messung2stufe2 = this.messungpruefen(russzahl,cogehalt,abgastemperatur,verbrennungstemperatur, no2gehalt, waermer, o2gehalt, abgasverluste,oelanteil);
+
+    	return messung2stufe2;
+    }
+
+
+
+
+    /**
+     * Prueft die Messwerte der Messungen
+     *
+     * @param stringrusszahl
+     * @param stringcogehalt
+     * @param stringabgastemperatur
+     * @param stringverbrennungstemparatur
+     * @param stringno2gehalt
+     * @param stringwaermer
+     * @param stringo2gehalt
+     * @param stringabgasverluste
+     * @param oelanteil
+     * @return messung
+     */
+  private Messung messungpruefen(String stringrusszahl, String stringcogehalt, String stringabgastemperatur, String stringverbrennungstemparatur, String stringno2gehalt, String stringwaermer, String stringo2gehalt, String stringabgasverluste
+		  ,boolean oelanteil){
+
+	  if(stringrusszahl.isEmpty() || stringcogehalt.isEmpty()||stringabgastemperatur.isEmpty() || stringverbrennungstemparatur.isEmpty()
+  			|| stringno2gehalt.isEmpty() || stringwaermer.isEmpty() || stringo2gehalt.isEmpty() || stringabgasverluste.isEmpty()){
+  		lblRueckmeldung.setText("Messung 1 Stufe 1 nicht alle Felder ausgefüllt!");
+  		return null;
+  	}else{
+  		//Alles parsen
+  		int russzahl = Integer.parseInt(stringrusszahl);
+  		int coGehalt = Integer.parseInt(stringcogehalt);
+  		int abgastemperatur = Integer.parseInt(stringabgastemperatur);
+  		int verbrennungstemperatur = Integer.parseInt(stringverbrennungstemparatur);
+  		int no2gehalt = Integer.parseInt(stringno2gehalt);
+  		int waermeerzeugertemperatur = Integer.parseInt(stringwaermer);
+  		int o2gehalt = Integer.parseInt(stringo2gehalt);
+  		int abgasverluste = Integer.parseInt(stringabgasverluste);
+
+
+  		  //heutiges Datum holen
+  	 		GregorianCalendar messDatum =new GregorianCalendar();
+  			messDatum.getInstance().getTime();
+
+
+  		Messung messung = new Messung(messDatum, russzahl, coGehalt, oelanteil, no2gehalt,
+          	    abgastemperatur, waermeerzeugertemperatur, verbrennungstemperatur, o2gehalt, abgasverluste);
+  		return messung;
+  	}
+
+  }
 
 
 
