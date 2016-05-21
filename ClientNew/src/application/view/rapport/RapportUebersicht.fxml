@@ -6,7 +6,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -60,12 +59,10 @@
                      <children>
                         <GridPane>
                           <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="103.0" minWidth="10.0" prefWidth="77.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="68.0" minWidth="0.0" prefWidth="30.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="111.0" minWidth="10.0" prefWidth="77.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="98.0" minWidth="10.0" prefWidth="49.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="129.0" minWidth="10.0" prefWidth="125.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="129.0" minWidth="10.0" prefWidth="57.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.5" minWidth="10.0" prefWidth="131.5" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="98.0" minWidth="10.0" prefWidth="15.5" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.5" minWidth="10.0" prefWidth="119.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="129.0" minWidth="10.0" prefWidth="19.5" />
                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.5" minWidth="10.0" prefWidth="191.0" />
                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="86.0" minWidth="10.0" prefWidth="19.0" />
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -76,16 +73,14 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label fx:id="lblRueckmeldung" prefHeight="17.0" prefWidth="162.0" text="  " textFill="#e91212" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-                              <Label text="Vorname" GridPane.columnIndex="2" />
-                              <Label text="Name" />
-                              <TextField fx:id="txtName" GridPane.rowIndex="1" />
-                              <TextField fx:id="txtVorname" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <Button fx:id="btnSuchen" mnemonicParsing="false" onAction="#rapportSuchen" text="Suchen" GridPane.columnIndex="8" GridPane.rowIndex="1" />
-                              <DatePicker fx:id="dpDate" prefHeight="25.0" prefWidth="123.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                              <Label prefHeight="17.0" prefWidth="80.0" text="Datum" GridPane.columnIndex="4" />
-                              <ComboBox fx:id="cbZeitslot" prefWidth="150.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-                              <Label text="Zeitslot" GridPane.columnIndex="6" />
+                              <Label fx:id="lblRueckmeldung" prefHeight="17.0" prefWidth="162.0" text="  " textFill="#e91212" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                              <Label text="Mitarbeiter" />
+                              <Button fx:id="btnSuchen" mnemonicParsing="false" onAction="#rapportSuchen" text="Suchen" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                              <DatePicker fx:id="dpDate" prefHeight="25.0" prefWidth="123.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label prefHeight="17.0" prefWidth="80.0" text="Datum" GridPane.columnIndex="2" />
+                              <ComboBox fx:id="cbZeitslot" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <Label text="Zeitslot" GridPane.columnIndex="4" />
+                              <ComboBox fx:id="cbMitarbeiter" prefWidth="150.0" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </children>
@@ -98,9 +93,9 @@
                             <TableColumn fx:id="tblVorname" prefWidth="199.0" text="Vorname" />
                               <TableColumn fx:id="tblStrasse" minWidth="0.0" prefWidth="85.5" text="Strasse" />
                               <TableColumn fx:id="tblOrt" prefWidth="99.5" text="Ort" />
-                              <TableColumn fx:id="tblPosition" prefWidth="70.5" text="Datum" />
-                              <TableColumn fx:id="tblEMail" prefWidth="68.0" text="Zeitslot" />
-                              <TableColumn fx:id="tblTelefon" prefWidth="103.5" text="Kundenname" />
+                              <TableColumn fx:id="tblAuftragsart" prefWidth="70.5" text="Art" />
+                              <TableColumn fx:id="tblZeitslot" prefWidth="68.0" text="Zeitslot" />
+                              <TableColumn fx:id="tblKontaktname" prefWidth="103.5" text="Art" />
                           </columns>
                            <columnResizePolicy>
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

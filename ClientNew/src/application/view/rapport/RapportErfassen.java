@@ -16,6 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import rmi.MessungRO;
 
 /**
  * Dies ist die Dokumentation der Klasse RapportErfassen. Hier werden neue
@@ -29,6 +30,7 @@ import javafx.stage.Stage;
 public class RapportErfassen {
 
 	static Auftrag ausgewaehlterauftrag;
+	MessungRO messungRO;
 
 
     @FXML
@@ -63,7 +65,7 @@ public class RapportErfassen {
     brennertyp, brennerjahr, brennerstoff, waermetyp, waermejahr, waermestoff, auftragsart, feuerungsleistung;
 
     @FXML
-    private CheckBox checkboxreguliert;
+    private CheckBox checkboxreguliert, cbBeurteilung;
 
     @FXML
     private Stage leaf;
@@ -169,13 +171,35 @@ public class RapportErfassen {
     	Messung messung1stufe2 = this.createMessung1Stufe2();
     	Messung messung2stufe1 = this.createMessung2Stufe1();
     	Messung messung2stufe2 = this.createMessung2Stufe2();
+    	//nicht mehr gebraucht?
+    	Messung m1s1 = null,m1s2 = null,m2s1 = null,m2s2 = null;
 
-    	ausgewaehlterauftrag.setMessung1stufe1(messung1stufe1);
-    	ausgewaehlterauftrag.setMessung1stufe2(messung1stufe2);
-    	ausgewaehlterauftrag.setMessung2stufe1(messung2stufe1);
-    	ausgewaehlterauftrag.setMessung2stufe2(messung2stufe2);
+		try {
+			m1s1 = messungRO.add(messung1stufe1);
+			ausgewaehlterauftrag.setMessung1stufe1(m1s1);
+
+			m1s2 = messungRO.add(messung1stufe2);
+			ausgewaehlterauftrag.setMessung1stufe1(m1s2);
+
+			m2s1 = messungRO.add(messung2stufe1);
+			ausgewaehlterauftrag.setMessung1stufe1(m2s1);
+
+			m2s2 = messungRO.add(messung2stufe2);
+			ausgewaehlterauftrag.setMessung1stufe1(m2s2);
+
+		} catch (Exception e) {
+			lblRueckmeldung.setText("Messungen konnten nicht gespeichert werden");
+		}
+
+		if(m1s1.isBeurteilungNotOk() || m1s2.isBeurteilungNotOk() || m2s1.isBeurteilungNotOk() || m2s2.isBeurteilungNotOk()){
+			// setze Check
+		}else{
+
+		}
 
     }
+
+
 
 
     /**

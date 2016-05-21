@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -429,15 +428,16 @@
                                                       <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
                                                     <RowConstraints vgrow="SOMETIMES" />
                                                     <RowConstraints vgrow="SOMETIMES" />
+                                                      <RowConstraints vgrow="SOMETIMES" />
                                                       <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
                                                   </rowConstraints>
                                                    <children>
-                                                      <ChoiceBox prefHeight="31.0" prefWidth="305.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                      <Label text="Überschreitung" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                      <Label text="abgasverluste" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                                       <CheckBox mnemonicParsing="false" text="Russzahl" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                                                       <CheckBox mnemonicParsing="false" text="Ölanteil" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                                                       <CheckBox mnemonicParsing="false" text="CO2 in mg/m3" GridPane.columnIndex="4" GridPane.rowIndex="1" />
                                                       <CheckBox mnemonicParsing="false" text="NO2 in mg/m3" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                                      <CheckBox fx:id="cbBeurteilung" mnemonicParsing="false" text="Beurteilung Okey" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                                                    </children>
                                                 </GridPane>
                                                 <Pane minWidth="10.0" prefHeight="10.0" prefWidth="10.0" />
