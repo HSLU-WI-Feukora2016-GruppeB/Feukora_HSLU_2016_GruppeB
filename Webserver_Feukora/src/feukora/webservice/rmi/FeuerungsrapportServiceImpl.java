@@ -7,6 +7,7 @@ package feukora.webservice.rmi;
  * Copyright (c) Dominik Stirnimann
  */
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
@@ -19,7 +20,6 @@ import java.util.Properties;
 import javax.jws.WebService;
 
 import rmi.*;
-import rmi.rmiserver.RMIServer;
 import entitys.*;
 
 /**
@@ -34,16 +34,6 @@ import entitys.*;
 @WebService(endpointInterface = "feukora.webservice.rmi.FeuerungsrapportService")
 public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 
-	 private AuftragRO auftragRO;
-	 private BenutzerRO benutzerRO;
-	 private BrennerRO brennerRO;
-	 private FeuerungsanlageRO feuerungsanlageRO;
-	 private KontaktRO kontaktRO;
-	 private LiegenschaftRO liegenschaftRO;
-	 private MessungRO messungRO;
-	 private MitarbeiterRO mitarbeiterRO;
-	 private OrtRO ortRO;
-	 private WaermeerzeugerRO waermeerzeugerRO;
 	private AuftragRO auftragManager;
 	private BenutzerRO benutzerManager;
 	private BrennerRO brennerManager;
@@ -68,60 +58,49 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 		String OrtROName = "ortRO";
 		String WaermeerzeugerROName = "waermerzeugerRO";
 
-		String hostIp = "localhost";
-		int rmiPort = 10090;
-				
-		//Properties dbProperties = new Properties();
-		
-
-//		String hostIp;
-//		int rmiPort;
-//		
-		// SecurityManager braucht nicht installiert zu werden, da Tomcat einen
-		// eigenen SecurityManager hat
+//		String hostIp = "localhost";
+//		int rmiPort = 10090;
 		
 		try {
-//
-//			//Properties Objekt erstellen
-//			Properties wsProperties = new Properties();
-//			
-//			
-//			InputStream is = FeuerungsrapportServiceImpl.class.getClassLoader()
-//					.getResourceAsStream("webserver.properties");
-//
-//			wsProperties.load(is);
-//
-//			hostIp = wsProperties.getProperty("rmi.server_ip");
-//			rmiPort = Integer.parseInt(wsProperties.getProperty("rmi.server_port"));
-//			/* 2te Methode */
-//			//Klassenloader holen
-//			ClassLoader cLoader = FeuerungsrapportServiceImpl.class.getClassLoader();
-//			
-//			//Properties laden
-//			dbProperties.load(cLoader.getResourceAsStream("webserver.properties")); 
-//			
-//			//Ip auslesen
-//			String hostIp = dbProperties.getProperty("server_ip");
-//			
-//			//Port auslesen
-//			String rmiPort = dbProperties.getProperty("server_port");
-//			
-//			/* Properties laden */
+
+			//Properties Objekt erstellen
+			Properties webserverProperties = new Properties();
+
+			//Klassenloader holen
+			ClassLoader cLoader = FeuerungsrapportServiceImpl.class.getClassLoader();
+
+			//Properties laden
+			try {
+				webserverProperties.load(cLoader
+						.getResourceAsStream("webserver.properties"));
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+
+			//Port und Webserver auslesen
+			String stringPort = webserverProperties.getProperty("serverPort");
+			Integer rmiPort = Integer.valueOf(stringPort);
+			
+
+			String hostIp = webserverProperties.getProperty("serverIp");
+
+			/* Hardcode */
+//			String hostIp = "localhost";
+//			int rmiPort = 1099;
+			
+			/* 2te art*/
+			
 //			Properties props = new Properties();
 //
-//			
-
-			/* Properties laden */
-			Properties props = new Properties();
-
-			InputStream is = FeuerungsrapportServiceImpl.class.getClassLoader()
-					.getResourceAsStream("webserver.properties");
-
-			props.load(is);
-
-			hostIp = props.getProperty("rmi.server_ip");
-			rmiPort = Integer.parseInt(props.getProperty("rmi.server_port"));
-
+//			InputStream is = FeuerungsrapportServiceImpl.class.getClassLoader()
+//					.getResourceAsStream("ws.properties");
+//
+//			props.load(is);
+//
+//			hostIp = props.getProperty("rmi.host_ip");
+//			rmiPort = Integer.parseInt(props.getProperty("rmi.port"));
+			
+			
 			// URLs definieren
 			String urlAuftragRO = "rmi://" + hostIp + ":" + rmiPort + "/"
 					+ AuftragROName;
@@ -325,7 +304,7 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	// -----------------------------------------------------------------------------------------------
 	// Kontakt
 	// -----------------------------------------------------------------------------------------------
-
+	
 	@Override
 	public Kontakt addKontakt(Kontakt kontakt) throws Exception {
 		return kontaktManager.add(kontakt);
@@ -350,7 +329,11 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	public List<Kontakt> findKontaktByVorname(String vorname) throws Exception {
 		return kontaktManager.findByVorname(vorname);
 	}
-
+	@Override
+	public List<Kontakt> findAllKontakte() throws Exception {
+		return kontaktManager.findAll();
+		}
+	
 	@Override
 	public List<Kontakt> findKontaktByOrt(Ort ort) throws Exception {
 		return kontaktManager.findByOrt(ort);
