@@ -1,10 +1,15 @@
 package application.view.liegenschaft;
 
+import java.util.List;
+
 import entitys.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import rmi.BrennerRO;
 import rmi.KontaktRO;
@@ -39,6 +44,9 @@ public class LiegenschaftErfassen {
 	private Label lblRueckmeldung;
 
 	@FXML
+	private TableView tvKundentbl;
+
+	@FXML
 	private ComboBox<String> cbBrennart, cbBrennstoff;
 
 	@FXML
@@ -53,7 +61,7 @@ public class LiegenschaftErfassen {
 		String nameK = txtNachname.getText();
 
 		try {
-			Kontakt foundKontakt = kontaktRO.findByNameVorname(vornameK, nameK);
+			Kontakt foundKontakt = kontaktSuchen(vornameK, nameK);
 		} catch (Exception e) {
 			lblRueckmeldung.setText("Kontakt konnte nicht gefunden werden, bitte neuen Kontakt hinzufügen.");
 		}
@@ -123,6 +131,26 @@ public class LiegenschaftErfassen {
 
 		}
 
+	}
+
+	private Kontakt kontaktSuchen(String vornameK, String nameK) {
+
+//		if (name.isEmpty() || vorname.isEmpty()) {
+//
+//			lblRueckmeldung.setText("Beide Felder müssen ausgefüllt werden!");
+//
+//		} else {
+//
+//			try {
+//				List<Mitarbeiter> list = MitarbeiterRO.findByNameVorname(name, vorname);
+//				ObservableList<Mitarbeiter> list2 = FXCollections.observableList(list);
+//				tabelle.setItems(list2);
+//			} catch (Exception e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//
+//		}
 	}
 
 	public Liegenschaft createLiegenschaft(String kvorname, String kname, String kstrasse, int kplz, String kort,
