@@ -114,7 +114,7 @@ public class FeuerungsrapportServiceAuftragTest {
 	@Test
 	public void testFindAuftragByMitarbeiter() throws Exception {
 		
-		Mitarbeiter ma = fservice.findMitarbeiterByName("Raneri").get(0);
+		Mitarbeiter ma = fservice.findMitarbeiterByName("Stirnimann").get(0);
 		List<Auftrag> al = fservice.findAuftragByMitarbeiter(ma);
 		
 		assertNotNull(al);

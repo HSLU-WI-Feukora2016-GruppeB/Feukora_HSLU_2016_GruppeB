@@ -38,22 +38,24 @@ public class RMIServer {
 	
 	public static void main(String[] args) {
 
-		//Properties Objekt erstellen
-		Properties dbProperties = new Properties();
+		int port = 1099;
 		
-		//Klassenloader holen
-		ClassLoader cLoader = RMIServer.class.getClassLoader();
-		
-		//Properties laden
-		try {
-			dbProperties.load(cLoader.getResourceAsStream("rmi.properties"));
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} 
-		
-		//Port auslesen
-		String port = dbProperties.getProperty("port");
+//		//Properties Objekt erstellen
+//		Properties dbProperties = new Properties();
+//		
+//		//Klassenloader holen
+//		ClassLoader cLoader = RMIServer.class.getClassLoader();
+//		
+//		//Properties laden
+//		try {
+//			dbProperties.load(cLoader.getResourceAsStream("rmi.properties"));
+//		} catch (IOException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		} 
+//		
+//		//Port auslesen
+//		String port = dbProperties.getProperty("port");
 		
 	try {
 	

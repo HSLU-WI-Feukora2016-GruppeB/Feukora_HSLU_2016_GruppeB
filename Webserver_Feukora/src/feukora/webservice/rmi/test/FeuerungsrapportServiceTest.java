@@ -1,8 +1,11 @@
 package feukora.webservice.rmi.test;
 
 /*
- * ZWECK: Test der FeuerungsrapportService Klasse
+ * ZWECK: Test der FeuerungsrapportService KlassenTest
+ * 
  * MODUL: Softwarekompomenten, HSLU-Wirtschaft
+ * 
+ * @Copyright Dominik Stirnimann
  */
 
 import static org.junit.Assert.*;
@@ -12,9 +15,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import entitys.Auftrag;

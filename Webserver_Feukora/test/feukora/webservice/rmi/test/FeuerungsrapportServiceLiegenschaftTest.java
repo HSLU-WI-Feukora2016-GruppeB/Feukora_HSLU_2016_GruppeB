@@ -1,6 +1,16 @@
 package feukora.webservice.rmi.test;
 
+/*
+ * ZWECK: Feukora Feuerungsrapport Webservice
+ * MODUL: Softwarekompomenten, HSLU-Wirtschaft
+ * 
+ * Copyright (c) Dominik Stirnimann
+ */
+
 import static org.junit.Assert.*;
+
+import java.util.GregorianCalendar;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -24,7 +34,8 @@ import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
 /**
  * Diese Klasse Testet die Funktionalität der Liegenschaftsmethoden im FeuerungsrapportServiceImpl.
  * 
- * @author Luca Raneri
+ * @author Dominik
+ * 
  * @version 1.0
  */
 public class FeuerungsrapportServiceLiegenschaftTest {
@@ -40,11 +51,15 @@ public class FeuerungsrapportServiceLiegenschaftTest {
 	public static void tearDownAfterClass() throws Exception {
 	}
 
+	/**
+	 * Initialisiert die Testwerten.
+	 * @throws Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 		init();
 	}
-		
+	
 	@After
 	public void tearDown() throws Exception {
 		deleteAll();
@@ -56,28 +71,56 @@ public class FeuerungsrapportServiceLiegenschaftTest {
 	}
 
 	@Test
-	public void testUpdatLiegenschaft() {
-		fail("Not yet implemented");
+	public void testUpdatLiegenschaft() throws Exception{
+		
+		List<Liegenschaft> liegenschaftListe = fservice.findAllLiegenschaft();
+		assertTrue(liegenschaftListe.size() == 3);
+		
+		Ort altOrt = new Ort(6043,"Adligenswil");
+		Liegenschaft o = fservice.findLiegenschaftByOrt(altOrt).get(0);
+		assertNotNull(o);
+		
+		Ort neuOrt = new Ort(8000,"Zürich");
+		o.setOrt(neuOrt);
+		
+		fservice.updatLiegenschaft(o);
+		
+		Liegenschaft t2 = fservice.findLiegenschaftByOrt(neuOrt).get(0);
+		assertNotNull(t2);
+		assertTrue(t2.getOrt() != altOrt);
+		
+		liegenschaftListe = fservice.findAllLiegenschaft();
+		assertTrue(liegenschaftListe.size() == 4);
 	}
 
 	@Test
-	public void testFindAllLiegenschaft() {
-		fail("Not yet implemented");
+	public void testFindAllLiegenschaft() throws Exception {
+		
+		List<Liegenschaft> liegenschaftListe = fservice.findAllLiegenschaft();
+		assertTrue(liegenschaftListe.size() == 3);
 	}
 
 	@Test
-	public void testFindLiegenschaftById() {
+	public void testFindLiegenschaftById() throws Exception{
 		fail("Not yet implemented");
-	}
+		}
 
 	@Test
-	public void testFindLiegenschaftByKontakt() {
-		fail("Not yet implemented");
+	public void testFindLiegenschaftByKontakt() throws Exception {
+		int lplz = 8000;
+		Ort lo = fservice.findOrtByPlz(lplz).get(0);
+		
+		Kontakt lk = fservice.findKontaktByOrt(lo).get(0);
+		
+		List<Liegenschaft> b = fservice.findLiegenschaftByKontakt(lk);
+		assertTrue(b.size() == 1);
 	}
 
 	@Test
 	public void testFindLiegenschaftByOrt() {
-		fail("Not yet implemented");
+			int lplz = 8000;
+			Ort lo = fservice.findOrtByPlz(lplz).get(0);
+			fservice.findLiegenschaftByOrt(lo)
 	}
 
 	@Test
