@@ -16,6 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import rmi.MessungRO;
 
 /**
  * Dies ist die Dokumentation der Klasse RapportErfassen. Hier werden neue
@@ -29,6 +30,7 @@ import javafx.stage.Stage;
 public class RapportErfassen {
 
 	static Auftrag ausgewaehlterauftrag;
+	MessungRO messungRO;
 
 
     @FXML
@@ -36,10 +38,8 @@ public class RapportErfassen {
 
     @FXML
     private TextField txtName, txtVorname,txtPlz, txtOrt,txtTelefonNr, txtStrasseL, txtOrtL, txtPlzL, txtInfo,
-    txtBrenner, txtBaujahr, txtBrennstoff, txtWaermeerzeuger, txtBaujahrW, txtBrennstoffW, txtLeistung;
+    txtBrenner, txtBaujahr, txtBrennstoff, txtWaermeerzeuger, txtBaujahrW, txtBrennstoffW, txtLeistung, txtAuftragsart;
 
-    @FXML
-    private ChoiceBox<String> cbKontrollart;
 
     //Messung1--------------------
     @FXML
@@ -65,7 +65,7 @@ public class RapportErfassen {
     brennertyp, brennerjahr, brennerstoff, waermetyp, waermejahr, waermestoff, auftragsart, feuerungsleistung;
 
     @FXML
-    private CheckBox checkboxreguliert;
+    private CheckBox checkboxreguliert, cbBeurteilung;
 
     @FXML
     private Stage leaf;
@@ -97,10 +97,8 @@ public class RapportErfassen {
     	txtBrennstoffW.setText(waermestoff);
 
     	//Kontrollarten setzen
-    	cbKontrollart.setText(auftragsart);
-    	txtLeistung.setText(feuerungsleistug);
-
-
+    	txtAuftragsart.setText(auftragsart);
+    	txtLeistung.setText(feuerungsleistung);
     }
 
 
@@ -137,12 +135,14 @@ public class RapportErfassen {
 
         //Kontrollarten
         auftragsart =auftrag.getTerminArt();
-        feuerungsleistung = feuerungs.getFeuerungswaermeleistung();
+        feuerungsleistung = String.valueOf(feuerungs.getFeuerungswaermeleistung());
     }
 
 
     public void auftragSpeichern(){
 //
+
+   // 	DIESER TEIL SEHRWAHRSCHEINLICH UNNTÖTIG!!
 //    	//Kundenfelder holen
 //    	String name = txtName.getText();
 //    	String vorname = txtVorname.getText();
@@ -171,13 +171,35 @@ public class RapportErfassen {
     	Messung messung1stufe2 = this.createMessung1Stufe2();
     	Messung messung2stufe1 = this.createMessung2Stufe1();
     	Messung messung2stufe2 = this.createMessung2Stufe2();
+    	//nicht mehr gebraucht?
+    	Messung m1s1 = null,m1s2 = null,m2s1 = null,m2s2 = null;
 
-    	ausgewaehlterauftrag.setMessung1stufe1(messung1stufe1);
-    	ausgewaehlterauftrag.setMessung1stufe2(messung1stufe2);
-    	ausgewaehlterauftrag.setMessung2stufe1(messung2stufe1);
-    	ausgewaehlterauftrag.setMessung2stufe2(messung2stufe2);
+		try {
+			m1s1 = messungRO.add(messung1stufe1);
+			ausgewaehlterauftrag.setMessung1stufe1(m1s1);
+
+			m1s2 = messungRO.add(messung1stufe2);
+			ausgewaehlterauftrag.setMessung1stufe1(m1s2);
+
+			m2s1 = messungRO.add(messung2stufe1);
+			ausgewaehlterauftrag.setMessung1stufe1(m2s1);
+
+			m2s2 = messungRO.add(messung2stufe2);
+			ausgewaehlterauftrag.setMessung1stufe1(m2s2);
+
+		} catch (Exception e) {
+			lblRueckmeldung.setText("Messungen konnten nicht gespeichert werden");
+		}
+
+		if(m1s1.isBeurteilungNotOk() || m1s2.isBeurteilungNotOk() || m2s1.isBeurteilungNotOk() || m2s2.isBeurteilungNotOk()){
+			// setze Check
+		}else{
+
+		}
 
     }
+
+
 
 
     /**
@@ -196,7 +218,8 @@ public class RapportErfassen {
     	String o2gehalt = txtM1S1O2.getText();
     	String abgasverluste = txtM1S1Abgasverl.getText();
     	Boolean oelanteil = checkM1S1Oel.isSelected();
-    	Messung messung1stufe1 = this.messungpruefen(russzahl,cogehalt,abgastemperatur,verbrennungstemperatur, no2gehalt, waermer, o2gehalt, abgasverluste,oelanteil);
+    	Messung messung1stufe1 = this.messungpruefen(russzahl,cogehalt,abgastemperatur,verbrennungstemperatur,
+    			no2gehalt, waermer,o2gehalt, abgasverluste,oelanteil);
 
     	return messung1stufe1;
     }

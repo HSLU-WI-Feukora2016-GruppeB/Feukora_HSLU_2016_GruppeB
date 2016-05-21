@@ -188,7 +188,7 @@ public class MitarbeiterBearbeiten {
 	}
 
 	/**
-	 * Diese Methode führt den User zur Übersicht MitarbeierÜbersicht zurück.
+	 * Diese Methode führt den User zur Übersicht Rapportsübersicht zurück.
 	 */
 	public void abbrechen() {
 		((Stage) leaf.getScene().getWindow()).close();
@@ -227,7 +227,12 @@ public class MitarbeiterBearbeiten {
 
 		maupdate.setName(name);
 		maupdate.setVorname(vorname);
-		maupdate.setRolleIntern(rolle);
+		try {
+			maupdate.setRolleIntern(rolle);
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		maupdate.setStrasse(strasse);
 		maupdate.setLohn(lohn);
 		maupdate.setEmail(email);
