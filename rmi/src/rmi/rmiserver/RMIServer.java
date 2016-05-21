@@ -32,33 +32,33 @@ import rmi.WaermeerzeugerROImpl;
  * @author Matthias
  * @version 1.0
  * @since 1.0
- * 
+ *
  */
 public class RMIServer {
-	
+
 	public static void main(String[] args) {
 
-		int port = 1099;
-		
-//		//Properties Objekt erstellen
-//		Properties dbProperties = new Properties();
-//		
-//		//Klassenloader holen
-//		ClassLoader cLoader = RMIServer.class.getClassLoader();
-//		
-//		//Properties laden
-//		try {
-//			dbProperties.load(cLoader.getResourceAsStream("rmi.properties"));
-//		} catch (IOException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		} 
-//		
-//		//Port auslesen
-//		String port = dbProperties.getProperty("port");
-		
+//		int port = 1099;
+
+		//Properties Objekt erstellen
+		Properties dbProperties = new Properties();
+
+		//Klassenloader holen
+		ClassLoader cLoader = RMIServer.class.getClassLoader();
+
+		//Properties laden
+		try {
+			dbProperties.load(cLoader.getResourceAsStream("rmi.properties"));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		//Port auslesen
+		String port = dbProperties.getProperty("port");
+
 	try {
-	
+
 
 
 	//entfernte Objekte erzeugen
@@ -72,13 +72,13 @@ public class RMIServer {
 	MitarbeiterRO mi = new MitarbeiterROImpl();
 	OrtRO or = new OrtROImpl();
 	WaermeerzeugerRO wa = new WaermeerzeugerROImpl();
-	
-	// Registry-Instanz erzeugen bzw. starten 
+
+	// Registry-Instanz erzeugen bzw. starten
 	Registry reg = LocateRegistry.getRegistry(port);
-	
+
 	// Entferntes Objekt beim Namensdienst registrieren
 	if (reg != null) {
-		
+
 		reg.rebind("Auftrag", au);
 		reg.rebind("Benutzer", be);
 		reg.rebind("Brenner", br);
@@ -89,15 +89,15 @@ public class RMIServer {
 		reg.rebind("Mitarbeiter", mi);
 		reg.rebind("Ort", or);
 		reg.rebind("Waermerzeuger", wa);
-		
+
 		// Ausgabe
 		System.out.println("Objekt beim Namensdienst angemeldet.");
-		
+
 		//Server bereit
 		System.out.println("Server bereit.");
-		
+
 		}
-	
+
 	} catch(RemoteException re){
 		re.printStackTrace();
 	}catch (Exception e){
