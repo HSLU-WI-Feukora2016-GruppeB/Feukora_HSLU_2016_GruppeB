@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ComboBoxBase;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import rmi.BrennerRO;
@@ -28,7 +29,8 @@ public class LiegenschaftErfassen {
 	OrtRO ortRO;
 
 	@FXML
-	private TextField txtVorname, txtNachname, txtStrasse, txtOrt, txtPlz, txtBrennertyp, txtBrennerjahr, txtWaermetyp, txtWaermejahr;
+	private TextField txtVorname, txtNachname, txtStrasse, txtOrt, txtPlz, txtBrennertyp, txtBrennerjahr, txtWaermetyp,
+			txtWaermejahr;
 
 	@FXML
 	private Label lblRueckmeldung;
@@ -40,7 +42,7 @@ public class LiegenschaftErfassen {
 	private Button btnSuchen;
 
 	/**
-	 * Die Mehode speichert eine Liegenschaft
+	 * Methode speichert eine Liegenschaft neu.
 	 */
 	public void liegenschaftSpeichern() {
 
@@ -48,12 +50,19 @@ public class LiegenschaftErfassen {
 		String ort = txtOrt.getText();
 		String plz = txtPlz.getText();
 		String brennertyp = txtBrennertyp.getText();
-		String brennerart = txtWaermejahr.getValue().toString();
-		String baujahr = txtBrennerjahr.getText();
+		String brennerart = cbBrennart.getValue().toString();
+		String brennerjahr = txtBrennerjahr.getText();
+		String waermetyp = txtWaermetyp.getText();
+		String waermeart = cbBrennstoff.getValue().toString();
+		String waermejahr = txtWaermejahr.getText();
 
 		// Überprüfung ob die Felder auch mit einem Wert belegt wurden
-		if (strasse.isEmpty() || ort.isEmpty() || plz.isEmpty() || ) {
+		if (strasse.isEmpty() || ort.isEmpty() || plz.isEmpty() ||
+				brennertyp.isEmpty() || brennerart.isEmpty() || brennerjahr.isEmpty() ||
+				waermetyp.isEmpty() || waermeart.isEmpty() || waermejahr.isEmpty()) {
 			lblRueckmeldung.setText(" Bitte alle Felder ausfüllen!");
+		} else {
+
 		}
 
 	}

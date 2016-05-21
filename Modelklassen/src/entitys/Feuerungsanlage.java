@@ -10,7 +10,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
 /**
- * Eine Feuerungsanlage besteht aus einem Brenner 
+ * Eine Feuerungsanlage besteht aus einem Brenner
  * und einem Wärmeerzeuger sie erzeugt Wärme für eine bestimmt Liegenschaft.
  * @author Olivia
  * @version 1.0
@@ -23,24 +23,26 @@ import javax.persistence.NamedQuery;
 	@NamedQuery(name = "Feuerungsanlage.findById", query = "SELECT f FROM Feuerungsanlage f WHERE f.id=:id")
 })
 public class Feuerungsanlage implements Serializable{
-	
+
 	private static final long serialVersionUID = -4675827977388169401L;
-	
+
 	@Id
 	@GeneratedValue
 	private Integer id;
-	
+
 	@ManyToOne
 	private Brenner brenner;
-	
+
 	@ManyToOne
 	private Waermeerzeuger waermeerzeuger;
-	
+
+	private int feuerungswaermeleistung;
+
 	//konstruktor**************************************************
 	public Feuerungsanlage(){
-		
+
 	}
-	
+
 	public Feuerungsanlage(Brenner brenner, Waermeerzeuger waermeerzeuger){
 		this.brenner = brenner;
 		this.waermeerzeuger = waermeerzeuger;
@@ -70,12 +72,23 @@ public class Feuerungsanlage implements Serializable{
 	public void setWaermeerzeuger(Waermeerzeuger waermeerzeuger) {
 		this.waermeerzeuger = waermeerzeuger;
 	}
-	
+
+	public int getFeuerungswaermeleistung() {
+		return feuerungswaermeleistung;
+	}
+
+	public void setFeuerungswaermeleistung(int feuerungswaermeleistung) {
+		this.feuerungswaermeleistung = feuerungswaermeleistung;
+	}
+
 	@Override
 	public String toString() {
 		return "Feuerungsanlage: " + "\n"
-				+ "Brenner: \t \t \t" + brenner + "\n"
-				+ "Waermeerzeuger: \t \t \t" + waermeerzeuger + "\n";
+				+ "Feuerungswärmeleistung KW: " + feuerungswaermeleistung
+				+ "Brenner: " + brenner.toString() + "\n"
+				+ "Waermeerzeuger: " + waermeerzeuger.toString() + "\n";
 	}
+
+
 
 }

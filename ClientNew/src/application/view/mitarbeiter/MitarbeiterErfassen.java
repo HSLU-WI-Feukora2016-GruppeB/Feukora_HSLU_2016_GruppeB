@@ -53,13 +53,9 @@ public class MitarbeiterErfassen {
 		System.setSecurityManager(new SecurityManager());
 */
 
-
-
 		String url = "rmi://192.168.43.4:10099/";
 		String MitarbeiterROName = "Mitarbeiter";
 		String OrtROName = "Ort";
-
-
 
 		try {
 			this.MitarbeiterRO = (MitarbeiterRO) Naming.lookup(url + MitarbeiterROName);
