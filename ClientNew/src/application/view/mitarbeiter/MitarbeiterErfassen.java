@@ -69,6 +69,8 @@ public class MitarbeiterErfassen {
 			e.printStackTrace();
 		}
 
+		//TODO comboboxen füllen
+
 	}
 
 

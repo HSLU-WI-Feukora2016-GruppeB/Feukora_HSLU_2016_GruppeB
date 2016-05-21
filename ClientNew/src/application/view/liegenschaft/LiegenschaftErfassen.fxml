@@ -34,7 +34,7 @@
             </VBox>
          </top>
          <bottom>
-            <HBox prefHeight="21.0" prefWidth="640.0" BorderPane.alignment="CENTER">
+            <HBox prefHeight="10.0" prefWidth="640.0" BorderPane.alignment="CENTER">
                <children>
                   <Pane prefHeight="34.0" prefWidth="391.0" />
                   <Pane prefHeight="34.0" prefWidth="6.0" />
@@ -54,7 +54,7 @@
                </children></Pane>
          </right>
          <center>
-            <VBox prefHeight="422.0" prefWidth="430.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="423.0" prefWidth="510.0" BorderPane.alignment="CENTER">
                <children>
                   <GridPane prefHeight="165.0" prefWidth="430.0">
                     <columnConstraints>
@@ -167,7 +167,7 @@
                         </GridPane>
                      </children>
                   </HBox>
-                  <Label fx:id="lblRueckmeldung" prefHeight="17.0" prefWidth="496.0" text="                  " />
+                  <Label fx:id="lblRueckmeldung" prefHeight="30.0" prefWidth="496.0" text="                  " wrapText="true" />
                </children>
             </VBox>
          </center>

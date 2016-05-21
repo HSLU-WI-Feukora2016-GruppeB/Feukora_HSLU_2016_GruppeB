@@ -1,13 +1,13 @@
 package application.view.liegenschaft;
 
+import entitys.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.ComboBoxBase;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import rmi.BrennerRO;
+import rmi.KontaktRO;
 import rmi.LiegenschaftRO;
 import rmi.OrtRO;
 import rmi.WaermeerzeugerRO;
@@ -23,14 +23,17 @@ import rmi.WaermeerzeugerRO;
 
 public class LiegenschaftErfassen {
 
+	static KontaktRO kontaktRO;
 	LiegenschaftRO liegenschaftRO;
 	WaermeerzeugerRO waermeerzeugerRO;
 	BrennerRO brennerRO;
 	OrtRO ortRO;
 
 	@FXML
-	private TextField txtVorname, txtNachname, txtStrasse, txtOrt, txtPlz, txtBrennertyp, txtBrennerjahr, txtWaermetyp,
-			txtWaermejahr;
+	private TextField txtVorname, txtNachname, txtStrasse, txtOrt, txtPlz,
+		txtStrasseL, txtOrtL, txtPlzL,
+		txtBrennertyp, txtBrennerjahr,
+		txtWaermetyp, txtWaermejahr;
 
 	@FXML
 	private Label lblRueckmeldung;
@@ -46,6 +49,15 @@ public class LiegenschaftErfassen {
 	 */
 	public void liegenschaftSpeichern() {
 
+		String vornameK = txtVorname.getText();
+		String nameK = txtNachname.getText();
+
+		try {
+			Kontakt foundKontakt = kontaktRO.findByNameVorname(vornameK, nameK);
+		} catch (Exception e) {
+			lblRueckmeldung.setText("Kontakt konnte nicht gefunden werden, bitte neuen Kontakt hinzufügen.");
+		}
+
 		String strasse = txtStrasse.getText();
 		String ort = txtOrt.getText();
 		String plz = txtPlz.getText();
@@ -57,13 +69,70 @@ public class LiegenschaftErfassen {
 		String waermejahr = txtWaermejahr.getText();
 
 		// Überprüfung ob die Felder auch mit einem Wert belegt wurden
-		if (strasse.isEmpty() || ort.isEmpty() || plz.isEmpty() ||
-				brennertyp.isEmpty() || brennerart.isEmpty() || brennerjahr.isEmpty() ||
-				waermetyp.isEmpty() || waermeart.isEmpty() || waermejahr.isEmpty()) {
+		if (strasse.isEmpty() || ort.isEmpty() || plz.isEmpty() || brennertyp.isEmpty() || brennerart.isEmpty()
+				|| brennerjahr.isEmpty() || waermetyp.isEmpty() || waermeart.isEmpty() || waermejahr.isEmpty()) {
 			lblRueckmeldung.setText(" Bitte alle Felder ausfüllen!");
 		} else {
+			// Combobox je nach Text int vergeben
+			int brennerA = 0;
+			switch (brennerart) {
+			case "Gebläsebrenner 1-stufig mit Heizöl":
+				brennerA = 1;
+				break;
+			case "Gebläsebrenner 2-stufig mit Heizöl":
+				brennerA = 2;
+				break;
+			case "Verdampfungsbrenner":
+				brennerA = 3;
+				break;
+			case "Gebläsebrenner 1-stufig mit Gas":
+				brennerA = 4;
+				break;
+			case "Gebläsebrenner 2-stufig mit Gas":
+				brennerA = 5;
+				break;
+			case "Athmosphärischer Brenner":
+				brennerA = 6;
+				break;
+			}
+			// brennerjahr in int parsen
+			int brennerJ = Integer.parseInt(brennerjahr);
+
+			// neues Brenenrobjekt erstellen
+			Brenner newBrenner = new Brenner(brennerA, brennertyp, brennerJ);
+
+			// Combobox je nach Text int vergeben
+			int waermeA = 0;
+			switch (waermeart) {
+			case "Öl":
+				waermeA = 1;
+				break;
+			case "Erdgas":
+				waermeA = 2;
+				break;
+			case "Flüssiggas":
+				waermeA = 3;
+				break;
+			}
+
+			// Wärmeerzeugerjahr in int parsen
+			int waermeJ = Integer.parseInt(waermejahr);
+
+			// neues Waermeerzeugerobjekt erstellen
+			Waermeerzeuger newWaermeerzeuger = new Waermeerzeuger(waermeA, waermetyp, waermeJ);
 
 		}
+
+	}
+
+	public Liegenschaft createLiegenschaft(String kvorname, String kname, String kstrasse, int kplz, String kort,
+			String lstrasse, int lplz, String lort, String btyp, int bart, int bjahr, String wtyp, int wart, int wjahr){
+
+		Liegenschaft = new Liegenschaft();
+
+
+		return newliegenschaft;
+
 
 	}
 
