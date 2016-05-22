@@ -43,9 +43,10 @@ public class Feuerungsanlage implements Serializable{
 
 	}
 
-	public Feuerungsanlage(Brenner brenner, Waermeerzeuger waermeerzeuger){
+	public Feuerungsanlage(Brenner brenner, Waermeerzeuger waermeerzeuger, int feuerungswaermeleistung){
 		this.brenner = brenner;
 		this.waermeerzeuger = waermeerzeuger;
+		this.feuerungswaermeleistung = feuerungswaermeleistung;
 	}
 
 	//getter&setter********************************************************

@@ -8,7 +8,6 @@ package feukora.webservice.rmi;
  */
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
@@ -58,9 +57,6 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 		String OrtROName = "Ort";
 		String WaermeerzeugerROName = "Waermerzeuger";
 
-//		String hostIp = "localhost";
-//		int rmiPort = 10090;
-		
 		try {
 
 			//Properties Objekt erstellen
@@ -84,23 +80,6 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 
 			String hostIp = webserverProperties.getProperty("rmiIp");
 
-			/* Hardcode */
-//			String hostIp = "localhost";
-//			int rmiPort = 1099;
-			
-			/* 2te art*/
-			
-//			Properties props = new Properties();
-//
-//			InputStream is = FeuerungsrapportServiceImpl.class.getClassLoader()
-//					.getResourceAsStream("ws.properties");
-//
-//			props.load(is);
-//
-//			hostIp = props.getProperty("rmi.host_ip");
-//			rmiPort = Integer.parseInt(props.getProperty("rmi.port"));
-			
-			
 			// URLs definieren
 			String urlAuftragRO = "rmi://" + hostIp + ":" + rmiPort + "/"
 					+ AuftragROName;

@@ -207,14 +207,14 @@ public class FeuerungsrapportServiceAuftragTest {
 		deleteAll();
 		
 		List<Benutzer> lBenutzer = new ArrayList<>();
+		List<Ort> lOrt = new ArrayList<>();
 		List<Brenner> lBrenner = new ArrayList<>();
+		List<Waermeerzeuger> lWaermeerzeuger = new ArrayList<>();
 		List<Feuerungsanlage> lFeuerungsanlage = new ArrayList<>();
 		List<Kontakt> lKontakt = new ArrayList<>();
 		List<Liegenschaft> lLiegenschaft = new ArrayList<>();
 		List<Messung> lMessung = new ArrayList<>();
 		List<Mitarbeiter> lMitarbeiter = new ArrayList<>();
-		List<Ort> lOrt = new ArrayList<>();
-		List<Waermeerzeuger> lWaermeerzeuger = new ArrayList<>();
 		List<Auftrag> lAuftrag = new ArrayList<>();
 		
 		//6 Benutzer erstellen
@@ -237,9 +237,9 @@ public class FeuerungsrapportServiceAuftragTest {
 		lWaermeerzeuger.add(new Waermeerzeuger(3, "asdfg", 2010));
 	
 		//3 Feuerungsanlagen
-		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(0), lWaermeerzeuger.get(0)));
-		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(1), lWaermeerzeuger.get(1)));
-		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(2), lWaermeerzeuger.get(2)));
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(0), lWaermeerzeuger.get(0), 65));
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(1), lWaermeerzeuger.get(1), 46));
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(2), lWaermeerzeuger.get(2), 88));
 
 		//5 Orte
 		lOrt.add(new Ort(8000, "Zürich"));

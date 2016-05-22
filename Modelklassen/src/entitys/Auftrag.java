@@ -39,22 +39,22 @@ public class Auftrag implements Serializable {
 	private Liegenschaft liegenschaft;
 
 	@Nullable
-	@OneToOne // (cascade = CascadeType.ALL)
+	@OneToOne
 	private Messung messung1stufe1;
 
 	@Nullable
-	@OneToOne // (cascade = CascadeType.ALL)
+	@OneToOne
 	private Messung messung1stufe2;
 
 	@Nullable
-	@OneToOne // (cascade = CascadeType.ALL)
+	@OneToOne
 	private Messung messung2stufe1;
 
 	@Nullable
-	@OneToOne // (cascade = CascadeType.ALL)
+	@OneToOne
 	private Messung messung2stufe2;
 
-	// weiteres vorgehen wird manuell entschieden
+	// weiteres vorgehen nach messungen wird manuell entschieden
 	private boolean einregulierungInnert30;
 
 	private boolean einregulierungNichtMoeglich;
@@ -86,16 +86,22 @@ public class Auftrag implements Serializable {
 		this.terminArt = terminArt;
 	}
 
-	public Auftrag(Kontakt kontakt, Liegenschaft liegenschaft, @Nullable Messung messung1stufe1,
-			@Nullable Messung messung1stufe2, @Nullable Messung messung2stufe1, @Nullable Messung messung2stufe2,
-			Mitarbeiter mitarbeiter, GregorianCalendar datum, int zeitSlot, int terminArt) {
-		super();
+	public Auftrag(Kontakt kontakt, Liegenschaft liegenschaft,
+			@Nullable Messung messung1stufe1, @Nullable Messung messung1stufe2,
+			@Nullable Messung messung2stufe1, @Nullable Messung messung2stufe2,
+			boolean einregulierungInnert30,
+			boolean einregulierungNichtMoeglich, String bemerkung,
+			Mitarbeiter mitarbeiter, GregorianCalendar datum, int zeitSlot,
+			int terminArt) {
 		this.kontakt = kontakt;
 		this.liegenschaft = liegenschaft;
 		this.messung1stufe1 = messung1stufe1;
 		this.messung1stufe2 = messung1stufe2;
 		this.messung2stufe1 = messung2stufe1;
 		this.messung2stufe2 = messung2stufe2;
+		this.einregulierungInnert30 = einregulierungInnert30;
+		this.einregulierungNichtMoeglich = einregulierungNichtMoeglich;
+		this.bemerkung = bemerkung;
 		this.mitarbeiter = mitarbeiter;
 		this.datum = datum;
 		this.zeitSlot = zeitSlot;

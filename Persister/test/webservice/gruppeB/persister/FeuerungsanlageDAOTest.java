@@ -165,10 +165,10 @@ public class FeuerungsanlageDAOTest {
 
 		// 3 Feuerungsanlagen
 		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(0),
-				lWaermeerzeuger.get(0)));
+				lWaermeerzeuger.get(0), 65));
 		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(1),
-				lWaermeerzeuger.get(1)));
-		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(2), lWaermeerzeuger.get(2)));
+				lWaermeerzeuger.get(1), 88));
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(2), lWaermeerzeuger.get(2), 46));
 
 		for(Brenner b : lBrenner){
 			brennerDAO.saveBrenner(b);

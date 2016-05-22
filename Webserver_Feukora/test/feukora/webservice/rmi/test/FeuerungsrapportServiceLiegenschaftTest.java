@@ -10,7 +10,6 @@ package feukora.webservice.rmi.test;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.junit.After;
@@ -19,14 +18,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import entitys.Auftrag;
-import entitys.Benutzer;
 import entitys.Brenner;
 import entitys.Feuerungsanlage;
 import entitys.Kontakt;
 import entitys.Liegenschaft;
-import entitys.Messung;
-import entitys.Mitarbeiter;
 import entitys.Ort;
 import entitys.Waermeerzeuger;
 import feukora.webservice.rmi.FeuerungsrapportService;
@@ -60,7 +55,7 @@ public class FeuerungsrapportServiceLiegenschaftTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		this.init();
+		init();
 	}
 
 	/**
@@ -71,11 +66,6 @@ public class FeuerungsrapportServiceLiegenschaftTest {
 	@After
 	public void tearDown() throws Exception {
 		deleteAll();
-	}
-
-	@Test
-	public void testAddLiegenschaft() {
-		fail("Not yet implemented");
 	}
 
 	/**
@@ -231,11 +221,11 @@ public class FeuerungsrapportServiceLiegenschaftTest {
 
 		// 3 Feuerungsanlagen
 		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(0),
-				lWaermeerzeuger.get(0)));
+				lWaermeerzeuger.get(0), 65));
 		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(1),
-				lWaermeerzeuger.get(1)));
+				lWaermeerzeuger.get(1), 46));
 		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(2),
-				lWaermeerzeuger.get(2)));
+				lWaermeerzeuger.get(2), 88));
 
 		// 5 Orte
 		lOrt.add(new Ort(8000, "Zürich"));

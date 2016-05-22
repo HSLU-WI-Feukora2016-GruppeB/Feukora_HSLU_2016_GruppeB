@@ -55,11 +55,6 @@ public class Messung implements Serializable{
 
 	private int abgasverluste;
 
-	//weiteres vorgehen wird manuell entschieden
-	private boolean einregulierungInnert30;
-
-	private boolean einregulierungNichtMoeglich;
-
 	//beurteilung true wenn nicht ok
 	private boolean beurteilungNotOk;
 
@@ -282,12 +277,6 @@ public class Messung implements Serializable{
 					+ "Abgasverluste: \t" + abgasverlusteNotOk + "\n";
 		} else {
 			messung+="Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. \n";
-		}
-
-		if(einregulierungInnert30){
-			messung+= "Die Anlage muss innert 30 Tagen einreguliert werden. Die erfolgte Einregulierung ist durch den Brennermonteur mit der beiligenden Rückmeldekarte zu bestätigen. \n";
-		} else {
-			messung+= "Einregulierung auf Einhaltung der LRV-Grenzwerte ist nicht möglich \n";
 		}
 
 		return messung;
