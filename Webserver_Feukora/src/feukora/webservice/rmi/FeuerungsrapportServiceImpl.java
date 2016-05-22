@@ -47,16 +47,16 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 
 	public FeuerungsrapportServiceImpl() throws Exception {
 
-		String AuftragROName = "auftragRO";
-		String BenutzerROName = "benutzerRO";
-		String BrennerROName = "brennerRO";
-		String FeuerungsanlageROName = "feuerungsanlageRO";
-		String KontaktROName = "kontaktRO";
-		String MessungsROName = "messungRO";
-		String MitarbeiterROName = "mitarbeiterRO";
-		String LiegenschaftROName = "liegenschaftRO";
-		String OrtROName = "ortRO";
-		String WaermeerzeugerROName = "waermerzeugerRO";
+		String AuftragROName = "Auftrag";
+		String BenutzerROName = "Benutzer";
+		String BrennerROName = "Brenner";
+		String FeuerungsanlageROName = "Feuerungsanlage";
+		String KontaktROName = "Kontakt";
+		String MessungsROName = "Messung";
+		String MitarbeiterROName = "Mitarbeiter";
+		String LiegenschaftROName = "Liegenschaft";
+		String OrtROName = "Ort";
+		String WaermeerzeugerROName = "Waermerzeuger";
 
 //		String hostIp = "localhost";
 //		int rmiPort = 10090;
@@ -77,12 +77,12 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 				e1.printStackTrace();
 			}
 
-			//Port und Webserver auslesen
-			String stringPort = webserverProperties.getProperty("serverPort");
+			//Port RMI auslesen
+			String stringPort = webserverProperties.getProperty("rmiPort");
 			Integer rmiPort = Integer.valueOf(stringPort);
 			
 
-			String hostIp = webserverProperties.getProperty("serverIp");
+			String hostIp = webserverProperties.getProperty("rmiIp");
 
 			/* Hardcode */
 //			String hostIp = "localhost";
