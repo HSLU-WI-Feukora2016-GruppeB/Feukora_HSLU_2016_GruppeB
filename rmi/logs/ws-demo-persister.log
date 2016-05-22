@@ -1,0 +1,931 @@
+2016-05-22 16:05:26 ERROR GenericPersisterImpl:45 - Fehler beim Speichern der Entity vom Typ 'entitys.Feuerungsanlage': [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 0Brenner: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:40)
+	at gruppeB.feukora.persister.FeuerungsanlageDAOImpl.saveFeuerungsanlage(FeuerungsanlageDAOImpl.java:29)
+	at managerKlassen.FeuerungsanlageManagerImpl.add(FeuerungsanlageManagerImpl.java:31)
+	at rmi.FeuerungsanlageROImpl.add(FeuerungsanlageROImpl.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 22 more
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+ale
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [8000 Zürich]  wird gelöscht
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [6000 Luzern]  wird gelöscht
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [5000 Aarau]  wird gelöscht
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [3000 Bern]  wird gelöscht
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [1000 Genf]  wird gelöscht
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [2000 Neuchâtel]  wird gelöscht
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [4000 Basel]  wird gelöscht
+2016-05-22 16:05:26 ERROR GenericPersisterImpl:45 - Fehler beim Speichern der Entity vom Typ 'entitys.Feuerungsanlage': [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 0Brenner: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:40)
+	at gruppeB.feukora.persister.FeuerungsanlageDAOImpl.saveFeuerungsanlage(FeuerungsanlageDAOImpl.java:29)
+	at managerKlassen.FeuerungsanlageManagerImpl.add(FeuerungsanlageManagerImpl.java:31)
+	at rmi.FeuerungsanlageROImpl.add(FeuerungsanlageROImpl.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 22 more
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-22 16:05:26 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+ale
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [8000 Zürich]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [6000 Luzern]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [5000 Aarau]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [3000 Bern]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [1000 Genf]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [2000 Neuchâtel]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [4000 Basel]  wird gelöscht
+2016-05-22 16:05:27 ERROR GenericPersisterImpl:45 - Fehler beim Speichern der Entity vom Typ 'entitys.Feuerungsanlage': [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 0Brenner: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:40)
+	at gruppeB.feukora.persister.FeuerungsanlageDAOImpl.saveFeuerungsanlage(FeuerungsanlageDAOImpl.java:29)
+	at managerKlassen.FeuerungsanlageManagerImpl.add(FeuerungsanlageManagerImpl.java:31)
+	at rmi.FeuerungsanlageROImpl.add(FeuerungsanlageROImpl.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 22 more
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+ale
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [8000 Zürich]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [6000 Luzern]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [5000 Aarau]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [3000 Bern]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [1000 Genf]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [2000 Neuchâtel]  wird gelöscht
+2016-05-22 16:05:27 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [4000 Basel]  wird gelöscht
+2016-05-22 16:05:28 ERROR GenericPersisterImpl:45 - Fehler beim Speichern der Entity vom Typ 'entitys.Feuerungsanlage': [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 0Brenner: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:40)
+	at gruppeB.feukora.persister.FeuerungsanlageDAOImpl.saveFeuerungsanlage(FeuerungsanlageDAOImpl.java:29)
+	at managerKlassen.FeuerungsanlageManagerImpl.add(FeuerungsanlageManagerImpl.java:31)
+	at rmi.FeuerungsanlageROImpl.add(FeuerungsanlageROImpl.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 22 more
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+ale
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [8000 Zürich]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [6000 Luzern]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [5000 Aarau]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [3000 Bern]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [1000 Genf]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [2000 Neuchâtel]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [4000 Basel]  wird gelöscht
+2016-05-22 16:05:28 ERROR GenericPersisterImpl:45 - Fehler beim Speichern der Entity vom Typ 'entitys.Feuerungsanlage': [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 0Brenner: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:40)
+	at gruppeB.feukora.persister.FeuerungsanlageDAOImpl.saveFeuerungsanlage(FeuerungsanlageDAOImpl.java:29)
+	at managerKlassen.FeuerungsanlageManagerImpl.add(FeuerungsanlageManagerImpl.java:31)
+	at rmi.FeuerungsanlageROImpl.add(FeuerungsanlageROImpl.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 22 more
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+ale
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [8000 Zürich]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [6000 Luzern]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [5000 Aarau]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [3000 Bern]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [1000 Genf]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [2000 Neuchâtel]  wird gelöscht
+2016-05-22 16:05:28 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [4000 Basel]  wird gelöscht
+2016-05-22 16:05:29 ERROR GenericPersisterImpl:45 - Fehler beim Speichern der Entity vom Typ 'entitys.Feuerungsanlage': [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 0Brenner: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:40)
+	at gruppeB.feukora.persister.FeuerungsanlageDAOImpl.saveFeuerungsanlage(FeuerungsanlageDAOImpl.java:29)
+	at managerKlassen.FeuerungsanlageManagerImpl.add(FeuerungsanlageManagerImpl.java:31)
+	at rmi.FeuerungsanlageROImpl.add(FeuerungsanlageROImpl.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 22 more
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+ale
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [8000 Zürich]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [6000 Luzern]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [5000 Aarau]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [3000 Bern]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [1000 Genf]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [2000 Neuchâtel]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [4000 Basel]  wird gelöscht
+2016-05-22 16:05:29 ERROR GenericPersisterImpl:45 - Fehler beim Speichern der Entity vom Typ 'entitys.Feuerungsanlage': [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 0Brenner: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:40)
+	at gruppeB.feukora.persister.FeuerungsanlageDAOImpl.saveFeuerungsanlage(FeuerungsanlageDAOImpl.java:29)
+	at managerKlassen.FeuerungsanlageManagerImpl.add(FeuerungsanlageManagerImpl.java:31)
+	at rmi.FeuerungsanlageROImpl.add(FeuerungsanlageROImpl.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 22 more
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+ale
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [8000 Zürich]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [6000 Luzern]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [5000 Aarau]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [3000 Bern]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [1000 Genf]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [2000 Neuchâtel]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [4000 Basel]  wird gelöscht
+2016-05-22 16:05:29 ERROR GenericPersisterImpl:45 - Fehler beim Speichern der Entity vom Typ 'entitys.Feuerungsanlage': [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 0Brenner: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:40)
+	at gruppeB.feukora.persister.FeuerungsanlageDAOImpl.saveFeuerungsanlage(FeuerungsanlageDAOImpl.java:29)
+	at managerKlassen.FeuerungsanlageManagerImpl.add(FeuerungsanlageManagerImpl.java:31)
+	at rmi.FeuerungsanlageROImpl.add(FeuerungsanlageROImpl.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 22 more
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+ale
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [8000 Zürich]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [6000 Luzern]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [5000 Aarau]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [3000 Bern]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [1000 Genf]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [2000 Neuchâtel]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [4000 Basel]  wird gelöscht
+2016-05-22 16:05:29 ERROR GenericPersisterImpl:45 - Fehler beim Speichern der Entity vom Typ 'entitys.Feuerungsanlage': [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 0Brenner: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz.
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:63)
+	at gruppeB.feukora.persister.generic.GenericPersisterImpl.save(GenericPersisterImpl.java:40)
+	at gruppeB.feukora.persister.FeuerungsanlageDAOImpl.saveFeuerungsanlage(FeuerungsanlageDAOImpl.java:29)
+	at managerKlassen.FeuerungsanlageManagerImpl.add(FeuerungsanlageManagerImpl.java:31)
+	at rmi.FeuerungsanlageROImpl.add(FeuerungsanlageROImpl.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz.
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:304)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:702)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1490)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:267)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1143)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commitInternal(EntityTransactionImpl.java:84)
+	... 22 more
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+ale
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [8000 Zürich]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [6000 Luzern]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [5000 Aarau]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [3000 Bern]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [1000 Genf]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [2000 Neuchâtel]  wird gelöscht
+2016-05-22 16:05:29 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [4000 Basel]  wird gelöscht
