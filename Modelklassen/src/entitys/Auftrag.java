@@ -59,6 +59,8 @@ public class Auftrag implements Serializable {
 
 	private boolean einregulierungNichtMoeglich;
 
+	private String bemerkung;
+
 	@ManyToOne
 	private Mitarbeiter mitarbeiter;
 
@@ -332,6 +334,14 @@ public class Auftrag implements Serializable {
 
 	public void setEinregulierungNichtMoeglich(boolean einregulierungNichtMoeglich) {
 		this.einregulierungNichtMoeglich = einregulierungNichtMoeglich;
+	}
+
+	public String getBemerkung() {
+		return bemerkung;
+	}
+
+	public void setBemerkung(String bemerkung) {
+		this.bemerkung = bemerkung;
 	}
 
 }
