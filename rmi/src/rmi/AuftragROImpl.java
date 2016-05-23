@@ -5,9 +5,11 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import entitys.*;
 import managerInterfaces.AuftragManager;
 import managerKlassen.AuftragManagerImpl;
+import rmi.interfaces.AuftragRO;
+import entitys.*;
+
 
 /**
  * Stellt die Implementierung von Methoden der Schnittstelle AuftragRO zur

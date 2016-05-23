@@ -4,6 +4,7 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
+import rmi.interfaces.BenutzerRO;
 import entitys.Benutzer;
 import managerInterfaces.BenutzerManager;
 import managerKlassen.BenutzerManagerImpl;

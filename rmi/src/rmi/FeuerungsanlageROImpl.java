@@ -4,6 +4,7 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
+import rmi.interfaces.FeuerungsanlageRO;
 import entitys.Brenner;
 import entitys.Feuerungsanlage;
 import entitys.Liegenschaft;

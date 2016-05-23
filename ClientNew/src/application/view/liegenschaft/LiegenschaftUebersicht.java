@@ -19,7 +19,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import rmi.LiegenschaftRO;
+import rmi.interfaces.LiegenschaftRO;
 
 public class LiegenschaftUebersicht {
 

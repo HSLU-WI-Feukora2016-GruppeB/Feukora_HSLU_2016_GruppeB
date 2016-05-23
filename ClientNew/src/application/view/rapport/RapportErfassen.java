@@ -18,8 +18,8 @@ import javafx.scene.control.Labeled;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import rmi.AuftragRO;
-import rmi.MessungRO;
+import rmi.interfaces.AuftragRO;
+import rmi.interfaces.MessungRO;
 
 /**
  * Dies ist die Dokumentation der Klasse RapportErfassen. Hier werden neue

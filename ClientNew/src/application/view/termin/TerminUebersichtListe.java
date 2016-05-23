@@ -16,7 +16,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
-import rmi.AuftragRO;
+import rmi.interfaces.AuftragRO;
 
 public class TerminUebersichtListe {
 

@@ -19,6 +19,16 @@ import java.util.Properties;
 import javax.jws.WebService;
 
 import rmi.*;
+import rmi.interfaces.AuftragRO;
+import rmi.interfaces.BenutzerRO;
+import rmi.interfaces.BrennerRO;
+import rmi.interfaces.FeuerungsanlageRO;
+import rmi.interfaces.KontaktRO;
+import rmi.interfaces.LiegenschaftRO;
+import rmi.interfaces.MessungRO;
+import rmi.interfaces.MitarbeiterRO;
+import rmi.interfaces.OrtRO;
+import rmi.interfaces.WaermeerzeugerRO;
 import entitys.*;
 
 /**

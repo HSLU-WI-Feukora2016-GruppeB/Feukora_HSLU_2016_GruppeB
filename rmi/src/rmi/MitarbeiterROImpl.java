@@ -5,6 +5,7 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import rmi.interfaces.MitarbeiterRO;
 import entitys.Benutzer;
 import entitys.Mitarbeiter;
 import entitys.Ort;

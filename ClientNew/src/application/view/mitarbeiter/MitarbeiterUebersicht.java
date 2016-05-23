@@ -35,8 +35,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
-import rmi.MitarbeiterRO;
-import rmi.OrtRO;
+import rmi.interfaces.MitarbeiterRO;
+import rmi.interfaces.OrtRO;
 
 /**
  * Dies ist die Dokumentation der Klasse Mitarbeiter‹bersicht. Sie zeigt alle
