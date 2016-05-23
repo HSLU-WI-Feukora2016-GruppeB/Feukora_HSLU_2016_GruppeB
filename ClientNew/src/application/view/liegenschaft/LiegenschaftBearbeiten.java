@@ -19,12 +19,12 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import rmi.BrennerRO;
-import rmi.FeuerungsanlageRO;
-import rmi.KontaktRO;
-import rmi.LiegenschaftRO;
-import rmi.OrtRO;
-import rmi.WaermeerzeugerRO;
+import rmi.interfaces.BrennerRO;
+import rmi.interfaces.FeuerungsanlageRO;
+import rmi.interfaces.KontaktRO;
+import rmi.interfaces.LiegenschaftRO;
+import rmi.interfaces.OrtRO;
+import rmi.interfaces.WaermeerzeugerRO;
 
 
 

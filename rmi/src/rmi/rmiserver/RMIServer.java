@@ -6,26 +6,26 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.Properties;
 
-import rmi.AuftragRO;
 import rmi.AuftragROImpl;
-import rmi.BenutzerRO;
 import rmi.BenutzerROImpl;
-import rmi.BrennerRO;
 import rmi.BrennerROImpl;
-import rmi.FeuerungsanlageRO;
 import rmi.FeuerungsanlageROImpl;
-import rmi.KontaktRO;
 import rmi.KontaktROImpl;
-import rmi.LiegenschaftRO;
 import rmi.LiegenschaftROImpl;
-import rmi.MessungRO;
 import rmi.MessungROImpl;
-import rmi.MitarbeiterRO;
 import rmi.MitarbeiterROImpl;
-import rmi.OrtRO;
 import rmi.OrtROImpl;
-import rmi.WaermeerzeugerRO;
 import rmi.WaermeerzeugerROImpl;
+import rmi.interfaces.AuftragRO;
+import rmi.interfaces.BenutzerRO;
+import rmi.interfaces.BrennerRO;
+import rmi.interfaces.FeuerungsanlageRO;
+import rmi.interfaces.KontaktRO;
+import rmi.interfaces.LiegenschaftRO;
+import rmi.interfaces.MessungRO;
+import rmi.interfaces.MitarbeiterRO;
+import rmi.interfaces.OrtRO;
+import rmi.interfaces.WaermeerzeugerRO;
 
 /**
  * Diese Klasse fungiert als RMI-Server.

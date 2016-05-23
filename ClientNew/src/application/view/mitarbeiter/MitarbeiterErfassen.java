@@ -1,5 +1,6 @@
 package application.view.mitarbeiter;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
@@ -9,6 +10,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Properties;
 
 import entitys.Mitarbeiter;
 import entitys.Ort;
@@ -21,8 +23,22 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+<<<<<<< HEAD
+import rmi.interfaces.MitarbeiterRO;
+import rmi.interfaces.OrtRO;
+=======
+import rmi.AuftragRO;
+import rmi.BenutzerRO;
+import rmi.BrennerRO;
+import rmi.FeuerungsanlageRO;
+import rmi.KontaktRO;
+import rmi.LiegenschaftRO;
+import rmi.MessungRO;
 import rmi.MitarbeiterRO;
 import rmi.OrtRO;
+import rmi.WaermeerzeugerRO;
+import rmi.rmiserver.RMIServer;
+>>>>>>> refs/remotes/origin/master
 
 /**
  * Dies ist die Dokumentation der Klasse MitarbeiterErfassen. Hier können neue
@@ -35,7 +51,7 @@ import rmi.OrtRO;
 
 public class MitarbeiterErfassen {
 
-	MitarbeiterRO  MitarbeiterRO;
+	MitarbeiterRO MitarbeiterRO;
 	OrtRO OrtRO;
 
 	@FXML
@@ -52,29 +68,83 @@ public class MitarbeiterErfassen {
 	@FXML
 	private ComboBox<String> cbRolle;
 
-	public void initialize(){
-		/* SecurityManager zusätzlich falls man will
-		System.setProperty("java.security.policy", "MitarbeiterRO.policy");
+	private AuftragRO auftragManager;
+	private BenutzerRO benutzerManager;
+	private BrennerRO brennerManager;
+	private FeuerungsanlageRO feuerungsanlageManager;
+	private KontaktRO kontaktManager;
+	private LiegenschaftRO liegenschaftManager;
+	private MessungRO messungManager;
+	private MitarbeiterRO mitarbeiterManager;
+	private OrtRO ortManager;
+	private WaermeerzeugerRO waermeerzeugerManager;
 
-		System.setSecurityManager(new SecurityManager());
-*/
-
-		String url = "rmi://192.168.43.4:10099/";
+	public void initialize() throws Exception {
+		/*
+		 * SecurityManager zusätzlich falls man will
+		 * System.setProperty("java.security.policy", "MitarbeiterRO.policy");
+		 *
+		 * System.setSecurityManager(new SecurityManager());
+		 */
+		String AuftragROName = "Auftrag";
+		String BenutzerROName = "Benutzer";
+		String BrennerROName = "Brenner";
+		String FeuerungsanlageROName = "Feuerungsanlage";
+		String KontaktROName = "Kontakt";
+		String MessungsROName = "Messung";
 		String MitarbeiterROName = "Mitarbeiter";
+		String LiegenschaftROName = "Liegenschaft";
 		String OrtROName = "Ort";
+		String WaermeerzeugerROName = "Waermerzeuger";
 
 		try {
-			this.MitarbeiterRO = (MitarbeiterRO) Naming.lookup(url + MitarbeiterROName);
-			this.OrtRO = (OrtRO) Naming.lookup(url + OrtROName);
-			System.out.println("yeah au das fonzt");
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		} catch (RemoteException e) {
-			e.printStackTrace();
-		} catch (NotBoundException e) {
-			e.printStackTrace();
-		}
 
+			// Properties Objekt erstellen
+			Properties webserverProperties = new Properties();
+
+			// Klassenloader holen
+			ClassLoader cLoader = MitarbeiterErfassen.class.getClassLoader();
+
+			// Properties laden
+			try {
+				webserverProperties.load(cLoader.getResourceAsStream("webserver.properties"));
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+
+			// Port RMI auslesen
+			String stringPort = webserverProperties.getProperty("rmiPort");
+			Integer rmiPort = Integer.valueOf(stringPort);
+
+			String hostIp = webserverProperties.getProperty("rmiIp");
+
+			// URLs definieren
+			String urlAuftragRO = "rmi://" + hostIp + ":" + rmiPort + "/" + AuftragROName;
+			String urlBenutzerRO = "rmi://" + hostIp + ":" + rmiPort + "/" + BenutzerROName;
+			String urlBrennerRO = "rmi://" + hostIp + ":" + rmiPort + "/" + BrennerROName;
+			String urlFeuerungsanlageRO = "rmi://" + hostIp + ":" + rmiPort + "/" + FeuerungsanlageROName;
+			String urlKontaktRO = "rmi://" + hostIp + ":" + rmiPort + "/" + KontaktROName;
+			String urlMessungRO = "rmi://" + hostIp + ":" + rmiPort + "/" + MessungsROName;
+			String urlMitarbeiterRO = "rmi://" + hostIp + ":" + rmiPort + "/" + MitarbeiterROName;
+			String urlLiegenschaftRO = "rmi://" + hostIp + ":" + rmiPort + "/" + LiegenschaftROName;
+			String urlOrtRO = "rmi://" + hostIp + ":" + rmiPort + "/" + OrtROName;
+			String urlWaermeerzeugerRO = "rmi://" + hostIp + ":" + rmiPort + "/" + WaermeerzeugerROName;
+
+			/* Lookup */
+			auftragManager = (AuftragRO) Naming.lookup(urlAuftragRO);
+			benutzerManager = (BenutzerRO) Naming.lookup(urlBenutzerRO);
+			brennerManager = (BrennerRO) Naming.lookup(urlBrennerRO);
+			feuerungsanlageManager = (FeuerungsanlageRO) Naming.lookup(urlFeuerungsanlageRO);
+			kontaktManager = (KontaktRO) Naming.lookup(urlKontaktRO);
+			messungManager = (MessungRO) Naming.lookup(urlMessungRO);
+			mitarbeiterManager = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
+			liegenschaftManager = (LiegenschaftRO) Naming.lookup(urlLiegenschaftRO);
+			ortManager = (OrtRO) Naming.lookup(urlOrtRO);
+			waermeerzeugerManager = (WaermeerzeugerRO) Naming.lookup(urlWaermeerzeugerRO);
+
+		} catch (MalformedURLException | RemoteException | NotBoundException e) {
+			throw e;
+		}
 
 		List<String> list = new ArrayList<String>();
 		list.add("Administrator");
@@ -85,8 +155,6 @@ public class MitarbeiterErfassen {
 		cbRolle.setItems(list2);
 
 	}
-
-
 
 	/**
 	 * Diese Methode speichert einen Mitarbeier.
@@ -108,13 +176,13 @@ public class MitarbeiterErfassen {
 		// Überprüfung ob die Felder auch mit einem Wert belegt wurden
 		if (name.isEmpty() || vorname.isEmpty() || strasse.isEmpty() || ort.isEmpty() || plz.isEmpty()
 				|| rolle.isEmpty() || email.isEmpty() || telefonnr.isEmpty() || enddatum.toString().isEmpty()
-				|| startdatum.toString().isEmpty()){
+				|| startdatum.toString().isEmpty()) {
 
 			lblRueckmeldung.setText("Bitte alle Felder ausfüllen");
 
 		} else {
 
-			//Die Rolle wieder in einen int verwandel
+			// Die Rolle wieder in einen int verwandel
 			int rolleint = 0;
 			switch (rolle) {
 			case "Kontrolleur":
@@ -129,7 +197,7 @@ public class MitarbeiterErfassen {
 
 			}
 
-			//Das arbeitet seit: in GregorianCalendar Format umwandeln
+			// Das arbeitet seit: in GregorianCalendar Format umwandeln
 			int starttag = startdatum.getDayOfMonth();
 			int startmonat = startdatum.getMonthValue();
 			int startjahr = startdatum.getYear();
@@ -149,16 +217,14 @@ public class MitarbeiterErfassen {
 			try {
 				lohnint = Integer.parseInt(lohn);
 				plzint = Integer.parseInt(plz);
-			}catch (Exception e) {
+			} catch (Exception e) {
 				lblRueckmeldung.setText("Parsen hat fehlgeschlagen");
 			}
 
-
-
 			System.out.println("vor addmitarbeiter");
 			try {
-				Mitarbeiter newmitarbeiter = createMitarbeiter(name,vorname,strasse,ort,plzint,
-						rolleint,lohnint,email,telefonnr,gcalstart, gcalend);
+				Mitarbeiter newmitarbeiter = createMitarbeiter(name, vorname, strasse, ort, plzint, rolleint, lohnint,
+						email, telefonnr, gcalstart, gcalend);
 				MitarbeiterRO.add(newmitarbeiter);
 			} catch (Exception e) {
 				lblRueckmeldung.setText("Mitarbeiter konnte nicht gespeichert werden");
@@ -193,9 +259,9 @@ public class MitarbeiterErfassen {
 	 * @return Mitarbeiter
 	 * @throws Exception
 	 */
-	private Mitarbeiter createMitarbeiter(String name, String vorname, String strasse, String ort, int plz,
-			int rolle, int lohn, String email, String telefonnr,
-			GregorianCalendar gcalstart, GregorianCalendar gcalend) throws Exception{
+	private Mitarbeiter createMitarbeiter(String name, String vorname, String strasse, String ort, int plz, int rolle,
+			int lohn, String email, String telefonnr, GregorianCalendar gcalstart, GregorianCalendar gcalend)
+			throws Exception {
 
 		Mitarbeiter mitarbeiter = new Mitarbeiter();
 		List<Ort> ortsliste = new ArrayList<Ort>();
@@ -210,18 +276,18 @@ public class MitarbeiterErfassen {
 		mitarbeiter.setArbeitetSeit(gcalstart);
 		mitarbeiter.setArbeitetBis(gcalend);
 
-		//zu erst auf liste speichern damit man nachher das zweite der Liste prüfen kann falls nicht übereinstimmt
-		 ortsliste = OrtRO.findByOrtPlz(plz);
+		// zu erst auf liste speichern damit man nachher das zweite der Liste
+		// prüfen kann falls nicht übereinstimmt
+		ortsliste = OrtRO.findByOrtPlz(plz);
 
-
-		//durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die gleiche ist.
-		for(Ort o: ortsliste){
-			if(ort.equals(o.getOrt())){
+		// durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die
+		// gleiche ist.
+		for (Ort o : ortsliste) {
+			if (ort.equals(o.getOrt())) {
 				Ort o2 = OrtRO.add(o);
 				mitarbeiter.setOrt(o2);
-				}
+			}
 		}
-
 
 		return mitarbeiter;
 	}

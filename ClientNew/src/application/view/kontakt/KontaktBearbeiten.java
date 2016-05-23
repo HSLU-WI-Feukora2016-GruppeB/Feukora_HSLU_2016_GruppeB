@@ -20,8 +20,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import rmi.KontaktRO;
-import rmi.OrtRO;
+import rmi.interfaces.KontaktRO;
+import rmi.interfaces.OrtRO;
 
 public class KontaktBearbeiten {
 

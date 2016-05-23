@@ -4,6 +4,7 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
+import rmi.interfaces.KontaktRO;
 import entitys.Kontakt;
 import entitys.Ort;
 import managerInterfaces.KontaktManager;

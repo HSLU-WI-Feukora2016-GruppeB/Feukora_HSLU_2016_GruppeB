@@ -11,9 +11,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import rmi.KontaktRO;
-import rmi.MitarbeiterRO;
-import rmi.OrtRO;
+import rmi.interfaces.KontaktRO;
+import rmi.interfaces.MitarbeiterRO;
+import rmi.interfaces.OrtRO;
 
 /**
  * Dies ist die Dokumentation der Klasse KontaktErfassen. Hier werden neue

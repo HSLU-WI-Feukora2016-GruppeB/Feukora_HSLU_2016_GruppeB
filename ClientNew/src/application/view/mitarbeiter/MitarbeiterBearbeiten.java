@@ -24,8 +24,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import rmi.MitarbeiterRO;
-import rmi.OrtRO;
+import rmi.interfaces.MitarbeiterRO;
+import rmi.interfaces.OrtRO;
 
 /**
  * Dies ist die Dokumentation der Klasse MitarbeiterErfassen. Hier können neue

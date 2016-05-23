@@ -17,8 +17,8 @@ import java.util.Observable;
 
 import javax.imageio.ImageIO;
 
-import rmi.AuftragRO;
-import rmi.MitarbeiterRO;
+import rmi.interfaces.AuftragRO;
+import rmi.interfaces.MitarbeiterRO;
 import entitys.Auftrag;
 import entitys.Benutzer;
 import entitys.Brenner;

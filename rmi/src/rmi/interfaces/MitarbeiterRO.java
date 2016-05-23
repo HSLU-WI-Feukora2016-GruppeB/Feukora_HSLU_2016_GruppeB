@@ -1,4 +1,4 @@
-package rmi;
+package rmi.interfaces;
 
 import java.rmi.Remote;
 import java.util.GregorianCalendar;
