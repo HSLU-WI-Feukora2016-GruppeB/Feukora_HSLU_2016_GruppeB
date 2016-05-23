@@ -20,6 +20,8 @@ import entitys.Messung;
 import entitys.Mitarbeiter;
 import entitys.Ort;
 import entitys.Waermeerzeuger;
+
+import rmi.interfaces.*;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -70,8 +72,10 @@ public class MitarbeiterUebersicht {
 	@FXML
 	private TableColumn tblName, tblVorname, tblStrasse, tblEMail, tblTelefon, tblPosition, tblOrt;
 
+
 	MitarbeiterRO mitarbeiterRO;
 	OrtRO ortRO;
+
 
 
 	public static Mitarbeiter mastatic;
@@ -108,6 +112,7 @@ public class MitarbeiterUebersicht {
 			String urlMitarbeiterRO = "rmi://" + hostIp + ":" + rmiPort + "/" + MitarbeiterROName;
 
 			/* Lookup */
+
 			ortRO = (OrtRO) Naming.lookup(urlOrtRO);
 			mitarbeiterRO = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
 

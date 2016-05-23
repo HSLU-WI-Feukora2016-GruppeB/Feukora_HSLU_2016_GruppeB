@@ -40,6 +40,7 @@ public class MitarbeiterErfassen {
 
 
 
+
 	@FXML
 	private TextField txtName, txtVorname, txtOrt, txtPLZ, txtLohn, txtEmail, txtTelefonNr, txtStrasse;
 
@@ -74,6 +75,7 @@ public class MitarbeiterErfassen {
 
 			// Properties laden
 
+
 				rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
 
 
@@ -95,6 +97,7 @@ public class MitarbeiterErfassen {
 			throw e;
 		}
 
+		System.out.println("RMI läuft soweit");
 		List<String> list = new ArrayList<String>();
 		list.add("Administrator");
 		list.add("Sachbearbeiter");
@@ -174,7 +177,9 @@ public class MitarbeiterErfassen {
 			try {
 				Mitarbeiter newmitarbeiter = createMitarbeiter(name, vorname, strasse, ort, plzint, rolleint, lohnint,
 						email, telefonnr, gcalstart, gcalend);
+
 				mitarbeiterRO.add(newmitarbeiter);
+
 			} catch (Exception e) {
 				lblRueckmeldung.setText("Mitarbeiter konnte nicht gespeichert werden");
 				e.printStackTrace();
@@ -228,6 +233,7 @@ public class MitarbeiterErfassen {
 
 		// zu erst auf liste speichern damit man nachher das zweite der Liste
 		// prüfen kann falls nicht übereinstimmt
+
 		ortsliste = ortRO.findByOrtPlz(plz);
 
 		// durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die

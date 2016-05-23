@@ -218,8 +218,9 @@ public class RapportUebersicht {
 		}
 	}
 
-	public void loeschenAuftrag() {
-		Liegenschaft indSelected = (Liegenschaft) tabelle.getSelectionModel().getSelectedItem();
+	public void loeschenAuftrag() throws Exception {
+		Auftrag indSelected = (Auftrag) tabelle.getSelectionModel().getSelectedItem();
+		auftragRO.delete(indSelected);
 	}
 
 	public void neuRapport (){
