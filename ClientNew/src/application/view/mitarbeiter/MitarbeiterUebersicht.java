@@ -20,6 +20,8 @@ import entitys.Messung;
 import entitys.Mitarbeiter;
 import entitys.Ort;
 import entitys.Waermeerzeuger;
+
+import rmi.interfaces.*;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -72,8 +74,6 @@ public class MitarbeiterUebersicht {
 	OrtRO OrtRO;
 
 
-	private MitarbeiterRO mitarbeiterManager;
-
 	public static Mitarbeiter mastatic;
 
 	public void initialize() throws Exception {
@@ -112,7 +112,7 @@ public class MitarbeiterUebersicht {
 
 			/* Lookup */
 
-			mitarbeiterManager = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
+			MitarbeiterRO = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
 
 
 		} catch (MalformedURLException | RemoteException | NotBoundException e) {
