@@ -6,6 +6,5 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="lib/feukora-model.jar"/>
 	<classpathentry kind="lib" path="lib/feukora-persister.jar"/>
-	<classpathentry kind="lib" path="lib/feukora-persister-impl.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
