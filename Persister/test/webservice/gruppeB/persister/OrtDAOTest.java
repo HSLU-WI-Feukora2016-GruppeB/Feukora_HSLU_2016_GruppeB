@@ -38,7 +38,7 @@ public class OrtDAOTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-		OrtDAOTest.deleteAll();
+		//OrtDAOTest.deleteAll();
 	}
 	
 	/**

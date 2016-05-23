@@ -75,7 +75,7 @@ public class WaermeerzeugerROImpl extends UnicastRemoteObject implements Waermee
 
 	@Override
 	public List<Waermeerzeuger> findByBaujahr(int baujahr) throws Exception {
-		return findByBaujahr(baujahr);
+		return waermeerzeugerManager.findByBaujahr(baujahr);
 	}
 
 }
