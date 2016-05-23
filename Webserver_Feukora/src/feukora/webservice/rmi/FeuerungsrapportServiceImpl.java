@@ -8,7 +8,6 @@ package feukora.webservice.rmi;
  */
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
