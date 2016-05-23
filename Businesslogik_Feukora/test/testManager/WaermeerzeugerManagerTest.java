@@ -13,7 +13,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import webservice.gruppeB.persister.WaermeerzeugerDAOTest;
 
 /**
  * Diese Klasse ist für das Testen der WaermeerzeugerManager zuständig.
