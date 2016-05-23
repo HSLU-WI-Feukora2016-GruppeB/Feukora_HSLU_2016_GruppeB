@@ -1,9 +1,15 @@
 package application.view.rapport;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Properties;
 
 import entitys.Auftrag;
 import entitys.Feuerungsanlage;
@@ -80,7 +86,49 @@ public class RapportErfassen {
     private Stage leaf;
 
 
-    public void initialize(){
+    public void initialize() throws Exception{
+
+
+		 /*---------------RMI Verbindung---------------*/
+
+			String MessungROName = "Messung";
+			String AuftragROName = "Auftrag";
+
+			try {
+
+				// Properties Objekt erstellen
+				Properties rmiProperties = new Properties();
+
+				// Klassenloader holen
+				ClassLoader cLoader = RapportErfassen.class.getClassLoader();
+
+				// Properties laden
+				try {
+					rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+
+				// Port RMI auslesen
+				String stringPort = rmiProperties.getProperty("rmiPort");
+				Integer rmiPort = Integer.valueOf(stringPort);
+
+				String hostIp = rmiProperties.getProperty("rmiIp");
+
+				// URLs definieren
+				String urlMessungRO = "rmi://" + hostIp + ":" + rmiPort + "/" + MessungROName;
+				String urlAuftragRO = "rmi://" + hostIp + ":" + rmiPort + "/" + AuftragROName;
+
+				/* Lookup */
+				messungRO = (MessungRO) Naming.lookup(urlMessungRO);
+				auftragRO = (AuftragRO) Naming.lookup(urlAuftragRO);
+
+			} catch (MalformedURLException | RemoteException | NotBoundException e) {
+				throw e;
+			}
+
+	/*----------------------------------------------*/
+
 
     	//Kundenfelder setzen
     	txtName.setText(kundenname);

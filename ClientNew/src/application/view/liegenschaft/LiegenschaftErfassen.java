@@ -1,7 +1,13 @@
 package application.view.liegenschaft;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import application.view.rapport.RapportErfassen;
 import entitys.*;
@@ -63,7 +69,63 @@ public class LiegenschaftErfassen {
 	private BorderPane leaf;
 
 
-	public void initialize(){
+	public void initialize() throws Exception{
+
+		/*---------------RMI Verbindung---------------*/
+
+
+		String KontaktROName = "Kontakt";
+		String LiegenschaftRO = "Liegenschaft";
+		String WaermeerzeugerRO = "Waermerzeuger";
+		String BrennerRO = "Brenner";
+		String OrtRO = "Ort";
+		String FeuerungsanlageRO = "Feuerungsanlage";
+
+		try {
+
+			// Properties Objekt erstellen
+			Properties rmiProperties = new Properties();
+
+			// Klassenloader holen
+			ClassLoader cLoader = LiegenschaftErfassen.class.getClassLoader();
+
+			// Properties laden
+			try {
+				rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+
+			// Port RMI auslesen
+			String stringPort = rmiProperties.getProperty("rmiPort");
+			Integer rmiPort = Integer.valueOf(stringPort);
+
+			String hostIp = rmiProperties.getProperty("rmiIp");
+
+			// URLs definieren
+
+			String urlKontaktRO = "rmi://" + hostIp + ":" + rmiPort + "/" + KontaktROName;
+			String urlLiegenschaftRO = "rmi://" + hostIp + ":" + rmiPort + "/" + LiegenschaftRO;
+			String urlWaermeerzeugerRO = "rmi://" + hostIp + ":" + rmiPort + "/" + WaermeerzeugerRO;
+			String urlBrennerRO = "rmi://" + hostIp + ":" + rmiPort + "/" + BrennerRO;
+			String urlOrtRO = "rmi://" + hostIp + ":" + rmiPort + "/" + OrtRO;
+			String urlFeuerungsanlageRO = "rmi://" + hostIp + ":" + rmiPort + "/" + FeuerungsanlageRO;
+
+			/* Lookup */
+			brennerRO = (BrennerRO) Naming.lookup(urlBrennerRO);
+			feuerungsanlageRO = (FeuerungsanlageRO) Naming.lookup(urlFeuerungsanlageRO);
+			kontaktRO = (KontaktRO) Naming.lookup(urlKontaktRO);
+			liegenschaftRO = (LiegenschaftRO) Naming.lookup(urlLiegenschaftRO);
+			ortRO = (OrtRO) Naming.lookup(urlOrtRO);
+			waermeerzeugerRO = (WaermeerzeugerRO) Naming.lookup(urlWaermeerzeugerRO);
+
+		} catch (MalformedURLException | RemoteException | NotBoundException e) {
+			throw e;
+		}
+
+/*----------------------------------------------*/
+
+
 
 		List<String> listbrennstoff = new ArrayList<String>();
 		listbrennstoff.add("Öl");

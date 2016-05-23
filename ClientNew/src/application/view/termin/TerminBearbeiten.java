@@ -1,12 +1,19 @@
 package application.view.termin;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Properties;
 
+import application.view.liegenschaft.LiegenschaftErfassen;
 import entitys.Auftrag;
 import entitys.Feuerungsanlage;
 import entitys.Kontakt;
@@ -24,9 +31,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import rmi.interfaces.BrennerRO;
+import rmi.interfaces.FeuerungsanlageRO;
 import rmi.interfaces.KontaktRO;
 import rmi.interfaces.LiegenschaftRO;
 import rmi.interfaces.MitarbeiterRO;
+import rmi.interfaces.OrtRO;
+import rmi.interfaces.WaermeerzeugerRO;
 
 public class TerminBearbeiten {
 
@@ -56,17 +67,64 @@ public class TerminBearbeiten {
 
 	private Stage ErfaStage = new Stage();
 
-	 LiegenschaftRO liegenschaftRo;
+	 LiegenschaftRO liegenschaftRO;
 	 Liegenschaft liegenschaft;
-	 KontaktRO kundeRO;
+	 KontaktRO kontaktRO;
 	 Kontakt kunde;
-	 MitarbeiterRO mitarbeiterRo;
+	 MitarbeiterRO mitarbeiterRO;
 	 Mitarbeiter mitarbeiter;
 
 	@FXML
 	private void initialize() throws Exception {
 
-		List<Mitarbeiter> list = mitarbeiterRo.findAllMitarbeiter();
+
+		/*---------------RMI Verbindung---------------*/
+
+
+		String KontaktROName = "Kontakt";
+		String LiegenschaftRO = "Liegenschaft";
+		String MitarbeiterROName = "Mitarbeiter";
+		try {
+
+			// Properties Objekt erstellen
+			Properties rmiProperties = new Properties();
+
+			// Klassenloader holen
+			ClassLoader cLoader = TerminBearbeiten.class.getClassLoader();
+
+			// Properties laden
+
+				rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
+
+
+			// Port RMI auslesen
+			String stringPort = rmiProperties.getProperty("rmiPort");
+			Integer rmiPort = Integer.valueOf(stringPort);
+
+			String hostIp = rmiProperties.getProperty("rmiIp");
+
+			// URLs definieren
+
+			String urlKontaktRO = "rmi://" + hostIp + ":" + rmiPort + "/" + KontaktROName;
+			String urlLiegenschaftRO = "rmi://" + hostIp + ":" + rmiPort + "/" + LiegenschaftRO;
+			String urlMitarbeiterRO = "rmi://" + hostIp + ":" + rmiPort + "/" + MitarbeiterROName;
+
+
+			/* Lookup */
+			kontaktRO = (KontaktRO) Naming.lookup(urlKontaktRO);
+			liegenschaftRO = (LiegenschaftRO) Naming.lookup(urlLiegenschaftRO);
+			mitarbeiterRO = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
+
+		} catch (MalformedURLException | RemoteException | NotBoundException e) {
+			throw e;
+		}
+
+/*----------------------------------------------*/
+
+
+
+
+		List<Mitarbeiter> list = mitarbeiterRO.findAllMitarbeiter();
 		List<String> list3 = new ArrayList<String>();
 		for (Mitarbeiter i : list) {
 			String rolle = i.getRolleIntern();
@@ -129,8 +187,9 @@ public static void bekommeTermin(Auftrag termin) {
 	/**
 	 * Die Methode hollt die hinterlegten Kontaktinformationen zur eingegebener
 	 * Liegenschaft
+	 * @throws Exception
 	 */
-	public void liegenschaftSuchen() {
+	public void liegenschaftSuchen() throws Exception {
 
 		String strasse = txtStrasseL.getText();
 		String ort = txtOrtL.getText();
@@ -141,17 +200,25 @@ public static void bekommeTermin(Auftrag termin) {
 
 		} else {
 
-			// liegenschaft =
-			// liegenschaftRO.findLiegenschaftByStrasseOrt(strasse,
-			// ort);
+			List<Liegenschaft> liegenschaftliste = liegenschaftRO.findByStrasse(strasse);
 
-			// Kontakt kunde = kundeRO.findKundeByLiegenschaft(liegenschaft);
+			for (Liegenschaft l : liegenschaftliste) {
+				if (ort.equals(l.getOrt().getOrt())) {
+					liegenschaft = l;
+				}
+			}
 
-			/*
-			 * txtStrasseK.setText(kunde.getStrasseInklNr()); Ort ort =
-			 * kunde.getAdresse(); txtOrtK.setText(ort.getOrt);
-			 * txtPlz.setText(ort.getPlz);
-			 */
+			List<Kontakt> kundenListe = kontaktRO.findByStrasse(strasse);
+			for (Kontakt k : kundenListe) {
+				if (ort.equals(k.getOrt().getOrt())) {
+					kunde = k;
+				}
+			}
+
+			txtStrasseK.setText(kunde.getStrasse());
+			txtOrtK.setText(kunde.getOrt().getOrt());
+			txtPlzK.setText(String.valueOf(kunde.getOrt().getPlz()));
+
 		}
 
 	}

@@ -1,5 +1,6 @@
 package application.view.kontakt;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
@@ -10,7 +11,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Properties;
 
+import application.view.mitarbeiter.MitarbeiterErfassen;
 import entitys.Kontakt;
 import entitys.Mitarbeiter;
 import entitys.Ort;
@@ -21,12 +24,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import rmi.interfaces.KontaktRO;
+import rmi.interfaces.MitarbeiterRO;
 import rmi.interfaces.OrtRO;
 
 public class KontaktBearbeiten {
 
-	OrtRO OrtRO;
-	KontaktRO  KontaktRO;
+	OrtRO ortRO;
+	KontaktRO  kontaktRO;
 
 
 	@FXML
@@ -54,24 +58,47 @@ public class KontaktBearbeiten {
 
 	static Kontakt kontaktupdate;
 
-	public void initialize(){
+	public void initialize() throws Exception{
 
 
-		String url = "rmi://192.168.43.4:10099/";
-		String MitarbeiterROName = "Mitarbeiter";
-		String OrtROName = "Ort";
+		/*---------------RMI Verbindung---------------*/
+
+
+		String KontaktROName = "Kontakt";
 
 		try {
-			this.KontaktRO = (KontaktRO) Naming.lookup(url + MitarbeiterROName);
-			this.OrtRO = (OrtRO) Naming.lookup(url + OrtROName);
-			System.out.println("yeah au das fonzt");
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		} catch (RemoteException e) {
-			e.printStackTrace();
-		} catch (NotBoundException e) {
-			e.printStackTrace();
+
+			// Properties Objekt erstellen
+			Properties rmiProperties = new Properties();
+
+			// Klassenloader holen
+			ClassLoader cLoader = KontaktBearbeiten.class.getClassLoader();
+
+			// Properties laden
+			try {
+				rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+
+			// Port RMI auslesen
+			String stringPort = rmiProperties.getProperty("rmiPort");
+			Integer rmiPort = Integer.valueOf(stringPort);
+
+			String hostIp = rmiProperties.getProperty("rmiIp");
+
+			// URLs definieren
+
+			String urlKontaktRO = "rmi://" + hostIp + ":" + rmiPort + "/" + KontaktROName;
+
+			/* Lookup */
+			kontaktRO = (KontaktRO) Naming.lookup(urlKontaktRO);
+
+		} catch (MalformedURLException | RemoteException | NotBoundException e) {
+			throw e;
 		}
+
+/*----------------------------------------------*/
 
 
 		txtName.setText(name);
@@ -135,7 +162,7 @@ public class KontaktBearbeiten {
 				Kontakt updatekontakt = createKontakt(name, vorname,strasse, ort, plzint, email,telefonnr);
 				//braucht es dieses this? überspeichere ich wirklich das alte Objekt?
 				//evtl lösung könnte sein das alte einfach löschen und ein neue erstellen
-				this.KontaktRO.update(updatekontakt);
+				this.kontaktRO.update(updatekontakt);
 			} catch (Exception e) {
 				lblRueckmeldung.setText("Das überscheiben hat nicht funktioniert");
 				e.printStackTrace();
@@ -190,12 +217,12 @@ public class KontaktBearbeiten {
 		kontaktupdate.setTel(telefonnr);
 
 		//zu erst auf liste speichern damit man nachher das zweite der Liste prüfen kann falls nicht übereinstimmt
-		 ortsliste = OrtRO.findByOrtPlz(plz);
+		 ortsliste = ortRO.findByOrtPlz(plz);
 
 		//durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die gleiche ist.
 			for(Ort o: ortsliste){
 				if(ort.equals(o.getOrt())){
-					Ort o2 = OrtRO.add(o);
+					Ort o2 = ortRO.add(o);
 					kontaktupdate.setOrt(o2);
 					}
 			}

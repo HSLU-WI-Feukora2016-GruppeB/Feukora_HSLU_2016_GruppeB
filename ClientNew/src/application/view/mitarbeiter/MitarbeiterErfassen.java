@@ -38,8 +38,7 @@ import rmi.interfaces.OrtRO;
 
 public class MitarbeiterErfassen {
 
-	MitarbeiterRO MitarbeiterRO;
-	OrtRO OrtRO;
+
 
 	@FXML
 	private TextField txtName, txtVorname, txtOrt, txtPLZ, txtLohn, txtEmail, txtTelefonNr, txtStrasse;
@@ -55,46 +54,42 @@ public class MitarbeiterErfassen {
 	@FXML
 	private ComboBox<String> cbRolle;
 
-	private MitarbeiterRO mitarbeiterManager;
-	private OrtRO ortManager;
+	MitarbeiterRO mitarbeiterRO;
+	OrtRO ortRO;
 
 	public void initialize() throws Exception {
-		/*
-		 * SecurityManager zusätzlich falls man will
-		 * System.setProperty("java.security.policy", "MitarbeiterRO.policy");
-		 *
-		 * System.setSecurityManager(new SecurityManager());
-		 */
 
+		/*---------------RMI Verbindung---------------*/
+
+		String OrtRO = "Ort";
 		String MitarbeiterROName = "Mitarbeiter";
 
 		try {
 
 			// Properties Objekt erstellen
-			Properties webserverProperties = new Properties();
+			Properties rmiProperties = new Properties();
 
 			// Klassenloader holen
 			ClassLoader cLoader = MitarbeiterErfassen.class.getClassLoader();
 
 			// Properties laden
-			try {
-				webserverProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
+
+				rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
+
 
 			// Port RMI auslesen
-			String stringPort = webserverProperties.getProperty("rmiPort");
+			String stringPort = rmiProperties.getProperty("rmiPort");
 			Integer rmiPort = Integer.valueOf(stringPort);
 
-			String hostIp = webserverProperties.getProperty("rmiIp");
+			String hostIp = rmiProperties.getProperty("rmiIp");
 
 			// URLs definieren
-
+			String urlOrtRO = "rmi://" + hostIp + ":" + rmiPort + "/" + OrtRO;
 			String urlMitarbeiterRO = "rmi://" + hostIp + ":" + rmiPort + "/" + MitarbeiterROName;
 
 			/* Lookup */
-			mitarbeiterManager = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
+			mitarbeiterRO = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
+			ortRO = (OrtRO) Naming.lookup(urlOrtRO);
 
 		} catch (MalformedURLException | RemoteException | NotBoundException e) {
 			throw e;
@@ -179,7 +174,7 @@ public class MitarbeiterErfassen {
 			try {
 				Mitarbeiter newmitarbeiter = createMitarbeiter(name, vorname, strasse, ort, plzint, rolleint, lohnint,
 						email, telefonnr, gcalstart, gcalend);
-				MitarbeiterRO.add(newmitarbeiter);
+				mitarbeiterRO.add(newmitarbeiter);
 			} catch (Exception e) {
 				lblRueckmeldung.setText("Mitarbeiter konnte nicht gespeichert werden");
 				e.printStackTrace();
@@ -233,13 +228,13 @@ public class MitarbeiterErfassen {
 
 		// zu erst auf liste speichern damit man nachher das zweite der Liste
 		// prüfen kann falls nicht übereinstimmt
-		ortsliste = OrtRO.findByOrtPlz(plz);
+		ortsliste = ortRO.findByOrtPlz(plz);
 
 		// durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die
 		// gleiche ist.
 		for (Ort o : ortsliste) {
 			if (ort.equals(o.getOrt())) {
-				Ort o2 = OrtRO.add(o);
+				Ort o2 = ortRO.add(o);
 				mitarbeiter.setOrt(o2);
 			}
 		}

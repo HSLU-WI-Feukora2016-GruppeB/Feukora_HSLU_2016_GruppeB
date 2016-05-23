@@ -1,9 +1,15 @@
 package application.view.rapport;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Properties;
 
 import application.view.liegenschaft.LiegenschaftBearbeiten;
 import application.view.mitarbeiter.MitarbeiterBearbeiten;
@@ -27,6 +33,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import rmi.interfaces.AuftragRO;
+import rmi.interfaces.MessungRO;
 import rmi.interfaces.MitarbeiterRO;
 
 public class RapportUebersicht {
@@ -55,7 +62,44 @@ public class RapportUebersicht {
 	AuftragRO auftragRO;
 	MitarbeiterRO mitarbeiterRO;
 
-	public void initialize() {
+	public void initialize() throws Exception {
+
+		 /*---------------RMI Verbindung---------------*/
+
+			String MitarbeiterROName = "Mitarbeiter";
+			String AuftragROName = "Auftrag";
+
+			try {
+
+				// Properties Objekt erstellen
+				Properties rmiProperties = new Properties();
+
+				// Klassenloader holen
+				ClassLoader cLoader = RapportUebersicht.class.getClassLoader();
+
+				// Properties laden
+					rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
+
+				// Port RMI auslesen
+				String stringPort = rmiProperties.getProperty("rmiPort");
+				Integer rmiPort = Integer.valueOf(stringPort);
+
+				String hostIp = rmiProperties.getProperty("rmiIp");
+
+				// URLs definieren
+				String urlMitarbeiterRO = "rmi://" + hostIp + ":" + rmiPort + "/" + MitarbeiterROName;
+				String urlAuftragRO = "rmi://" + hostIp + ":" + rmiPort + "/" + AuftragROName;
+
+				/* Lookup */
+				mitarbeiterRO = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
+				auftragRO = (AuftragRO) Naming.lookup(urlAuftragRO);
+
+			} catch (MalformedURLException | RemoteException | NotBoundException e) {
+				throw e;
+			}
+
+	/*----------------------------------------------*/
+
 
 		// Alle Feuerungskontrolleure in der Combobox anzeigen lassen
 		List<Mitarbeiter> list = new ArrayList<Mitarbeiter>();

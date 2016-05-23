@@ -37,6 +37,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import rmi.interfaces.MitarbeiterRO;
+import rmi.interfaces.OrtRO;
 
 
 /**
@@ -68,51 +70,46 @@ public class MitarbeiterUebersicht {
 	@FXML
 	private TableColumn tblName, tblVorname, tblStrasse, tblEMail, tblTelefon, tblPosition, tblOrt;
 
-	MitarbeiterRO MitarbeiterRO;
-	OrtRO OrtRO;
+	MitarbeiterRO mitarbeiterRO;
+	OrtRO ortRO;
 
-
-	private MitarbeiterRO mitarbeiterManager;
 
 	public static Mitarbeiter mastatic;
 
 	public void initialize() throws Exception {
-		/*
-		 * SecurityManager zusätzlich falls man will
-		 * System.setProperty("java.security.policy", "MitarbeiterRO.policy");
-		 *
-		 * System.setSecurityManager(new SecurityManager());
-		 */
 
+
+		/*---------------RMI Verbindung---------------*/
+
+		String OrtRO = "Ort";
 		String MitarbeiterROName = "Mitarbeiter";
 
 		try {
 
 			// Properties Objekt erstellen
-			Properties  clientinternProperties = new Properties();
+			Properties  rmiProperties = new Properties();
 
 			// Klassenloader holen
 			ClassLoader cLoader = MitarbeiterUebersicht.class.getClassLoader();
 
 			// Properties laden
-			try {
-				clientinternProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
+
+				rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
+
 
 			// Port RMI auslesen
-			String stringPort = clientinternProperties.getProperty("rmiPort");
+			String stringPort =rmiProperties.getProperty("rmiPort");
 			Integer rmiPort = Integer.valueOf(stringPort);
 
-			String hostIp = clientinternProperties.getProperty("rmiIp");
+			String hostIp = rmiProperties.getProperty("rmiIp");
 
 			// URLs definieren
+			String urlOrtRO = "rmi://" + hostIp + ":" + rmiPort + "/" + OrtRO;
 			String urlMitarbeiterRO = "rmi://" + hostIp + ":" + rmiPort + "/" + MitarbeiterROName;
 
 			/* Lookup */
-
-			mitarbeiterManager = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
+			ortRO = (OrtRO) Naming.lookup(urlOrtRO);
+			mitarbeiterRO = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
 
 
 		} catch (MalformedURLException | RemoteException | NotBoundException e) {
@@ -123,7 +120,7 @@ public class MitarbeiterUebersicht {
 
 
 		try {
-			 List<Mitarbeiter> listmitarbeiter = MitarbeiterRO.findAllMitarbeiter();
+			 List<Mitarbeiter> listmitarbeiter = mitarbeiterRO.findAllMitarbeiter();
 			ObservableList<Mitarbeiter> listmitarbeiter2 = FXCollections.observableList(listmitarbeiter);
 			tblName.setCellValueFactory(new PropertyValueFactory<>("name"));
 			tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
@@ -153,7 +150,7 @@ public class MitarbeiterUebersicht {
 		} else {
 
 			try {
-				List<Mitarbeiter> list = MitarbeiterRO.findByNameVorname(name, vorname);
+				List<Mitarbeiter> list = mitarbeiterRO.findByNameVorname(name, vorname);
 				ObservableList<Mitarbeiter> list2 = FXCollections.observableList(list);
 				tabelle.setItems(list2);
 			} catch (Exception e) {

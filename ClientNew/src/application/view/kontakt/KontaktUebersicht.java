@@ -1,8 +1,14 @@
 package application.view.kontakt;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Properties;
 
 import application.view.mitarbeiter.MitarbeiterBearbeiten;
 import entitys.Benutzer;
@@ -43,10 +49,10 @@ public class KontaktUebersicht {
 	private TableView tabelle;
 
 	@FXML
-	private TableColumn tblName, tblVorname, tblStrasse, tblEMail, tblTelefon, tblPosition, tblOrt;
+	private TableColumn tblName, tblVorname, tblStrasse, tblEMail, tblTelefon, tblOrt;
 
-	KontaktRO KontaktRO;
-	OrtRO OrtRO;
+	KontaktRO kontaktRO;
+	OrtRO ortRO;
 
 
 
@@ -55,46 +61,66 @@ public class KontaktUebersicht {
 	@FXML
 	private void initialize() throws Exception {
 
+		/*---------------RMI Verbindung---------------*/
 
-//		String url = "rmi://192.168.43.4:10099/";
-//		String MitarbeiterROName = "Mitarbeiter";
-//		String OrtROName = "Ort";
-//
-//
-//
-//		try {
-//			this.KontaktRO = (KontaktRO) Naming.lookup(url + MitarbeiterROName);
-//			this.OrtRO = (OrtRO) Naming.lookup(url + OrtROName);
-//		} catch (MalformedURLException e) {
-//			e.printStackTrace();
-//		} catch (RemoteException e) {
-//			e.printStackTrace();
-//		} catch (NotBoundException e) {
-//			e.printStackTrace();
-//		}
+
+		String KontaktROName = "Kontakt";
+
+		try {
+
+			// Properties Objekt erstellen
+			Properties rmiProperties = new Properties();
+
+			// Klassenloader holen
+			ClassLoader cLoader = KontaktUebersicht.class.getClassLoader();
+
+			// Properties laden
+			try {
+				rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+
+			// Port RMI auslesen
+			String stringPort = rmiProperties.getProperty("rmiPort");
+			Integer rmiPort = Integer.valueOf(stringPort);
+
+			String hostIp = rmiProperties.getProperty("rmiIp");
+
+			// URLs definieren
+
+			String urlKontaktRO = "rmi://" + hostIp + ":" + rmiPort + "/" + KontaktROName;
+
+			/* Lookup */
+			kontaktRO = (KontaktRO) Naming.lookup(urlKontaktRO);
+
+		} catch (MalformedURLException | RemoteException | NotBoundException e) {
+			throw e;
+		}
+
+/*----------------------------------------------*/
+
+
+
 
 		System.out.println("RMI verbunden");
 
 
 
-		try{
-		List<Kontakt> list = KontaktRO.findAll();
+		List<Kontakt> list = kontaktRO.findAll();
 		ObservableList<Kontakt> list2 = FXCollections.observableList(list);
 		tblName.setCellValueFactory(new PropertyValueFactory<>("name"));
 		tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
 		tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
 		tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
 		tblEMail.setCellValueFactory(new PropertyValueFactory<>("email"));
-		tblPosition.setCellValueFactory(new PropertyValueFactory<>("rolleIntern"));
 		tblTelefon.setCellValueFactory(new PropertyValueFactory<>("tel"));
 
 
 		tabelle.setItems(list2);
 
 
-		}catch(Exception e){
-			e.printStackTrace();
-		}
+
 
 
 
@@ -112,7 +138,7 @@ public class KontaktUebersicht {
 		} else {
 
 			try {
-				List<Kontakt> list = KontaktRO.findByNameVorname(name, vorname);
+				List<Kontakt> list = kontaktRO.findByNameVorname(name, vorname);
 				ObservableList<Kontakt> list2 = FXCollections.observableList(list);
 				tabelle.setItems(list2);
 			} catch (Exception e) {

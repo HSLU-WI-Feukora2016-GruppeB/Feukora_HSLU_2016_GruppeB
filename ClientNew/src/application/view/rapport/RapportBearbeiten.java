@@ -1,7 +1,14 @@
 package application.view.rapport;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.Properties;
 
+import application.view.mitarbeiter.MitarbeiterBearbeiten;
 import entitys.Auftrag;
 import entitys.Feuerungsanlage;
 import entitys.Liegenschaft;
@@ -15,6 +22,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import rmi.interfaces.AuftragRO;
 import rmi.interfaces.MessungRO;
+import rmi.interfaces.MitarbeiterRO;
+import rmi.interfaces.OrtRO;
 
 public class RapportBearbeiten {
 
@@ -65,7 +74,46 @@ public class RapportBearbeiten {
     @FXML
     private Stage leaf;
 
-	 public void initialize(){
+	 public void initialize() throws Exception{
+
+		 /*---------------RMI Verbindung---------------*/
+
+			String MessungROName = "Messung";
+			String AuftragROName = "Auftrag";
+
+			try {
+
+				// Properties Objekt erstellen
+				Properties rmiProperties = new Properties();
+
+				// Klassenloader holen
+				ClassLoader cLoader = RapportBearbeiten.class.getClassLoader();
+
+				// Properties laden
+
+					rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
+
+
+				// Port RMI auslesen
+				String stringPort = rmiProperties.getProperty("rmiPort");
+				Integer rmiPort = Integer.valueOf(stringPort);
+
+				String hostIp = rmiProperties.getProperty("rmiIp");
+
+				// URLs definieren
+				String urlMessungRO = "rmi://" + hostIp + ":" + rmiPort + "/" + MessungROName;
+				String urlAuftragRO = "rmi://" + hostIp + ":" + rmiPort + "/" + AuftragROName;
+
+				/* Lookup */
+				messungRO = (MessungRO) Naming.lookup(urlMessungRO);
+				auftragRO = (AuftragRO) Naming.lookup(urlAuftragRO);
+
+			} catch (MalformedURLException | RemoteException | NotBoundException e) {
+				throw e;
+			}
+
+	/*----------------------------------------------*/
+
 
 	    	//Kundenfelder setzen
 	    	txtName.setText(kundenname);

@@ -1,7 +1,13 @@
 package application.view.kontakt;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import entitys.Kontakt;
 import entitys.Ort;
@@ -42,6 +48,51 @@ public class KontaktErfassen {
 
 	@FXML
 	private Pane leaf;
+
+
+	public void initialize() throws Exception{
+		/*---------------RMI Verbindung---------------*/
+
+
+		String KontaktROName = "Kontakt";
+
+		try {
+
+			// Properties Objekt erstellen
+			Properties rmiProperties = new Properties();
+
+			// Klassenloader holen
+			ClassLoader cLoader = KontaktErfassen.class.getClassLoader();
+
+			// Properties laden
+			try {
+				rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+
+			// Port RMI auslesen
+			String stringPort = rmiProperties.getProperty("rmiPort");
+			Integer rmiPort = Integer.valueOf(stringPort);
+
+			String hostIp = rmiProperties.getProperty("rmiIp");
+
+			// URLs definieren
+
+			String urlKontaktRO = "rmi://" + hostIp + ":" + rmiPort + "/" + KontaktROName;
+
+			/* Lookup */
+			kontaktRO = (KontaktRO) Naming.lookup(urlKontaktRO);
+
+		} catch (MalformedURLException | RemoteException | NotBoundException e) {
+			throw e;
+		}
+
+/*----------------------------------------------*/
+	}
+
+
+
 
 	/**
 	 * Diese Methode speichert einen neuen Kontakt in der Datenbank.

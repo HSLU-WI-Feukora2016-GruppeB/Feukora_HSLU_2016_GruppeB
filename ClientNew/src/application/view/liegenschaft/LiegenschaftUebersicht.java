@@ -1,7 +1,13 @@
 package application.view.liegenschaft;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import application.view.mitarbeiter.MitarbeiterBearbeiten;
 import entitys.Liegenschaft;
@@ -19,7 +25,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import rmi.interfaces.BrennerRO;
+import rmi.interfaces.FeuerungsanlageRO;
+import rmi.interfaces.KontaktRO;
 import rmi.interfaces.LiegenschaftRO;
+import rmi.interfaces.OrtRO;
+import rmi.interfaces.WaermeerzeugerRO;
 
 public class LiegenschaftUebersicht {
 
@@ -38,28 +49,61 @@ public class LiegenschaftUebersicht {
 	private TableView tabelle;
 
 	@FXML
-	private TableColumn tblName, tblVorname, tblStrasse, tblEMail, tblTelefon, tblPosition, tblOrt;
+	private TableColumn tblInfovorort, tblStrasse, tblOrt;
 
 	LiegenschaftRO liegenschaftRO;
 
-	public void initialize(){
+	public void initialize() throws Exception{
+
+		/*---------------RMI Verbindung---------------*/
+
+		String LiegenschaftRO = "Liegenschaft";
+
+		try {
+
+			// Properties Objekt erstellen
+			Properties rmiProperties = new Properties();
+
+			// Klassenloader holen
+			ClassLoader cLoader = LiegenschaftUebersicht.class.getClassLoader();
+
+			// Properties laden
+			try {
+				rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+
+			// Port RMI auslesen
+			String stringPort = rmiProperties.getProperty("rmiPort");
+			Integer rmiPort = Integer.valueOf(stringPort);
+
+			String hostIp = rmiProperties.getProperty("rmiIp");
+
+			// URLs definieren
+
+			String urlLiegenschaftRO = "rmi://" + hostIp + ":" + rmiPort + "/" + LiegenschaftRO;
+
+			/* Lookup */
+			liegenschaftRO = (LiegenschaftRO) Naming.lookup(urlLiegenschaftRO);
 
 
-		try{
+		} catch (MalformedURLException | RemoteException | NotBoundException e) {
+			throw e;
+		}
+
+/*----------------------------------------------*/
+
+
 			List<Liegenschaft> list = liegenschaftRO.findAll();
 			ObservableList<Liegenschaft> list2 = FXCollections.observableList(list);
-			tblName.setCellValueFactory(new PropertyValueFactory<>("name"));
-			tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
+			tblInfovorort.setCellValueFactory(new PropertyValueFactory<>("infoVorOrt"));
 			tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
 			tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
-			tblEMail.setCellValueFactory(new PropertyValueFactory<>("email"));
-			tblPosition.setCellValueFactory(new PropertyValueFactory<>("rolleIntern"));
-			tblTelefon.setCellValueFactory(new PropertyValueFactory<>("tel"));
+
 
 			tabelle.setItems(list2);
-			}catch(Exception e){
-				e.printStackTrace();
-			}
+
 	}
 
 	public void LiegenschaftSuchen() {
@@ -122,8 +166,8 @@ public class LiegenschaftUebersicht {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
+
 
 	/**
 	 * Diese Methode führt den User zum Dashboard zurück

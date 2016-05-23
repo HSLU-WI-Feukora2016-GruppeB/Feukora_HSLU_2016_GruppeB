@@ -1,9 +1,14 @@
 package application.view.termin;
 
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Properties;
 
 import entitys.Auftrag;
 import entitys.Kontakt;
@@ -60,11 +65,11 @@ public class TerminErfassen {
 
 	private Stage ErfaStage = new Stage();
 
-	LiegenschaftRO liegenschaftRo;
+	LiegenschaftRO liegenschaftRO;
 	Liegenschaft liegenschaft;
-	KontaktRO kundeRO;
+	KontaktRO kontaktRO;
 	Kontakt kunde;
-	MitarbeiterRO mitarbeiterRo;
+	MitarbeiterRO mitarbeiterRO;
 	AuftragRO auftragRo;
 	Mitarbeiter kontrolleur;
 	int zeitslotint;
@@ -73,6 +78,52 @@ public class TerminErfassen {
 	@FXML
 	private void initialize() throws Exception {
 
+
+		/*---------------RMI Verbindung---------------*/
+
+
+		String KontaktROName = "Kontakt";
+		String LiegenschaftRO = "Liegenschaft";
+		String MitarbeiterROName = "Mitarbeiter";
+		try {
+
+			// Properties Objekt erstellen
+			Properties rmiProperties = new Properties();
+
+			// Klassenloader holen
+			ClassLoader cLoader = TerminErfassen.class.getClassLoader();
+
+			// Properties laden
+
+				rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
+
+
+			// Port RMI auslesen
+			String stringPort = rmiProperties.getProperty("rmiPort");
+			Integer rmiPort = Integer.valueOf(stringPort);
+
+			String hostIp = rmiProperties.getProperty("rmiIp");
+
+			// URLs definieren
+
+			String urlKontaktRO = "rmi://" + hostIp + ":" + rmiPort + "/" + KontaktROName;
+			String urlLiegenschaftRO = "rmi://" + hostIp + ":" + rmiPort + "/" + LiegenschaftRO;
+			String urlMitarbeiterRO = "rmi://" + hostIp + ":" + rmiPort + "/" + MitarbeiterROName;
+
+
+			/* Lookup */
+			kontaktRO = (KontaktRO) Naming.lookup(urlKontaktRO);
+			liegenschaftRO = (LiegenschaftRO) Naming.lookup(urlLiegenschaftRO);
+			mitarbeiterRO = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
+
+		} catch (MalformedURLException | RemoteException | NotBoundException e) {
+			throw e;
+		}
+
+/*----------------------------------------------*/
+
+
+
 		List<String> terminarten = new ArrayList<String>();
 		terminarten.add("Routinekontrolle");
 		terminarten.add("Abnahmekontrolle");
@@ -80,7 +131,7 @@ public class TerminErfassen {
 		ObservableList<String> terminarten2 = FXCollections.observableList(terminarten);
 		cTerminart.setItems(terminarten2);
 
-		List<Mitarbeiter> list = mitarbeiterRo.findAllMitarbeiter();
+		List<Mitarbeiter> list = mitarbeiterRO.findAllMitarbeiter();
 		List<String> list3 = new ArrayList<String>();
 		for (Mitarbeiter i : list) {
 			String rolle = i.getRolleIntern();
@@ -118,7 +169,7 @@ public class TerminErfassen {
 
 		} else {
 
-			List<Liegenschaft> liegenschaftliste = liegenschaftRo.findByStrasse(strasse);
+			List<Liegenschaft> liegenschaftliste = liegenschaftRO.findByStrasse(strasse);
 
 			for (Liegenschaft l : liegenschaftliste) {
 				if (ort.equals(l.getOrt().getOrt())) {
@@ -126,7 +177,7 @@ public class TerminErfassen {
 				}
 			}
 
-			List<Kontakt> kundenListe = kundeRO.findByStrasse(strasse);
+			List<Kontakt> kundenListe = kontaktRO.findByStrasse(strasse);
 			for (Kontakt k : kundenListe) {
 				if (ort.equals(k.getOrt().getOrt())) {
 					kunde = k;
@@ -157,12 +208,10 @@ public class TerminErfassen {
 		} else {
 			String kontakt = txtNachnameK.getText();
 			List<Kontakt> kontaktliste = new ArrayList<Kontakt>();
-			kontaktliste = kundeRO.findByName(kontakt);
+			kontaktliste = kontaktRO.findByName(kontakt);
 			kunde = kontaktliste.get(0);
 
-			String strasse = txtStrasseK.getText();
-			String plz = txtPlzK.getText();
-			String ort = txtOrtK.getText();
+
 
 			String zeitslot = (String) cZeitslot.getValue();
 
@@ -196,7 +245,7 @@ public class TerminErfassen {
 
 			String fk = cFK.getValue();
 			List<Mitarbeiter> kontrolleurliste = new ArrayList<Mitarbeiter>();
-			kontrolleurliste = mitarbeiterRo.findByName(fk);
+			kontrolleurliste = mitarbeiterRO.findByName(fk);
 			kontrolleur = kontrolleurliste.get(0);
 
 			LocalDate datum = dateoftermin.getValue();
