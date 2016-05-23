@@ -89,8 +89,6 @@ public class LiegenschaftUebersicht {
 	 */
 	public void neueLiegenschaft() {
 
-
-
 		try {
 			Stage LiegenschaftStage = new Stage();
 
@@ -103,19 +101,18 @@ public class LiegenschaftUebersicht {
 		}
 	}
 
-
 	/**
 	 * Diese Methode öffnet die Übersicht zur Bearbeitung von Liegenschaften.
 	 */
 	public void bearbeitenLiegenschaft() {
-		try{
-		Liegenschaft indSelected = (Liegenschaft) tabelle.getSelectionModel().getSelectedItem();
-		LiegenschaftBearbeiten.bekommeLiegenschaft(indSelected);
-
+		try {
+			Liegenschaft indSelected = (Liegenschaft) tabelle.getSelectionModel().getSelectedItem();
+			LiegenschaftBearbeiten.bekommeLiegenschaft(indSelected);
 
 			Stage LiegenschaftStage = new Stage();
 
-			LiegenschaftStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("LiegenschaftBearbeiten.fxml"))));
+			LiegenschaftStage
+					.setScene(new Scene(FXMLLoader.load(getClass().getResource("LiegenschaftBearbeiten.fxml"))));
 
 			LiegenschaftStage.show();
 
@@ -125,7 +122,8 @@ public class LiegenschaftUebersicht {
 			e.printStackTrace();
 		}
 	}
-
+	
+	
 
 	/**
 	 * Diese Methode führt den User zum Dashboard zurück

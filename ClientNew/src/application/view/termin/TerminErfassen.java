@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import entitys.Auftrag;
+import entitys.Kontakt;
+import entitys.Liegenschaft;
+import entitys.Mitarbeiter;
+import entitys.Ort;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -19,6 +24,10 @@ import javafx.scene.control.SingleSelectionModel;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import rmi.interfaces.AuftragRO;
+import rmi.interfaces.KontaktRO;
+import rmi.interfaces.LiegenschaftRO;
+import rmi.interfaces.MitarbeiterRO;
 
 /**
  * Dies ist die Dokumentation der Klasse TerminErfassen. Hier können neue
@@ -32,11 +41,10 @@ import javafx.stage.Stage;
 public class TerminErfassen {
 
 	@FXML
-	private TextField txtStrasseL, txtOrtL, txtNachname, txtVorname, txtStrasseK, txtPlzK, txtOrtK, txtNachnameK,
-			txtVornameK;
+	private TextField txtStrasseL, txtOrtL, txtStrasseK, txtPlzK, txtOrtK, txtNachnameK, txtVornameK;
 
 	@FXML
-	private ComboBox<String> cZeitslot, cFK;
+	private ComboBox<String> cZeitslot, cFK, cTerminart;
 
 	@FXML
 	private DatePicker dateoftermin;
@@ -52,35 +60,54 @@ public class TerminErfassen {
 
 	private Stage ErfaStage = new Stage();
 
-	// LiegenschaftRO liegenschaftRo;
-	// Liegenschaft liegenschaft;
-	// KundeRO kundeRO;
-	// Kunde kunde;
-	// MitarbeiterRO mitarbeiterRo;
-	// Mitarbeier mitarbeiter;
+	LiegenschaftRO liegenschaftRo;
+	Liegenschaft liegenschaft;
+	KontaktRO kundeRO;
+	Kontakt kunde;
+	MitarbeiterRO mitarbeiterRo;
+	AuftragRO auftragRo;
+	Mitarbeiter kontrolleur;
+	int zeitslotint;
+	int terminartint;
 
 	@FXML
-	private void initialize() {
+	private void initialize() throws Exception {
 
-		// List<Mitarbeiter> list = mitarbeiterRO.findAllMitarbeit();
-		// ObservableList<String> list2 = FXCollections.observableList(list);
-		// cFK.setItems(list2);
+		List<String> terminarten = new ArrayList<String>();
+		terminarten.add("Routinekontrolle");
+		terminarten.add("Abnahmekontrolle");
 
-		List<String> list = new ArrayList<String>();
-		list.add("08:00 bis 10.00 Uhr");
-		list.add("10:00 bis 12:00 Uhr");
-		list.add("13:00 bis 15:00 Uhr");
-		list.add("15:00 bis 17:00 Uhr");
-		ObservableList<String> list2 = FXCollections.observableList(list);
-		cZeitslot.setItems(list2);
+		ObservableList<String> terminarten2 = FXCollections.observableList(terminarten);
+		cTerminart.setItems(terminarten2);
+
+		List<Mitarbeiter> list = mitarbeiterRo.findAllMitarbeiter();
+		List<String> list3 = new ArrayList<String>();
+		for (Mitarbeiter i : list) {
+			String rolle = i.getRolleIntern();
+			if (rolle.equalsIgnoreCase("Kontrolleur")) {
+				list3.add(i.getName());
+			}
+		}
+		ObservableList<String> list2 = FXCollections.observableList(list3);
+		cFK.setItems(list2);
+
+		List<String> listzeitslot = new ArrayList<String>();
+		listzeitslot.add("08:00 bis 10.00 Uhr");
+		listzeitslot.add("10:00 bis 12:00 Uhr");
+		listzeitslot.add("13:00 bis 15:00 Uhr");
+		listzeitslot.add("15:00 bis 17:00 Uhr");
+		ObservableList<String> listzeitslot2 = FXCollections.observableList(listzeitslot);
+		cZeitslot.setItems(listzeitslot2);
 
 	}
 
 	/**
 	 * Die Methode hollt die hinterlegten Kontaktinformationen zur eingegebener
 	 * Liegenschaft
+	 *
+	 * @throws Exception
 	 */
-	public void liegenschaftSuchen() {
+	public void liegenschaftSuchen() throws Exception {
 
 		String strasse = txtStrasseL.getText();
 		String ort = txtOrtL.getText();
@@ -91,59 +118,96 @@ public class TerminErfassen {
 
 		} else {
 
-			// liegenschaft =
-			// liegenschaftRO.findLiegenschaftByStrasseOrt(strasse,
-			// ort);
+			List<Liegenschaft> liegenschaftliste = liegenschaftRo.findByStrasse(strasse);
 
-			// Kontakt kunde = kundeRO.findKundeByLiegenschaft(liegenschaft);
+			for (Liegenschaft l : liegenschaftliste) {
+				if (ort.equals(l.getOrt().getOrt())) {
+					liegenschaft = l;
+				}
+			}
 
-			/*
-			 * txtStrasseK.setText(kunde.getStrasseInklNr()); Ort ort =
-			 * kunde.getAdresse(); txtOrtK.setText(ort.getOrt);
-			 * txtPlz.setText(ort.getPlz);
-			 */
+			List<Kontakt> kundenListe = kundeRO.findByStrasse(strasse);
+			for (Kontakt k : kundenListe) {
+				if (ort.equals(k.getOrt().getOrt())) {
+					kunde = k;
+				}
+			}
+
+			txtStrasseK.setText(kunde.getStrasse());
+			txtOrtK.setText(kunde.getOrt().getOrt());
+			txtPlzK.setText(String.valueOf(kunde.getOrt().getPlz()));
+
 		}
 
 	}
 
 	/**
 	 * Die Methode speichert einen Termin
+	 *
+	 * @throws Exception
 	 */
-	public void terminSpeichern() {
+	public void terminSpeichern() throws Exception {
 
 		if (txtNachnameK.getText() == null || txtVornameK.getText() == null || txtStrasseK.getText() == null
 				|| txtPlzK.getText() == null || txtOrtK.getText() == null || cZeitslot.getValue() == null
 				|| cFK.getValue() == null || dateoftermin.getValue() == null) {
 
-			lblRueckmeldung.setText("Bitte alle Felder ausfüllen"); // funktioniert
-																	// hier
-																	// müsste
-																	// aber noch
-																	// ein neues
-																	// Label
-																	// gesetzt
-																	// werden
+			lblRueckmeldung.setText("Bitte alle Felder ausfüllen");
 
 		} else {
+			String kontakt = txtNachnameK.getText();
+			List<Kontakt> kontaktliste = new ArrayList<Kontakt>();
+			kontaktliste = kundeRO.findByName(kontakt);
+			kunde = kontaktliste.get(0);
+
 			String strasse = txtStrasseK.getText();
 			String plz = txtPlzK.getText();
 			String ort = txtOrtK.getText();
+
 			String zeitslot = (String) cZeitslot.getValue();
-			// SelectionModel<Mitarbeiter> fk = cFK.getSelectionModel();
-			// SelectionModel<String> zs = cZeitslot.getSelectionModel().getIndex();
+
+			switch (zeitslot) {
+
+			case "08:00 bis 10.00 Uhr":
+				zeitslotint = 1;
+				break;
+			case "10:00 bis 12.00 Uhr":
+				zeitslotint = 2;
+				break;
+			case "13:00 bis 15.00 Uhr":
+				zeitslotint = 3;
+				break;
+			case "15:00 bis 17.00 Uhr":
+				zeitslotint = 4;
+				break;
+			}
+
+			String terminart = (String) cTerminart.getValue();
+
+			switch (terminart) {
+
+			case "Routinekontrolle":
+				terminartint = 1;
+				break;
+			case "Abnhamekontrolle":
+				terminartint = 2;
+				break;
+			}
+
+			String fk = cFK.getValue();
+			List<Mitarbeiter> kontrolleurliste = new ArrayList<Mitarbeiter>();
+			kontrolleurliste = mitarbeiterRo.findByName(fk);
+			kontrolleur = kontrolleurliste.get(0);
+
+			LocalDate datum = dateoftermin.getValue();
+			int tag = datum.getDayOfMonth();
+			int monat = datum.getMonthValue();
+			int jahr = datum.getYear();
+			GregorianCalendar gcal = new GregorianCalendar(jahr, monat, tag);
+
+			Auftrag auftrag = new Auftrag(kunde, liegenschaft, kontrolleur, gcal, zeitslotint, terminartint);
+			auftragRo.add(auftrag);
 		}
-		LocalDate datum = dateoftermin.getValue();
-		int tag = datum.getDayOfMonth();
-		int monat = datum.getMonthValue();
-		int jahr = datum.getYear();
-		GregorianCalendar gcal = new GregorianCalendar(jahr, monat, tag);
-
-		// mitarbeiter = mitarbeiterRO.findMitarbeiterByName();
-
-		// Auftrag auftrag = new Auftrag (kunde, liegenschaft, fk, zeitslot,
-		// gcal);
-		// this.AuftragRO.add(auftrag);
-
 	}
 
 	/**

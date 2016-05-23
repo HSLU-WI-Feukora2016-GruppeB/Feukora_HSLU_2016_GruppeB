@@ -5,14 +5,18 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import application.view.liegenschaft.LiegenschaftBearbeiten;
 import application.view.mitarbeiter.MitarbeiterBearbeiten;
+import application.view.termin.TerminBearbeiten;
 import entitys.Auftrag;
+import entitys.Liegenschaft;
 import entitys.Mitarbeiter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -20,171 +24,195 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import rmi.interfaces.AuftragRO;
 import rmi.interfaces.MitarbeiterRO;
 
 public class RapportUebersicht {
 
-	AuftragRO auftragro;
-	MitarbeiterRO mitarbeiterro;
-
-
+	@FXML
+	private Button btnNeu, btnBearbeiten, btnSchliessen, btnWocheAnzeigen, btnRapportAnzeigen, btnRapportErstellen;
 
 	@FXML
 	private Label lblRueckmeldung;
 
 	@FXML
-	private TextField txtName, txtVorname;
+	private BorderPane leaf;
 
 	@FXML
-	private DatePicker dpDate;
+	private TableView tabelle;
 
 	@FXML
-	private ComboBox<Integer> cbZeitslot;
+	private TableColumn tblDatum, tblZeitSlot, tblLiegenschaft, tblKunde;
 
 	@FXML
-	private ComboBox<String> cbMitarbeiter;
+	private ComboBox ddFK;
 
 	@FXML
-	private TableView tvTabelle;
+	private DatePicker startDatum, endDatum;
 
-	@FXML
-	private TableColumn tblName, tblVorname, tblStrasse,  tblOrt, tblAuftragart, tblZeitslot, tblKontaktname;
+	AuftragRO auftragRO;
+	MitarbeiterRO mitarbeiterRO;
 
-	@FXML
-    private Stage leaf;
+	public void initialize() {
 
-	public void initialize(){
-		List<Mitarbeiter> list = null;
-		List<Auftrag> auftragslisteheute = null;
-
-		//Mitarbeiter in der Combobox anzeigen lassen
-
+		// Alle Feuerungskontrolleure in der Combobox anzeigen lassen
+		List<Mitarbeiter> list = new ArrayList<Mitarbeiter>();
 		try {
-			list = mitarbeiterro.findAllMitarbeiter();
-		} catch (Exception e) {
-			lblRueckmeldung.setText("keine Mitarbeiter gefunden");
+			list = mitarbeiterRO.findAllMitarbeiter();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
 		List<String> list3 = new ArrayList<String>();
 		for (Mitarbeiter i : list) {
 			String rolle = i.getRolleIntern();
-			if (rolle.equalsIgnoreCase("Kontrolleur")) {
+			if (rolle.equals("Kontrolleur")) {
 				list3.add(i.getName());
 			}
 		}
 		ObservableList<String> list2 = FXCollections.observableList(list3);
-		cbMitarbeiter.setItems(list2);
-
-
-		//Zeitslotsanzeigenlassen
-		List<Integer> zeitslots = new ArrayList<Integer>();
-		zeitslots.add(1);
-		zeitslots.add(2);
-		zeitslots.add(3);
-		zeitslots.add(4);
-		ObservableList<Integer> listzeitslot = FXCollections.observableList(zeitslots);
-		cbZeitslot.setItems(listzeitslot);
-
-		//Auftragsliste des heutigen Tages in die TableView
-		//-----------Könnte man noch verbessern. So dass nur die Aufträge des ausgewählten Mitarbeiters angezeigt werden
-		//FindbyDateundMitarbeiter()!!!!!!!!!!!!!!!!!!!!!
-		GregorianCalendar today =new GregorianCalendar();
-			today.getInstance().getTime();
-
-		try {
-			auftragslisteheute = auftragro.findByDatum(today);
-		} catch (Exception e) {
-		lblRueckmeldung.setText("keine aufträge gefunden");
-		}
-
-
-		ObservableList<Auftrag> auftragslisteheute2 = FXCollections.observableList(auftragslisteheute);
-		tblName.setCellValueFactory(new PropertyValueFactory<>("name"));
-		tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
-		tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
-		tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
-		tblZeitslot.setCellValueFactory(new PropertyValueFactory<>("zeitSlot"));
-		tblKontaktname.setCellValueFactory(new PropertyValueFactory<>("kontakt"));
-
-		tvTabelle.setItems(list2);
-
+		ddFK.setItems(list2);
 	}
 
 	/**
-	 * Rapport wird manuel gesucht
+	 * Diese Methode zeigte alle Termine der ausgewählten Woche an.
 	 */
-	public void rapportSuchen(){
+	public void wocheAnzeigen() {
 
-		//Felder auslesen
-		String name = txtName.getText();
-		String vorname = txtVorname.getText();
-		LocalDate dpdate = dpDate.getValue();
+		Mitarbeiter kontrolleur = null;
+		if (startDatum.getValue() == null || ddFK.getValue() == null) {
+			lblRueckmeldung.setText("Bitte Datumsfelder und \n" + "Kontrolleur ausfüllen");
 
+		} else {
 
-		if(name.isEmpty()|| vorname.isEmpty() || dpdate == null || cbZeitslot.getValue() == null){
-			lblRueckmeldung.setText("Bitte alle Felder ausfüllen");
-		}else{
-
-
-			int slut = cbZeitslot.getValue();
-
-			Mitarbeiter mitarbeiter = null;
-
-			//Mitarbeiter finden
-			List<Mitarbeiter> mitarbeiterliste;
+			LocalDate vonDatum = startDatum.getValue();
+			LocalDate bisDatum = vonDatum.plusDays(4);
+			endDatum.setValue(bisDatum);
+			String fk = ddFK.getSelectionModel().toString();
+			List<Mitarbeiter> mitlist;
 			try {
-				mitarbeiterliste = mitarbeiterro.findByNameVorname(name, vorname);
-				mitarbeiter = mitarbeiterliste.get(0);
-			} catch (Exception e1) {
-				lblRueckmeldung.setText("Mitarbeiter nicht gefunden!");
+				mitlist = mitarbeiterRO.findByName(fk);
+				kontrolleur = mitlist.get(0);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 
+			if (vonDatum.getDayOfWeek().name() != "MONDAY") {
+				lblRueckmeldung.setText("Bitte einen Montag anwählen!");
 
-			//GregorianCalendar erstellen
-			int tag = dpdate.getDayOfMonth();
-			int monat = dpdate.getMonthValue();
-			int jahr = dpdate.getYear();
-			GregorianCalendar gcal = new GregorianCalendar(jahr,monat,tag);
+			} else {
+				lblRueckmeldung.setText(" ");
 
-			try {
-				Auftrag auftrag = auftragro.findByDateAndMitarbeiterAndZeitslot(gcal, mitarbeiter, slut);
-				ArrayList<Auftrag> list = new ArrayList<Auftrag>();
-				list.add(auftrag);
-				ObservableList<Auftrag> list2 = FXCollections.observableList(list);
-				tvTabelle.setItems(list2);
+				int tag = vonDatum.getDayOfMonth();
+				int tag2 = vonDatum.plusDays(1).getDayOfMonth();
+				int tag3 = vonDatum.plusDays(2).getDayOfMonth();
+				int tag4 = vonDatum.plusDays(3).getDayOfMonth();
+				int tag5 = vonDatum.plusDays(4).getDayOfMonth();
+				int monat = vonDatum.getMonthValue();
+				int jahr = vonDatum.getYear();
+				GregorianCalendar gcal1 = new GregorianCalendar(jahr, monat, tag);
+				GregorianCalendar gcal2 = new GregorianCalendar(jahr, monat, tag2);
+				GregorianCalendar gcal3 = new GregorianCalendar(jahr, monat, tag3);
+				GregorianCalendar gcal4 = new GregorianCalendar(jahr, monat, tag4);
+				GregorianCalendar gcal5 = new GregorianCalendar(jahr, monat, tag5);
 
-			} catch (Exception e) {
-				lblRueckmeldung.setText("Auftrag nicht gefunden!");
+				try {
+					List<Auftrag> auftragsliste = auftragRO.findByDateAndMitarbeiter(gcal1, gcal5, kontrolleur);
+					ObservableList<Auftrag> listauftrag2 = FXCollections.observableList(auftragsliste);
+					tblKunde.setCellValueFactory(new PropertyValueFactory<>("kontakt"));
+					tblLiegenschaft.setCellValueFactory(new PropertyValueFactory<>("liegenschaft"));
+					tblDatum.setCellValueFactory(new PropertyValueFactory<>("datum"));
+					tblZeitSlot.setCellValueFactory(new PropertyValueFactory<>("zeitSlot"));
+
+					tabelle.setItems(listauftrag2);
+				} catch (Exception e) {
+					lblRueckmeldung.setText("Auftragsliste nicht gefunden");
+				}
+
 			}
 		}
-
 	}
 
-	public void rapportErstellen(){
-		try{
-		Auftrag indSelected = (Auftrag) tvTabelle.getSelectionModel().getSelectedItem();
-		RapportErfassen.bekommeAuftrag(indSelected);
+	/**
+	 * Diese Methode öffnet die Übersicht zur Erfassung eines neuen Auftrages.
+	 */
+	public void neuerAuftrag() {
 
-		Stage RapportStage = new Stage();
+		try {
+			Stage AuftragStage = new Stage();
 
-		RapportStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("RapportErfassen.fxml"))));
+			AuftragStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("termin/TerminErfassen.fxml"))));
 
-		RapportStage.show();
-		}catch(Exception e){
-			lblRueckmeldung.setText("Bitte Rapport auswählen!");
+			AuftragStage.show();
+			((Stage) leaf.getScene().getWindow()).close();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+	}
 
+	/**
+	 * Diese Methode öffnet die Übersicht zur Bearbeitung von Liegenschaften.
+	 */
+	public void bearbeitenAuftrag() {
+		try {
+			Auftrag indSelected = (Auftrag) tabelle.getSelectionModel().getSelectedItem();
+			TerminBearbeiten.bekommeTermin(indSelected);
+
+			Stage TerminStage = new Stage();
+
+			TerminStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("termin/TerminBearbeiten.fxml"))));
+
+			TerminStage.show();
+
+			((Stage) leaf.getScene().getWindow()).close();
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+	}
+
+	public void loeschenAuftrag() {
+		Liegenschaft indSelected = (Liegenschaft) tabelle.getSelectionModel().getSelectedItem();
+	}
+
+	public void neuRapport (){
+		try {
+			Stage RapportStage = new Stage();
+
+			RapportStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("RapportErfassen.fxml"))));
+
+			RapportStage.show();
+			((Stage) leaf.getScene().getWindow()).close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void anzeigenRapport(){
+		try {
+			Auftrag indSelected = (Auftrag) tabelle.getSelectionModel().getSelectedItem();
+			RapportBearbeiten.bekommeAuftrag(indSelected);
+
+			Stage RapportStage = new Stage();
+
+			RapportStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("RapportBearbeiten.fxml"))));
+
+			RapportStage.show();
+
+			((Stage) leaf.getScene().getWindow()).close();
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Diese Methode führt den User zum Dashboard zurück
+	 */
+	public void abbrechen() {
 		((Stage) leaf.getScene().getWindow()).close();
 	}
-
-	public void rapportBearbeiten(){
-
-	}
-
-
-
-
-
-
 }

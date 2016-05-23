@@ -36,7 +36,7 @@ public class Dashboard {
 		try {
 
 			DashStage.setScene(new Scene(
-					FXMLLoader.load(getClass().getResource("/application/view/termin/TerminUebersichtListe.fxml"))));
+					FXMLLoader.load(getClass().getResource("/application/view/termin/TerminUebersicht.fxml"))));
 
 			DashStage.setFullScreen(true);
 			DashStage.show();
