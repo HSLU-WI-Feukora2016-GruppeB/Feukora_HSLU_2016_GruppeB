@@ -31,12 +31,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-<<<<<<< HEAD
 import rmi.interfaces.BrennerRO;
 import rmi.interfaces.FeuerungsanlageRO;
-=======
 import rmi.interfaces.AuftragRO;
->>>>>>> refs/remotes/origin/master
 import rmi.interfaces.KontaktRO;
 import rmi.interfaces.LiegenschaftRO;
 import rmi.interfaces.MitarbeiterRO;
@@ -77,6 +74,7 @@ public class TerminBearbeiten {
 	 Kontakt kunde;
 	 MitarbeiterRO mitarbeiterRO;
 	 Mitarbeiter mitarbeiter;
+	 AuftragRO auftragRO;
 
 
 
@@ -156,9 +154,9 @@ public class TerminBearbeiten {
 
 
 		//Dropdown Mitarbeiter
-		List<Mitarbeiter> list = mitarbeiterRo.findAllMitarbeiter();
+		List<Mitarbeiter> mitarbeiterlist = mitarbeiterRO.findAllMitarbeiter();
 		List<String> list3 = new ArrayList<String>();
-		for (Mitarbeiter i : list) {
+		for (Mitarbeiter i : mitarbeiterlist) {
 			String rolle = i.getRolleIntern();
 			if (rolle.equalsIgnoreCase("Kontrolleur")) {
 				list3.add(i.getName());
@@ -261,7 +259,7 @@ public static void bekommeTermin(Auftrag termin) {
 
 		}
 
-		List<Kontakt> kundenListe = kundeRO.findByStrasse(strasse);
+		List<Kontakt> kundenListe = kontaktRO.findByStrasse(strasse);
 		for (Kontakt k : kundenListe) {
 			if (ort.equals(k.getOrt().getOrt())) {
 				kunde = k;
@@ -274,7 +272,7 @@ public static void bekommeTermin(Auftrag termin) {
 
 	}
 
-}
+
 
 /**
  * Die Methode speichert einen Termin
@@ -292,12 +290,9 @@ public void terminSpeichern() throws Exception {
 	} else {
 		String kontakt = txtNachnameK.getText();
 		List<Kontakt> kontaktliste = new ArrayList<Kontakt>();
-		kontaktliste = kundeRO.findByName(kontakt);
+		kontaktliste = kontaktRO.findByName(kontakt);
 		kunde = kontaktliste.get(0);
 
-		String strasse = txtStrasseK.getText();
-		String plz = txtPlzK.getText();
-		String ort = txtOrtK.getText();
 
 		String zeitslot = (String) cZeitslot.getValue();
 
@@ -331,8 +326,8 @@ public void terminSpeichern() throws Exception {
 
 		String fk = cFK.getValue();
 		List<Mitarbeiter> kontrolleurliste = new ArrayList<Mitarbeiter>();
-		kontrolleurliste = mitarbeiterRo.findByName(fk);
-		kontrolleur2 = kontrolleurliste.get(0);
+		kontrolleurliste = mitarbeiterRO.findByName(fk);
+		mitarbeiter = kontrolleurliste.get(0);
 
 		LocalDate datum = dateoftermin.getValue();
 		int tag = datum.getDayOfMonth();
@@ -340,8 +335,8 @@ public void terminSpeichern() throws Exception {
 		int jahr = datum.getYear();
 		GregorianCalendar gcal = new GregorianCalendar(jahr, monat, tag);
 
-		Auftrag auftrag = new Auftrag(kunde, liegenschaft, kontrolleur2, gcal, zeitslotint, terminartint);
-		auftragRo.add(auftrag);
+		Auftrag auftrag = new Auftrag(kunde, liegenschaft, mitarbeiter, gcal, zeitslotint, terminartint);
+		auftragRO.add(auftrag);
 	}
 }
 
