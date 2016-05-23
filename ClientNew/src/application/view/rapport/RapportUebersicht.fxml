@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.rapport.RapportUebersicht">
+<VBox fx:id="leaf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.rapport.RapportUebersicht">
   <children>
       <VBox prefHeight="61.0" prefWidth="640.0">
          <children>
@@ -42,8 +42,8 @@
                   <HBox layoutY="18.0" prefHeight="48.0" prefWidth="640.0">
                      <children>
                         <Pane prefHeight="53.0" prefWidth="160.0" />
-                        <Button fx:id="btnNeu" mnemonicParsing="false" onAction="#neuerMitarbeiter" prefHeight="25.0" prefWidth="80.0" text="Hinzufügen" />
-                        <Button fx:id="btnBearbeiten" mnemonicParsing="false" onAction="#bearbeitenMitarbeiter" prefHeight="25.0" prefWidth="73.0" text="Bearbeiten" />
+                        <Button fx:id="btnMessungen" mnemonicParsing="false" onAction="#rapportErstellen" text="Messungen" />
+                        <Button fx:id="btnBearbeiten" mnemonicParsing="false" onAction="#rapportBearbeiten" prefHeight="25.0" prefWidth="73.0" text="Bearbeiten" />
                         <Button fx:id="btnLoeschen" mnemonicParsing="false" text="Löschen" />
                         <Button fx:id="btnSchliessen" mnemonicParsing="false" onAction="#abbrechen" text="Schliessen" />
                         <Pane prefHeight="53.0" prefWidth="135.0" />

@@ -86,7 +86,7 @@ public class Dashboard {
 		try {
 
 			DashStage.setScene(new Scene(FXMLLoader
-					.load(getClass().getResource("/application/view/liegenschaft/LiegenschaftErfassen.fxml"))));
+					.load(getClass().getResource("/application/view/liegenschaft/LiegenschaftUebersicht.fxml"))));
 
 			DashStage.show();
 

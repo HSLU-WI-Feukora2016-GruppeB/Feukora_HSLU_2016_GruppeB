@@ -5,11 +5,14 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import application.view.mitarbeiter.MitarbeiterBearbeiten;
 import entitys.Auftrag;
 import entitys.Mitarbeiter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -17,6 +20,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import rmi.AuftragRO;
 import rmi.MitarbeiterRO;
 
@@ -48,6 +52,8 @@ public class RapportUebersicht {
 	@FXML
 	private TableColumn tblName, tblVorname, tblStrasse,  tblOrt, tblAuftragart, tblZeitslot, tblKontaktname;
 
+	@FXML
+    private Stage leaf;
 
 	public void initialize(){
 		List<Mitarbeiter> list = null;
@@ -81,6 +87,8 @@ public class RapportUebersicht {
 		cbZeitslot.setItems(listzeitslot);
 
 		//Auftragsliste des heutigen Tages in die TableView
+		//-----------Könnte man noch verbessern. So dass nur die Aufträge des ausgewählten Mitarbeiters angezeigt werden
+		//FindbyDateundMitarbeiter()!!!!!!!!!!!!!!!!!!!!!
 		GregorianCalendar today =new GregorianCalendar();
 			today.getInstance().getTime();
 
@@ -103,7 +111,9 @@ public class RapportUebersicht {
 
 	}
 
-
+	/**
+	 * Rapport wird manuel gesucht
+	 */
 	public void rapportSuchen(){
 
 		//Felder auslesen
@@ -139,7 +149,11 @@ public class RapportUebersicht {
 
 			try {
 				Auftrag auftrag = auftragro.findByDateAndMitarbeiterAndZeitslot(gcal, mitarbeiter, slut);
-				RapportErfassen.bekommeAuftrag(auftrag);
+				ArrayList<Auftrag> list = new ArrayList<Auftrag>();
+				list.add(auftrag);
+				ObservableList<Auftrag> list2 = FXCollections.observableList(list);
+				tvTabelle.setItems(list2);
+
 			} catch (Exception e) {
 				lblRueckmeldung.setText("Auftrag nicht gefunden!");
 			}
@@ -147,7 +161,26 @@ public class RapportUebersicht {
 
 	}
 
+	public void rapportErstellen(){
+		try{
+		Auftrag indSelected = (Auftrag) tvTabelle.getSelectionModel().getSelectedItem();
+		RapportErfassen.bekommeAuftrag(indSelected);
 
+		Stage RapportStage = new Stage();
+
+		RapportStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("RapportErfassen.fxml"))));
+
+		RapportStage.show();
+		}catch(Exception e){
+			lblRueckmeldung.setText("Bitte Rapport auswählen!");
+		}
+
+		((Stage) leaf.getScene().getWindow()).close();
+	}
+
+	public void rapportBearbeiten(){
+
+	}
 
 
 

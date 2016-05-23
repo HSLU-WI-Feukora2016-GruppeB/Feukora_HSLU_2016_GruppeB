@@ -6,8 +6,10 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import entitys.Kontakt;
 import entitys.Mitarbeiter;
@@ -128,8 +130,9 @@ public class KontaktBearbeiten {
 			}
 
 
-			Kontakt updatekontakt = createKontakt(name, vorname,strasse, ort, plzint, email,telefonnr);
+
 			try {
+				Kontakt updatekontakt = createKontakt(name, vorname,strasse, ort, plzint, email,telefonnr);
 				//braucht es dieses this? überspeichere ich wirklich das alte Objekt?
 				//evtl lösung könnte sein das alte einfach löschen und ein neue erstellen
 				this.KontaktRO.update(updatekontakt);
@@ -172,12 +175,13 @@ public class KontaktBearbeiten {
 	 *            Telefonnummer des Kontaktes
 	 *
 	 * @return Ein neues Mitarbeiterobjekt
+	 * @throws Exception
 	 */
 	private Kontakt createKontakt(String name, String vorname, String strasse, String ort, int plz,
-			String email, String telefonnr){
+			String email, String telefonnr) throws Exception{
 		//Exception werfen? bei Referenzprojekt hat ers gemacht
 
-		Ort ortschaft = new Ort();
+		List<Ort> ortsliste = new ArrayList<Ort>();
 
 		kontaktupdate.setNachname(name);
 		kontaktupdate.setVorname(vorname);
@@ -185,19 +189,16 @@ public class KontaktBearbeiten {
 		kontaktupdate.setEmail(email);
 		kontaktupdate.setTel(telefonnr);
 
-		try {
-			//zu erst auf liste speichern damit man nachher das zweite der Liste prüfen kann falls nicht übereinstimmt
-		 ortschaft = OrtRO.findByOrtPlz(plz).get(0);
-		} catch (Exception e) {
-			lblRueckmeldung.setText("PLZ nicht gefunden");
-		}
+		//zu erst auf liste speichern damit man nachher das zweite der Liste prüfen kann falls nicht übereinstimmt
+		 ortsliste = OrtRO.findByOrtPlz(plz);
 
-		String ortvondb = ortschaft.getOrt();
-		if(ort.equals(ortvondb)){
-			kontaktupdate.setOrt(ortschaft);
-		}else{
-			//prüfe zweites objekt auf der Liste
-		}
+		//durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die gleiche ist.
+			for(Ort o: ortsliste){
+				if(ort.equals(o.getOrt())){
+					Ort o2 = OrtRO.add(o);
+					kontaktupdate.setOrt(o2);
+					}
+			}
 
 
 		return kontaktupdate;

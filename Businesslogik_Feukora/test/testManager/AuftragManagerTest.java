@@ -69,7 +69,7 @@ public class AuftragManagerTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-		//AuftragManagerTest.deleteAll();
+		AuftragManagerTest.deleteAll();
 	}
 
 	/**
@@ -290,9 +290,9 @@ public class AuftragManagerTest {
 		lOrt.add(new Ort(4000, "Basel"));
 		
 		//3 Feuerungsanlagen
-		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(0), lWaermeerzeuger.get(0)));
-		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(1), lWaermeerzeuger.get(1)));
-		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(2), lWaermeerzeuger.get(2)));
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(0), lWaermeerzeuger.get(0), 46));
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(1), lWaermeerzeuger.get(1), 50));
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(2), lWaermeerzeuger.get(2), 66));
 		
 		//4 Kontakte erstellen
 		lKontakt.add(new Kontakt("Martina", "Meyer", "Altstrasse 1", lOrt.get(3), "0633335577", "m.m@gmail.com", 2));
@@ -330,9 +330,9 @@ public class AuftragManagerTest {
 		lMitarbeiter.add(new Mitarbeiter("Alexandra", "Lengen", "Musterstrasse 1", lOrt.get(5), "1234563678", "a.l@feukora.ch", 1, lBenutzer.get(5), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
 		
 		//3 Aufträge erstellen
-		lAuftrag.add(new Auftrag(lKontakt.get(0), lLiegenschaft.get(0), lMessung.get(0), lMessung.get(1), lMessung.get(2), lMessung.get(3), lMitarbeiter.get(0), new GregorianCalendar(2016, 9, 11), 1, 1));
-		lAuftrag.add(new Auftrag(lKontakt.get(1), lLiegenschaft.get(1), lMessung.get(4), lMessung.get(2), lMessung.get(5), lMessung.get(3), lMitarbeiter.get(2), new GregorianCalendar(2016, 9, 18), 1, 1));
-		lAuftrag.add(new Auftrag(lKontakt.get(2), lLiegenschaft.get(1), lMessung.get(6), lMessung.get(7), lMessung.get(8), lMessung.get(9), lMitarbeiter.get(3), new GregorianCalendar(2016, 9, 11), 2, 2));
+		lAuftrag.add(new Auftrag(lKontakt.get(0), lLiegenschaft.get(0), lMessung.get(0), lMessung.get(1), lMessung.get(2), lMessung.get(3), true, false, "Keine", lMitarbeiter.get(0), new GregorianCalendar(2016, 9, 11), 1, 1));
+		lAuftrag.add(new Auftrag(lKontakt.get(1), lLiegenschaft.get(1), lMessung.get(4), lMessung.get(2), lMessung.get(5), lMessung.get(3), true, false, "Werden demnächst eine neue Heizung erhalten", lMitarbeiter.get(2), new GregorianCalendar(2016, 9, 18), 1, 1));
+		lAuftrag.add(new Auftrag(lKontakt.get(2), lLiegenschaft.get(1), lMessung.get(6), lMessung.get(7), lMessung.get(8), lMessung.get(9), false, true, "Heizung muss sehrwahrscheinlich ersetzt werden, ist komplett verrostet", lMitarbeiter.get(3), new GregorianCalendar(2016, 9, 11), 2, 2));
 		
 		
 		for(Benutzer b : lBenutzer){

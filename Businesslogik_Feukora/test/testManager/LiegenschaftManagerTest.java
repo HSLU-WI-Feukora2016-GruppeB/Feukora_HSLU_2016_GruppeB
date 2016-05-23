@@ -201,9 +201,9 @@ public class LiegenschaftManagerTest {
 		lWaermeerzeuger.add(new Waermeerzeuger(3, "asdfg", 2010));
 	
 		//3 Feuerungsanlagen
-		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(0), lWaermeerzeuger.get(0)));
-		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(1), lWaermeerzeuger.get(1)));
-		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(2), lWaermeerzeuger.get(2)));
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(0), lWaermeerzeuger.get(0), 65));
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(1), lWaermeerzeuger.get(1), 87));
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(2), lWaermeerzeuger.get(2), 46));
 
 		//7 Orte
 		lOrt.add(new Ort(8000, "Zürich"));

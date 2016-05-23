@@ -2,7 +2,6 @@ package managerInterfaces;
 
 import java.util.List;
 
-import entitys.Benutzer;
 import entitys.Ort;
 
 /**

@@ -1,7 +1,9 @@
 package application.view.liegenschaft;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import application.view.rapport.RapportErfassen;
 import entitys.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,7 +13,10 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 import rmi.BrennerRO;
+import rmi.FeuerungsanlageRO;
 import rmi.KontaktRO;
 import rmi.LiegenschaftRO;
 import rmi.OrtRO;
@@ -28,17 +33,19 @@ import rmi.WaermeerzeugerRO;
 
 public class LiegenschaftErfassen {
 
-	static KontaktRO kontaktRO;
+	KontaktRO kontaktRO;
 	LiegenschaftRO liegenschaftRO;
 	WaermeerzeugerRO waermeerzeugerRO;
 	BrennerRO brennerRO;
 	OrtRO ortRO;
+	FeuerungsanlageRO feuerungsanlageRO;
 
+	//txtVorname usw nicht mehr gebraucht?
 	@FXML
 	private TextField txtVorname, txtNachname, txtStrasse, txtOrt, txtPlz,
 		txtStrasseL, txtOrtL, txtPlzL,
 		txtBrennertyp, txtBrennerjahr,
-		txtWaermetyp, txtWaermejahr;
+		txtWaermetyp, txtWaermejahr, txtInfo;
 
 	@FXML
 	private Label lblRueckmeldung;
@@ -52,19 +59,37 @@ public class LiegenschaftErfassen {
 	@FXML
 	private Button btnSuchen;
 
+	@FXML
+	private BorderPane leaf;
+
+
+	public void initialize(){
+
+		List<String> listbrennstoff = new ArrayList<String>();
+		listbrennstoff.add("Öl");
+		listbrennstoff.add("Erdgas");
+		listbrennstoff.add("Flüssiggas");
+
+
+		ObservableList<String> obslistbrennstoff = FXCollections.observableList(listbrennstoff);
+		cbBrennart.setItems(obslistbrennstoff);
+
+		List<String> listbrennart = new ArrayList<String>();
+		listbrennart.add("Gebläsebrenner 1-stufig mit Heizöl");
+		listbrennart.add("Gebläsebrenner 2-stufig mit Heizöl");
+		listbrennart.add("Verdampfungsbrenner");
+		listbrennart.add("Gebläsebrenner 1-stufig mit Gas");
+		listbrennart.add("Gebläsebrenner 2-stufig mit Gas");
+		listbrennart.add("Athmosphärischer Brenner");
+
+		ObservableList<String> obslistbrennart = FXCollections.observableList(listbrennart);
+		cbBrennart.setItems(obslistbrennart);
+
+	}
 	/**
 	 * Methode speichert eine Liegenschaft neu.
 	 */
 	public void liegenschaftSpeichern() {
-
-		String vornameK = txtVorname.getText();
-		String nameK = txtNachname.getText();
-
-		try {
-			Kontakt foundKontakt = kontaktSuchen(vornameK, nameK);
-		} catch (Exception e) {
-			lblRueckmeldung.setText("Kontakt konnte nicht gefunden werden, bitte neuen Kontakt hinzufügen.");
-		}
 
 		String strasse = txtStrasse.getText();
 		String ort = txtOrt.getText();
@@ -75,10 +100,12 @@ public class LiegenschaftErfassen {
 		String waermetyp = txtWaermetyp.getText();
 		String waermeart = cbBrennstoff.getValue().toString();
 		String waermejahr = txtWaermejahr.getText();
+		String infovorort = txtInfo.getText();
 
 		// Überprüfung ob die Felder auch mit einem Wert belegt wurden
 		if (strasse.isEmpty() || ort.isEmpty() || plz.isEmpty() || brennertyp.isEmpty() || brennerart.isEmpty()
-				|| brennerjahr.isEmpty() || waermetyp.isEmpty() || waermeart.isEmpty() || waermejahr.isEmpty()) {
+				|| brennerjahr.isEmpty() || waermetyp.isEmpty() || waermeart.isEmpty() || waermejahr.isEmpty()
+				|| infovorort.isEmpty()) {
 			lblRueckmeldung.setText(" Bitte alle Felder ausfüllen!");
 		} else {
 			// Combobox je nach Text int vergeben
@@ -103,11 +130,7 @@ public class LiegenschaftErfassen {
 				brennerA = 6;
 				break;
 			}
-			// brennerjahr in int parsen
-			int brennerJ = Integer.parseInt(brennerjahr);
 
-			// neues Brenenrobjekt erstellen
-			Brenner newBrenner = new Brenner(brennerA, brennertyp, brennerJ);
 
 			// Combobox je nach Text int vergeben
 			int waermeA = 0;
@@ -125,75 +148,100 @@ public class LiegenschaftErfassen {
 
 			// Wärmeerzeugerjahr in int parsen
 			int waermeJ = Integer.parseInt(waermejahr);
+			// brennerjahr in int parsen
+			int brennerJ = Integer.parseInt(brennerjahr);
+			//plz parsen
+			int plzint = Integer.parseInt(plz);
 
-			// neues Waermeerzeugerobjekt erstellen
-			Waermeerzeuger newWaermeerzeuger = new Waermeerzeuger(waermeA, waermetyp, waermeJ);
-
-		}
-
-	}
-
-	private Kontakt kontaktSuchen(String vornameK, String nameK) {
-
-//		if (name.isEmpty() || vorname.isEmpty()) {
-//
-//			lblRueckmeldung.setText("Beide Felder müssen ausgefüllt werden!");
-//
-//		} else {
-//
-//			try {
-//				List<Mitarbeiter> list = MitarbeiterRO.findByNameVorname(name, vorname);
-//				ObservableList<Mitarbeiter> list2 = FXCollections.observableList(list);
-//				tabelle.setItems(list2);
-//			} catch (Exception e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//
-//		}
-	}
-
-	public Liegenschaft createLiegenschaft(String kvorname, String kname, String kstrasse, int kplz, String kort,
-			String lstrasse, int lplz, String lort, String btyp, int bart, int bjahr, String wtyp, int wart, int wjahr){
-
-		Liegenschaft = new Liegenschaft();
-
-
-		return newliegenschaft;
-
-
-	}
-
-	/**
-	 * Die Methode sucht das Kontaktobjekt in der DB mithilfe der Eingaben
-	 */
-	public void suchen() {
-
-		String vorname = txtVorname.getText();
-		String nachname = txtNachname.getText();
-
-		// prüfe ob Eingaben gemacht wurden
-		if (vorname.isEmpty() || nachname.isEmpty()) {
-
-			lblRueckmeldung.setText("Bitte beide Felder ausfüllen");
-		} else {
 			try {
-				// Kontakt kontakt = FindKontaktByNameVorname();
+				Liegenschaft newliegenschaft = createLiegenschaft(strasse, plzint, ort,infovorort,
+						brennertyp, brennerA, brennerJ, waermetyp, waermeA, waermeJ);
+				liegenschaftRO.add(newliegenschaft);
 			} catch (Exception e) {
-				lblRueckmeldung.setText("Kontakt wurde nicht gefunden. Rechtschreibung überprüfen!");
+				// TODO Auto-generated catch block
+				lblRueckmeldung.setText("Liegenschaft konnte nicht gespeichert werden");
 			}
 
-			// txtStrasse.setText(kontakt.getStrasse());
-			// txtOrt.setText(adresse.getOrt);
-			// txtPlz.setText(adresse.GetPlz());
+
+		}
+
+	}
+
+	public void kontaktSuchen() {
+		String vornameK = txtVorname.getText();
+		String nameK = txtNachname.getText();
+
+		if (nameK.isEmpty() || vornameK.isEmpty()) {
+
+			lblRueckmeldung.setText("Beide Felder müssen ausgefüllt werden!");
+
+		} else {
+
+			try {
+				List<Kontakt> list = kontaktRO.findByNameVorname(nameK, vornameK);
+				ObservableList<Kontakt> list2 = FXCollections.observableList(list);
+				tvKundentbl.setItems(list2);
+			} catch (Exception e) {
+				lblRueckmeldung.setText("Kontakt wurde nicht gefunden");
+			}
 		}
 	}
 
+
+	public Liegenschaft createLiegenschaft(	String strasse, int plz, String ortbez, String info, String btyp, int bart,
+			int bjahr, String wtyp, int wart, int wjahr) throws Exception{
+
+		List<Ort> ortsliste = new ArrayList<Ort>();
+		Ort ort = new Ort();
+
+
+		//Liegenschaftsobjekt erstellen und speichern
+		Liegenschaft liegenschaft = new Liegenschaft();
+
+		liegenschaft.setStrasse(strasse);
+
+		 ortsliste = ortRO.findByOrtPlz(plz);
+
+			//durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die gleiche ist.
+		 for(Ort o: ortsliste){
+				if(ortbez.equals(o.getOrt())){
+					ort = ortRO.add(o);
+					liegenschaft.setOrt(ort);
+					}
+		 }
+
+		liegenschaft.setInfoVorOrt(info);
+
+		// neues Brenenrobjekt erstellen und speicher
+		Brenner brenner = new Brenner(bart,btyp,bjahr);
+		Brenner brenner2 = brennerRO.add(brenner);
+
+		// neues Waermeerzeugerobjekt erstellen und speicher
+		Waermeerzeuger waermeerzeuger = new Waermeerzeuger(wart,wtyp,wjahr);
+		Waermeerzeuger	waermeerzeuger2 = waermeerzeugerRO.add(waermeerzeuger);
+
+		//Feuerungsanlageobjekt erstellen, speichern und Liegenschaft hinzufügen
+		Feuerungsanlage feuera = new Feuerungsanlage(brenner2,waermeerzeuger2);
+		Feuerungsanlage feuera2 = feuerungsanlageRO.add(feuera);
+		liegenschaft.setFeuerungsanlage(feuera2);
+
+
+		//Kontakt nehmen und hinzufügen
+		Kontakt indSelected = (Kontakt) tvKundentbl.getSelectionModel().getSelectedItem();
+		liegenschaft.setKontakt(indSelected);
+
+
+		return liegenschaft;
+
+	}
+
+
+
 	/**
-	 * Diese Methode führt den User zum Dashboard zurück
+	 * Diese Methode führt den User zur Übersicht Rapportsübersicht zurück.
 	 */
 	public void abbrechen() {
-
+		((Stage) leaf.getScene().getWindow()).close();
 	}
 
 }

@@ -18,8 +18,9 @@ import feukora.webservice.rmi.FeuerungsrapportService;
 import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
 
 /**
- * Diese Klasse Testet die Funktionalität der Feuerungsanlagenmethoden im FeuerungsrapportServiceImpl.
- *  
+ * Diese Klasse Testet die Funktionalität der Feuerungsanlagenmethoden im
+ * FeuerungsrapportServiceImpl.
+ * 
  * @author Luca Raneri
  * @version 1.0
  */
@@ -38,15 +39,17 @@ public class FeuerungsrapportServiceFeuerungsanlageTest {
 
 	/**
 	 * Initialisiert die Testwerten.
+	 * 
 	 * @throws Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
 		init();
 	}
-	
+
 	/**
 	 * Schliesst Test ab.
+	 * 
 	 * @throws Exception
 	 */
 	@After
@@ -55,37 +58,45 @@ public class FeuerungsrapportServiceFeuerungsanlageTest {
 	}
 
 	/**
-	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#updateFeuerungsanlage(Feuerungsanlage)}.
+	 * Dieser Test tested die Methode
+	 * {@link FeuerungsrapportServiceImpl#updateFeuerungsanlage(Feuerungsanlage)}
+	 * .
+	 * 
 	 * @throws Exception
 	 */
 	@Test
 	public void testUpdateFeuerungsanlage() throws Exception {
-		
+
 		List<Feuerungsanlage> fListe = fservice.findAllFeuerungsanlage();
 		assertTrue(fListe.size() == 3);
 
 		Feuerungsanlage f = fservice.findAllFeuerungsanlage().get(0);
 		Brenner bNew = fservice.findAllBrenner().get(2);
 		f.setBrenner(bNew);
-		
+
 		fservice.updateFeuerungsanlage(f);
-		
+
 		assertTrue(fservice.findAllFeuerungsanlage().size() == 3);
 	}
 
 	/**
-	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#findAllFeuerungsanlage()}.
+	 * Dieser Test tested die Methode
+	 * {@link FeuerungsrapportServiceImpl#findAllFeuerungsanlage()}.
+	 * 
 	 * @throws Exception
 	 */
 	@Test
 	public void testFindAllFeuerungsanlage() throws Exception {
-		
+
 		List<Feuerungsanlage> fListe = fservice.findAllFeuerungsanlage();
 		assertTrue(fListe.size() == 3);
 	}
 
 	/**
-	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#findFeuerungsanlageByBrenner(Brenner)}.
+	 * Dieser Test tested die Methode
+	 * {@link FeuerungsrapportServiceImpl#findFeuerungsanlageByBrenner(Brenner)}
+	 * .
+	 * 
 	 * @throws Exception
 	 */
 	@Test
@@ -93,31 +104,38 @@ public class FeuerungsrapportServiceFeuerungsanlageTest {
 
 		Brenner b = fservice.findAllBrenner().get(0);
 		List<Feuerungsanlage> fList = fservice.findFeuerungsanlageByBrenner(b);
-		
+
 		assertNotNull(fList);
 		assertTrue(fList.size() == 1);
 	}
 
 	/**
-	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#findFeuerungsanlageByWaermeerzeuger(Waermeerzeuger)}.
+	 * Dieser Test tested die Methode
+	 * {@link FeuerungsrapportServiceImpl#findFeuerungsanlageByWaermeerzeuger(Waermeerzeuger)}
+	 * .
+	 * 
 	 * @throws Exception
 	 */
 	@Test
 	public void testFindFeuerungsanlageByWaermeerzeuger() throws Exception {
-		
+
 		Waermeerzeuger w = fservice.findAllWaermeerzeuger().get(0);
-		List<Feuerungsanlage> fList = fservice.findFeuerungsanlageByWaermeerzeuger(w);
-		
+		List<Feuerungsanlage> fList = fservice
+				.findFeuerungsanlageByWaermeerzeuger(w);
+
 		assertTrue(fList.size() == 1);
 	}
 
 	/**
-	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#deleteFeuerungsanlage(Feuerungsanlage)}.
+	 * Dieser Test tested die Methode
+	 * {@link FeuerungsrapportServiceImpl#deleteFeuerungsanlage(Feuerungsanlage)}
+	 * .
+	 * 
 	 * @throws Exception
 	 */
 	@Test
 	public void testDeleteFeuerungsanlage() throws Exception {
-		
+
 		List<Feuerungsanlage> fListe = fservice.findAllFeuerungsanlage();
 		assertTrue(fListe.size() == 3);
 
@@ -128,12 +146,14 @@ public class FeuerungsrapportServiceFeuerungsanlageTest {
 	}
 
 	/**
-	 * Dieser Test tested die Methode {@link FeuerungsrapportServiceImpl#deleteFeuerungsanlageById(Integer)}.
+	 * Dieser Test tested die Methode
+	 * {@link FeuerungsrapportServiceImpl#deleteFeuerungsanlageById(Integer)}.
+	 * 
 	 * @throws Exception
 	 */
 	@Test
 	public void testDeleteFeuerungsanlageById() throws Exception {
-		
+
 		List<Feuerungsanlage> fListe = fservice.findAllFeuerungsanlage();
 		assertTrue(fListe.size() == 3);
 
@@ -145,17 +165,18 @@ public class FeuerungsrapportServiceFeuerungsanlageTest {
 
 	/**
 	 * Initialisiert die Testwerte.
+	 * 
 	 * @return
 	 * @throws Exception
 	 */
 	public static List<Feuerungsanlage> init() throws Exception {
-		
+
 		deleteAll();
-		
+
 		List<Feuerungsanlage> lFeuerungsanlage = new ArrayList<>();
 		List<Brenner> lBrenner = new ArrayList<>();
 		List<Waermeerzeuger> lWaermeerzeuger = new ArrayList<>();
-		
+
 		// 3 Brenner erstellen
 		lBrenner.add(new Brenner(1, "abc123", 2013));
 		lBrenner.add(new Brenner(2, "def456", 2014));
@@ -168,38 +189,42 @@ public class FeuerungsrapportServiceFeuerungsanlageTest {
 
 		// 3 Feuerungsanlagen
 		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(0),
-				lWaermeerzeuger.get(0)));
+				lWaermeerzeuger.get(0), 65));
 		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(1),
-				lWaermeerzeuger.get(1)));
-		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(2), lWaermeerzeuger.get(2)));
+				lWaermeerzeuger.get(1), 88));
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(2),
+				lWaermeerzeuger.get(2), 46));
 
-		for(Brenner b : lBrenner){
+		for (Brenner b : lBrenner) {
 			fservice.addBrenner(b);
 		}
-		for(Waermeerzeuger w : lWaermeerzeuger){
+		for (Waermeerzeuger w : lWaermeerzeuger) {
 			fservice.addWaermeerzeuger(w);
 		}
-		for(Feuerungsanlage f : lFeuerungsanlage){
+		for (Feuerungsanlage f : lFeuerungsanlage) {
 			fservice.addFeuerungsanlage(f);
 		}
-		
+
 		return lFeuerungsanlage;
 	}
 
 	/**
 	 * Löscht alle initialisierten Daten.
+	 * 
 	 * @throws Exception
 	 */
 	private static void deleteAll() throws Exception {
 
-		for(Feuerungsanlage f : fservice.findAllFeuerungsanlage()){
+		for (Feuerungsanlage f : fservice.findAllFeuerungsanlage()) {
 			fservice.deleteFeuerungsanlage(f);
 		}
-		for(Brenner b : fservice.findAllBrenner()){
-			fservice.deleteBrenner(b);;
+		for (Brenner b : fservice.findAllBrenner()) {
+			fservice.deleteBrenner(b);
+			;
 		}
-		for(Waermeerzeuger w : fservice.findAllWaermeerzeuger()){
-			fservice.deleteWaermeerzeuger(w);;
+		for (Waermeerzeuger w : fservice.findAllWaermeerzeuger()) {
+			fservice.deleteWaermeerzeuger(w);
+			;
 		}
 	}
 }

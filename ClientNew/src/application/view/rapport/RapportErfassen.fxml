@@ -70,7 +70,7 @@
                         <Image url="@Bilder/Background/electronic-circuit-board-1920x1080-wallpaper.jpg" />
                      </image>
                   </ImageView>
-                  <ScrollPane prefHeight="928.0" prefWidth="1234.0">
+                  <ScrollPane layoutX="-2.0" layoutY="57.0" prefHeight="990.0" prefWidth="1234.0">
                      <content>
                         <VBox prefHeight="977.0" prefWidth="1209.0">
                            <children>
@@ -378,6 +378,7 @@
                                               <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                               <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                 <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                 <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
                                             </rowConstraints>
                                              <children>
@@ -432,12 +433,13 @@
                                                       <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
                                                   </rowConstraints>
                                                    <children>
-                                                      <Label text="abgasverluste" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                                      <CheckBox mnemonicParsing="false" text="Russzahl" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                                                      <CheckBox mnemonicParsing="false" text="Ölanteil" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                                                      <CheckBox mnemonicParsing="false" text="CO2 in mg/m3" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                                                      <CheckBox mnemonicParsing="false" text="NO2 in mg/m3" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                                                      <CheckBox fx:id="cbBeurteilung" mnemonicParsing="false" text="Beurteilung Okey" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                      <CheckBox fx:id="cbRusszahl" mnemonicParsing="false" text="Russzahl" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                      <CheckBox fx:id="cbOelanteil" mnemonicParsing="false" text="Ölanteil" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                                      <CheckBox fx:id="cbCo2" mnemonicParsing="false" text="CO2 in mg/m3" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                                      <CheckBox fx:id="cbNo2" mnemonicParsing="false" text="NO2 in mg/m3" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                                      <CheckBox fx:id="cbBeurteilung" mnemonicParsing="false" text="Beurteilung nicht Okey" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                      <CheckBox fx:id="cbAbgasverluste" mnemonicParsing="false" text="Abgasverluste" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                      <Button fx:id="btnMesswertePruefen" mnemonicParsing="false" onAction="#messwertePruefen" text="Messwerte Pruefen" GridPane.columnIndex="5" GridPane.rowIndex="2" />
                                                    </children>
                                                 </GridPane>
                                                 <Pane minWidth="10.0" prefHeight="10.0" prefWidth="10.0" />
@@ -469,8 +471,8 @@
                                                     <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
                                                   </rowConstraints>
                                                    <children>
-                                                      <CheckBox fx:id="checkboxreguliert" mnemonicParsing="false" text="Anlage muss innert 30 Tagen einreguliert werden" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                      <CheckBox mnemonicParsing="false" text="Einregulierung auf einhalten der LRV-Grenzwerte nicht möglich" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                      <CheckBox fx:id="cb30Tage" mnemonicParsing="false" text="Anlage muss innert 30 Tagen einreguliert werden" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                      <CheckBox fx:id="cbEinregulierung" mnemonicParsing="false" text="Einregulierung auf einhalten der LRV-Grenzwerte nicht möglich" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                                    </children>
                                                 </GridPane>
                                              </children>
@@ -480,18 +482,21 @@
                                     <Pane minWidth="20.0" prefHeight="20.0" prefWidth="20.0" />
                                  </children>
                               </HBox>
-                              <HBox prefHeight="83.0" prefWidth="1209.0">
+                              <HBox prefHeight="130.0" prefWidth="1209.0">
                                  <children>
                                     <VBox prefHeight="63.0" prefWidth="1231.0">
                                        <children>
                                           <HBox prefHeight="100.0" prefWidth="200.0">
                                              <children>
                                                 <Pane minWidth="20.0" prefHeight="20.0" prefWidth="20.0" />
-                                                <TextArea prefHeight="7.0" prefWidth="1169.0" promptText="Bemerkungen" style="-fx-border-color: #000000;" />
+                                                <TextArea fx:id="taBemerkung" prefHeight="7.0" prefWidth="1169.0" promptText="Bemerkungen" style="-fx-border-color: #000000;" />
                                                 <Pane minWidth="20.0" prefHeight="20.0" prefWidth="20.0" />
                                              </children>
                                           </HBox>
-                                          <Pane maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="200.0" />
+                                          <Pane maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="200.0">
+                                             <children>
+                                                <Button fx:id="btnAuftragSpeichern" layoutX="237.0" layoutY="-3.0" mnemonicParsing="false" onAction="#auftragSpeichern" prefHeight="25.0" prefWidth="631.0" text="Auftrag speichern" />
+                                             </children></Pane>
                                        </children>
                                     </VBox>
                                  </children>
