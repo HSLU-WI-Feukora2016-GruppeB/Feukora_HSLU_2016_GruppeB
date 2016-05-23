@@ -7,13 +7,18 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import entitys.Mitarbeiter;
 import entitys.Ort;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -38,7 +43,7 @@ public class MitarbeiterBearbeiten {
 
 
 	@FXML
-	private TextField txtName, txtVorname, txtOrt, txtPLZ, txtRolle, txtLohn, txtEmail, txtTelefonNr, txtStrasse;
+	private TextField txtName, txtVorname, txtOrt, txtPLZ,txtLohn, txtEmail, txtTelefonNr, txtStrasse;
 
 	@FXML
 	private Label lblRueckmeldung;
@@ -48,6 +53,10 @@ public class MitarbeiterBearbeiten {
 
 	@FXML
 	private Pane leaf;
+
+	@FXML
+	private ComboBox<String> cbRolle;
+
 
 
 
@@ -91,7 +100,18 @@ public class MitarbeiterBearbeiten {
 		txtStrasse.setText(strasse);
 		txtOrt.setText(ort);
 		txtPLZ.setText(plz);
-		txtRolle.setText(rolle);
+
+		//Rolle ins die Combobox einfügen
+		List<String> list = new ArrayList<String>();
+		list.add("Administrator");
+		list.add("Sachbearbeiter");
+		list.add("Kontrolleur");
+
+		ObservableList<String> list2 = FXCollections.observableList(list);
+		cbRolle.setItems(list2);
+		cbRolle.getSelectionModel().select(rolle);
+
+
 		txtLohn.setText(lohn2);
 		txtEmail.setText(email);
 		txtTelefonNr.setText(telefon);
@@ -108,7 +128,7 @@ public class MitarbeiterBearbeiten {
 		strasse = mabearbeitet.getStrasse();
 		ort = mabearbeitet.getOrt().getOrt();
 		plz = String.valueOf(mabearbeitet.getOrt().getPlz());
-		rolle = mabearbeitet.getRolleIntern().toString();
+		rolle = mabearbeitet.getRolleIntern();
 		Integer lohn = (Integer) mabearbeitet.getLohn();
 		lohn2 = lohn.toString();
 		email = mabearbeitet.getEmail();
@@ -130,7 +150,7 @@ public class MitarbeiterBearbeiten {
 		String strasse = txtStrasse.getText();
 		String ort = txtOrt.getText();
 		String plz = txtPLZ.getText();
-		String rolle = txtRolle.getText();
+		String rolle = cbRolle.getValue();
 		String lohn = txtLohn.getText();
 		String email = txtEmail.getText();
 		String telefonnr = txtTelefonNr.getText();
@@ -147,11 +167,27 @@ public class MitarbeiterBearbeiten {
 
 		} else {
 
+			//Die Rolle wieder in einen int verwandel
+			int rolleint = 0;
+			switch (rolle) {
+			case "Kontrolleur":
+				rolleint = 1;
+				break;
+			case "Sachbearbeiter":
+				rolleint = 2;
+				break;
+			case "Administrator":
+				rolleint = 3;
+				break;
+			}
+
+
 			//Das arbeitet seit: in GregorianCalendar Format umwandeln
 			int starttag = startdatum.getDayOfMonth();
 			int startmonat = startdatum.getMonthValue();
 			int startjahr = startdatum.getYear();
 			GregorianCalendar gcalstart = new GregorianCalendar(startjahr, startmonat, starttag);
+
 
 			// Das arbeitet bis: in GregorianCalendar umwandeln
 			int endtag = enddatum.getDayOfMonth();
@@ -161,8 +197,9 @@ public class MitarbeiterBearbeiten {
 			// Parsen erst nach der Überprüfung da sonst die isEmpty() Methode
 			// nicht vorhanden ist
 
+
 			// Neue Variabeln für das Parsen
-			int rolleint = 0, lohnint = 0, plzint =0;
+			int lohnint = 0, plzint =0;
 
 			try {
 				rolleint = Integer.parseInt(rolle);
@@ -173,9 +210,10 @@ public class MitarbeiterBearbeiten {
 			}
 
 
-			Mitarbeiter updatemitarbeiter = createMitarbeiter(name, vorname,strasse, ort, plzint,
-					rolleint,lohnint, email,telefonnr,gcalstart,gcalend);
+
 			try {
+				Mitarbeiter updatemitarbeiter = createMitarbeiter(name, vorname,strasse, ort, plzint,
+						rolleint,lohnint, email,telefonnr,gcalstart,gcalend);
 				//braucht es dieses this? überspeichere ich wirklich das alte Objekt?
 				//evtl lösung könnte sein das alte einfach löschen und ein neue erstellen
 				this.MitarbeiterRO.update(updatemitarbeiter);
@@ -186,6 +224,10 @@ public class MitarbeiterBearbeiten {
 
 		}
 	}
+
+
+
+
 
 	/**
 	 * Diese Methode führt den User zur Übersicht Rapportsübersicht zurück.
@@ -218,21 +260,17 @@ public class MitarbeiterBearbeiten {
 	 *            Telefonnummer des Kontaktes
 	 *
 	 * @return Ein neues Mitarbeiterobjekt
+	 * @throws Exception
 	 */
 	private Mitarbeiter createMitarbeiter(String name, String vorname, String strasse, String ort, int plz,
-			int rolle, int lohn, String email, String telefonnr, GregorianCalendar gcalstart, GregorianCalendar gcalend){
+			int rolle, int lohn, String email, String telefonnr, GregorianCalendar gcalstart, GregorianCalendar gcalend) throws Exception{
 		//Exception werfen? bei Referenzprojekt hat ers gemacht
 
-		Ort ortschaft = new Ort();
+		List<Ort> ortsliste = new ArrayList<Ort>();
 
 		maupdate.setName(name);
 		maupdate.setVorname(vorname);
-		try {
-			maupdate.setRolleIntern(rolle);
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		maupdate.setRolleIntern(rolle);
 		maupdate.setStrasse(strasse);
 		maupdate.setLohn(lohn);
 		maupdate.setEmail(email);
@@ -240,23 +278,23 @@ public class MitarbeiterBearbeiten {
 		maupdate.setArbeitetSeit(gcalstart);
 		maupdate.setArbeitetBis(gcalend);
 
-		try {
 			//zu erst auf liste speichern damit man nachher das zweite der Liste prüfen kann falls nicht übereinstimmt
-		 ortschaft = OrtRO.findByOrtPlz(plz).get(0);
-		} catch (Exception e) {
-			lblRueckmeldung.setText("PLZ nicht gefunden");
-		}
+		 ortsliste = OrtRO.findByOrtPlz(plz);
 
-		String ortvondb = ortschaft.getOrt();
-		if(ort.equals(ortvondb)){
-		maupdate.setOrt(ortschaft);
-		}else{
-			//prüfe zweites objekt auf der Liste
-		}
-
+		//durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die gleiche ist.
+			for(Ort o: ortsliste){
+				if(ort.equals(o.getOrt())){
+					Ort o2 = OrtRO.add(o);
+					maupdate.setOrt(o2);
+					}
+			}
 
 		return maupdate;
 	}
+
+
+
+
 
 	/**
 	 * Diese Funkion wandelt das startdatum bekommeMitarbeiter() um

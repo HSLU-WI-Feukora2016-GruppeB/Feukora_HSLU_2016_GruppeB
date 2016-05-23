@@ -159,9 +159,6 @@ public class MitarbeiterUebersicht{
 		}
 
 
-
-
-
 	}
 
 	public void MitarbeiterSuchen() {
@@ -228,6 +225,7 @@ public class MitarbeiterUebersicht{
 			((Stage) leaf.getScene().getWindow()).close();
 		} catch (Exception e) {
 			lblRueckmeldung.setText("Bitte Mitarbeiter auswählen");
+			e.printStackTrace();
 		}
 
 

@@ -3,8 +3,12 @@ package application.view.liegenschaft;
 import java.util.ArrayList;
 import java.util.List;
 
-import application.view.rapport.RapportErfassen;
-import entitys.*;
+import entitys.Brenner;
+import entitys.Feuerungsanlage;
+import entitys.Kontakt;
+import entitys.Liegenschaft;
+import entitys.Ort;
+import entitys.Waermeerzeuger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -22,16 +26,9 @@ import rmi.LiegenschaftRO;
 import rmi.OrtRO;
 import rmi.WaermeerzeugerRO;
 
-/**
- * Dies ist die Dokumentation der Klasse LiegenschaftErfassen. Sie dient zur
- * Erfassung neuer Liegenschaften.
- *
- * @author Alexandra Lengen und Pascal Steiner
- * @version 4.0
- * @since 1.0
- */
 
-public class LiegenschaftErfassen {
+
+public class LiegenschaftBearbeiten {
 
 	KontaktRO kontaktRO;
 	LiegenschaftRO liegenschaftRO;
@@ -40,7 +37,6 @@ public class LiegenschaftErfassen {
 	OrtRO ortRO;
 	FeuerungsanlageRO feuerungsanlageRO;
 
-	//txtVorname usw nicht mehr gebraucht?
 	@FXML
 	private TextField txtVorname, txtNachname, txtStrasse, txtOrt, txtPlz,
 		txtStrasseL, txtOrtL, txtPlzL,
@@ -62,18 +58,48 @@ public class LiegenschaftErfassen {
 	@FXML
 	private BorderPane leaf;
 
+	static Liegenschaft liegupdate;
+
+	//Variabelndeklaration für static bekommeLiegenschaft() methode
+	static String strassel,ortl,plzl,infovorort,feuerungsleistung,vorname,nachname,
+	brennertyp,brennerart,brennerjahr, waermetyp, waermeart, waermejahr;
+
+	static Kontakt kontaktvonlieg;
 
 	public void initialize(){
 
+		//Kontaktanzeigen
+		ArrayList<Kontakt> setkontakt = new ArrayList<Kontakt>();
+		setkontakt.add(kontaktvonlieg);
+		ObservableList<Kontakt> setkontakt2 = FXCollections.observableList(setkontakt);
+		tvKundentbl.setItems(setkontakt2);
+
+		txtVorname.setText(vorname);
+		txtNachname.setText(nachname);
+
+		//Liegenschaft anzeigen
+		txtStrasseL.setText(strassel);
+		txtOrtL.setText(ortl);
+		txtPlzL.setText(plzl);
+		txtInfo.setText(infovorort);
+
+		//Brenner anzeigen
+		txtBrennertyp.setText(brennertyp);
+		txtBrennerjahr.setText(brennerjahr);
+		//Brennerart in die Combobox einfügen
 		List<String> listbrennstoff = new ArrayList<String>();
 		listbrennstoff.add("Öl");
 		listbrennstoff.add("Erdgas");
 		listbrennstoff.add("Flüssiggas");
 
+		ObservableList<String> listbrennstoff2 = FXCollections.observableList(listbrennstoff);
+		cbBrennstoff.setItems(listbrennstoff2);
+		cbBrennstoff.getSelectionModel().select(brennerart);
 
-		ObservableList<String> obslistbrennstoff = FXCollections.observableList(listbrennstoff);
-		cbBrennart.setItems(obslistbrennstoff);
-
+		//Waermeerzeuger anzeigen
+		txtWaermetyp.setText(waermetyp);
+		txtWaermejahr.setText(waermejahr);
+		//Waermeerzeugerart in die Combobox einfügen
 		List<String> listbrennart = new ArrayList<String>();
 		listbrennart.add("Gebläsebrenner 1-stufig mit Heizöl");
 		listbrennart.add("Gebläsebrenner 2-stufig mit Heizöl");
@@ -84,12 +110,42 @@ public class LiegenschaftErfassen {
 
 		ObservableList<String> obslistbrennart = FXCollections.observableList(listbrennart);
 		cbBrennart.setItems(obslistbrennart);
+		cbBrennart.getSelectionModel().select(brennerart);
 
 	}
-	/**
-	 * Methode speichert eine Liegenschaft neu.
-	 */
-	public void liegenschaftSpeichern() {
+
+	public static void bekommeLiegenschaft(Liegenschaft liegenschaft){
+		liegupdate = liegenschaft;
+
+		//Kunde holen
+		Kontakt kontaktvonlieg = liegenschaft.getKontakt();
+		vorname = kontaktvonlieg.getVorname();
+		nachname = kontaktvonlieg.getNachname();
+
+		//Liegeschaftsdaten holen
+		strassel = liegenschaft.getStrasse();
+		ortl = liegenschaft.getOrt().getOrt();
+		plzl = String.valueOf(liegenschaft.getOrt().getPlz());
+		infovorort = liegenschaft.getInfoVorOrt();
+		feuerungsleistung = String.valueOf(liegenschaft.getFeuerungsanlage().getFeuerungswaermeleistung());
+
+		//Feuerungsanlage holen
+		Feuerungsanlage feueranl = liegenschaft.getFeuerungsanlage();
+
+		//Brennerdaten holen
+		brennertyp = feueranl.getBrenner().getBrennerTyp();
+		brennerart = feueranl.getBrenner().getBrennerArtString();
+		brennerjahr = String.valueOf(feueranl.getBrenner().getBaujahr());
+
+		//Waermeerzeugerdaten holen
+		waermetyp = feueranl.getWaermeerzeuger().getWaermeerzeugerTyp();
+		waermeart = feueranl.getWaermeerzeuger().getBrennstoffString();
+		waermejahr = String.valueOf(feueranl.getWaermeerzeuger().getBaujahr());
+	}
+
+
+
+	public void liegenschaftUpdate(){
 
 		String strasse = txtStrasse.getText();
 		String ort = txtOrt.getText();
@@ -154,18 +210,17 @@ public class LiegenschaftErfassen {
 			int plzint = Integer.parseInt(plz);
 
 			try {
-				Liegenschaft newliegenschaft = createLiegenschaft(strasse, plzint, ort,infovorort,
+				Liegenschaft newliegenschaft = updateLiegenschaft(strasse, plzint, ort,infovorort,
 						brennertyp, brennerA, brennerJ, waermetyp, waermeA, waermeJ);
 				liegenschaftRO.add(newliegenschaft);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				lblRueckmeldung.setText("Liegenschaft konnte nicht gespeichert werden");
 			}
-
-
 		}
-
 	}
+
+
 
 	public void kontaktSuchen() {
 		String vornameK = txtVorname.getText();
@@ -188,7 +243,9 @@ public class LiegenschaftErfassen {
 	}
 
 
-	public Liegenschaft createLiegenschaft(	String strasse, int plz, String ortbez, String info, String btyp, int bart,
+
+
+	public Liegenschaft updateLiegenschaft(	String strasse, int plz, String ortbez, String info, String btyp, int bart,
 			int bjahr, String wtyp, int wart, int wjahr) throws Exception{
 
 		List<Ort> ortsliste = new ArrayList<Ort>();
@@ -214,15 +271,15 @@ public class LiegenschaftErfassen {
 
 		// neues Brenenrobjekt erstellen und speicher
 		Brenner brenner = new Brenner(bart,btyp,bjahr);
-		Brenner brenner2 = brennerRO.add(brenner);
+		Brenner brenner2 = brennerRO.update(brenner);
 
 		// neues Waermeerzeugerobjekt erstellen und speicher
 		Waermeerzeuger waermeerzeuger = new Waermeerzeuger(wart,wtyp,wjahr);
-		Waermeerzeuger	waermeerzeuger2 = waermeerzeugerRO.add(waermeerzeuger);
+		Waermeerzeuger	waermeerzeuger2 = waermeerzeugerRO.update(waermeerzeuger);
 
 		//Feuerungsanlageobjekt erstellen, speichern und Liegenschaft hinzufügen
 		Feuerungsanlage feuera = new Feuerungsanlage(brenner2,waermeerzeuger2);
-		Feuerungsanlage feuera2 = feuerungsanlageRO.add(feuera);
+		Feuerungsanlage feuera2 = feuerungsanlageRO.update(feuera);
 		liegenschaft.setFeuerungsanlage(feuera2);
 
 
@@ -232,9 +289,7 @@ public class LiegenschaftErfassen {
 
 
 		return liegenschaft;
-
 	}
-
 
 
 	/**

@@ -12,7 +12,10 @@ import java.util.List;
 
 import entitys.Mitarbeiter;
 import entitys.Ort;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -36,7 +39,7 @@ public class MitarbeiterErfassen {
 	OrtRO OrtRO;
 
 	@FXML
-	private TextField txtName, txtVorname, txtOrt, txtPLZ, txtRolle, txtLohn, txtEmail, txtTelefonNr, txtStrasse;
+	private TextField txtName, txtVorname, txtOrt, txtPLZ, txtLohn, txtEmail, txtTelefonNr, txtStrasse;
 
 	@FXML
 	private Label lblRueckmeldung;
@@ -45,6 +48,9 @@ public class MitarbeiterErfassen {
 	private DatePicker startDatum, endDatum;
 	@FXML
 	private Pane leaf;
+
+	@FXML
+	private ComboBox<String> cbRolle;
 
 	public void initialize(){
 		/* SecurityManager zusätzlich falls man will
@@ -69,7 +75,14 @@ public class MitarbeiterErfassen {
 			e.printStackTrace();
 		}
 
-		//TODO comboboxen füllen
+
+		List<String> list = new ArrayList<String>();
+		list.add("Administrator");
+		list.add("Sachbearbeiter");
+		list.add("Kontrolleur");
+
+		ObservableList<String> list2 = FXCollections.observableList(list);
+		cbRolle.setItems(list2);
 
 	}
 
@@ -85,7 +98,7 @@ public class MitarbeiterErfassen {
 		String strasse = txtStrasse.getText();
 		String ort = txtOrt.getText();
 		String plz = txtPLZ.getText();
-		String rolle = txtRolle.getText();
+		String rolle = cbRolle.getValue();
 		String lohn = txtLohn.getText();
 		String email = txtEmail.getText();
 		String telefonnr = txtTelefonNr.getText();
@@ -100,6 +113,21 @@ public class MitarbeiterErfassen {
 			lblRueckmeldung.setText("Bitte alle Felder ausfüllen");
 
 		} else {
+
+			//Die Rolle wieder in einen int verwandel
+			int rolleint = 0;
+			switch (rolle) {
+			case "Kontrolleur":
+				rolleint = 1;
+				break;
+			case "Sachbearbeiter":
+				rolleint = 2;
+				break;
+			case "Administrator":
+				rolleint = 3;
+				break;
+
+			}
 
 			//Das arbeitet seit: in GregorianCalendar Format umwandeln
 			int starttag = startdatum.getDayOfMonth();
@@ -116,10 +144,9 @@ public class MitarbeiterErfassen {
 			// nicht vorhanden ist
 
 			// Neue Variabeln für das Parsen
-			int rolleint = 0, lohnint = 0, plzint = 0;
+			int lohnint = 0, plzint = 0;
 
 			try {
-				rolleint = Integer.parseInt(rolle);
 				lohnint = Integer.parseInt(lohn);
 				plzint = Integer.parseInt(plz);
 			}catch (Exception e) {
@@ -127,13 +154,14 @@ public class MitarbeiterErfassen {
 			}
 
 
-			Mitarbeiter newmitarbeiter = createMitarbeiter(name,vorname,strasse,ort,plzint,
-					rolleint,lohnint,email,telefonnr,gcalstart, gcalend);
+
 			System.out.println("vor addmitarbeiter");
 			try {
+				Mitarbeiter newmitarbeiter = createMitarbeiter(name,vorname,strasse,ort,plzint,
+						rolleint,lohnint,email,telefonnr,gcalstart, gcalend);
 				MitarbeiterRO.add(newmitarbeiter);
 			} catch (Exception e) {
-				e.printStackTrace();
+				lblRueckmeldung.setText("Mitarbeiter konnte nicht gespeichert werden");
 			}
 			System.out.println("nach addmitarbeiter");
 
@@ -163,24 +191,18 @@ public class MitarbeiterErfassen {
 	 * @param gcalend
 	 *
 	 * @return Mitarbeiter
+	 * @throws Exception
 	 */
 	private Mitarbeiter createMitarbeiter(String name, String vorname, String strasse, String ort, int plz,
 			int rolle, int lohn, String email, String telefonnr,
-			GregorianCalendar gcalstart, GregorianCalendar gcalend){
-		//Exception werfen? bei Referenzprojekt hat ers gemacht
+			GregorianCalendar gcalstart, GregorianCalendar gcalend) throws Exception{
 
 		Mitarbeiter mitarbeiter = new Mitarbeiter();
-		Ort ortschaft = new Ort();
 		List<Ort> ortsliste = new ArrayList<Ort>();
 
 		mitarbeiter.setName(name);
 		mitarbeiter.setVorname(vorname);
-		try {
-			mitarbeiter.setRolleIntern(rolle);
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		mitarbeiter.setRolleIntern(rolle);
 		mitarbeiter.setStrasse(strasse);
 		mitarbeiter.setLohn(lohn);
 		mitarbeiter.setEmail(email);
@@ -188,20 +210,18 @@ public class MitarbeiterErfassen {
 		mitarbeiter.setArbeitetSeit(gcalstart);
 		mitarbeiter.setArbeitetBis(gcalend);
 
-		try {
-			//zu erst auf liste speichern damit man nachher das zweite der Liste prüfen kann falls nicht übereinstimmt
+		//zu erst auf liste speichern damit man nachher das zweite der Liste prüfen kann falls nicht übereinstimmt
 		 ortsliste = OrtRO.findByOrtPlz(plz);
-		} catch (Exception e) {
-			lblRueckmeldung.setText("PLZ nicht gefunden");
-		}
+
 
 		//durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die gleiche ist.
 		for(Ort o: ortsliste){
-			o = ortsliste.get(0);
 			if(ort.equals(o.getOrt())){
-				mitarbeiter.setOrt(ortschaft);
+				Ort o2 = OrtRO.add(o);
+				mitarbeiter.setOrt(o2);
 				}
 		}
+
 
 		return mitarbeiter;
 	}

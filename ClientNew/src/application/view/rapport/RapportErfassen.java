@@ -1,6 +1,7 @@
 package application.view.rapport;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -14,8 +15,10 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import rmi.AuftragRO;
 import rmi.MessungRO;
 
 /**
@@ -31,6 +34,7 @@ public class RapportErfassen {
 
 	static Auftrag ausgewaehlterauftrag;
 	MessungRO messungRO;
+	AuftragRO auftragRO;
 
 
     @FXML
@@ -41,7 +45,7 @@ public class RapportErfassen {
     txtBrenner, txtBaujahr, txtBrennstoff, txtWaermeerzeuger, txtBaujahrW, txtBrennstoffW, txtLeistung, txtAuftragsart;
 
 
-    //Messung1--------------------
+    //----------------Messung1--------------------
     @FXML
     private TextField txtM1S1Russzahl, txtM1S1CO ,txtM1S1Abgastemperatur  ,txtM1S1Verbrenn, txtM1S1Nox, txtM1S1Waermeerz, txtM1S1O2, txtM1S1Abgasverl,
     txtM1S2Russzahl, txtM1S2CO ,txtM1S2Abgastemperatur  ,txtM1S2Verbrenn, txtM1S2Nox, txtM1S2Waermeerz, txtM1S2O2, txtM1S2Abgasverl;
@@ -49,7 +53,7 @@ public class RapportErfassen {
     @FXML
     private CheckBox checkM1S1Oel, checkM1S2Oel;
 
-    //Messung2---------------------
+    //----------------Messung2---------------------
     @FXML
     private TextField txtM2S1Russzahl, txtM2S1CO ,txtM2S1Abgastemperatur  ,txtM2S1Verbrenn, txtM2S1Nox, txtM2S1Waermeerz, txtM2S1O2, txtM2S1Abgasverl,
     txtM2S2Russzahl, txtM2S2CO ,txtM2S2Abgastemperatur  ,txtM2S2Verbrenn, txtM2S2Nox, txtM2S2Waermeerz, txtM2S2O2, txtM2S2Abgasverl;
@@ -60,12 +64,17 @@ public class RapportErfassen {
     @FXML
     private Label lblRueckmeldung;
 
+    //Deklerationen für die bekommeAuftrag() methode
     private static String kundenvorname, kundenname, kundenort, kundenplz,kundentelnr,
     liegenschaftsstrasse, Liegenschaftsort,Liegenschaftsplz,Liegenschaftsinfo,
     brennertyp, brennerjahr, brennerstoff, waermetyp, waermejahr, waermestoff, auftragsart, feuerungsleistung;
 
+    //Grenzwertcheckboxen
     @FXML
-    private CheckBox checkboxreguliert, cbBeurteilung;
+    private CheckBox cb30Tage, cbEinregulierung, cbBeurteilung, cbAbgasverluste, cbRusszahl, cbOelanteil, cbCo2, cbNo2;
+
+    @FXML
+    private TextArea taBemerkung;
 
     @FXML
     private Stage leaf;
@@ -139,7 +148,7 @@ public class RapportErfassen {
     }
 
 
-    public void auftragSpeichern(){
+    public void messwertePruefen(){
 //
 
    // 	DIESER TEIL SEHRWAHRSCHEINLICH UNNTÖTIG!!
@@ -167,47 +176,101 @@ public class RapportErfassen {
 //    	String kontrollart = cbKontrollart.getValue();
 
 
-    	Messung messung1stufe1 = this.createMessung1Stufe1();
-    	Messung messung1stufe2 = this.createMessung1Stufe2();
-    	Messung messung2stufe1 = this.createMessung2Stufe1();
-    	Messung messung2stufe2 = this.createMessung2Stufe2();
-    	//nicht mehr gebraucht?
-    	Messung m1s1 = null,m1s2 = null,m2s1 = null,m2s2 = null;
-
+    	Messung messung1stufe1 = null, messung2stufe1 = null,messung1stufe2=null,messung2stufe2 =null;
 		try {
-			m1s1 = messungRO.add(messung1stufe1);
-			ausgewaehlterauftrag.setMessung1stufe1(m1s1);
+			messung1stufe1 = this.createMessung1Stufe1();
+			messung1stufe2 = this.createMessung1Stufe2();
+	    	messung2stufe1 = this.createMessung2Stufe1();
+	    	messung2stufe2 = this.createMessung2Stufe2();
+		} catch (Exception e1) {
+			lblRueckmeldung.setText("Messungen abspeichern fehlgeschlagen");
+		}
 
-			m1s2 = messungRO.add(messung1stufe2);
-			ausgewaehlterauftrag.setMessung1stufe1(m1s2);
 
-			m2s1 = messungRO.add(messung2stufe1);
-			ausgewaehlterauftrag.setMessung1stufe1(m2s1);
+    	Auftrag gespeicherterauftrag = null;
 
-			m2s2 = messungRO.add(messung2stufe2);
-			ausgewaehlterauftrag.setMessung1stufe1(m2s2);
+    	//könnte es sein dass wenn eine Messung nicht ausgefüllt worden ist und somit in messungpruefen() eine
+    	//null Referenz bekommt, ich diese dann in den auftrag speicher und den Auftrag in die Db speichere, dass programm
+    	//dann crasht?
+			ausgewaehlterauftrag.setMessung1stufe1(messung1stufe1);
+
+			ausgewaehlterauftrag.setMessung1stufe1(messung2stufe1);
+
+			ausgewaehlterauftrag.setMessung2stufe1(messung1stufe2);
+
+			ausgewaehlterauftrag.setMessung1stufe1(messung2stufe2);
+			try {
+
+				//hier update oder add? eigentlich update da sonst wieder ein neues Objekt in der DB angelegt wird oder?
+				//das Backoffice hat ja eines angelegt.
+			gespeicherterauftrag = auftragRO.update(ausgewaehlterauftrag);
 
 		} catch (Exception e) {
-			lblRueckmeldung.setText("Messungen konnten nicht gespeichert werden");
+			lblRueckmeldung.setText("Auftrag speichern fehlgeschlagen");
 		}
 
-		if(m1s1.isBeurteilungNotOk() || m1s2.isBeurteilungNotOk() || m2s1.isBeurteilungNotOk() || m2s2.isBeurteilungNotOk()){
-			// setze Check
-		}else{
+		ArrayList<Messung> messungsliste = new ArrayList<Messung>();
+		messungsliste.add(gespeicherterauftrag.getMessung1stufe1());
+		messungsliste.add(gespeicherterauftrag.getMessung2stufe1());
+		messungsliste.add(gespeicherterauftrag.getMessung1stufe2());
+		messungsliste.add(gespeicherterauftrag.getMessung2stufe2());
 
+		for(Messung m: messungsliste){
+			boolean notokey = m.isBeurteilungNotOk();
+			if(notokey){
+				cbBeurteilung.setSelected(true);
+				for(Messung m2: messungsliste){
+					notokey = m2.isAbgasverlusteNotOk();
+					if(notokey){
+						cbAbgasverluste.setSelected(true);
+					}
+					boolean notokey2 = m2.isCoMgNotOk();
+					if(notokey2){
+						cbCo2.setSelected(true);
+					}
+					boolean notokey3 = m2.isNoMgNotOk();
+					if(notokey3){
+						cbNo2.setSelected(true);
+					}
+					boolean notokey4 = m2.isOelanteilenNotOk();
+					if(notokey4){
+						cbOelanteil.setSelected(true);
+					}
+					boolean notokey5 = m2.isRusszahlNotOk();
+					if(notokey5){
+						cbRusszahl.setSelected(true);
+					}
+				}
+			}
 		}
-
     }
 
+/**
+ * Hier wird nun der Auftrag endgültig abgespeichert
+ */
+public void auftragSpeichern(){
 
+	ausgewaehlterauftrag.setBemerkung(taBemerkung.getText());
+	ausgewaehlterauftrag.setEinregulierungInnert30(cb30Tage.isSelected());
+	ausgewaehlterauftrag.setEinregulierungNichtMoeglich(cbEinregulierung.isSelected());
+
+	try {
+		this.auftragRO.update(ausgewaehlterauftrag);
+	} catch (Exception e) {
+		lblRueckmeldung.setText("Auftrag konnte nicht gespeichert werden");
+	}
+
+
+}
 
 
     /**
      * Diese Methode liefert die 1 Stufe der 1 Messung in einem Messungsobjekt
      *
      * @return messung1stufe1
+     * @throws Exception
      */
-    public Messung createMessung1Stufe1(){
+    public Messung createMessung1Stufe1() throws Exception{
 
     	String russzahl = txtM1S1Russzahl.getText();
     	String cogehalt = txtM1S1CO.getText();
@@ -228,8 +291,9 @@ public class RapportErfassen {
      * Diese Methode liefert die 2 Stufe der 1 Messung in einem Messungsobjekt
      *
      * @return messung1stufe1
+     * @throws Exception
      */
-    public Messung createMessung1Stufe2(){
+    public Messung createMessung1Stufe2() throws Exception{
 
     	String russzahl = txtM1S2Russzahl.getText();
     	String cogehalt = txtM1S2CO.getText();
@@ -249,8 +313,9 @@ public class RapportErfassen {
      * Diese Methode liefert die 1 Stufe der 2 Messung in einem Messungsobjekt
      *
      * @return messung1stufe1
+     * @throws Exception
      */
-    public Messung createMessung2Stufe1(){
+    public Messung createMessung2Stufe1() throws Exception{
 
     	String russzahl = txtM2S1Russzahl.getText();
     	String cogehalt = txtM2S1CO.getText();
@@ -272,8 +337,9 @@ public class RapportErfassen {
      * Diese Methode liefert die 1 Stufe der 2 Messung in einem Messungsobjekt
      *
      * @return messung1stufe1
+     * @throws Exception
      */
-    public Messung createMessung2Stufe2(){
+    public Messung createMessung2Stufe2() throws Exception{
 
     	String russzahl = txtM2S2Russzahl.getText();
     	String cogehalt = txtM2S2CO.getText();
@@ -304,14 +370,16 @@ public class RapportErfassen {
      * @param stringo2gehalt
      * @param stringabgasverluste
      * @param oelanteil
-     * @return messung
+     * @return m
+     * @throws Exception
      */
   private Messung messungpruefen(String stringrusszahl, String stringcogehalt, String stringabgastemperatur, String stringverbrennungstemparatur, String stringno2gehalt, String stringwaermer, String stringo2gehalt, String stringabgasverluste
-		  ,boolean oelanteil){
+		  ,boolean oelanteil) throws Exception{
 
+	  //falls nur ein Feld nicht ausgefüllt wird wird die Messung nicht abgespeichert und der Kotrolleur weiss es nicht!!!!!!!!!!
 	  if(stringrusszahl.isEmpty() || stringcogehalt.isEmpty()||stringabgastemperatur.isEmpty() || stringverbrennungstemparatur.isEmpty()
   			|| stringno2gehalt.isEmpty() || stringwaermer.isEmpty() || stringo2gehalt.isEmpty() || stringabgasverluste.isEmpty()){
-  		lblRueckmeldung.setText("Messung 1 Stufe 1 nicht alle Felder ausgefüllt!");
+  		//objekt wird mit null Referenzzuweisung gelöscht
   		return null;
   	}else{
   		//Alles parsen
@@ -332,13 +400,19 @@ public class RapportErfassen {
 
   		Messung messung = new Messung(messDatum, russzahl, coGehalt, oelanteil, no2gehalt,
           	    abgastemperatur, waermeerzeugertemperatur, verbrennungstemperatur, o2gehalt, abgasverluste);
-  		return messung;
+
+  		//Messung in der DB abspeichern
+  		Messung m = messungRO.add(messung);
+
+  		return m;
   	}
 
   }
 
 
-
+  /**
+   * verlässt die Szene
+   */
     public void abbrechen() {
 		((Stage) leaf.getScene().getWindow()).close();
 	}
