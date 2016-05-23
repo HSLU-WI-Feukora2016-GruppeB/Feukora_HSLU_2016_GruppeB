@@ -70,7 +70,7 @@ public class RMIServer {
 		reg.rebind("Messung", me);
 		reg.rebind("Mitarbeiter", mi);
 		reg.rebind("Ort", or);
-		reg.rebind("Waermerzeuger", wa);
+		reg.rebind("Waermeerzeuger", wa);
 
 		// Ausgabe
 		System.out.println("Objekt beim Namensdienst angemeldet.");

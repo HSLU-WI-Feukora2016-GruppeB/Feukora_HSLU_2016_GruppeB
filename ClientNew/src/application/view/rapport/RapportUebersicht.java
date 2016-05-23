@@ -11,6 +11,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Properties;
 
+import application.RmiUtil;
 import application.view.liegenschaft.LiegenschaftBearbeiten;
 import application.view.mitarbeiter.MitarbeiterBearbeiten;
 import application.view.termin.TerminBearbeiten;
@@ -64,41 +65,13 @@ public class RapportUebersicht {
 
 	public void initialize() throws Exception {
 
-		 /*---------------RMI Verbindung---------------*/
 
-			String MitarbeiterROName = "Mitarbeiter";
-			String AuftragROName = "Auftrag";
+		/* Lookup */
+		auftragRO = RmiUtil.getAuftragRO();
+		mitarbeiterRO = RmiUtil.getMitarbeiterRO();
 
-			try {
 
-				// Properties Objekt erstellen
-				Properties rmiProperties = new Properties();
-
-				// Klassenloader holen
-				ClassLoader cLoader = RapportUebersicht.class.getClassLoader();
-
-				// Properties laden
-					rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
-
-				// Port RMI auslesen
-				String stringPort = rmiProperties.getProperty("rmiPort");
-				Integer rmiPort = Integer.valueOf(stringPort);
-
-				String hostIp = rmiProperties.getProperty("rmiIp");
-
-				// URLs definieren
-				String urlMitarbeiterRO = "rmi://" + hostIp + ":" + rmiPort + "/" + MitarbeiterROName;
-				String urlAuftragRO = "rmi://" + hostIp + ":" + rmiPort + "/" + AuftragROName;
-
-				/* Lookup */
-				mitarbeiterRO = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
-				auftragRO = (AuftragRO) Naming.lookup(urlAuftragRO);
-
-			} catch (MalformedURLException | RemoteException | NotBoundException e) {
-				throw e;
-			}
-
-	/*----------------------------------------------*/
+		/*----------------------------------------------*/
 
 
 		// Alle Feuerungskontrolleure in der Combobox anzeigen lassen

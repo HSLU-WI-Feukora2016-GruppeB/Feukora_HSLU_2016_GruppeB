@@ -7,6 +7,5 @@
 	<classpathentry kind="lib" path="lib/feukora-model.jar"/>
 	<classpathentry kind="lib" path="lib/feukora-rmi.jar"/>
 	<classpathentry kind="lib" path="lib/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="lib/feukora-business.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

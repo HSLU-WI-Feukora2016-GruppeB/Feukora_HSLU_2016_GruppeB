@@ -16,8 +16,8 @@
 		<class>entitys.Mitarbeiter</class>
 		<class>entitys.Ort</class>
 		<class>entitys.Waermeerzeuger</class>
-		
-		
+
+
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
 			<property name="javax.persistence.jdbc.url"
@@ -26,8 +26,8 @@
 			<property name="javax.persistence.jdbc.password" value="Florence123" />
 			<property name="eclipselink.ddl-generation.output-mode"
 				value="database" />
-				
-			<!-- 
+
+			<!--
 			<property name="eclipselink.logging.level" value="FINEST" />
 			<property name="eclipselink.logging.level.sql" value="FINE" />
 			<property name="eclipselink.logging.parameters" value="true" />
@@ -35,13 +35,13 @@
 			-->
 
 			<!-- SQL-Statements nicht ausgeben -->
-			<property name="eclipselink.logging.level" value="off"/> 
+			<property name="eclipselink.logging.level" value="off"/>
 			<!--
-		    <property name="eclipselink.logging.level" value="FINE"/> 
+		    <property name="eclipselink.logging.level" value="FINE"/>
 			-->
-			
-			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" /> 		
-			<!--  <property name="eclipselink.ddl-generation" value="create-tables" /> nachher für nicht-test db verwenden	-->
+
+			<!-- <property name="eclipselink.ddl-generation" value="drop-and-create-tables" /> 	-->
+			<property name="eclipselink.ddl-generation" value="create-tables" /> <!-- nachher für nicht-test db verwenden	-->
 
 		</properties>
 

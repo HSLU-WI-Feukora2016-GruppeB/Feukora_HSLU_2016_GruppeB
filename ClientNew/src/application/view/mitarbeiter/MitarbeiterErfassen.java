@@ -236,13 +236,19 @@ public class MitarbeiterErfassen {
 
 		ortsliste = ortRO.findByOrtPlz(plz);
 
-		// durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die
-		// gleiche ist.
-		for (Ort o : ortsliste) {
-			if (ort.equals(o.getOrt())) {
-				Ort o2 = ortRO.add(o);
-				mitarbeiter.setOrt(o2);
+		boolean found = false;
+		for(Ort o: ortsliste){
+			if(ort.equals(o.getOrt())){
+				mitarbeiter.setOrt(o);
+				found=true;
+				break;
 			}
+		}
+		//wenn nicht gefunden wird neuöer ort hinzugefügt
+		//orte können nicht upgedated werden etweder gefunden oder neu
+		if(!found) {
+			Ort ortDb = ortRO.add(new Ort(plz, ort));
+			mitarbeiter.setOrt(ortDb);
 		}
 
 		return mitarbeiter;

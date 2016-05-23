@@ -64,7 +64,7 @@ public class AuftragDAOTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-		AuftragDAOTest.deleteAll();
+		//AuftragDAOTest.deleteAll();
 	}
 
 	/**

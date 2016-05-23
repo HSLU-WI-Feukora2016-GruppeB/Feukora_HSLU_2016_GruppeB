@@ -15,6 +15,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Properties;
 
+import application.RmiUtil;
 import entitys.Mitarbeiter;
 import entitys.Ort;
 import javafx.collections.FXCollections;
@@ -79,39 +80,11 @@ public class MitarbeiterBearbeiten {
 
 /*---------------RMI Verbindung---------------*/
 
-		String OrtRO = "Ort";
-		String MitarbeiterROName = "Mitarbeiter";
-
-		try {
-
-			// Properties Objekt erstellen
-			Properties rmiProperties = new Properties();
-
-			// Klassenloader holen
-			ClassLoader cLoader = MitarbeiterBearbeiten.class.getClassLoader();
-
-			// Properties laden
-
-				rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
-
-
-			// Port RMI auslesen
-			String stringPort = rmiProperties.getProperty("rmiPort");
-			Integer rmiPort = Integer.valueOf(stringPort);
-
-			String hostIp = rmiProperties.getProperty("rmiIp");
-
-			// URLs definieren
-			String urlOrtRO = "rmi://" + hostIp + ":" + rmiPort + "/" + OrtRO;
-			String urlMitarbeiterRO = "rmi://" + hostIp + ":" + rmiPort + "/" + MitarbeiterROName;
 
 			/* Lookup */
-			mitarbeiterRO = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
-			ortRO = (OrtRO) Naming.lookup(urlOrtRO);
+			mitarbeiterRO = RmiUtil.getMitarbeiterRO();
+			ortRO = RmiUtil.getOrtRO();
 
-		} catch (MalformedURLException | RemoteException | NotBoundException e) {
-			throw e;
-		}
 
 /*----------------------------------------------*/
 
@@ -223,7 +196,7 @@ public class MitarbeiterBearbeiten {
 			int lohnint = 0, plzint =0;
 
 			try {
-				rolleint = Integer.parseInt(rolle);
+//				rolleint = Integer.parseInt(rolle);
 				lohnint = Integer.parseInt(lohn);
 				plzint = Integer.parseInt(plz);
 			} catch (Exception e) {
@@ -299,16 +272,25 @@ public class MitarbeiterBearbeiten {
 		maupdate.setArbeitetSeit(gcalstart);
 		maupdate.setArbeitetBis(gcalend);
 
-			//zu erst auf liste speichern damit man nachher das zweite der Liste prüfen kann falls nicht übereinstimmt
+		//zu erst auf liste speichern damit man nachher das zweite der Liste prüfen kann falls nicht übereinstimmt
 		 ortsliste = ortRO.findByOrtPlz(plz);
 
 		//durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die gleiche ist.
-			for(Ort o: ortsliste){
-				if(ort.equals(o.getOrt())){
-					Ort o2 = ortRO.add(o);
-					maupdate.setOrt(o2);
-					}
+		//setzte ort wenn genau gleiche ortbez
+		boolean found = false;
+		for(Ort o: ortsliste){
+			if(ort.equals(o.getOrt())){
+				maupdate.setOrt(o);
+				found=true;
+				break;
 			}
+		}
+		//wenn nicht gefunden wird neuöer ort hinzugefügt
+		//orte können nicht upgedated werden etweder gefunden oder neu
+		if(!found) {
+			Ort ortDb = ortRO.add(new Ort(plz, ort));
+			maupdate.setOrt(ortDb);
+		}
 
 		return maupdate;
 	}

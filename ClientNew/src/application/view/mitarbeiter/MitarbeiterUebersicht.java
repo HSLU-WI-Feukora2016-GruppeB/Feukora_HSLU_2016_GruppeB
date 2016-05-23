@@ -10,6 +10,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Properties;
 
+import application.RmiUtil;
 import entitys.Auftrag;
 import entitys.Benutzer;
 import entitys.Brenner;
@@ -85,47 +86,13 @@ public class MitarbeiterUebersicht {
 
 		/*---------------RMI Verbindung---------------*/
 
-		String OrtRO = "Ort";
-		String MitarbeiterROName = "Mitarbeiter";
+		/* Lookup */
+
+		ortRO = RmiUtil.getOrtRO();
+		mitarbeiterRO = RmiUtil.getMitarbeiterRO();
 
 		try {
-
-			// Properties Objekt erstellen
-			Properties  rmiProperties = new Properties();
-
-			// Klassenloader holen
-			ClassLoader cLoader = MitarbeiterUebersicht.class.getClassLoader();
-
-			// Properties laden
-
-				rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
-
-
-			// Port RMI auslesen
-			String stringPort =rmiProperties.getProperty("rmiPort");
-			Integer rmiPort = Integer.valueOf(stringPort);
-
-			String hostIp = rmiProperties.getProperty("rmiIp");
-
-			// URLs definieren
-			String urlOrtRO = "rmi://" + hostIp + ":" + rmiPort + "/" + OrtRO;
-			String urlMitarbeiterRO = "rmi://" + hostIp + ":" + rmiPort + "/" + MitarbeiterROName;
-
-			/* Lookup */
-
-			ortRO = (OrtRO) Naming.lookup(urlOrtRO);
-			mitarbeiterRO = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
-
-
-		} catch (MalformedURLException | RemoteException | NotBoundException e) {
-			throw e;
-		}
-		System.out.println("Verbunden mit RMI");
-
-
-
-		try {
-			 List<Mitarbeiter> listmitarbeiter = mitarbeiterRO.findAllMitarbeiter();
+			List<Mitarbeiter> listmitarbeiter = mitarbeiterRO.findAllMitarbeiter();
 			ObservableList<Mitarbeiter> listmitarbeiter2 = FXCollections.observableList(listmitarbeiter);
 			tblName.setCellValueFactory(new PropertyValueFactory<>("name"));
 			tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
