@@ -4,7 +4,11 @@
 	<classpathentry kind="src" path="resource"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="lib/feukora-model.jar"/>
-	<classpathentry kind="lib" path="lib/feukora-businesslogic.jar"/>
-	<classpathentry kind="lib" path="lib/feukora-businesslogic-impl.jar"/>
+	<classpathentry kind="lib" path="lib/feukora-business.jar"/>
+	<classpathentry kind="lib" path="lib/feukora-persister.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="lib/eclipselink.jar"/>
+	<classpathentry kind="lib" path="lib/javax.persistence_2.0.4.jar"/>
+	<classpathentry kind="lib" path="lib/postgresql-9.1-902.jdbc4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

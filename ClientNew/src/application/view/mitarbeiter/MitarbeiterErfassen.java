@@ -23,22 +23,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-<<<<<<< HEAD
+
 import rmi.interfaces.MitarbeiterRO;
 import rmi.interfaces.OrtRO;
-=======
-import rmi.AuftragRO;
-import rmi.BenutzerRO;
-import rmi.BrennerRO;
-import rmi.FeuerungsanlageRO;
-import rmi.KontaktRO;
-import rmi.LiegenschaftRO;
-import rmi.MessungRO;
-import rmi.MitarbeiterRO;
-import rmi.OrtRO;
-import rmi.WaermeerzeugerRO;
-import rmi.rmiserver.RMIServer;
->>>>>>> refs/remotes/origin/master
 
 /**
  * Dies ist die Dokumentation der Klasse MitarbeiterErfassen. Hier können neue
@@ -68,16 +55,8 @@ public class MitarbeiterErfassen {
 	@FXML
 	private ComboBox<String> cbRolle;
 
-	private AuftragRO auftragManager;
-	private BenutzerRO benutzerManager;
-	private BrennerRO brennerManager;
-	private FeuerungsanlageRO feuerungsanlageManager;
-	private KontaktRO kontaktManager;
-	private LiegenschaftRO liegenschaftManager;
-	private MessungRO messungManager;
 	private MitarbeiterRO mitarbeiterManager;
 	private OrtRO ortManager;
-	private WaermeerzeugerRO waermeerzeugerManager;
 
 	public void initialize() throws Exception {
 		/*
@@ -88,7 +67,6 @@ public class MitarbeiterErfassen {
 		 */
 
 		String MitarbeiterROName = "Mitarbeiter";
-
 
 		try {
 
@@ -115,16 +93,12 @@ public class MitarbeiterErfassen {
 
 			String urlMitarbeiterRO = "rmi://" + hostIp + ":" + rmiPort + "/" + MitarbeiterROName;
 
-
 			/* Lookup */
 			mitarbeiterManager = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
-
 
 		} catch (MalformedURLException | RemoteException | NotBoundException e) {
 			throw e;
 		}
-
-
 
 		List<String> list = new ArrayList<String>();
 		list.add("Administrator");

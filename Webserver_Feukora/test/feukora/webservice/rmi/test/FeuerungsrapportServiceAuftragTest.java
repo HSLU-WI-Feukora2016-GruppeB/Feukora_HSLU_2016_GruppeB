@@ -49,7 +49,7 @@ public class FeuerungsrapportServiceAuftragTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-		deleteAll();
+		//deleteAll();
 	}
 
 	/**
@@ -298,8 +298,8 @@ public class FeuerungsrapportServiceAuftragTest {
 			fservice.addOrt(o);
 		}
 		
-		for(Brenner b : lBrenner){
-			fservice.addBrenner(b);
+		for(Brenner br : lBrenner){
+			fservice.addBrenner(br);
 		}
 		
 		for(Waermeerzeuger w : lWaermeerzeuger){
