@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -18,7 +19,7 @@
   <children>
       <VBox prefHeight="61.0" prefWidth="640.0">
          <children>
-            <Label text="Liegenschaft Übersicht">
+            <Label text="Terminübersicht">
                <font>
                   <Font size="24.0" />
                </font>
@@ -72,9 +73,10 @@
                           </rowConstraints>
                            <children>
                               <Label fx:id="lblRueckmeldung" prefHeight="17.0" prefWidth="162.0" text="  " textFill="#e91212" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                              <Label text="Strasse" />
-                              <TextField fx:id="txtStrasse" GridPane.rowIndex="1" />
-                              <Button fx:id="btnSuchen" mnemonicParsing="false" onAction="#LiegenschaftSuchen" text="Suchen" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label text="Kontrolleur:" />
+                              <ComboBox fx:id="ddFK" prefWidth="150.0" GridPane.rowIndex="1" />
+                              <DatePicker fx:id="startDatum" prefHeight="31.0" prefWidth="304.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Button fx:id="btnWocheAnzeigen" mnemonicParsing="false" onAction="#wocheAnzeigen" text="Anzeigen" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </children>

@@ -3,7 +3,7 @@ package feukora.webservice.rmi;
 /*
  * ZWECK: Feukora Feuerungsrapport Webservice
  * MODUL: Softwarekompomenten, HSLU-Wirtschaft
- * 
+ *
  * Copyright (c) Dominik Stirnimann
  */
 
@@ -34,11 +34,11 @@ import entitys.*;
 /**
  * Diese Klasse implementiert die Konkreten Methoden des
  * FeuerungsrapportInterface für die Feuerungskontrolle zur Verfügung.
- * 
+ *
  * @author Dominik
  * @version 1.0.0
  * @since 1.0.0
- * 
+ *
  */
 @WebService(endpointInterface = "feukora.webservice.rmi.FeuerungsrapportService")
 public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
@@ -86,7 +86,7 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 			//Port RMI auslesen
 			String stringPort = webserverProperties.getProperty("rmiPort");
 			Integer rmiPort = Integer.valueOf(stringPort);
-			
+
 
 			String hostIp = webserverProperties.getProperty("rmiIp");
 
@@ -111,7 +111,7 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 					+ OrtROName;
 			String urlWaermeerzeugerRO = "rmi://" + hostIp + ":" + rmiPort
 					+ "/" + WaermeerzeugerROName;
-			
+
 			/* Lookup */
 			auftragManager = (AuftragRO) Naming.lookup(urlAuftragRO);
 			benutzerManager = (BenutzerRO) Naming.lookup(urlBenutzerRO);
@@ -128,7 +128,7 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 			throw e;
 		}
 	}
-	
+
 	// -----------------------------------------------------------------------------------------------
 	// Auftrag
 	// -----------------------------------------------------------------------------------------------
@@ -177,9 +177,9 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 		return auftragManager.findByDatum(datum);
 	}
 	@Override
-	public List<Auftrag> findAuftragByDateAndMitarbeiter(GregorianCalendar startdatum, 
+	public List<Auftrag> findAuftragByDateAndMitarbeiter(GregorianCalendar startdatum,
 			GregorianCalendar enddatum, Mitarbeiter mitarbeiter) throws Exception {
-		
+
 		return auftragManager.findByDateAndMitarbeiter(startdatum, enddatum, mitarbeiter);
 	}
 
@@ -293,7 +293,7 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	// -----------------------------------------------------------------------------------------------
 	// Kontakt
 	// -----------------------------------------------------------------------------------------------
-	
+
 	@Override
 	public Kontakt addKontakt(Kontakt kontakt) throws Exception {
 		return kontaktManager.add(kontakt);
@@ -322,7 +322,7 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	public List<Kontakt> findAllKontakte() throws Exception {
 		return kontaktManager.findAll();
 		}
-	
+
 	@Override
 	public List<Kontakt> findKontaktByOrt(Ort ort) throws Exception {
 		return kontaktManager.findByOrt(ort);
@@ -433,7 +433,7 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	}
 
 	@Override
-	public List<Mitarbeiter> findMitarbeiterByName(String name) 
+	public List<Mitarbeiter> findMitarbeiterByName(String name)
 			throws Exception {
 		return mitarbeiterManager.findByName(name);
 	}
@@ -443,7 +443,7 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 			throws Exception {
 		return mitarbeiterManager.findByVorname(vorname);
 	}
-	
+
 	@Override
 	public List<Mitarbeiter> findMitarbeiterByNameVorname(String name,
 			String vorname) throws Exception {
@@ -536,7 +536,7 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	public List<Waermeerzeuger> findAllWaermeerzeuger() throws Exception {
 		return waermeerzeugerManager.findAllWaermeerzeuger();
 	}
-	
+
 	@Override
 	public List<Waermeerzeuger> findWaermeerzeugerByTyp(String waermeerzeugerTyp)
 			throws Exception {
@@ -554,7 +554,7 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 			throws Exception {
 		return waermeerzeugerManager.findByBaujahr(baujahr);
 	}
-	
+
 	//----------------------------------------------------------------------------
 	//Nur für Testzwecken
     //----------------------------------------------------------------------------
@@ -580,7 +580,7 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 
 	@Override
 	public void deleteMitarbeiter(Mitarbeiter mitarbeiter) throws Exception {
-		mitarbeiterManager.delete(mitarbeiter);		
+		mitarbeiterManager.delete(mitarbeiter);
 	}
 
 	@Override

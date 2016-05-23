@@ -1,5 +1,6 @@
 package application.view.mitarbeiter;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
@@ -7,6 +8,7 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Properties;
 
 import entitys.Auftrag;
 import entitys.Benutzer;
@@ -35,8 +37,22 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+<<<<<<< HEAD
 import rmi.interfaces.MitarbeiterRO;
 import rmi.interfaces.OrtRO;
+=======
+import rmi.AuftragRO;
+import rmi.BenutzerRO;
+import rmi.BrennerRO;
+import rmi.FeuerungsanlageRO;
+import rmi.KontaktRO;
+import rmi.LiegenschaftRO;
+import rmi.MessungRO;
+import rmi.MitarbeiterRO;
+import rmi.OrtRO;
+import rmi.WaermeerzeugerRO;
+import rmi.rmiserver.RMIServer;
+>>>>>>> refs/remotes/origin/master
 
 /**
  * Dies ist die Dokumentation der Klasse MitarbeiterÜbersicht. Sie zeigt alle
@@ -47,7 +63,7 @@ import rmi.interfaces.OrtRO;
  * @since 1.0
  */
 
-public class MitarbeiterUebersicht{
+public class MitarbeiterUebersicht {
 
 	@FXML
 	private Button btnNeu, btnBearbeiten, btnSchliessen, btnSuchen;
@@ -70,32 +86,85 @@ public class MitarbeiterUebersicht{
 	MitarbeiterRO MitarbeiterRO;
 	OrtRO OrtRO;
 
-
+	private AuftragRO auftragManager;
+	private BenutzerRO benutzerManager;
+	private BrennerRO brennerManager;
+	private FeuerungsanlageRO feuerungsanlageManager;
+	private KontaktRO kontaktManager;
+	private LiegenschaftRO liegenschaftManager;
+	private MessungRO messungManager;
+	private MitarbeiterRO mitarbeiterManager;
+	private OrtRO ortManager;
+	private WaermeerzeugerRO waermeerzeugerManager;
 
 	public static Mitarbeiter mastatic;
 
-	@FXML
 	private void initialize() throws Exception {
+		/*
+		 * SecurityManager zusätzlich falls man will
+		 * System.setProperty("java.security.policy", "MitarbeiterRO.policy");
+		 *
+		 * System.setSecurityManager(new SecurityManager());
+		 */
+		String AuftragROName = "Auftrag";
+		String BenutzerROName = "Benutzer";
+		String BrennerROName = "Brenner";
+		String FeuerungsanlageROName = "Feuerungsanlage";
+		String KontaktROName = "Kontakt";
+		String MessungsROName = "Messung";
+		String MitarbeiterROName = "Mitarbeiter";
+		String LiegenschaftROName = "Liegenschaft";
+		String OrtROName = "Ort";
+		String WaermeerzeugerROName = "Waermerzeuger";
 
+		try {
 
-//		String url = "rmi://192.168.43.4:10099/";
-//		String MitarbeiterROName = "Mitarbeiter";
-//		String OrtROName = "Ort";
-//
-//
-//
-//		try {
-//			this.MitarbeiterRO = (MitarbeiterRO) Naming.lookup(url + MitarbeiterROName);
-//			this.OrtRO = (OrtRO) Naming.lookup(url + OrtROName);
-//		} catch (MalformedURLException e) {
-//			e.printStackTrace();
-//		} catch (RemoteException e) {
-//			e.printStackTrace();
-//		} catch (NotBoundException e) {
-//			e.printStackTrace();
-//		}
+			// Properties Objekt erstellen
+			Properties webserverProperties = new Properties();
 
-		System.out.println("RMI verbunden");
+			// Klassenloader holen
+			ClassLoader cLoader = MitarbeiterErfassen.class.getClassLoader();
+
+			// Properties laden
+			try {
+				webserverProperties.load(cLoader.getResourceAsStream("webserver.properties"));
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+
+			// Port RMI auslesen
+			String stringPort = webserverProperties.getProperty("rmiPort");
+			Integer rmiPort = Integer.valueOf(stringPort);
+
+			String hostIp = webserverProperties.getProperty("rmiIp");
+
+			// URLs definieren
+			String urlAuftragRO = "rmi://" + hostIp + ":" + rmiPort + "/" + AuftragROName;
+			String urlBenutzerRO = "rmi://" + hostIp + ":" + rmiPort + "/" + BenutzerROName;
+			String urlBrennerRO = "rmi://" + hostIp + ":" + rmiPort + "/" + BrennerROName;
+			String urlFeuerungsanlageRO = "rmi://" + hostIp + ":" + rmiPort + "/" + FeuerungsanlageROName;
+			String urlKontaktRO = "rmi://" + hostIp + ":" + rmiPort + "/" + KontaktROName;
+			String urlMessungRO = "rmi://" + hostIp + ":" + rmiPort + "/" + MessungsROName;
+			String urlMitarbeiterRO = "rmi://" + hostIp + ":" + rmiPort + "/" + MitarbeiterROName;
+			String urlLiegenschaftRO = "rmi://" + hostIp + ":" + rmiPort + "/" + LiegenschaftROName;
+			String urlOrtRO = "rmi://" + hostIp + ":" + rmiPort + "/" + OrtROName;
+			String urlWaermeerzeugerRO = "rmi://" + hostIp + ":" + rmiPort + "/" + WaermeerzeugerROName;
+
+			/* Lookup */
+			auftragManager = (AuftragRO) Naming.lookup(urlAuftragRO);
+			benutzerManager = (BenutzerRO) Naming.lookup(urlBenutzerRO);
+			brennerManager = (BrennerRO) Naming.lookup(urlBrennerRO);
+			feuerungsanlageManager = (FeuerungsanlageRO) Naming.lookup(urlFeuerungsanlageRO);
+			kontaktManager = (KontaktRO) Naming.lookup(urlKontaktRO);
+			messungManager = (MessungRO) Naming.lookup(urlMessungRO);
+			mitarbeiterManager = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
+			liegenschaftManager = (LiegenschaftRO) Naming.lookup(urlLiegenschaftRO);
+			ortManager = (OrtRO) Naming.lookup(urlOrtRO);
+			waermeerzeugerManager = (WaermeerzeugerRO) Naming.lookup(urlWaermeerzeugerRO);
+
+		} catch (MalformedURLException | RemoteException | NotBoundException e) {
+			throw e;
+		}
 
 		List<Benutzer> lBenutzer = new ArrayList<>();
 		List<Mitarbeiter> lMitarbeiter = new ArrayList<>();
@@ -137,27 +206,24 @@ public class MitarbeiterUebersicht{
 				"a.l@feukora.ch", 1, lBenutzer.get(5), 5000, new GregorianCalendar(2016, 05, 1),
 				new GregorianCalendar(2018, 8, 11)));
 
-				List<Mitarbeiter> list = lMitarbeiter;
+		List<Mitarbeiter> list = lMitarbeiter;
 
-		try{
-		//List<Mitarbeiter> list = MitarbeiterRO.findAllMitarbeiter();
-		ObservableList<Mitarbeiter> list2 = FXCollections.observableList(list);
-		tblName.setCellValueFactory(new PropertyValueFactory<>("name"));
-		tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
-		tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
-		tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
-		tblEMail.setCellValueFactory(new PropertyValueFactory<>("email"));
-		tblPosition.setCellValueFactory(new PropertyValueFactory<>("rolleIntern"));
-		tblTelefon.setCellValueFactory(new PropertyValueFactory<>("tel"));
+		try {
+			// List<Mitarbeiter> list = MitarbeiterRO.findAllMitarbeiter();
+			ObservableList<Mitarbeiter> list2 = FXCollections.observableList(list);
+			tblName.setCellValueFactory(new PropertyValueFactory<>("name"));
+			tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
+			tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
+			tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
+			tblEMail.setCellValueFactory(new PropertyValueFactory<>("email"));
+			tblPosition.setCellValueFactory(new PropertyValueFactory<>("rolleIntern"));
+			tblTelefon.setCellValueFactory(new PropertyValueFactory<>("tel"));
 
+			tabelle.setItems(list2);
 
-		tabelle.setItems(list2);
-
-
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 
 	}
 
@@ -190,8 +256,6 @@ public class MitarbeiterUebersicht{
 	 */
 	public void neuerMitarbeiter() {
 
-
-
 		try {
 			Stage MitarbeiterStage = new Stage();
 
@@ -205,16 +269,13 @@ public class MitarbeiterUebersicht{
 
 	}
 
-
-
 	/**
 	 * Diese Methode öffnet die Übersicht zur Bearbeitung von Mitarbeiter.
 	 */
 	public void bearbeitenMitarbeiter() {
-		try{
-		Mitarbeiter indSelected = (Mitarbeiter) tabelle.getSelectionModel().getSelectedItem();
-		MitarbeiterBearbeiten.bekommeMitarbeiter(indSelected);
-
+		try {
+			Mitarbeiter indSelected = (Mitarbeiter) tabelle.getSelectionModel().getSelectedItem();
+			MitarbeiterBearbeiten.bekommeMitarbeiter(indSelected);
 
 			Stage MitarbeiterStage = new Stage();
 
@@ -227,8 +288,6 @@ public class MitarbeiterUebersicht{
 			lblRueckmeldung.setText("Bitte Mitarbeiter auswählen");
 			e.printStackTrace();
 		}
-
-
 
 	}
 

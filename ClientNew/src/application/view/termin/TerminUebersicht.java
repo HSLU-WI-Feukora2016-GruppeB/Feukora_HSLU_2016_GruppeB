@@ -84,17 +84,17 @@ public class TerminUebersicht{
 	@FXML
 	private void initialize() throws Exception {
 
-		//
-//		List<Mitarbeiter> list = mitarbeiterRo.findAllMitarbeiter();
-//		List<String> list3 = new ArrayList();
-//		for (Mitarbeiter i : list) {
-//			String rolle = i.getRolleIntern();
-//			if (rolle.equalsIgnoreCase("Kontrolleur")) {
-//				list3.add(i.getName());
-//			}
-//		}
-//		ObservableList<String> list2 = FXCollections.observableList(list3);
-//		ddFK.setItems(list2);
+
+		List<Mitarbeiter> list = mitarbeiterRo.findAllMitarbeiter();
+		List<String> list3 = new ArrayList<String>();
+		for (Mitarbeiter i : list) {
+			String rolle = i.getRolleIntern();
+			if (rolle.equalsIgnoreCase("Kontrolleur")) {
+				list3.add(i.getName());
+			}
+		}
+		ObservableList<String> list2 = FXCollections.observableList(list3);
+		ddFK.setItems(list2);
 
 	}
 
