@@ -45,7 +45,7 @@ public class LiegenschaftErfassen {
 	private TextField txtVorname, txtNachname, txtStrasse, txtOrt, txtPlz,
 		txtStrasseL, txtOrtL, txtPlzL,
 		txtBrennertyp, txtBrennerjahr,
-		txtWaermetyp, txtWaermejahr, txtInfo;
+		txtWaermetyp, txtWaermejahr, txtInfo, txtFeuerungswaermekW;
 
 	@FXML
 	private Label lblRueckmeldung;
@@ -101,11 +101,12 @@ public class LiegenschaftErfassen {
 		String waermeart = cbBrennstoff.getValue().toString();
 		String waermejahr = txtWaermejahr.getText();
 		String infovorort = txtInfo.getText();
+		String leistung = txtFeuerungswaermekW.getText();
 
 		// Überprüfung ob die Felder auch mit einem Wert belegt wurden
 		if (strasse.isEmpty() || ort.isEmpty() || plz.isEmpty() || brennertyp.isEmpty() || brennerart.isEmpty()
 				|| brennerjahr.isEmpty() || waermetyp.isEmpty() || waermeart.isEmpty() || waermejahr.isEmpty()
-				|| infovorort.isEmpty()) {
+				|| infovorort.isEmpty() || leistung.isEmpty()) {
 			lblRueckmeldung.setText(" Bitte alle Felder ausfüllen!");
 		} else {
 			// Combobox je nach Text int vergeben
@@ -153,9 +154,11 @@ public class LiegenschaftErfassen {
 			//plz parsen
 			int plzint = Integer.parseInt(plz);
 
+			int leistungint = Integer.parseInt(leistung);
+
 			try {
 				Liegenschaft newliegenschaft = createLiegenschaft(strasse, plzint, ort,infovorort,
-						brennertyp, brennerA, brennerJ, waermetyp, waermeA, waermeJ);
+						brennertyp, brennerA, brennerJ, waermetyp, waermeA, waermeJ, leistungint);
 				liegenschaftRO.add(newliegenschaft);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -189,7 +192,7 @@ public class LiegenschaftErfassen {
 
 
 	public Liegenschaft createLiegenschaft(	String strasse, int plz, String ortbez, String info, String btyp, int bart,
-			int bjahr, String wtyp, int wart, int wjahr) throws Exception{
+			int bjahr, String wtyp, int wart, int wjahr, int leistung) throws Exception{
 
 		List<Ort> ortsliste = new ArrayList<Ort>();
 		Ort ort = new Ort();
@@ -221,7 +224,7 @@ public class LiegenschaftErfassen {
 		Waermeerzeuger	waermeerzeuger2 = waermeerzeugerRO.add(waermeerzeuger);
 
 		//Feuerungsanlageobjekt erstellen, speichern und Liegenschaft hinzufügen
-		Feuerungsanlage feuera = new Feuerungsanlage(brenner2,waermeerzeuger2);
+		Feuerungsanlage feuera = new Feuerungsanlage(brenner2,waermeerzeuger2,leistung);
 		Feuerungsanlage feuera2 = feuerungsanlageRO.add(feuera);
 		liegenschaft.setFeuerungsanlage(feuera2);
 
