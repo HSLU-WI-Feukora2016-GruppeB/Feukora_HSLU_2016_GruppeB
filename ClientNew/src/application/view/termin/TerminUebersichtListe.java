@@ -1,25 +1,30 @@
 package application.view.termin;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
 import entitys.Auftrag;
 import entitys.Liegenschaft;
+import entitys.Mitarbeiter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.SingleSelectionModel;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import rmi.AuftragRO;
+import rmi.MitarbeiterRO;
 
 public class TerminUebersichtListe {
-
 
 	@FXML
 	private TextField txtStrasse;
@@ -36,38 +41,44 @@ public class TerminUebersichtListe {
 	private TableView tabelle;
 
 	@FXML
-	private TableColumn tblName, tblVorname, tblStrasse, tblEMail, tblTelefon, tblPosition, tblOrt;
+	private TableColumn tblDatum, tblZeitSlot, tblLiegenschaft, tblKontakt;
 
+	@FXML
+	private ComboBox ddFK;
+
+	@FXML
+	private DatePicker startDatum, endDatum;
 
 	AuftragRO auftragRO;
+	MitarbeiterRO mitarbeiterRO;
 
-	public void initialize(){
+	public void initialize() {
 
-
-		//Listenattribute anpassen
-		try{
-			List<Auftrag> list = auftragRO.findAll();
-			ObservableList<Auftrag> list2 = FXCollections.observableList(list);
-			tblName.setCellValueFactory(new PropertyValueFactory<>("name"));
-			tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
-			tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
-			tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
-			tblEMail.setCellValueFactory(new PropertyValueFactory<>("email"));
-			tblPosition.setCellValueFactory(new PropertyValueFactory<>("rolleIntern"));
-			tblTelefon.setCellValueFactory(new PropertyValueFactory<>("tel"));
-
-			tabelle.setItems(list2);
-			}catch(Exception e){
-				e.printStackTrace();
+		// Alle Feuerungskontrolleure in der Combobox anzeigen lassen
+		List<Mitarbeiter> list = new ArrayList<Mitarbeiter>();
+		try {
+			list = mitarbeiterRO.findAllMitarbeiter();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		List<String> list3 = new ArrayList<String>();
+		for (Mitarbeiter i : list) {
+			String rolle = i.getRolleIntern();
+			if (rolle.equalsIgnoreCase("Kontrolleur")) {
+				list3.add(i.getName());
 			}
+		}
+		ObservableList<String> list2 = FXCollections.observableList(list3);
+		ddFK.setItems(list2);
 	}
-
 
 	/**
 	 * Diese Methode zeigte alle Termine der ausgewählten Woche an.
 	 */
 	public void wocheAnzeigen() {
 
+		Mitarbeiter kontrolleur = null;
 		if (startDatum.getValue() == null || ddFK.getValue() == null) {
 			lblRueckmeldung.setText("Bitte Datumsfelder und \n" + "Kontrolleur ausfüllen");
 
@@ -76,21 +87,21 @@ public class TerminUebersichtListe {
 			LocalDate vonDatum = startDatum.getValue();
 			LocalDate bisDatum = vonDatum.plusDays(4);
 			endDatum.setValue(bisDatum);
-			//String fk = ddFK.getSelectionModel();
-			//List<Mitarbeiter> mitlist = mitarbeiterRo.findByName(fk);
-			//Mitarbeiter kontrolleur = mitlist.get(0);
+			String fk = ddFK.getSelectionModel().toString();
+			List<Mitarbeiter> mitlist;
+			try {
+				mitlist = mitarbeiterRO.findByName(fk);
+				kontrolleur = mitlist.get(0);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 			if (vonDatum.getDayOfWeek().name() != "MONDAY") {
 				lblRueckmeldung.setText("Bitte einen Montag anwählen!");
 
 			} else {
 				lblRueckmeldung.setText(" ");
-
-				txtMontag.setText(vonDatum.toString());
-				txtDienstag.setText(vonDatum.plusDays(1).toString());
-				txtMittwoch.setText(vonDatum.plusDays(2).toString());
-				txtDonnerstag.setText(vonDatum.plusDays(3).toString());
-				txtFreitag.setText(vonDatum.plusDays(4).toString());
 
 				int tag = vonDatum.getDayOfMonth();
 				int tag2 = vonDatum.plusDays(1).getDayOfMonth();
@@ -104,9 +115,21 @@ public class TerminUebersichtListe {
 				GregorianCalendar gcal3 = new GregorianCalendar(jahr, monat, tag3);
 				GregorianCalendar gcal4 = new GregorianCalendar(jahr, monat, tag4);
 				GregorianCalendar gcal5 = new GregorianCalendar(jahr, monat, tag5);
-			}
+
+				try {
+					List<Auftrag> auftragsliste = auftragRO.findByDateAndMitarbeiter(gcal1, gcal5, kontrolleur);
+					ObservableList<Auftrag> listauftrag2 = FXCollections.observableList(auftragsliste);
+					tblKontakt.setCellValueFactory(new PropertyValueFactory<>("kontakt"));
+					tblLiegenschaft.setCellValueFactory(new PropertyValueFactory<>("liegenschaft"));
+					tblDatum.setCellValueFactory(new PropertyValueFactory<>("datum"));
+					tblZeitSlot.setCellValueFactory(new PropertyValueFactory<>("zeitSlot"));
+
+					tabelle.setItems(listauftrag2);
+				} catch (Exception e) {
+					lblRueckmeldung.setText("Auftragsliste nicht gefunden");
+				}
+
 			}
 		}
-
-
+	}
 }

@@ -89,13 +89,10 @@
                      <children>
                         <TableView fx:id="tvTabelle" prefHeight="193.0" prefWidth="589.0">
                           <columns>
-                            <TableColumn fx:id="tblName" prefWidth="115.0" text="Name" />
-                            <TableColumn fx:id="tblVorname" prefWidth="199.0" text="Vorname" />
-                              <TableColumn fx:id="tblStrasse" minWidth="0.0" prefWidth="85.5" text="Strasse" />
-                              <TableColumn fx:id="tblOrt" prefWidth="99.5" text="Ort" />
-                              <TableColumn fx:id="tblAuftragsart" prefWidth="70.5" text="Art" />
-                              <TableColumn fx:id="tblZeitslot" prefWidth="68.0" text="Zeitslot" />
-                              <TableColumn fx:id="tblKontaktname" prefWidth="103.5" text="Art" />
+                            <TableColumn fx:id="tbLiegenschaft" prefWidth="115.0" text="Liegenschaft" />
+                            <TableColumn fx:id="tblKontakt" prefWidth="220.5" resizable="false" text="Kunde" />
+                              <TableColumn fx:id="tblDatum" minWidth="0.0" prefWidth="98.5" resizable="false" text="Datum" />
+                              <TableColumn fx:id="tblOrt" prefWidth="177.5" resizable="false" text="Zeitslot" />
                           </columns>
                            <columnResizePolicy>
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
