@@ -70,8 +70,8 @@ public class MitarbeiterUebersicht {
 	@FXML
 	private TableColumn tblName, tblVorname, tblStrasse, tblEMail, tblTelefon, tblPosition, tblOrt;
 
-	MitarbeiterRO MitarbeiterRO;
-	OrtRO OrtRO;
+	private MitarbeiterRO mitarbeiterRO;
+	private OrtRO ortRO;
 
 
 	public static Mitarbeiter mastatic;
@@ -112,7 +112,7 @@ public class MitarbeiterUebersicht {
 
 			/* Lookup */
 
-			MitarbeiterRO = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
+			mitarbeiterRO = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
 
 
 		} catch (MalformedURLException | RemoteException | NotBoundException e) {
@@ -123,7 +123,7 @@ public class MitarbeiterUebersicht {
 
 
 		try {
-			 List<Mitarbeiter> listmitarbeiter = MitarbeiterRO.findAllMitarbeiter();
+			 List<Mitarbeiter> listmitarbeiter = mitarbeiterRO.findAllMitarbeiter();
 			ObservableList<Mitarbeiter> listmitarbeiter2 = FXCollections.observableList(listmitarbeiter);
 			tblName.setCellValueFactory(new PropertyValueFactory<>("name"));
 			tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
@@ -153,7 +153,7 @@ public class MitarbeiterUebersicht {
 		} else {
 
 			try {
-				List<Mitarbeiter> list = MitarbeiterRO.findByNameVorname(name, vorname);
+				List<Mitarbeiter> list = mitarbeiterRO.findByNameVorname(name, vorname);
 				ObservableList<Mitarbeiter> list2 = FXCollections.observableList(list);
 				tabelle.setItems(list2);
 			} catch (Exception e) {
