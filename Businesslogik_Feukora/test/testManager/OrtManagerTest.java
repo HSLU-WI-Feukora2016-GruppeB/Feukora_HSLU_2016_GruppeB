@@ -12,9 +12,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import webservice.gruppeB.persister.OrtDAOTest;
 import entitys.Ort;
-import gruppeB.feukora.persister.OrtDAOImpl;
 
 /**
  * Diese Klasse ist für das Testen der OrtManager zuständig.

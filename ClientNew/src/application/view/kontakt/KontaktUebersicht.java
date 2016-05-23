@@ -22,8 +22,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import rmi.KontaktRO;
-import rmi.OrtRO;
+import rmi.interfaces.KontaktRO;
+import rmi.interfaces.OrtRO;
 
 public class KontaktUebersicht {
 

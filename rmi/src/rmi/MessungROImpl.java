@@ -5,6 +5,7 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import rmi.interfaces.MessungRO;
 import entitys.Messung;
 import managerInterfaces.MessungsManager;
 import managerKlassen.MessungManagerImpl;

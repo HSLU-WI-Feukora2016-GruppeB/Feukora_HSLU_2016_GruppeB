@@ -3,6 +3,7 @@ package rmi;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
+import rmi.interfaces.LiegenschaftRO;
 import entitys.Kontakt;
 import entitys.Liegenschaft;
 import entitys.Ort;

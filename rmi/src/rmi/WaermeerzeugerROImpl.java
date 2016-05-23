@@ -4,6 +4,7 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
+import rmi.interfaces.WaermeerzeugerRO;
 import entitys.Waermeerzeuger;
 import managerInterfaces.WaermeerzeugerManager;
 import managerKlassen.WaermeerzeugerManagerImpl;

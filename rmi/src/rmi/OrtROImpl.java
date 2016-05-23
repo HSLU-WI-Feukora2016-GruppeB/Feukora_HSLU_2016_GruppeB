@@ -3,6 +3,7 @@ package rmi;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
+import rmi.interfaces.OrtRO;
 import entitys.Ort;
 import managerInterfaces.OrtManager;
 import managerKlassen.OrtManagerImpl;

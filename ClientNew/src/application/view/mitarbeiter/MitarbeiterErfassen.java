@@ -23,6 +23,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+<<<<<<< HEAD
+import rmi.interfaces.MitarbeiterRO;
+import rmi.interfaces.OrtRO;
+=======
 import rmi.AuftragRO;
 import rmi.BenutzerRO;
 import rmi.BrennerRO;
@@ -34,6 +38,7 @@ import rmi.MitarbeiterRO;
 import rmi.OrtRO;
 import rmi.WaermeerzeugerRO;
 import rmi.rmiserver.RMIServer;
+>>>>>>> refs/remotes/origin/master
 
 /**
  * Dies ist die Dokumentation der Klasse MitarbeiterErfassen. Hier können neue

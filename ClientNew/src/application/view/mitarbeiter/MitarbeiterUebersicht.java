@@ -37,6 +37,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+<<<<<<< HEAD
+import rmi.interfaces.MitarbeiterRO;
+import rmi.interfaces.OrtRO;
+=======
 import rmi.AuftragRO;
 import rmi.BenutzerRO;
 import rmi.BrennerRO;
@@ -48,6 +52,7 @@ import rmi.MitarbeiterRO;
 import rmi.OrtRO;
 import rmi.WaermeerzeugerRO;
 import rmi.rmiserver.RMIServer;
+>>>>>>> refs/remotes/origin/master
 
 /**
  * Dies ist die Dokumentation der Klasse Mitarbeiter‹bersicht. Sie zeigt alle
