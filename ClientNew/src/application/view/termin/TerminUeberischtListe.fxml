@@ -19,7 +19,7 @@
   <children>
       <VBox prefHeight="61.0" prefWidth="640.0">
          <children>
-            <Label text="Terminübersicht">
+            <Label text="Auftragsübersicht">
                <font>
                   <Font size="24.0" />
                </font>
@@ -42,13 +42,14 @@
                   <HBox layoutY="18.0" prefHeight="48.0" prefWidth="640.0">
                      <children>
                         <Pane prefHeight="53.0" prefWidth="160.0" />
-                        <Button fx:id="btnNeu" mnemonicParsing="false" onAction="#neueLiegenschaft" prefHeight="25.0" prefWidth="80.0" text="Hinzufügen" />
-                        <Button fx:id="btnBearbeiten" mnemonicParsing="false" onAction="#bearbeitenLiegenschaft" prefHeight="25.0" prefWidth="73.0" text="Bearbeiten" />
-                        <Button fx:id="btnLoeschen" mnemonicParsing="false" text="Löschen" />
                         <Button fx:id="btnSchliessen" mnemonicParsing="false" onAction="#abbrechen" text="Schliessen" />
-                        <Pane prefHeight="53.0" prefWidth="135.0" />
+                        <Pane prefHeight="53.0" prefWidth="135.0">
+                           <children>
+                              <Button fx:id="btnSchliessen1" layoutY="2.0" mnemonicParsing="false" onAction="#abbrechen" text="Rapport öffnen" />
+                           </children></Pane>
                      </children>
                   </HBox>
+                  <Button fx:id="btnNeu" layoutX="40.0" layoutY="3.0" mnemonicParsing="false" onAction="#neueLiegenschaft" prefHeight="25.0" prefWidth="80.0" text="Hinzufügen" />
                </children>
             </Pane>
          </bottom>
@@ -76,7 +77,9 @@
                               <Label text="Kontrolleur:" />
                               <ComboBox fx:id="ddFK" prefWidth="150.0" GridPane.rowIndex="1" />
                               <DatePicker fx:id="startDatum" prefHeight="31.0" prefWidth="304.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Button fx:id="btnWocheAnzeigen" mnemonicParsing="false" onAction="#wocheAnzeigen" text="Anzeigen" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <Button fx:id="btnWocheAnzeigen" mnemonicParsing="false" onAction="#wocheAnzeigen" text="Anzeigen" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                              <Label layoutX="10.0" layoutY="19.0" text="Von:" GridPane.columnIndex="1" />
+                              <DatePicker fx:id="startDatum1" layoutX="235.0" layoutY="45.0" prefHeight="31.0" prefWidth="304.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </children>
@@ -99,6 +102,8 @@
                         </TableView>
                      </children>
                   </HBox>
+                  <Button fx:id="btnLoeschen" mnemonicParsing="false" text="Löschen" />
+                  <Button fx:id="btnBearbeiten" mnemonicParsing="false" onAction="#bearbeitenLiegenschaft" prefHeight="25.0" prefWidth="73.0" text="Bearbeiten" />
                </children>
             </VBox>
          </center>
