@@ -81,16 +81,9 @@ public class MitarbeiterErfassen {
 		 *
 		 * System.setSecurityManager(new SecurityManager());
 		 */
-		String AuftragROName = "Auftrag";
-		String BenutzerROName = "Benutzer";
-		String BrennerROName = "Brenner";
-		String FeuerungsanlageROName = "Feuerungsanlage";
-		String KontaktROName = "Kontakt";
-		String MessungsROName = "Messung";
+
 		String MitarbeiterROName = "Mitarbeiter";
-		String LiegenschaftROName = "Liegenschaft";
-		String OrtROName = "Ort";
-		String WaermeerzeugerROName = "Waermerzeuger";
+
 
 		try {
 
@@ -102,7 +95,7 @@ public class MitarbeiterErfassen {
 
 			// Properties laden
 			try {
-				webserverProperties.load(cLoader.getResourceAsStream("webserver.properties"));
+				webserverProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
@@ -114,32 +107,19 @@ public class MitarbeiterErfassen {
 			String hostIp = webserverProperties.getProperty("rmiIp");
 
 			// URLs definieren
-			String urlAuftragRO = "rmi://" + hostIp + ":" + rmiPort + "/" + AuftragROName;
-			String urlBenutzerRO = "rmi://" + hostIp + ":" + rmiPort + "/" + BenutzerROName;
-			String urlBrennerRO = "rmi://" + hostIp + ":" + rmiPort + "/" + BrennerROName;
-			String urlFeuerungsanlageRO = "rmi://" + hostIp + ":" + rmiPort + "/" + FeuerungsanlageROName;
-			String urlKontaktRO = "rmi://" + hostIp + ":" + rmiPort + "/" + KontaktROName;
-			String urlMessungRO = "rmi://" + hostIp + ":" + rmiPort + "/" + MessungsROName;
+
 			String urlMitarbeiterRO = "rmi://" + hostIp + ":" + rmiPort + "/" + MitarbeiterROName;
-			String urlLiegenschaftRO = "rmi://" + hostIp + ":" + rmiPort + "/" + LiegenschaftROName;
-			String urlOrtRO = "rmi://" + hostIp + ":" + rmiPort + "/" + OrtROName;
-			String urlWaermeerzeugerRO = "rmi://" + hostIp + ":" + rmiPort + "/" + WaermeerzeugerROName;
+
 
 			/* Lookup */
-			auftragManager = (AuftragRO) Naming.lookup(urlAuftragRO);
-			benutzerManager = (BenutzerRO) Naming.lookup(urlBenutzerRO);
-			brennerManager = (BrennerRO) Naming.lookup(urlBrennerRO);
-			feuerungsanlageManager = (FeuerungsanlageRO) Naming.lookup(urlFeuerungsanlageRO);
-			kontaktManager = (KontaktRO) Naming.lookup(urlKontaktRO);
-			messungManager = (MessungRO) Naming.lookup(urlMessungRO);
 			mitarbeiterManager = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
-			liegenschaftManager = (LiegenschaftRO) Naming.lookup(urlLiegenschaftRO);
-			ortManager = (OrtRO) Naming.lookup(urlOrtRO);
-			waermeerzeugerManager = (WaermeerzeugerRO) Naming.lookup(urlWaermeerzeugerRO);
+
 
 		} catch (MalformedURLException | RemoteException | NotBoundException e) {
 			throw e;
 		}
+
+
 
 		List<String> list = new ArrayList<String>();
 		list.add("Administrator");
@@ -223,6 +203,7 @@ public class MitarbeiterErfassen {
 				MitarbeiterRO.add(newmitarbeiter);
 			} catch (Exception e) {
 				lblRueckmeldung.setText("Mitarbeiter konnte nicht gespeichert werden");
+				e.printStackTrace();
 			}
 			System.out.println("nach addmitarbeiter");
 
