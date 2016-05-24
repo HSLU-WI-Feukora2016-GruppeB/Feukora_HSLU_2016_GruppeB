@@ -5,11 +5,10 @@ import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import application.view.mitarbeiter.MitarbeiterBearbeiten;
+import application.RmiUtil;
 import entitys.Liegenschaft;
 import entitys.Mitarbeiter;
 import javafx.collections.FXCollections;
@@ -25,13 +24,16 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import rmi.interfaces.BrennerRO;
-import rmi.interfaces.FeuerungsanlageRO;
-import rmi.interfaces.KontaktRO;
 import rmi.interfaces.LiegenschaftRO;
-import rmi.interfaces.OrtRO;
-import rmi.interfaces.WaermeerzeugerRO;
 
+/**
+ * Dies ist die Dokumentation der Klasse Liegenschaften-Übersicht. Sie zeigt
+ * alle Liegenschaften an.
+ *
+ * @author Alexandra Lengen und Pascal Steiner
+ * @version 4.0
+ * @since 1.0
+ */
 public class LiegenschaftUebersicht {
 
 	@FXML
@@ -53,59 +55,28 @@ public class LiegenschaftUebersicht {
 
 	LiegenschaftRO liegenschaftRO;
 
-	public void initialize() throws Exception{
+	public void initialize() throws Exception {
 
 		/*---------------RMI Verbindung---------------*/
 
-		String LiegenschaftRO = "Liegenschaft";
+		/* Lookup */
+		liegenschaftRO = RmiUtil.getLiegenschaftRO();
 
-		try {
+		/*----------------------------------------------*/
 
-			// Properties Objekt erstellen
-			Properties rmiProperties = new Properties();
+		List<Liegenschaft> list = liegenschaftRO.findAll();
+		ObservableList<Liegenschaft> list2 = FXCollections.observableList(list);
+		tblInfovorort.setCellValueFactory(new PropertyValueFactory<>("infoVorOrt"));
+		tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
+		tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
 
-			// Klassenloader holen
-			ClassLoader cLoader = LiegenschaftUebersicht.class.getClassLoader();
-
-			// Properties laden
-			try {
-				rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-
-			// Port RMI auslesen
-			String stringPort = rmiProperties.getProperty("rmiPort");
-			Integer rmiPort = Integer.valueOf(stringPort);
-
-			String hostIp = rmiProperties.getProperty("rmiIp");
-
-			// URLs definieren
-
-			String urlLiegenschaftRO = "rmi://" + hostIp + ":" + rmiPort + "/" + LiegenschaftRO;
-
-			/* Lookup */
-			liegenschaftRO = (LiegenschaftRO) Naming.lookup(urlLiegenschaftRO);
-
-
-		} catch (MalformedURLException | RemoteException | NotBoundException e) {
-			throw e;
-		}
-
-/*----------------------------------------------*/
-
-
-			List<Liegenschaft> list = liegenschaftRO.findAll();
-			ObservableList<Liegenschaft> list2 = FXCollections.observableList(list);
-			tblInfovorort.setCellValueFactory(new PropertyValueFactory<>("infoVorOrt"));
-			tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
-			tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
-
-
-			tabelle.setItems(list2);
+		tabelle.setItems(list2);
 
 	}
 
+	/**
+	 * Mit dieser Methode wird anhand der Strasse nach einer Liegenschaft gesucht.
+	 */
 	public void LiegenschaftSuchen() {
 
 		String strasse = txtStrasse.getText();
@@ -121,12 +92,10 @@ public class LiegenschaftUebersicht {
 				ObservableList<Liegenschaft> list2 = FXCollections.observableList(list);
 				tabelle.setItems(list2);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 	}
-
 
 	/**
 	 * Diese Methode öffnet die Übersicht zur Erfassung neuer Liegenschaften.

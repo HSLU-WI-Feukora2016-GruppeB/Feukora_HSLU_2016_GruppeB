@@ -126,7 +126,7 @@ public class TerminUebersicht {
 			LocalDate vonDatum = startDatum.getValue();
 			LocalDate bisDatum = vonDatum.plusDays(4);
 			endDatum.setValue(bisDatum);
-			String fk = ddFK.getSelectionModel().toString();
+			String fk = ddFK.getValue();
 			List<Mitarbeiter> mitlist = mitarbeiterRO.findByName(fk);
 			Mitarbeiter kontrolleur = mitlist.get(0);
 

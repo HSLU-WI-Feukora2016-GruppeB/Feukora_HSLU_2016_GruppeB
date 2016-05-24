@@ -105,20 +105,18 @@
                     <rowConstraints>
                       <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <DatePicker fx:id="dateoftermin" prefHeight="22.0" prefWidth="162.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label text="Zeitslot" />
                         <Label text="Datum" GridPane.rowIndex="1" />
-                        <Label text="Feuerungskontrolleur" GridPane.rowIndex="2" />
-                        <ComboBox fx:id="cFK" prefHeight="22.0" prefWidth="163.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Feuerungskontrolleur" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="cFK" prefHeight="22.0" prefWidth="163.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <ComboBox fx:id="cZeitslot" layoutX="290.0" layoutY="71.0" prefHeight="23.0" prefWidth="161.0" GridPane.columnIndex="1" />
-<<<<<<< HEAD
-=======
                         <Label text="Terminart" GridPane.rowIndex="2" />
                         <ComboBox fx:id="cTerminArt" layoutX="177.0" layoutY="103.0" prefHeight="22.0" prefWidth="163.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
->>>>>>> refs/remotes/origin/master
                      </children>
                   </GridPane>
                </children>

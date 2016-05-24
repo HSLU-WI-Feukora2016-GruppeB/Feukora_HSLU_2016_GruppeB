@@ -16,7 +16,6 @@ import javafx.stage.Stage;
  * @version 3.0
  * @since 1.0
  */
-
 public class Dashboard {
 
 	@FXML

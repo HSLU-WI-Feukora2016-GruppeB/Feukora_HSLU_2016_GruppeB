@@ -209,11 +209,11 @@ public class RapportErfassen {
 		// dann crasht?
 		ausgewaehlterauftrag.setMessung1stufe1(messung1stufe1);
 
-		ausgewaehlterauftrag.setMessung1stufe1(messung2stufe1);
+		ausgewaehlterauftrag.setMessung2stufe1(messung2stufe1);
 
-		ausgewaehlterauftrag.setMessung2stufe1(messung1stufe2);
+		ausgewaehlterauftrag.setMessung1stufe2(messung1stufe2);
 
-		ausgewaehlterauftrag.setMessung1stufe1(messung2stufe2);
+		ausgewaehlterauftrag.setMessung2stufe2(messung2stufe2);
 		try {
 
 			// hier update oder add? eigentlich update da sonst wieder ein neues
@@ -233,31 +233,34 @@ public class RapportErfassen {
 		messungsliste.add(gespeicherterauftrag.getMessung2stufe2());
 
 		for (Messung m : messungsliste) {
+			if(m==null){
+				continue;
+			}
 			boolean notokey = m.isBeurteilungNotOk();
 			if (notokey) {
 				cbBeurteilung.setSelected(true);
-				for (Messung m2 : messungsliste) {
-					notokey = m2.isAbgasverlusteNotOk();
+				//for (Messung m2 : messungsliste) {
+					notokey = m.isAbgasverlusteNotOk();
 					if (notokey) {
 						cbAbgasverluste.setSelected(true);
 					}
-					boolean notokey2 = m2.isCoMgNotOk();
+					boolean notokey2 = m.isCoMgNotOk();
 					if (notokey2) {
 						cbCo2.setSelected(true);
 					}
-					boolean notokey3 = m2.isNoMgNotOk();
+					boolean notokey3 = m.isNoMgNotOk();
 					if (notokey3) {
 						cbNo2.setSelected(true);
 					}
-					boolean notokey4 = m2.isOelanteilenNotOk();
+					boolean notokey4 = m.isOelanteilenNotOk();
 					if (notokey4) {
 						cbOelanteil.setSelected(true);
 					}
-					boolean notokey5 = m2.isRusszahlNotOk();
+					boolean notokey5 = m.isRusszahlNotOk();
 					if (notokey5) {
 						cbRusszahl.setSelected(true);
 					}
-				}
+				//}
 			}
 		}
 	}

@@ -32,6 +32,13 @@ import javafx.stage.Stage;
 import rmi.interfaces.KontaktRO;
 import rmi.interfaces.OrtRO;
 
+/**
+ *
+ * @author User Pascal Steiner & Alexandra Lenggen
+ * @since 15.05.2016
+ * @version 1.0
+ *
+ */
 public class KontaktUebersicht {
 
 	@FXML
@@ -41,7 +48,7 @@ public class KontaktUebersicht {
 	private TextField txtName, txtVorname;
 
 	@FXML
-	private Label lblRueckmeldung;
+	private Label lblRueckmeldung1, lblRueckmeldung2;
 
 	@FXML
 	private BorderPane leaf;
@@ -57,8 +64,7 @@ public class KontaktUebersicht {
 
 	public static Mitarbeiter mastatic;
 
-	@FXML
-	private void initialize() throws Exception {
+	public void initialize() throws Exception {
 
 		/*---------------RMI Verbindung---------------*/
 
@@ -67,11 +73,9 @@ public class KontaktUebersicht {
 
 		/*----------------------------------------------*/
 
-		System.out.println("RMI verbunden");
-
 		List<Kontakt> list = kontaktRO.findAll();
 		ObservableList<Kontakt> list2 = FXCollections.observableList(list);
-		tblName.setCellValueFactory(new PropertyValueFactory<>("name"));
+		tblName.setCellValueFactory(new PropertyValueFactory<>("nachname"));
 		tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
 		tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
 		tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
@@ -82,6 +86,9 @@ public class KontaktUebersicht {
 
 	}
 
+	/**
+	 * Manuelles suchen um den Kontakt in der Tableview anzuzeigen
+	 */
 	public void kontaktSuchen() {
 
 		String name = txtName.getText();
@@ -89,7 +96,7 @@ public class KontaktUebersicht {
 
 		if (name.isEmpty() || vorname.isEmpty()) {
 
-			lblRueckmeldung.setText("Beide Felder müssen ausgefüllt werden!");
+			lblRueckmeldung1.setText("Beide Felder müssen ausgefüllt werden!");
 
 		} else {
 
@@ -140,10 +147,25 @@ public class KontaktUebersicht {
 
 			((Stage) leaf.getScene().getWindow()).close();
 		} catch (Exception e) {
-			lblRueckmeldung.setText("Bitte Kontakt auswählen");
+			lblRueckmeldung1.setText("Bitte Kontakt auswählen");
 		}
-
 	}
+
+
+
+	/**
+	 * Diese Methode löscht das ausgewählte Objekt in der Tableview
+	 */
+	public void loeschen(){
+		Kontakt indSelected = (Kontakt) tabelle.getSelectionModel().getSelectedItem();
+		try {
+			kontaktRO.delete(indSelected);
+		} catch (Exception e) {
+			lblRueckmeldung2.setText("Mitarbeiter wurde nicht gelöscht");
+		}
+		lblRueckmeldung2.setText("Mitarbeiter gelöscht");
+	}
+
 
 	/**
 	 * Diese Methode führt den User zum Dashboard zurück
