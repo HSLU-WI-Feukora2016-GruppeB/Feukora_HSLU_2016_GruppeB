@@ -107,7 +107,7 @@ public class RapportUebersicht {
 			LocalDate vonDatum = startDatum.getValue();
 			LocalDate bisDatum = vonDatum.plusDays(4);
 			endDatum.setValue(bisDatum);
-			String fk = ddFK.getSelectionModel().toString();
+			String fk = String.valueOf(ddFK.getValue());
 			List<Mitarbeiter> mitlist;
 			try {
 				mitlist = mitarbeiterRO.findByName(fk);
@@ -124,25 +124,18 @@ public class RapportUebersicht {
 				lblRueckmeldung.setText(" ");
 
 				int tag = vonDatum.getDayOfMonth();
-				int tag2 = vonDatum.plusDays(1).getDayOfMonth();
-				int tag3 = vonDatum.plusDays(2).getDayOfMonth();
-				int tag4 = vonDatum.plusDays(3).getDayOfMonth();
 				int tag5 = vonDatum.plusDays(4).getDayOfMonth();
 				int monat = vonDatum.getMonthValue();
 				int jahr = vonDatum.getYear();
-				GregorianCalendar gcal1 = new GregorianCalendar(jahr, monat, tag);
-				GregorianCalendar gcal2 = new GregorianCalendar(jahr, monat, tag2);
-				GregorianCalendar gcal3 = new GregorianCalendar(jahr, monat, tag3);
-				GregorianCalendar gcal4 = new GregorianCalendar(jahr, monat, tag4);
-				GregorianCalendar gcal5 = new GregorianCalendar(jahr, monat, tag5);
+				GregorianCalendar gcalstart = new GregorianCalendar(jahr, monat, tag);
+				GregorianCalendar gcalend = new GregorianCalendar(jahr, monat, tag5);
 
 				try {
-					List<Auftrag> auftragsliste = auftragRO.findByDateAndMitarbeiter(gcal1, gcal5, kontrolleur);
+					List<Auftrag> auftragsliste = auftragRO.findByDateAndMitarbeiter(gcalstart, gcalend, kontrolleur);
 					ObservableList<Auftrag> listauftrag2 = FXCollections.observableList(auftragsliste);
-					tblKunde.setCellValueFactory(new PropertyValueFactory<>("kontakt"));
+					tblKunde.setCellValueFactory(new PropertyValueFactory<>("kunde"));
 					tblLiegenschaft.setCellValueFactory(new PropertyValueFactory<>("liegenschaft"));
-					tblDatum.setCellValueFactory(new PropertyValueFactory<>("datum"));
-					tblZeitSlot.setCellValueFactory(new PropertyValueFactory<>("zeitSlot"));
+					tblDatum.setCellValueFactory(new PropertyValueFactory<>("auftrag"));
 
 					tabelle.setItems(listauftrag2);
 				} catch (Exception e) {

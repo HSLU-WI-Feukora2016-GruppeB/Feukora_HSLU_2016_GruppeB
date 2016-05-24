@@ -289,39 +289,14 @@ public class Auftrag implements Serializable {
 
 		String auftrag = "";
 
-		auftrag += "Auftrag:" + "\n" + "Auftragsdatum: " + this.printDatum(this.datum) + "\n" + "Termin "
-				+ this.getZeitSlotString() + "\n" + "Auftragsnummer: " + id + "\n" + "\n"
-
-				+ "Kontakt: \n" + kontakt.toString() + "\n" + "Liegenschaft: \n" + liegenschaft.toString() + "\n"
-				+ "Info vor Ort: " + liegenschaft.getInfoVorOrt() + "\n" + "\n"
-
-				+ "Messung: \n";
+		auftrag += "Auftrag:" + "\n" + "Auftragsdatum: " + datum.toString() + "\n" + "Termin "
+				+ getZeitSlotString() + "\n" + "Auftragsnummer: " + id + "\n" + "\n";
 
 		if (messung1stufe1 == null) {
 			auftrag += "Keine Messung 1 Stufe 1 vorhanden! +\n";
 		} else {
-			auftrag += messung1stufe1.toString() + "\n";
+			auftrag += "Messung erfasst" + "\n";
 		}
-
-		if (messung1stufe2 == null) {
-			auftrag += "Keine Messung 1 Stufe 2 vorhanden! + \n";
-		} else {
-			auftrag += messung1stufe2.toString() + "\n";
-		}
-
-		if (messung2stufe1 == null) {
-			auftrag += "Keine Messung 2 Stufe 1 vorhanden!";
-		} else {
-			auftrag += messung2stufe1.toString() + "\n";
-		}
-
-		if (messung2stufe2 == null) {
-			auftrag += "Keine Messung 2 Stufe 2 vorhanden!";
-		} else {
-			auftrag += messung2stufe2.toString() + "\n" + "\n";
-		}
-
-		auftrag += "Kontrolleur: \n" + mitarbeiter.toString() + "\n" + "Kontrollart: " + terminArt + "\n";
 
 		return auftrag;
 	}

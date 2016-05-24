@@ -11,7 +11,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 
 /**
- * Eine Liegenschaft stellt ein Haus oder eine Wohnung dar, 
+ * Eine Liegenschaft stellt ein Haus oder eine Wohnung dar,
  * sie hat jeweils einen oder mehrere Kontaktpersonen
  * um Kontakt aufzunehmen.
  * @author Matthias
@@ -27,32 +27,32 @@ import javax.persistence.OneToOne;
 	@NamedQuery(name = "Liegenschaft.findByStrasse", query = "SELECT l FROM Liegenschaft l WHERE l.strasse=:strasse"),
 })
 public class Liegenschaft implements Serializable{
-	
+
 	private static final long serialVersionUID = -964056024070796750L;
 
 	@Id
 	@GeneratedValue
 	private Integer id;
-	
+
 	@ManyToOne
-	private Kontakt kontakt;	
-	
+	private Kontakt kontakt;
+
 	//hier wird per Text zb Hausmeisterinfo eingetragen
 	private String infoVorOrt;
-	
+
 	private String strasse;
-	
+
 	@ManyToOne
 	private Ort ort;
-	
+
 	@OneToOne
 	private Feuerungsanlage feuerungsanlage;
-	
+
 	//standardkonstruktor**************************************************
 	public Liegenschaft(){
-		
+
 	}
-	
+
 	public Liegenschaft(Kontakt kontakt, String infoVorOrt, String strasse,
 			Ort ort, Feuerungsanlage feuerungsanlage) {
 		this.kontakt = kontakt;
@@ -110,14 +110,12 @@ public class Liegenschaft implements Serializable{
 	public void setInfoVorOrt(String infoVorOrt) {
 		this.infoVorOrt = infoVorOrt;
 	}
-	
+
 	@Override
 	public String toString(){
 		return "Liegenschaft:" + "\n"
-				+ "Kontakt: \t \t \t" + kontakt + "\n"
-				+ "Info vo Ort: \n" + infoVorOrt.toString() + "\n"
 				+ "Strasse: \n" + strasse.toString() + "\n"
 				+ "Ort: \n" + ort.toString() + "\n";
 	}
-	
+
 }
