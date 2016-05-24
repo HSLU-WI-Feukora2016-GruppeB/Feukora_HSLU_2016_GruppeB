@@ -182,30 +182,40 @@ public class FeuerungsrapportServiceFeuerungsanlageTest {
 		lBrenner.add(new Brenner(2, "def456", 2014));
 		lBrenner.add(new Brenner(1, "ghi789", 2015));
 
+		for (Brenner br : lBrenner) {
+			fservice.addBrenner(br);
+		}
+
+		List<Brenner> lBrennerDB = fservice.findAllBrenner();
+
 		// 3 Waermeerzeuger erstellen
 		lWaermeerzeuger.add(new Waermeerzeuger(1, "qwertz", 2012));
 		lWaermeerzeuger.add(new Waermeerzeuger(2, "uiopü", 2011));
 		lWaermeerzeuger.add(new Waermeerzeuger(3, "asdfg", 2010));
 
-		// 3 Feuerungsanlagen
-		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(0),
-				lWaermeerzeuger.get(0), 65));
-		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(1),
-				lWaermeerzeuger.get(1), 88));
-		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(2),
-				lWaermeerzeuger.get(2), 46));
-
-		for (Brenner b : lBrenner) {
-			fservice.addBrenner(b);
-		}
 		for (Waermeerzeuger w : lWaermeerzeuger) {
 			fservice.addWaermeerzeuger(w);
 		}
+
+		List<Waermeerzeuger> lWaermeerzeugerDB = fservice
+				.findAllWaermeerzeuger();
+
+		// 3 Feuerungsanlagen
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrennerDB.get(0),
+				lWaermeerzeugerDB.get(0), 65));
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrennerDB.get(1),
+				lWaermeerzeugerDB.get(1), 46));
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrennerDB.get(2),
+				lWaermeerzeugerDB.get(2), 88));
+
 		for (Feuerungsanlage f : lFeuerungsanlage) {
 			fservice.addFeuerungsanlage(f);
 		}
 
-		return lFeuerungsanlage;
+		List<Feuerungsanlage> lFeuerungsanlageDB = fservice
+				.findAllFeuerungsanlage();
+
+		return lFeuerungsanlageDB;
 	}
 
 	/**

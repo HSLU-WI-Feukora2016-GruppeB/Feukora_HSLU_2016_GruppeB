@@ -65,7 +65,7 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 		String MitarbeiterROName = "Mitarbeiter";
 		String LiegenschaftROName = "Liegenschaft";
 		String OrtROName = "Ort";
-		String WaermeerzeugerROName = "Waermerzeuger";
+		String WaermeerzeugerROName = "Waermeerzeuger";
 
 		try {
 

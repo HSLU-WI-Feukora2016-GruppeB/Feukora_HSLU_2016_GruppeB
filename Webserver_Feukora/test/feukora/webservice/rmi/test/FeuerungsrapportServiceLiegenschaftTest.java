@@ -10,6 +10,7 @@ package feukora.webservice.rmi.test;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.junit.After;
@@ -18,10 +19,14 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import entitys.Auftrag;
+import entitys.Benutzer;
 import entitys.Brenner;
 import entitys.Feuerungsanlage;
 import entitys.Kontakt;
 import entitys.Liegenschaft;
+import entitys.Messung;
+import entitys.Mitarbeiter;
 import entitys.Ort;
 import entitys.Waermeerzeuger;
 import feukora.webservice.rmi.FeuerungsrapportService;
@@ -65,7 +70,7 @@ public class FeuerungsrapportServiceLiegenschaftTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-		deleteAll();
+		//deleteAll();
 	}
 
 	/**
@@ -81,21 +86,22 @@ public class FeuerungsrapportServiceLiegenschaftTest {
 		List<Liegenschaft> liegenschaftListe = fservice.findAllLiegenschaft();
 		assertTrue(liegenschaftListe.size() == 3);
 
-		Ort altOrt = new Ort(6043, "Adligenswil");
-		Liegenschaft o = fservice.findLiegenschaftByOrt(altOrt).get(0);
-		assertNotNull(o);
+		Ort altOrt = fservice.findOrtByPlz(3000).get(0);
+		Liegenschaft l = fservice.findLiegenschaftByOrt(altOrt).get(0);
+		assertNotNull(l);
 
-		Ort neuOrt = new Ort(8000, "Zürich");
-		o.setOrt(neuOrt);
+		Ort neuOrt = new Ort(6043, "Adligenswil");
+		Ort neuOrtDB = fservice.addOrt(neuOrt);
+		
+		l.setOrt(neuOrtDB);
+		fservice.updatLiegenschaft(l);
 
-		fservice.updatLiegenschaft(o);
-
-		Liegenschaft t2 = fservice.findLiegenschaftByOrt(neuOrt).get(0);
-		assertNotNull(t2);
-		assertTrue(t2.getOrt() != altOrt);
+		Liegenschaft l2 = fservice.findLiegenschaftByOrt(neuOrtDB).get(0);
+		assertNotNull(l2);
+		assertTrue(l2.getOrt() != altOrt);
 
 		liegenschaftListe = fservice.findAllLiegenschaft();
-		assertTrue(liegenschaftListe.size() == 4);
+		assertTrue(liegenschaftListe.size() == 3);
 	}
 
 	/**
@@ -119,7 +125,7 @@ public class FeuerungsrapportServiceLiegenschaftTest {
 	 */
 	@Test
 	public void testFindLiegenschaftByKontakt() throws Exception {
-		int lplz = 8000;
+		int lplz = 5000;
 
 		Ort lo = fservice.findOrtByPlz(lplz).get(0);
 
@@ -137,7 +143,7 @@ public class FeuerungsrapportServiceLiegenschaftTest {
 	 */
 	@Test
 	public void testFindLiegenschaftByOrt() throws Exception {
-		int lplz = 8000;
+		int lplz = 3000;
 
 		Ort lo = fservice.findOrtByPlz(lplz).get(0);
 
@@ -156,7 +162,7 @@ public class FeuerungsrapportServiceLiegenschaftTest {
 		String ls = "Musterweg 456";
 
 		List<Liegenschaft> ll = fservice.findLiegenschaftByStrasse(ls);
-		assertTrue(ll.size() == 1);
+		assertTrue(ll.size() == 2);
 	}
 
 	/**
@@ -193,8 +199,10 @@ public class FeuerungsrapportServiceLiegenschaftTest {
 		lListe = fservice.findAllLiegenschaft();
 		assertTrue(lListe.size() == 2);
 	}
+
 	/**
 	 * Initialisiert die Testwerte.
+	 * 
 	 * @return
 	 * @throws Exception
 	 */
@@ -214,18 +222,38 @@ public class FeuerungsrapportServiceLiegenschaftTest {
 		lBrenner.add(new Brenner(2, "def456", 2014));
 		lBrenner.add(new Brenner(1, "ghi789", 2015));
 
+		for (Brenner br : lBrenner) {
+			fservice.addBrenner(br);
+		}
+
+		List<Brenner> lBrennerDB = fservice.findAllBrenner();
+
 		// 3 Waermeerzeuger erstellen
 		lWaermeerzeuger.add(new Waermeerzeuger(1, "qwertz", 2012));
 		lWaermeerzeuger.add(new Waermeerzeuger(2, "uiopü", 2011));
 		lWaermeerzeuger.add(new Waermeerzeuger(3, "asdfg", 2010));
 
+		for (Waermeerzeuger w : lWaermeerzeuger) {
+			fservice.addWaermeerzeuger(w);
+		}
+
+		List<Waermeerzeuger> lWaermeerzeugerDB = fservice
+				.findAllWaermeerzeuger();
+
 		// 3 Feuerungsanlagen
-		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(0),
-				lWaermeerzeuger.get(0), 65));
-		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(1),
-				lWaermeerzeuger.get(1), 46));
-		lFeuerungsanlage.add(new Feuerungsanlage(lBrenner.get(2),
-				lWaermeerzeuger.get(2), 88));
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrennerDB.get(0),
+				lWaermeerzeugerDB.get(0), 65));
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrennerDB.get(1),
+				lWaermeerzeugerDB.get(1), 46));
+		lFeuerungsanlage.add(new Feuerungsanlage(lBrennerDB.get(2),
+				lWaermeerzeugerDB.get(2), 88));
+
+		for (Feuerungsanlage f : lFeuerungsanlage) {
+			fservice.addFeuerungsanlage(f);
+		}
+
+		List<Feuerungsanlage> lFeuerungsanlageDB = fservice
+				.findAllFeuerungsanlage();
 
 		// 5 Orte
 		lOrt.add(new Ort(8000, "Zürich"));
@@ -236,53 +264,53 @@ public class FeuerungsrapportServiceLiegenschaftTest {
 		lOrt.add(new Ort(2000, "Neuchâtel"));
 		lOrt.add(new Ort(4000, "Basel"));
 
-		// 4 Kontakte erstellen
-		lKontakt.add(new Kontakt("Martina", "Meyer", "Altstrasse 1", lOrt
+		for (Ort o : lOrt) {
+			fservice.addOrt(o);
+		}
+
+		List<Ort> lOrtDB = fservice.findAllOrt();
+
+		// 8 Kontakte erstellen
+		lKontakt.add(new Kontakt("Martina", "Meyer", "Altstrasse 1", lOrtDB
 				.get(2), "0633335577", "m.m@gmail.com", 2));
-		lKontakt.add(new Kontakt("Christoph", "Müller", "Neustrasse 1", lOrt
+		lKontakt.add(new Kontakt("Christoph", "Müller", "Neustrasse 1", lOrtDB
 				.get(6), "0554445577", "c.m@gmail.com", 1));
-		lKontakt.add(new Kontakt("Heiri", "Muster", "Bernstrasse 1", lOrt
+		lKontakt.add(new Kontakt("Heiri", "Muster", "Bernstrasse 1", lOrtDB
 				.get(4), "0688885577", "h.m@gmail.com", 2));
-		lKontakt.add(new Kontakt("Christof", "Meyer", "Gassweg 1", lOrt.get(5),
-				"0633335577", "ch.m@gmail.com", 2));
-		lKontakt.add(new Kontakt("Hanna", "Putz", "Malweg 5", lOrt.get(4),
+		lKontakt.add(new Kontakt("Christof", "Meyer", "Gassweg 1", lOrtDB
+				.get(5), "0633335577", "ch.m@gmail.com", 2));
+		lKontakt.add(new Kontakt("Hanna", "Putz", "Malweg 5", lOrtDB.get(4),
 				"0637777777", "h.p@gmail.com", 2));
-		lKontakt.add(new Kontakt("Martina", "Zäh", "Altstrasse 90",
-				lOrt.get(3), "0633888877", "m.z@gmail.com", 2));
-		lKontakt.add(new Kontakt("Tina", "Bär", "Waserstrasse 4", lOrt.get(5),
-				"0222235577", "t.b@gmail.com", 1));
-		lKontakt.add(new Kontakt("Rudolf", "Santa", "Zaubergass 7",
-				lOrt.get(1), "0699999997", "r.s@gmail.com", 2));
+		lKontakt.add(new Kontakt("Martina", "Zäh", "Altstrasse 90", lOrtDB
+				.get(3), "0633888877", "m.z@gmail.com", 2));
+		lKontakt.add(new Kontakt("Tina", "Bär", "Waserstrasse 4",
+				lOrtDB.get(5), "0222235577", "t.b@gmail.com", 1));
+		lKontakt.add(new Kontakt("Rudolf", "Santa", "Zaubergass 7", lOrtDB
+				.get(1), "0699999997", "r.s@gmail.com", 2));
+
+		for (Kontakt k : lKontakt) {
+			fservice.addKontakt(k);
+		}
+
+		List<Kontakt> lKontaktDB = fservice.findAllKontakt();
 
 		// 3 Liegenschaften erstellen
-		lLiegenschaft.add(new Liegenschaft(lKontakt.get(0),
-				"Hausmeister bei Muster klingeln", "Abcweg 123", lOrt.get(3),
-				lFeuerungsanlage.get(0)));
-		lLiegenschaft.add(new Liegenschaft(lKontakt.get(1),
-				"07978885599 anrufen bei Ankunft", "Musterweg 456",
-				lOrt.get(4), lFeuerungsanlage.get(1)));
-		lLiegenschaft.add(new Liegenschaft(lKontakt.get(2), "Türe ist offen",
-				"Musterweg 456", lOrt.get(5), lFeuerungsanlage.get(2)));
+		lLiegenschaft.add(new Liegenschaft(lKontaktDB.get(0),
+				"Hausmeister bei Muster klingeln", "Abcweg 123", lOrtDB.get(3),
+				lFeuerungsanlageDB.get(0)));
+		lLiegenschaft.add(new Liegenschaft(lKontaktDB.get(1),
+				"07978885599 anrufen bei Ankunft", "Musterweg 456", lOrtDB
+						.get(4), lFeuerungsanlageDB.get(1)));
+		lLiegenschaft.add(new Liegenschaft(lKontaktDB.get(2), "Türe ist offen",
+				"Musterweg 456", lOrtDB.get(5), lFeuerungsanlageDB.get(2)));
 
 		for (Liegenschaft l : lLiegenschaft) {
 			fservice.addLiegenschaft(l);
 		}
-		for (Brenner b : lBrenner) {
-			fservice.addBrenner(b);
-		}
-		for (Waermeerzeuger w : lWaermeerzeuger) {
-			fservice.addWaermeerzeuger(w);
-		}
-		for (Feuerungsanlage f : lFeuerungsanlage) {
-			fservice.addFeuerungsanlage(f);
-		}
-		for (Ort o : lOrt) {
-			fservice.addOrt(o);
-		}
-		for (Kontakt k : lKontakt) {
-			fservice.addKontakt(k);
-		}
-		return lLiegenschaft;
+
+		List<Liegenschaft> lLiegenschaftDB = fservice.findAllLiegenschaft();
+
+		return lLiegenschaftDB;
 
 	}
 

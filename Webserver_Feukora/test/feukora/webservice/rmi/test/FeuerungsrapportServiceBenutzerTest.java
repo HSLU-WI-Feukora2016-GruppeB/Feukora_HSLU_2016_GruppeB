@@ -122,7 +122,7 @@ public class FeuerungsrapportServiceBenutzerTest {
 		
 		List<Benutzer> lBenutzer = new ArrayList<>();
 		
-		//6 Benutzer erstellen
+		//6 Benutzer hinzufügen
 		lBenutzer.add(new Benutzer("ale", "123"));
 		lBenutzer.add(new Benutzer("lra", "456"));
 		lBenutzer.add(new Benutzer("pst", "789"));
@@ -134,7 +134,9 @@ public class FeuerungsrapportServiceBenutzerTest {
 			fservice.addBenutzer(b);
 		}
 		
-		return lBenutzer;
+		List<Benutzer> lBenutzerDB = fservice.findAllBenutzer();
+		
+		return lBenutzerDB;
 	}
 
 	/**
