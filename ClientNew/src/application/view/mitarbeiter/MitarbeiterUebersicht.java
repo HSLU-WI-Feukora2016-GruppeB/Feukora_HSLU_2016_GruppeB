@@ -177,6 +177,15 @@ public class MitarbeiterUebersicht {
 
 	}
 
+	public void loeschen(){
+		Mitarbeiter indSelected = (Mitarbeiter) tabelle.getSelectionModel().getSelectedItem();
+		try {
+			mitarbeiterRO.delete(indSelected);
+		} catch (Exception e) {
+			lblRueckmeldung.setText("Mitarbeiter gelöscht");
+		}
+	}
+
 	/**
 	 * Diese Methode führt den User zum Dashboard zurück
 	 */

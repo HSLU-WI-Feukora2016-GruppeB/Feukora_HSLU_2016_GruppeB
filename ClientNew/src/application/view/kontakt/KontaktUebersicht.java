@@ -142,8 +142,20 @@ public class KontaktUebersicht {
 		} catch (Exception e) {
 			lblRueckmeldung.setText("Bitte Kontakt auswählen");
 		}
-
 	}
+
+
+		public void loeschen(){
+			Kontakt indSelected = (Kontakt) tabelle.getSelectionModel().getSelectedItem();
+			try {
+				kontaktRO.delete(indSelected);
+			} catch (Exception e) {
+				lblRueckmeldung.setText("Mitarbeiter gelöscht");
+			}
+		}
+
+
+
 
 	/**
 	 * Diese Methode führt den User zum Dashboard zurück
