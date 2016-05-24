@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -21,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="leaf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.termin.TerminUebersicht">
+<Pane fx:id="leaf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.termin.TerminUebersicht">
    <children>
       <BorderPane prefHeight="616.0" prefWidth="966.0">
          <top>
@@ -120,7 +113,7 @@
                               <TextField fx:id="txtDonnerstag" disable="true" GridPane.columnIndex="4" GridPane.rowIndex="5" />
                               <TextField fx:id="txtFreitag" disable="true" GridPane.columnIndex="5" GridPane.rowIndex="5" />
                               <Button fx:id="btnWocheAnzeigen" mnemonicParsing="false" onAction="#wocheAnzeigen" text="Anzeigen" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <Label fx:id="lblRueckmeldung" layoutX="10.0" layoutY="279.0" lineSpacing="2.0" prefHeight="30.0" prefWidth="159.0" text="   " textFill="#eb0c0c" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                              <Label fx:id="lblRueckmeldung" layoutX="10.0" layoutY="279.0" lineSpacing="2.0" prefHeight="30.0" prefWidth="159.0" text="   " textFill="#eb0c0c" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="11.0" />
                                  </font></Label>
@@ -135,9 +128,7 @@
                                     <Label fx:id="lblDruckRueckmeldung" layoutX="238.0" layoutY="1.0" prefHeight="45.0" prefWidth="161.0" text="  " textFill="#e20e0e" textOverrun="CENTER_WORD_ELLIPSIS" />
                                  </children></Pane>
                               <Button fx:id="btnAktuelleTerminliste" mnemonicParsing="false" onAction="#terminDrucken" text="Aktuelle Terminliste Drucken" />
-                              <Button fx:id="btnNeuerTermin" mnemonicParsing="false" onAction="#neuerTermin" text="Neuer Termin erstellen" />
-                              <Button fx:id="btnRapportÖffnen" mnemonicParsing="false" onAction="#rapportOeffnen" text="Rapport öffnen" />
-                              <Button fx:id="btnAbbrechen" layoutX="714.0" layoutY="10.0" mnemonicParsing="false" onAction="#abbrechen" text="Zurück" />
+                              <Button fx:id="btnAbbrechen" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="714.0" layoutY="10.0" mnemonicParsing="false" onAction="#abbrechen" text="Zurück" textAlignment="RIGHT" />
                            </children>
                         </HBox>
                      </children>

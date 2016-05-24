@@ -85,6 +85,7 @@ public class TerminErfassen {
 		kontaktRO = RmiUtil.getKontaktRO();
 		liegenschaftRO = RmiUtil.getLiegenschaftRO();
 		mitarbeiterRO = RmiUtil.getMitarbeiterRO();
+		auftragRo = RmiUtil.getAuftragRO();
 
 		/*----------------------------------------------*/
 
@@ -141,16 +142,11 @@ public class TerminErfassen {
 				}
 			}
 
-			List<Kontakt> kundenListe = kontaktRO.findByStrasse(strasse);
-			for (Kontakt k : kundenListe) {
-				if (ort.equals(k.getOrt().getOrt())) {
-					kunde = k;
-				}
-			}
-
-			txtStrasseK.setText(kunde.getStrasse());
-			txtOrtK.setText(kunde.getOrt().getOrt());
-			txtPlzK.setText(String.valueOf(kunde.getOrt().getPlz()));
+			txtNachnameK.setText(liegenschaft.getKontakt().getNachname());
+			txtVornameK.setText(liegenschaft.getKontakt().getVorname());
+			txtStrasseK.setText(liegenschaft.getKontakt().getStrasse());
+			txtOrtK.setText(liegenschaft.getKontakt().getOrt().getOrt());
+			txtPlzK.setText(String.valueOf(liegenschaft.getKontakt().getOrt().getPlz()));
 
 		}
 

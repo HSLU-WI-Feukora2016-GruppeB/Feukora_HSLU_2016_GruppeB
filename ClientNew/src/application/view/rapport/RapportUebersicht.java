@@ -161,7 +161,7 @@ public class RapportUebersicht {
 		try {
 			Stage AuftragStage = new Stage();
 
-			AuftragStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("termin/TerminErfassen.fxml"))));
+			AuftragStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/application/view/termin/TerminErfassen.fxml"))));
 
 			AuftragStage.show();
 			((Stage) leaf.getScene().getWindow()).close();
