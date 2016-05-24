@@ -87,8 +87,8 @@ public class TerminUebersicht {
 	AuftragRO auftragRO;
 	MitarbeiterRO mitarbeiterRO;
 
-	@FXML
-	private void initialize() throws Exception {
+
+	public void initialize() throws Exception {
 
 		/*---------------RMI Verbindung---------------*/
 

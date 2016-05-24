@@ -135,7 +135,7 @@ public class RapportUebersicht {
 					ObservableList<Auftrag> listauftrag2 = FXCollections.observableList(auftragsliste);
 					tblKunde.setCellValueFactory(new PropertyValueFactory<>("kunde"));
 					tblLiegenschaft.setCellValueFactory(new PropertyValueFactory<>("liegenschaft"));
-					tblDatum.setCellValueFactory(new PropertyValueFactory<>("auftrag"));
+					tblDatum.setCellValueFactory(new PropertyValueFactory<>("datum"));
 
 					tabelle.setItems(listauftrag2);
 				} catch (Exception e) {
@@ -173,7 +173,7 @@ public class RapportUebersicht {
 
 			Stage TerminStage = new Stage();
 
-			TerminStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("termin/TerminBearbeiten.fxml"))));
+			TerminStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/application/view/termin/TerminBearbeiten.fxml"))));
 
 			TerminStage.show();
 
@@ -191,6 +191,10 @@ public class RapportUebersicht {
 
 	public void neuRapport (){
 		try {
+			Auftrag indSelected = (Auftrag) tabelle.getSelectionModel().getSelectedItem();
+			RapportErfassen.bekommeAuftrag(indSelected);
+
+
 			Stage RapportStage = new Stage();
 
 			RapportStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("RapportErfassen.fxml"))));

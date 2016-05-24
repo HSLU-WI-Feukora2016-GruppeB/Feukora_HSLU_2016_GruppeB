@@ -23,8 +23,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import rmi.interfaces.AuftragRO;
@@ -49,8 +51,8 @@ import rmi.interfaces.WaermeerzeugerRO;
 public class LiegenschaftBearbeiten {
 
 	@FXML
-	private TextField txtVorname, txtNachname, txtStrasse, txtOrt, txtPlz, txtStrasseL, txtOrtL, txtPlzL, txtBrennertyp,
-			txtBrennerjahr, txtWaermetyp, txtWaermejahr, txtInfo, txtFeuerungswaermekW;
+	private TextField txtVorname, txtNachname, txtStrasseL, txtOrtL, txtPlzL, txtBrennertyp, txtBrennerjahr,
+			txtWaermetyp, txtWaermejahr, txtInfo, txtFeuerungswaermekW;
 
 	@FXML
 	private Label lblRueckmeldung;
@@ -67,13 +69,15 @@ public class LiegenschaftBearbeiten {
 	@FXML
 	private BorderPane leaf;
 
+	@FXML
+	private TableColumn tblNachname, tblVorname, tblStrasse, tblEmail, tblTelefon, tblOrt;
+
 	static Liegenschaft liegupdate;
+	static Kontakt kontaktvonlieg;
 
 	// Variabelndeklaration für static bekommeLiegenschaft() methode
 	static String strassel, ortl, plzl, infovorort, feuerungsleistung, vorname, nachname, brennertyp, brennerart,
 			brennerjahr, waermetyp, waermeart, waermejahr;
-
-	static Kontakt kontaktvonlieg;
 
 	KontaktRO kontaktRO;
 	LiegenschaftRO liegenschaftRO;
@@ -86,16 +90,14 @@ public class LiegenschaftBearbeiten {
 
 		/*---------------RMI Verbindung---------------*/
 
-
-			/* Lookup */
-			kontaktRO = RmiUtil.getKontaktRO();
-			brennerRO = RmiUtil.getBrennerRO();
-			feuerungsanlageRO = RmiUtil.getFeuerungsanlageRO();
-			kontaktRO = RmiUtil.getKontaktRO();
-			liegenschaftRO = RmiUtil.getLiegenschaftRO();
-			ortRO = RmiUtil.getOrtRO();
-			waermeerzeugerRO = RmiUtil.getWaermeerzeugerRO();
-
+		/* Lookup */
+		kontaktRO = RmiUtil.getKontaktRO();
+		brennerRO = RmiUtil.getBrennerRO();
+		feuerungsanlageRO = RmiUtil.getFeuerungsanlageRO();
+		kontaktRO = RmiUtil.getKontaktRO();
+		liegenschaftRO = RmiUtil.getLiegenschaftRO();
+		ortRO = RmiUtil.getOrtRO();
+		waermeerzeugerRO = RmiUtil.getWaermeerzeugerRO();
 
 		/*----------------------------------------------*/
 
@@ -149,7 +151,8 @@ public class LiegenschaftBearbeiten {
 		liegupdate = liegenschaft;
 
 		// Kunde holen
-		Kontakt kontaktvonlieg = liegenschaft.getKontakt();
+		kontaktvonlieg = liegenschaft.getKontakt();
+
 		vorname = kontaktvonlieg.getVorname();
 		nachname = kontaktvonlieg.getNachname();
 
@@ -176,9 +179,9 @@ public class LiegenschaftBearbeiten {
 
 	public void liegenschaftUpdate() {
 
-		String strasse = txtStrasse.getText();
-		String ort = txtOrt.getText();
-		String plz = txtPlz.getText();
+		String strasse = txtStrasseL.getText();
+		String ort = txtOrtL.getText();
+		String plz = txtPlzL.getText();
 		String brennertyp = txtBrennertyp.getText();
 		String brennerart = cbBrennart.getValue().toString();
 		String brennerjahr = txtBrennerjahr.getText();
@@ -243,11 +246,13 @@ public class LiegenschaftBearbeiten {
 			try {
 				Liegenschaft newliegenschaft = updateLiegenschaft(strasse, plzint, ort, infovorort, brennertyp,
 						brennerA, brennerJ, waermetyp, waermeA, waermeJ, leistungint);
-				liegenschaftRO.add(newliegenschaft);
+				liegenschaftRO.update(newliegenschaft);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				lblRueckmeldung.setText("Liegenschaft konnte nicht gespeichert werden");
+				e.printStackTrace();
 			}
+			((Stage) leaf.getScene().getWindow()).close();
 		}
 	}
 
@@ -264,7 +269,16 @@ public class LiegenschaftBearbeiten {
 			try {
 				List<Kontakt> list = kontaktRO.findByNameVorname(nameK, vornameK);
 				ObservableList<Kontakt> list2 = FXCollections.observableList(list);
+
+				tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
+				tblNachname.setCellValueFactory(new PropertyValueFactory<>("nachname"));
+				tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
+				tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
+				tblTelefon.setCellValueFactory(new PropertyValueFactory<>("tel"));
+				tblEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+
 				tvKundentbl.setItems(list2);
+
 			} catch (Exception e) {
 				lblRueckmeldung.setText("Kontakt wurde nicht gefunden");
 			}
@@ -275,45 +289,53 @@ public class LiegenschaftBearbeiten {
 			int bjahr, String wtyp, int wart, int wjahr, int leistung) throws Exception {
 
 		List<Ort> ortsliste = new ArrayList<Ort>();
-		Ort ort = new Ort();
-
-		// Liegenschaftsobjekt erstellen und speichern
-		Liegenschaft liegenschaft = new Liegenschaft();
-
-		liegenschaft.setStrasse(strasse);
+		
+		liegupdate.setStrasse(strasse);
 
 		ortsliste = ortRO.findByOrtPlz(plz);
 
 		// durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die
 		// gleiche ist.
+
+		boolean found = false;
 		for (Ort o : ortsliste) {
 			if (ortbez.equals(o.getOrt())) {
-				ort = ortRO.add(o);
-				liegenschaft.setOrt(ort);
+				liegupdate.setOrt(o);
+				found = true;
+				break;
 			}
 		}
+		// wenn nicht gefunden wird neuöer ort hinzugefügt
+		// orte können nicht upgedated werden etweder gefunden oder neu
+		if (!found) {
+			Ort ortDb = ortRO.add(new Ort(plz, ortbez));
+			liegupdate.setOrt(ortDb);
+		}
 
-		liegenschaft.setInfoVorOrt(info);
+		liegupdate.setInfoVorOrt(info);
 
 		// neues Brenenrobjekt erstellen und speicher
-		Brenner brenner = new Brenner(bart, btyp, bjahr);
+		Brenner brenner = liegupdate.getFeuerungsanlage().getBrenner();
+
 		Brenner brenner2 = brennerRO.update(brenner);
 
 		// neues Waermeerzeugerobjekt erstellen und speicher
-		Waermeerzeuger waermeerzeuger = new Waermeerzeuger(wart, wtyp, wjahr);
+		Waermeerzeuger waermeerzeuger = liegupdate.getFeuerungsanlage().getWaermeerzeuger();
+
 		Waermeerzeuger waermeerzeuger2 = waermeerzeugerRO.update(waermeerzeuger);
 
 		// Feuerungsanlageobjekt erstellen, speichern und Liegenschaft
 		// hinzufügen
-		Feuerungsanlage feuera = new Feuerungsanlage(brenner2, waermeerzeuger2, leistung);
+		Feuerungsanlage feuera = liegupdate.getFeuerungsanlage();
+
 		Feuerungsanlage feuera2 = feuerungsanlageRO.update(feuera);
-		liegenschaft.setFeuerungsanlage(feuera2);
+		liegupdate.setFeuerungsanlage(feuera2);
 
 		// Kontakt nehmen und hinzufügen
 		Kontakt indSelected = (Kontakt) tvKundentbl.getSelectionModel().getSelectedItem();
-		liegenschaft.setKontakt(indSelected);
+		liegupdate.setKontakt(indSelected);
 
-		return liegenschaft;
+		return liegupdate;
 	}
 
 	/**

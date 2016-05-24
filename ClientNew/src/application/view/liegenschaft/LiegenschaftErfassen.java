@@ -11,8 +11,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import rmi.interfaces.BrennerRO;
@@ -41,6 +43,9 @@ public class LiegenschaftErfassen {
 
 	@FXML
 	private TableView tvKundentbl;
+
+	@FXML
+	private TableColumn tblNachname, tblVorname, tblStrasse, tblEmail, tblTelefon, tblOrt;
 
 	@FXML
 	private ComboBox<String> cbBrennart, cbBrennstoff;
@@ -78,7 +83,7 @@ public class LiegenschaftErfassen {
 		listbrennstoff.add("Flüssiggas");
 
 		ObservableList<String> obslistbrennstoff = FXCollections.observableList(listbrennstoff);
-		cbBrennart.setItems(obslistbrennstoff);
+		cbBrennstoff.setItems(obslistbrennstoff);
 
 		List<String> listbrennart = new ArrayList<String>();
 		listbrennart.add("Gebläsebrenner 1-stufig mit Heizöl");
@@ -98,9 +103,9 @@ public class LiegenschaftErfassen {
 	 */
 	public void liegenschaftSpeichern() {
 
-		String strasse = txtStrasse.getText();
-		String ort = txtOrt.getText();
-		String plz = txtPlz.getText();
+		String strasse = txtStrasseL.getText();
+		String ort = txtOrtL.getText();
+		String plz = txtPlzL.getText();
 		String brennertyp = txtBrennertyp.getText();
 		String brennerart = cbBrennart.getValue().toString();
 		String brennerjahr = txtBrennerjahr.getText();
@@ -191,7 +196,16 @@ public class LiegenschaftErfassen {
 			try {
 				List<Kontakt> list = kontaktRO.findByNameVorname(nameK, vornameK);
 				ObservableList<Kontakt> list2 = FXCollections.observableList(list);
+				tblNachname.setCellValueFactory(new PropertyValueFactory<>("name"));
+				tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
+				tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
+				tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
+				tblTelefon.setCellValueFactory(new PropertyValueFactory<>("tel"));
+				tblEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+
 				tvKundentbl.setItems(list2);
+
+
 			} catch (Exception e) {
 				lblRueckmeldung.setText("Kontakt wurde nicht gefunden");
 			}

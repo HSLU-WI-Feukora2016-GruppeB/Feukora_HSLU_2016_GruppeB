@@ -41,7 +41,7 @@ public class KontaktUebersicht {
 	private TextField txtName, txtVorname;
 
 	@FXML
-	private Label lblRueckmeldung;
+	private Label lblRueckmeldung1, lblRueckmeldung2;
 
 	@FXML
 	private BorderPane leaf;
@@ -57,8 +57,7 @@ public class KontaktUebersicht {
 
 	public static Mitarbeiter mastatic;
 
-	@FXML
-	private void initialize() throws Exception {
+	public void initialize() throws Exception {
 
 		/*---------------RMI Verbindung---------------*/
 
@@ -67,11 +66,9 @@ public class KontaktUebersicht {
 
 		/*----------------------------------------------*/
 
-		System.out.println("RMI verbunden");
-
 		List<Kontakt> list = kontaktRO.findAll();
 		ObservableList<Kontakt> list2 = FXCollections.observableList(list);
-		tblName.setCellValueFactory(new PropertyValueFactory<>("name"));
+		tblName.setCellValueFactory(new PropertyValueFactory<>("nachname"));
 		tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
 		tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
 		tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
@@ -89,7 +86,7 @@ public class KontaktUebersicht {
 
 		if (name.isEmpty() || vorname.isEmpty()) {
 
-			lblRueckmeldung.setText("Beide Felder müssen ausgefüllt werden!");
+			lblRueckmeldung1.setText("Beide Felder müssen ausgefüllt werden!");
 
 		} else {
 
@@ -140,22 +137,22 @@ public class KontaktUebersicht {
 
 			((Stage) leaf.getScene().getWindow()).close();
 		} catch (Exception e) {
-			lblRueckmeldung.setText("Bitte Kontakt auswählen");
+			lblRueckmeldung1.setText("Bitte Kontakt auswählen");
 		}
 	}
 
-
-		public void loeschen(){
-			Kontakt indSelected = (Kontakt) tabelle.getSelectionModel().getSelectedItem();
-			try {
-				kontaktRO.delete(indSelected);
-			} catch (Exception e) {
-				lblRueckmeldung.setText("Mitarbeiter gelöscht");
-			}
+	/**
+	 * Diese Methode löscht das ausgewählte Tupel in der Tabelle
+	 */
+	public void loeschen() {
+		Kontakt indSelected = (Kontakt) tabelle.getSelectionModel().getSelectedItem();
+		try {
+			kontaktRO.delete(indSelected);
+		} catch (Exception e) {
+			lblRueckmeldung2.setText("Mitarbeiter konnte nicht gelöscht werden");
 		}
-
-
-
+		lblRueckmeldung2.setText("Mitarbeiter gelöscht");
+	}
 
 	/**
 	 * Diese Methode führt den User zum Dashboard zurück

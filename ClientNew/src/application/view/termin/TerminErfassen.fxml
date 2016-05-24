@@ -116,7 +116,7 @@
                         <ComboBox fx:id="cFK" prefHeight="22.0" prefWidth="163.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <ComboBox fx:id="cZeitslot" layoutX="290.0" layoutY="71.0" prefHeight="23.0" prefWidth="161.0" GridPane.columnIndex="1" />
                         <Label text="Terminart" GridPane.rowIndex="2" />
-                        <ComboBox fx:id="cTerminart" layoutX="177.0" layoutY="103.0" prefHeight="22.0" prefWidth="163.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="cTerminArt" layoutX="177.0" layoutY="103.0" prefHeight="22.0" prefWidth="163.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                </children>

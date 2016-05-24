@@ -27,6 +27,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import rmi.interfaces.AuftragRO;
 import rmi.interfaces.MessungRO;
+import rmi.interfaces.OrtRO;
 
 /**
  * Dies ist die Dokumentation der Klasse RapportErfassen. Hier werden neue
@@ -42,12 +43,13 @@ public class RapportErfassen {
 	static Auftrag ausgewaehlterauftrag;
 	MessungRO messungRO;
 	AuftragRO auftragRO;
+	OrtRO ortRO;
 
 	@FXML
 	private Button btnNeu;
 
 	@FXML
-	private TextField txtName, txtVorname, txtPlz, txtOrt, txtTelefonNr, txtStrasseL, txtOrtL, txtPlzL, txtInfo,
+	private TextField txtName, txtVorname, txtPLZ, txtOrt, txtTelefonNr, txtStrasseL, txtOrtL, txtPlzL, txtInfo,
 			txtBrenner, txtBaujahr, txtBrennstoff, txtWaermeerzeuger, txtBaujahrW, txtBrennstoffW, txtLeistung,
 			txtAuftragsart;
 
@@ -94,6 +96,7 @@ public class RapportErfassen {
 		/* Lookup */
 		messungRO = RmiUtil.getMessungRO();
 		auftragRO = RmiUtil.getAuftragRO();
+		ortRO = RmiUtil.getOrtRO();
 
 		/*----------------------------------------------*/
 
@@ -101,12 +104,11 @@ public class RapportErfassen {
 		txtName.setText(kundenname);
 		txtVorname.setText(kundenvorname);
 		txtOrt.setText(kundenort);
-		txtPlz.setText(kundenplz);
+		txtPLZ.setText(kundenplz);
 		txtTelefonNr.setText(kundentelnr);
 
 		// Liegenschaftsfelder setzen
 		txtStrasseL.setText(liegenschaftsstrasse);
-		;
 		txtOrtL.setText(Liegenschaftsort);
 		txtPlzL.setText(Liegenschaftsplz);
 		txtInfo.setText(Liegenschaftsinfo);
@@ -135,7 +137,6 @@ public class RapportErfassen {
 		kundenname = auftrag.getKunde().getNachname();
 		kundenort = auftrag.getKunde().getOrt().getOrt();
 		kundenplz = String.valueOf(auftrag.getKunde().getOrt().getPlz());
-		;
 		kundentelnr = auftrag.getKunde().getTel();
 
 		Liegenschaft liegenschaft = auftrag.getLiegenschaft();
@@ -221,6 +222,7 @@ public class RapportErfassen {
 
 		} catch (Exception e) {
 			lblRueckmeldung.setText("Auftrag speichern fehlgeschlagen");
+			e.printStackTrace();
 		}
 
 		ArrayList<Messung> messungsliste = new ArrayList<Messung>();

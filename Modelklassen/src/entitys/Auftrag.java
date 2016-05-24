@@ -86,13 +86,10 @@ public class Auftrag implements Serializable {
 		this.terminArt = terminArt;
 	}
 
-	public Auftrag(Kontakt kontakt, Liegenschaft liegenschaft,
-			@Nullable Messung messung1stufe1, @Nullable Messung messung1stufe2,
-			@Nullable Messung messung2stufe1, @Nullable Messung messung2stufe2,
-			boolean einregulierungInnert30,
-			boolean einregulierungNichtMoeglich, String bemerkung,
-			Mitarbeiter mitarbeiter, GregorianCalendar datum, int zeitSlot,
-			int terminArt) {
+	public Auftrag(Kontakt kontakt, Liegenschaft liegenschaft, @Nullable Messung messung1stufe1,
+			@Nullable Messung messung1stufe2, @Nullable Messung messung2stufe1, @Nullable Messung messung2stufe2,
+			boolean einregulierungInnert30, boolean einregulierungNichtMoeglich, String bemerkung,
+			Mitarbeiter mitarbeiter, GregorianCalendar datum, int zeitSlot, int terminArt) {
 		this.kontakt = kontakt;
 		this.liegenschaft = liegenschaft;
 		this.messung1stufe1 = messung1stufe1;
@@ -287,18 +284,31 @@ public class Auftrag implements Serializable {
 	@Override
 	public String toString() {
 
-		String auftrag = "";
+		String auftrag = null;
 
-		auftrag += "Auftrag:" + "\n" + "Auftragsdatum: " + datum.toString() + "\n" + "Termin "
-				+ getZeitSlotString() + "\n" + "Auftragsnummer: " + id + "\n" + "\n";
 
-		if (messung1stufe1 == null) {
-			auftrag += "Keine Messung 1 Stufe 1 vorhanden! +\n";
-		} else {
-			auftrag += "Messung erfasst" + "\n";
+		auftrag += datum.toString();
+
+		String termin = null;
+
+		switch (this.zeitSlot) {
+		case 1:
+			termin = "8:00 - 10:00 Uhr";
+			break;
+		case 2:
+			termin = "10:00 - 12:00 Uhr";
+			break;
+		case 3:
+			termin = "13:00 - 15:00 Uhr";
+			break;
+		case 4:
+			termin = "15:00 - 17:00 Uhr";
+			break;
 		}
+		auftrag += termin;
 
-		return auftrag;
+	return auftrag;
+
 	}
 
 	public boolean isEinregulierungInnert30() {

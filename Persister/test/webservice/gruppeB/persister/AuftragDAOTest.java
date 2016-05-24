@@ -328,7 +328,7 @@ public class AuftragDAOTest {
 
 		//3 Aufträge erstellen
 		lAuftrag.add(new Auftrag(lKontakt.get(0), lLiegenschaft.get(0), lMessung.get(0), lMessung.get(1), lMessung.get(2), lMessung.get(3), true, false, "Keine", lMitarbeiter.get(0), new GregorianCalendar(2016, 9, 11), 1, 1));
-		lAuftrag.add(new Auftrag(lKontakt.get(1), lLiegenschaft.get(1), lMessung.get(4), lMessung.get(2), lMessung.get(5), lMessung.get(3), true, false, "Bekommen bald neue Feuerungsanlage", lMitarbeiter.get(2), new GregorianCalendar(2016, 9, 18), 1, 1));
+		lAuftrag.add(new Auftrag(lKontakt.get(1), lLiegenschaft.get(1), lMessung.get(4), lMessung.get(2), lMessung.get(5), lMessung.get(3), true, false, "Bekommen bald neue Feuerungsanlage", lMitarbeiter.get(2), new GregorianCalendar(2016, 9, 14), 1, 1));
 		lAuftrag.add(new Auftrag(lKontakt.get(2), lLiegenschaft.get(1), lMessung.get(6), lMessung.get(7), lMessung.get(8), lMessung.get(9), false, true, "Komplett verostet geht nicht ohne neue Anlage", lMitarbeiter.get(3), new GregorianCalendar(2016, 9, 11), 2, 2));
 
 		for(Benutzer b : lBenutzer){

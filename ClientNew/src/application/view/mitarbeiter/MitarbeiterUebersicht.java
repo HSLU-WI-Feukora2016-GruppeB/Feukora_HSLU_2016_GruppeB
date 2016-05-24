@@ -71,7 +71,7 @@ public class MitarbeiterUebersicht {
 	private TableView tabelle;
 
 	@FXML
-	private TableColumn tblName, tblVorname, tblStrasse, tblEMail, tblTelefon, tblPosition, tblOrt;
+	private TableColumn tblName, tblVorname, tblStrasse, tblEmail, tblTelefon, tblPosition, tblOrt;
 
 
 	MitarbeiterRO mitarbeiterRO;
@@ -91,22 +91,20 @@ public class MitarbeiterUebersicht {
 
 		/*----------------------------------------------*/
 
-		try {
+
 			List<Mitarbeiter> listmitarbeiter = mitarbeiterRO.findAllMitarbeiter();
 			ObservableList<Mitarbeiter> listmitarbeiter2 = FXCollections.observableList(listmitarbeiter);
 			tblName.setCellValueFactory(new PropertyValueFactory<>("name"));
 			tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
 			tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
 			tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
-			tblEMail.setCellValueFactory(new PropertyValueFactory<>("email"));
+			tblEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
 			tblPosition.setCellValueFactory(new PropertyValueFactory<>("rolleIntern"));
 			tblTelefon.setCellValueFactory(new PropertyValueFactory<>("tel"));
 
 			tabelle.setItems(listmitarbeiter2);
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+
 
 	}
 
@@ -176,14 +174,17 @@ public class MitarbeiterUebersicht {
 		}
 
 	}
-
+	/**
+	 * Diese Methode löscht das ausgewählte Objekt in der Tableview
+	 */
 	public void loeschen(){
 		Mitarbeiter indSelected = (Mitarbeiter) tabelle.getSelectionModel().getSelectedItem();
 		try {
 			mitarbeiterRO.delete(indSelected);
 		} catch (Exception e) {
-			lblRueckmeldung.setText("Mitarbeiter gelöscht");
+			lblRueckmeldung.setText("Liegenschaft wurde nicht gelöscht");
 		}
+		lblRueckmeldung.setText("Liegenschaft gelöscht");
 	}
 
 	/**
