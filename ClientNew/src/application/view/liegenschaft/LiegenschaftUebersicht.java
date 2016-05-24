@@ -61,6 +61,8 @@ public class LiegenschaftUebersicht {
 		/* Lookup */
 		liegenschaftRO = RmiUtil.getLiegenschaftRO();
 
+		/*----------------------------------------------*/
+
 		List<Liegenschaft> list = liegenschaftRO.findAll();
 		ObservableList<Liegenschaft> list2 = FXCollections.observableList(list);
 		tblInfovorort.setCellValueFactory(new PropertyValueFactory<>("infoVorOrt"));

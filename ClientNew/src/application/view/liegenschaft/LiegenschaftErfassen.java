@@ -1,16 +1,9 @@
 package application.view.liegenschaft;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.rmi.Naming;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
-
 import application.RmiUtil;
-import application.view.rapport.RapportErfassen;
 import entitys.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -182,6 +175,9 @@ public class LiegenschaftErfassen {
 
 	}
 
+	/**
+	 * Mit dieser Methode wird anhand des Vor-und Nachnamen nach einem Kontakt gesucht.
+	 */
 	public void kontaktSuchen() {
 		String vornameK = txtVorname.getText();
 		String nameK = txtNachname.getText();
