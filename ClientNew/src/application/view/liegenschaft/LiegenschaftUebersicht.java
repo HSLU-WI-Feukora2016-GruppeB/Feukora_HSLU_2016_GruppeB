@@ -149,6 +149,8 @@ public class LiegenschaftUebersicht {
 		}
 	}
 
+
+
 	/**
 	 * Diese Methode führt den User zum Dashboard zurück
 	 */

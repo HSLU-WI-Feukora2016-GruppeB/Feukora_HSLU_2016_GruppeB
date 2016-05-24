@@ -49,7 +49,7 @@ public class AuftragManagerImpl implements AuftragManager {
 
 	private void checkTerminProMitarbeiter(Auftrag entity) throws Exception{
 		Auftrag auftrag = auftragDAO.findAuftragByDateAndMitarbeiterAndZeitslot(entity.getTermin(), entity.getMitarbeiter(), entity.getZeitSlot());
-		if(auftrag == null || entity.getAuftragsNummer() == auftrag.getAuftragsNummer()){
+		if( auftrag == null || entity.getAuftragsNummer() == auftrag.getAuftragsNummer()){
 			return;
 		}else{
             throw new Exception("Der gewünschte Termin ist bereits erfasst. (Id = " + entity.getAuftragsNummer() + ")");

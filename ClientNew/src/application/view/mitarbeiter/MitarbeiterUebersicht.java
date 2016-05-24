@@ -174,6 +174,7 @@ public class MitarbeiterUebersicht {
 		}
 
 	}
+
 	/**
 	 * Diese Methode löscht das ausgewählte Objekt in der Tableview
 	 */
@@ -182,10 +183,15 @@ public class MitarbeiterUebersicht {
 		try {
 			mitarbeiterRO.delete(indSelected);
 		} catch (Exception e) {
-			lblRueckmeldung.setText("Liegenschaft wurde nicht gelöscht");
+
+			lblRueckmeldung.setText("Mitarbeiter wurde nicht gelöscht");
 		}
-		lblRueckmeldung.setText("Liegenschaft gelöscht");
+		lblRueckmeldung.setText("Mitarbeiter wurde gelöscht");
+
 	}
+
+
+
 
 	/**
 	 * Diese Methode führt den User zum Dashboard zurück

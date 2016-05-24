@@ -197,6 +197,7 @@ public class RapportErfassen {
 			messung2stufe2 = this.createMessung2Stufe2();
 		} catch (Exception e1) {
 			lblRueckmeldung.setText("Messungen abspeichern fehlgeschlagen");
+			e1.printStackTrace();
 		}
 
 		Auftrag gespeicherterauftrag = null;

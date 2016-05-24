@@ -32,6 +32,13 @@ import javafx.stage.Stage;
 import rmi.interfaces.KontaktRO;
 import rmi.interfaces.OrtRO;
 
+/**
+ *
+ * @author User Pascal Steiner & Alexandra Lenggen
+ * @since 15.05.2016
+ * @version 1.0
+ *
+ */
 public class KontaktUebersicht {
 
 	@FXML
@@ -79,6 +86,9 @@ public class KontaktUebersicht {
 
 	}
 
+	/**
+	 * Manuelles suchen um den Kontakt in der Tableview anzuzeigen
+	 */
 	public void kontaktSuchen() {
 
 		String name = txtName.getText();
@@ -141,18 +151,21 @@ public class KontaktUebersicht {
 		}
 	}
 
+
+
 	/**
-	 * Diese Methode löscht das ausgewählte Tupel in der Tabelle
+	 * Diese Methode löscht das ausgewählte Objekt in der Tableview
 	 */
-	public void loeschen() {
+	public void loeschen(){
 		Kontakt indSelected = (Kontakt) tabelle.getSelectionModel().getSelectedItem();
 		try {
 			kontaktRO.delete(indSelected);
 		} catch (Exception e) {
-			lblRueckmeldung2.setText("Mitarbeiter konnte nicht gelöscht werden");
+			lblRueckmeldung2.setText("Mitarbeiter wurde nicht gelöscht");
 		}
 		lblRueckmeldung2.setText("Mitarbeiter gelöscht");
 	}
+
 
 	/**
 	 * Diese Methode führt den User zum Dashboard zurück

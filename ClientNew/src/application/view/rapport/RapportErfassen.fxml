@@ -268,7 +268,7 @@
                                                 <TextField fx:id="txtM2S1O2" GridPane.columnIndex="4" GridPane.rowIndex="5" />
                                                 <Label text="Stufe 1" GridPane.columnIndex="1" />
                                                 <Label text="2. Messung" GridPane.columnIndex="5" />
-                                                <CheckBox fx:id="checkM2S2Oel" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                <CheckBox fx:id="checkM2S1Oel" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                                              </children>
                                           </GridPane>
                                           <GridPane style="-fx-border-color: #000000; -fx-background-color: #FFFFFF;" GridPane.columnIndex="3" GridPane.rowIndex="3">
