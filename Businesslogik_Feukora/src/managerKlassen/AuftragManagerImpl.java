@@ -51,7 +51,7 @@ public class AuftragManagerImpl implements AuftragManager {
 		Auftrag auftrag = auftragDAO.findAuftragByDateAndMitarbeiterAndZeitslot(entity.getTermin(), entity.getMitarbeiter(), entity.getZeitSlot());
 		if(auftrag == null){
 			return;
-		}else if(entity.getAuftragsNummer() == auftrag.getAuftragsNummer()){
+		}else if(entity.getAuftragsNummer().equals(auftrag.getAuftragsNummer())){
 			return;
 		}else{
             throw new Exception("Der gewünschte Termin ist bereits erfasst. (Id = " + entity.getAuftragsNummer());

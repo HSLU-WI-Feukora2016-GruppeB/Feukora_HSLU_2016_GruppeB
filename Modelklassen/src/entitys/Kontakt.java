@@ -10,7 +10,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
 /**
- * Kontakt stellt eine Kontaktperson oder einen Kunden dar, sie ist entweder 
+ * Kontakt stellt eine Kontaktperson oder einen Kunden dar, sie ist entweder
  * ein Hauseigentümer, Verwalter oder Hausmeister.
  * @author Olivia
  * @version 1.0
@@ -28,7 +28,7 @@ import javax.persistence.NamedQuery;
 	@NamedQuery(name = "Kontakt.findByStrasse", query = "SELECT k FROM Kontakt k WHERE k.strasse=:strasse")
 })
 public class Kontakt implements Serializable{
-	
+
 	private static final long serialVersionUID = 1916150058162417599L;
 
 	@Id
@@ -49,12 +49,12 @@ public class Kontakt implements Serializable{
 	private String email;
 
 	private int	rolleExtern;
-	
+
 	//konstruktor**************************************************
 	public Kontakt(){
-		
+
 	}
-	
+
 	public Kontakt(String vorname, String name, String strasse, Ort ort, String tel, String email, int rolleExtern){
 		this.vorname = vorname;
 		this.name = name;
@@ -123,16 +123,16 @@ public class Kontakt implements Serializable{
 	}
 
 	public String getRolleExtern() {
-		
+
 		String rolleE = null;
-		
+
 		switch (this.rolleExtern){
 			case 1: rolleE = "Eigentümer";
 				break;
 			case 2: rolleE = "Verwaltung";
 				break;
 		}
-		
+
 		return rolleE;
 	}
 
@@ -142,20 +142,17 @@ public class Kontakt implements Serializable{
 		}else{
 			throw new Exception("Rolle ungültig, entweder 1 oder 2");
 		}
-		
+
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Kontakt: " + "\n"
 				+ "Vorname: " + vorname.toString() + "\n"
 				+ "Nachname: " + name.toString() + "\n"
-				+ "Strasse: " + strasse.toString() + "\n"
-				+ ort + "\n"
-				+ "Telefon: " + tel + "\n"
-				+ "eMail: " + email.toString() + "\n"
-				+ "Rolle Extern: " + this.getRolleExtern() + "\n";
+				+ ort.toString() + "\n"
+				+ "Telefon: " + tel + "\n";
 	}
-	
-	
+
+
 }
