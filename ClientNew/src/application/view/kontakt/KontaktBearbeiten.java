@@ -13,6 +13,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Properties;
 
+import application.RmiUtil;
 import application.view.mitarbeiter.MitarbeiterErfassen;
 import entitys.Kontakt;
 import entitys.Mitarbeiter;
@@ -63,40 +64,8 @@ public class KontaktBearbeiten {
 
 		/*---------------RMI Verbindung---------------*/
 
-
-		String KontaktROName = "Kontakt";
-
-		try {
-
-			// Properties Objekt erstellen
-			Properties rmiProperties = new Properties();
-
-			// Klassenloader holen
-			ClassLoader cLoader = KontaktBearbeiten.class.getClassLoader();
-
-			// Properties laden
-			try {
-				rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-
-			// Port RMI auslesen
-			String stringPort = rmiProperties.getProperty("rmiPort");
-			Integer rmiPort = Integer.valueOf(stringPort);
-
-			String hostIp = rmiProperties.getProperty("rmiIp");
-
-			// URLs definieren
-
-			String urlKontaktRO = "rmi://" + hostIp + ":" + rmiPort + "/" + KontaktROName;
-
-			/* Lookup */
-			kontaktRO = (KontaktRO) Naming.lookup(urlKontaktRO);
-
-		} catch (MalformedURLException | RemoteException | NotBoundException e) {
-			throw e;
-		}
+		/* Lookup */
+			kontaktRO = RmiUtil.getKontaktRO();
 
 /*----------------------------------------------*/
 

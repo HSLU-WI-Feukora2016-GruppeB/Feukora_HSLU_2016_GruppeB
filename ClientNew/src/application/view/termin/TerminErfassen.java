@@ -10,6 +10,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Properties;
 
+import application.RmiUtil;
 import entitys.Auftrag;
 import entitys.Kontakt;
 import entitys.Liegenschaft;
@@ -78,51 +79,14 @@ public class TerminErfassen {
 	@FXML
 	private void initialize() throws Exception {
 
-
 		/*---------------RMI Verbindung---------------*/
 
+		/* Lookup */
+		kontaktRO = RmiUtil.getKontaktRO();
+		liegenschaftRO = RmiUtil.getLiegenschaftRO();
+		mitarbeiterRO = RmiUtil.getMitarbeiterRO();
 
-		String KontaktROName = "Kontakt";
-		String LiegenschaftRO = "Liegenschaft";
-		String MitarbeiterROName = "Mitarbeiter";
-		try {
-
-			// Properties Objekt erstellen
-			Properties rmiProperties = new Properties();
-
-			// Klassenloader holen
-			ClassLoader cLoader = TerminErfassen.class.getClassLoader();
-
-			// Properties laden
-
-				rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
-
-
-			// Port RMI auslesen
-			String stringPort = rmiProperties.getProperty("rmiPort");
-			Integer rmiPort = Integer.valueOf(stringPort);
-
-			String hostIp = rmiProperties.getProperty("rmiIp");
-
-			// URLs definieren
-
-			String urlKontaktRO = "rmi://" + hostIp + ":" + rmiPort + "/" + KontaktROName;
-			String urlLiegenschaftRO = "rmi://" + hostIp + ":" + rmiPort + "/" + LiegenschaftRO;
-			String urlMitarbeiterRO = "rmi://" + hostIp + ":" + rmiPort + "/" + MitarbeiterROName;
-
-
-			/* Lookup */
-			kontaktRO = (KontaktRO) Naming.lookup(urlKontaktRO);
-			liegenschaftRO = (LiegenschaftRO) Naming.lookup(urlLiegenschaftRO);
-			mitarbeiterRO = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
-
-		} catch (MalformedURLException | RemoteException | NotBoundException e) {
-			throw e;
-		}
-
-/*----------------------------------------------*/
-
-
+		/*----------------------------------------------*/
 
 		List<String> terminarten = new ArrayList<String>();
 		terminarten.add("Routinekontrolle");
@@ -210,8 +174,6 @@ public class TerminErfassen {
 			List<Kontakt> kontaktliste = new ArrayList<Kontakt>();
 			kontaktliste = kontaktRO.findByName(kontakt);
 			kunde = kontaktliste.get(0);
-
-
 
 			String zeitslot = (String) cZeitslot.getValue();
 

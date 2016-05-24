@@ -22,6 +22,7 @@ import java.util.Properties;
 
 import javax.imageio.ImageIO;
 
+import application.RmiUtil;
 import rmi.interfaces.AuftragRO;
 import rmi.interfaces.KontaktRO;
 import rmi.interfaces.LiegenschaftRO;
@@ -60,7 +61,7 @@ import javafx.stage.Stage;
  * @since 1.0
  */
 
-public class TerminUebersicht{
+public class TerminUebersicht {
 
 	@FXML
 	private Button btnNeuerTermin, btnAktuelleTerminliste, btnAbbrechen, btnWocheAnzeigen;
@@ -86,53 +87,16 @@ public class TerminUebersicht{
 	AuftragRO auftragRO;
 	MitarbeiterRO mitarbeiterRO;
 
-
-
 	@FXML
 	private void initialize() throws Exception {
 
-
 		/*---------------RMI Verbindung---------------*/
 
+		/* Lookup */
+		mitarbeiterRO = RmiUtil.getMitarbeiterRO();
+		auftragRO = RmiUtil.getAuftragRO();
 
-
-		String MitarbeiterROName = "Mitarbeiter";
-		String AuftragROName = "Auftrag";
-		try {
-
-			// Properties Objekt erstellen
-			Properties rmiProperties = new Properties();
-
-			// Klassenloader holen
-			ClassLoader cLoader = TerminUebersicht.class.getClassLoader();
-
-			// Properties laden
-
-				rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
-
-
-			// Port RMI auslesen
-			String stringPort = rmiProperties.getProperty("rmiPort");
-			Integer rmiPort = Integer.valueOf(stringPort);
-
-			String hostIp = rmiProperties.getProperty("rmiIp");
-
-			// URLs definieren
-
-
-			String urlMitarbeiterRO = "rmi://" + hostIp + ":" + rmiPort + "/" + MitarbeiterROName;
-			String urlAuftragRO = "rmi://" + hostIp + ":" + rmiPort + "/" + AuftragROName;
-
-
-			/* Lookup */
-			mitarbeiterRO = (MitarbeiterRO) Naming.lookup(urlMitarbeiterRO);
-			auftragRO = (AuftragRO) Naming.lookup(urlAuftragRO);
-
-		} catch (MalformedURLException | RemoteException | NotBoundException e) {
-			throw e;
-		}
-
-/*----------------------------------------------*/
+		/*----------------------------------------------*/
 
 		List<Mitarbeiter> list = mitarbeiterRO.findAllMitarbeiter();
 		List<String> list3 = new ArrayList<String>();
@@ -147,11 +111,9 @@ public class TerminUebersicht{
 
 	}
 
-
-
-
 	/**
 	 * Diese Methode zeigte alle Termine der ausgewählten Woche an.
+	 *
 	 * @throws Exception
 	 */
 	public void wocheAnzeigen() throws Exception {
@@ -193,81 +155,55 @@ public class TerminUebersicht{
 				GregorianCalendar gcal4 = new GregorianCalendar(jahr, monat, tag4);
 				GregorianCalendar gcal5 = new GregorianCalendar(jahr, monat, tag5);
 
+				// Montag
+				Auftrag auftrag11 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1, kontrolleur, 1);
+				T1Z1.setText(auftrag11.getLiegenschaft().toString());
+				Auftrag auftrag12 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1, kontrolleur, 2);
+				T1Z2.setText(auftrag12.getLiegenschaft().toString());
+				Auftrag auftrag13 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1, kontrolleur, 3);
+				T1Z3.setText(auftrag13.getLiegenschaft().toString());
+				Auftrag auftrag14 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1, kontrolleur, 4);
+				T1Z4.setText(auftrag14.getLiegenschaft().toString());
 
-				 //Montag
-				  Auftrag auftrag11 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1,kontrolleur, 1);
-				  T1Z1.setText(auftrag11.getLiegenschaft().toString());
-				  Auftrag auftrag12 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1,kontrolleur, 2);
-				  T1Z2.setText(auftrag12.getLiegenschaft().toString());
-				  Auftrag auftrag13 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1,kontrolleur, 3);
-				  T1Z3.setText(auftrag13.getLiegenschaft().toString());
-				  Auftrag auftrag14 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1, kontrolleur, 4);
-				  T1Z4.setText(auftrag14.getLiegenschaft().toString());
+				// Dienstag
+				Auftrag auftrag21 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal2, kontrolleur, 1);
+				T2Z1.setText(auftrag21.getLiegenschaft().toString());
+				Auftrag auftrag22 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal2, kontrolleur, 2);
+				T2Z2.setText(auftrag22.getLiegenschaft().toString());
+				Auftrag auftrag23 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal2, kontrolleur, 3);
+				T2Z3.setText(auftrag23.getLiegenschaft().toString());
+				Auftrag auftrag24 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal2, kontrolleur, 4);
+				T2Z4.setText(auftrag24.getLiegenschaft().toString());
 
-				  // Dienstag
-				  Auftrag auftrag21 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal2, kontrolleur, 1);
-				  T2Z1.setText(auftrag21.getLiegenschaft().toString());
-				  Auftrag auftrag22 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal2, kontrolleur, 2);
-				  T2Z2.setText(auftrag22.getLiegenschaft().toString());
-				  Auftrag auftrag23 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal2, kontrolleur, 3);
-				  T2Z3.setText(auftrag23.getLiegenschaft().toString());
-				  Auftrag auftrag24 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal2, kontrolleur, 4);
-				  T2Z4.setText(auftrag24.getLiegenschaft().toString());
+				// Mittwoch
+				Auftrag auftrag31 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal3, kontrolleur, 1);
+				T3Z1.setText(auftrag31.getLiegenschaft().toString());
+				Auftrag auftrag32 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal3, kontrolleur, 2);
+				T3Z2.setText(auftrag32.getLiegenschaft().toString());
+				Auftrag auftrag33 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal3, kontrolleur, 3);
+				T3Z3.setText(auftrag33.getLiegenschaft().toString());
+				Auftrag auftrag34 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal3, kontrolleur, 4);
+				T3Z4.setText(auftrag34.getLiegenschaft().toString());
 
-				 //Mittwoch
-				  Auftrag auftrag31 =
-				 auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal3,
-				 kontrolleur, 1);
-				 T3Z1.setText(auftrag31.getLiegenschaft().toString()); Auftrag
-				 auftrag32 =
-				 auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal3,
-				 kontrolleur, 2);
-				  T3Z2.setText(auftrag32.getLiegenschaft().toString()); Auftrag
-				  auftrag33 =
-				  auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal3,
-				  kontrolleur, 3);
-				  T3Z3.setText(auftrag33.getLiegenschaft().toString()); Auftrag
-				  auftrag34 =
-				  auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal3,
-				  kontrolleur, 4);
-				  T3Z4.setText(auftrag34.getLiegenschaft().toString());
+				// Donnerstag
+				Auftrag auftrag41 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal4, kontrolleur, 1);
+				T4Z1.setText(auftrag41.getLiegenschaft().toString());
+				Auftrag auftrag42 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal4, kontrolleur, 2);
+				T4Z2.setText(auftrag42.getLiegenschaft().toString());
+				Auftrag auftrag43 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal4, kontrolleur, 3);
+				T4Z3.setText(auftrag43.getLiegenschaft().toString());
+				Auftrag auftrag44 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal4, kontrolleur, 4);
+				T4Z4.setText(auftrag44.getLiegenschaft().toString());
 
-				  //Donnerstag
-				  Auftrag auftrag41 =
-				  auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal4,
-				  kontrolleur, 1);
-				  T4Z1.setText(auftrag41.getLiegenschaft().toString()); Auftrag
-				  auftrag42 =
-				  auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal4,
-				  kontrolleur, 2);
-				  T4Z2.setText(auftrag42.getLiegenschaft().toString()); Auftrag
-				  auftrag43 =
-				  auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal4,
-				  kontrolleur, 3);
-				  T4Z3.setText(auftrag43.getLiegenschaft().toString()); Auftrag
-				  auftrag44 =
-				  auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal4,
-				  kontrolleur, 4);
-				  T4Z4.setText(auftrag44.getLiegenschaft().toString());
-
-				  //Freitag
-				  Auftrag auftrag51 =
-				  auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal5,
-				  kontrolleur, 1);
-				  T5Z1.setText(auftrag51.getLiegenschaft().toString()); Auftrag
-				  auftrag52 =
-				  auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal5,
-				  kontrolleur, 2);
-				  T5Z2.setText(auftrag52.getLiegenschaft().toString()); Auftrag
-				  auftrag53 =
-				  auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal5,
-				  kontrolleur, 3);
-				  T5Z3.setText(auftrag53.getLiegenschaft().toString()); Auftrag
-				  auftrag54 =
-				  auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal5,
-				  kontrolleur, 4);
-				  T5Z4.setText(auftrag54.getLiegenschaft().toString());
-
+				// Freitag
+				Auftrag auftrag51 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal5, kontrolleur, 1);
+				T5Z1.setText(auftrag51.getLiegenschaft().toString());
+				Auftrag auftrag52 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal5, kontrolleur, 2);
+				T5Z2.setText(auftrag52.getLiegenschaft().toString());
+				Auftrag auftrag53 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal5, kontrolleur, 3);
+				T5Z3.setText(auftrag53.getLiegenschaft().toString());
+				Auftrag auftrag54 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal5, kontrolleur, 4);
+				T5Z4.setText(auftrag54.getLiegenschaft().toString());
 
 				// Alternative Olivia:
 				// List<Auftrag> la = null;// =

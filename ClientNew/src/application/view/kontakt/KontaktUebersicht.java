@@ -10,6 +10,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Properties;
 
+import application.RmiUtil;
 import application.view.mitarbeiter.MitarbeiterBearbeiten;
 import entitys.Benutzer;
 import entitys.Kontakt;
@@ -54,8 +55,6 @@ public class KontaktUebersicht {
 	KontaktRO kontaktRO;
 	OrtRO ortRO;
 
-
-
 	public static Mitarbeiter mastatic;
 
 	@FXML
@@ -63,49 +62,12 @@ public class KontaktUebersicht {
 
 		/*---------------RMI Verbindung---------------*/
 
+		/* Lookup */
+		kontaktRO = RmiUtil.getKontaktRO();
 
-		String KontaktROName = "Kontakt";
-
-		try {
-
-			// Properties Objekt erstellen
-			Properties rmiProperties = new Properties();
-
-			// Klassenloader holen
-			ClassLoader cLoader = KontaktUebersicht.class.getClassLoader();
-
-			// Properties laden
-			try {
-				rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-
-			// Port RMI auslesen
-			String stringPort = rmiProperties.getProperty("rmiPort");
-			Integer rmiPort = Integer.valueOf(stringPort);
-
-			String hostIp = rmiProperties.getProperty("rmiIp");
-
-			// URLs definieren
-
-			String urlKontaktRO = "rmi://" + hostIp + ":" + rmiPort + "/" + KontaktROName;
-
-			/* Lookup */
-			kontaktRO = (KontaktRO) Naming.lookup(urlKontaktRO);
-
-		} catch (MalformedURLException | RemoteException | NotBoundException e) {
-			throw e;
-		}
-
-/*----------------------------------------------*/
-
-
-
+		/*----------------------------------------------*/
 
 		System.out.println("RMI verbunden");
-
-
 
 		List<Kontakt> list = kontaktRO.findAll();
 		ObservableList<Kontakt> list2 = FXCollections.observableList(list);
@@ -116,13 +78,7 @@ public class KontaktUebersicht {
 		tblEMail.setCellValueFactory(new PropertyValueFactory<>("email"));
 		tblTelefon.setCellValueFactory(new PropertyValueFactory<>("tel"));
 
-
 		tabelle.setItems(list2);
-
-
-
-
-
 
 	}
 
@@ -155,8 +111,6 @@ public class KontaktUebersicht {
 	 */
 	public void neuerKontakt() {
 
-
-
 		try {
 			Stage MitarbeiterStage = new Stage();
 
@@ -174,10 +128,9 @@ public class KontaktUebersicht {
 	 * Diese Methode öffnet die Übersicht zur Bearbeitung von Mitarbeiter.
 	 */
 	public void bearbeitenKontakt() {
-		try{
-		Kontakt indSelected = (Kontakt) tabelle.getSelectionModel().getSelectedItem();
-		KontaktBearbeiten.bekommeKontakt(indSelected);
-
+		try {
+			Kontakt indSelected = (Kontakt) tabelle.getSelectionModel().getSelectedItem();
+			KontaktBearbeiten.bekommeKontakt(indSelected);
 
 			Stage MitarbeiterStage = new Stage();
 
@@ -189,8 +142,6 @@ public class KontaktUebersicht {
 		} catch (Exception e) {
 			lblRueckmeldung.setText("Bitte Kontakt auswählen");
 		}
-
-
 
 	}
 

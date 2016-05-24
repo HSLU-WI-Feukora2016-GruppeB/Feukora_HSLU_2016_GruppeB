@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import application.RmiUtil;
 import entitys.Kontakt;
 import entitys.Ort;
 import javafx.fxml.FXML;
@@ -35,8 +36,6 @@ public class KontaktErfassen {
 	KontaktRO kontaktRO;
 	OrtRO ortRO;
 
-
-
 	@FXML
 	private TextField txtVorname, txtNachname, txtStrasse, txtOrt, txtPlz, txtTelnr, txtEmail;
 
@@ -49,50 +48,14 @@ public class KontaktErfassen {
 	@FXML
 	private Pane leaf;
 
-
-	public void initialize() throws Exception{
+	public void initialize() throws Exception {
 		/*---------------RMI Verbindung---------------*/
 
+		/* Lookup */
+		kontaktRO = RmiUtil.getKontaktRO();
 
-		String KontaktROName = "Kontakt";
-
-		try {
-
-			// Properties Objekt erstellen
-			Properties rmiProperties = new Properties();
-
-			// Klassenloader holen
-			ClassLoader cLoader = KontaktErfassen.class.getClassLoader();
-
-			// Properties laden
-			try {
-				rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-
-			// Port RMI auslesen
-			String stringPort = rmiProperties.getProperty("rmiPort");
-			Integer rmiPort = Integer.valueOf(stringPort);
-
-			String hostIp = rmiProperties.getProperty("rmiIp");
-
-			// URLs definieren
-
-			String urlKontaktRO = "rmi://" + hostIp + ":" + rmiPort + "/" + KontaktROName;
-
-			/* Lookup */
-			kontaktRO = (KontaktRO) Naming.lookup(urlKontaktRO);
-
-		} catch (MalformedURLException | RemoteException | NotBoundException e) {
-			throw e;
-		}
-
-/*----------------------------------------------*/
+		/*----------------------------------------------*/
 	}
-
-
-
 
 	/**
 	 * Diese Methode speichert einen neuen Kontakt in der Datenbank.
@@ -125,9 +88,7 @@ public class KontaktErfassen {
 				lblRueckmeldung.setText("Parsen hat fehlgeschlagen");
 			}
 
-
-			Kontakt newkontakt = creatKontakt(name, vorname, strasse,
-					ort, plzint, email, telnr);
+			Kontakt newkontakt = creatKontakt(name, vorname, strasse, ort, plzint, email, telnr);
 
 			try {
 				kontaktRO.add(newkontakt);
@@ -135,7 +96,6 @@ public class KontaktErfassen {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
 
 		}
 
@@ -173,40 +133,38 @@ public class KontaktErfassen {
 	 * @return Ein neues Kontaktobjekt
 	 */
 
+	private Kontakt creatKontakt(String name, String vorname, String strasse, String ort, int plz, String email,
+			String telnr) {
 
-	private Kontakt creatKontakt(String name, String vorname, String strasse,
-		String ort,  int plz, String email, String telnr){
+		Kontakt kontakt = new Kontakt();
+		Ort ortschaft = new Ort();
+		List<Ort> ortsliste = new ArrayList<Ort>();
 
-	Kontakt kontakt = new Kontakt();
-	Ort ortschaft = new Ort();
-	List<Ort> ortsliste = new ArrayList<Ort>();
+		kontakt.setNachname(name);
+		kontakt.setVorname(vorname);
 
-	kontakt.setNachname(name);
-	kontakt.setVorname(vorname);
+		kontakt.setStrasse(strasse);
+		kontakt.setEmail(email);
+		kontakt.setTel(telnr);
 
-	kontakt.setStrasse(strasse);
-	kontakt.setEmail(email);
-	kontakt.setTel(telnr);
-
-
-try {
-			//zu erst auf liste speichern damit man nachher das zweite der Liste prüfen kann falls nicht übereinstimmt
-		 ortsliste = ortRO.findByOrtPlz(plz);
+		try {
+			// zu erst auf liste speichern damit man nachher das zweite der
+			// Liste prüfen kann falls nicht übereinstimmt
+			ortsliste = ortRO.findByOrtPlz(plz);
 		} catch (Exception e) {
 			lblRueckmeldung.setText("PLZ nicht gefunden");
 		}
 
-		//durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die gleiche ist.
-		for(Ort o: ortsliste){
+		// durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die
+		// gleiche ist.
+		for (Ort o : ortsliste) {
 			o = ortsliste.get(0);
-			if(ort.equals(o.getOrt())){
+			if (ort.equals(o.getOrt())) {
 				kontakt.setOrt(ortschaft);
-				}
+			}
 		}
 
-
-	return kontakt;
+		return kontakt;
 	}
-
 
 }
