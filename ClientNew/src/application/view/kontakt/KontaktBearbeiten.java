@@ -31,19 +31,16 @@ import rmi.interfaces.OrtRO;
 public class KontaktBearbeiten {
 
 	OrtRO ortRO;
-	KontaktRO  kontaktRO;
-
+	KontaktRO kontaktRO;
 
 	@FXML
-	private TextField txtName, txtVorname, txtOrt, txtPLZ,txtEmail, txtTelefonNr, txtStrasse;
+	private TextField txtName, txtVorname, txtOrt, txtPLZ, txtEmail, txtTelefonNr, txtStrasse;
 
 	@FXML
 	private Label lblRueckmeldung;
 
 	@FXML
 	private Pane leaf;
-
-
 
 	static String name;
 	static String vorname;
@@ -55,20 +52,17 @@ public class KontaktBearbeiten {
 	static String lohn2;
 	static String plz;
 
-
-
 	static Kontakt kontaktupdate;
 
-	public void initialize() throws Exception{
-
+	public void initialize() throws Exception {
 
 		/*---------------RMI Verbindung---------------*/
 
 		/* Lookup */
-			kontaktRO = RmiUtil.getKontaktRO();
+		kontaktRO = RmiUtil.getKontaktRO();
+		ortRO =RmiUtil.getOrtRO();
 
-/*----------------------------------------------*/
-
+		/*----------------------------------------------*/
 
 		txtName.setText(name);
 		txtVorname.setText(vorname);
@@ -80,7 +74,7 @@ public class KontaktBearbeiten {
 
 	}
 
-	public static void bekommeKontakt(Kontakt kontaktbearbeitet) throws Exception{
+	public static void bekommeKontakt(Kontakt kontaktbearbeitet) throws Exception {
 		kontaktupdate = kontaktbearbeitet;
 
 		name = kontaktbearbeitet.getNachname();
@@ -106,17 +100,16 @@ public class KontaktBearbeiten {
 		String email = txtEmail.getText();
 		String telefonnr = txtTelefonNr.getText();
 
-
 		// Überprüfung ob die Felder auch mit einem Wert belegt wurden
-		if (name.isEmpty() || vorname.isEmpty() || strasse.isEmpty() || ort.isEmpty()
-				|| plz.isEmpty() || email.isEmpty() || telefonnr.isEmpty()) {
+		if (name.isEmpty() || vorname.isEmpty() || strasse.isEmpty() || ort.isEmpty() || plz.isEmpty()
+				|| email.isEmpty() || telefonnr.isEmpty()) {
 
 			lblRueckmeldung.setText("Bitte alle Felder ausfüllen");
 
 		} else {
 
 			// Neue Variabeln für das Parsen
-			int plzint =0;
+			int plzint = 0;
 
 			try {
 
@@ -125,12 +118,12 @@ public class KontaktBearbeiten {
 				lblRueckmeldung.setText("Parsen hat fehlgeschlagen");
 			}
 
-
-
 			try {
-				Kontakt updatekontakt = createKontakt(name, vorname,strasse, ort, plzint, email,telefonnr);
-				//braucht es dieses this? überspeichere ich wirklich das alte Objekt?
-				//evtl lösung könnte sein das alte einfach löschen und ein neue erstellen
+				Kontakt updatekontakt = updateKontakt(name, vorname, strasse, ort, plzint, email, telefonnr);
+				// braucht es dieses this? überspeichere ich wirklich das alte
+				// Objekt?
+				// evtl lösung könnte sein das alte einfach löschen und ein neue
+				// erstellen
 				this.kontaktRO.update(updatekontakt);
 			} catch (Exception e) {
 				lblRueckmeldung.setText("Das überscheiben hat nicht funktioniert");
@@ -173,9 +166,8 @@ public class KontaktBearbeiten {
 	 * @return Ein neues Mitarbeiterobjekt
 	 * @throws Exception
 	 */
-	private Kontakt createKontakt(String name, String vorname, String strasse, String ort, int plz,
-			String email, String telefonnr) throws Exception{
-		//Exception werfen? bei Referenzprojekt hat ers gemacht
+	private Kontakt updateKontakt(String name, String vorname, String strasse, String ort, int plz, String email,
+			String telefonnr) throws Exception {
 
 		List<Ort> ortsliste = new ArrayList<Ort>();
 
@@ -185,17 +177,26 @@ public class KontaktBearbeiten {
 		kontaktupdate.setEmail(email);
 		kontaktupdate.setTel(telefonnr);
 
-		//zu erst auf liste speichern damit man nachher das zweite der Liste prüfen kann falls nicht übereinstimmt
-		 ortsliste = ortRO.findByOrtPlz(plz);
+		// zu erst auf liste speichern damit man nachher das zweite der Liste
+		// prüfen kann falls nicht übereinstimmt
+		ortsliste = ortRO.findByOrtPlz(plz);
 
-		//durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die gleiche ist.
-			for(Ort o: ortsliste){
-				if(ort.equals(o.getOrt())){
-					Ort o2 = ortRO.add(o);
-					kontaktupdate.setOrt(o2);
-					}
+		// durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die
+		// gleiche ist.
+		boolean found = false;
+		for (Ort o : ortsliste) {
+			if (ort.equals(o.getOrt())) {
+				kontaktupdate.setOrt(o);
+				found = true;
+				break;
 			}
-
+		}
+		// wenn nicht gefunden wird neuöer ort hinzugefügt
+		// orte können nicht upgedated werden etweder gefunden oder neu
+		if (!found) {
+			Ort ortDb = ortRO.add(new Ort(plz, ort));
+			kontaktupdate.setOrt(ortDb);
+		}
 
 		return kontaktupdate;
 	}

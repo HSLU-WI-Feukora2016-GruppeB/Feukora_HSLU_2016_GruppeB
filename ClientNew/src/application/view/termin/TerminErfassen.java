@@ -50,7 +50,7 @@ public class TerminErfassen {
 	private TextField txtStrasseL, txtOrtL, txtStrasseK, txtPlzK, txtOrtK, txtNachnameK, txtVornameK;
 
 	@FXML
-	private ComboBox<String> cZeitslot, cFK, cTerminart;
+	private ComboBox<String> cZeitslot, cFK, cTerminArt;
 
 	@FXML
 	private DatePicker dateoftermin;
@@ -93,7 +93,7 @@ public class TerminErfassen {
 		terminarten.add("Abnahmekontrolle");
 
 		ObservableList<String> terminarten2 = FXCollections.observableList(terminarten);
-		cTerminart.setItems(terminarten2);
+		cTerminArt.setItems(terminarten2);
 
 		List<Mitarbeiter> list = mitarbeiterRO.findAllMitarbeiter();
 		List<String> list3 = new ArrayList<String>();
@@ -193,7 +193,7 @@ public class TerminErfassen {
 				break;
 			}
 
-			String terminart = (String) cTerminart.getValue();
+			String terminart = (String) cTerminArt.getValue();
 
 			switch (terminart) {
 

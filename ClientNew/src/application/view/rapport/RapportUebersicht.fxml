@@ -43,7 +43,7 @@
                               <Pane prefHeight="53.0" prefWidth="135.0" />
                            </children>
                         </HBox>
-                        <Button fx:id="btnRapportErstellen" layoutX="261.0" layoutY="1.0" mnemonicParsing="false" onAction="#bearbeitenAuftrag" text="Rapport erstellen" />
+                        <Button fx:id="btnRapportErstellen" layoutX="261.0" layoutY="1.0" mnemonicParsing="false" onAction="#neuRapport" text="Rapport erstellen" />
                         <Button fx:id="btnRapportAnzeigen" layoutX="368.0" layoutY="1.0" mnemonicParsing="false" onAction="#anzeigenRapport" text="Rapport anzeigen" />
                      </children>
                   </Pane>

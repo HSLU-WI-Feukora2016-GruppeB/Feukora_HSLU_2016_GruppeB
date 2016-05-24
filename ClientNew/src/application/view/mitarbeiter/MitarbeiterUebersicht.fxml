@@ -99,7 +99,7 @@
                               <TableColumn fx:id="tblStrasse" minWidth="0.0" prefWidth="85.5" text="Strasse" />
                               <TableColumn fx:id="tblOrt" prefWidth="99.5" text="Ort" />
                               <TableColumn fx:id="tblPosition" prefWidth="70.5" text="Position" />
-                              <TableColumn fx:id="tblEMail" prefWidth="68.0" text="Email" />
+                              <TableColumn fx:id="tblEmail" prefWidth="68.0" text="Email" />
                               <TableColumn fx:id="tblTelefon" prefWidth="103.5" text="TelefonNr." />
                           </columns>
                            <columnResizePolicy>

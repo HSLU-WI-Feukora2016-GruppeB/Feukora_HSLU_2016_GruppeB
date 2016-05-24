@@ -17,14 +17,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="leaf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.liegenschaft.LiegenschaftErfassen">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.liegenschaft.LiegenschaftBearbeiten">
    <children>
       <ImageView fitHeight="480.0" fitWidth="640.0" pickOnBounds="true" />
-      <BorderPane prefHeight="480.0" prefWidth="640.0">
+      <BorderPane fx:id="leaf" prefHeight="480.0" prefWidth="640.0">
          <top>
             <VBox prefHeight="47.0" prefWidth="640.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label text="     Liegenschaft bearbeiten">
+                  <Label text="Liegenschaft bearbeiten">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -42,24 +42,25 @@
             <Pane prefHeight="251.0" prefWidth="105.0" styleClass="r" BorderPane.alignment="CENTER">
                <children>
                   <Button fx:id="btnSuchen" layoutX="10.0" layoutY="56.0" mnemonicParsing="false" onAction="#kontaktSuchen" prefHeight="25.0" prefWidth="65.0" text="suchen" />
-                  <Button fx:id="btnSpeichern" layoutX="10.0" layoutY="339.0" mnemonicParsing="false" onAction="#liegenschaftSpeichern" prefHeight="25.0" prefWidth="74.0" text="Speichern" />
+                  <Button fx:id="btnSpeichern" layoutX="10.0" layoutY="339.0" mnemonicParsing="false" onAction="#liegenschaftUpdate" prefHeight="25.0" prefWidth="74.0" text="Speichern" />
                   <Button fx:id="btnAbbrechen" layoutX="10.0" layoutY="368.0" mnemonicParsing="false" onAction="#abbrechen" text="Abbrechen" />
-               </children></Pane>
+               </children>
+            </Pane>
          </right>
          <center>
             <VBox prefHeight="433.0" prefWidth="495.0" BorderPane.alignment="CENTER">
                <children>
                   <GridPane prefHeight="86.0" prefWidth="510.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="144.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.0" minWidth="10.0" prefWidth="286.0" />
-                    </columnConstraints>
-                    <rowConstraints>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="144.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.0" minWidth="10.0" prefWidth="286.0" />
+                     </columnConstraints>
+                     <rowConstraints>
                         <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="18.0" minHeight="0.0" prefHeight="0.0" />
-                    </rowConstraints>
+                        <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="18.0" minHeight="0.0" prefHeight="0.0" />
+                     </rowConstraints>
                      <children>
                         <Label text="Vorname" GridPane.rowIndex="1" />
                         <Label text="Nachname" GridPane.rowIndex="2" />
@@ -75,44 +76,45 @@
                   <Pane prefHeight="96.0" prefWidth="510.0">
                      <children>
                         <TableView fx:id="tvKundentbl" layoutY="3.0" prefHeight="88.0" prefWidth="496.0">
-                          <columns>
-                            <TableColumn fx:id="tblVorname" prefWidth="65.5" text="Vorname" />
-                            <TableColumn fx:id="tblNachname" prefWidth="78.5" text="Nachname" />
+                           <columns>
+                              <TableColumn fx:id="tblVorname" prefWidth="65.5" text="Vorname" />
+                              <TableColumn fx:id="tblNachname" prefWidth="78.5" text="Nachname" />
                               <TableColumn fx:id="tblStrasse" prefWidth="135.0" text="Strasse" />
                               <TableColumn fx:id="tblOrt" prefWidth="67.5" text="Ort" />
-                              <TableColumn fx:id="tblTel" prefWidth="65.5" text="Tel" />
-                              <TableColumn fx:id="tblPosition" prefWidth="81.0" text="Position" />
-                          </columns>
+                              <TableColumn fx:id="tblTelefon" prefWidth="65.5" text="Telefon" />
+                              <TableColumn fx:id="tblEmail" prefWidth="81.0" text="EMail" />
+                           </columns>
                         </TableView>
                      </children>
                   </Pane>
                   <GridPane prefHeight="117.0" prefWidth="510.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.0" minWidth="10.0" prefWidth="97.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.0" minWidth="10.0" prefWidth="141.0" />
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.0" minWidth="10.0" prefWidth="97.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.0" minWidth="10.0" prefWidth="141.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.0" minWidth="6.0" prefWidth="18.5" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.0" minWidth="10.0" prefWidth="95.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.0" minWidth="10.0" prefWidth="148.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.0" minWidth="1.5" prefWidth="15.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints maxHeight="29.5" minHeight="0.0" prefHeight="20.5" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="42.0" minHeight="1.5" prefHeight="26.5" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="30.5" vgrow="SOMETIMES" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="29.5" minHeight="0.0" prefHeight="20.5" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="42.0" minHeight="1.5" prefHeight="26.5" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="30.5" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="13.5" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="42.0" minHeight="2.5" prefHeight="28.5" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                     </rowConstraints>
                      <children>
                         <Label prefHeight="20.0" prefWidth="98.0" text="Liegenschaft">
                            <font>
                               <Font name="System Bold" size="12.0" />
-                           </font></Label>
+                           </font>
+                        </Label>
                         <Label text="Strasse" GridPane.rowIndex="1" />
                         <Label text="Ort" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                         <Label text="PLZ" GridPane.rowIndex="2" />
                         <TextField fx:id="txtStrasseL" prefHeight="0.0" prefWidth="286.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="txtOrtL" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField fx:id="txtPlzL" prefHeight="25.0" prefWidth="149.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtPlzL" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtOrtL" prefHeight="25.0" prefWidth="149.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
                         <Label text="Feuerungswärmeleistung" wrapText="true" GridPane.rowIndex="4" />
                         <TextField fx:id="txtFeuerungswaermekW" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <Label text="kW" GridPane.columnIndex="2" GridPane.rowIndex="4" />
@@ -123,16 +125,16 @@
                   <HBox prefHeight="121.0" prefWidth="430.0">
                      <children>
                         <GridPane prefHeight="121.0" prefWidth="232.0">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="111.5" minWidth="10.0" prefWidth="94.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="138.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="29.5" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="52.0" minHeight="0.0" prefHeight="27.5" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="111.5" minWidth="10.0" prefWidth="94.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="138.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="29.5" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="52.0" minHeight="0.0" prefHeight="27.5" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
+                           </rowConstraints>
                            <children>
                               <Label text="Brenner">
                                  <font>
@@ -149,16 +151,16 @@
                         </GridPane>
                         <VBox prefHeight="121.0" prefWidth="18.0" />
                         <GridPane prefHeight="121.0" prefWidth="244.0">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.5" minWidth="10.0" prefWidth="97.5" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.5" minWidth="10.0" prefWidth="146.5" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints maxHeight="47.5" minHeight="10.0" prefHeight="27.5" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="30.5" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="24.5" vgrow="SOMETIMES" />
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.5" minWidth="10.0" prefWidth="97.5" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.5" minWidth="10.0" prefWidth="146.5" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="47.5" minHeight="10.0" prefHeight="27.5" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="30.5" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="24.5" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="27.5" minHeight="10.0" prefHeight="27.5" vgrow="SOMETIMES" />
-                          </rowConstraints>
+                           </rowConstraints>
                            <children>
                               <Label prefHeight="31.0" prefWidth="119.0" text="Wärmeerzeuger">
                                  <font>

@@ -47,7 +47,7 @@ public class TerminBearbeiten {
 	private TextField txtStrasseL, txtOrtL, txtVorname, txtStrasseK, txtPlzK, txtOrtK, txtNachnameK, txtVornameK;
 
 	@FXML
-	private ComboBox<String> cZeitslot, cFK, cTerminart;
+	private ComboBox<String> cZeitslot, cFK, cTerminArt;
 
 	@FXML
 	private DatePicker dateoftermin;
@@ -86,10 +86,10 @@ public class TerminBearbeiten {
 		kontaktRO = RmiUtil.getKontaktRO();
 		liegenschaftRO = RmiUtil.getLiegenschaftRO();
 		mitarbeiterRO = RmiUtil.getMitarbeiterRO();
+		auftragRO = RmiUtil.getAuftragRO();
 
 		/*----------------------------------------------*/
 
-		List<Mitarbeiter> list = mitarbeiterRO.findAllMitarbeiter();
 
 		txtStrasseL.setText(strasseL);
 		txtOrtL.setText(ortL);
@@ -104,8 +104,8 @@ public class TerminBearbeiten {
 		terminarten.add("Routinekontrolle");
 		terminarten.add("Abnahmekontrolle");
 		ObservableList<String> terminarten2 = FXCollections.observableList(terminarten);
-		cTerminart.setItems(terminarten2);
-		cTerminart.getSelectionModel().select(terminart);
+		cTerminArt.setItems(terminarten2);
+		cTerminArt.getSelectionModel().select(terminart);
 
 		// Dropdown Mitarbeiter
 		List<Mitarbeiter> mitarbeiterlist = mitarbeiterRO.findAllMitarbeiter();
@@ -253,7 +253,7 @@ public class TerminBearbeiten {
 				break;
 			}
 
-			String terminart = (String) cTerminart.getValue();
+			String terminart = (String) cTerminArt.getValue();
 
 			switch (terminart) {
 
@@ -277,7 +277,7 @@ public class TerminBearbeiten {
 			GregorianCalendar gcal = new GregorianCalendar(jahr, monat, tag);
 
 			Auftrag auftrag = new Auftrag(kunde, liegenschaft, mitarbeiter, gcal, zeitslotint, terminartint);
-			auftragRO.add(auftrag);
+			auftragRO.update(auftrag);
 		}
 	}
 

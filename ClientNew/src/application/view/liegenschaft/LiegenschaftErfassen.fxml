@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.liegenschaft.LiegenschaftErfassen">
+<Pane fx:id="leaf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.liegenschaft.LiegenschaftErfassen">
    <children>
       <ImageView fitHeight="480.0" fitWidth="640.0" pickOnBounds="true" />
       <BorderPane fx:id="leaf" prefHeight="480.0" prefWidth="640.0">
@@ -80,8 +80,8 @@
                             <TableColumn fx:id="tblNachname" prefWidth="78.5" text="Nachname" />
                               <TableColumn fx:id="tblStrasse" prefWidth="135.0" text="Strasse" />
                               <TableColumn fx:id="tblOrt" prefWidth="67.5" text="Ort" />
-                              <TableColumn fx:id="tblTel" prefWidth="65.5" text="Tel" />
-                              <TableColumn fx:id="tblPosition" prefWidth="81.0" text="Position" />
+                              <TableColumn fx:id="tblTelefon" prefWidth="65.5" text="Telefon" />
+                              <TableColumn fx:id="tblEmail" prefWidth="81.0" text="EMail" />
                           </columns>
                         </TableView>
                      </children>
@@ -111,8 +111,8 @@
                         <Label text="Ort" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                         <Label text="PLZ" GridPane.rowIndex="2" />
                         <TextField fx:id="txtStrasseL" prefHeight="0.0" prefWidth="286.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="txtOrtL" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField fx:id="txtPlzL" prefHeight="25.0" prefWidth="149.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtPlzL" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtOrtL" prefHeight="25.0" prefWidth="149.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
                         <Label text="Feuerungswärmeleistung" wrapText="true" GridPane.rowIndex="4" />
                         <TextField fx:id="txtFeuerungswaermekW" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <Label text="kW" GridPane.columnIndex="2" GridPane.rowIndex="4" />
