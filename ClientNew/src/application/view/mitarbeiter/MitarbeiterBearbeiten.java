@@ -196,7 +196,6 @@ public class MitarbeiterBearbeiten {
 			int lohnint = 0, plzint =0;
 
 			try {
-//				rolleint = Integer.parseInt(rolle);
 				lohnint = Integer.parseInt(lohn);
 				plzint = Integer.parseInt(plz);
 			} catch (Exception e) {

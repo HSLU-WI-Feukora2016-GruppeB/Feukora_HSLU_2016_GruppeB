@@ -23790,3 +23790,117 @@ O2Gehalt: 	 	 	3
 Abgasverluste: 	 	 	389
 Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
 ]  wird gelöscht
+2016-05-23 23:17:35 INFO  GenericPersisterImpl:66 - Entity vom Typ Mitarbeiter wird updatet: Mitarbeiter: 
+Vorname: 
+fghj
+Name: 
+rtzui
+Strasse: 
+dfghj
+Ort: 0 uio
+Telefon: 3456789
+eMail: 
+rtzuio
+Rolle Intern: 2
+User: null
+Lohn: 0
+Arbeitet seit: 
+9/6/2016
+Arbeitet bis: 
+9/6/2016
+
+2016-05-23 23:52:43 INFO  GenericPersisterImpl:66 - Entity vom Typ Mitarbeiter wird updatet: Mitarbeiter: 
+Vorname: 
+kjhgfds
+Name: 
+dfghjk
+Strasse: 
+sdfghjkl
+Ort: 0 wertz
+Telefon: 345678
+eMail: 
+dfghjk
+Rolle Intern: 2
+User: null
+Lohn: 0
+Arbeitet seit: 
+2/6/2016
+Arbeitet bis: 
+2/6/2016
+
+2016-05-23 23:58:27 INFO  GenericPersisterImpl:66 - Entity vom Typ Mitarbeiter wird updatet: Mitarbeiter: 
+Vorname: 
+kjhgfds
+Name: 
+dfghjk
+Strasse: 
+sdfghjkl
+Ort: 456 wertz
+Telefon: 345678
+eMail: 
+dfghjk
+Rolle Intern: 2
+User: null
+Lohn: 8765
+Arbeitet seit: 
+2/7/2016
+Arbeitet bis: 
+2/7/2016
+
+2016-05-24 00:05:07 INFO  GenericPersisterImpl:66 - Entity vom Typ Mitarbeiter wird updatet: Mitarbeiter: 
+Vorname: 
+kjhgfds
+Name: 
+dfghjk
+Strasse: 
+sdfghjkl
+Ort: 456 wertz
+Telefon: 345678
+eMail: 
+dfghjk
+Rolle Intern: 1
+User: null
+Lohn: 8765
+Arbeitet seit: 
+2/8/2016
+Arbeitet bis: 
+2/8/2016
+
+2016-05-24 08:38:16 INFO  GenericPersisterImpl:66 - Entity vom Typ Mitarbeiter wird updatet: Mitarbeiter: 
+Vorname: 
+Domi
+Name: 
+Stirni
+Strasse: 
+Dlsssssssssss
+Ort: 7897 Züri
+Telefon: 3456789
+eMail: 
+fghjkl
+Rolle Intern: 2
+User: null
+Lohn: 7777
+Arbeitet seit: 
+9/6/2016
+Arbeitet bis: 
+9/6/2016
+
+2016-05-24 08:40:07 INFO  GenericPersisterImpl:66 - Entity vom Typ Mitarbeiter wird updatet: Mitarbeiter: 
+Vorname: 
+Domi
+Name: 
+Stirni
+Strasse: 
+Dlsssssssssss
+Ort: 7897 Züri
+Telefon: 3456789
+eMail: 
+fghjkl
+Rolle Intern: 1
+User: null
+Lohn: 7777
+Arbeitet seit: 
+9/7/2016
+Arbeitet bis: 
+9/7/2016
+
