@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import application.RmiUtil;
 import application.view.rapport.RapportErfassen;
 import entitys.*;
 import javafx.collections.FXCollections;
@@ -36,22 +37,11 @@ import rmi.interfaces.WaermeerzeugerRO;
  * @version 4.0
  * @since 1.0
  */
-
 public class LiegenschaftErfassen {
 
-	KontaktRO kontaktRO;
-	LiegenschaftRO liegenschaftRO;
-	WaermeerzeugerRO waermeerzeugerRO;
-	BrennerRO brennerRO;
-	OrtRO ortRO;
-	FeuerungsanlageRO feuerungsanlageRO;
-
-	//txtVorname usw nicht mehr gebraucht?
 	@FXML
-	private TextField txtVorname, txtNachname, txtStrasse, txtOrt, txtPlz,
-		txtStrasseL, txtOrtL, txtPlzL,
-		txtBrennertyp, txtBrennerjahr,
-		txtWaermetyp, txtWaermejahr, txtInfo, txtFeuerungswaermekW;
+	private TextField txtVorname, txtNachname, txtStrasse, txtOrt, txtPlz, txtStrasseL, txtOrtL, txtPlzL, txtBrennertyp,
+			txtBrennerjahr, txtWaermetyp, txtWaermejahr, txtInfo, txtFeuerungswaermekW;
 
 	@FXML
 	private Label lblRueckmeldung;
@@ -68,70 +58,31 @@ public class LiegenschaftErfassen {
 	@FXML
 	private BorderPane leaf;
 
+	KontaktRO kontaktRO;
+	LiegenschaftRO liegenschaftRO;
+	WaermeerzeugerRO waermeerzeugerRO;
+	BrennerRO brennerRO;
+	OrtRO ortRO;
+	FeuerungsanlageRO feuerungsanlageRO;
 
-	public void initialize() throws Exception{
+	public void initialize() throws Exception {
 
 		/*---------------RMI Verbindung---------------*/
 
+		/* Lookup */
+		brennerRO = RmiUtil.getBrennerRO();
+		feuerungsanlageRO = RmiUtil.getFeuerungsanlageRO();
+		kontaktRO = RmiUtil.getKontaktRO();
+		liegenschaftRO = RmiUtil.getLiegenschaftRO();
+		ortRO = RmiUtil.getOrtRO();
+		waermeerzeugerRO = RmiUtil.getWaermeerzeugerRO();
 
-		String KontaktROName = "Kontakt";
-		String LiegenschaftRO = "Liegenschaft";
-		String WaermeerzeugerRO = "Waermerzeuger";
-		String BrennerRO = "Brenner";
-		String OrtRO = "Ort";
-		String FeuerungsanlageRO = "Feuerungsanlage";
-
-		try {
-
-			// Properties Objekt erstellen
-			Properties rmiProperties = new Properties();
-
-			// Klassenloader holen
-			ClassLoader cLoader = LiegenschaftErfassen.class.getClassLoader();
-
-			// Properties laden
-			try {
-				rmiProperties.load(cLoader.getResourceAsStream("clientintern.properties"));
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-
-			// Port RMI auslesen
-			String stringPort = rmiProperties.getProperty("rmiPort");
-			Integer rmiPort = Integer.valueOf(stringPort);
-
-			String hostIp = rmiProperties.getProperty("rmiIp");
-
-			// URLs definieren
-
-			String urlKontaktRO = "rmi://" + hostIp + ":" + rmiPort + "/" + KontaktROName;
-			String urlLiegenschaftRO = "rmi://" + hostIp + ":" + rmiPort + "/" + LiegenschaftRO;
-			String urlWaermeerzeugerRO = "rmi://" + hostIp + ":" + rmiPort + "/" + WaermeerzeugerRO;
-			String urlBrennerRO = "rmi://" + hostIp + ":" + rmiPort + "/" + BrennerRO;
-			String urlOrtRO = "rmi://" + hostIp + ":" + rmiPort + "/" + OrtRO;
-			String urlFeuerungsanlageRO = "rmi://" + hostIp + ":" + rmiPort + "/" + FeuerungsanlageRO;
-
-			/* Lookup */
-			brennerRO = (BrennerRO) Naming.lookup(urlBrennerRO);
-			feuerungsanlageRO = (FeuerungsanlageRO) Naming.lookup(urlFeuerungsanlageRO);
-			kontaktRO = (KontaktRO) Naming.lookup(urlKontaktRO);
-			liegenschaftRO = (LiegenschaftRO) Naming.lookup(urlLiegenschaftRO);
-			ortRO = (OrtRO) Naming.lookup(urlOrtRO);
-			waermeerzeugerRO = (WaermeerzeugerRO) Naming.lookup(urlWaermeerzeugerRO);
-
-		} catch (MalformedURLException | RemoteException | NotBoundException e) {
-			throw e;
-		}
-
-/*----------------------------------------------*/
-
-
+		/*----------------------------------------------*/
 
 		List<String> listbrennstoff = new ArrayList<String>();
 		listbrennstoff.add("Öl");
 		listbrennstoff.add("Erdgas");
 		listbrennstoff.add("Flüssiggas");
-
 
 		ObservableList<String> obslistbrennstoff = FXCollections.observableList(listbrennstoff);
 		cbBrennart.setItems(obslistbrennstoff);
@@ -148,6 +99,7 @@ public class LiegenschaftErfassen {
 		cbBrennart.setItems(obslistbrennart);
 
 	}
+
 	/**
 	 * Methode speichert eine Liegenschaft neu.
 	 */
@@ -194,7 +146,6 @@ public class LiegenschaftErfassen {
 				break;
 			}
 
-
 			// Combobox je nach Text int vergeben
 			int waermeA = 0;
 			switch (waermeart) {
@@ -213,20 +164,19 @@ public class LiegenschaftErfassen {
 			int waermeJ = Integer.parseInt(waermejahr);
 			// brennerjahr in int parsen
 			int brennerJ = Integer.parseInt(brennerjahr);
-			//plz parsen
+			// plz parsen
 			int plzint = Integer.parseInt(plz);
 
 			int leistungint = Integer.parseInt(leistung);
 
 			try {
-				Liegenschaft newliegenschaft = createLiegenschaft(strasse, plzint, ort,infovorort,
-						brennertyp, brennerA, brennerJ, waermetyp, waermeA, waermeJ, leistungint);
+				Liegenschaft newliegenschaft = createLiegenschaft(strasse, plzint, ort, infovorort, brennertyp,
+						brennerA, brennerJ, waermetyp, waermeA, waermeJ, leistungint);
 				liegenschaftRO.add(newliegenschaft);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				lblRueckmeldung.setText("Liegenschaft konnte nicht gespeichert werden");
 			}
-
 
 		}
 
@@ -252,55 +202,51 @@ public class LiegenschaftErfassen {
 		}
 	}
 
-
-	public Liegenschaft createLiegenschaft(	String strasse, int plz, String ortbez, String info, String btyp, int bart,
-			int bjahr, String wtyp, int wart, int wjahr, int leistung) throws Exception{
+	public Liegenschaft createLiegenschaft(String strasse, int plz, String ortbez, String info, String btyp, int bart,
+			int bjahr, String wtyp, int wart, int wjahr, int leistung) throws Exception {
 
 		List<Ort> ortsliste = new ArrayList<Ort>();
 		Ort ort = new Ort();
 
-
-		//Liegenschaftsobjekt erstellen und speichern
+		// Liegenschaftsobjekt erstellen und speichern
 		Liegenschaft liegenschaft = new Liegenschaft();
 
 		liegenschaft.setStrasse(strasse);
 
-		 ortsliste = ortRO.findByOrtPlz(plz);
+		ortsliste = ortRO.findByOrtPlz(plz);
 
-			//durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die gleiche ist.
-		 for(Ort o: ortsliste){
-				if(ortbez.equals(o.getOrt())){
-					ort = ortRO.add(o);
-					liegenschaft.setOrt(ort);
-					}
-		 }
+		// durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die
+		// gleiche ist.
+		for (Ort o : ortsliste) {
+			if (ortbez.equals(o.getOrt())) {
+				ort = ortRO.add(o);
+				liegenschaft.setOrt(ort);
+			}
+		}
 
 		liegenschaft.setInfoVorOrt(info);
 
 		// neues Brenenrobjekt erstellen und speicher
-		Brenner brenner = new Brenner(bart,btyp,bjahr);
+		Brenner brenner = new Brenner(bart, btyp, bjahr);
 		Brenner brenner2 = brennerRO.add(brenner);
 
 		// neues Waermeerzeugerobjekt erstellen und speicher
-		Waermeerzeuger waermeerzeuger = new Waermeerzeuger(wart,wtyp,wjahr);
-		Waermeerzeuger	waermeerzeuger2 = waermeerzeugerRO.add(waermeerzeuger);
+		Waermeerzeuger waermeerzeuger = new Waermeerzeuger(wart, wtyp, wjahr);
+		Waermeerzeuger waermeerzeuger2 = waermeerzeugerRO.add(waermeerzeuger);
 
-		//Feuerungsanlageobjekt erstellen, speichern und Liegenschaft hinzufügen
-		Feuerungsanlage feuera = new Feuerungsanlage(brenner2,waermeerzeuger2,leistung);
+		// Feuerungsanlageobjekt erstellen, speichern und Liegenschaft
+		// hinzufügen
+		Feuerungsanlage feuera = new Feuerungsanlage(brenner2, waermeerzeuger2, leistung);
 		Feuerungsanlage feuera2 = feuerungsanlageRO.add(feuera);
 		liegenschaft.setFeuerungsanlage(feuera2);
 
-
-		//Kontakt nehmen und hinzufügen
+		// Kontakt nehmen und hinzufügen
 		Kontakt indSelected = (Kontakt) tvKundentbl.getSelectionModel().getSelectedItem();
 		liegenschaft.setKontakt(indSelected);
-
 
 		return liegenschaft;
 
 	}
-
-
 
 	/**
 	 * Diese Methode führt den User zur Übersicht Rapportsübersicht zurück.

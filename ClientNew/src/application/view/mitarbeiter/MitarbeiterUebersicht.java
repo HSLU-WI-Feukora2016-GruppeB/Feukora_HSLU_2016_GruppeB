@@ -77,8 +77,6 @@ public class MitarbeiterUebersicht {
 	MitarbeiterRO mitarbeiterRO;
 	OrtRO ortRO;
 
-
-
 	public static Mitarbeiter mastatic;
 
 	public void initialize() throws Exception {
@@ -90,6 +88,8 @@ public class MitarbeiterUebersicht {
 
 		ortRO = RmiUtil.getOrtRO();
 		mitarbeiterRO = RmiUtil.getMitarbeiterRO();
+
+		/*----------------------------------------------*/
 
 		try {
 			List<Mitarbeiter> listmitarbeiter = mitarbeiterRO.findAllMitarbeiter();
@@ -110,6 +110,9 @@ public class MitarbeiterUebersicht {
 
 	}
 
+	/**
+	 * Mit dieser Methode wird anhand des Vor-und Nachnamen nach einem Mitarbeiter gesucht.
+	 */
 	public void MitarbeiterSuchen() {
 
 		String name = txtName.getText();
