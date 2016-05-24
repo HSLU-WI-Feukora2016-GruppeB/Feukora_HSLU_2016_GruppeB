@@ -177,14 +177,22 @@ public class MitarbeiterUebersicht {
 
 	}
 
+
+	/**
+	 * Diese Methode löscht das ausgewählte Objekt in der Tableview
+	 */
 	public void loeschen(){
 		Mitarbeiter indSelected = (Mitarbeiter) tabelle.getSelectionModel().getSelectedItem();
 		try {
 			mitarbeiterRO.delete(indSelected);
 		} catch (Exception e) {
-			lblRueckmeldung.setText("Mitarbeiter gelöscht");
+			lblRueckmeldung.setText("Mitarbeiter wurde nicht gelöscht");
 		}
+		lblRueckmeldung.setText("Mitarbeiter wurde gelöscht");
 	}
+
+
+
 
 	/**
 	 * Diese Methode führt den User zum Dashboard zurück

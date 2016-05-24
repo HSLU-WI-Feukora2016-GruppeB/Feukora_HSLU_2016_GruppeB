@@ -10,6 +10,7 @@ import java.util.Properties;
 
 import application.RmiUtil;
 import entitys.Liegenschaft;
+import entitys.Mitarbeiter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -134,6 +135,22 @@ public class LiegenschaftUebersicht {
 			e.printStackTrace();
 		}
 	}
+
+
+	/**
+	 * Diese Methode löscht das ausgewählte Objekt in der Tableview
+	 */
+	public void loeschen(){
+		Liegenschaft indSelected = (Liegenschaft) tabelle.getSelectionModel().getSelectedItem();
+		try {
+			liegenschaftRO.delete(indSelected);
+		} catch (Exception e) {
+			lblRueckmeldung.setText("Liegenschaft wurde nicht gelöscht");
+		}
+		lblRueckmeldung.setText("Liegenschaft wurde gelöscht");
+	}
+
+
 
 	/**
 	 * Diese Methode führt den User zum Dashboard zurück
