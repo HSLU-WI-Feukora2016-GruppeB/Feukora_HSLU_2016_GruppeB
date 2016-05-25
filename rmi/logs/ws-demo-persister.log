@@ -20719,3 +20719,1153 @@ Arbeitet bis:
 2/5/2016
 ]  wird gelöscht
 >>>>>>> refs/remotes/origin/master
+2016-05-24 23:56:34 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Luca
+Name: 
+Raneri
+Strasse: 
+Musterstrasse 5
+Ort: 6000 Luzern
+Telefon: 1234567178
+eMail: 
+l.r@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-25 00:16:26 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 7/6/2016
+Termin null
+Auftragsnummer: 553
+
+Kontakt: 
+Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+5000 Aarau
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+5000 Aarau
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+1000 Genf
+
+Info vor Ort: 07978885599 anrufen bei Ankunft
+
+Messung: 
+Keine Messung 1 Stufe 1 vorhanden! +
+Keine Messung 1 Stufe 2 vorhanden! + 
+Keine Messung 2 Stufe 1 vorhanden!Keine Messung 2 Stufe 2 vorhanden!Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: 3000 Bern
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
+2016-05-25 00:19:49 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 7/6/2016
+Termin null
+Auftragsnummer: 553
+
+Kontakt: 
+Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+5000 Aarau
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+5000 Aarau
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+1000 Genf
+
+Info vor Ort: 07978885599 anrufen bei Ankunft
+
+Messung: 
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	11
+Kohlenstoff: 	 	 	22
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	55
+Abgastemperatur: 	 	 	77
+Waermeerzeugertemperatur: 	 	 	66
+Verbrennungstemperatur: 	 	 	999
+O2Gehalt: 	 	 	66
+Abgasverluste: 	 	 	8
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	true
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Keine Messung 1 Stufe 2 vorhanden! + 
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	67
+Kohlenstoff: 	 	 	678
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	678
+Abgastemperatur: 	 	 	67
+Waermeerzeugertemperatur: 	 	 	67
+Verbrennungstemperatur: 	 	 	876
+O2Gehalt: 	 	 	67
+Abgasverluste: 	 	 	987
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+
+Keine Messung 2 Stufe 2 vorhanden!Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: 3000 Bern
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
+2016-05-25 00:23:40 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 7/6/2016
+Termin null
+Auftragsnummer: 553
+
+Kontakt: 
+Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+5000 Aarau
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+5000 Aarau
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+1000 Genf
+
+Info vor Ort: 07978885599 anrufen bei Ankunft
+
+Messung: 
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	11
+Kohlenstoff: 	 	 	22
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	55
+Abgastemperatur: 	 	 	77
+Waermeerzeugertemperatur: 	 	 	66
+Verbrennungstemperatur: 	 	 	999
+O2Gehalt: 	 	 	66
+Abgasverluste: 	 	 	8
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	true
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Keine Messung 1 Stufe 2 vorhanden! + 
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	67
+Kohlenstoff: 	 	 	678
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	678
+Abgastemperatur: 	 	 	67
+Waermeerzeugertemperatur: 	 	 	67
+Verbrennungstemperatur: 	 	 	876
+O2Gehalt: 	 	 	67
+Abgasverluste: 	 	 	987
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+
+Keine Messung 2 Stufe 2 vorhanden!Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: 3000 Bern
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
+2016-05-25 00:37:02 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 7/6/2016
+Termin null
+Auftragsnummer: 553
+
+Kontakt: 
+Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+5000 Aarau
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+5000 Aarau
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+1000 Genf
+
+Info vor Ort: 07978885599 anrufen bei Ankunft
+
+Messung: 
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	33
+Kohlenstoff: 	 	 	44
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	44
+Abgastemperatur: 	 	 	66
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	88
+O2Gehalt: 	 	 	88
+Abgasverluste: 	 	 	66
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	true
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	999
+Kohlenstoff: 	 	 	44
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	55
+Abgastemperatur: 	 	 	44
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	55
+O2Gehalt: 	 	 	66
+Abgasverluste: 	 	 	55
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	true
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	77
+Kohlenstoff: 	 	 	11
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	44
+Abgastemperatur: 	 	 	33
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	33
+O2Gehalt: 	 	 	66
+Abgasverluste: 	 	 	66
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	66
+Kohlenstoff: 	 	 	88
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	444
+Abgastemperatur: 	 	 	44
+Waermeerzeugertemperatur: 	 	 	88
+Verbrennungstemperatur: 	 	 	33
+O2Gehalt: 	 	 	887
+Abgasverluste: 	 	 	99
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+
+
+Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: 3000 Bern
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
+2016-05-25 00:37:33 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 7/6/2016
+Termin null
+Auftragsnummer: 553
+
+Kontakt: 
+Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+5000 Aarau
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+5000 Aarau
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+1000 Genf
+
+Info vor Ort: 07978885599 anrufen bei Ankunft
+
+Messung: 
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	33
+Kohlenstoff: 	 	 	44
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	44
+Abgastemperatur: 	 	 	66
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	88
+O2Gehalt: 	 	 	88
+Abgasverluste: 	 	 	66
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	true
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	999
+Kohlenstoff: 	 	 	44
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	55
+Abgastemperatur: 	 	 	44
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	55
+O2Gehalt: 	 	 	66
+Abgasverluste: 	 	 	55
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	true
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	77
+Kohlenstoff: 	 	 	11
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	44
+Abgastemperatur: 	 	 	33
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	33
+O2Gehalt: 	 	 	66
+Abgasverluste: 	 	 	66
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	66
+Kohlenstoff: 	 	 	88
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	444
+Abgastemperatur: 	 	 	44
+Waermeerzeugertemperatur: 	 	 	88
+Verbrennungstemperatur: 	 	 	33
+O2Gehalt: 	 	 	887
+Abgasverluste: 	 	 	99
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+
+
+Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: 3000 Bern
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
+2016-05-25 00:37:34 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 7/6/2016
+Termin null
+Auftragsnummer: 553
+
+Kontakt: 
+Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+5000 Aarau
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+5000 Aarau
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+1000 Genf
+
+Info vor Ort: 07978885599 anrufen bei Ankunft
+
+Messung: 
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	33
+Kohlenstoff: 	 	 	44
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	44
+Abgastemperatur: 	 	 	66
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	88
+O2Gehalt: 	 	 	88
+Abgasverluste: 	 	 	66
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	true
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	999
+Kohlenstoff: 	 	 	44
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	55
+Abgastemperatur: 	 	 	44
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	55
+O2Gehalt: 	 	 	66
+Abgasverluste: 	 	 	55
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	true
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	77
+Kohlenstoff: 	 	 	11
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	44
+Abgastemperatur: 	 	 	33
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	33
+O2Gehalt: 	 	 	66
+Abgasverluste: 	 	 	66
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	66
+Kohlenstoff: 	 	 	88
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	444
+Abgastemperatur: 	 	 	44
+Waermeerzeugertemperatur: 	 	 	88
+Verbrennungstemperatur: 	 	 	33
+O2Gehalt: 	 	 	887
+Abgasverluste: 	 	 	99
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+
+
+Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: 3000 Bern
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
+2016-05-25 00:37:41 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 7/6/2016
+Termin null
+Auftragsnummer: 553
+
+Kontakt: 
+Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+5000 Aarau
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+5000 Aarau
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+1000 Genf
+
+Info vor Ort: 07978885599 anrufen bei Ankunft
+
+Messung: 
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	33
+Kohlenstoff: 	 	 	44
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	44
+Abgastemperatur: 	 	 	66
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	88
+O2Gehalt: 	 	 	88
+Abgasverluste: 	 	 	66
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	true
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	999
+Kohlenstoff: 	 	 	44
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	55
+Abgastemperatur: 	 	 	44
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	55
+O2Gehalt: 	 	 	66
+Abgasverluste: 	 	 	55
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	true
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	77
+Kohlenstoff: 	 	 	11
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	44
+Abgastemperatur: 	 	 	33
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	33
+O2Gehalt: 	 	 	66
+Abgasverluste: 	 	 	66
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	66
+Kohlenstoff: 	 	 	888888
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	444
+Abgastemperatur: 	 	 	44
+Waermeerzeugertemperatur: 	 	 	88
+Verbrennungstemperatur: 	 	 	33
+O2Gehalt: 	 	 	887
+Abgasverluste: 	 	 	99
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+
+
+Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: 3000 Bern
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
+2016-05-25 00:37:42 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 7/6/2016
+Termin null
+Auftragsnummer: 553
+
+Kontakt: 
+Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+5000 Aarau
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+5000 Aarau
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+1000 Genf
+
+Info vor Ort: 07978885599 anrufen bei Ankunft
+
+Messung: 
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	33
+Kohlenstoff: 	 	 	44
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	44
+Abgastemperatur: 	 	 	66
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	88
+O2Gehalt: 	 	 	88
+Abgasverluste: 	 	 	66
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	true
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	999
+Kohlenstoff: 	 	 	44
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	55
+Abgastemperatur: 	 	 	44
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	55
+O2Gehalt: 	 	 	66
+Abgasverluste: 	 	 	55
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	true
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	77
+Kohlenstoff: 	 	 	11
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	44
+Abgastemperatur: 	 	 	33
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	33
+O2Gehalt: 	 	 	66
+Abgasverluste: 	 	 	66
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	66
+Kohlenstoff: 	 	 	888888
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	444
+Abgastemperatur: 	 	 	44
+Waermeerzeugertemperatur: 	 	 	88
+Verbrennungstemperatur: 	 	 	33
+O2Gehalt: 	 	 	887
+Abgasverluste: 	 	 	99
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+
+
+Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: 3000 Bern
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
+2016-05-25 00:37:43 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 7/6/2016
+Termin null
+Auftragsnummer: 553
+
+Kontakt: 
+Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+5000 Aarau
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+5000 Aarau
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+1000 Genf
+
+Info vor Ort: 07978885599 anrufen bei Ankunft
+
+Messung: 
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	33
+Kohlenstoff: 	 	 	44
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	44
+Abgastemperatur: 	 	 	66
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	88
+O2Gehalt: 	 	 	88
+Abgasverluste: 	 	 	66
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	true
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	999
+Kohlenstoff: 	 	 	44
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	55
+Abgastemperatur: 	 	 	44
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	55
+O2Gehalt: 	 	 	66
+Abgasverluste: 	 	 	55
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	true
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	77
+Kohlenstoff: 	 	 	11
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	44
+Abgastemperatur: 	 	 	33
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	33
+O2Gehalt: 	 	 	66
+Abgasverluste: 	 	 	66
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	66
+Kohlenstoff: 	 	 	888888
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	444
+Abgastemperatur: 	 	 	44
+Waermeerzeugertemperatur: 	 	 	88
+Verbrennungstemperatur: 	 	 	33
+O2Gehalt: 	 	 	887
+Abgasverluste: 	 	 	99
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+
+
+Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: 3000 Bern
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
+2016-05-25 00:38:06 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 7/6/2016
+Termin null
+Auftragsnummer: 553
+
+Kontakt: 
+Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+5000 Aarau
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Christoph
+Nachname: Müller
+Strasse: Neustrasse 1
+5000 Aarau
+Telefon: 0554445577
+eMail: c.m@gmail.com
+Rolle Extern: Eigentümer
+
+Info vo Ort: 
+07978885599 anrufen bei Ankunft
+Strasse: 
+Musterweg 456
+Ort: 
+1000 Genf
+
+Info vor Ort: 07978885599 anrufen bei Ankunft
+
+Messung: 
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	33
+Kohlenstoff: 	 	 	44
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	44
+Abgastemperatur: 	 	 	66
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	88
+O2Gehalt: 	 	 	88
+Abgasverluste: 	 	 	66
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	true
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	999
+Kohlenstoff: 	 	 	44
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	55
+Abgastemperatur: 	 	 	44
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	55
+O2Gehalt: 	 	 	66
+Abgasverluste: 	 	 	55
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	true
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	77
+Kohlenstoff: 	 	 	11
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	44
+Abgastemperatur: 	 	 	33
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	33
+O2Gehalt: 	 	 	66
+Abgasverluste: 	 	 	66
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	66
+Kohlenstoff: 	 	 	888888
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	444
+Abgastemperatur: 	 	 	44
+Waermeerzeugertemperatur: 	 	 	88
+Verbrennungstemperatur: 	 	 	33
+O2Gehalt: 	 	 	887
+Abgasverluste: 	 	 	99
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+
+
+Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: 3000 Bern
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
