@@ -29,7 +29,7 @@ import rmi.interfaces.WaermeerzeugerRO;
  * Erfassung neuer Liegenschaften.
  *
  * @author Alexandra Lengen und Pascal Steiner
- * @version 4.0
+ * @version 1.0
  * @since 1.0
  */
 public class LiegenschaftErfassen {

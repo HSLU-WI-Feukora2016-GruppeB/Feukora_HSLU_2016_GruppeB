@@ -1,15 +1,8 @@
 package application.view.rapport;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.rmi.Naming;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
-import java.util.ArrayList;
-import java.util.Properties;
 
+import java.util.ArrayList;
 import application.RmiUtil;
-import application.view.mitarbeiter.MitarbeiterBearbeiten;
 import entitys.Auftrag;
 import entitys.Feuerungsanlage;
 import entitys.Liegenschaft;
@@ -23,9 +16,15 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import rmi.interfaces.AuftragRO;
 import rmi.interfaces.MessungRO;
-import rmi.interfaces.MitarbeiterRO;
-import rmi.interfaces.OrtRO;
 
+/**
+ *Diese Klasse zeigt einen Rapport mitsamt den erfassten Messdaten an
+ *
+ * @author Pascal Steiner & Alexandra Lenggen
+ * @version 1.0
+ * @since 1.0
+ *
+ */
 public class RapportBearbeiten {
 
 	static Auftrag ausgewaehlterauftrag;
@@ -166,6 +165,11 @@ public class RapportBearbeiten {
 
 	}
 
+	/**
+	 * speichert den ausgewählten auftrag auf Variabeln
+	 *
+	 * @param auftrag
+	 */
 	public static void bekommeAuftrag(Auftrag auftrag) {
 
 		ausgewaehlterauftrag = auftrag;

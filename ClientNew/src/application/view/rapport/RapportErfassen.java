@@ -1,16 +1,7 @@
 package application.view.rapport;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.rmi.Naming;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Properties;
 
+import java.util.GregorianCalendar;
 import application.RmiUtil;
 import entitys.Auftrag;
 import entitys.Feuerungsanlage;
@@ -19,9 +10,7 @@ import entitys.Messung;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.Labeled;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -34,7 +23,7 @@ import rmi.interfaces.OrtRO;
  * Feruengsrapporte erstellt.
  *
  * @author Alexandra Lengen und Pascal Steiner
- * @version 3.0
+ * @version 1.0
  * @since 1.0
  */
 
@@ -130,11 +119,16 @@ public class RapportErfassen {
 		txtLeistung.setText(feuerungsleistung);
 	}
 
+	/**
+	 * speicher den ausgeählten Auftrag auf Variabeln
+	 *
+	 * @param auftrag
+	 */
 	public static void bekommeAuftrag(Auftrag auftrag) {
 
 		ausgewaehlterauftrag = auftrag;
 		if(auftrag.getMessung1stufe1() != null){
-			
+
 		}
 
 		// Kundenobjekt zerlegen
@@ -421,7 +415,6 @@ public class RapportErfassen {
 	 * @param stringwaermer
 	 * @param stringo2gehalt
 	 * @param stringabgasverluste
-	 * @param oelanteil
 	 * @return m
 	 * @throws Exception
 	 */

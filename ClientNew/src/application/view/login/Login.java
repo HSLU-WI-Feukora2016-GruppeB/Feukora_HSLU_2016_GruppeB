@@ -33,6 +33,14 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import rmi.interfaces.KontaktRO;
 
+/**
+ *Managed das Login und die Authentifizierung
+ *
+ * @author Pascal Steiner & Alexandra Lenggen
+ * @version 1.0
+ * @since 1.0
+ *
+ */
 public class Login {
 
 	@FXML

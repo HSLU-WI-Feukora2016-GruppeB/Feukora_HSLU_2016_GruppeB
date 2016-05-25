@@ -1,20 +1,13 @@
 package application.view.mitarbeiter;
 
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.rmi.Naming;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
+
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
-import java.util.Properties;
-
 import application.RmiUtil;
 import entitys.Mitarbeiter;
 import entitys.Ort;
@@ -35,7 +28,7 @@ import rmi.interfaces.OrtRO;
  * Mitarbeiter erfasst und alte Bearbeitet werden.
  *
  * @author Alexandra Lengen und Pascal Steiner
- * @version 4.0
+ * @version 1.0
  * @since 1.0
  */
 

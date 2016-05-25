@@ -136,7 +136,7 @@ public class LiegenschaftBearbeiten {
 	}
 
 	/**
-	 *
+	 *Speichert das erhaltene Objekt auf statische Variabeln
 	 *
 	 * @param liegenschaft
 	 */
@@ -170,6 +170,10 @@ public class LiegenschaftBearbeiten {
 		waermejahr = String.valueOf(feueranl.getWaermeerzeuger().getBaujahr());
 	}
 
+
+	/**
+	 * Überspeichert die Daten des Objekts
+	 */
 	public void liegenschaftUpdate() {
 
 		String strasse = txtStrasseL.getText();
@@ -249,6 +253,9 @@ public class LiegenschaftBearbeiten {
 		}
 	}
 
+	/**
+	 * Manuelles suchen um den Kontakt in der Tableview anzuzeigen
+	 */
 	public void kontaktSuchen() {
 		String vornameK = txtVorname.getText();
 		String nameK = txtNachname.getText();
@@ -278,6 +285,24 @@ public class LiegenschaftBearbeiten {
 		}
 	}
 
+
+	/**
+	 * Setzt die Parameter zu einem neuen Liegenschaftsobjekt zusammen
+	 *
+	 * @param strasse
+	 * @param plz
+	 * @param ortbez
+	 * @param info
+	 * @param btyp
+	 * @param bart
+	 * @param bjahr
+	 * @param wtyp
+	 * @param wart
+	 * @param wjahr
+	 * @param leistung
+	 * @return
+	 * @throws Exception
+	 */
 	public Liegenschaft updateLiegenschaft(String strasse, int plz, String ortbez, String info, String btyp, int bart,
 			int bjahr, String wtyp, int wart, int wjahr, int leistung) throws Exception {
 
