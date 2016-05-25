@@ -22318,3 +22318,912 @@ Arbeitet bis:
 
 Kontrollart: 1
 
+2016-05-25 11:45:46 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 8/9/2016
+Termin 8:00 - 10:00 Uhr
+Auftragsnummer: 150
+
+Kontakt: 
+Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+3000 Bern
+
+Info vor Ort: Hausmeister bei Muster klingeln
+
+Messung: 
+Keine Messung 1 Stufe 1 vorhanden! +
+Keine Messung 1 Stufe 2 vorhanden! + 
+Keine Messung 2 Stufe 1 vorhanden!Keine Messung 2 Stufe 2 vorhanden!Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
+2016-05-25 11:49:03 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 8/9/2016
+Termin 8:00 - 10:00 Uhr
+Auftragsnummer: 150
+
+Kontakt: 
+Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+3000 Bern
+
+Info vor Ort: Hausmeister bei Muster klingeln
+
+Messung: 
+Keine Messung 1 Stufe 1 vorhanden! +
+Keine Messung 1 Stufe 2 vorhanden! + 
+Keine Messung 2 Stufe 1 vorhanden!Keine Messung 2 Stufe 2 vorhanden!Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
+2016-05-25 12:01:41 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 8/9/2016
+Termin 8:00 - 10:00 Uhr
+Auftragsnummer: 150
+
+Kontakt: 
+Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+3000 Bern
+
+Info vor Ort: Hausmeister bei Muster klingeln
+
+Messung: 
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	23
+Kohlenstoff: 	 	 	43
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	43
+Waermeerzeugertemperatur: 	 	 	43
+Verbrennungstemperatur: 	 	 	34
+O2Gehalt: 	 	 	43
+Abgasverluste: 	 	 	34
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	true
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Keine Messung 1 Stufe 2 vorhanden! + 
+Keine Messung 2 Stufe 1 vorhanden!Keine Messung 2 Stufe 2 vorhanden!Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
+2016-05-25 12:06:22 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 8/9/2016
+Termin 8:00 - 10:00 Uhr
+Auftragsnummer: 150
+
+Kontakt: 
+Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+3000 Bern
+
+Info vor Ort: Hausmeister bei Muster klingeln
+
+Messung: 
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	32
+Kohlenstoff: 	 	 	32
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	23
+Abgastemperatur: 	 	 	32
+Waermeerzeugertemperatur: 	 	 	332
+Verbrennungstemperatur: 	 	 	3232
+O2Gehalt: 	 	 	32
+Abgasverluste: 	 	 	32
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	true
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Keine Messung 1 Stufe 2 vorhanden! + 
+Keine Messung 2 Stufe 1 vorhanden!Keine Messung 2 Stufe 2 vorhanden!Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
+2016-05-25 12:06:33 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 8/9/2016
+Termin 8:00 - 10:00 Uhr
+Auftragsnummer: 150
+
+Kontakt: 
+Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+3000 Bern
+
+Info vor Ort: Hausmeister bei Muster klingeln
+
+Messung: 
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	32
+Kohlenstoff: 	 	 	32
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	23
+Abgastemperatur: 	 	 	32
+Waermeerzeugertemperatur: 	 	 	332
+Verbrennungstemperatur: 	 	 	3232
+O2Gehalt: 	 	 	32
+Abgasverluste: 	 	 	32
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	true
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Keine Messung 1 Stufe 2 vorhanden! + 
+Keine Messung 2 Stufe 1 vorhanden!Keine Messung 2 Stufe 2 vorhanden!Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
+2016-05-25 12:12:27 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 8/9/2016
+Termin 8:00 - 10:00 Uhr
+Auftragsnummer: 150
+
+Kontakt: 
+Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+3000 Bern
+
+Info vor Ort: Hausmeister bei Muster klingeln
+
+Messung: 
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	324234
+Kohlenstoff: 	 	 	432432
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	234
+Abgastemperatur: 	 	 	342432
+Waermeerzeugertemperatur: 	 	 	234
+Verbrennungstemperatur: 	 	 	432344
+O2Gehalt: 	 	 	342
+Abgasverluste: 	 	 	342
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	false
+NO2 in mg/m3: 	false
+Abgasverluste: 	false
+
+Keine Messung 1 Stufe 2 vorhanden! + 
+Keine Messung 2 Stufe 1 vorhanden!Keine Messung 2 Stufe 2 vorhanden!Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
+2016-05-25 12:20:20 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 8/9/2016
+Termin 8:00 - 10:00 Uhr
+Auftragsnummer: 150
+
+Kontakt: 
+Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+3000 Bern
+
+Info vor Ort: Hausmeister bei Muster klingeln
+
+Messung: 
+Keine Messung 1 Stufe 1 vorhanden! +
+Keine Messung 1 Stufe 2 vorhanden! + 
+Keine Messung 2 Stufe 1 vorhanden!Keine Messung 2 Stufe 2 vorhanden!Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
+2016-05-25 12:27:33 INFO  GenericPersisterImpl:66 - Entity vom Typ Messung wird updatet: Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	23
+Kohlenstoff: 	 	 	423
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	244
+Waermeerzeugertemperatur: 	 	 	43
+Verbrennungstemperatur: 	 	 	42
+O2Gehalt: 	 	 	434
+Abgasverluste: 	 	 	43
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+
+2016-05-25 12:29:00 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 8/9/2016
+Termin 8:00 - 10:00 Uhr
+Auftragsnummer: 150
+
+Kontakt: 
+Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+3000 Bern
+
+Info vor Ort: Hausmeister bei Muster klingeln
+
+Messung: 
+Keine Messung 1 Stufe 1 vorhanden! +
+Keine Messung 1 Stufe 2 vorhanden! + 
+Keine Messung 2 Stufe 1 vorhanden!Keine Messung 2 Stufe 2 vorhanden!Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
+2016-05-25 12:48:49 INFO  GenericPersisterImpl:66 - Entity vom Typ Messung wird updatet: Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	4454
+Kohlenstoff: 	 	 	324
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	43
+Abgastemperatur: 	 	 	442
+Waermeerzeugertemperatur: 	 	 	43
+Verbrennungstemperatur: 	 	 	324
+O2Gehalt: 	 	 	43
+Abgasverluste: 	 	 	43
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+
+2016-05-25 12:49:25 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 8/9/2016
+Termin 8:00 - 10:00 Uhr
+Auftragsnummer: 150
+
+Kontakt: 
+Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+3000 Bern
+
+Info vor Ort: Hausmeister bei Muster klingeln
+
+Messung: 
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	4454
+Kohlenstoff: 	 	 	324
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	43
+Abgastemperatur: 	 	 	442
+Waermeerzeugertemperatur: 	 	 	43
+Verbrennungstemperatur: 	 	 	324
+O2Gehalt: 	 	 	43
+Abgasverluste: 	 	 	43
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	false
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Keine Messung 1 Stufe 2 vorhanden! + 
+Keine Messung 2 Stufe 1 vorhanden!Keine Messung 2 Stufe 2 vorhanden!Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
+2016-05-25 12:54:25 INFO  GenericPersisterImpl:66 - Entity vom Typ Messung wird updatet: Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	32
+Kohlenstoff: 	 	 	32
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	32
+Abgastemperatur: 	 	 	23
+Waermeerzeugertemperatur: 	 	 	32
+Verbrennungstemperatur: 	 	 	32
+O2Gehalt: 	 	 	32
+Abgasverluste: 	 	 	32
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+
+2016-05-25 12:54:25 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 8/9/2016
+Termin 8:00 - 10:00 Uhr
+Auftragsnummer: 150
+
+Kontakt: 
+Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+3000 Bern
+
+Info vor Ort: Hausmeister bei Muster klingeln
+
+Messung: 
+Messung:
+Messdatum: 	 	 	25/4/2016
+Russzahl: 	 	 	32
+Kohlenstoff: 	 	 	32
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	32
+Abgastemperatur: 	 	 	23
+Waermeerzeugertemperatur: 	 	 	32
+Verbrennungstemperatur: 	 	 	32
+O2Gehalt: 	 	 	32
+Abgasverluste: 	 	 	32
+Die Anlage wird beanstandet wegen Überschreibung von: 
+Russzahl 	false
+Ölanteilen: 	true
+CO in mg/m3: 	true
+NO2 in mg/m3: 	true
+Abgasverluste: 	false
+
+Keine Messung 1 Stufe 2 vorhanden! + 
+Keine Messung 2 Stufe 1 vorhanden!Keine Messung 2 Stufe 2 vorhanden!Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
+2016-05-25 12:55:08 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 8/9/2016
+Termin 8:00 - 10:00 Uhr
+Auftragsnummer: 150
+
+Kontakt: 
+Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+3000 Bern
+
+Info vor Ort: Hausmeister bei Muster klingeln
+
+Messung: 
+Keine Messung 1 Stufe 1 vorhanden! +
+Keine Messung 1 Stufe 2 vorhanden! + 
+Keine Messung 2 Stufe 1 vorhanden!Keine Messung 2 Stufe 2 vorhanden!Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
+2016-05-25 12:57:25 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: Auftrag:
+Auftragsdatum: 8/9/2016
+Termin 8:00 - 10:00 Uhr
+Auftragsnummer: 150
+
+Kontakt: 
+Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Liegenschaft: 
+Liegenschaft:
+Kontakt: 	 	 	Kontakt: 
+Vorname: Martina
+Nachname: Meyer
+Strasse: Altstrasse 1
+5000 Aarau
+Telefon: 0633335577
+eMail: m.m@gmail.com
+Rolle Extern: Verwaltung
+
+Info vo Ort: 
+Hausmeister bei Muster klingeln
+Strasse: 
+Abcweg 123
+Ort: 
+3000 Bern
+
+Info vor Ort: Hausmeister bei Muster klingeln
+
+Messung: 
+Keine Messung 1 Stufe 1 vorhanden! +
+Keine Messung 1 Stufe 2 vorhanden! + 
+Keine Messung 2 Stufe 1 vorhanden!Keine Messung 2 Stufe 2 vorhanden!Kontrolleur: 
+Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+
+Kontrollart: 1
+
