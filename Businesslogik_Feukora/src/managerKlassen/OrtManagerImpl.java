@@ -47,8 +47,8 @@ public class OrtManagerImpl implements OrtManager {
 	}
 
 	@Override
-	public void deleteById(Integer plz) throws Exception {
-		ortDAO.deleteOrtById(plz);
+	public void deleteById(Integer id) throws Exception {
+		ortDAO.deleteOrtById(id);
 	}
 
 	@Override

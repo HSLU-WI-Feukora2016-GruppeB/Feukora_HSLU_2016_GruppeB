@@ -3,7 +3,7 @@ package managerKlassen;
 import entitys.Auftrag;
 import entitys.Kontakt;
 import entitys.Liegenschaft;
-import entitys.Messung;
+//import entitys.Messung;
 import entitys.Mitarbeiter;
 import gruppeB.feukora.interfaces.AuftragDAO;
 import gruppeB.feukora.persister.AuftragDAOImpl;
@@ -24,7 +24,7 @@ import managerInterfaces.AuftragManager;
  */
 public class AuftragManagerImpl implements AuftragManager {
 
-	private GrenzwerteManagerImpl grenzwerteManager = new GrenzwerteManagerImpl();
+	//private GrenzwerteManagerImpl grenzwerteManager = new GrenzwerteManagerImpl();
 
 	private AuftragDAO auftragDAO = new AuftragDAOImpl();
 
@@ -35,7 +35,7 @@ public class AuftragManagerImpl implements AuftragManager {
 
 			/*
 			 * Werte werden in der Datenbank nicht aktualisiert, aus Zeitgründen
-			 * musste diese Methode im Umfang des PRojektes ausgeklammert werden
+			 * musste diese Methode im Umfang des Projektes ausgeklammert werden
 			 * und durch eine Manuelle setzung der Beurteilung ersetzt werden.
 			 *
 			 * checkMessungByGrenzwerte(entity);
@@ -87,21 +87,21 @@ public class AuftragManagerImpl implements AuftragManager {
 	 * @param auftrag
 	 * @throws Exception
 	 */
-	private void checkMessungByGrenzwerte(Auftrag auftrag) throws Exception {
-		int brennerArt = auftrag.getLiegenschaft().getFeuerungsanlage().getBrenner().getBrennerArt();
-
-		Messung messung1 = auftrag.getMessung1stufe1();
-		grenzwerteManager.checkGrenzwerte(messung1, brennerArt, 1);
-
-		Messung messung2 = auftrag.getMessung1stufe2();
-		grenzwerteManager.checkGrenzwerte(messung2, brennerArt, 2);
-
-		Messung messung3 = auftrag.getMessung2stufe1();
-		grenzwerteManager.checkGrenzwerte(messung3, brennerArt, 3);
-
-		Messung messung4 = auftrag.getMessung2stufe2();
-		grenzwerteManager.checkGrenzwerte(messung4, brennerArt, 4);
-	}
+//	private void checkMessungByGrenzwerte(Auftrag auftrag) throws Exception {
+//		int brennerArt = auftrag.getLiegenschaft().getFeuerungsanlage().getBrenner().getBrennerArt();
+//
+//		Messung messung1 = auftrag.getMessung1stufe1();
+//		grenzwerteManager.checkGrenzwerte(messung1, brennerArt, 1);
+//
+//		Messung messung2 = auftrag.getMessung1stufe2();
+//		grenzwerteManager.checkGrenzwerte(messung2, brennerArt, 2);
+//
+//		Messung messung3 = auftrag.getMessung2stufe1();
+//		grenzwerteManager.checkGrenzwerte(messung3, brennerArt, 3);
+//
+//		Messung messung4 = auftrag.getMessung2stufe2();
+//		grenzwerteManager.checkGrenzwerte(messung4, brennerArt, 4);
+//	}
 
 	@Override
 	public void delete(Auftrag entity) throws Exception {
