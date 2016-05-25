@@ -16,7 +16,7 @@ import gruppeB.feukora.persister.util.JpaUtil;
 /**
  * Diese Klasse stellt die Implementierung von Methoden der Schnittstelle
  * LiegenschaftDAO zur Verfügung.
- * 
+ * @since 1.0
  * @version 1.0
  * @author Luca Raneri
  * 
@@ -39,17 +39,17 @@ public class LiegenschaftDAOImpl implements LiegenschaftDAO{
 	}
 
 	@Override
-	public Liegenschaft findLiegenschaftById(Integer id) {
+	public Liegenschaft findLiegenschaftById(Integer id) throws Exception{
 		return new GenericPersisterImpl<Liegenschaft>(Liegenschaft.class).findById(id);
 	}
 
 	@Override
-	public List<Liegenschaft> findAllLiegenschaft() {
+	public List<Liegenschaft> findAllLiegenschaft() throws Exception{
 		return new GenericPersisterImpl<Liegenschaft>(Liegenschaft.class).findAll();
 	}
 
 	@Override
-	public List<Liegenschaft> findLiegenschaftByStrasse(String strasse) {
+	public List<Liegenschaft> findLiegenschaftByStrasse(String strasse) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -66,7 +66,7 @@ public class LiegenschaftDAOImpl implements LiegenschaftDAO{
 	}
 
 	@Override
-	public List<Liegenschaft> findLiegenschaftByKontakt(Kontakt kontakt) {
+	public List<Liegenschaft> findLiegenschaftByKontakt(Kontakt kontakt) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -83,7 +83,7 @@ public class LiegenschaftDAOImpl implements LiegenschaftDAO{
 	}
 
 	@Override
-	public List<Liegenschaft> findLiegenschaftByOrt(Ort ort) {
+	public List<Liegenschaft> findLiegenschaftByOrt(Ort ort) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 

@@ -8,7 +8,7 @@ import entitys.Ort;
 
 /**
  * Interface für Persistierung von Liegenschaft-Entities.
- * 
+ * @since 1.0
  * @version 1.0
  * @author Luca Raneri
  *
@@ -27,7 +27,7 @@ public interface LiegenschaftDAO {
 	 * Updatet die übergebene Liegenschaft-Entity.
 	 * 
 	 * @param entity
-	 * @return
+	 * @return Liegenschaft
 	 * @throws Exception
 	 */
 	public Liegenschaft updateLiegenschaft(Liegenschaft entity) throws Exception;
@@ -52,42 +52,47 @@ public interface LiegenschaftDAO {
 	 * Liefert die Liegenschaft-Entity für den übergebenen Id-Wert zurück.
 	 * 
 	 * @param id
-	 * @return
+	 * @return Liegenschaft
+	 * @throws Exception
 	 */
-	public Liegenschaft findLiegenschaftById(Integer id);
+	public Liegenschaft findLiegenschaftById(Integer id) throws Exception;
 	
 	/**
 	 * Liefert alle Liegenschaft-Objekte zurück.
 	 * 
-	 * @return
+	 * @return List<Liegenschaft>
+	 * @throws Exception
 	 */
-	List<Liegenschaft> findAllLiegenschaft();
+	public List<Liegenschaft> findAllLiegenschaft() throws Exception;
 
 	/**
 	 * Liefert die Liste mit den Liegenschaften für die übergebenen Kontakt zurück, falls
 	 * es welche gibt. Sonst eine leere Liste.
 	 * 
 	 * @param kontakt
-	 * @return
+	 * @return List<Liegenschaft>
+	 * @throws Exception
 	 */
-	public List<Liegenschaft> findLiegenschaftByKontakt(Kontakt kontakt);
+	public List<Liegenschaft> findLiegenschaftByKontakt(Kontakt kontakt) throws Exception;
 	
 	/**
 	 * Liefert die Liste mit den Liegenschaften für die übergebenen Ort zurück, falls
 	 * es welche gibt. Sonst eine leere Liste.
 	 * 
 	 * @param ort
-	 * @return
+	 * @return List<Liegenschaft>
+	 * @throws Exception
 	 */
-	public List<Liegenschaft> findLiegenschaftByOrt(Ort ort);
+	public List<Liegenschaft> findLiegenschaftByOrt(Ort ort) throws Exception;
 
 	/**
 	 * Liefert die Liste mit den Liegenschaften für die übergebenen Strasse zurück, falls
 	 * es welche gibt. Sonst eine leere Liste.
 	 * 
 	 * @param strasse
-	 * @return
+	 * @return List<Liegenschaft>
+	 * @throws Exception
 	 */
-	public List<Liegenschaft> findLiegenschaftByStrasse(String strasse);
+	public List<Liegenschaft> findLiegenschaftByStrasse(String strasse) throws Exception;
 	
 }

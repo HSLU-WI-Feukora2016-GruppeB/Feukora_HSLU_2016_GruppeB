@@ -9,7 +9,7 @@ import entitys.Waermeerzeuger;
 
 /**
  * Interface für Persistierung von Feuerungsanlage-Entities.
- * 
+ * @since 1.0
  * @version 1.0
  * @author Luca Raneri
  *
@@ -28,7 +28,7 @@ public interface FeuerungsanlageDAO {
 	 * Updatet die übergebene Feuerungsanlage-Entity.
 	 * 
 	 * @param entity
-	 * @return
+	 * @return Feuerungsanlage
 	 * @throws Exception
 	 */
 	public Feuerungsanlage updateFeuerungsanlage(Feuerungsanlage entity) throws Exception;
@@ -53,42 +53,47 @@ public interface FeuerungsanlageDAO {
 	 * Liefert die Feuerungsanlage-Entity für den übergebenen Id-Wert zurück.
 	 * 
 	 * @param id
-	 * @return
+	 * @return Feuerungsanlage
+	 * @throws Exception
 	 */
-	public Feuerungsanlage findFeuerungsanlageById(Integer id);
+	public Feuerungsanlage findFeuerungsanlageById(Integer id) throws Exception;
 	
 	/**
 	 * Liefert alle Feuerungsanlage-Objekte zurück.
 	 * 
-	 * @return
+	 * @return List<Feuerungsanlage>
+	 * @throws Exception
 	 */
-	List<Feuerungsanlage> findAllFeuerungsanlage();
+	List<Feuerungsanlage> findAllFeuerungsanlage() throws Exception;
 
 	/**
 	 * Liefert die Liste mit den Feuerungsanlagen für die übergebenen Liegenschaften zurück, falls
 	 * es welche gibt. Sonst eine leere Liste.
 	 * 
 	 * @param liegenschaft
-	 * @return
+	 * @return List<Feuerungsanlage>
+	 * @throws Exception
 	 */
-	public List<Feuerungsanlage> findByLiegenschaft(Liegenschaft liegenschaft);
+	public List<Feuerungsanlage> findByLiegenschaft(Liegenschaft liegenschaft) throws Exception;
 
 	/**
 	 * Liefert die Liste mit den Feuerungsanlagen für die übergebenen Brenner zurück, falls
 	 * es welche gibt. Sonst eine leere Liste.
 	 * 
 	 * @param brenner
-	 * @return
+	 * @return List<Feuerungsanlage>
+	 * @throws Exception
 	 */
-	public List<Feuerungsanlage> findByBrenner(Brenner brenner);
+	public List<Feuerungsanlage> findByBrenner(Brenner brenner) throws Exception;
 
 	/**
 	 * Liefert die Liste mit den Feuerungsanlagen für die übergebenen Waermeerzeuger zurück, falls
 	 * es welche gibt. Sonst eine leere Liste.
 	 * 
 	 * @param waermeerzeuger
-	 * @return
+	 * @return List<Feuerungsanlage>
+	 * @throws Exception
 	 */
-	public List<Feuerungsanlage> findByWaermeerzeuger(Waermeerzeuger waermeerzeuger);
+	public List<Feuerungsanlage> findByWaermeerzeuger(Waermeerzeuger waermeerzeuger) throws Exception;
 
 }

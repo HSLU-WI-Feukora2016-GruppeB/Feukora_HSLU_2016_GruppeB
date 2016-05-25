@@ -16,6 +16,7 @@ import gruppeB.feukora.persister.util.JpaUtil;
  * Diese Klasse stellt die Implementierung von Methoden der Schnittstelle
  * MessungDAO zur Verfügung.
  * 
+ * @since 1.0
  * @version 1.0
  * @author Luca Raneri
  * 
@@ -38,22 +39,23 @@ public class MessungDAOImpl implements MessungDAO {
 	}
 
 	@Override
-	public Messung findMessungById(Integer id) {
+	public Messung findMessungById(Integer id) throws Exception {
 		return new GenericPersisterImpl<Messung>(Messung.class).findById(id);
 	}
 
 	@Override
-	public List<Messung> findAllMessung() {
+	public List<Messung> findAllMessung() throws Exception {
 		return new GenericPersisterImpl<Messung>(Messung.class).findAll();
 	}
 
 	@Override
-	public List<Messung> findByMessDatum(GregorianCalendar messDatum) {
-		
+	public List<Messung> findByMessDatum(GregorianCalendar messDatum)
+			throws Exception {
+
 		EntityManager em = JpaUtil.createEntityManager();
 
-		TypedQuery<Messung> tQuery = em.createNamedQuery("Messung.findByMessDatum",
-				Messung.class);
+		TypedQuery<Messung> tQuery = em.createNamedQuery(
+				"Messung.findByMessDatum", Messung.class);
 
 		tQuery.setParameter("messDatum", messDatum);
 
@@ -70,11 +72,12 @@ public class MessungDAOImpl implements MessungDAO {
 	}
 
 	@Override
-	public List<Messung> findByBeurteilungNotOk(boolean beurteilungNotOk) {
+	public List<Messung> findByBeurteilungNotOk(boolean beurteilungNotOk)
+			throws Exception {
 		EntityManager em = JpaUtil.createEntityManager();
 
-		TypedQuery<Messung> tQuery = em.createNamedQuery("Messung.findByBeurteilungNotOk",
-				Messung.class);
+		TypedQuery<Messung> tQuery = em.createNamedQuery(
+				"Messung.findByBeurteilungNotOk", Messung.class);
 
 		tQuery.setParameter("beurteilungNotOk", beurteilungNotOk);
 

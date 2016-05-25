@@ -12,14 +12,15 @@ import gruppeB.feukora.persister.generic.GenericPersisterImpl;
 import gruppeB.feukora.persister.util.JpaUtil;
 
 /**
- * Diese Klasse stellt die Implementierung von Methoden der Schnittstelle
- * OrtDAO zur Verfügung.
+ * Diese Klasse stellt die Implementierung von Methoden der Schnittstelle OrtDAO
+ * zur Verfügung.
  * 
+ * @since 1.0
  * @version 1.0
  * @author Luca Raneri
  * 
  */
-public class OrtDAOImpl implements OrtDAO{
+public class OrtDAOImpl implements OrtDAO {
 
 	@Override
 	public void saveOrt(Ort entity) throws Exception {
@@ -37,23 +38,23 @@ public class OrtDAOImpl implements OrtDAO{
 	}
 
 	@Override
-	public void deleteOrtById(Integer id) throws Exception {
-		new GenericPersisterImpl<Ort>(Ort.class).deleteById(id);
+	public void deleteOrtById(Integer idOrt) throws Exception {
+		new GenericPersisterImpl<Ort>(Ort.class).deleteById(idOrt);
 	}
 
 	@Override
-	public Ort findOrtById(Integer idOrt) {
+	public Ort findOrtById(Integer idOrt) throws Exception {
 		return new GenericPersisterImpl<Ort>(Ort.class).findById(idOrt);
 	}
 
 	@Override
-	public List<Ort> findAllOrt() {
+	public List<Ort> findAllOrt() throws Exception {
 		return new GenericPersisterImpl<Ort>(Ort.class).findAll();
 	}
 
 	@Override
-	public List<Ort> findOrtByBezeichnung(String ortBez) {
-		
+	public List<Ort> findOrtByBezeichnung(String ortBez) throws Exception {
+
 		EntityManager em = JpaUtil.createEntityManager();
 
 		TypedQuery<Ort> tQuery = em.createNamedQuery("Ort.findByOrtBez",
@@ -66,16 +67,16 @@ public class OrtDAOImpl implements OrtDAO{
 		em.close();
 
 		return ortsListe != null ? ortsListe : new ArrayList<Ort>();
-		
+
 	}
 
 	@Override
-	public List<Ort> findOrtByPlz(Integer plz) {
-		
+	public List<Ort> findOrtByPlz(Integer plz) throws Exception {
+
 		EntityManager em = JpaUtil.createEntityManager();
 
-		TypedQuery<Ort> tQuery = em.createNamedQuery("Ort.findByPlz",
-				Ort.class);
+		TypedQuery<Ort> tQuery = em
+				.createNamedQuery("Ort.findByPlz", Ort.class);
 
 		tQuery.setParameter("plz", plz);
 
@@ -84,7 +85,7 @@ public class OrtDAOImpl implements OrtDAO{
 		em.close();
 
 		return ortsListe != null ? ortsListe : new ArrayList<Ort>();
-		
+
 	}
 
 }

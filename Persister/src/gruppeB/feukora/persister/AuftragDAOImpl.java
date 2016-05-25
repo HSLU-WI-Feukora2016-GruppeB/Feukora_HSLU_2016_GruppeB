@@ -18,7 +18,7 @@ import gruppeB.feukora.persister.util.JpaUtil;
 /**
  * Diese Klasse stellt die Implementierung von Methoden der Schnittstelle
  * MitarbeiterDAO zur Verfügung.
- *
+ * @since 1.0
  * @version 1.0
  * @author Luca Raneri
  *
@@ -52,7 +52,7 @@ public class AuftragDAOImpl implements AuftragDAO {
 	}
 
 	@Override
-	public List<Auftrag> findAllAuftrag() {
+	public List<Auftrag> findAllAuftrag() throws Exception{
 		return new GenericPersisterImpl<Auftrag>(Auftrag.class).findAll();
 	}
 

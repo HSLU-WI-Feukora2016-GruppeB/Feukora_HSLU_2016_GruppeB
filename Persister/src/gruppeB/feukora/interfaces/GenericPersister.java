@@ -23,7 +23,7 @@ public interface GenericPersister<T> {
 	 * Updated die übergebene Entity.
 	 *
 	 * @param entity
-	 * @return
+	 * @return T
 	 * @throws Exception
 	 */
 	T update (T entity) throws Exception;
@@ -48,14 +48,16 @@ public interface GenericPersister<T> {
 	 * Liefert die Entity für den übergebenen Id-Wert.
 	 *
 	 * @param id
-	 * @return
+	 * @return T
+	 * @throws Exception
 	 */
-	T findById (Integer id);
+	T findById (Integer id) throws Exception;
 
 	/**
 	 * Liefert alle Entity-Objekte zurück.
 	 *
-	 * @return
+	 * @return List<T>
+	 * @throws Exception
 	 */
-	List<T> findAll();
+	List<T> findAll() throws Exception;
 }

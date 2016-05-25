@@ -18,11 +18,12 @@ import gruppeB.feukora.persister.util.JpaUtil;
  * Diese Klasse stellt die Implementierung von Methoden der Schnittstelle
  * MitarbeiterDAO zur Verfügung.
  * 
+ * @since 1.0
  * @version 1.0
  * @author Luca Raneri
  * 
  */
-public class MitarbeiterDAOImpl implements MitarbeiterDAO{
+public class MitarbeiterDAOImpl implements MitarbeiterDAO {
 
 	@Override
 	public void saveMitarbeiter(Mitarbeiter entity) throws Exception {
@@ -31,7 +32,8 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 
 	@Override
 	public Mitarbeiter updateMitarbeiter(Mitarbeiter entity) throws Exception {
-		return new GenericPersisterImpl<Mitarbeiter>(Mitarbeiter.class).update(entity);
+		return new GenericPersisterImpl<Mitarbeiter>(Mitarbeiter.class)
+				.update(entity);
 	}
 
 	@Override
@@ -45,22 +47,25 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 	}
 
 	@Override
-	public Mitarbeiter findMitarbeiterById(Integer id) throws Exception{
-		return new GenericPersisterImpl<Mitarbeiter>(Mitarbeiter.class).findById(id);
+	public Mitarbeiter findMitarbeiterById(Integer id) throws Exception {
+		return new GenericPersisterImpl<Mitarbeiter>(Mitarbeiter.class)
+				.findById(id);
 	}
 
 	@Override
-	public List<Mitarbeiter> findAllMitarbeiter() throws Exception{
-		return new GenericPersisterImpl<Mitarbeiter>(Mitarbeiter.class).findAll();
+	public List<Mitarbeiter> findAllMitarbeiter() throws Exception {
+		return new GenericPersisterImpl<Mitarbeiter>(Mitarbeiter.class)
+				.findAll();
 	}
 
 	@Override
-	public List<Mitarbeiter> findMitarbeiterByName(String name) throws Exception{
-		
+	public List<Mitarbeiter> findMitarbeiterByName(String name)
+			throws Exception {
+
 		EntityManager em = JpaUtil.createEntityManager();
 
-		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery("Mitarbeiter.findByName",
-				Mitarbeiter.class);
+		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery(
+				"Mitarbeiter.findByName", Mitarbeiter.class);
 
 		tQuery.setParameter("name", name);
 
@@ -68,13 +73,14 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 
 		em.close();
 
-		return mitarbeiterListe != null ? mitarbeiterListe : new ArrayList<Mitarbeiter>();
+		return mitarbeiterListe != null ? mitarbeiterListe
+				: new ArrayList<Mitarbeiter>();
 	}
 
 	@Override
 	public List<Mitarbeiter> findMitarbeiterByNameVorname(String name,
-			String vorname) throws Exception{
-		
+			String vorname) throws Exception {
+
 		EntityManager em = JpaUtil.createEntityManager();
 
 		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery(
@@ -87,16 +93,18 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 
 		em.close();
 
-		return mitarbeiterListe != null ? mitarbeiterListe : new ArrayList<Mitarbeiter>();
+		return mitarbeiterListe != null ? mitarbeiterListe
+				: new ArrayList<Mitarbeiter>();
 	}
 
 	@Override
-	public List<Mitarbeiter> findMitarbeiterByVorname(String vorname) throws Exception{
-		
+	public List<Mitarbeiter> findMitarbeiterByVorname(String vorname)
+			throws Exception {
+
 		EntityManager em = JpaUtil.createEntityManager();
 
-		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery("Mitarbeiter.findByVorname",
-				Mitarbeiter.class);
+		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery(
+				"Mitarbeiter.findByVorname", Mitarbeiter.class);
 
 		tQuery.setParameter("vorname", vorname);
 
@@ -104,16 +112,18 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 
 		em.close();
 
-		return mitarbeiterListe != null ? mitarbeiterListe : new ArrayList<Mitarbeiter>();
+		return mitarbeiterListe != null ? mitarbeiterListe
+				: new ArrayList<Mitarbeiter>();
 	}
 
 	@Override
-	public List<Mitarbeiter> findMitarbeiterByRolleIntern(int rolleIntern) throws Exception{
-		
+	public List<Mitarbeiter> findMitarbeiterByRolleIntern(int rolleIntern)
+			throws Exception {
+
 		EntityManager em = JpaUtil.createEntityManager();
 
-		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery("Mitarbeiter.findByRolleIntern",
-				Mitarbeiter.class);
+		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery(
+				"Mitarbeiter.findByRolleIntern", Mitarbeiter.class);
 
 		tQuery.setParameter("rolleIntern", rolleIntern);
 
@@ -121,16 +131,18 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 
 		em.close();
 
-		return mitarbeiterListe != null ? mitarbeiterListe : new ArrayList<Mitarbeiter>();
+		return mitarbeiterListe != null ? mitarbeiterListe
+				: new ArrayList<Mitarbeiter>();
 	}
 
 	@Override
-	public List<Mitarbeiter> findMitarbeiterByStrasse(String strasse)throws Exception {
-		
+	public List<Mitarbeiter> findMitarbeiterByStrasse(String strasse)
+			throws Exception {
+
 		EntityManager em = JpaUtil.createEntityManager();
 
-		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery("Mitarbeiter.findByStrasse",
-				Mitarbeiter.class);
+		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery(
+				"Mitarbeiter.findByStrasse", Mitarbeiter.class);
 
 		tQuery.setParameter("strasse", strasse);
 
@@ -138,16 +150,17 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 
 		em.close();
 
-		return mitarbeiterListe != null ? mitarbeiterListe : new ArrayList<Mitarbeiter>();
+		return mitarbeiterListe != null ? mitarbeiterListe
+				: new ArrayList<Mitarbeiter>();
 	}
 
 	@Override
-	public List<Mitarbeiter> findMitarbeiterByOrt(Ort ort) throws Exception{
-		
+	public List<Mitarbeiter> findMitarbeiterByOrt(Ort ort) throws Exception {
+
 		EntityManager em = JpaUtil.createEntityManager();
 
-		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery("Mitarbeiter.findByOrt",
-				Mitarbeiter.class);
+		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery(
+				"Mitarbeiter.findByOrt", Mitarbeiter.class);
 
 		tQuery.setParameter("ort", ort);
 
@@ -155,16 +168,18 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 
 		em.close();
 
-		return mitarbeiterListe != null ? mitarbeiterListe : new ArrayList<Mitarbeiter>();
+		return mitarbeiterListe != null ? mitarbeiterListe
+				: new ArrayList<Mitarbeiter>();
 	}
 
 	@Override
-	public List<Mitarbeiter> findMitarbeiterByBenutzer(Benutzer user) throws Exception{
-		
+	public List<Mitarbeiter> findMitarbeiterByBenutzer(Benutzer user)
+			throws Exception {
+
 		EntityManager em = JpaUtil.createEntityManager();
 
-		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery("Mitarbeiter.findByUser",
-				Mitarbeiter.class);
+		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery(
+				"Mitarbeiter.findByUser", Mitarbeiter.class);
 
 		tQuery.setParameter("user", user);
 
@@ -172,16 +187,18 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 
 		em.close();
 
-		return mitarbeiterListe != null ? mitarbeiterListe : new ArrayList<Mitarbeiter>();
+		return mitarbeiterListe != null ? mitarbeiterListe
+				: new ArrayList<Mitarbeiter>();
 	}
 
 	@Override
-	public List<Mitarbeiter> findMitarbeiterByArbeitetSeit(GregorianCalendar arbeitetSeit) throws Exception{
-		
+	public List<Mitarbeiter> findMitarbeiterByArbeitetSeit(
+			GregorianCalendar arbeitetSeit) throws Exception {
+
 		EntityManager em = JpaUtil.createEntityManager();
 
-		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery("Mitarbeiter.findByArbeitetSeit",
-				Mitarbeiter.class);
+		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery(
+				"Mitarbeiter.findByArbeitetSeit", Mitarbeiter.class);
 
 		tQuery.setParameter("arbeitetSeit", arbeitetSeit);
 
@@ -189,16 +206,18 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 
 		em.close();
 
-		return mitarbeiterListe != null ? mitarbeiterListe : new ArrayList<Mitarbeiter>();
+		return mitarbeiterListe != null ? mitarbeiterListe
+				: new ArrayList<Mitarbeiter>();
 	}
 
 	@Override
-	public List<Mitarbeiter> findMitarbeiterByArbeitetBis(GregorianCalendar arbeitetBis) throws Exception {
-		
+	public List<Mitarbeiter> findMitarbeiterByArbeitetBis(
+			GregorianCalendar arbeitetBis) throws Exception {
+
 		EntityManager em = JpaUtil.createEntityManager();
 
-		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery("Mitarbeiter.findByArbeitetBis",
-				Mitarbeiter.class);
+		TypedQuery<Mitarbeiter> tQuery = em.createNamedQuery(
+				"Mitarbeiter.findByArbeitetBis", Mitarbeiter.class);
 
 		tQuery.setParameter("arbeitetBis", arbeitetBis);
 
@@ -206,6 +225,7 @@ public class MitarbeiterDAOImpl implements MitarbeiterDAO{
 
 		em.close();
 
-		return mitarbeiterListe != null ? mitarbeiterListe : new ArrayList<Mitarbeiter>();
+		return mitarbeiterListe != null ? mitarbeiterListe
+				: new ArrayList<Mitarbeiter>();
 	}
 }

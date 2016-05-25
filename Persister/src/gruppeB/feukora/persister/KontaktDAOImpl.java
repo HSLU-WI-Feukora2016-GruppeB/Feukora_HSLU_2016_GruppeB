@@ -1,8 +1,3 @@
-/*
- * ZWECK: Praxisprojekt Feukora
- * MODUL: Softwarekomponenten, HSLU - Wirtschaft
- */
-
 package gruppeB.feukora.persister;
 
 import java.util.List;
@@ -20,7 +15,7 @@ import gruppeB.feukora.persister.util.JpaUtil;
 /**
  * Diese Klasse stellt die Implementierung von Methoden der Schnittstelle
  * KontaktDAO zur Verfügung.
- * 
+ * @since 1.0
  * @version 1.0
  * @author Luca Raneri
  * 
@@ -48,17 +43,17 @@ public class KontaktDAOImpl implements KontaktDAO{
 	}
 
 	@Override
-	public Kontakt findKontaktById(Integer idKontakt) {
+	public Kontakt findKontaktById(Integer idKontakt) throws Exception{
 		return new GenericPersisterImpl<Kontakt>(Kontakt.class).findById(idKontakt);
 	}
 
 	@Override
-	public List<Kontakt> findAllKontakte() {
+	public List<Kontakt> findAllKontakte() throws Exception{
 		return new GenericPersisterImpl<Kontakt>(Kontakt.class).findAll();
 	}
 
 	@Override
-	public List<Kontakt> findKontaktByName(String name) {
+	public List<Kontakt> findKontaktByName(String name) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -75,7 +70,7 @@ public class KontaktDAOImpl implements KontaktDAO{
 	}
 
 	@Override
-	public List<Kontakt> findKontaktByNameVorname(String name, String vorname) {
+	public List<Kontakt> findKontaktByNameVorname(String name, String vorname) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -93,7 +88,7 @@ public class KontaktDAOImpl implements KontaktDAO{
 	}
 
 	@Override
-	public List<Kontakt> findKontaktByVorname(String vorname) {
+	public List<Kontakt> findKontaktByVorname(String vorname) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -110,7 +105,7 @@ public class KontaktDAOImpl implements KontaktDAO{
 	}
 
 	@Override
-	public List<Kontakt> findKontaktByOrt(Ort ort) {
+	public List<Kontakt> findKontaktByOrt(Ort ort) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -127,7 +122,7 @@ public class KontaktDAOImpl implements KontaktDAO{
 	}
 
 	@Override
-	public List<Kontakt> findKontaktByRolleExtern(int rolleExtern) {
+	public List<Kontakt> findKontaktByRolleExtern(int rolleExtern) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -144,7 +139,7 @@ public class KontaktDAOImpl implements KontaktDAO{
 	}
 
 	@Override
-	public List<Kontakt> findKontaktByStrasse(String strasse) {
+	public List<Kontakt> findKontaktByStrasse(String strasse) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 

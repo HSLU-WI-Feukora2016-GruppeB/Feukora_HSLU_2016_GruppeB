@@ -6,7 +6,7 @@ import entitys.Brenner;
 
 /**
  * Interface für Persistierung von Brenner-Entities.
- * 
+ * @since 1.0
  * @version 1.0
  * @author Luca Raneri
  *
@@ -25,7 +25,7 @@ public interface BrennerDAO {
 	 * Updatet die übergebene Brenner-Entity.
 	 * 
 	 * @param entity
-	 * @return
+	 * @return Brenner
 	 * @throws Exception
 	 */
 	public Brenner updateBrenner(Brenner entity) throws Exception;
@@ -50,43 +50,48 @@ public interface BrennerDAO {
 	 * Liefert die Brenner-Entities für die übergebene ID zurück.
 	 * 
 	 * @param id
-	 * @return
+	 * @return Brenner
+	 * @throws Exception
 	 */
-	public Brenner findBrennerById(Integer idBrenner);
+	public Brenner findBrennerById(Integer idBrenner) throws Exception;
 	
 	/**
 	 * Liefert alle Brenner-Objekte zurück.
 	 * 
-	 * @return
+	 * @return List<Brenner>
+	 * @throws Exception
 	 */
-	List<Brenner> findAllBrenner();
+	List<Brenner> findAllBrenner() throws Exception;
 	
 	/**
 	 * Liefert die Liste mit den Brenner für die übergebenen Brennerarten zurück, falls
 	 * es welche gibt. Sonst eine leere Liste.
 	 * 
 	 * @param brennerArt
-	 * @return
+	 * @return List<Brenner>
+	 * @throws Exception
 	 */
-	public List<Brenner> findBrennerByBrennerart(int brennerArt);
+	public List<Brenner> findBrennerByBrennerart(int brennerArt) throws Exception;
 
 	/**
 	 * Liefert die Liste mit den Brenner für die übergebenen Brenntypen zurück, falls
 	 * es welche gibt. Sonst eine leere Liste.
 	 * 
 	 * @param brennerTyp
-	 * @return
+	 * @return List<Brenner>
+	 * @throws Exception
 	 */
-	public List<Brenner> findBrennerByBrennertyp(String brennerTyp);
+	public List<Brenner> findBrennerByBrennertyp(String brennerTyp) throws Exception;
 	
 	/**
 	 * Liefert die Liste mit den Brenner für die übergebenen Brenntypen zurück, falls
 	 * es welche gibt. Sonst eine leere Liste.
 	 * 
 	 * @param baujahr
-	 * @return
+	 * @return List<Brenner>
+	 * @throws Exception
 	 */
-	public List<Brenner> findBrennerByBaujahr(int baujahr);
+	public List<Brenner> findBrennerByBaujahr(int baujahr) throws Exception;
  	
 }
 

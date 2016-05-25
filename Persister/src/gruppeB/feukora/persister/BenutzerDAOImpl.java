@@ -14,7 +14,7 @@ import gruppeB.feukora.persister.util.JpaUtil;
 /**
  * Diese Klasse stellt die Implementierung von Methoden der Schnittstelle
  * BenutzerDAO zur Verfügung.
- * 
+ * @since 1.0
  * @version 1.0
  * @author Luca Raneri
  * 
@@ -42,17 +42,17 @@ public class BenutzerDAOImpl implements BenutzerDAO{
 	}
 
 	@Override
-	public Benutzer findBenutzerById(Integer id) {
+	public Benutzer findBenutzerById(Integer id) throws Exception{
 		return new GenericPersisterImpl<Benutzer>(Benutzer.class).findById(id);
 	}
 
 	@Override
-	public List<Benutzer> findAllBenutzer() {
+	public List<Benutzer> findAllBenutzer() throws Exception{
 		return new GenericPersisterImpl<Benutzer>(Benutzer.class).findAll();
 	}
 
 	@Override
-	public List<Benutzer> findBenutzerByUsernamePassword(String username, String password) {
+	public List<Benutzer> findBenutzerByUsernamePassword(String username, String password) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -70,7 +70,7 @@ public class BenutzerDAOImpl implements BenutzerDAO{
 	}
 
 	@Override
-	public List<Benutzer> findBenutzerByUsername(String username) {
+	public List<Benutzer> findBenutzerByUsername(String username) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 

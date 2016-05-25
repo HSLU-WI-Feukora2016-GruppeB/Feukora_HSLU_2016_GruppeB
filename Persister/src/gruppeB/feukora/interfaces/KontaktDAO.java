@@ -7,7 +7,7 @@ import entitys.Ort;
 
 /**
  * Interface für Persistierung von Kontakt-Entities.
- * 
+ * @since 1.0
  * @version 1.0
  * @author Luca Raneri
  *
@@ -26,7 +26,7 @@ public interface KontaktDAO {
 	 * Updatet die übergebene Kontakt-Entity.
 	 * 
 	 * @param entity
-	 * @return
+	 * @return Kontakt
 	 * @throws Exception
 	 */
 	public Kontakt updateKontakt(Kontakt entity) throws Exception;
@@ -50,35 +50,39 @@ public interface KontaktDAO {
 	/**
 	 * Liefert die Kontakt-Entity für den übergebenen Id-Wert zurück.
 	 * 
-	 * @param id
-	 * @return
+	 * @param idKontakt
+	 * @return Kontakt
+	 * @throws Exception
 	 */
-	public Kontakt findKontaktById(Integer idKontakt);
+	public Kontakt findKontaktById(Integer idKontakt) throws Exception;
 	
 	/**
 	 * Liefert alle Kontakt-Objekte zurück.
 	 * 
-	 * @return
+	 * @return List<Kontakt>
+	 * @throws Exception
 	 */
-	public List<Kontakt> findAllKontakte();
+	public List<Kontakt> findAllKontakte() throws Exception;
 	
 	/**
 	 * Liefert die Liste mit den Kontakten für die übergebene Namen zurück, falls
 	 * welche gefunden werden. Sonst eine leere Liste.
 	 * 
 	 * @param name
-	 * @return
+	 * @return List<Kontakt>
+	 * @throws Exception
 	 */
-	public List<Kontakt> findKontaktByName(String name);
+	public List<Kontakt> findKontaktByName(String name) throws Exception;
 	
 	/**
 	 * Liefert die Liste mit den Kontakten für den übergebenen Vornamen zurück,
 	 * falls es welche gibt. Sonst eine leere Liste.
 	 * 
 	 * @param vorname
-	 * @return
+	 * @return List<Kontakt>
+	 * @throws Exception
 	 */
-	public List<Kontakt> findKontaktByVorname(String vorname);
+	public List<Kontakt> findKontaktByVorname(String vorname) throws Exception;
 	
 	/**
 	 * Liefert die Liste mit den Kontakten für den übergebenen Namen und Vornamen zurück,
@@ -86,34 +90,38 @@ public interface KontaktDAO {
 	 * 
 	 * @param name
 	 * @param vorname
-	 * @return
+	 * @return List<Kontakt>
+	 * @throws Exception
 	 */
-	public List<Kontakt> findKontaktByNameVorname(String name, String vorname);
+	public List<Kontakt> findKontaktByNameVorname(String name, String vorname) throws Exception;
 
 	/**
 	 * Liefert die Liste mit den Kontakten für den übergebenen Ort zurück,
 	 * falls es welche gibt. Sonst eine leere Liste.
 	 * 
 	 * @param ort
-	 * @return
+	 * @return List<Kontakt>
+	 * @throws Exception
 	 */	
-	public List<Kontakt> findKontaktByOrt(Ort ort);
+	public List<Kontakt> findKontaktByOrt(Ort ort) throws Exception;
 	
 	/**
 	 * Liefert die Liste mit den Kontakten für die übergebene Rolle zurück,
 	 * falls es welche gibt. Sonst eine leere Liste.
 	 * 
 	 * @param rolleExtern
-	 * @return
+	 * @return List<Kontakt>
+	 * @throws Exception
 	 */
-	public List<Kontakt> findKontaktByRolleExtern(int rolleExtern);
+	public List<Kontakt> findKontaktByRolleExtern(int rolleExtern) throws Exception;
 	
 	/**
 	 * Liefert die Liste mit den Kontakten für die übergebene Strasse zurück,
 	 * falls es welche gibt. Sonst eine leere Liste.
 	 * 
 	 * @param strasse
-	 * @return
+	 * @return List<Kontakt>
+	 * @throws Exception
 	 */
-	public List<Kontakt> findKontaktByStrasse(String strasse);
+	public List<Kontakt> findKontaktByStrasse(String strasse) throws Exception;
 }
