@@ -20,8 +20,6 @@ public class RMIServer {
 
 	public static void main(String[] args) {
 
-//		int port = 1099;
-
 		//Properties Objekt erstellen
 		Properties dbProperties = new Properties();
 

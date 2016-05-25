@@ -113,9 +113,7 @@ public class Liegenschaft implements Serializable{
 
 	@Override
 	public String toString(){
-		return "Liegenschaft:" + "\n"
-				+ "Strasse: \n" + strasse.toString() + "\n"
-				+ "Ort: \n" + ort.toString() + "\n";
+		return infoVorOrt + "\n" + strasse.toString() + ", " + ort.toString();
 	}
 
 }

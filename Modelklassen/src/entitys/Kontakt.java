@@ -147,11 +147,9 @@ public class Kontakt implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Kontakt: " + "\n"
-				+ "Vorname: " + vorname.toString() + "\n"
-				+ "Nachname: " + name.toString() + "\n"
-				+ ort.toString() + "\n"
-				+ "Telefon: " + tel + "\n";
+		return vorname.toString() + " " + name.toString() + "\n"
+				+ strasse + ", " + ort.toString() + "\n"
+				+ tel;
 	}
 
 
