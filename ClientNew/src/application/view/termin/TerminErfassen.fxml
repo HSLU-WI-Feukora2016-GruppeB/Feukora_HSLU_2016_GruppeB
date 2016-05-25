@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="leaf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.termin.TerminErfassen">
+<Pane fx:id="leaf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.termin.TerminErfassen">
    <children>
       <ImageView fitHeight="480.0" fitWidth="640.0" pickOnBounds="true" />
       <BorderPane prefHeight="480.0" prefWidth="640.0">
@@ -42,11 +42,10 @@
             <Pane prefHeight="50.0" prefWidth="25.0" BorderPane.alignment="CENTER" />
          </left>
          <right>
-            <Pane prefHeight="415.0" prefWidth="129.0" styleClass="r" BorderPane.alignment="CENTER">
+            <Pane prefHeight="578.0" prefWidth="23.0" styleClass="r" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btnSuchen" layoutX="19.0" layoutY="71.0" mnemonicParsing="false" onAction="#liegenschaftSuchen" text="Suchen" />
-                  <Button fx:id="btnSpeichern" layoutX="12.0" layoutY="319.0" mnemonicParsing="false" onAction="#terminSpeichern" text="Speichern" />
-                  <Button fx:id="btnAbbrechen" layoutX="12.0" layoutY="352.0" mnemonicParsing="false" onAction="#abbrechen" prefHeight="25.0" prefWidth="69.0" text="Zurück" />
+                  <Button fx:id="btnSuchen" layoutX="19.0" layoutY="71.0" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#liegenschaftSuchen" prefWidth="150.0" text="Suchen" />
+                  <Button fx:id="btnSpeichern" layoutX="12.0" layoutY="319.0" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#terminSpeichern" prefWidth="150.0" text="Speichern" />
                </children></Pane>
          </right>
          <center>
@@ -59,15 +58,15 @@
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="427.0" minWidth="10.0" prefWidth="321.0" />
                     </columnConstraints>
                     <rowConstraints>
-                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="29.5" minHeight="29.5" prefHeight="29.5" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <Label text="Strasse" GridPane.rowIndex="6" />
@@ -103,10 +102,10 @@
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="412.5" minWidth="10.0" prefWidth="319.0" />
                     </columnConstraints>
                     <rowConstraints>
-                      <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <DatePicker fx:id="dateoftermin" prefHeight="22.0" prefWidth="162.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
@@ -123,5 +122,6 @@
             </VBox>
          </center>
       </BorderPane>
+      <Button fx:id="btnAbbrechen" layoutX="629.0" layoutY="406.0" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#abbrechen" prefHeight="25.0" prefWidth="150.0" text="Zurück" />
    </children>
 </Pane>

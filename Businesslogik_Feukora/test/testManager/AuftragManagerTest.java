@@ -146,6 +146,7 @@ public class AuftragManagerTest {
 
 	/**
 	 * Testet die Methode {@link AuftragManagerImpl#findByDateAndMitarbeiter(GregorianCalendar, GregorianCalendar, Mitarbeiter)}
+	 * @throws Exception
 	 */
 	@Test
 	public void testFindByDatumAndMitarbeiter() throws Exception {
@@ -245,7 +246,7 @@ public class AuftragManagerTest {
 
 	/**
 	 * Initialisiert die Datenbank mit Testwerten
-	 * @return
+	 * @return lAuftrag
 	 * @throws Exception
 	 */
 	public static List<Auftrag> init() throws Exception {

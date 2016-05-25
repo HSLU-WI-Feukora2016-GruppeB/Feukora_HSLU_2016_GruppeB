@@ -17,7 +17,7 @@ import gruppeB.feukora.persister.util.JpaUtil;
 /**
  * Diese Klasse stellt die Implementierung von Methoden der Schnittstelle
  * FeuerungsanlageDAO zur Verfügung.
- * 
+ * @since 1.0
  * @version 1.0
  * @author Luca Raneri
  * 
@@ -40,17 +40,17 @@ public class FeuerungsanlageDAOImpl implements FeuerungsanlageDAO{
 	}
 
 	@Override
-	public Feuerungsanlage findFeuerungsanlageById(Integer id) {
+	public Feuerungsanlage findFeuerungsanlageById(Integer id) throws Exception{
 		return new GenericPersisterImpl<Feuerungsanlage>(Feuerungsanlage.class).findById(id);
 	}
 
 	@Override
-	public List<Feuerungsanlage> findAllFeuerungsanlage() {
+	public List<Feuerungsanlage> findAllFeuerungsanlage() throws Exception{
 		return new GenericPersisterImpl<Feuerungsanlage>(Feuerungsanlage.class).findAll();
 	}
 
 	@Override
-	public List<Feuerungsanlage> findByLiegenschaft(Liegenschaft liegenschaft) {
+	public List<Feuerungsanlage> findByLiegenschaft(Liegenschaft liegenschaft) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -67,7 +67,7 @@ public class FeuerungsanlageDAOImpl implements FeuerungsanlageDAO{
 	}
 
 	@Override
-	public List<Feuerungsanlage> findByBrenner(Brenner brenner) {
+	public List<Feuerungsanlage> findByBrenner(Brenner brenner) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -84,7 +84,7 @@ public class FeuerungsanlageDAOImpl implements FeuerungsanlageDAO{
 	}
 
 	@Override
-	public List<Feuerungsanlage> findByWaermeerzeuger(Waermeerzeuger waermeerzeuger) {
+	public List<Feuerungsanlage> findByWaermeerzeuger(Waermeerzeuger waermeerzeuger) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 

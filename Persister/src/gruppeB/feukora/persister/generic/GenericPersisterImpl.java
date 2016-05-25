@@ -14,14 +14,16 @@ import gruppeB.feukora.persister.util.JpaUtil;
 /**
  * Diese Klasse stellt die CRUD-Methoden zur Verfügung, die in allen
  * Unterklassen vorkommen müssen.
- *
+ * 
+ * @since 1.0
  * @author Luca Raneri
  * @version 1.0
  * @param <T>
  */
 public class GenericPersisterImpl<T> implements GenericPersister<T> {
 
-	private static final Logger logger = Logger.getLogger(GenericPersisterImpl.class);
+	private static final Logger logger = Logger
+			.getLogger(GenericPersisterImpl.class);
 
 	protected Class<T> classType;
 
@@ -149,13 +151,13 @@ public class GenericPersisterImpl<T> implements GenericPersister<T> {
 	}
 
 	@Override
-	public T findById(Integer id) {
+	public T findById(Integer id) throws Exception{
 
 		return JpaUtil.createEntityManager().find(classType, id);
 	}
 
 	@Override
-	public List<T> findAll() {
+	public List<T> findAll() throws Exception{
 
 		String sql = "SELECT entity FROM " + classType.getSimpleName()
 				+ " entity";

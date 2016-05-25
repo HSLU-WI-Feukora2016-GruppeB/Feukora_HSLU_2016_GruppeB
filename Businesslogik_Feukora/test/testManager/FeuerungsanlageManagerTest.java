@@ -34,7 +34,6 @@ public class FeuerungsanlageManagerTest {
 
 	/**
 	 * Initialisiert die Datenbank mit Testwerten.
-	 * 
 	 * @throws Exception
 	 */
 	@Before
@@ -44,7 +43,6 @@ public class FeuerungsanlageManagerTest {
 
 	/**
 	 * Schliesst Test mit Datenbank ab.
-	 * 
 	 * @throws Exception
 	 */
 	@After
@@ -146,7 +144,7 @@ public class FeuerungsanlageManagerTest {
 	
 	/**
 	 * Initialisiert die Datenbank mit Testwerten
-	 * @return
+	 * @return lFeuerungsanlage
 	 * @throws Exception
 	 */
 	public static List<Feuerungsanlage> init() throws Exception {

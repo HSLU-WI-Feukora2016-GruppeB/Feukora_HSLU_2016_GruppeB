@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.liegenschaft.LiegenschaftUebersicht">
+<VBox maxHeight="-Infinity" maxWidth="800.0" minHeight="-Infinity" minWidth="800.0" prefHeight="480.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.liegenschaft.LiegenschaftUebersicht">
   <children>
       <VBox prefHeight="61.0" prefWidth="640.0">
          <children>
@@ -38,13 +38,17 @@
          <bottom>
             <Pane prefHeight="47.0" prefWidth="640.0" BorderPane.alignment="CENTER">
                <children>
-                  <HBox layoutY="18.0" prefHeight="48.0" prefWidth="640.0">
+                  <HBox layoutY="18.0" prefHeight="48.0" prefWidth="800.0">
                      <children>
-                        <Pane prefHeight="53.0" prefWidth="160.0" />
-                        <Button fx:id="btnNeu" mnemonicParsing="false" onAction="#neueLiegenschaft" prefHeight="25.0" prefWidth="80.0" text="Hinzufügen" />
-                        <Button fx:id="btnBearbeiten" mnemonicParsing="false" onAction="#bearbeitenLiegenschaft" prefHeight="25.0" prefWidth="73.0" text="Bearbeiten" />
-                        <Button fx:id="btnLoeschen" mnemonicParsing="false" onAction="#loeschen" text="Löschen" />
-                        <Button fx:id="btnSchliessen" mnemonicParsing="false" onAction="#abbrechen" text="Schliessen" />
+                        <Pane maxWidth="25.0" minWidth="25.0" prefHeight="53.0" prefWidth="25.0" />
+                        <Button fx:id="btnNeu" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#neueLiegenschaft" prefHeight="25.0" prefWidth="150.0" text="Hinzufügen" />
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <Button fx:id="btnBearbeiten" minWidth="150.0" mnemonicParsing="false" onAction="#bearbeitenLiegenschaft" prefHeight="25.0" prefWidth="73.0" text="Bearbeiten" />
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <Button fx:id="btnLoeschen" minWidth="150.0" mnemonicParsing="false" onAction="#loeschen" text="Löschen" />
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <Button fx:id="btnSchliessen" minWidth="150.0" mnemonicParsing="false" onAction="#abbrechen" text="Schliessen" />
+                        <Pane maxWidth="25.0" minWidth="25.0" prefHeight="200.0" prefWidth="25.0" />
                         <Pane prefHeight="53.0" prefWidth="135.0" />
                      </children>
                   </HBox>
@@ -74,7 +78,7 @@
                               <Label fx:id="lblRueckmeldung" prefHeight="17.0" prefWidth="162.0" text="  " textFill="#e91212" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                               <Label text="Strasse" />
                               <TextField fx:id="txtStrasse" GridPane.rowIndex="1" />
-                              <Button fx:id="btnSuchen" mnemonicParsing="false" onAction="#LiegenschaftSuchen" text="Suchen" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Button fx:id="btnSuchen" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#LiegenschaftSuchen" prefWidth="150.0" text="Suchen" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </children>

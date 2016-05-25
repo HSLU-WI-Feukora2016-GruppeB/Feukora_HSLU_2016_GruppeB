@@ -6,7 +6,7 @@ import entitys.Benutzer;
 
 /**
  * Interface für Persistierung von Benutzer-Entities.
- * 
+ * @since 1.0
  * @version 1.0
  * @author Luca Raneri
  *
@@ -25,7 +25,7 @@ public interface BenutzerDAO {
 	 * Updatet die übergebene Benutzer-Entity.
 	 * 
 	 * @param entity
-	 * @return
+	 * @return Benutzer
 	 * @throws Exception
 	 */
 	public Benutzer updateBenutzer(Benutzer entity) throws Exception;
@@ -49,15 +49,17 @@ public interface BenutzerDAO {
 	/**
 	 * Liefert die Benutzer-Entity für den übergebenen Id-Wert zurück.
 	 * 
-	 * @param id
-	 * @return
+	 * @param idUser
+	 * @return Benutzer
+	 * @throws Exception
 	 */
 	public Benutzer findBenutzerById(Integer idUser) throws Exception;
 	
 	/**
 	 * Liefert alle Benutzer-Objekte zurück.
 	 * 
-	 * @return
+	 * @return List<Benutzer>
+	 * @throws Exception
 	 */
 	List<Benutzer> findAllBenutzer() throws Exception;
 	
@@ -66,7 +68,8 @@ public interface BenutzerDAO {
 	 * welche gefunden werden. Sonst eine leere Liste.
 	 * 
 	 * @param username
-	 * @return
+	 * @return List<Benutzer>
+	 * @throws Exception
 	 */
 	public List<Benutzer> findBenutzerByUsername(String username) throws Exception;
 	
@@ -75,7 +78,8 @@ public interface BenutzerDAO {
 	 * es welche gibt. Sonst eine leere Liste.
 	 * 
 	 * @param username
-	 * @return
+	 * @return List<Benutzer>
+	 * @throws Exception
 	 */
 	public List<Benutzer> findBenutzerByUsernamePassword(String username, String password) throws Exception;
 }

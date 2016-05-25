@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <VBox prefHeight="583.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.dashboard.Dashboard">
@@ -15,7 +14,7 @@
          <children>
             <ImageView fitHeight="552.0" fitWidth="640.0" pickOnBounds="true">
                <image>
-                  <Image url="@../../../../Pictures/WP/34e41d.jpg" />
+                  <Image url="@../../../../../../../Desktop/Bilder%20GUI/Background/Background_weiss_ver.jpg" />
                </image>
             </ImageView>
             <VBox prefHeight="552.0" prefWidth="640.0">
@@ -28,7 +27,7 @@
                            <graphic>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../Pictures/WP/ICON%20Feukora/clock.png" />
+                                    <Image url="@../../../../../../../Desktop/Bilder%20GUI/Icons/clock.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -37,13 +36,17 @@
                            </font>
                         </Button>
                         <Pane prefHeight="200.0" prefWidth="40.0" />
-                        <Rectangle fx:id="logo" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" stroke="BLACK" strokeType="INSIDE" width="150.0" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../Desktop/Bilder%20GUI/Icons/nature.png" />
+                           </image>
+                        </ImageView>
                         <Pane prefHeight="200.0" prefWidth="40.0" />
                         <Button fx:id="btnRapportUebersicht" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#rapportVerwalten" prefHeight="150.0" prefWidth="150.0" text="Aufträge">
                            <graphic>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../Pictures/WP/ICON%20Feukora/check.png" />
+                                    <Image url="@../../../../../../../Desktop/Bilder%20GUI/Icons/check.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -61,7 +64,7 @@
                            <graphic>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../Pictures/WP/ICON%20Feukora/house.png" />
+                                    <Image url="@../../../../../../../Desktop/Bilder%20GUI/Icons/house.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -74,7 +77,7 @@
                            <graphic>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../Pictures/WP/ICON%20Feukora/two.png" />
+                                    <Image url="@../../../../../../../Desktop/Bilder%20GUI/Icons/two.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -87,7 +90,7 @@
                            <graphic>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../Pictures/WP/ICON%20Feukora/people.png" />
+                                    <Image url="@../../../../../../../Desktop/Bilder%20GUI/Icons/people.png" />
                                  </image>
                               </ImageView>
                            </graphic>

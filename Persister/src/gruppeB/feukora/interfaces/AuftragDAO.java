@@ -10,7 +10,7 @@ import entitys.Mitarbeiter;
 
 /**
  * Interface für Persistierung von Auftrag-Entities.
- * 
+ * @since 1.0
  * @version 1.0
  * @author Luca Raneri
  *
@@ -29,7 +29,7 @@ public interface AuftragDAO {
 	 * Updatet die übergebene Auftrag-Entity.
 	 * 
 	 * @param entity
-	 * @return
+	 * @return Auftrag
 	 * @throws Exception
 	 */
 	public Auftrag updateAuftrag(Auftrag entity) throws Exception;
@@ -54,14 +54,16 @@ public interface AuftragDAO {
 	 * Liefert die Auftrag-Entity für den übergebenen Id-Wert zurück.
 	 * 
 	 * @param idAuftrag
-	 * @return
+	 * @return Auftrag
+	 * @throws Exception
 	 */
 	public Auftrag findAuftragById(Integer idAuftrag) throws Exception;
 
 	/**
 	 * Liefert alle Auftrag-Objekte zurück.
 	 * 
-	 * @return
+	 * @return List<Auftrag>
+	 * @throws Exception
 	 */
 	List<Auftrag> findAllAuftrag() throws Exception;
 
@@ -70,7 +72,8 @@ public interface AuftragDAO {
 	 * falls welche gefunden werden. Sonst eine leere Liste.
 	 * 
 	 * @param mitarbeiter
-	 * @return
+	 * @return List<Auftrag>
+	 * @throws Exception
 	 */
 	public List<Auftrag> findByMitarbeiter(Mitarbeiter mitarbeiter) throws Exception;
 
@@ -79,19 +82,21 @@ public interface AuftragDAO {
 	 * welche gefunden werden. Sonst eine leere Liste.
 	 * 
 	 * @param datum
-	 * @return
+	 * @return List<Auftrag>
+	 * @throws Exception
 	 */
 	public List<Auftrag> findByDatum(GregorianCalendar datum) throws Exception;
 
 	/**
-	 * Liefert die Liste mit Aufträgen für die übergebene DAtumsspanne (Start  bis Ende) 
+	 * Liefert die Liste mit Aufträgen für die übergebene Datumsspanne (Start  bis Ende) 
 	 * und der für den entsprechenden Mitarbeiter zurück, falls welche gefunden werden. 
 	 * Sonst eine leere Liste.
 	 * 
 	 * @param startdatum
 	 * @param enddatum
 	 * @param mitarbeiter
-	 * @return
+	 * @return List<Auftrag>
+	 * @throws Exception
 	 */
 	public List<Auftrag> findByDatumAndMitarbeiter(
 			GregorianCalendar startdatum, GregorianCalendar enddatum,
@@ -102,7 +107,8 @@ public interface AuftragDAO {
 	 * welche gefunden werden. Sonst eine leere Liste.
 	 * 
 	 * @param kontakt
-	 * @return
+	 * @return List<Auftrag>
+	 * @throws Exception
 	 */
 	public List<Auftrag> findByKontakt(Kontakt kontakt) throws Exception;
 
@@ -111,7 +117,8 @@ public interface AuftragDAO {
 	 * zurück, falls welche gefunden werden. Sonst eine leere Liste.
 	 * 
 	 * @param liegenschaft
-	 * @return
+	 * @return List<Auftrag>
+	 * @throws Exception
 	 */
 	public List<Auftrag> findByLiegenschaft(Liegenschaft liegenschaft) throws Exception;
 
@@ -120,7 +127,8 @@ public interface AuftragDAO {
 	 * @param datum
 	 * @param mitarbeiter
 	 * @param zeitSlot
-	 * @return
+	 * @return Auftrag
+	 * @throws Exception
 	 */
 	public Auftrag findAuftragByDateAndMitarbeiterAndZeitslot(
 			GregorianCalendar datum, Mitarbeiter mitarbeiter, int zeitSlot) throws Exception;

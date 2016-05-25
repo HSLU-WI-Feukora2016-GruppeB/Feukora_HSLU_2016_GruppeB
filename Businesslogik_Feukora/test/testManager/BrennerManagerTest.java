@@ -16,7 +16,7 @@ import entitys.Brenner;
 
 /**
  * Diese Klasse ist für das Testen der BrennerManager zuständig.
- * @author Olivia
+ * @author Pascal Steiner
  * @version 1.0
  * @since 1.0
  */

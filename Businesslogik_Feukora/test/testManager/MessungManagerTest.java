@@ -145,7 +145,7 @@ private static MessungsManager messungManager = new MessungManagerImpl();
 	
 	/**
 	 * Initialisiert die Objekte welche für die Tests verwendet werden.
-	 * @return
+	 * @return lMessung
 	 * @throws Exception
 	 */
 	public static List<Messung> init() throws Exception {

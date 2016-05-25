@@ -14,7 +14,7 @@ import gruppeB.feukora.persister.util.JpaUtil;
 /**
  * Diese Klasse stellt die Implementierung von Methoden der Schnittstelle
  * BrennerDAO zur Verfügung.
- * 
+ * @since 1.0
  * @version 1.0
  * @author Luca Raneri
  * 
@@ -42,17 +42,17 @@ public class BrennerDAOImpl implements BrennerDAO{
 	}
 
 	@Override
-	public Brenner findBrennerById(Integer id) {
+	public Brenner findBrennerById(Integer id) throws Exception{
 		return new GenericPersisterImpl<Brenner>(Brenner.class).findById(id);
 	}
 
 	@Override
-	public List<Brenner> findAllBrenner() {
+	public List<Brenner> findAllBrenner() throws Exception{
 		return new GenericPersisterImpl<Brenner>(Brenner.class).findAll();
 	}
 
 	@Override
-	public List<Brenner> findBrennerByBaujahr(int baujahr) {
+	public List<Brenner> findBrennerByBaujahr(int baujahr) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -69,7 +69,7 @@ public class BrennerDAOImpl implements BrennerDAO{
 	}
 
 	@Override
-	public List<Brenner> findBrennerByBrennerart(int brennerArt) {
+	public List<Brenner> findBrennerByBrennerart(int brennerArt) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 
@@ -86,7 +86,7 @@ public class BrennerDAOImpl implements BrennerDAO{
 	}
 
 	@Override
-	public List<Brenner> findBrennerByBrennertyp(String brennerTyp) {
+	public List<Brenner> findBrennerByBrennertyp(String brennerTyp) throws Exception{
 		
 		EntityManager em = JpaUtil.createEntityManager();
 

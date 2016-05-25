@@ -16,7 +16,7 @@ import entitys.Ort;
 
 /**
  * Diese Klasse ist für das Testen der OrtManager zuständig.
- * @author Olivia
+ * @author Pascal Steiner
  * @version 1.0
  * @since 1.0
  */

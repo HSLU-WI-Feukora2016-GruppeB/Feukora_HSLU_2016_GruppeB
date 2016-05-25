@@ -139,7 +139,7 @@ public class BenutzerManagerTest {
 	
 	/**
 	 * Initialisiert die Datenbank mit Testwerten
-	 * @return
+	 * @return lBenutzer
 	 * @throws Exception
 	 */
 	public static List<Benutzer> init() throws Exception {
@@ -172,8 +172,4 @@ public class BenutzerManagerTest {
 			benutzerManager.delete(b);
 		}
 	}
-
-
-
 }
-
