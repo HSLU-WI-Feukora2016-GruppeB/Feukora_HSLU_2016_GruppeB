@@ -21,7 +21,11 @@ import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
  * 
  * @author Alexandra
  * @version 1.0
+<<<<<<< HEAD
  * @since 1.0
+=======
+ * @since 1.0.0
+>>>>>>> refs/remotes/origin/master
  */
 public class FeuerungsrapportServiceBrennerTest {
 
