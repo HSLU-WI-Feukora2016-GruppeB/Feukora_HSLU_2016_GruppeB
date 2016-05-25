@@ -157,53 +157,91 @@ public class TerminUebersicht {
 
 				// Montag
 				Auftrag auftrag11 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1, kontrolleur, 1);
-				T1Z1.setText(auftrag11.getLiegenschaft().toString());
+				if( auftrag11 != null){
+				T1Z1.setText(auftrag11.getLiegenschaft().getStrasse());
+				}
 				Auftrag auftrag12 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1, kontrolleur, 2);
+				if(auftrag12 !=null){
 				T1Z2.setText(auftrag12.getLiegenschaft().toString());
+				}
 				Auftrag auftrag13 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1, kontrolleur, 3);
+				if(auftrag13 != null){
 				T1Z3.setText(auftrag13.getLiegenschaft().toString());
+				}
 				Auftrag auftrag14 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1, kontrolleur, 4);
+				if(auftrag14 != null){
 				T1Z4.setText(auftrag14.getLiegenschaft().toString());
-
+				}
 				// Dienstag
 				Auftrag auftrag21 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal2, kontrolleur, 1);
+				if(auftrag21 != null){
 				T2Z1.setText(auftrag21.getLiegenschaft().toString());
+				}
 				Auftrag auftrag22 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal2, kontrolleur, 2);
+				if(auftrag22 != null){
 				T2Z2.setText(auftrag22.getLiegenschaft().toString());
+				}
 				Auftrag auftrag23 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal2, kontrolleur, 3);
+				if(auftrag23 != null){
 				T2Z3.setText(auftrag23.getLiegenschaft().toString());
+				}
 				Auftrag auftrag24 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal2, kontrolleur, 4);
+				if(auftrag24 != null){
 				T2Z4.setText(auftrag24.getLiegenschaft().toString());
-
+				}
 				// Mittwoch
 				Auftrag auftrag31 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal3, kontrolleur, 1);
+				if(auftrag31 != null){
 				T3Z1.setText(auftrag31.getLiegenschaft().toString());
+				}
 				Auftrag auftrag32 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal3, kontrolleur, 2);
+				if(auftrag32 != null){
 				T3Z2.setText(auftrag32.getLiegenschaft().toString());
+				}
 				Auftrag auftrag33 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal3, kontrolleur, 3);
+				if(auftrag33 != null){
 				T3Z3.setText(auftrag33.getLiegenschaft().toString());
+				}
 				Auftrag auftrag34 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal3, kontrolleur, 4);
+				if(auftrag34 != null){
 				T3Z4.setText(auftrag34.getLiegenschaft().toString());
+				}
 
 				// Donnerstag
 				Auftrag auftrag41 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal4, kontrolleur, 1);
+				if(auftrag41 != null){
 				T4Z1.setText(auftrag41.getLiegenschaft().toString());
+				}
 				Auftrag auftrag42 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal4, kontrolleur, 2);
+				if(auftrag42 != null){
 				T4Z2.setText(auftrag42.getLiegenschaft().toString());
+				}
 				Auftrag auftrag43 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal4, kontrolleur, 3);
+				if(auftrag43 != null){
 				T4Z3.setText(auftrag43.getLiegenschaft().toString());
+				}
 				Auftrag auftrag44 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal4, kontrolleur, 4);
+				if(auftrag43 != null){
 				T4Z4.setText(auftrag44.getLiegenschaft().toString());
+				}
 
 				// Freitag
 				Auftrag auftrag51 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal5, kontrolleur, 1);
+				if(auftrag51 !=null){
 				T5Z1.setText(auftrag51.getLiegenschaft().toString());
+				}
 				Auftrag auftrag52 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal5, kontrolleur, 2);
+				if(auftrag52 != null){
 				T5Z2.setText(auftrag52.getLiegenschaft().toString());
+				}
 				Auftrag auftrag53 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal5, kontrolleur, 3);
+				if(auftrag53 != null){
 				T5Z3.setText(auftrag53.getLiegenschaft().toString());
+				}
 				Auftrag auftrag54 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal5, kontrolleur, 4);
+				if(auftrag54 != null){
 				T5Z4.setText(auftrag54.getLiegenschaft().toString());
+				}
 
 				// Alternative Olivia:
 				// List<Auftrag> la = null;// =

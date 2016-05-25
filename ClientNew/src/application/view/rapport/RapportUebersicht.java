@@ -158,7 +158,7 @@ public class RapportUebersicht {
 					ObservableList<Auftrag> listauftrag2 = FXCollections.observableList(auftragsliste);
 					tblKunde.setCellValueFactory(new PropertyValueFactory<>("kunde"));
 					tblLiegenschaft.setCellValueFactory(new PropertyValueFactory<>("liegenschaft"));
-					tblDatum.setCellValueFactory(new PropertyValueFactory<>("datum"));
+					tblDatum.setCellValueFactory(new PropertyValueFactory<>("auftrag"));
 
 					tabelle.setItems(listauftrag2);
 				} catch (Exception e) {

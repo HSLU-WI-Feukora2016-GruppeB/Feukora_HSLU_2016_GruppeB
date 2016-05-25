@@ -60,8 +60,8 @@ public class RapportErfassen {
 			txtM1S2Nox, txtM1S2Waermeerz, txtM1S2O2, txtM1S2Abgasverl;
 
 	@FXML
-	private CheckBox checkS1M1Oel,  checkS1M1Abgas, checkS1M1Russzahl, checkS1M1Co2, checkS1M1No2
-	,checkS1M2Oel,checkS1M2Abgas, checkS1M2Russzahl, checkS1M2Co2, checkS1M2No2;
+	private CheckBox checkS1M1Oel, checkS1M1Abgas, checkS1M1Russzahl, checkS1M1Co2, checkS1M1No2, checkS1M2Oel,
+			checkS1M2Abgas, checkS1M2Russzahl, checkS1M2Co2, checkS1M2No2;
 
 	// ----------------Stufe 2---------------------
 	@FXML
@@ -70,9 +70,8 @@ public class RapportErfassen {
 			txtM2S2Nox, txtM2S2Waermeerz, txtM2S2O2, txtM2S2Abgasverl;
 
 	@FXML
-	private CheckBox check21M1Oel, checkS2M2Oel, checkS2M1Abgas, checkS2M1Russzahl, checkS2M1Co2, checkS2M1No2
-	,checkS2M2Abgas, checkS2M2Russzahl, checkS2M2Co2, checkS2M2No2;
-
+	private CheckBox checkS2M1Oel, checkS2M2Oel, checkS2M1Abgas, checkS2M1Russzahl, checkS2M1Co2, checkS2M1No2,
+			checkS2M2Abgas, checkS2M2Russzahl, checkS2M2Co2, checkS2M2No2;
 
 	@FXML
 	private Label lblRueckmeldung;
@@ -165,112 +164,82 @@ public class RapportErfassen {
 		feuerungsleistung = String.valueOf(feuerungs.getFeuerungswaermeleistung());
 	}
 
-
-/*
-	public void messwertePruefen() {
-
-
-		Messung messung1stufe1 = null, messung2stufe1 = null, messung1stufe2 = null, messung2stufe2 = null;
-		try {
-			messung1stufe1 = this.createMessung1Stufe1();
-			messung1stufe1.setAbgasverlusteNotOk(checkS1M1Abgas.isSelected());
-			messung1stufe1.setRusszahlNotOk(checkS1M1Russzahl.isSelected());
-			messung1stufe1.setCoMgNotOk(checkS1M1C02.isSelected());
-			messung1stufe1.setNoMgNotOk(checkS1M1No2.isSelected());
-
-
-			messung1stufe2 = this.createMessung1Stufe2();
-			messung1stufe2.setAbgasverlusteNotOk(checkS2M1Abgas.isSelected());
-			messung1stufe2.setRusszahlNotOk(checkS2M1Russzahl.isSelected());
-			messung1stufe2.setCoMgNotOk(checkS2M1C02.isSelected());
-			messung1stufe2.setNoMgNotOk(checkS2M1No2.isSelected());
-
-			messung2stufe1 = this.createMessung2Stufe1();
-			messung2stufe1.setAbgasverlusteNotOk(checkS1M2Abgas.isSelected());
-			messung2stufe1.setRusszahlNotOk(checkS1M2Russzahl.isSelected());
-			messung2stufe1.setCoMgNotOk(checkS1M2C02.isSelected());
-			messung2stufe1.setNoMgNotOk(checkS1M2No2.isSelected());
-
-			messung2stufe2 = this.createMessung2Stufe2();
-			messung2stufe2.setAbgasverlusteNotOk(checkS2M2Abgas.isSelected());
-			messung2stufe2.setRusszahlNotOk(checkS2M2Russzahl.isSelected());
-			messung2stufe2.setCoMgNotOk(checkS2M2C02.isSelected());
-			messung2stufe2.setNoMgNotOk(checkS2M2No2.isSelected());
-
-		} catch (Exception e1) {
-			lblRueckmeldung.setText("Messungen abspeichern fehlgeschlagen");
-			e1.printStackTrace();
-		}
-
-		Auftrag gespeicherterauftrag = null;
-
-		// könnte es sein dass wenn eine Messung nicht ausgefüllt worden ist und
-		// somit in messungpruefen() eine
-		// null Referenz bekommt, ich diese dann in den auftrag speicher und den
-		// Auftrag in die Db speichere, dass programm
-		// dann crasht?
-		ausgewaehlterauftrag.setMessung1stufe1(messung1stufe1);
-
-		ausgewaehlterauftrag.setMessung2stufe1(messung2stufe1);
-
-		ausgewaehlterauftrag.setMessung1stufe2(messung1stufe2);
-
-		ausgewaehlterauftrag.setMessung2stufe2(messung2stufe2);
-		try {
-
-			// hier update oder add? eigentlich update da sonst wieder ein neues
-			// Objekt in der DB angelegt wird oder?
-			// das Backoffice hat ja eines angelegt.
-			gespeicherterauftrag = auftragRO.update(ausgewaehlterauftrag);
-
-		} catch (Exception e) {
-			lblRueckmeldung.setText("Auftrag speichern fehlgeschlagen");
-			e.printStackTrace();
-		}
-	}
-
-		ArrayList<Messung> messungsliste = new ArrayList<Messung>();
-		messungsliste.add(gespeicherterauftrag.getMessung1stufe1());
-		messungsliste.add(gespeicherterauftrag.getMessung2stufe1());
-		messungsliste.add(gespeicherterauftrag.getMessung1stufe2());
-		messungsliste.add(gespeicherterauftrag.getMessung2stufe2());
-
-		for (Messung m : messungsliste) {
-
-			boolean notokey = m.isBeurteilungNotOk();
-			if (notokey) {
-				cbBeurteilung.setSelected(true);
-				for (Messung m2 : messungsliste) {
-					notokey = m2.isAbgasverlusteNotOk();
-					if (notokey) {
-						cbAbgasverluste.setSelected(true);
-					}
-					boolean notokey2 = m.isCoMgNotOk();
-					if (notokey2) {
-						cbCo2.setSelected(true);
-					}
-					boolean notokey3 = m.isNoMgNotOk();
-					if (notokey3) {
-						cbNo2.setSelected(true);
-					}
-					boolean notokey4 = m.isOelanteilenNotOk();
-					if (notokey4) {
-						cbOelanteil.setSelected(true);
-					}
-					boolean notokey5 = m.isRusszahlNotOk();
-					if (notokey5) {
-						cbRusszahl.setSelected(true);
-					}
-				}
-			}else{
-				cbBeurteilung.setSelected(true);
-				lblRueckmeldung.setText("sollte eigentlich funktionieren");
-				break;
-			}
-		}
-	}
-
-*/
+	/*
+	 * public void messwertePruefen() {
+	 *
+	 *
+	 * Messung messung1stufe1 = null, messung2stufe1 = null, messung1stufe2 =
+	 * null, messung2stufe2 = null; try { messung1stufe1 =
+	 * this.createMessung1Stufe1();
+	 * messung1stufe1.setAbgasverlusteNotOk(checkS1M1Abgas.isSelected());
+	 * messung1stufe1.setRusszahlNotOk(checkS1M1Russzahl.isSelected());
+	 * messung1stufe1.setCoMgNotOk(checkS1M1C02.isSelected());
+	 * messung1stufe1.setNoMgNotOk(checkS1M1No2.isSelected());
+	 *
+	 *
+	 * messung1stufe2 = this.createMessung1Stufe2();
+	 * messung1stufe2.setAbgasverlusteNotOk(checkS2M1Abgas.isSelected());
+	 * messung1stufe2.setRusszahlNotOk(checkS2M1Russzahl.isSelected());
+	 * messung1stufe2.setCoMgNotOk(checkS2M1C02.isSelected());
+	 * messung1stufe2.setNoMgNotOk(checkS2M1No2.isSelected());
+	 *
+	 * messung2stufe1 = this.createMessung2Stufe1();
+	 * messung2stufe1.setAbgasverlusteNotOk(checkS1M2Abgas.isSelected());
+	 * messung2stufe1.setRusszahlNotOk(checkS1M2Russzahl.isSelected());
+	 * messung2stufe1.setCoMgNotOk(checkS1M2C02.isSelected());
+	 * messung2stufe1.setNoMgNotOk(checkS1M2No2.isSelected());
+	 *
+	 * messung2stufe2 = this.createMessung2Stufe2();
+	 * messung2stufe2.setAbgasverlusteNotOk(checkS2M2Abgas.isSelected());
+	 * messung2stufe2.setRusszahlNotOk(checkS2M2Russzahl.isSelected());
+	 * messung2stufe2.setCoMgNotOk(checkS2M2C02.isSelected());
+	 * messung2stufe2.setNoMgNotOk(checkS2M2No2.isSelected());
+	 *
+	 * } catch (Exception e1) { lblRueckmeldung.setText(
+	 * "Messungen abspeichern fehlgeschlagen"); e1.printStackTrace(); }
+	 *
+	 * Auftrag gespeicherterauftrag = null;
+	 *
+	 * // könnte es sein dass wenn eine Messung nicht ausgefüllt worden ist und
+	 * // somit in messungpruefen() eine // null Referenz bekommt, ich diese
+	 * dann in den auftrag speicher und den // Auftrag in die Db speichere, dass
+	 * programm // dann crasht?
+	 * ausgewaehlterauftrag.setMessung1stufe1(messung1stufe1);
+	 *
+	 * ausgewaehlterauftrag.setMessung2stufe1(messung2stufe1);
+	 *
+	 * ausgewaehlterauftrag.setMessung1stufe2(messung1stufe2);
+	 *
+	 * ausgewaehlterauftrag.setMessung2stufe2(messung2stufe2); try {
+	 *
+	 * // hier update oder add? eigentlich update da sonst wieder ein neues //
+	 * Objekt in der DB angelegt wird oder? // das Backoffice hat ja eines
+	 * angelegt. gespeicherterauftrag = auftragRO.update(ausgewaehlterauftrag);
+	 *
+	 * } catch (Exception e) { lblRueckmeldung.setText(
+	 * "Auftrag speichern fehlgeschlagen"); e.printStackTrace(); } }
+	 *
+	 * ArrayList<Messung> messungsliste = new ArrayList<Messung>();
+	 * messungsliste.add(gespeicherterauftrag.getMessung1stufe1());
+	 * messungsliste.add(gespeicherterauftrag.getMessung2stufe1());
+	 * messungsliste.add(gespeicherterauftrag.getMessung1stufe2());
+	 * messungsliste.add(gespeicherterauftrag.getMessung2stufe2());
+	 *
+	 * for (Messung m : messungsliste) {
+	 *
+	 * boolean notokey = m.isBeurteilungNotOk(); if (notokey) {
+	 * cbBeurteilung.setSelected(true); for (Messung m2 : messungsliste) {
+	 * notokey = m2.isAbgasverlusteNotOk(); if (notokey) {
+	 * cbAbgasverluste.setSelected(true); } boolean notokey2 = m.isCoMgNotOk();
+	 * if (notokey2) { cbCo2.setSelected(true); } boolean notokey3 =
+	 * m.isNoMgNotOk(); if (notokey3) { cbNo2.setSelected(true); } boolean
+	 * notokey4 = m.isOelanteilenNotOk(); if (notokey4) {
+	 * cbOelanteil.setSelected(true); } boolean notokey5 = m.isRusszahlNotOk();
+	 * if (notokey5) { cbRusszahl.setSelected(true); } } }else{
+	 * cbBeurteilung.setSelected(true); lblRueckmeldung.setText(
+	 * "sollte eigentlich funktionieren"); break; } } }
+	 *
+	 */
 	/**
 	 * Hier wird nun der Auftrag endgültig abgespeichert
 	 */
@@ -281,48 +250,49 @@ public class RapportErfassen {
 		try {
 
 			messung1stufe1 = this.createMessung1Stufe1();
-			if(messung1stufe1 != null){
-			messung1stufe1.setAbgasverlusteNotOk(checkS1M1Abgas.isSelected());
-			messung1stufe1.setRusszahlNotOk(checkS1M1Russzahl.isSelected());
-			messung1stufe1.setCoMgNotOk(checkS1M1Co2.isSelected());
-			messung1stufe1.setNoMgNotOk(checkS1M1No2.isSelected());
-			messungRO.add(messung1stufe1);
+			if (messung1stufe1 != null) {
+				messung1stufe1.setAbgasverlusteNotOk(checkS1M1Abgas.isSelected());
+				messung1stufe1.setRusszahlNotOk(checkS1M1Russzahl.isSelected());
+				messung1stufe1.setCoMgNotOk(checkS1M1Co2.isSelected());
+				messung1stufe1.setNoMgNotOk(checkS1M1No2.isSelected());
+				messung1stufe1.setOelanteilenNotOk(checkS1M1Oel.isSelected());
+				messungRO.add(messung1stufe1);
 			}
-
 
 			messung1stufe2 = this.createMessung1Stufe2();
-			if(messung1stufe2 != null){
-			messung1stufe2.setAbgasverlusteNotOk(checkS2M1Abgas.isSelected());
-			messung1stufe2.setRusszahlNotOk(checkS2M1Russzahl.isSelected());
-			messung1stufe2.setCoMgNotOk(checkS2M1Co2.isSelected());
-			messung1stufe2.setNoMgNotOk(checkS2M1No2.isSelected());
-			messungRO.add(messung1stufe2);
+			if (messung1stufe2 != null) {
+				messung1stufe2.setAbgasverlusteNotOk(checkS2M1Abgas.isSelected());
+				messung1stufe2.setRusszahlNotOk(checkS2M1Russzahl.isSelected());
+				messung1stufe2.setCoMgNotOk(checkS2M1Co2.isSelected());
+				messung1stufe2.setNoMgNotOk(checkS2M1No2.isSelected());
+				messung1stufe2.setOelanteilenNotOk(checkS2M1Oel.isSelected());
+				messungRO.add(messung1stufe2);
 			}
 
-			if(messung1stufe2 != null){
-				messung2stufe1 = this.createMessung2Stufe1();
+			messung2stufe1 = this.createMessung2Stufe1();
+			if (messung2stufe1 != null) {
 				messung2stufe1.setAbgasverlusteNotOk(checkS1M2Abgas.isSelected());
 				messung2stufe1.setRusszahlNotOk(checkS1M2Russzahl.isSelected());
 				messung2stufe1.setCoMgNotOk(checkS1M2Co2.isSelected());
 				messung2stufe1.setNoMgNotOk(checkS1M2No2.isSelected());
+				messung2stufe1.setOelanteilenNotOk(checkS1M2Oel.isSelected());
 				messungRO.add(messung2stufe1);
 			}
 
-
 			messung2stufe2 = this.createMessung2Stufe2();
-			if(messung2stufe2 != null){
-			messung2stufe2.setAbgasverlusteNotOk(checkS2M2Abgas.isSelected());
-			messung2stufe2.setRusszahlNotOk(checkS2M2Russzahl.isSelected());
-			messung2stufe2.setCoMgNotOk(checkS2M2Co2.isSelected());
-			messung2stufe2.setNoMgNotOk(checkS2M2No2.isSelected());
-			messungRO.add(messung2stufe2);
+			if (messung2stufe2 != null) {
+				messung2stufe2.setAbgasverlusteNotOk(checkS2M2Abgas.isSelected());
+				messung2stufe2.setRusszahlNotOk(checkS2M2Russzahl.isSelected());
+				messung2stufe2.setCoMgNotOk(checkS2M2Co2.isSelected());
+				messung2stufe2.setNoMgNotOk(checkS2M2No2.isSelected());
+				messung2stufe1.setOelanteilenNotOk(checkS2M2Oel.isSelected());
+				messungRO.add(messung2stufe2);
 			}
 
 		} catch (Exception e1) {
 			lblRueckmeldung.setText("Messungen abspeichern fehlgeschlagen");
 			e1.printStackTrace();
 		}
-
 
 		// könnte es sein dass wenn eine Messung nicht ausgefüllt worden ist und
 		// somit in messungpruefen() eine
@@ -349,8 +319,6 @@ public class RapportErfassen {
 
 	}
 
-
-
 	/**
 	 * Diese Methode liefert die 1 Stufe der 1 Messung in einem Messungsobjekt
 	 *
@@ -367,15 +335,11 @@ public class RapportErfassen {
 		String waermer = txtM1S1Waermeerz.getText();
 		String o2gehalt = txtM1S1O2.getText();
 		String abgasverluste = txtM1S1Abgasverl.getText();
-		Boolean oelanteil = checkS1M1Oel.isSelected();
 		Messung messung1stufe1 = this.messungpruefen(russzahl, cogehalt, abgastemperatur, verbrennungstemperatur,
-				no2gehalt, waermer, o2gehalt, abgasverluste, oelanteil);
+				no2gehalt, waermer, o2gehalt, abgasverluste);
 
 		return messung1stufe1;
 	}
-
-
-
 
 	/**
 	 * Diese Methode liefert die 2 Stufe der 1 Messung in einem Messungsobjekt
@@ -393,14 +357,11 @@ public class RapportErfassen {
 		String waermer = txtM1S2Waermeerz.getText();
 		String o2gehalt = txtM1S2O2.getText();
 		String abgasverluste = txtM1S2Abgasverl.getText();
-		Boolean oelanteil = checkS2M2Oel.isSelected();
 		Messung messung1stufe2 = this.messungpruefen(russzahl, cogehalt, abgastemperatur, verbrennungstemperatur,
-				no2gehalt, waermer, o2gehalt, abgasverluste, oelanteil);
+				no2gehalt, waermer, o2gehalt, abgasverluste);
 
 		return messung1stufe2;
 	}
-
-
 
 	/**
 	 * Diese Methode liefert die 1 Stufe der 2 Messung in einem Messungsobjekt
@@ -418,15 +379,11 @@ public class RapportErfassen {
 		String waermer = txtM2S1Waermeerz.getText();
 		String o2gehalt = txtM2S1O2.getText();
 		String abgasverluste = txtM2S1Abgasverl.getText();
-		Boolean oelanteil = checkS2M2Oel.isSelected();
 		Messung messung2stufe1 = this.messungpruefen(russzahl, cogehalt, abgastemperatur, verbrennungstemperatur,
-				no2gehalt, waermer, o2gehalt, abgasverluste, oelanteil);
+				no2gehalt, waermer, o2gehalt, abgasverluste);
 
 		return messung2stufe1;
 	}
-
-
-
 
 	/**
 	 * Diese Methode liefert die 1 Stufe der 2 Messung in einem Messungsobjekt
@@ -444,9 +401,8 @@ public class RapportErfassen {
 		String waermer = txtM2S2Waermeerz.getText();
 		String o2gehalt = txtM2S2O2.getText();
 		String abgasverluste = txtM2S2Abgasverl.getText();
-		Boolean oelanteil = checkS2M2Oel.isSelected();
 		Messung messung2stufe2 = this.messungpruefen(russzahl, cogehalt, abgastemperatur, verbrennungstemperatur,
-				no2gehalt, waermer, o2gehalt, abgasverluste, oelanteil);
+				no2gehalt, waermer, o2gehalt, abgasverluste);
 
 		return messung2stufe2;
 	}
@@ -468,7 +424,7 @@ public class RapportErfassen {
 	 */
 	private Messung messungpruefen(String stringrusszahl, String stringcogehalt, String stringabgastemperatur,
 			String stringverbrennungstemparatur, String stringno2gehalt, String stringwaermer, String stringo2gehalt,
-			String stringabgasverluste, boolean oelanteil) throws Exception {
+			String stringabgasverluste) throws Exception {
 
 		// falls nur ein Feld nicht ausgefüllt wird wird die Messung nicht
 		// abgespeichert und der Kotrolleur weiss es nicht!!!!!!!!!!
@@ -492,10 +448,8 @@ public class RapportErfassen {
 			GregorianCalendar messDatum = new GregorianCalendar();
 			messDatum.getInstance().getTime();
 
-			Messung messung = new Messung(messDatum, russzahl, coGehalt, oelanteil, no2gehalt, abgastemperatur,
+			Messung messung = new Messung(messDatum, russzahl, coGehalt, no2gehalt, abgastemperatur,
 					waermeerzeugertemperatur, verbrennungstemperatur, o2gehalt, abgasverluste);
-
-
 
 			return messung;
 		}

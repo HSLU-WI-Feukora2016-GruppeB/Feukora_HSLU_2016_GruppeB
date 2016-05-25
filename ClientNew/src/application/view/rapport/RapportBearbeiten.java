@@ -57,7 +57,7 @@ public class RapportBearbeiten {
 			txtM2S2Nox, txtM2S2Waermeerz, txtM2S2O2, txtM2S2Abgasverl;
 
 	@FXML
-	private CheckBox check21M1Oel, checkS2M2Oel, checkS2M1Abgas, checkS2M1Russzahl, checkS2M1Co2, checkS2M1No2,
+	private CheckBox checkS2M1Oel, checkS2M2Oel, checkS2M1Abgas, checkS2M1Russzahl, checkS2M1Co2, checkS2M1No2,
 			checkS2M2Abgas, checkS2M2Russzahl, checkS2M2Co2, checkS2M2No2;
 
 	@FXML
@@ -125,6 +125,9 @@ public class RapportBearbeiten {
 		cbEinregulierung.setSelected(ausgewaehlterauftrag.isEinregulierungNichtMoeglich());
 
 		setMessung1Stufe1();
+		setMessung2Stufe1();
+		setMessung1Stufe2();
+		setMessung2Stufe2();
 
 		/*---------wird nicht mehr gebraucht
 				for (Messung m : messungsliste) {
@@ -201,6 +204,7 @@ public class RapportBearbeiten {
 	public void setMessung1Stufe1() throws Exception {
 		m= ausgewaehlterauftrag.getMessung1stufe1();
 
+		if(m != null){
 		 txtM1S1Russzahl.setText(String.valueOf(m.getRusszahl()));
 		txtM1S1CO.setText(String.valueOf(m.getCoGehalt()));
 		txtM1S1Abgastemperatur.setText(String.valueOf(m.getAbgastemperatur()));
@@ -214,7 +218,82 @@ public class RapportBearbeiten {
 		checkS1M1Russzahl.setSelected(m.isRusszahlNotOk());
 		checkS1M1Co2.setSelected(m.isCoMgNotOk());
 		checkS1M1No2.setSelected(m.isNoMgNotOk());
+		}
 	}
+
+	/**
+	 * Diese Methode liefert die 1 Stufe der 2 Messung in einem Messungsobjekt
+	 *
+	 * @throws Exception
+	 */
+	public void setMessung2Stufe1() throws Exception {
+		m= ausgewaehlterauftrag.getMessung2stufe1();
+		if(m!= null){
+		 txtM2S1Russzahl.setText(String.valueOf(m.getRusszahl()));
+		txtM2S1CO.setText(String.valueOf(m.getCoGehalt()));
+		txtM2S1Abgastemperatur.setText(String.valueOf(m.getAbgastemperatur()));
+		txtM2S1Verbrenn.setText(String.valueOf(m.getVerbrennungstemperatur()));
+		txtM2S1Nox.setText(String.valueOf(m.getNo2Gehalt()));
+		txtM2S1Waermeerz.setText(String.valueOf(m.getWaermeerzeugertemperatur()));
+		txtM2S1O2.setText(String.valueOf(m.getO2gehalt()));
+		txtM2S1Abgasverl.setText(String.valueOf(m.getAbgasverluste()));
+		checkS1M2Oel.setSelected(m.isOelanteilenNotOk());
+		checkS1M2Abgas.setSelected(m.isAbgasverlusteNotOk());
+		checkS1M2Russzahl.setSelected(m.isRusszahlNotOk());
+		checkS1M2Co2.setSelected(m.isCoMgNotOk());
+		checkS1M2No2.setSelected(m.isNoMgNotOk());
+		}
+	}
+
+
+	/**
+	 * Diese Methode liefert die 2 Stufe der 1 Messung in einem Messungsobjekt
+	 *
+	 * @throws Exception
+	 */
+	public void setMessung1Stufe2() throws Exception {
+		m= ausgewaehlterauftrag.getMessung1stufe2();
+		if(m!= null){
+		 txtM1S2Russzahl.setText(String.valueOf(m.getRusszahl()));
+		txtM1S2CO.setText(String.valueOf(m.getCoGehalt()));
+		txtM1S2Abgastemperatur.setText(String.valueOf(m.getAbgastemperatur()));
+		txtM1S2Verbrenn.setText(String.valueOf(m.getVerbrennungstemperatur()));
+		txtM1S2Nox.setText(String.valueOf(m.getNo2Gehalt()));
+		txtM1S2Waermeerz.setText(String.valueOf(m.getWaermeerzeugertemperatur()));
+		txtM1S2O2.setText(String.valueOf(m.getO2gehalt()));
+		txtM1S2Abgasverl.setText(String.valueOf(m.getAbgasverluste()));
+		checkS2M1Oel.setSelected(m.isOelanteilenNotOk());
+		checkS2M1Abgas.setSelected(m.isAbgasverlusteNotOk());
+		checkS2M1Russzahl.setSelected(m.isRusszahlNotOk());
+		checkS2M1Co2.setSelected(m.isCoMgNotOk());
+		checkS2M1No2.setSelected(m.isNoMgNotOk());
+		}
+	}
+
+	/**
+	 * Diese Methode liefert die 2 Stufe der 2 Messung in einem Messungsobjekt
+	 *
+	 * @throws Exception
+	 */
+	public void setMessung2Stufe2() throws Exception {
+		m= ausgewaehlterauftrag.getMessung2stufe2();
+		if(m!=null){
+		 txtM2S2Russzahl.setText(String.valueOf(m.getRusszahl()));
+		txtM2S2CO.setText(String.valueOf(m.getCoGehalt()));
+		txtM2S2Abgastemperatur.setText(String.valueOf(m.getAbgastemperatur()));
+		txtM2S2Verbrenn.setText(String.valueOf(m.getVerbrennungstemperatur()));
+		txtM2S2Nox.setText(String.valueOf(m.getNo2Gehalt()));
+		txtM2S2Waermeerz.setText(String.valueOf(m.getWaermeerzeugertemperatur()));
+		txtM2S2O2.setText(String.valueOf(m.getO2gehalt()));
+		txtM2S2Abgasverl.setText(String.valueOf(m.getAbgasverluste()));
+		checkS2M2Oel.setSelected(m.isOelanteilenNotOk());
+		checkS2M2Abgas.setSelected(m.isAbgasverlusteNotOk());
+		checkS2M2Russzahl.setSelected(m.isRusszahlNotOk());
+		checkS2M2Co2.setSelected(m.isCoMgNotOk());
+		checkS2M2No2.setSelected(m.isNoMgNotOk());
+		}
+	}
+
 
 	/**
 	 * verlässt die Szene

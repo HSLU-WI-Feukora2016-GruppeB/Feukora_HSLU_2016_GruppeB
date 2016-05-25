@@ -69,9 +69,10 @@ public class TerminErfassen {
 	LiegenschaftRO liegenschaftRO;
 	Liegenschaft liegenschaft;
 	KontaktRO kontaktRO;
-	Kontakt kunde;
+	Kontakt kontakt;
 	MitarbeiterRO mitarbeiterRO;
 	AuftragRO auftragRo;
+	Auftrag auftrag;
 	Mitarbeiter kontrolleur;
 	int zeitslotint;
 	int terminartint;
@@ -166,10 +167,10 @@ public class TerminErfassen {
 			lblRueckmeldung.setText("Bitte alle Felder ausfüllen");
 
 		} else {
-			String kontakt = txtNachnameK.getText();
+			String kontaktstring = txtNachnameK.getText();
 			List<Kontakt> kontaktliste = new ArrayList<Kontakt>();
-			kontaktliste = kontaktRO.findByName(kontakt);
-			kunde = kontaktliste.get(0);
+			kontaktliste = kontaktRO.findByName(kontaktstring);
+			kontakt = kontaktliste.get(0);
 
 			String zeitslot = (String) cZeitslot.getValue();
 
@@ -212,7 +213,7 @@ public class TerminErfassen {
 			int jahr = datum.getYear();
 			GregorianCalendar gcal = new GregorianCalendar(jahr, monat, tag);
 
-			Auftrag auftrag = new Auftrag(kunde, liegenschaft, kontrolleur, gcal, zeitslotint, terminartint);
+			auftrag = new Auftrag(kontakt, liegenschaft, kontrolleur, gcal, zeitslotint, terminartint);
 			auftragRo.add(auftrag);
 		}
 	}

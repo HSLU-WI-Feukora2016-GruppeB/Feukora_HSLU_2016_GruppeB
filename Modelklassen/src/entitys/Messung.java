@@ -92,6 +92,25 @@ public class Messung implements Serializable{
 		this.abgasverluste = abgasverluste;
 	}
 
+	//nur für messwerte, beurteilungswerte werden via grenzwerte klasse gesetzt
+		public Messung(GregorianCalendar messDatum, int russzahl, int coGehalt, int no2gehalt, int abgastemperatur,
+				int waermeerzeugertemperatur, int verbrennungstemperatur,
+				int o2gehalt, int abgasverluste) {
+			super();
+			this.messDatum = messDatum;
+			this.russzahl = russzahl;
+			this.coGehalt = coGehalt;
+			this.no2gehalt = no2gehalt;
+			this.abgastemperatur = abgastemperatur;
+			this.waermeerzeugertemperatur = waermeerzeugertemperatur;
+			this.verbrennungstemperatur = verbrennungstemperatur;
+			this.o2gehalt = o2gehalt;
+			this.abgasverluste = abgasverluste;
+		}
+
+
+
+
 
 
 	//getter&setter
