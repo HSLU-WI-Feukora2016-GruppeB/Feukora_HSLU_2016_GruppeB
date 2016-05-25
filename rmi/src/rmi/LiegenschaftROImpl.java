@@ -11,7 +11,7 @@ import managerInterfaces.LiegenschaftManager;
 import managerKlassen.LiegenschaftManagerImpl;
 
 /**
- * Stellt die Implementierung von Methoden der Schnittstelle LiegenschaftenRO zur
+ * Stellt die Implementierung von Methoden der Schnittstelle LiegenschaftRO zur
  * Verfügung.
  * 
  * @author Matthias Perrollaz

@@ -44,7 +44,7 @@ public interface OrtRO extends Remote {
 	/**
 	 * Löscht den übergebenen Ort mithilfe seiner Id.
 	 * 
-	 * @param plz
+	 * @param id
 	 * @throws Exception
 	 */
 	public void deleteById(Integer id) throws Exception;
@@ -52,8 +52,9 @@ public interface OrtRO extends Remote {
 	/**
 	 * Liefert einen Ort anhand der gesuchten Id.
 	 * 
-	 * @param plz
+	 * @param id
 	 * @return
+	 * @throws Exception
 	 */
 	public Ort findById(Integer id) throws Exception;
 
@@ -62,14 +63,16 @@ public interface OrtRO extends Remote {
 	 * 
 	 * @param ortBez
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Ort> findByOrtBez(String ortBez) throws Exception;
 	
 	/**
-	 * Liefert einen Ort anhand der gesuchten Ortsbezeichnung.
+	 * Liefert einen Ort anhand der gesuchten Postleitzahl.
 	 * 
-	 * @param ortBez
+	 * @param plz
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Ort> findByOrtPlz(int plz) throws Exception;
 
@@ -77,6 +80,7 @@ public interface OrtRO extends Remote {
 	 * Liefert alle Benutzer zurück.
 	 * 
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Ort> findAll() throws Exception;
 

@@ -47,12 +47,14 @@ public interface BenutzerRO extends Remote {
 	 * Liefert einen Benutzer anhand der gesuchten Benutzerid.
 	 * @param id
 	 * @return
+	 * @throws Exception
 	 */
 	public Benutzer findById(Integer id)throws Exception;
 
 	/**
 	 * Liefert alle Benutzer zurück.
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Benutzer> findAll()throws Exception;
 
@@ -60,6 +62,7 @@ public interface BenutzerRO extends Remote {
 	 * Liefert eine Benutzerliste anhand des gesuchten Usernames.
 	 * @param username
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Benutzer> findByUsername(String username)throws Exception;
 	
@@ -67,6 +70,7 @@ public interface BenutzerRO extends Remote {
 	 * Liefert eine Benutzerliste anhand des gesuchten Benutzernamens und Passworts.
 	 * @param username, password
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Benutzer> findByUsernamePassword(String username, String password)throws Exception;
 

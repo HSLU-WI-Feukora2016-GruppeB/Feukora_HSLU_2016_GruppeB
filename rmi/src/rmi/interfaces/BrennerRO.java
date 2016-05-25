@@ -47,12 +47,14 @@ public interface BrennerRO extends Remote {
 	/**
 	 * Liefert Brenner mithilfe seiner Id.
 	 * @return
+	 * @throws Exception
 	 */
 	public Brenner findById(Integer id) throws Exception;
 	
 	/**
 	 * Liefert Liste aller Brenner.
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Brenner> findAll() throws Exception;
 	
@@ -60,6 +62,7 @@ public interface BrennerRO extends Remote {
 	 * Liefert alle Brenner des angefragten Typs.
 	 * @param brennerTyp
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Brenner> findByTyp(String brennerTyp) throws Exception;
 	
@@ -67,6 +70,7 @@ public interface BrennerRO extends Remote {
 	 * Liefert alle Brenner der angefragten Art.
 	 * @param brennerArt
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Brenner> findByArt(int brennerArt) throws Exception;
 	
@@ -74,6 +78,7 @@ public interface BrennerRO extends Remote {
 	 * Liefert alle Brenner mit angefragtem Baujahr.
 	 * @param baujahr
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Brenner> findByBaujahr(int baujahr) throws Exception;
 	

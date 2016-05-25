@@ -47,13 +47,16 @@ public interface KontaktRO extends Remote {
 
 	/**
 	 * Liefert Liste von Kontakten mit der mitgegebenen ID.
+	 * @param id
 	 * @return
+	 * @throws Exception
 	 */
 	public Kontakt findById(Integer id)throws Exception; 
 	
 	/**
 	 * Liefert Liste aller Kontakte.
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Kontakt> findAll()throws Exception;
 	
@@ -61,6 +64,7 @@ public interface KontaktRO extends Remote {
 	 * Liefert alle Kontakt mit gesuchtem Namen.
 	 * @param name
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Kontakt> findByName(String name)throws Exception;
 	
@@ -68,6 +72,7 @@ public interface KontaktRO extends Remote {
 	 * Liefert alle Kontakte mit gesuchtem Vornamen.
 	 * @param vorname
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Kontakt> findByVorname(String vorname)throws Exception;
 	
@@ -76,6 +81,7 @@ public interface KontaktRO extends Remote {
 	 * @param name
 	 * @param vorname	 
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Kontakt> findByNameVorname(String name, String vorname)throws Exception;
 	
@@ -83,6 +89,7 @@ public interface KontaktRO extends Remote {
 	 * Liefert alle Kontakte mit gesuchtem Ort.
 	 * @param ort
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Kontakt> findByOrt (Ort ort)throws Exception;
 	
@@ -90,6 +97,7 @@ public interface KontaktRO extends Remote {
 	 * Liefert alle Mitarbeiter mit gesuchter Rolle.
 	 * @param rolleIntern
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Kontakt> findByRolleExtern (int rolleExtern)throws Exception;
 	
@@ -97,6 +105,7 @@ public interface KontaktRO extends Remote {
 	 * Liefert alle Mitarbeiter mit gesuchter Strasse.
 	 * @param strasse
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Kontakt> findByStrasse (String strasse)throws Exception;
 

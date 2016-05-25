@@ -49,14 +49,16 @@ public interface LiegenschaftRO extends Remote {
 
 	/**
 	 * Liefert die Liegenschaft die mit der Id angefragt wurde. 
-	 * @param id
+	 * @param idLiegenschaft
 	 * @return
+	 * @throws Exception
 	 */
 	public Liegenschaft findById(Integer idLiegenschaft)throws Exception;
 	
 	/**
 	 * Liefert alle Liegenschaften zurück.
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Liegenschaft> findAll()throws Exception;
 	
@@ -64,6 +66,7 @@ public interface LiegenschaftRO extends Remote {
 	 * Liefert eine Liegenschaftsliste anhand des gesuchten Kontakts.
 	 * @param kontakt
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Liegenschaft> findByKontakt(Kontakt kontakt)throws Exception;
 
@@ -71,13 +74,15 @@ public interface LiegenschaftRO extends Remote {
 	 * Liefert eine Liegenschaftsliste anhand des gesuchten Orts.
 	 * @param ort
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Liegenschaft> findByOrt(Ort ort)throws Exception;
 	
 	/**
 	 * Liefert eine Liegenschaftsliste anhand der gesuchten Strasse.
-	 * @param strasseInklNr
+	 * @param strasse
 	 * @return
+	 * @throws Exception
 	 */	
 	public List<Liegenschaft> findByStrasse(String strasse)throws Exception;
 

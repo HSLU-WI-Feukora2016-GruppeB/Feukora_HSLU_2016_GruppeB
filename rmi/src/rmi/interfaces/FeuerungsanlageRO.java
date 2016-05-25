@@ -58,6 +58,7 @@ public interface FeuerungsanlageRO extends Remote {
 	/**
 	 * Liefert Liste aller Feuerungsanlagen.
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Feuerungsanlage> findAll() throws Exception;
 	
@@ -65,6 +66,7 @@ public interface FeuerungsanlageRO extends Remote {
 	 * Liefert alle Feuerungsanlagen für die gesuchte Liegenschaft.
 	 * @param brennerTyp
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Feuerungsanlage> findByLiegenschaft(Liegenschaft liegenschaft) throws Exception;
 	
@@ -72,6 +74,7 @@ public interface FeuerungsanlageRO extends Remote {
 	 * Liefert alle Feuerungsanlagen für den gesuchten Brenner.
 	 * @param brennerArt
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Feuerungsanlage> findByBrenner(Brenner brenner) throws Exception;
 	
@@ -79,6 +82,7 @@ public interface FeuerungsanlageRO extends Remote {
 	 * Liefert alle Feuerungsanlagen für den gesuchten Waermeerzeuger.
 	 * @param brennerArt
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Feuerungsanlage> findByWaermeerzeuger(Waermeerzeuger waermeerzeuger) throws Exception;
 
