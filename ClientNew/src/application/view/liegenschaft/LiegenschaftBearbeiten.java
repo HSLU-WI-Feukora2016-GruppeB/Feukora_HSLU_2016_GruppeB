@@ -1,16 +1,8 @@
 package application.view.liegenschaft;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.rmi.Naming;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
-
 import application.RmiUtil;
-import application.view.kontakt.KontaktBearbeiten;
 import entitys.Brenner;
 import entitys.Feuerungsanlage;
 import entitys.Kontakt;
@@ -29,14 +21,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import rmi.interfaces.AuftragRO;
-import rmi.interfaces.BenutzerRO;
 import rmi.interfaces.BrennerRO;
 import rmi.interfaces.FeuerungsanlageRO;
 import rmi.interfaces.KontaktRO;
 import rmi.interfaces.LiegenschaftRO;
-import rmi.interfaces.MessungRO;
-import rmi.interfaces.MitarbeiterRO;
 import rmi.interfaces.OrtRO;
 import rmi.interfaces.WaermeerzeugerRO;
 
@@ -45,7 +33,7 @@ import rmi.interfaces.WaermeerzeugerRO;
  * bestehende Liegenschaften verändert und in der Datenbank bearbeitet werden.
  *
  * @author Alexandra Lengen und Pascal Steiner
- * @version 4.0
+ * @version 1.0
  * @since 1.0
  */
 public class LiegenschaftBearbeiten {
@@ -127,7 +115,7 @@ public class LiegenschaftBearbeiten {
 
 		ObservableList<String> listbrennstoff2 = FXCollections.observableList(listbrennstoff);
 		cbBrennstoff.setItems(listbrennstoff2);
-		cbBrennstoff.getSelectionModel().select(brennerart);
+		cbBrennstoff.getSelectionModel().select(waermeart);
 
 		// Waermeerzeuger anzeigen
 		txtWaermetyp.setText(waermetyp);
@@ -147,6 +135,11 @@ public class LiegenschaftBearbeiten {
 
 	}
 
+	/**
+	 *Speichert das erhaltene Objekt auf statische Variabeln
+	 *
+	 * @param liegenschaft
+	 */
 	public static void bekommeLiegenschaft(Liegenschaft liegenschaft) {
 		liegupdate = liegenschaft;
 
@@ -177,6 +170,10 @@ public class LiegenschaftBearbeiten {
 		waermejahr = String.valueOf(feueranl.getWaermeerzeuger().getBaujahr());
 	}
 
+
+	/**
+	 * Überspeichert die Daten des Objekts
+	 */
 	public void liegenschaftUpdate() {
 
 		String strasse = txtStrasseL.getText();
@@ -256,6 +253,9 @@ public class LiegenschaftBearbeiten {
 		}
 	}
 
+	/**
+	 * Manuelles suchen um den Kontakt in der Tableview anzuzeigen
+	 */
 	public void kontaktSuchen() {
 		String vornameK = txtVorname.getText();
 		String nameK = txtNachname.getText();
@@ -285,11 +285,29 @@ public class LiegenschaftBearbeiten {
 		}
 	}
 
+
+	/**
+	 * Setzt die Parameter zu einem neuen Liegenschaftsobjekt zusammen
+	 *
+	 * @param strasse
+	 * @param plz
+	 * @param ortbez
+	 * @param info
+	 * @param btyp
+	 * @param bart
+	 * @param bjahr
+	 * @param wtyp
+	 * @param wart
+	 * @param wjahr
+	 * @param leistung
+	 * @return
+	 * @throws Exception
+	 */
 	public Liegenschaft updateLiegenschaft(String strasse, int plz, String ortbez, String info, String btyp, int bart,
 			int bjahr, String wtyp, int wart, int wjahr, int leistung) throws Exception {
 
 		List<Ort> ortsliste = new ArrayList<Ort>();
-		
+
 		liegupdate.setStrasse(strasse);
 
 		ortsliste = ortRO.findByOrtPlz(plz);

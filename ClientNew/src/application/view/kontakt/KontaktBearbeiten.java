@@ -1,33 +1,29 @@
 package application.view.kontakt;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.rmi.Naming;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
-import java.time.LocalDate;
-import java.time.ZoneId;
+
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
-import java.util.Properties;
 
 import application.RmiUtil;
-import application.view.mitarbeiter.MitarbeiterErfassen;
 import entitys.Kontakt;
-import entitys.Mitarbeiter;
 import entitys.Ort;
 import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import rmi.interfaces.KontaktRO;
-import rmi.interfaces.MitarbeiterRO;
 import rmi.interfaces.OrtRO;
 
+
+/**
+ * Diese Klasse behandelt das Updaten eines Kontaktes
+ *
+ * @author Pascal Steiner & Alexandra Lenggen
+ * @version 1.0
+ * @since 1.0
+ *
+ */
 public class KontaktBearbeiten {
 
 	OrtRO ortRO;
@@ -54,6 +50,11 @@ public class KontaktBearbeiten {
 
 	static Kontakt kontaktupdate;
 
+	/**
+	 * Initialisiert die Felder von bekommeMitarbeiter()
+	 *
+	 * @throws Exception
+	 */
 	public void initialize() throws Exception {
 
 		/*---------------RMI Verbindung---------------*/
@@ -74,6 +75,12 @@ public class KontaktBearbeiten {
 
 	}
 
+	/**
+	 * Erhält den in der KontaktUebersicht ausgewählten Kontakt und speicher ihn auf variabeln
+	 *
+	 * @param kontaktbearbeitet
+	 * @throws Exception
+	 */
 	public static void bekommeKontakt(Kontakt kontaktbearbeitet) throws Exception {
 		kontaktupdate = kontaktbearbeitet;
 
@@ -88,7 +95,7 @@ public class KontaktBearbeiten {
 	}
 
 	/**
-	 * Diese Methode speichert einen Mitarbeier.
+	 * Diese Methode updatet einen Mitarbeier.
 	 */
 	public void kontaktUpdate() {
 
@@ -141,29 +148,16 @@ public class KontaktBearbeiten {
 	}
 
 	/**
-	 * Diese Methode erstellt ein neues Mitarbeiterobjekt.
+	 * setzt die neuen Werte in das alte Objekt
 	 *
 	 * @param name
-	 *            Name des Mitarbeiters
 	 * @param vorname
-	 *            Vorname des Mitarbeiters
 	 * @param strasse
-	 *            Strasse des Mitarbeiters
-	 * @param plz
-	 *            Plz des Mitarbeiters
 	 * @param ort
-	 *            Ort des Mitarbeiters
-	 * @param rolle
-	 *            Rolle des Mitarbeiters (Backoffice, Admin oder
-	 *            Feuerungskontrolleur)
-	 * @param lohn
-	 *            Lohn des Mitarbeiters
+	 * @param plz
 	 * @param email
-	 *            Email-Adresse des Kontaktes
-	 * @param telnr
-	 *            Telefonnummer des Kontaktes
-	 *
-	 * @return Ein neues Mitarbeiterobjekt
+	 * @param telefonnr
+	 * @return
 	 * @throws Exception
 	 */
 	private Kontakt updateKontakt(String name, String vorname, String strasse, String ort, int plz, String email,

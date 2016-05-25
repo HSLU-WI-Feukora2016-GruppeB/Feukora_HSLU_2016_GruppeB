@@ -1,14 +1,8 @@
 package application.view.kontakt;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.rmi.Naming;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
-
 import application.RmiUtil;
 import entitys.Kontakt;
 import entitys.Ort;
@@ -19,7 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import rmi.interfaces.KontaktRO;
-import rmi.interfaces.MitarbeiterRO;
 import rmi.interfaces.OrtRO;
 
 /**
@@ -27,7 +20,7 @@ import rmi.interfaces.OrtRO;
  * Kontaktobjekte erstellt und in der Datenbank gespeichert.
  *
  * @author Alexandra Lengen und Pascal Steiner
- * @version 3.0
+ * @version 1.0
  * @since 1.0
  */
 
@@ -59,8 +52,9 @@ public class KontaktErfassen {
 
 	/**
 	 * Diese Methode speichert einen neuen Kontakt in der Datenbank.
+	 * @throws Exception
 	 */
-	public void kontaktSpeichern() {
+	public void kontaktSpeichern() throws Exception {
 
 		String name = txtNachname.getText();
 		String vorname = txtVorname.getText();
@@ -131,10 +125,11 @@ public class KontaktErfassen {
 	 *            Telefonnummer des Kontaktes
 	 *
 	 * @return Ein neues Kontaktobjekt
+	 * @throws Exception
 	 */
 
 	private Kontakt creatKontakt(String name, String vorname, String strasse, String ort, int plz, String email,
-			String telnr) {
+			String telnr) throws Exception {
 
 		Kontakt kontakt = new Kontakt();
 		Ort ortschaft = new Ort();
@@ -147,22 +142,28 @@ public class KontaktErfassen {
 		kontakt.setEmail(email);
 		kontakt.setTel(telnr);
 
-		try {
-			// zu erst auf liste speichern damit man nachher das zweite der
-			// Liste prüfen kann falls nicht übereinstimmt
+
 			ortsliste = ortRO.findByOrtPlz(plz);
-		} catch (Exception e) {
-			lblRueckmeldung.setText("PLZ nicht gefunden");
-		}
+
 
 		// durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die
 		// gleiche ist.
-		for (Ort o : ortsliste) {
-			o = ortsliste.get(0);
-			if (ort.equals(o.getOrt())) {
-				kontakt.setOrt(ortschaft);
+
+			boolean found = false;
+			for (Ort o : ortsliste) {
+				if (ort.equals(o.getOrt())) {
+					kontakt.setOrt(o);
+					found = true;
+					break;
+				}
 			}
-		}
+			// wenn nicht gefunden wird neuöer ort hinzugefügt
+			// orte können nicht upgedated werden etweder gefunden oder neu
+			if (!found) {
+				Ort ortDb = ortRO.add(new Ort(plz, ort));
+				kontakt.setOrt(ortDb);
+			}
+
 
 		return kontakt;
 	}

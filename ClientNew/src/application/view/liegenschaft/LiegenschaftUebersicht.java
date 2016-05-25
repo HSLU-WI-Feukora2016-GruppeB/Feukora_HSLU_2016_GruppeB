@@ -1,16 +1,9 @@
 package application.view.liegenschaft;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.rmi.Naming;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
-import java.util.List;
-import java.util.Properties;
 
+import java.util.List;
 import application.RmiUtil;
 import entitys.Liegenschaft;
-import entitys.Mitarbeiter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -31,7 +24,7 @@ import rmi.interfaces.LiegenschaftRO;
  * alle Liegenschaften an.
  *
  * @author Alexandra Lengen und Pascal Steiner
- * @version 4.0
+ * @version 1.0
  * @since 1.0
  */
 public class LiegenschaftUebersicht {

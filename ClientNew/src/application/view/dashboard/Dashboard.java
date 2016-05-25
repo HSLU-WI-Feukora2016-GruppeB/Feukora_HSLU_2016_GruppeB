@@ -13,7 +13,7 @@ import javafx.stage.Stage;
  * sämtliche Übersichten geöffnet.
  *
  * @author Alexandra Lengen und Pascal Steiner
- * @version 3.0
+ * @version 1.0
  * @since 1.0
  */
 public class Dashboard {
@@ -28,7 +28,7 @@ public class Dashboard {
 	private Pane leaf;
 
 	/**
-	 * Diese Methode dient zur Öffnung der Übersicht Kontaktverwaltung.
+	 * Diese Methode dient zur Öffnung der Übersicht Terminübersicht.
 	 */
 	public void terminVerwaltung() {
 
@@ -63,7 +63,7 @@ public class Dashboard {
 	}
 
 	/**
-	 * Diese Methode dient zur Öffnung der Übersicht Terminverwaltung.
+	 * Diese Methode dient zur Öffnung der Übersicht Kontaktverwaltung.
 	 */
 	public void kontaktVerwaltung() {
 		try {
