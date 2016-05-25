@@ -233,14 +233,12 @@ public class RapportErfassen {
 		messungsliste.add(gespeicherterauftrag.getMessung2stufe2());
 
 		for (Messung m : messungsliste) {
-			if(m==null){
-				continue;
-			}
+
 			boolean notokey = m.isBeurteilungNotOk();
 			if (notokey) {
 				cbBeurteilung.setSelected(true);
-				//for (Messung m2 : messungsliste) {
-					notokey = m.isAbgasverlusteNotOk();
+				for (Messung m2 : messungsliste) {
+					notokey = m2.isAbgasverlusteNotOk();
 					if (notokey) {
 						cbAbgasverluste.setSelected(true);
 					}
@@ -260,7 +258,11 @@ public class RapportErfassen {
 					if (notokey5) {
 						cbRusszahl.setSelected(true);
 					}
-				//}
+				}
+			}else{
+				cbBeurteilung.setSelected(true);
+				lblRueckmeldung.setText("sollte eigentlich funktionieren");
+				break;
 			}
 		}
 	}
