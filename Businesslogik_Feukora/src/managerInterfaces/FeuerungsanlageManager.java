@@ -58,6 +58,7 @@ public interface FeuerungsanlageManager {
 	/**
 	 * Liefert Liste aller Feuerungsanlagen.
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Feuerungsanlage> findAll();
 	
@@ -65,6 +66,7 @@ public interface FeuerungsanlageManager {
 	 * Liefert alle Feuerungsanlagen für die gesuchte Liegenschaft.
 	 * @param brennerTyp
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Feuerungsanlage> findByLiegenschaft(Liegenschaft liegenschaft);
 	
@@ -72,6 +74,7 @@ public interface FeuerungsanlageManager {
 	 * Liefert alle Feuerungsanlagen für den gesuchten Brenner.
 	 * @param brennerArt
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Feuerungsanlage> findByBrenner(Brenner brenner);
 	
@@ -79,6 +82,7 @@ public interface FeuerungsanlageManager {
 	 * Liefert alle Feuerungsanlagen für den gesuchten Waermeerzeuger.
 	 * @param brennerArt
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Feuerungsanlage> findByWaermeerzeuger(Waermeerzeuger waermeerzeuger);
 }

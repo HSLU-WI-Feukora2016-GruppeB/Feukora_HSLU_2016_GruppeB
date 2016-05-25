@@ -54,6 +54,7 @@ public interface BenutzerManager {
 	 * 
 	 * @param id
 	 * @return
+	 * @throws Exception
 	 */
 	public Benutzer findById(Integer id)throws Exception;
 
@@ -61,6 +62,7 @@ public interface BenutzerManager {
 	 * Liefert alle Benutzer zurück.
 	 * 
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Benutzer> findAll()throws Exception;
 
@@ -69,6 +71,7 @@ public interface BenutzerManager {
 	 * 
 	 * @param username
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Benutzer> findByUsername(String username)throws Exception;
 	
@@ -77,6 +80,7 @@ public interface BenutzerManager {
 	 * 
 	 * @param password
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Benutzer> findByUsernamePassword(String username, String password)throws Exception;
 

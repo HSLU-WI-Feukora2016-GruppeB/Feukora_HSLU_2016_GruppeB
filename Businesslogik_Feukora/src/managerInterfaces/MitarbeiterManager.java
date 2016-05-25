@@ -52,19 +52,22 @@ public interface MitarbeiterManager {
 	 * Liefert den Mitarbeiter zur mitgegebenen Id.
 	 * @param idMitarbeiter
 	 * @return
+	 * @throws Exception
 	 */
 	public Mitarbeiter findById(Integer idMitarbeiter)throws Exception;
 	
 	/**
 	 * Liefert Liste aller Mitarbeiter.
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Mitarbeiter> findAllMitarbeiter()throws Exception;
 	
 	/**
-	 * Liefert alle Mitarbeiter des angefragten Typs.
+	 * Liefert alle Mitarbeiter mit dem mitgegebenen Namen zurück.
 	 * @param name
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Mitarbeiter> findByName(String name)throws Exception;
 	
@@ -72,14 +75,16 @@ public interface MitarbeiterManager {
 	 * Liefert alle Mitarbeiter mit gesuchtem Vornamen.
 	 * @param vorname
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Mitarbeiter> findByVorname(String vorname)throws Exception;
 	
 	/**
-	 * Liefert alle Mitarbeiter mit gesuchtem Vornamen.
+	 * Liefert alle Mitarbeiter mit gesuchtem Namen und Vornamen.
 	 * @param name
 	 * @param vorname
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Mitarbeiter> findByNameVorname(String name, String vorname)throws Exception;
 	
@@ -87,6 +92,7 @@ public interface MitarbeiterManager {
 	 * Liefert alle Mitarbeiter mit gesuchter Rolle.
 	 * @param rolleIntern
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Mitarbeiter> findByRolleIntern (int rolleIntern)throws Exception;
 	
@@ -94,6 +100,7 @@ public interface MitarbeiterManager {
 	 * Liefert alle Mitarbeiter mit gesuchter Strasse.
 	 * @param strasse
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Mitarbeiter> findByStrasse (String strasse)throws Exception;
 	
@@ -101,13 +108,15 @@ public interface MitarbeiterManager {
 	 * Liefert alle Mitarbeiter mit gesuchtem Ort.
 	 * @param ort
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Mitarbeiter> findByOrt (Ort ort)throws Exception;
 	
 	/**
 	 * Liefert alle Mitarbeiter mit gesuchtem Benutzernamen.
-	 * @param username
+	 * @param user
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Mitarbeiter> findByBenutzer (Benutzer user)throws Exception;
 	
@@ -115,6 +124,7 @@ public interface MitarbeiterManager {
 	 * Liefert alle Mitarbeiter mit gesuchtem Arbeitsbeginn-Datum.
 	 * @param arbeitetSeit
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Mitarbeiter> findByArbeitetSeit (GregorianCalendar arbeitetSeit)throws Exception;
 
@@ -122,6 +132,7 @@ public interface MitarbeiterManager {
 	 * Liefert alle Mitarbeiter mit gesuchtem Kündigungs-Datum.
 	 * @param arbeitetBis
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Mitarbeiter> findByArbeitetBis (GregorianCalendar arbeitetBis)throws Exception;
 }

@@ -16,7 +16,7 @@ public interface BrennerManager {
 	
 	/**
 	 * Speichert einen Brenner.
-	 * @param entität
+	 * @param entity
 	 * @return
 	 * @throws Exception
 	 */
@@ -47,12 +47,14 @@ public interface BrennerManager {
 	/**
 	 * Liefert Brenner mithilfe seiner Id.
 	 * @return
+	 * @throws Exception
 	 */
 	public Brenner findById(Integer id);
 	
 	/**
 	 * Liefert Liste aller Brenner.
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Brenner> findAll();
 	
@@ -60,6 +62,7 @@ public interface BrennerManager {
 	 * Liefert alle Brenner des angefragten Typs.
 	 * @param brennerTyp
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Brenner> findByTyp(String brennerTyp);
 	
@@ -67,6 +70,7 @@ public interface BrennerManager {
 	 * Liefert alle Brenner der angefragten Art.
 	 * @param brennerArt
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Brenner> findByArt(int brennerArt);
 	
@@ -74,6 +78,7 @@ public interface BrennerManager {
 	 * Liefert alle Brenner mit angefragtem Baujahr.
 	 * @param baujahr
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Brenner> findByBaujahr(int baujahr);
 	

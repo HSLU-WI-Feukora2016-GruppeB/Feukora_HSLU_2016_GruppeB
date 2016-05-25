@@ -60,6 +60,7 @@ public interface AuftragManager {
 	 * 
 	 * @param auftragsNummer
 	 * @return
+	 * @throws Exception
 	 */
 	public Auftrag findById(Integer auftragsNummer) throws Exception;
 
@@ -67,6 +68,7 @@ public interface AuftragManager {
 	 * Liefert alle Aufträge zurück.
 	 * 
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Auftrag> findAll() throws Exception;
 
@@ -75,6 +77,7 @@ public interface AuftragManager {
 	 * 
 	 * @param datum
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Auftrag> findByDatum(GregorianCalendar datum) throws Exception;
 
@@ -83,6 +86,7 @@ public interface AuftragManager {
 	 * 
 	 * @param mitarbeiter
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Auftrag> findByMitarbeiter(Mitarbeiter mitarbeiter)
 			throws Exception;
@@ -95,6 +99,7 @@ public interface AuftragManager {
 	 * @param enddatum
 	 * @param mitarbeiter
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Auftrag> findByDateAndMitarbeiter(GregorianCalendar startdatum,
 			GregorianCalendar enddatum, Mitarbeiter mitarbeiter)
@@ -108,6 +113,7 @@ public interface AuftragManager {
 	 * @param zeitSlot
 	 * @param mitarbeiter
 	 * @return
+	 * @throws Exception
 	 */
 	public Auftrag findByDateAndMitarbeiterAndZeitslot(GregorianCalendar datum,
 			Mitarbeiter mitarbeiter, int zeitSlot) throws Exception;
@@ -117,14 +123,16 @@ public interface AuftragManager {
 	 * 
 	 * @param kontakt
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Auftrag> findByKontakt(Kontakt kontakt) throws Exception;
 
 	/**
 	 * Liefert eine Auftragsliste anhand der gesuchten Liegenschaften.
 	 * 
-	 * @param liegenschaftOrt
+	 * @param liegenschaft
 	 * @return
+	 * @throws Exception
 	 */
 	public List<Auftrag> findByLiegenschaft(Liegenschaft liegenschaft)
 			throws Exception;
