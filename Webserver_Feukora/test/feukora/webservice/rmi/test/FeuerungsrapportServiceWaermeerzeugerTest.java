@@ -11,7 +11,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import entitys.Feuerungsanlage;
 import entitys.Waermeerzeuger;
 import feukora.webservice.rmi.FeuerungsrapportService;
 import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
@@ -22,6 +21,7 @@ import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
  * 
  * @author Dominik
  * @version 1.0
+ * @since 1.0
  */
 public class FeuerungsrapportServiceWaermeerzeugerTest {
 
@@ -58,8 +58,8 @@ public class FeuerungsrapportServiceWaermeerzeugerTest {
 
 	/**
 	 * Dieser Test tested die Methode
-	 * {@link FeuerungsrapportServiceImpl#updateWaermeerzeuger(entitys.Waermeerzeuger)}
-	 * .
+	 * {@link FeuerungsrapportServiceImpl#updateWaermeerzeuger(entitys.Waermeerzeuger)}.
+	 * 
 	 * 
 	 * @throws Exception
 	 */

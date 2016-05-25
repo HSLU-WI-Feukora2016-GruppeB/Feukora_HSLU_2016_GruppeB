@@ -21,6 +21,7 @@ import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
  * 
  * @author Alexandra
  * @version 1.0
+ * @since 1.0
  */
 public class FeuerungsrapportServiceBrennerTest {
 
@@ -176,7 +177,7 @@ public class FeuerungsrapportServiceBrennerTest {
 	/**
 	 * Initialisiert die Testwerte
 	 * 
-	 * @return
+	 * @return lBrennerDB
 	 * @throws Exception
 	 */
 	public static List<Brenner> init() throws Exception {

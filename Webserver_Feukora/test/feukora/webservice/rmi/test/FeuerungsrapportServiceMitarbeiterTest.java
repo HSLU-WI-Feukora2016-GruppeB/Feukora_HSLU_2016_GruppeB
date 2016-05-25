@@ -22,8 +22,9 @@ import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
  * Diese Klasse Testet die Funktionalität der Mitarbeitermethoden im
  * FeuerungsrapportServiceImpl.
  * 
- * @author Luca Raneri
+ * @author Dominik
  * @version 1.0
+ * @since 1.0
  */
 public class FeuerungsrapportServiceMitarbeiterTest {
 
@@ -211,8 +212,8 @@ public class FeuerungsrapportServiceMitarbeiterTest {
 
 	/**
 	 * Dieser Test tested die Methode
-	 * {@link FeuerungsrapportServiceImpl#findMitarbeiterByArbeitetSeit(GregorianCalendar)}
-	 * .
+	 * {@link FeuerungsrapportServiceImpl#findMitarbeiterByArbeitetSeit(GregorianCalendar)}.
+	 * 
 	 * 
 	 * @throws Exception
 	 */
@@ -227,8 +228,8 @@ public class FeuerungsrapportServiceMitarbeiterTest {
 
 	/**
 	 * Dieser Test tested die Methode
-	 * {@link FeuerungsrapportServiceImpl#findMitarbeiterByArbeitetBis(GregorianCalendar)}
-	 * .
+	 * {@link FeuerungsrapportServiceImpl#findMitarbeiterByArbeitetBis(GregorianCalendar)}.
+	 * 
 	 * 
 	 * @throws Exception
 	 */
@@ -281,7 +282,7 @@ public class FeuerungsrapportServiceMitarbeiterTest {
 	/**
 	 * Initialisiert die Testwerte.
 	 * 
-	 * @return
+	 * @return lBenutzerDB
 	 * @throws Exception
 	 */
 	public static List<Mitarbeiter> init() throws Exception {

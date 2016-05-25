@@ -22,6 +22,7 @@ import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
  * 
  * @author Dominik
  * @version 1.0
+ * @since 1.0
  */
 public class FeuerungsrapportServiceMessungTest {
 
@@ -153,7 +154,7 @@ public class FeuerungsrapportServiceMessungTest {
 	/**
 	 * Initialisiert die Objekte welche für die Tests verwendet werden.
 	 * 
-	 * @return
+	 * @return lMessungDB
 	 * @throws Exception
 	 */
 	public static List<Messung> init() throws Exception {

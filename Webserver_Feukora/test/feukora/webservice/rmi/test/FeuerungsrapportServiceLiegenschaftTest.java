@@ -10,7 +10,6 @@ package feukora.webservice.rmi.test;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.junit.After;
@@ -19,14 +18,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import entitys.Auftrag;
-import entitys.Benutzer;
 import entitys.Brenner;
 import entitys.Feuerungsanlage;
 import entitys.Kontakt;
 import entitys.Liegenschaft;
-import entitys.Messung;
-import entitys.Mitarbeiter;
 import entitys.Ort;
 import entitys.Waermeerzeuger;
 import feukora.webservice.rmi.FeuerungsrapportService;
@@ -37,8 +32,8 @@ import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
  * FeuerungsrapportServiceImpl.
  * 
  * @author Dominik
- * 
  * @version 1.0
+ * @since 1.0
  */
 public class FeuerungsrapportServiceLiegenschaftTest {
 
@@ -75,8 +70,8 @@ public class FeuerungsrapportServiceLiegenschaftTest {
 
 	/**
 	 * Dieser Test tested die Methode
-	 * {@link FeuerungsrapportServiceImpl#updateLiegenschaft(entitys.Liegenschaft)}
-	 * .
+	 * {@link FeuerungsrapportServiceImpl#updateLiegenschaft(entitys.Liegenschaft)}.
+	 * 
 	 * 
 	 * @throws Exception
 	 */
@@ -203,7 +198,7 @@ public class FeuerungsrapportServiceLiegenschaftTest {
 	/**
 	 * Initialisiert die Testwerte.
 	 * 
-	 * @return
+	 * @return lLiegenschaftDB
 	 * @throws Exception
 	 */
 	public static List<Liegenschaft> init() throws Exception {

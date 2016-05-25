@@ -23,6 +23,7 @@ import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
  * 
  * @author Dominik
  * @version 1.0
+ * @since 1.0
  */
 public class FeuerungsrapportServiceFeuerungsanlageTest {
 
@@ -59,8 +60,8 @@ public class FeuerungsrapportServiceFeuerungsanlageTest {
 
 	/**
 	 * Dieser Test tested die Methode
-	 * {@link FeuerungsrapportServiceImpl#updateFeuerungsanlage(Feuerungsanlage)}
-	 * .
+	 * {@link FeuerungsrapportServiceImpl#updateFeuerungsanlage(Feuerungsanlage)}.
+	 * 
 	 * 
 	 * @throws Exception
 	 */
@@ -94,8 +95,8 @@ public class FeuerungsrapportServiceFeuerungsanlageTest {
 
 	/**
 	 * Dieser Test tested die Methode
-	 * {@link FeuerungsrapportServiceImpl#findFeuerungsanlageByBrenner(Brenner)}
-	 * .
+	 * {@link FeuerungsrapportServiceImpl#findFeuerungsanlageByBrenner(Brenner)}.
+	 * 
 	 * 
 	 * @throws Exception
 	 */
@@ -111,8 +112,8 @@ public class FeuerungsrapportServiceFeuerungsanlageTest {
 
 	/**
 	 * Dieser Test tested die Methode
-	 * {@link FeuerungsrapportServiceImpl#findFeuerungsanlageByWaermeerzeuger(Waermeerzeuger)}
-	 * .
+	 * {@link FeuerungsrapportServiceImpl#findFeuerungsanlageByWaermeerzeuger(Waermeerzeuger)}.
+	 * 
 	 * 
 	 * @throws Exception
 	 */
@@ -128,8 +129,8 @@ public class FeuerungsrapportServiceFeuerungsanlageTest {
 
 	/**
 	 * Dieser Test tested die Methode
-	 * {@link FeuerungsrapportServiceImpl#deleteFeuerungsanlage(Feuerungsanlage)}
-	 * .
+	 * {@link FeuerungsrapportServiceImpl#deleteFeuerungsanlage(Feuerungsanlage)}.
+	 * 
 	 * 
 	 * @throws Exception
 	 */
@@ -166,7 +167,7 @@ public class FeuerungsrapportServiceFeuerungsanlageTest {
 	/**
 	 * Initialisiert die Testwerte.
 	 * 
-	 * @return
+	 * @return lFeuerungsanlageDB
 	 * @throws Exception
 	 */
 	public static List<Feuerungsanlage> init() throws Exception {
