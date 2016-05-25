@@ -33,7 +33,13 @@ public class AuftragManagerImpl implements AuftragManager {
 
 		if (entity.getAuftragsNummer() == null) {
 
-			checkMessungByGrenzwerte(entity);
+			/*
+			 * Werte werden in der Datenbank nicht aktualisiert, aus Zeitgründen
+			 * musste diese Methode im Umfang des PRojektes ausgeklammert werden
+			 * und durch eine Manuelle setzung der Beurteilung ersetzt werden.
+			 *
+			 * checkMessungByGrenzwerte(entity);
+			 */
 			checkTerminProMitarbeiter(entity);
 
 			auftragDAO.saveAuftrag(entity);
@@ -41,20 +47,20 @@ public class AuftragManagerImpl implements AuftragManager {
 			return entity;
 
 		} else {
-			throw new Exception(
-					"Entity ist bereits in der Datenbank vorhanden (Id = "
-							+ entity.getAuftragsNummer().intValue() + ")");
+			throw new Exception("Entity ist bereits in der Datenbank vorhanden (Id = "
+					+ entity.getAuftragsNummer().intValue() + ")");
 		}
 	}
 
-	private void checkTerminProMitarbeiter(Auftrag entity) throws Exception{
-		Auftrag auftrag = auftragDAO.findAuftragByDateAndMitarbeiterAndZeitslot(entity.getTermin(), entity.getMitarbeiter(), entity.getZeitSlot());
-		if(auftrag == null){
+	private void checkTerminProMitarbeiter(Auftrag entity) throws Exception {
+		Auftrag auftrag = auftragDAO.findAuftragByDateAndMitarbeiterAndZeitslot(entity.getTermin(),
+				entity.getMitarbeiter(), entity.getZeitSlot());
+		if (auftrag == null) {
 			return;
-		}else if(entity.getAuftragsNummer().equals(auftrag.getAuftragsNummer())){
+		} else if (entity.getAuftragsNummer().equals(auftrag.getAuftragsNummer())) {
 			return;
-		}else{
-            throw new Exception("Der gewünschte Termin ist bereits erfasst. (Id = " + entity.getAuftragsNummer());
+		} else {
+			throw new Exception("Der gewünschte Termin ist bereits erfasst. (Id = " + entity.getAuftragsNummer());
 		}
 	}
 
@@ -65,14 +71,24 @@ public class AuftragManagerImpl implements AuftragManager {
 			return add(entity);
 		}
 		checkTerminProMitarbeiter(entity);
-		checkMessungByGrenzwerte(entity);
+		/*
+		 * Werte werden in der Datenbank nicht aktualisiert, aus Zeitgründen
+		 * musste diese Methode im Umfang des PRojektes ausgeklammert werden
+		 * und durch eine Manuelle setzung der Beurteilung ersetzt werden.
+		 *
+		 * checkMessungByGrenzwerte(entity);
+		 */
 
 		return auftragDAO.updateAuftrag(entity);
 	}
 
-	private void checkMessungByGrenzwerte(Auftrag auftrag) throws Exception{
-		int brennerArt = auftrag.getLiegenschaft().getFeuerungsanlage()
-				.getBrenner().getBrennerArt();
+	/**
+	 * Überprüft die einzelnen Messungen mithilfe der zutreffenden Grenzwerte.
+	 * @param auftrag
+	 * @throws Exception
+	 */
+	private void checkMessungByGrenzwerte(Auftrag auftrag) throws Exception {
+		int brennerArt = auftrag.getLiegenschaft().getFeuerungsanlage().getBrenner().getBrennerArt();
 
 		Messung messung1 = auftrag.getMessung1stufe1();
 		grenzwerteManager.checkGrenzwerte(messung1, brennerArt, 1);
@@ -120,14 +136,14 @@ public class AuftragManagerImpl implements AuftragManager {
 	}
 
 	@Override
-	public List<Auftrag> findByDateAndMitarbeiter(GregorianCalendar startdatum,
-			GregorianCalendar enddatum, Mitarbeiter mitarbeiter) throws Exception {
+	public List<Auftrag> findByDateAndMitarbeiter(GregorianCalendar startdatum, GregorianCalendar enddatum,
+			Mitarbeiter mitarbeiter) throws Exception {
 		return auftragDAO.findByDatumAndMitarbeiter(startdatum, enddatum, mitarbeiter);
 	}
 
 	@Override
-	public Auftrag findByDateAndMitarbeiterAndZeitslot(GregorianCalendar datum,
-			Mitarbeiter mitarbeiter, int zeitSlot) throws Exception {
+	public Auftrag findByDateAndMitarbeiterAndZeitslot(GregorianCalendar datum, Mitarbeiter mitarbeiter, int zeitSlot)
+			throws Exception {
 		return auftragDAO.findAuftragByDateAndMitarbeiterAndZeitslot(datum, mitarbeiter, zeitSlot);
 	}
 
