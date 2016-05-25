@@ -49,7 +49,7 @@ import rmi.interfaces.OrtRO;
  * Mitarbeiter an.
  *
  * @author Alexandra Lengen und Pascal Steiner
- * @version 4.0
+ * @version 1.0
  * @since 1.0
  */
 
