@@ -241,7 +241,7 @@ public class AuftragDAOTest {
 
 	/**
 	 * Initialisiert die Datenbank mit Testwerten
-	 * @return
+	 * @return lAuftrag
 	 * @throws Exception
 	 */
 	public static List<Auftrag> init() throws Exception {
