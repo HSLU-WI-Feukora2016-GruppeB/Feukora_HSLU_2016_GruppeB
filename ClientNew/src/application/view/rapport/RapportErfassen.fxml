@@ -13,13 +13,13 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="969.0" prefWidth="1272.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.rapport.RapportErfassen">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="915.0" prefWidth="1264.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.rapport.RapportErfassen">
   <children>
       <HBox prefHeight="324.0" prefWidth="1244.0">
          <children>
             <Pane prefHeight="324.0" prefWidth="1588.0">
                <children>
-                  <ScrollPane layoutY="1.0" prefHeight="944.0" prefWidth="1272.0">
+                  <ScrollPane layoutY="1.0" prefHeight="912.0" prefWidth="1272.0">
                      <content>
                         <VBox prefHeight="977.0" prefWidth="1229.0">
                            <children>
@@ -436,14 +436,14 @@
                                  <children>
                                     <VBox prefHeight="63.0" prefWidth="1231.0">
                                        <children>
-                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <HBox prefHeight="147.0" prefWidth="1229.0">
                                              <children>
                                                 <Pane minWidth="20.0" prefHeight="20.0" prefWidth="20.0" />
-                                                <TextArea fx:id="taBemerkung" prefHeight="7.0" prefWidth="1169.0" promptText="Bemerkungen" style="-fx-border-color: #000000;" />
+                                                <TextArea fx:id="taBemerkung" prefHeight="121.0" prefWidth="1161.0" promptText="Bemerkungen" style="-fx-border-color: #000000;" />
                                                 <Pane minWidth="20.0" prefHeight="20.0" prefWidth="20.0" />
                                              </children>
                                           </HBox>
-                                          <Pane maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="200.0">
+                                          <Pane maxHeight="221.0" minHeight="19.0" prefHeight="221.0" prefWidth="1229.0">
                                              <children>
                                                 <Button fx:id="btnAuftragSpeichern" layoutX="237.0" layoutY="-3.0" mnemonicParsing="false" onAction="#auftragSpeichern" prefHeight="25.0" prefWidth="631.0" text="Auftrag speichern" />
                                              </children>
