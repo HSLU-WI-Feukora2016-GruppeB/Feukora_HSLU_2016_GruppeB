@@ -23,6 +23,7 @@ import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
  * 
  * @author Dominik
  * @version 1.0
+ * @since 1.0.0
  */
 public class FeuerungsrapportServiceFeuerungsanlageTest {
 

@@ -22,8 +22,9 @@ import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
  * Diese Klasse Testet die Funktionalität der Mitarbeitermethoden im
  * FeuerungsrapportServiceImpl.
  * 
- * @author Luca Raneri
+ * @author Dominik
  * @version 1.0
+ * @since 1.0.0
  */
 public class FeuerungsrapportServiceMitarbeiterTest {
 
