@@ -51,7 +51,7 @@ public class LiegenschaftErfassen {
 	private ComboBox<String> cbBrennart, cbBrennstoff;
 
 	@FXML
-	private Button btnSuchen;
+	private Button btnSuchen, btnSpeichern;
 
 	@FXML
 	private BorderPane leaf;
@@ -62,6 +62,8 @@ public class LiegenschaftErfassen {
 	BrennerRO brennerRO;
 	OrtRO ortRO;
 	FeuerungsanlageRO feuerungsanlageRO;
+
+	String ort;
 
 	public void initialize() throws Exception {
 
@@ -104,7 +106,7 @@ public class LiegenschaftErfassen {
 	public void liegenschaftSpeichern() {
 
 		String strasse = txtStrasseL.getText();
-		String ort = txtOrtL.getText();
+		 ort = txtOrtL.getText();
 		String plz = txtPlzL.getText();
 		String brennertyp = txtBrennertyp.getText();
 		String brennerart = cbBrennart.getValue().toString();
@@ -196,7 +198,7 @@ public class LiegenschaftErfassen {
 			try {
 				List<Kontakt> list = kontaktRO.findByNameVorname(nameK, vornameK);
 				ObservableList<Kontakt> list2 = FXCollections.observableList(list);
-				tblNachname.setCellValueFactory(new PropertyValueFactory<>("name"));
+				tblNachname.setCellValueFactory(new PropertyValueFactory<>("Nachname"));
 				tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
 				tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
 				tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
@@ -216,7 +218,6 @@ public class LiegenschaftErfassen {
 			int bjahr, String wtyp, int wart, int wjahr, int leistung) throws Exception {
 
 		List<Ort> ortsliste = new ArrayList<Ort>();
-		Ort ort = new Ort();
 
 		// Liegenschaftsobjekt erstellen und speichern
 		Liegenschaft liegenschaft = new Liegenschaft();
@@ -227,11 +228,19 @@ public class LiegenschaftErfassen {
 
 		// durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die
 		// gleiche ist.
-		for (Ort o : ortsliste) {
-			if (ortbez.equals(o.getOrt())) {
-				ort = ortRO.add(o);
-				liegenschaft.setOrt(ort);
+		boolean found = false;
+		for(Ort o: ortsliste){
+			if(ort.equals(o.getOrt())){
+				liegenschaft.setOrt(o);
+				found=true;
+				break;
 			}
+		}
+		//wenn nicht gefunden wird neuöer ort hinzugefügt
+		//orte können nicht upgedated werden etweder gefunden oder neu
+		if(!found) {
+			Ort ortDb = ortRO.add(new Ort(plz, ort));
+			liegenschaft.setOrt(ortDb);
 		}
 
 		liegenschaft.setInfoVorOrt(info);

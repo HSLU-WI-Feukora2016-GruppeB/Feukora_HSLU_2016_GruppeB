@@ -129,6 +129,8 @@ public class RapportBearbeiten {
 		setMessung1Stufe2();
 		setMessung2Stufe2();
 
+		taBemerkung.setText(ausgewaehlterauftrag.getBemerkung());
+
 		/*---------wird nicht mehr gebraucht
 				for (Messung m : messungsliste) {
 					boolean notokey = m.isBeurteilungNotOk();
@@ -194,6 +196,7 @@ public class RapportBearbeiten {
 		// Kontrollarten
 		auftragsart = auftrag.getTerminArt();
 		feuerungsleistung = String.valueOf(feuerungs.getFeuerungswaermeleistung());
+
 	}
 
 	/**

@@ -1,22 +1,13 @@
 package application.view.rapport;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.rmi.Naming;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
-import java.util.Properties;
-
 import application.RmiUtil;
-import application.view.liegenschaft.LiegenschaftBearbeiten;
-import application.view.mitarbeiter.MitarbeiterBearbeiten;
 import application.view.termin.TerminBearbeiten;
 import entitys.Auftrag;
-import entitys.Liegenschaft;
 import entitys.Mitarbeiter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -35,32 +26,40 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import rmi.interfaces.AuftragRO;
-import rmi.interfaces.MessungRO;
 import rmi.interfaces.MitarbeiterRO;
 
+
+/**
+ *Diese Klasse zeigt die Uebersicht der Rapporte einer Woche anhand des ausgewählten kontrolleurs
+ * und der ausgewählten Woche.
+ *
+ * @author Pascal Steiner & Alexandra Lenggen
+ * @version 1.0
+ * @since 1.0
+ *
+ *
+ */
 public class RapportUebersicht {
 
 	// ----------------Stufe 1--------------------
-		@FXML
-		private TextField txtM1S1Russzahl, txtM1S1CO, txtM1S1Abgastemperatur, txtM1S1Verbrenn, txtM1S1Nox, txtM1S1Waermeerz,
-				txtM1S1O2, txtM1S1Abgasverl, txtM1S2Russzahl, txtM1S2CO, txtM1S2Abgastemperatur, txtM1S2Verbrenn,
-				txtM1S2Nox, txtM1S2Waermeerz, txtM1S2O2, txtM1S2Abgasverl;
+	@FXML
+	private TextField txtM1S1Russzahl, txtM1S1CO, txtM1S1Abgastemperatur, txtM1S1Verbrenn, txtM1S1Nox, txtM1S1Waermeerz,
+			txtM1S1O2, txtM1S1Abgasverl, txtM1S2Russzahl, txtM1S2CO, txtM1S2Abgastemperatur, txtM1S2Verbrenn,
+			txtM1S2Nox, txtM1S2Waermeerz, txtM1S2O2, txtM1S2Abgasverl;
 
-		@FXML
-		private CheckBox checkS1M1Oel,  checkS1M1Abgas, checkS1M1Russzahl, checkS1M1Co2, checkS1M1No2
-		,checkS1M2Oel,checkS1M2Abgas, checkS1M2Russzahl, checkS1M2Co2, checkS1M2No2;
+	@FXML
+	private CheckBox checkS1M1Oel, checkS1M1Abgas, checkS1M1Russzahl, checkS1M1Co2, checkS1M1No2, checkS1M2Oel,
+			checkS1M2Abgas, checkS1M2Russzahl, checkS1M2Co2, checkS1M2No2;
 
-		// ----------------Stufe 2---------------------
-		@FXML
-		private TextField txtM2S1Russzahl, txtM2S1CO, txtM2S1Abgastemperatur, txtM2S1Verbrenn, txtM2S1Nox, txtM2S1Waermeerz,
-				txtM2S1O2, txtM2S1Abgasverl, txtM2S2Russzahl, txtM2S2CO, txtM2S2Abgastemperatur, txtM2S2Verbrenn,
+	// ----------------Stufe 2---------------------
+	@FXML
+	private TextField txtM2S1Russzahl, txtM2S1CO, txtM2S1Abgastemperatur, txtM2S1Verbrenn, txtM2S1Nox, txtM2S1Waermeerz,
+			txtM2S1O2, txtM2S1Abgasverl, txtM2S2Russzahl, txtM2S2CO, txtM2S2Abgastemperatur, txtM2S2Verbrenn,
 			txtM2S2Nox, txtM2S2Waermeerz, txtM2S2O2, txtM2S2Abgasverl;
 
 	@FXML
-	private CheckBox check21M1Oel, checkS2M2Oel, checkS2M1Abgas, checkS2M1Russzahl, checkS2M1Co2, checkS2M1No2
-	,checkS2M2Abgas, checkS2M2Russzahl, checkS2M2Co2, checkS2M2No2;
-
-
+	private CheckBox check21M1Oel, checkS2M2Oel, checkS2M1Abgas, checkS2M1Russzahl, checkS2M1Co2, checkS2M1No2,
+			checkS2M2Abgas, checkS2M2Russzahl, checkS2M2Co2, checkS2M2No2;
 
 	@FXML
 	private Button btnNeu, btnBearbeiten, btnSchliessen, btnWocheAnzeigen, btnRapportAnzeigen, btnRapportErstellen;
@@ -86,16 +85,19 @@ public class RapportUebersicht {
 	AuftragRO auftragRO;
 	MitarbeiterRO mitarbeiterRO;
 
-	public void initialize() throws Exception {
 
+	/**
+	 * Initialisiert das GUI
+	 *
+	 * @throws Exception
+	 */
+	public void initialize() throws Exception {
 
 		/* Lookup */
 		auftragRO = RmiUtil.getAuftragRO();
 		mitarbeiterRO = RmiUtil.getMitarbeiterRO();
 
-
 		/*----------------------------------------------*/
-
 
 		// Alle Feuerungskontrolleure in der Combobox anzeigen lassen
 		List<Mitarbeiter> list = new ArrayList<Mitarbeiter>();
@@ -170,14 +172,15 @@ public class RapportUebersicht {
 	}
 
 	/**
-	 * Diese Methode öffnet die Übersicht zur Erfassung eines neuen Auftrages.
+	 * Diese Methode öffnet die Übersicht zur Erfassung eines neuen Auftrages(Termines).
 	 */
 	public void neuerAuftrag() {
 
 		try {
 			Stage AuftragStage = new Stage();
 
-			AuftragStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/application/view/termin/TerminErfassen.fxml"))));
+			AuftragStage.setScene(
+					new Scene(FXMLLoader.load(getClass().getResource("/application/view/termin/TerminErfassen.fxml"))));
 
 			AuftragStage.show();
 			((Stage) leaf.getScene().getWindow()).close();
@@ -187,7 +190,7 @@ public class RapportUebersicht {
 	}
 
 	/**
-	 * Diese Methode öffnet die Übersicht zur Bearbeitung von Liegenschaften.
+	 * Diese Methode öffnet die Übersicht zur Bearbeitung von Terminen.
 	 */
 	public void bearbeitenAuftrag() {
 		try {
@@ -196,7 +199,8 @@ public class RapportUebersicht {
 
 			Stage TerminStage = new Stage();
 
-			TerminStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/application/view/termin/TerminBearbeiten.fxml"))));
+			TerminStage.setScene(new Scene(
+					FXMLLoader.load(getClass().getResource("/application/view/termin/TerminBearbeiten.fxml"))));
 
 			TerminStage.show();
 
@@ -207,30 +211,50 @@ public class RapportUebersicht {
 		}
 	}
 
+
+	/**
+	 * Löscht den in der Tableview ausgewählten Auftrag
+	 *
+	 * @throws Exception
+	 */
 	public void loeschenAuftrag() throws Exception {
 		Auftrag indSelected = (Auftrag) tabelle.getSelectionModel().getSelectedItem();
 		auftragRO.delete(indSelected);
 	}
 
+
+	/**
+	 * Öffnet den in der Tableview ausgewählten Auftrag, solange er noch keine Messungen enthält
+	 */
 	public void neuRapport (){
-		try {
+
 			Auftrag indSelected = (Auftrag) tabelle.getSelectionModel().getSelectedItem();
-			RapportErfassen.bekommeAuftrag(indSelected);
+			if(indSelected.getMessung1stufe1() == null){
+				try {
+				RapportErfassen.bekommeAuftrag(indSelected);
 
 
-			Stage RapportStage = new Stage();
+				Stage RapportStage = new Stage();
 
-			RapportStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("RapportErfassen.fxml"))));
+				RapportStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("RapportErfassen.fxml"))));
 
-			RapportStage.show();
-			((Stage) leaf.getScene().getWindow()).close();
-		} catch (Exception e) {
-			e.printStackTrace();
-			lblRueckmeldung.setText("Bitte Rapport auswählen");
-		}
+				RapportStage.show();
+				((Stage) leaf.getScene().getWindow()).close();
+			} catch (Exception e) {
+				e.printStackTrace();
+				lblRueckmeldung.setText("Bitte Rapport auswählen");
+			}
+			}else{
+				lblRueckmeldung.setText("Enthält bereits Messungen");
+			}
+
+
 	}
 
-	public void anzeigenRapport(){
+	/**
+	 * Zeigt den ausgewählten Auftrag mit den erfassten Messergebnissen an
+	 */
+	public void anzeigenRapport() {
 		try {
 			Auftrag indSelected = (Auftrag) tabelle.getSelectionModel().getSelectedItem();
 			RapportBearbeiten.bekommeAuftrag(indSelected);

@@ -1,21 +1,9 @@
 package application.view.kontakt;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.rmi.Naming;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
-import java.util.ArrayList;
-import java.util.GregorianCalendar;
 import java.util.List;
-import java.util.Properties;
-
 import application.RmiUtil;
-import application.view.mitarbeiter.MitarbeiterBearbeiten;
-import entitys.Benutzer;
 import entitys.Kontakt;
 import entitys.Mitarbeiter;
-import entitys.Ort;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -33,10 +21,11 @@ import rmi.interfaces.KontaktRO;
 import rmi.interfaces.OrtRO;
 
 /**
+ *  Managed die Optionen für die Kontakte
  *
- * @author User Pascal Steiner & Alexandra Lenggen
- * @since 15.05.2016
+ * @author Pascal Steiner & Alexandra Lenggen
  * @version 1.0
+ * @since 1.0
  *
  */
 public class KontaktUebersicht {

@@ -133,6 +133,9 @@ public class RapportErfassen {
 	public static void bekommeAuftrag(Auftrag auftrag) {
 
 		ausgewaehlterauftrag = auftrag;
+		if(auftrag.getMessung1stufe1() != null){
+			
+		}
 
 		// Kundenobjekt zerlegen
 		kundenvorname = auftrag.getKunde().getVorname();

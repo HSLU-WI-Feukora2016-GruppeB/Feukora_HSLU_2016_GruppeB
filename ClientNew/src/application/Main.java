@@ -16,7 +16,7 @@ import javafx.scene.control.TextField;
  * gestartet.
  *
  * @author Alexandra Lengen und Pascal Steiner
- * @version 3.0
+ * @version 1.0
  * @since 1.0
  */
 

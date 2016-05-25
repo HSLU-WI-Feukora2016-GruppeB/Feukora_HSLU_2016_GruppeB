@@ -1,5 +1,16 @@
 package application.view.login;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
+import rmi.interfaces.BenutzerRO;
+import rmi.interfaces.KontaktRO;
+import rmi.interfaces.MitarbeiterRO;
+import application.RmiUtil;
+import entitys.Benutzer;
+import entitys.Mitarbeiter;
+
 /**
  * Dies ist die Dokumentation der Klasse Login. Sie dient zur
  * Authorisierung und Athentisierung eines Users.
@@ -20,6 +31,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import rmi.interfaces.KontaktRO;
 
 public class Login {
 
@@ -38,6 +50,9 @@ public class Login {
 	@FXML
 	private Pane leaf;
 
+	BenutzerRO benutzerRO;
+	MitarbeiterRO mitarbeiterRO;
+
 	/**
 	 * Diese Methode öffnet die Methode goLogin() durch die Taste "Enter".
 	 */
@@ -49,6 +64,17 @@ public class Login {
 		}
 	}
 
+	public void initialize(){
+		/*---------------RMI Verbindung---------------*/
+
+		/* Lookup */
+		benutzerRO = RmiUtil.getBenutzerRO();
+		mitarbeiterRO = RmiUtil.getMitarbeiterRO();
+
+		/*----------------------------------------------*/
+	}
+
+
 	/**
 	 * Diese Methode authentisiert und authorisiert den User.
 	 */
@@ -57,77 +83,64 @@ public class Login {
 
 		String entername = txtusername.getText();
 		String enterpassword = txtpassword.getText();
+		Mitarbeiter mitarbeiter;
+		Benutzer mitsingle = null;
 
-		// Nachname und Vorname
-		// User m = findMitarbeiterByUsername(entername);
 
-		// if(m.getUser().getUsername() == entername &&
-		// m.getUser().getPassword() == enterpassword){
-		if (entername.equals("a") && enterpassword.equals("a")) {
+		try {
+			List<Benutzer> mit = benutzerRO.findByUsername(entername);
+			mitsingle = mit.get(0);
 
-			// String rolle = m.getrolle();
-			String rolle = "Feuerungskontrolleur";
 
-			switch (rolle) {
+			if(mitsingle.getUsername().equals(entername) &&
+					mitsingle.getPassword().toString().equals(enterpassword)){
 
-			case "Feuerungskontrolleur":
+						List<Mitarbeiter> list = mitarbeiterRO.findByBenutzer(mitsingle);
+						mitarbeiter = list.get(0);
+String r = mitarbeiter.getRolleIntern();
+			switch(r){
 
-				try {
+						case "Sachbearbeiter":
 
-					Stage DashboardFKStage = new Stage();
+								Stage DashboardFKStage = new Stage();
 
-					DashboardFKStage.setScene(new Scene(FXMLLoader
-							.load(getClass().getResource("/application/view/dashboard/DashboardKontrolleur.fxml"))));
+								DashboardFKStage.setScene(new Scene(FXMLLoader
+										.load(getClass().getResource("/application/view/dashboard/DashboardKontrolleur.fxml"))));
 
-					DashboardFKStage.show();
+								DashboardFKStage.show();
 
-					((Stage) leaf.getScene().getWindow()).close();
+								((Stage) leaf.getScene().getWindow()).close();
+								break;
 
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+						case "Administrator":
 
-				break;
+							try {
+								Stage DashboardBOStage = new Stage();
 
-			case "Backoffice":
+								DashboardBOStage
+										.setScene(new Scene(FXMLLoader.load(getClass().getResource("/application/view/admin/BenutzerUebersicht"))));
+								DashboardBOStage.show();
 
-				try {
+								((Stage) leaf.getScene().getWindow()).close();
 
-					Stage DashboardBOStage = new Stage();
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
 
-					DashboardBOStage
-							.setScene(new Scene(FXMLLoader.load(getClass().getResource("Dashboard_Kontrolleur.fxml"))));
-					DashboardBOStage.show();
+							break;
 
-					((Stage) leaf.getScene().getWindow()).close();
-
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				break;
-
-			case "Administrator":
-
-				try {
-					Stage DashboardBOStage = new Stage();
-
-					DashboardBOStage
-							.setScene(new Scene(FXMLLoader.load(getClass().getResource("Dashboard_Kontrolleur.fxml"))));
-					DashboardBOStage.show();
-
-					((Stage) leaf.getScene().getWindow()).close();
-
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-
-				break;
-
-			}
-		} else {
-			lblRueckmeldung.setText("Benutzername oder Passwort falsch!");
-
+						}
+					}else {
+						lblRueckmeldung.setText("Benutzername oder Passwort falsch");
+					}
+		} catch (Exception e1) {
+			lblRueckmeldung.setText("Login fehlgeschlagen");
 		}
+
+
+
+
+
 
 	}
 
