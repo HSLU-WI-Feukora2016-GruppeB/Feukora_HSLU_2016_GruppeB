@@ -120,6 +120,7 @@ public class KontaktManagerTest {
 
 	/**
 	 * Testet die Methode {@link KontaktManagerImpl#findByStrasse(String)}
+	 * @throws Exception
 	 */
 	@Test
 	public void testFindByStrasse() throws Exception {
@@ -208,7 +209,7 @@ public class KontaktManagerTest {
 
 	/**
 	 * Initialisiert die Datenbank mit Testwerten
-	 * @return
+	 * @return lKontakt
 	 * @throws Exception
 	 */
 	public static List<Kontakt> init() throws Exception {

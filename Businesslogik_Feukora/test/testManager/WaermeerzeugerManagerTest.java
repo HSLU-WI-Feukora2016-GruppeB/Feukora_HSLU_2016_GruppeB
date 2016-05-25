@@ -150,7 +150,7 @@ public class WaermeerzeugerManagerTest {
 	
 	/**
 	 * Initialisiert die Datenbank mit Testwerten.
-	 * @return
+	 * @return lWaermeerzeuger
 	 * @throws Exception
 	 */
 	public static List<Waermeerzeuger> init() throws Exception{
