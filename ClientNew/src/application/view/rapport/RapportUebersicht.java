@@ -24,6 +24,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -38,6 +39,28 @@ import rmi.interfaces.MessungRO;
 import rmi.interfaces.MitarbeiterRO;
 
 public class RapportUebersicht {
+
+	// ----------------Stufe 1--------------------
+		@FXML
+		private TextField txtM1S1Russzahl, txtM1S1CO, txtM1S1Abgastemperatur, txtM1S1Verbrenn, txtM1S1Nox, txtM1S1Waermeerz,
+				txtM1S1O2, txtM1S1Abgasverl, txtM1S2Russzahl, txtM1S2CO, txtM1S2Abgastemperatur, txtM1S2Verbrenn,
+				txtM1S2Nox, txtM1S2Waermeerz, txtM1S2O2, txtM1S2Abgasverl;
+
+		@FXML
+		private CheckBox checkS1M1Oel,  checkS1M1Abgas, checkS1M1Russzahl, checkS1M1Co2, checkS1M1No2
+		,checkS1M2Oel,checkS1M2Abgas, checkS1M2Russzahl, checkS1M2Co2, checkS1M2No2;
+
+		// ----------------Stufe 2---------------------
+		@FXML
+		private TextField txtM2S1Russzahl, txtM2S1CO, txtM2S1Abgastemperatur, txtM2S1Verbrenn, txtM2S1Nox, txtM2S1Waermeerz,
+				txtM2S1O2, txtM2S1Abgasverl, txtM2S2Russzahl, txtM2S2CO, txtM2S2Abgastemperatur, txtM2S2Verbrenn,
+			txtM2S2Nox, txtM2S2Waermeerz, txtM2S2O2, txtM2S2Abgasverl;
+
+	@FXML
+	private CheckBox check21M1Oel, checkS2M2Oel, checkS2M1Abgas, checkS2M1Russzahl, checkS2M1Co2, checkS2M1No2
+	,checkS2M2Abgas, checkS2M2Russzahl, checkS2M2Co2, checkS2M2No2;
+
+
 
 	@FXML
 	private Button btnNeu, btnBearbeiten, btnSchliessen, btnWocheAnzeigen, btnRapportAnzeigen, btnRapportErstellen;
@@ -203,6 +226,7 @@ public class RapportUebersicht {
 			((Stage) leaf.getScene().getWindow()).close();
 		} catch (Exception e) {
 			e.printStackTrace();
+			lblRueckmeldung.setText("Bitte Rapport auswählen");
 		}
 	}
 
@@ -219,7 +243,7 @@ public class RapportUebersicht {
 
 			((Stage) leaf.getScene().getWindow()).close();
 		} catch (Exception e) {
-
+			lblRueckmeldung.setText("Bitte Rapport auswählen");
 			e.printStackTrace();
 		}
 	}

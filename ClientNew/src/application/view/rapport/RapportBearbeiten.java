@@ -40,23 +40,25 @@ public class RapportBearbeiten {
 			txtBrenner, txtBaujahr, txtBrennstoff, txtWaermeerzeuger, txtBaujahrW, txtBrennstoffW, txtLeistung,
 			txtAuftragsart;
 
-	// ----------------Messung1--------------------
+	// ----------------Stufe 1--------------------
 	@FXML
 	private TextField txtM1S1Russzahl, txtM1S1CO, txtM1S1Abgastemperatur, txtM1S1Verbrenn, txtM1S1Nox, txtM1S1Waermeerz,
 			txtM1S1O2, txtM1S1Abgasverl, txtM1S2Russzahl, txtM1S2CO, txtM1S2Abgastemperatur, txtM1S2Verbrenn,
 			txtM1S2Nox, txtM1S2Waermeerz, txtM1S2O2, txtM1S2Abgasverl;
 
 	@FXML
-	private CheckBox checkM1S1Oel, checkM1S2Oel;
+	private CheckBox checkS1M1Oel, checkS1M1Abgas, checkS1M1Russzahl, checkS1M1Co2, checkS1M1No2, checkS1M2Oel,
+			checkS1M2Abgas, checkS1M2Russzahl, checkS1M2Co2, checkS1M2No2;
 
-	// ----------------Messung2---------------------
+	// ----------------Stufe 2---------------------
 	@FXML
 	private TextField txtM2S1Russzahl, txtM2S1CO, txtM2S1Abgastemperatur, txtM2S1Verbrenn, txtM2S1Nox, txtM2S1Waermeerz,
 			txtM2S1O2, txtM2S1Abgasverl, txtM2S2Russzahl, txtM2S2CO, txtM2S2Abgastemperatur, txtM2S2Verbrenn,
 			txtM2S2Nox, txtM2S2Waermeerz, txtM2S2O2, txtM2S2Abgasverl;
 
 	@FXML
-	private CheckBox checkM2S1Oel, checkM2S2Oel;
+	private CheckBox check21M1Oel, checkS2M2Oel, checkS2M1Abgas, checkS2M1Russzahl, checkS2M1Co2, checkS2M1No2,
+			checkS2M2Abgas, checkS2M2Russzahl, checkS2M2Co2, checkS2M2No2;
 
 	@FXML
 	private Label lblRueckmeldung;
@@ -76,6 +78,8 @@ public class RapportBearbeiten {
 	@FXML
 	private Stage leaf;
 
+	Messung m;
+
 	public void initialize() throws Exception {
 
 		/*---------------RMI Verbindung---------------*/
@@ -89,15 +93,12 @@ public class RapportBearbeiten {
 		// Kundenfelder setzen
 		txtName.setText(kundenname);
 		txtVorname.setText(kundenvorname);
-		txtOrt.setText(kundenort);
 		txtPlz.setText(kundenplz);
 		txtTelefonNr.setText(kundentelnr);
 
 		// Liegenschaftsfelder setzen
 		txtStrasseL.setText(liegenschaftsstrasse);
-		;
 		txtOrtL.setText(Liegenschaftsort);
-		txtPlzL.setText(Liegenschaftsplz);
 		txtInfo.setText(Liegenschaftsinfo);
 
 		// Brennerfelder setzen
@@ -120,39 +121,43 @@ public class RapportBearbeiten {
 		messungsliste.add(ausgewaehlterauftrag.getMessung2stufe1());
 		messungsliste.add(ausgewaehlterauftrag.getMessung1stufe2());
 		messungsliste.add(ausgewaehlterauftrag.getMessung2stufe2());
-
-		for (Messung m : messungsliste) {
-			boolean notokey = m.isBeurteilungNotOk();
-			if (notokey) {
-				cbBeurteilung.setSelected(true);
-				for (Messung m2 : messungsliste) {
-					notokey = m2.isAbgasverlusteNotOk();
-					if (notokey) {
-						cbAbgasverluste.setSelected(true);
-					}
-					boolean notokey2 = m2.isCoMgNotOk();
-					if (notokey2) {
-						cbCo2.setSelected(true);
-					}
-					boolean notokey3 = m2.isNoMgNotOk();
-					if (notokey3) {
-						cbNo2.setSelected(true);
-					}
-					boolean notokey4 = m2.isOelanteilenNotOk();
-					if (notokey4) {
-						cbOelanteil.setSelected(true);
-					}
-					boolean notokey5 = m2.isRusszahlNotOk();
-					if (notokey5) {
-						cbRusszahl.setSelected(true);
-					}
-				}
-			}
-		}
-
-		// Manuell eingetragene Felder des Kontrolleurs anzeigen
 		cb30Tage.setSelected(ausgewaehlterauftrag.isEinregulierungInnert30());
 		cbEinregulierung.setSelected(ausgewaehlterauftrag.isEinregulierungNichtMoeglich());
+
+		setMessung1Stufe1();
+
+		/*---------wird nicht mehr gebraucht
+				for (Messung m : messungsliste) {
+					boolean notokey = m.isBeurteilungNotOk();
+					if (notokey) {
+						cbBeurteilung.setSelected(true);
+						for (Messung m2 : messungsliste) {
+							notokey = m2.isAbgasverlusteNotOk();
+							if (notokey) {
+								cbAbgasverluste.setSelected(true);
+							}
+							boolean notokey2 = m2.isCoMgNotOk();
+							if (notokey2) {
+								cbCo2.setSelected(true);
+							}
+							boolean notokey3 = m2.isNoMgNotOk();
+							if (notokey3) {
+								cbNo2.setSelected(true);
+							}
+							boolean notokey4 = m2.isOelanteilenNotOk();
+							if (notokey4) {
+								cbOelanteil.setSelected(true);
+							}
+							boolean notokey5 = m2.isRusszahlNotOk();
+							if (notokey5) {
+								cbRusszahl.setSelected(true);
+							}
+						}
+					}
+				}
+		*/
+		// Manuell eingetragene Felder des Kontrolleurs anzeigen
+
 
 	}
 
@@ -163,16 +168,13 @@ public class RapportBearbeiten {
 		// Kundenobjekt zerlegen
 		kundenvorname = auftrag.getKunde().getVorname();
 		kundenname = auftrag.getKunde().getNachname();
-		kundenort = auftrag.getKunde().getOrt().getOrt();
-		kundenplz = String.valueOf(auftrag.getKunde().getOrt().getPlz());
-		;
+		kundenplz = String.valueOf(auftrag.getKunde().getOrt().toString());
 		kundentelnr = auftrag.getKunde().getTel();
 
 		Liegenschaft liegenschaft = auftrag.getLiegenschaft();
 		// Liegenschaftsobjekt zerlegen
 		liegenschaftsstrasse = liegenschaft.getStrasse();
-		Liegenschaftsort = liegenschaft.getOrt().getOrt();
-		Liegenschaftsplz = String.valueOf(liegenschaft.getOrt().getPlz());
+		Liegenschaftsort = liegenschaft.getOrt().toString();
 		Liegenschaftsinfo = liegenschaft.getInfoVorOrt();
 
 		Feuerungsanlage feuerungs = liegenschaft.getFeuerungsanlage();
@@ -189,6 +191,29 @@ public class RapportBearbeiten {
 		// Kontrollarten
 		auftragsart = auftrag.getTerminArt();
 		feuerungsleistung = String.valueOf(feuerungs.getFeuerungswaermeleistung());
+	}
+
+	/**
+	 * Diese Methode liefert die 1 Stufe der 1 Messung in einem Messungsobjekt
+	 *
+	 * @throws Exception
+	 */
+	public void setMessung1Stufe1() throws Exception {
+		m= ausgewaehlterauftrag.getMessung1stufe1();
+
+		 txtM1S1Russzahl.setText(String.valueOf(m.getRusszahl()));
+		txtM1S1CO.setText(String.valueOf(m.getCoGehalt()));
+		txtM1S1Abgastemperatur.setText(String.valueOf(m.getAbgastemperatur()));
+		txtM1S1Verbrenn.setText(String.valueOf(m.getVerbrennungstemperatur()));
+		txtM1S1Nox.setText(String.valueOf(m.getNo2Gehalt()));
+		txtM1S1Waermeerz.setText(String.valueOf(m.getWaermeerzeugertemperatur()));
+		txtM1S1O2.setText(String.valueOf(m.getO2gehalt()));
+		txtM1S1Abgasverl.setText(String.valueOf(m.getAbgasverluste()));
+		checkS1M1Oel.setSelected(m.isOelanteilenNotOk());
+		checkS1M1Abgas.setSelected(m.isAbgasverlusteNotOk());
+		checkS1M1Russzahl.setSelected(m.isRusszahlNotOk());
+		checkS1M1Co2.setSelected(m.isCoMgNotOk());
+		checkS1M1No2.setSelected(m.isNoMgNotOk());
 	}
 
 	/**

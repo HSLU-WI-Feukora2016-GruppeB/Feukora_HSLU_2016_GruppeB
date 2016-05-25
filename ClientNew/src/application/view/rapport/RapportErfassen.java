@@ -279,33 +279,44 @@ public class RapportErfassen {
 		Messung messung1stufe1 = null, messung2stufe1 = null, messung1stufe2 = null, messung2stufe2 = null;
 
 		try {
+
 			messung1stufe1 = this.createMessung1Stufe1();
+			if(messung1stufe1 != null){
 			messung1stufe1.setAbgasverlusteNotOk(checkS1M1Abgas.isSelected());
 			messung1stufe1.setRusszahlNotOk(checkS1M1Russzahl.isSelected());
 			messung1stufe1.setCoMgNotOk(checkS1M1Co2.isSelected());
 			messung1stufe1.setNoMgNotOk(checkS1M1No2.isSelected());
 			messungRO.add(messung1stufe1);
-
+			}
 
 
 			messung1stufe2 = this.createMessung1Stufe2();
+			if(messung1stufe2 != null){
 			messung1stufe2.setAbgasverlusteNotOk(checkS2M1Abgas.isSelected());
 			messung1stufe2.setRusszahlNotOk(checkS2M1Russzahl.isSelected());
 			messung1stufe2.setCoMgNotOk(checkS2M1Co2.isSelected());
 			messung1stufe2.setNoMgNotOk(checkS2M1No2.isSelected());
+			messungRO.add(messung1stufe2);
+			}
 
-			messung2stufe1 = this.createMessung2Stufe1();
-			messung2stufe1.setAbgasverlusteNotOk(checkS1M2Abgas.isSelected());
-			messung2stufe1.setRusszahlNotOk(checkS1M2Russzahl.isSelected());
-			messung2stufe1.setCoMgNotOk(checkS1M2Co2.isSelected());
-			messung2stufe1.setNoMgNotOk(checkS1M2No2.isSelected());
+			if(messung1stufe2 != null){
+				messung2stufe1 = this.createMessung2Stufe1();
+				messung2stufe1.setAbgasverlusteNotOk(checkS1M2Abgas.isSelected());
+				messung2stufe1.setRusszahlNotOk(checkS1M2Russzahl.isSelected());
+				messung2stufe1.setCoMgNotOk(checkS1M2Co2.isSelected());
+				messung2stufe1.setNoMgNotOk(checkS1M2No2.isSelected());
+				messungRO.add(messung2stufe1);
+			}
 
 
 			messung2stufe2 = this.createMessung2Stufe2();
+			if(messung2stufe2 != null){
 			messung2stufe2.setAbgasverlusteNotOk(checkS2M2Abgas.isSelected());
 			messung2stufe2.setRusszahlNotOk(checkS2M2Russzahl.isSelected());
 			messung2stufe2.setCoMgNotOk(checkS2M2Co2.isSelected());
 			messung2stufe2.setNoMgNotOk(checkS2M2No2.isSelected());
+			messungRO.add(messung2stufe2);
+			}
 
 		} catch (Exception e1) {
 			lblRueckmeldung.setText("Messungen abspeichern fehlgeschlagen");
@@ -338,6 +349,8 @@ public class RapportErfassen {
 
 	}
 
+
+
 	/**
 	 * Diese Methode liefert die 1 Stufe der 1 Messung in einem Messungsobjekt
 	 *
@@ -360,6 +373,9 @@ public class RapportErfassen {
 
 		return messung1stufe1;
 	}
+
+
+
 
 	/**
 	 * Diese Methode liefert die 2 Stufe der 1 Messung in einem Messungsobjekt
@@ -384,6 +400,8 @@ public class RapportErfassen {
 		return messung1stufe2;
 	}
 
+
+
 	/**
 	 * Diese Methode liefert die 1 Stufe der 2 Messung in einem Messungsobjekt
 	 *
@@ -406,6 +424,9 @@ public class RapportErfassen {
 
 		return messung2stufe1;
 	}
+
+
+
 
 	/**
 	 * Diese Methode liefert die 1 Stufe der 2 Messung in einem Messungsobjekt
