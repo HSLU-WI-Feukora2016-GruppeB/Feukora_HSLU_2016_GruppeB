@@ -171,7 +171,7 @@ public class LiegenschaftDAOTest {
 	
 	/**
 	 * Initialisiert die Objekte welche für die Tests verwendet werden.
-	 * @return
+	 * @return lLiegenschaft
 	 * @throws Exception
 	 */
 	public static List<Liegenschaft> init() throws Exception {

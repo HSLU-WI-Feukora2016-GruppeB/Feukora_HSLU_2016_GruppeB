@@ -203,7 +203,7 @@ public class KontaktDAOTest {
 
 	/**
 	 * Initialisiert die Datenbank mit Testwerten
-	 * @return
+	 * @return lKontakt
 	 * @throws Exception
 	 */
 	public static List<Kontakt> init() throws Exception {

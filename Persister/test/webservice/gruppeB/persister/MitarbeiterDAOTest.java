@@ -234,7 +234,7 @@ public class MitarbeiterDAOTest {
 	
 	/**
 	 * Initialisiert die Datenbank mit Testwerten
-	 * @return
+	 * @return lMitarbeiter
 	 * @throws Exception
 	 */
 	public static List<Mitarbeiter> init() throws Exception{

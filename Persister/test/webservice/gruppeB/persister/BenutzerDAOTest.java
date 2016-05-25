@@ -137,7 +137,7 @@ public class BenutzerDAOTest {
 	
 	/**
 	 * Initialisiert die Datenbank mit Testwerten
-	 * @return
+	 * @return lBenutzer
 	 * @throws Exception
 	 */
 	public static List<Benutzer> init() throws Exception {

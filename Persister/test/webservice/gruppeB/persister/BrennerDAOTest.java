@@ -147,7 +147,7 @@ public class BrennerDAOTest {
 	
 	/**
 	 * Initialisiert die Datenbank mit Testwerten
-	 * @return
+	 * @return lBrenner
 	 * @throws Exception
 	 */
 	public static List<Brenner> init() throws Exception {
