@@ -20,7 +20,7 @@ import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
  * Diese Klasse Testet die Funktionalität der Waermeerzeugermethoden im
  * FeuerungsrapportServiceImpl.
  * 
- * @author Luca Raneri
+ * @author Dominik
  * @version 1.0
  */
 public class FeuerungsrapportServiceWaermeerzeugerTest {

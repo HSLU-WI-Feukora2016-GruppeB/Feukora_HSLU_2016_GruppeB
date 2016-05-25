@@ -625,8 +625,9 @@ public interface FeuerungsrapportService {
 	/**
 	 * Liefert die Liegenschaft die mit der Id angefragt wurde.
 	 * 
-	 * @param id
+	 * @param idLiegenschaft
 	 * @return
+	 * @throws Exception
 	 */
 	@WebMethod
 	Liegenschaft findLiegenschaftById(
@@ -1092,6 +1093,7 @@ public interface FeuerungsrapportService {
 	
 	//------------------------------------------------------------------------
 	// Zusätzliche Methoden für Testzwecke.
+	// edit: Luca Raneri
 	//------------------------------------------------------------------------
 	
 	/**

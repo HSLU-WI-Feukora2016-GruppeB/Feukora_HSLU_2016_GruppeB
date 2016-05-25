@@ -18,7 +18,6 @@ import java.util.Properties;
 
 import javax.jws.WebService;
 
-import rmi.*;
 import rmi.interfaces.AuftragRO;
 import rmi.interfaces.BenutzerRO;
 import rmi.interfaces.BrennerRO;
@@ -556,8 +555,10 @@ public class FeuerungsrapportServiceImpl implements FeuerungsrapportService {
 	}
 
 	//----------------------------------------------------------------------------
-	//Nur für Testzwecken
+	// Nur für Testzwecken
+	// edit: Luca Raneri
     //----------------------------------------------------------------------------
+	
 	@Override
 	public void deleteBenutzer(Benutzer benutzer) throws Exception {
 		benutzerManager.delete(benutzer);

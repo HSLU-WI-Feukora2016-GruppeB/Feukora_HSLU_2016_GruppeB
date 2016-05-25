@@ -19,7 +19,7 @@ import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
  * Diese Klasse Testet die Funktionalität der Ortmethoden im
  * FeuerungsrapportServiceImpl.
  * 
- * @author Luca Raneri
+ * @author Alexandra
  * @version 1.0
  */
 public class FeuerungsrapportServiceOrtTest {
