@@ -22,11 +22,7 @@ import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
  * 
  * @author Dominik
  * @version 1.0
-<<<<<<< HEAD
- * @since 1.0
-=======
  * @since 1.0.0
->>>>>>> refs/remotes/origin/master
  */
 public class FeuerungsrapportServiceKontaktTest {
 
@@ -223,7 +219,7 @@ public class FeuerungsrapportServiceKontaktTest {
 	/**
 	 * Initialisiert die Testwerte.
 	 * 
-	 * @return
+	 * @return lKontaktDB
 	 * @throws Exception
 	 */
 	public static List<Kontakt> init() throws Exception {

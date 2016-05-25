@@ -119,8 +119,8 @@ public class FeuerungsrapportServiceAuftragTest {
 
 	/**
 	 * Dieser Test tested die Methode
-	 * {@link FeuerungsrapportServiceImpl#findAuftragByMitarbeiter(Mitarbeiter)}
-	 * .
+	 * {@link FeuerungsrapportServiceImpl#findAuftragByMitarbeiter(Mitarbeiter)}.
+	 * 
 	 * 
 	 * @throws Exception
 	 */
@@ -152,8 +152,8 @@ public class FeuerungsrapportServiceAuftragTest {
 
 	/**
 	 * Dieser Test tested die Methode
-	 * {@link FeuerungsrapportServiceImpl#findAuftragByLiegenschaft(Liegenschaft)}
-	 * .
+	 * {@link FeuerungsrapportServiceImpl#findAuftragByLiegenschaft(Liegenschaft)}.
+	 * 
 	 * 
 	 * @throws Exception
 	 */
@@ -170,8 +170,8 @@ public class FeuerungsrapportServiceAuftragTest {
 
 	/**
 	 * Dieser Test tested die Methode
-	 * {@link FeuerungsrapportServiceImpl#findAuftragByDatum(GregorianCalendar)}
-	 * .
+	 * {@link FeuerungsrapportServiceImpl#findAuftragByDatum(GregorianCalendar)}.
+	 * 
 	 * 
 	 * @throws Exception
 	 */
@@ -205,8 +205,8 @@ public class FeuerungsrapportServiceAuftragTest {
 
 	/**
 	 * Dieser Test tested die Methode
-	 * {@link FeuerungsrapportServiceImpl#findAuftragByDateAndMitarbeiter(GregorianCalendar, GregorianCalendar, Mitarbeiter)}
-	 * .
+	 * {@link FeuerungsrapportServiceImpl#findAuftragByDateAndMitarbeiter(GregorianCalendar, GregorianCalendar, Mitarbeiter)}.
+	 * 
 	 * 
 	 * @throws Exception
 	 */
@@ -230,7 +230,7 @@ public class FeuerungsrapportServiceAuftragTest {
 	/**
 	 * Initialisiert die Testwerte
 	 * 
-	 * @return
+	 * @return lAuftragDB
 	 * @throws Exception
 	 */
 	public static List<Auftrag> init() throws Exception {
