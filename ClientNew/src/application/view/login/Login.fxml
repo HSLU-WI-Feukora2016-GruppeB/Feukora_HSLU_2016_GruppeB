@@ -23,9 +23,9 @@
                   <Pane prefHeight="36.0" prefWidth="465.0" />
                   <Pane prefHeight="261.0" prefWidth="465.0">
                      <children>
-                        <ImageView fitHeight="282.0" fitWidth="465.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="250.0" fitWidth="476.0" layoutX="-3.0" layoutY="-1.0" pickOnBounds="true">
                            <image>
-                              <Image url="@../../../../../../../Dropbox/HSLU/INM21%20Projekt/SoftwareArchitektur/Logo_schriftgross_banner.png" />
+                              <Image url="@../../../../../../../Desktop/Bilder%20GUI/Background/Background_weiss_hor.jpg" />
                            </image>
                         </ImageView>
                      </children></Pane>
