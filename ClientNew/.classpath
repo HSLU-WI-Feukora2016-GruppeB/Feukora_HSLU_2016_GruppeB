@@ -10,5 +10,6 @@
 	<classpathentry kind="lib" path="lib/postgresql-9.1-902.jdbc4.jar"/>
 	<classpathentry kind="lib" path="lib/feukora-gruppeB-rmi.jar"/>
 	<classpathentry kind="lib" path="lib/feukora-gruppeB-model.jar"/>
+	<classpathentry kind="lib" path="build.fxbuild"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

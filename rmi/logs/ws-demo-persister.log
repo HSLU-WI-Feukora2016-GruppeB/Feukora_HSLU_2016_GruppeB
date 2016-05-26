@@ -24707,3 +24707,3910 @@ Arbeitet seit:
 Arbeitet bis: 
 1/6/2016
 
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1467928800000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=6,WEEK_OF_YEAR=27,WEEK_OF_MONTH=1,DAY_OF_MONTH=8,DAY_OF_YEAR=190,DAY_OF_WEEK=6,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1468101600000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=6,WEEK_OF_YEAR=27,WEEK_OF_MONTH=1,DAY_OF_MONTH=10,DAY_OF_YEAR=192,DAY_OF_WEEK=1,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1468015200000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=6,WEEK_OF_YEAR=27,WEEK_OF_MONTH=1,DAY_OF_MONTH=9,DAY_OF_YEAR=191,DAY_OF_WEEK=7,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+13:00 - 15:00 Uhr]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1469138400000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=6,WEEK_OF_YEAR=29,WEEK_OF_MONTH=3,DAY_OF_MONTH=22,DAY_OF_YEAR=204,DAY_OF_WEEK=6,DAY_OF_WEEK_IN_MONTH=4,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+15:00 - 17:00 Uhr]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1469224800000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=6,WEEK_OF_YEAR=29,WEEK_OF_MONTH=3,DAY_OF_MONTH=23,DAY_OF_YEAR=205,DAY_OF_WEEK=7,DAY_OF_WEEK_IN_MONTH=4,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1469224800000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=6,WEEK_OF_YEAR=29,WEEK_OF_MONTH=3,DAY_OF_MONTH=23,DAY_OF_YEAR=205,DAY_OF_WEEK=7,DAY_OF_WEEK_IN_MONTH=4,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1469311200000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=6,WEEK_OF_YEAR=29,WEEK_OF_MONTH=3,DAY_OF_MONTH=24,DAY_OF_YEAR=206,DAY_OF_WEEK=1,DAY_OF_WEEK_IN_MONTH=4,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+15:00 - 17:00 Uhr]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Hausmeister bei Muster klingeln
+Abcweg 123, 3000 Bern]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [07978885599 anrufen bei Ankunft
+Musterweg 456, 1000 Genf]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Türe ist offen
+Musterweg 456, 2000 Neuchâtel]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Einfach reinkommen
+Hirschengraben 6, 5000 Aarau]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Türe ist offen
+Rösslimatte 666, 6000 Luzern]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Türe ist offen
+Grebli 1, 8000 Zürich]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Türe ist offen
+Hinterhof 96, 4000 Basel]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 65Brenner: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 88Brenner: Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 46Brenner: Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Matthias
+Name: 
+Perrollaz
+Strasse: 
+Musterstrasse 2
+Ort: 1000 Genf
+Telefon: 1234557678
+eMail: 
+m.p@feukora.ch
+Rolle Intern: 2
+User: Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: 3000 Bern
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Pascal
+Name: 
+Steiner
+Strasse: 
+Musterstrasse 4
+Ort: 5000 Aarau
+Telefon: 1234567678
+eMail: 
+p.st@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Luca
+Name: 
+Raneri
+Strasse: 
+Musterstrasse 5
+Ort: 6000 Luzern
+Telefon: 1234567178
+eMail: 
+l.r@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Alexandra
+Name: 
+Lengen
+Strasse: 
+Musterstrasse 1
+Ort: 8000 Zürich
+Telefon: 1234563678
+eMail: 
+a.l@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+ale
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Martina Meyer
+Altstrasse 1, 5000 Aarau
+0633335577]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Christoph Müller
+Neustrasse 1, 4000 Basel
+0554445577]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Heiri Muster
+Bernstrasse 1, 1000 Genf
+0688885577]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Christof Meyer
+Gassweg 1, 2000 Neuchâtel
+0633335577]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Hanna Putz
+Malweg 5, 1000 Genf
+0637777777]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Martina Zäh
+Altstrasse 90, 3000 Bern
+0633888877]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Tina Bär
+Waserstrasse 4, 2000 Neuchâtel
+0222235577]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Rudolf Santa
+Zaubergass 7, 6000 Luzern
+0699999997]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [8000 Zürich]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [6000 Luzern]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [5000 Aarau]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [3000 Bern]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [1000 Genf]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [2000 Neuchâtel]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [4000 Basel]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	3/7/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	120
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	2/8/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	5/10/2012
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	75
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	7/4/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	111
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	99
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	9/2/2014
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	200
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	10/1/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	140
+Waermeerzeugertemperatur: 	 	 	99
+Verbrennungstemperatur: 	 	 	150
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	29/6/2016
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	133
+Waermeerzeugertemperatur: 	 	 	100
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	30/7/2009
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	150
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	55
+O2Gehalt: 	 	 	9
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	1/9/2013
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	150
+Waermeerzeugertemperatur: 	 	 	44
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	49
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	5/0/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	99
+Waermeerzeugertemperatur: 	 	 	67
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	389
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476136800000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=41,WEEK_OF_MONTH=2,DAY_OF_MONTH=11,DAY_OF_YEAR=285,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476741600000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=42,WEEK_OF_MONTH=3,DAY_OF_MONTH=18,DAY_OF_YEAR=292,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=3,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476136800000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=41,WEEK_OF_MONTH=2,DAY_OF_MONTH=11,DAY_OF_YEAR=285,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+10:00 - 12:00 Uhr]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Hausmeister bei Muster klingeln
+Abcweg 123, 3000 Bern]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [07978885599 anrufen bei Ankunft
+Musterweg 456, 1000 Genf]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Türe ist offen
+Musterweg 456, 2000 Neuchâtel]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 65Brenner: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 46Brenner: Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 88Brenner: Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:48:58 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Matthias
+Name: 
+Perrollaz
+Strasse: 
+Musterstrasse 2
+Ort: 1000 Genf
+Telefon: 1234557678
+eMail: 
+m.p@feukora.ch
+Rolle Intern: 2
+User: Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: 3000 Bern
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Pascal
+Name: 
+Steiner
+Strasse: 
+Musterstrasse 4
+Ort: 5000 Aarau
+Telefon: 1234567678
+eMail: 
+p.st@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Luca
+Name: 
+Raneri
+Strasse: 
+Musterstrasse 5
+Ort: 6000 Luzern
+Telefon: 1234567178
+eMail: 
+l.r@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Alexandra
+Name: 
+Lengen
+Strasse: 
+Musterstrasse 1
+Ort: 8000 Zürich
+Telefon: 1234563678
+eMail: 
+a.l@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+ale
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Martina Meyer
+Altstrasse 1, 5000 Aarau
+0633335577]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Christoph Müller
+Neustrasse 1, 4000 Basel
+0554445577]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Heiri Muster
+Bernstrasse 1, 1000 Genf
+0688885577]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Christof Meyer
+Gassweg 1, 2000 Neuchâtel
+0633335577]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Hanna Putz
+Malweg 5, 1000 Genf
+0637777777]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Martina Zäh
+Altstrasse 90, 3000 Bern
+0633888877]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Tina Bär
+Waserstrasse 4, 2000 Neuchâtel
+0222235577]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Rudolf Santa
+Zaubergass 7, 6000 Luzern
+0699999997]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [8000 Zürich]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [6000 Luzern]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [5000 Aarau]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [3000 Bern]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [1000 Genf]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [2000 Neuchâtel]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [4000 Basel]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	3/7/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	120
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	2/8/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	5/10/2012
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	75
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	7/4/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	111
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	99
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	9/2/2014
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	200
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	10/1/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	140
+Waermeerzeugertemperatur: 	 	 	99
+Verbrennungstemperatur: 	 	 	150
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	29/6/2016
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	133
+Waermeerzeugertemperatur: 	 	 	100
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	30/7/2009
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	150
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	55
+O2Gehalt: 	 	 	9
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	1/9/2013
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	150
+Waermeerzeugertemperatur: 	 	 	44
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	49
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	5/0/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	99
+Waermeerzeugertemperatur: 	 	 	67
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	389
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476136800000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=41,WEEK_OF_MONTH=2,DAY_OF_MONTH=11,DAY_OF_YEAR=285,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476741600000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=42,WEEK_OF_MONTH=3,DAY_OF_MONTH=18,DAY_OF_YEAR=292,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=3,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476136800000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=41,WEEK_OF_MONTH=2,DAY_OF_MONTH=11,DAY_OF_YEAR=285,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+10:00 - 12:00 Uhr]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Hausmeister bei Muster klingeln
+Abcweg 123, 3000 Bern]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [07978885599 anrufen bei Ankunft
+Musterweg 456, 1000 Genf]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Türe ist offen
+Musterweg 456, 2000 Neuchâtel]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 65Brenner: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 46Brenner: Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 88Brenner: Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Matthias
+Name: 
+Perrollaz
+Strasse: 
+Musterstrasse 2
+Ort: 1000 Genf
+Telefon: 1234557678
+eMail: 
+m.p@feukora.ch
+Rolle Intern: 2
+User: Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: 3000 Bern
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Pascal
+Name: 
+Steiner
+Strasse: 
+Musterstrasse 4
+Ort: 5000 Aarau
+Telefon: 1234567678
+eMail: 
+p.st@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Luca
+Name: 
+Raneri
+Strasse: 
+Musterstrasse 5
+Ort: 6000 Luzern
+Telefon: 1234567178
+eMail: 
+l.r@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Alexandra
+Name: 
+Lengen
+Strasse: 
+Musterstrasse 1
+Ort: 8000 Zürich
+Telefon: 1234563678
+eMail: 
+a.l@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+ale
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Martina Meyer
+Altstrasse 1, 5000 Aarau
+0633335577]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Christoph Müller
+Neustrasse 1, 4000 Basel
+0554445577]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Heiri Muster
+Bernstrasse 1, 1000 Genf
+0688885577]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Christof Meyer
+Gassweg 1, 2000 Neuchâtel
+0633335577]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Hanna Putz
+Malweg 5, 1000 Genf
+0637777777]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Martina Zäh
+Altstrasse 90, 3000 Bern
+0633888877]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Tina Bär
+Waserstrasse 4, 2000 Neuchâtel
+0222235577]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Rudolf Santa
+Zaubergass 7, 6000 Luzern
+0699999997]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [8000 Zürich]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [6000 Luzern]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [5000 Aarau]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [3000 Bern]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [1000 Genf]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [2000 Neuchâtel]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [4000 Basel]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	3/7/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	120
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	2/8/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	5/10/2012
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	75
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	7/4/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	111
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	99
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	9/2/2014
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	200
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	10/1/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	140
+Waermeerzeugertemperatur: 	 	 	99
+Verbrennungstemperatur: 	 	 	150
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	29/6/2016
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	133
+Waermeerzeugertemperatur: 	 	 	100
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	30/7/2009
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	150
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	55
+O2Gehalt: 	 	 	9
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	1/9/2013
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	150
+Waermeerzeugertemperatur: 	 	 	44
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	49
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:48:59 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	5/0/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	99
+Waermeerzeugertemperatur: 	 	 	67
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	389
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:134 - Entity vom Typ Auftrag mit id = 254 wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476741600000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=42,WEEK_OF_MONTH=3,DAY_OF_MONTH=18,DAY_OF_YEAR=292,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=3,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476136800000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=41,WEEK_OF_MONTH=2,DAY_OF_MONTH=11,DAY_OF_YEAR=285,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+10:00 - 12:00 Uhr]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Hausmeister bei Muster klingeln
+Abcweg 123, 3000 Bern]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [07978885599 anrufen bei Ankunft
+Musterweg 456, 1000 Genf]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Türe ist offen
+Musterweg 456, 2000 Neuchâtel]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 65Brenner: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 46Brenner: Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 88Brenner: Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Matthias
+Name: 
+Perrollaz
+Strasse: 
+Musterstrasse 2
+Ort: 1000 Genf
+Telefon: 1234557678
+eMail: 
+m.p@feukora.ch
+Rolle Intern: 2
+User: Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: 3000 Bern
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Pascal
+Name: 
+Steiner
+Strasse: 
+Musterstrasse 4
+Ort: 5000 Aarau
+Telefon: 1234567678
+eMail: 
+p.st@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Luca
+Name: 
+Raneri
+Strasse: 
+Musterstrasse 5
+Ort: 6000 Luzern
+Telefon: 1234567178
+eMail: 
+l.r@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Alexandra
+Name: 
+Lengen
+Strasse: 
+Musterstrasse 1
+Ort: 8000 Zürich
+Telefon: 1234563678
+eMail: 
+a.l@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+ale
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Martina Meyer
+Altstrasse 1, 5000 Aarau
+0633335577]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Christoph Müller
+Neustrasse 1, 4000 Basel
+0554445577]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Heiri Muster
+Bernstrasse 1, 1000 Genf
+0688885577]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Christof Meyer
+Gassweg 1, 2000 Neuchâtel
+0633335577]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Hanna Putz
+Malweg 5, 1000 Genf
+0637777777]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Martina Zäh
+Altstrasse 90, 3000 Bern
+0633888877]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Tina Bär
+Waserstrasse 4, 2000 Neuchâtel
+0222235577]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Rudolf Santa
+Zaubergass 7, 6000 Luzern
+0699999997]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [8000 Zürich]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [6000 Luzern]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [5000 Aarau]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [3000 Bern]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [1000 Genf]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [2000 Neuchâtel]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [4000 Basel]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	3/7/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	120
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	2/8/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	5/10/2012
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	75
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	7/4/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	111
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	99
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	9/2/2014
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	200
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	10/1/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	140
+Waermeerzeugertemperatur: 	 	 	99
+Verbrennungstemperatur: 	 	 	150
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	29/6/2016
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	133
+Waermeerzeugertemperatur: 	 	 	100
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	30/7/2009
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	150
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	55
+O2Gehalt: 	 	 	9
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	1/9/2013
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	150
+Waermeerzeugertemperatur: 	 	 	44
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	49
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	5/0/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	99
+Waermeerzeugertemperatur: 	 	 	67
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	389
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:66 - Entity vom Typ Auftrag wird updatet: nulljava.util.GregorianCalendar[time=1476136800000,areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=41,WEEK_OF_MONTH=2,DAY_OF_MONTH=11,DAY_OF_YEAR=285,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476741600000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=42,WEEK_OF_MONTH=3,DAY_OF_MONTH=18,DAY_OF_YEAR=292,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=3,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476136800000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=41,WEEK_OF_MONTH=2,DAY_OF_MONTH=11,DAY_OF_YEAR=285,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+10:00 - 12:00 Uhr]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476136800000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=41,WEEK_OF_MONTH=2,DAY_OF_MONTH=11,DAY_OF_YEAR=285,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Hausmeister bei Muster klingeln
+Abcweg 123, 3000 Bern]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [07978885599 anrufen bei Ankunft
+Musterweg 456, 1000 Genf]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Türe ist offen
+Musterweg 456, 2000 Neuchâtel]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 65Brenner: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 46Brenner: Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 88Brenner: Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Matthias
+Name: 
+Perrollaz
+Strasse: 
+Musterstrasse 2
+Ort: 1000 Genf
+Telefon: 1234557678
+eMail: 
+m.p@feukora.ch
+Rolle Intern: 2
+User: Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: 3000 Bern
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Pascal
+Name: 
+Steiner
+Strasse: 
+Musterstrasse 4
+Ort: 5000 Aarau
+Telefon: 1234567678
+eMail: 
+p.st@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Luca
+Name: 
+Raneri
+Strasse: 
+Musterstrasse 5
+Ort: 6000 Luzern
+Telefon: 1234567178
+eMail: 
+l.r@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Alexandra
+Name: 
+Lengen
+Strasse: 
+Musterstrasse 1
+Ort: 8000 Zürich
+Telefon: 1234563678
+eMail: 
+a.l@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+ale
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Martina Meyer
+Altstrasse 1, 5000 Aarau
+0633335577]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Christoph Müller
+Neustrasse 1, 4000 Basel
+0554445577]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Heiri Muster
+Bernstrasse 1, 1000 Genf
+0688885577]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Christof Meyer
+Gassweg 1, 2000 Neuchâtel
+0633335577]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Hanna Putz
+Malweg 5, 1000 Genf
+0637777777]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Martina Zäh
+Altstrasse 90, 3000 Bern
+0633888877]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Tina Bär
+Waserstrasse 4, 2000 Neuchâtel
+0222235577]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Rudolf Santa
+Zaubergass 7, 6000 Luzern
+0699999997]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [8000 Zürich]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [6000 Luzern]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [5000 Aarau]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [3000 Bern]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [1000 Genf]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [2000 Neuchâtel]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [4000 Basel]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	3/7/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	120
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	2/8/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	5/10/2012
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	75
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	7/4/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	111
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	99
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	9/2/2014
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	200
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	10/1/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	140
+Waermeerzeugertemperatur: 	 	 	99
+Verbrennungstemperatur: 	 	 	150
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	29/6/2016
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	133
+Waermeerzeugertemperatur: 	 	 	100
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	30/7/2009
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	150
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	55
+O2Gehalt: 	 	 	9
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	1/9/2013
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	150
+Waermeerzeugertemperatur: 	 	 	44
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	49
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:00 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	5/0/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	99
+Waermeerzeugertemperatur: 	 	 	67
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	389
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476136800000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=41,WEEK_OF_MONTH=2,DAY_OF_MONTH=11,DAY_OF_YEAR=285,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476741600000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=42,WEEK_OF_MONTH=3,DAY_OF_MONTH=18,DAY_OF_YEAR=292,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=3,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476136800000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=41,WEEK_OF_MONTH=2,DAY_OF_MONTH=11,DAY_OF_YEAR=285,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+10:00 - 12:00 Uhr]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Hausmeister bei Muster klingeln
+Abcweg 123, 3000 Bern]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [07978885599 anrufen bei Ankunft
+Musterweg 456, 1000 Genf]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Türe ist offen
+Musterweg 456, 2000 Neuchâtel]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 65Brenner: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 46Brenner: Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 88Brenner: Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Matthias
+Name: 
+Perrollaz
+Strasse: 
+Musterstrasse 2
+Ort: 1000 Genf
+Telefon: 1234557678
+eMail: 
+m.p@feukora.ch
+Rolle Intern: 2
+User: Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: 3000 Bern
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Pascal
+Name: 
+Steiner
+Strasse: 
+Musterstrasse 4
+Ort: 5000 Aarau
+Telefon: 1234567678
+eMail: 
+p.st@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Luca
+Name: 
+Raneri
+Strasse: 
+Musterstrasse 5
+Ort: 6000 Luzern
+Telefon: 1234567178
+eMail: 
+l.r@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Alexandra
+Name: 
+Lengen
+Strasse: 
+Musterstrasse 1
+Ort: 8000 Zürich
+Telefon: 1234563678
+eMail: 
+a.l@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+ale
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Martina Meyer
+Altstrasse 1, 5000 Aarau
+0633335577]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Christoph Müller
+Neustrasse 1, 4000 Basel
+0554445577]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Heiri Muster
+Bernstrasse 1, 1000 Genf
+0688885577]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Christof Meyer
+Gassweg 1, 2000 Neuchâtel
+0633335577]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Hanna Putz
+Malweg 5, 1000 Genf
+0637777777]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Martina Zäh
+Altstrasse 90, 3000 Bern
+0633888877]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Tina Bär
+Waserstrasse 4, 2000 Neuchâtel
+0222235577]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Rudolf Santa
+Zaubergass 7, 6000 Luzern
+0699999997]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [8000 Zürich]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [6000 Luzern]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [5000 Aarau]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [3000 Bern]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [1000 Genf]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [2000 Neuchâtel]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [4000 Basel]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	3/7/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	120
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	2/8/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	5/10/2012
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	75
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	7/4/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	111
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	99
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	9/2/2014
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	200
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	10/1/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	140
+Waermeerzeugertemperatur: 	 	 	99
+Verbrennungstemperatur: 	 	 	150
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	29/6/2016
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	133
+Waermeerzeugertemperatur: 	 	 	100
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	30/7/2009
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	150
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	55
+O2Gehalt: 	 	 	9
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	1/9/2013
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	150
+Waermeerzeugertemperatur: 	 	 	44
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	49
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	5/0/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	99
+Waermeerzeugertemperatur: 	 	 	67
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	389
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476136800000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=41,WEEK_OF_MONTH=2,DAY_OF_MONTH=11,DAY_OF_YEAR=285,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476741600000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=42,WEEK_OF_MONTH=3,DAY_OF_MONTH=18,DAY_OF_YEAR=292,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=3,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476136800000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=41,WEEK_OF_MONTH=2,DAY_OF_MONTH=11,DAY_OF_YEAR=285,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+10:00 - 12:00 Uhr]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Hausmeister bei Muster klingeln
+Abcweg 123, 3000 Bern]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [07978885599 anrufen bei Ankunft
+Musterweg 456, 1000 Genf]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Türe ist offen
+Musterweg 456, 2000 Neuchâtel]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 65Brenner: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 46Brenner: Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 88Brenner: Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Matthias
+Name: 
+Perrollaz
+Strasse: 
+Musterstrasse 2
+Ort: 1000 Genf
+Telefon: 1234557678
+eMail: 
+m.p@feukora.ch
+Rolle Intern: 2
+User: Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: 3000 Bern
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Pascal
+Name: 
+Steiner
+Strasse: 
+Musterstrasse 4
+Ort: 5000 Aarau
+Telefon: 1234567678
+eMail: 
+p.st@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Luca
+Name: 
+Raneri
+Strasse: 
+Musterstrasse 5
+Ort: 6000 Luzern
+Telefon: 1234567178
+eMail: 
+l.r@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Alexandra
+Name: 
+Lengen
+Strasse: 
+Musterstrasse 1
+Ort: 8000 Zürich
+Telefon: 1234563678
+eMail: 
+a.l@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+ale
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Martina Meyer
+Altstrasse 1, 5000 Aarau
+0633335577]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Christoph Müller
+Neustrasse 1, 4000 Basel
+0554445577]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Heiri Muster
+Bernstrasse 1, 1000 Genf
+0688885577]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Christof Meyer
+Gassweg 1, 2000 Neuchâtel
+0633335577]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Hanna Putz
+Malweg 5, 1000 Genf
+0637777777]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Martina Zäh
+Altstrasse 90, 3000 Bern
+0633888877]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Tina Bär
+Waserstrasse 4, 2000 Neuchâtel
+0222235577]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Rudolf Santa
+Zaubergass 7, 6000 Luzern
+0699999997]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [8000 Zürich]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [6000 Luzern]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [5000 Aarau]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [3000 Bern]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [1000 Genf]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [2000 Neuchâtel]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [4000 Basel]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	3/7/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	120
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	2/8/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	5/10/2012
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	75
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	7/4/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	111
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	99
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	9/2/2014
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	200
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	10/1/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	140
+Waermeerzeugertemperatur: 	 	 	99
+Verbrennungstemperatur: 	 	 	150
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	29/6/2016
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	133
+Waermeerzeugertemperatur: 	 	 	100
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	30/7/2009
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	150
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	55
+O2Gehalt: 	 	 	9
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	1/9/2013
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	150
+Waermeerzeugertemperatur: 	 	 	44
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	49
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:01 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	5/0/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	99
+Waermeerzeugertemperatur: 	 	 	67
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	389
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476136800000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=41,WEEK_OF_MONTH=2,DAY_OF_MONTH=11,DAY_OF_YEAR=285,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476741600000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=42,WEEK_OF_MONTH=3,DAY_OF_MONTH=18,DAY_OF_YEAR=292,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=3,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476136800000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=41,WEEK_OF_MONTH=2,DAY_OF_MONTH=11,DAY_OF_YEAR=285,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+10:00 - 12:00 Uhr]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Hausmeister bei Muster klingeln
+Abcweg 123, 3000 Bern]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [07978885599 anrufen bei Ankunft
+Musterweg 456, 1000 Genf]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Türe ist offen
+Musterweg 456, 2000 Neuchâtel]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 65Brenner: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 46Brenner: Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 88Brenner: Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Matthias
+Name: 
+Perrollaz
+Strasse: 
+Musterstrasse 2
+Ort: 1000 Genf
+Telefon: 1234557678
+eMail: 
+m.p@feukora.ch
+Rolle Intern: 2
+User: Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: 3000 Bern
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Pascal
+Name: 
+Steiner
+Strasse: 
+Musterstrasse 4
+Ort: 5000 Aarau
+Telefon: 1234567678
+eMail: 
+p.st@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Luca
+Name: 
+Raneri
+Strasse: 
+Musterstrasse 5
+Ort: 6000 Luzern
+Telefon: 1234567178
+eMail: 
+l.r@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Alexandra
+Name: 
+Lengen
+Strasse: 
+Musterstrasse 1
+Ort: 8000 Zürich
+Telefon: 1234563678
+eMail: 
+a.l@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+ale
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Martina Meyer
+Altstrasse 1, 5000 Aarau
+0633335577]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Christoph Müller
+Neustrasse 1, 4000 Basel
+0554445577]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Heiri Muster
+Bernstrasse 1, 1000 Genf
+0688885577]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Christof Meyer
+Gassweg 1, 2000 Neuchâtel
+0633335577]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Hanna Putz
+Malweg 5, 1000 Genf
+0637777777]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Martina Zäh
+Altstrasse 90, 3000 Bern
+0633888877]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Tina Bär
+Waserstrasse 4, 2000 Neuchâtel
+0222235577]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Rudolf Santa
+Zaubergass 7, 6000 Luzern
+0699999997]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [8000 Zürich]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [6000 Luzern]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [5000 Aarau]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [3000 Bern]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [1000 Genf]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [2000 Neuchâtel]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [4000 Basel]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	3/7/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	120
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	2/8/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	5/10/2012
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	75
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	7/4/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	111
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	99
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	9/2/2014
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	200
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	10/1/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	140
+Waermeerzeugertemperatur: 	 	 	99
+Verbrennungstemperatur: 	 	 	150
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	29/6/2016
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	133
+Waermeerzeugertemperatur: 	 	 	100
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	30/7/2009
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	150
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	55
+O2Gehalt: 	 	 	9
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	1/9/2013
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	150
+Waermeerzeugertemperatur: 	 	 	44
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	49
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:02 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	5/0/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	99
+Waermeerzeugertemperatur: 	 	 	67
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	389
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476136800000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=41,WEEK_OF_MONTH=2,DAY_OF_MONTH=11,DAY_OF_YEAR=285,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476741600000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=42,WEEK_OF_MONTH=3,DAY_OF_MONTH=18,DAY_OF_YEAR=292,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=3,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476136800000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=41,WEEK_OF_MONTH=2,DAY_OF_MONTH=11,DAY_OF_YEAR=285,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+10:00 - 12:00 Uhr]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Hausmeister bei Muster klingeln
+Abcweg 123, 3000 Bern]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [07978885599 anrufen bei Ankunft
+Musterweg 456, 1000 Genf]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Türe ist offen
+Musterweg 456, 2000 Neuchâtel]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 65Brenner: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 46Brenner: Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 88Brenner: Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Matthias
+Name: 
+Perrollaz
+Strasse: 
+Musterstrasse 2
+Ort: 1000 Genf
+Telefon: 1234557678
+eMail: 
+m.p@feukora.ch
+Rolle Intern: 2
+User: Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: 3000 Bern
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Pascal
+Name: 
+Steiner
+Strasse: 
+Musterstrasse 4
+Ort: 5000 Aarau
+Telefon: 1234567678
+eMail: 
+p.st@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Luca
+Name: 
+Raneri
+Strasse: 
+Musterstrasse 5
+Ort: 6000 Luzern
+Telefon: 1234567178
+eMail: 
+l.r@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Alexandra
+Name: 
+Lengen
+Strasse: 
+Musterstrasse 1
+Ort: 8000 Zürich
+Telefon: 1234563678
+eMail: 
+a.l@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+ale
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Martina Meyer
+Altstrasse 1, 5000 Aarau
+0633335577]  wird gelöscht
+2016-05-26 12:49:03 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Christoph Müller
+Neustrasse 1, 4000 Basel
+0554445577]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Heiri Muster
+Bernstrasse 1, 1000 Genf
+0688885577]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Christof Meyer
+Gassweg 1, 2000 Neuchâtel
+0633335577]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Hanna Putz
+Malweg 5, 1000 Genf
+0637777777]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Martina Zäh
+Altstrasse 90, 3000 Bern
+0633888877]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Tina Bär
+Waserstrasse 4, 2000 Neuchâtel
+0222235577]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Rudolf Santa
+Zaubergass 7, 6000 Luzern
+0699999997]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [8000 Zürich]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [6000 Luzern]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [5000 Aarau]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [3000 Bern]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [1000 Genf]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [2000 Neuchâtel]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [4000 Basel]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	3/7/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	120
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	2/8/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	5/10/2012
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	75
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	7/4/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	111
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	99
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	9/2/2014
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	200
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	10/1/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	140
+Waermeerzeugertemperatur: 	 	 	99
+Verbrennungstemperatur: 	 	 	150
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	29/6/2016
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	133
+Waermeerzeugertemperatur: 	 	 	100
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	30/7/2009
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	150
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	55
+O2Gehalt: 	 	 	9
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	1/9/2013
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	150
+Waermeerzeugertemperatur: 	 	 	44
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	49
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	5/0/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	99
+Waermeerzeugertemperatur: 	 	 	67
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	389
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476136800000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=41,WEEK_OF_MONTH=2,DAY_OF_MONTH=11,DAY_OF_YEAR=285,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476741600000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=42,WEEK_OF_MONTH=3,DAY_OF_MONTH=18,DAY_OF_YEAR=292,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=3,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+8:00 - 10:00 Uhr]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Auftrag [nulljava.util.GregorianCalendar[time=1476136800000,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2016,MONTH=9,WEEK_OF_YEAR=41,WEEK_OF_MONTH=2,DAY_OF_MONTH=11,DAY_OF_YEAR=285,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=2,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=0,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+10:00 - 12:00 Uhr]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Hausmeister bei Muster klingeln
+Abcweg 123, 3000 Bern]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [07978885599 anrufen bei Ankunft
+Musterweg 456, 1000 Genf]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Liegenschaft [Türe ist offen
+Musterweg 456, 2000 Neuchâtel]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 65Brenner: Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz
+]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 46Brenner: Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü
+]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Feuerungsanlage [Feuerungsanlage: 
+Feuerungswärmeleistung KW: 88Brenner: Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015
+Waermeerzeuger: Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg
+]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	abc123
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2013]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	def456
+Brennertyp: 	 	 	2
+Baujahr: 	 	 	 	2014]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Brenner [Brenner:
+Brennerart: 	 	 	ghi789
+Brennertyp: 	 	 	1
+Baujahr: 	 	 	 	2015]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	1(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	qwertz]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	2(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	uiopü]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Waermeerzeuger [Wärmeerzeuger: 
+Brennstoff: 	 	 	3(1=Öl/2=Erdgas/3=Flüssiggas)
+Waermeerzeugertyp: 	 	asdfg]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Olivia
+Name: 
+Wassmer
+Strasse: 
+Musterstrasse 1
+Ort: 3000 Bern
+Telefon: 1234567678
+eMail: 
+o.w@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:04 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Matthias
+Name: 
+Perrollaz
+Strasse: 
+Musterstrasse 2
+Ort: 1000 Genf
+Telefon: 1234557678
+eMail: 
+m.p@feukora.ch
+Rolle Intern: 2
+User: Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Dominik
+Name: 
+Stirnimann
+Strasse: 
+Musterstrasse 3
+Ort: 3000 Bern
+Telefon: 1234367678
+eMail: 
+d.s@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Pascal
+Name: 
+Steiner
+Strasse: 
+Musterstrasse 4
+Ort: 5000 Aarau
+Telefon: 1234567678
+eMail: 
+p.st@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Luca
+Name: 
+Raneri
+Strasse: 
+Musterstrasse 5
+Ort: 6000 Luzern
+Telefon: 1234567178
+eMail: 
+l.r@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Mitarbeiter [Mitarbeiter: 
+Vorname: 
+Alexandra
+Name: 
+Lengen
+Strasse: 
+Musterstrasse 1
+Ort: 8000 Zürich
+Telefon: 1234563678
+eMail: 
+a.l@feukora.ch
+Rolle Intern: 1
+User: Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+
+Lohn: 5000
+Arbeitet seit: 
+1/5/2016
+Arbeitet bis: 
+1/5/2016
+]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+ale
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+lra
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+pst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+dst
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+mpe
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Benutzer [Benutzerdaten:
+Benutzername: 
+owa
+Password: 	 	 	***
+]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Martina Meyer
+Altstrasse 1, 5000 Aarau
+0633335577]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Christoph Müller
+Neustrasse 1, 4000 Basel
+0554445577]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Heiri Muster
+Bernstrasse 1, 1000 Genf
+0688885577]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Christof Meyer
+Gassweg 1, 2000 Neuchâtel
+0633335577]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Hanna Putz
+Malweg 5, 1000 Genf
+0637777777]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Martina Zäh
+Altstrasse 90, 3000 Bern
+0633888877]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Tina Bär
+Waserstrasse 4, 2000 Neuchâtel
+0222235577]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Kontakt [Rudolf Santa
+Zaubergass 7, 6000 Luzern
+0699999997]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [8000 Zürich]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [6000 Luzern]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [5000 Aarau]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [3000 Bern]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [1000 Genf]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [2000 Neuchâtel]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Ort [4000 Basel]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	3/7/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	120
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	2/8/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	55
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	5/10/2012
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	100
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	75
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	7/4/2011
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	111
+Waermeerzeugertemperatur: 	 	 	22
+Verbrennungstemperatur: 	 	 	99
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	9/2/2014
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	130
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	200
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	10/1/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	140
+Waermeerzeugertemperatur: 	 	 	99
+Verbrennungstemperatur: 	 	 	150
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	29/6/2016
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	133
+Waermeerzeugertemperatur: 	 	 	100
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	30/7/2009
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	true
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	150
+Waermeerzeugertemperatur: 	 	 	60
+Verbrennungstemperatur: 	 	 	55
+O2Gehalt: 	 	 	9
+Abgasverluste: 	 	 	5
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	1/9/2013
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	150
+Waermeerzeugertemperatur: 	 	 	44
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	49
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
+2016-05-26 12:49:05 INFO  GenericPersisterImpl:100 - Entity vom Typ Messung [Messung:
+Messdatum: 	 	 	5/0/2015
+Russzahl: 	 	 	4
+Kohlenstoff: 	 	 	8
+Oelanteil: 	 	 	false
+Stickstoffgehalt: 	 	 	4
+Abgastemperatur: 	 	 	99
+Waermeerzeugertemperatur: 	 	 	67
+Verbrennungstemperatur: 	 	 	70
+O2Gehalt: 	 	 	3
+Abgasverluste: 	 	 	389
+Die geltenden LRV-Grenzwerte werden eingehalten. Es sind keine Massnahmen nötig. 
+]  wird gelöscht
