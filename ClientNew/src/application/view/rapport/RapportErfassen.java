@@ -161,9 +161,9 @@ public class RapportErfassen {
 		feuerungsleistung = String.valueOf(feuerungs.getFeuerungswaermeleistung());
 	}
 
-	/*
-	 * public void messwertePruefen() {
-	 *
+
+	 public void messwertePruefen() {
+	 /*
 	 *
 	 * Messung messung1stufe1 = null, messung2stufe1 = null, messung1stufe2 =
 	 * null, messung2stufe2 = null; try { messung1stufe1 =
@@ -235,8 +235,8 @@ public class RapportErfassen {
 	 * if (notokey5) { cbRusszahl.setSelected(true); } } }else{
 	 * cbBeurteilung.setSelected(true); lblRueckmeldung.setText(
 	 * "sollte eigentlich funktionieren"); break; } } }
-	 *
 	 */
+	 }
 	/**
 	 * Hier wird nun der Auftrag endgültig abgespeichert
 	 */
