@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="583.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.dashboard.Dashboard">
+  <children>
+      <Pane fx:id="leaf" prefHeight="568.0" prefWidth="640.0">
+         <children>
+            <ImageView fitHeight="552.0" fitWidth="640.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../../../../../Desktop/Bilder%20GUI/Background/Background_weiss_ver.jpg" />
+               </image>
+            </ImageView>
+            <VBox prefHeight="552.0" prefWidth="640.0">
+               <children>
+                  <VBox prefHeight="45.0" prefWidth="640.0" />
+                  <HBox prefHeight="182.0" prefWidth="640.0">
+                     <children>
+                        <Pane prefHeight="141.0" prefWidth="50.0" />
+                        <Button fx:id="btnTerminUebersicht" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#terminVerwaltung" prefHeight="150.0" prefWidth="150.0" text="Terminkalender" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../../Desktop/Bilder%20GUI/Icons/clock.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Pane prefHeight="200.0" prefWidth="40.0" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../Desktop/Bilder%20GUI/Icons/nature.png" />
+                           </image>
+                        </ImageView>
+                        <Pane prefHeight="200.0" prefWidth="40.0" />
+                        <Button fx:id="btnRapportUebersicht" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#rapportVerwalten" prefHeight="150.0" prefWidth="150.0" text="Aufträge">
+                           <graphic>
+                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../../Desktop/Bilder%20GUI/Icons/check.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Pane prefHeight="200.0" prefWidth="50.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="197.0" prefWidth="640.0">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="130.0" />
+                        <Button fx:id="btnLiegenschaftUebersicht" contentDisplay="TOP" mnemonicParsing="false" onAction="#liegenschaftVerwaltung" prefHeight="150.0" prefWidth="150.0" text="Liegenschaften">
+                           <graphic>
+                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../../Desktop/Bilder%20GUI/Icons/house.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Pane prefHeight="150.0" prefWidth="40.0" />
+                        <Button fx:id="btnEigentuemerUebersicht" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#kontaktVerwaltung" prefHeight="150.0" prefWidth="150.0" text="Kontakte">
+                           <graphic>
+                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../../Desktop/Bilder%20GUI/Icons/two.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="136.0" prefWidth="640.0">
+                     <children>
+                        <Pane prefHeight="136.0" prefWidth="240.0" />
+                        <Button alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="70.0" prefWidth="150.0" text="Logout" textAlignment="CENTER">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Pane prefHeight="200.0" prefWidth="240.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+  </children>
+</VBox>

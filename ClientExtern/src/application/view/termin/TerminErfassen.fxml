@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="leaf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.termin.TerminErfassen">
+   <children>
+      <ImageView fitHeight="480.0" fitWidth="640.0" pickOnBounds="true" />
+      <BorderPane prefHeight="480.0" prefWidth="640.0">
+         <top>
+            <VBox prefHeight="46.0" prefWidth="640.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label prefHeight="61.0" prefWidth="640.0" text="     Neuer Termin erfassen">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font></Label>
+               </children>
+            </VBox>
+         </top>
+         <bottom>
+            <HBox prefHeight="24.0" prefWidth="640.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="0.0" prefWidth="640.0" />
+                  <Pane prefHeight="34.0" prefWidth="6.0" />
+                  <Pane prefHeight="34.0" prefWidth="9.0" />
+               </children>
+            </HBox>
+         </bottom>
+         <left>
+            <Pane prefHeight="50.0" prefWidth="25.0" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <Pane prefHeight="578.0" prefWidth="23.0" styleClass="r" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="btnSuchen" layoutX="19.0" layoutY="71.0" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#liegenschaftSuchen" prefWidth="150.0" text="Suchen" />
+                  <Button fx:id="btnSpeichern" layoutX="12.0" layoutY="319.0" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#terminSpeichern" prefWidth="150.0" text="Speichern" />
+               </children></Pane>
+         </right>
+         <center>
+            <VBox prefHeight="299.0" prefWidth="511.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane maxHeight="20.0" minHeight="8.0" prefHeight="8.0" prefWidth="486.0" />
+                  <GridPane prefHeight="122.0" prefWidth="420.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="278.5" minWidth="10.0" prefWidth="165.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="427.0" minWidth="10.0" prefWidth="321.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="29.5" minHeight="29.5" prefHeight="29.5" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Strasse" GridPane.rowIndex="6" />
+                        <Label text="PLZ" GridPane.rowIndex="7" />
+                        <Label text="Ort" GridPane.rowIndex="8" />
+                        <Label text="Strasse &amp; Nr." GridPane.rowIndex="1" />
+                        <TextField fx:id="txtStrasseL" prefHeight="25.0" prefWidth="352.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtOrtL" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtStrasseK" disable="true" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="txtPlzK" disable="true" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Label layoutX="21.0" layoutY="18.0" text="Ort" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtOrtK" disable="true" editable="false" layoutX="285.0" layoutY="104.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Label layoutX="21.0" layoutY="138.0" text="Nachname" GridPane.rowIndex="5" />
+                        <Label layoutX="21.0" layoutY="138.0" text="Vorname" GridPane.rowIndex="4" />
+                        <Label layoutX="21.0" layoutY="48.0" text="Liegenschaft:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtNachnameK" disable="true" editable="false" layoutX="285.0" layoutY="194.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="txtVornameK" disable="true" editable="false" layoutX="285.0" layoutY="164.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label layoutX="21.0" layoutY="18.0" text="Kunde:" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <Pane prefHeight="10.0" prefWidth="200.0" />
+                  <GridPane prefHeight="90.0" prefWidth="421.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="278.5" minWidth="10.0" prefWidth="167.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="412.5" minWidth="10.0" prefWidth="319.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <DatePicker fx:id="dateoftermin" prefHeight="22.0" prefWidth="162.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Zeitslot" />
+                        <Label text="Datum" GridPane.rowIndex="1" />
+                        <Label text="Feuerungskontrolleur" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="cFK" prefHeight="22.0" prefWidth="163.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="cZeitslot" layoutX="290.0" layoutY="71.0" prefHeight="23.0" prefWidth="161.0" GridPane.columnIndex="1" />
+                        <Label text="Terminart" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="cTerminArt" layoutX="177.0" layoutY="103.0" prefHeight="22.0" prefWidth="163.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+      <Button fx:id="btnAbbrechen" layoutX="629.0" layoutY="406.0" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#abbrechen" prefHeight="25.0" prefWidth="150.0" text="Zurück" />
+   </children>
+</Pane>

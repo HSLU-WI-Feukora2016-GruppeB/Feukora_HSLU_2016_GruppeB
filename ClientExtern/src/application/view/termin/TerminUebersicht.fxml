@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="leaf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.termin.TerminUebersicht">
+   <children>
+      <BorderPane prefHeight="616.0" prefWidth="966.0">
+         <top>
+            <VBox prefHeight="59.0" prefWidth="966.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label prefHeight="44.0" prefWidth="403.0" text="Terminübersicht - KontrolleurIn">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Label>
+               </children>
+            </VBox>
+         </top>
+         <left>
+            <Pane prefHeight="316.0" prefWidth="20.0" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <Pane prefHeight="316.0" prefWidth="20.0" BorderPane.alignment="CENTER" />
+         </right>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <GridPane prefHeight="546.0" prefWidth="926.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="0.0" prefWidth="0.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="900.0" minWidth="10.0" prefWidth="900.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="0.0" prefWidth="0.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="470.0" minHeight="470.0" prefHeight="470.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="21.0" minHeight="0.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="29.5" minHeight="29.5" prefHeight="29.5" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="61.5" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="63.5" minHeight="10.0" prefHeight="58.5" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="40.5" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="64.0" minHeight="10.0" prefHeight="63.5" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="61.5" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="34.5" minHeight="10.0" prefHeight="19.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="174.0" text="Montag" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label prefHeight="68.0" prefWidth="184.0" style="-fx-background-color: #AFEEEE;" text="8:00 - 10:00" GridPane.rowIndex="6" />
+                              <Label prefHeight="103.0" prefWidth="265.0" style="-fx-background-color: #AFEEEE;" text="10:00 - 12:00" GridPane.rowIndex="7" />
+                              <Label prefHeight="21.0" prefWidth="161.0" text="Dienstag" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Label prefHeight="64.0" prefWidth="150.0" style="-fx-background-color: #AFEEEE;" text="15:00 - 17:00" GridPane.rowIndex="10" />
+                              <Label prefHeight="65.0" prefWidth="150.0" style="-fx-background-color: #AFEEEE;" text="13:00 - 15:00" GridPane.rowIndex="9" />
+                              <Label prefHeight="21.0" prefWidth="179.0" text="Mittwoch" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                              <Label prefHeight="21.0" prefWidth="208.0" text="Donnerstag" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                              <Label prefHeight="4.0" prefWidth="150.0" text="Freitag" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                              <Label text="Von" />
+                              <Label text="Bis" GridPane.rowIndex="1" />
+                              <DatePicker fx:id="startDatum" prefHeight="31.0" prefWidth="304.0" GridPane.columnIndex="1" />
+                              <DatePicker fx:id="endDatum" disable="true" nodeOrientation="LEFT_TO_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="T1Z1" onMouseClicked="#rapportOeffnen" prefHeight="64.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <TextField fx:id="T1Z2" prefHeight="68.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <TextField fx:id="T1Z3" onAction="#wocheAnzeigen" prefHeight="62.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                              <TextField fx:id="T1Z4" onAction="#wocheAnzeigen" prefHeight="63.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                              <TextField fx:id="T2Z1" onAction="#wocheAnzeigen" prefHeight="66.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                              <TextField fx:id="T2Z2" onAction="#wocheAnzeigen" prefHeight="67.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                              <TextField fx:id="T3Z1" onAction="#wocheAnzeigen" prefHeight="74.0" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                              <TextField fx:id="T4Z1" onAction="#wocheAnzeigen" prefHeight="59.0" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                              <TextField fx:id="T5Z1" onAction="#wocheAnzeigen" prefHeight="59.0" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                              <TextField fx:id="T4Z2" onAction="#wocheAnzeigen" prefHeight="60.0" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                              <TextField fx:id="T3Z2" onAction="#wocheAnzeigen" prefHeight="60.0" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                              <TextField fx:id="T5Z2" onAction="#wocheAnzeigen" prefHeight="60.0" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                              <TextField fx:id="T2Z3" onAction="#wocheAnzeigen" prefHeight="66.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                              <TextField fx:id="T2Z4" onAction="#wocheAnzeigen" prefHeight="63.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                              <TextField fx:id="T3Z3" onAction="#wocheAnzeigen" prefHeight="67.0" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                              <TextField fx:id="T3Z4" onAction="#wocheAnzeigen" prefHeight="65.0" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                              <TextField fx:id="T4Z3" onAction="#wocheAnzeigen" prefHeight="69.0" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                              <TextField fx:id="T4Z4" onAction="#wocheAnzeigen" prefHeight="68.0" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+                              <TextField fx:id="T5Z3" onAction="#wocheAnzeigen" prefHeight="61.0" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+                              <TextField fx:id="T5Z4" onAction="#wocheAnzeigen" prefHeight="58.0" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+                              <Label text="Mittagspause" GridPane.rowIndex="8" />
+                              <TextField fx:id="txtMontag" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <TextField fx:id="txtDienstag" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <TextField fx:id="txtMittwoch" disable="true" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                              <TextField fx:id="txtDonnerstag" disable="true" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                              <TextField fx:id="txtFreitag" disable="true" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                              <Button fx:id="btnWocheAnzeigen" mnemonicParsing="false" onAction="#wocheAnzeigen" text="Anzeigen" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <Label fx:id="lblRueckmeldung" layoutX="10.0" layoutY="279.0" lineSpacing="2.0" prefHeight="30.0" prefWidth="159.0" text="   " textFill="#eb0c0c" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font></Label>
+                              <Label prefHeight="17.0" prefWidth="149.0" text="Feuerungskontrolleur" GridPane.rowIndex="2" />
+                              <ComboBox fx:id="ddFK" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                        <HBox prefHeight="33.0" prefWidth="966.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <Pane prefHeight="50.0" prefWidth="399.0">
+                                 <children>
+                                    <Label fx:id="lblDruckRueckmeldung" layoutX="238.0" layoutY="1.0" prefHeight="45.0" prefWidth="161.0" text="  " textFill="#e20e0e" textOverrun="CENTER_WORD_ELLIPSIS" />
+                                    <Button fx:id="btnAbbrechen" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutY="5.0" maxWidth="150.0" mnemonicParsing="false" onAction="#abbrechen" text="Zurück" textAlignment="CENTER" />
+                                 </children></Pane>
+                              <Pane prefHeight="47.0" prefWidth="267.0" />
+                              <Button fx:id="btnAktuelleTerminliste" maxWidth="240.0" minWidth="240.0" mnemonicParsing="false" onAction="#terminDrucken" prefWidth="240.0" text="Aktuelle Terminliste Drucken" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</Pane>
