@@ -10,7 +10,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-
 /**
  * Dies ist die Dokumentation der Klasse Main. Von hier aus wird das Programm
  * gestartet.
@@ -22,21 +21,11 @@ import javafx.scene.control.TextField;
 
 public class Main extends Application {
 
-	@FXML
-	private Button btnLogin;
-
-	@FXML
-	private TextField txtusername;
-
-	@FXML
-	private PasswordField txtpassword;
-
-	@FXML
-	private Label lblRueckmeldung;
-
 	/**
 	 * Diese Methode öffnet das Login-Fenster zur Authentisierung des Users.
-	 * @param primaryStage Login-Fenster
+	 *
+	 * @param primaryStage
+	 *            Login-Fenster
 	 */
 	@Override
 	public void start(Stage primaryStage) {
@@ -57,7 +46,7 @@ public class Main extends Application {
 	/**
 	 * Hier startet das Hauptprogramm
 	 */
-	public static void main(String[] args) throws Exception{
+	public static void main(String[] args) throws Exception {
 		RmiUtil.initialize();
 		launch(args);
 	}

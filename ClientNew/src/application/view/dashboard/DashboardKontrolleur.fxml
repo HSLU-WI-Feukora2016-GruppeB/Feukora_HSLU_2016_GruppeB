@@ -104,7 +104,7 @@
                   <HBox prefHeight="136.0" prefWidth="640.0">
                      <children>
                         <Pane prefHeight="136.0" prefWidth="240.0" />
-                        <Button alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="70.0" prefWidth="150.0" text="Logout" textAlignment="CENTER">
+                        <Button fx:id="btnLogout" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#abbrechen" prefHeight="70.0" prefWidth="150.0" text="Logout" textAlignment="CENTER">
                            <font>
                               <Font size="13.0" />
                            </font>

@@ -1,6 +1,5 @@
 package application.view.login;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +33,7 @@ import javafx.stage.Stage;
 import rmi.interfaces.KontaktRO;
 
 /**
- *Managed das Login und die Authentifizierung
+ * Managed das Login und die Authentifizierung
  *
  * @author Pascal Steiner & Alexandra Lenggen
  * @version 1.0
@@ -72,7 +71,7 @@ public class Login {
 		}
 	}
 
-	public void initialize(){
+	public void initialize() {
 		/*---------------RMI Verbindung---------------*/
 
 		/* Lookup */
@@ -81,7 +80,6 @@ public class Login {
 
 		/*----------------------------------------------*/
 	}
-
 
 	/**
 	 * Diese Methode authentisiert und authorisiert den User.
@@ -94,61 +92,52 @@ public class Login {
 		Mitarbeiter mitarbeiter;
 		Benutzer mitsingle = null;
 
-
 		try {
 			List<Benutzer> mit = benutzerRO.findByUsername(entername);
 			mitsingle = mit.get(0);
 
+			if (mitsingle.getUsername().equals(entername) && mitsingle.getPassword().toString().equals(enterpassword)) {
 
-			if(mitsingle.getUsername().equals(entername) &&
-					mitsingle.getPassword().toString().equals(enterpassword)){
+				List<Mitarbeiter> list = mitarbeiterRO.findByBenutzer(mitsingle);
+				mitarbeiter = list.get(0);
+				String r = mitarbeiter.getRolleIntern();
+				switch (r) {
 
-						List<Mitarbeiter> list = mitarbeiterRO.findByBenutzer(mitsingle);
-						mitarbeiter = list.get(0);
-String r = mitarbeiter.getRolleIntern();
-			switch(r){
+				case "Sachbearbeiter":
 
-						case "Sachbearbeiter":
+					Stage DashboardFKStage = new Stage();
 
-								Stage DashboardFKStage = new Stage();
+					DashboardFKStage.setScene(new Scene(FXMLLoader
+							.load(getClass().getResource("/application/view/dashboard/DashboardKontrolleur.fxml"))));
 
-								DashboardFKStage.setScene(new Scene(FXMLLoader
-										.load(getClass().getResource("/application/view/dashboard/DashboardKontrolleur.fxml"))));
+					DashboardFKStage.show();
 
-								DashboardFKStage.show();
+					((Stage) leaf.getScene().getWindow()).close();
+					break;
 
-								((Stage) leaf.getScene().getWindow()).close();
-								break;
+				case "Administrator":
 
-						case "Administrator":
+					try {
+						Stage DashboardBOStage = new Stage();
 
-							try {
-								Stage DashboardBOStage = new Stage();
+						DashboardBOStage.setScene(new Scene(FXMLLoader
+								.load(getClass().getResource("/application/view/admin/BenutzerUebersicht.fxml"))));
+						DashboardBOStage.show();
 
-								DashboardBOStage
-										.setScene(new Scene(FXMLLoader.load(getClass().getResource("/application/view/admin/BenutzerUebersicht"))));
-								DashboardBOStage.show();
+						((Stage) leaf.getScene().getWindow()).close();
 
-								((Stage) leaf.getScene().getWindow()).close();
-
-							} catch (Exception e) {
-								e.printStackTrace();
-							}
-
-							break;
-
-						}
-					}else {
-						lblRueckmeldung.setText("Benutzername oder Passwort falsch");
+					} catch (Exception e) {
+						e.printStackTrace();
 					}
+
+					break;
+
+				}
+			} else {
+			}
 		} catch (Exception e1) {
-			lblRueckmeldung.setText("Login fehlgeschlagen");
+			lblRueckmeldung.setText("Benutzername oder Passwort falsch");
 		}
-
-
-
-
-
 
 	}
 

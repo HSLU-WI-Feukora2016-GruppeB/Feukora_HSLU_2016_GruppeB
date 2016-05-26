@@ -43,6 +43,11 @@
                   <Pane prefHeight="101.0" prefWidth="425.0">
                      <children>
                         <Button fx:id="btnLogin" layoutY="15.0" mnemonicParsing="false" onAction="#goLogin" onKeyPressed="#goLoginEvent" text="Login" />
+                        <Label fx:id="lblRueckmeldung" layoutX="57.0" layoutY="15.0" text="  " textFill="#e90808">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
                      </children></Pane>
                </children>
             </VBox>

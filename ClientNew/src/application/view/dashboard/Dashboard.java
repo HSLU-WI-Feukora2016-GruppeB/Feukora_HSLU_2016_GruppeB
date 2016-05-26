@@ -111,4 +111,11 @@ public class Dashboard {
 
 	}
 
+	/**
+	 * Diese Methode führt den User zum Dashboard zurück
+	 */
+	public void abbrechen() {
+		((Stage) leaf.getScene().getWindow()).close();
+	}
+
 }
