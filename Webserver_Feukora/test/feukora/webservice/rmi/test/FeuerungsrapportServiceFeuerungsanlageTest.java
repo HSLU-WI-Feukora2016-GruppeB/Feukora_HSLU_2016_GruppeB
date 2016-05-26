@@ -14,7 +14,6 @@ import org.junit.Test;
 import entitys.Brenner;
 import entitys.Feuerungsanlage;
 import entitys.Waermeerzeuger;
-import feukora.webservice.rmi.FeuerungsrapportService;
 import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
 
 /**
@@ -27,7 +26,7 @@ import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
  */
 public class FeuerungsrapportServiceFeuerungsanlageTest {
 
-	static FeuerungsrapportService fservice;
+	static feukora.webservice.rmi.FeuerungsrapportService fservice;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {

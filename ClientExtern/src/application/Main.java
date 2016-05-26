@@ -1,5 +1,7 @@
 	package application;
-
+	
+import webservice.rmi.FeuerungsrapportService;
+import webservice.rmi.FeuerungsrapportServiceImplService;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import java.util.*;
 
 
 /**
@@ -33,7 +36,10 @@ public class Main extends Application {
 
 	@FXML
 	private Label lblRueckmeldung;
-
+	
+	private static FeuerungsrapportServiceImplService service;
+	static FeuerungsrapportService proxy;
+	
 	/**
 	 * Diese Methode öffnet das Login-Fenster zur Authentisierung des Users.
 	 * @param primaryStage Login-Fenster
@@ -58,7 +64,11 @@ public class Main extends Application {
 	 * Hier startet das Hauptprogramm
 	 */
 	public static void main(String[] args) throws Exception{
-		WsUtil.initialize();
+		
+		service = new FeuerungsrapportServiceImplService();
+		
+		proxy = service.getFeuerungsrapportServiceImplPort()
+
 		launch(args);
 	}
 }

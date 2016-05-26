@@ -24,7 +24,6 @@ import entitys.Kontakt;
 import entitys.Liegenschaft;
 import entitys.Ort;
 import entitys.Waermeerzeuger;
-import feukora.webservice.rmi.FeuerungsrapportService;
 import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
 
 /**
@@ -37,7 +36,7 @@ import feukora.webservice.rmi.FeuerungsrapportServiceImpl;
  */
 public class FeuerungsrapportServiceLiegenschaftTest {
 
-	static FeuerungsrapportService fservice;
+	static feukora.webservice.rmi.FeuerungsrapportService fservice;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
