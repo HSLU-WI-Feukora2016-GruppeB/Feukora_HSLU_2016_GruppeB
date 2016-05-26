@@ -2,5 +2,5 @@
 <endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime"
 	version="2.0">
 	<endpoint name="Webserver_Feukora" implementation="feukora.webservice.rmi.FeuerungsrapportServiceImpl"
-		url-pattern="/*" />
+		url-pattern="/webservice" />
 </endpoints>

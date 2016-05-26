@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import application.WsUtil;
 import entitys.Auftrag;
 import entitys.Kontakt;
 import entitys.Liegenschaft;
@@ -23,10 +22,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import rmi.interfaces.AuftragRO;
-import rmi.interfaces.KontaktRO;
-import rmi.interfaces.LiegenschaftRO;
-import rmi.interfaces.MitarbeiterRO;
 
 /**
  * Dies ist die Dokumentation der Klasse TerminErfassen. Hier können neue
@@ -59,12 +54,12 @@ public class TerminErfassen {
 
 	private Stage ErfaStage = new Stage();
 
-	LiegenschaftRO liegenschaftRO;
-	Liegenschaft liegenschaft;
-	KontaktRO kontaktRO;
-	Kontakt kontakt;
-	MitarbeiterRO mitarbeiterRO;
-	AuftragRO auftragRo;
+//	LiegenschaftRO liegenschaftRO;
+//	Liegenschaft liegenschaft;
+//	KontaktRO kontaktRO;
+//	Kontakt kontakt;
+//	MitarbeiterRO mitarbeiterRO;
+//	AuftragRO auftragRo;
 	Auftrag auftrag;
 	Mitarbeiter kontrolleur;
 	int zeitslotint;
@@ -73,16 +68,6 @@ public class TerminErfassen {
 	@FXML
 	private void initialize() throws Exception {
 
-		/*---------------RMI Verbindung---------------*/
-
-		/* Lookup */
-		kontaktRO = WsUtil.getKontaktRO();
-		liegenschaftRO = WsUtil.getLiegenschaftRO();
-		mitarbeiterRO = WsUtil.getMitarbeiterRO();
-		auftragRo = WsUtil.getAuftragRO();
-
-		/*----------------------------------------------*/
-
 		List<String> terminarten = new ArrayList<String>();
 		terminarten.add("Routinekontrolle");
 		terminarten.add("Abnahmekontrolle");
@@ -90,14 +75,14 @@ public class TerminErfassen {
 		ObservableList<String> terminarten2 = FXCollections.observableList(terminarten);
 		cTerminArt.setItems(terminarten2);
 
-		List<Mitarbeiter> list = mitarbeiterRO.findAllMitarbeiter();
+//		List<Mitarbeiter> list = mitarbeiterRO.findAllMitarbeiter();
 		List<String> list3 = new ArrayList<String>();
-		for (Mitarbeiter i : list) {
-			String rolle = i.getRolleIntern();
-			if (rolle.equalsIgnoreCase("Kontrolleur")) {
-				list3.add(i.getName());
-			}
-		}
+//		for (Mitarbeiter i : list) {
+//			String rolle = i.getRolleIntern();
+//			if (rolle.equalsIgnoreCase("Kontrolleur")) {
+//				list3.add(i.getName());
+//			}
+//		}
 		ObservableList<String> list2 = FXCollections.observableList(list3);
 		cFK.setItems(list2);
 
@@ -128,19 +113,19 @@ public class TerminErfassen {
 
 		} else {
 
-			List<Liegenschaft> liegenschaftliste = liegenschaftRO.findByStrasse(strasse);
-
-			for (Liegenschaft l : liegenschaftliste) {
-				if (ort.equals(l.getOrt().getOrt())) {
-					liegenschaft = l;
-				}
-			}
-
-			txtNachnameK.setText(liegenschaft.getKontakt().getNachname());
-			txtVornameK.setText(liegenschaft.getKontakt().getVorname());
-			txtStrasseK.setText(liegenschaft.getKontakt().getStrasse());
-			txtOrtK.setText(liegenschaft.getKontakt().getOrt().getOrt());
-			txtPlzK.setText(String.valueOf(liegenschaft.getKontakt().getOrt().getPlz()));
+//			List<Liegenschaft> liegenschaftliste = liegenschaftRO.findByStrasse(strasse);
+//
+//			for (Liegenschaft l : liegenschaftliste) {
+//				if (ort.equals(l.getOrt().getOrt())) {
+//					liegenschaft = l;
+//				}
+//			}
+//
+//			txtNachnameK.setText(liegenschaft.getKontakt().getNachname());
+//			txtVornameK.setText(liegenschaft.getKontakt().getVorname());
+//			txtStrasseK.setText(liegenschaft.getKontakt().getStrasse());
+//			txtOrtK.setText(liegenschaft.getKontakt().getOrt().getOrt());
+//			txtPlzK.setText(String.valueOf(liegenschaft.getKontakt().getOrt().getPlz()));
 
 		}
 
@@ -160,10 +145,10 @@ public class TerminErfassen {
 			lblRueckmeldung.setText("Bitte alle Felder ausfüllen");
 
 		} else {
-			String kontaktstring = txtNachnameK.getText();
-			List<Kontakt> kontaktliste = new ArrayList<Kontakt>();
-			kontaktliste = kontaktRO.findByName(kontaktstring);
-			kontakt = kontaktliste.get(0);
+//			String kontaktstring = txtNachnameK.getText();
+//			List<Kontakt> kontaktliste = new ArrayList<Kontakt>();
+//			kontaktliste = kontaktRO.findByName(kontaktstring);
+//			kontakt = kontaktliste.get(0);
 
 			String zeitslot = (String) cZeitslot.getValue();
 
@@ -196,9 +181,9 @@ public class TerminErfassen {
 			}
 
 			String fk = cFK.getValue();
-			List<Mitarbeiter> kontrolleurliste = new ArrayList<Mitarbeiter>();
-			kontrolleurliste = mitarbeiterRO.findByName(fk);
-			kontrolleur = kontrolleurliste.get(0);
+//			List<Mitarbeiter> kontrolleurliste = new ArrayList<Mitarbeiter>();
+//			kontrolleurliste = mitarbeiterRO.findByName(fk);
+//			kontrolleur = kontrolleurliste.get(0);
 
 			LocalDate datum = dateoftermin.getValue();
 			int tag = datum.getDayOfMonth();
@@ -206,8 +191,8 @@ public class TerminErfassen {
 			int jahr = datum.getYear();
 			GregorianCalendar gcal = new GregorianCalendar(jahr, monat, tag);
 
-			auftrag = new Auftrag(kontakt, liegenschaft, kontrolleur, gcal, zeitslotint, terminartint);
-			auftragRo.add(auftrag);
+//			auftrag = new Auftrag(kontakt, liegenschaft, kontrolleur, gcal, zeitslotint, terminartint);
+//			auftragRo.add(auftrag);
 		}
 	}
 

@@ -3,9 +3,7 @@ package application.view.login;
 
 import java.util.List;
 
-import rmi.interfaces.BenutzerRO;
-import rmi.interfaces.MitarbeiterRO;
-import application.WsUtil;
+import application.Main;
 import entitys.Benutzer;
 import entitys.Mitarbeiter;
 
@@ -55,8 +53,8 @@ public class Login {
 	@FXML
 	private Pane leaf;
 
-	BenutzerRO benutzerRO;
-	MitarbeiterRO mitarbeiterRO;
+//	BenutzerRO benutzerRO;
+//	MitarbeiterRO mitarbeiterRO;
 
 	/**
 	 * Diese Methode öffnet die Methode goLogin() durch die Taste "Enter".
@@ -70,13 +68,7 @@ public class Login {
 	}
 
 	public void initialize(){
-		/*---------------RMI Verbindung---------------*/
-
-		/* Lookup */
-		benutzerRO = WsUtil.getBenutzerRO();
-		mitarbeiterRO = WsUtil.getMitarbeiterRO();
-
-		/*----------------------------------------------*/
+		lblRueckmeldung = new Label();
 	}
 
 
@@ -92,44 +84,51 @@ public class Login {
 		Benutzer mitsingle = null;
 
 
-		try {
-			List<Benutzer> mit = benutzerRO.findByUsername(entername);
-			mitsingle = mit.get(0);
+//		try {
+//			List<feukora.webservice.rmi.Benutzer> findBenutzerByUsername = Main.getFeuerungsRapportService().findBenutzerByUsername(entername);
+//			mitsingle = mit.get(0);
+//
+//
+//			if(mitsingle.getUsername().equals(entername) &&
+//					mitsingle.getPassword().toString().equals(enterpassword)){
+//
+//						List<Mitarbeiter> list = mitarbeiterRO.findByBenutzer(mitsingle);
+//						mitarbeiter = list.get(0);
+//String r = mitarbeiter.getRolleIntern();
+//			switch(r){
+//
+//						case "Kontrolleur":
+//
+//								Stage DashboardFKStage = new Stage();
+//
+//								DashboardFKStage.setScene(new Scene(FXMLLoader
+//										.load(getClass().getResource("/application/view/dashboard/DashboardKontrolleur.fxml"))));
+//
+//								DashboardFKStage.show();
+//
+//								((Stage) leaf.getScene().getWindow()).close();
+//								break;
+//
+//						}
+//					}else {
+//						lblRueckmeldung.setText("Benutzername oder Passwort falsch");
+//					}
+//		} catch (Exception e1) {
+//			lblRueckmeldung.setText("Login fehlgeschlagen");
+//		}
 
 
-			if(mitsingle.getUsername().equals(entername) &&
-					mitsingle.getPassword().toString().equals(enterpassword)){
-
-						List<Mitarbeiter> list = mitarbeiterRO.findByBenutzer(mitsingle);
-						mitarbeiter = list.get(0);
-String r = mitarbeiter.getRolleIntern();
-			switch(r){
-
-						case "Kontrolleur":
-
-								Stage DashboardFKStage = new Stage();
-
-								DashboardFKStage.setScene(new Scene(FXMLLoader
-										.load(getClass().getResource("/application/view/dashboard/DashboardKontrolleur.fxml"))));
-
-								DashboardFKStage.show();
-
-								((Stage) leaf.getScene().getWindow()).close();
-								break;
-
-						}
-					}else {
-						lblRueckmeldung.setText("Benutzername oder Passwort falsch");
-					}
-		} catch (Exception e1) {
-			lblRueckmeldung.setText("Login fehlgeschlagen");
-		}
+		
 
 
 
+	}
 
-
-
+	/**
+	 * Diese Methode führt den User zum Dashboard zurück
+	 */
+	public void abbrechen() {
+		((Stage) leaf.getScene().getWindow()).close();
 	}
 
 }

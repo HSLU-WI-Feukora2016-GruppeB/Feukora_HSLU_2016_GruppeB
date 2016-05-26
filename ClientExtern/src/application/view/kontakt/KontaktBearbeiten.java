@@ -4,16 +4,14 @@ package application.view.kontakt;
 import java.util.ArrayList;
 import java.util.List;
 
-import application.WsUtil;
-import entitys.Kontakt;
-import entitys.Ort;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import rmi.interfaces.KontaktRO;
-import rmi.interfaces.OrtRO;
+import application.Main;
+import feukora.webservice.rmi.Kontakt;
+import feukora.webservice.rmi.Ort;
 
 
 /**
@@ -25,9 +23,6 @@ import rmi.interfaces.OrtRO;
  *
  */
 public class KontaktBearbeiten {
-
-	OrtRO ortRO;
-	KontaktRO kontaktRO;
 
 	@FXML
 	private TextField txtName, txtVorname, txtOrt, txtPLZ, txtEmail, txtTelefonNr, txtStrasse;
@@ -48,22 +43,14 @@ public class KontaktBearbeiten {
 	static String lohn2;
 	static String plz;
 
-	static Kontakt kontaktupdate;
-
+	static entitys.Kontakt kontaktupdate;
+	
 	/**
 	 * Initialisiert die Felder von bekommeMitarbeiter()
 	 *
 	 * @throws Exception
 	 */
 	public void initialize() throws Exception {
-
-		/*---------------RMI Verbindung---------------*/
-
-		/* Lookup */
-		kontaktRO = WsUtil.getKontaktRO();
-		ortRO =WsUtil.getOrtRO();
-
-		/*----------------------------------------------*/
 
 		txtName.setText(name);
 		txtVorname.setText(vorname);
@@ -81,7 +68,7 @@ public class KontaktBearbeiten {
 	 * @param kontaktbearbeitet
 	 * @throws Exception
 	 */
-	public static void bekommeKontakt(Kontakt kontaktbearbeitet) throws Exception {
+	public static void bekommeKontakt(entitys.Kontakt kontaktbearbeitet) throws Exception {
 		kontaktupdate = kontaktbearbeitet;
 
 		name = kontaktbearbeitet.getNachname();
@@ -126,12 +113,15 @@ public class KontaktBearbeiten {
 			}
 
 			try {
+				
 				Kontakt updatekontakt = updateKontakt(name, vorname, strasse, ort, plzint, email, telefonnr);
+				Kontakt kontakt = updatekontakt;
+				
 				// braucht es dieses this? überspeichere ich wirklich das alte
 				// Objekt?
 				// evtl lösung könnte sein das alte einfach löschen und ein neue
 				// erstellen
-				this.kontaktRO.update(updatekontakt);
+				Main.getFeuerungsRapportService().updateKontakt(updatekontakt);
 			} catch (Exception e) {
 				lblRueckmeldung.setText("Das überscheiben hat nicht funktioniert");
 				e.printStackTrace();
@@ -163,7 +153,7 @@ public class KontaktBearbeiten {
 	private Kontakt updateKontakt(String name, String vorname, String strasse, String ort, int plz, String email,
 			String telefonnr) throws Exception {
 
-		List<Ort> ortsliste = new ArrayList<Ort>();
+//		List<Ort> ortsliste = new ArrayList<Ort>();
 
 		kontaktupdate.setNachname(name);
 		kontaktupdate.setVorname(vorname);
@@ -173,26 +163,27 @@ public class KontaktBearbeiten {
 
 		// zu erst auf liste speichern damit man nachher das zweite der Liste
 		// prüfen kann falls nicht übereinstimmt
-		ortsliste = ortRO.findByOrtPlz(plz);
+//		ortsliste = Main.getFeuerungsRapportService().findOrtByPlz(plz);
+		List<Ort> ortsliste = Main.getFeuerungsRapportService().findOrtByPlz(plz);
 
 		// durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die
 		// gleiche ist.
-		boolean found = false;
-		for (Ort o : ortsliste) {
-			if (ort.equals(o.getOrt())) {
-				kontaktupdate.setOrt(o);
-				found = true;
-				break;
-			}
-		}
+//		boolean found = false;
+//		for (Ort o : ortsliste) {
+//			if (ort.equals(o.getOrt())) {
+//				kontaktupdate.setOrt(o);
+//				found = true;
+//				break;
+//			}
+//		}
 		// wenn nicht gefunden wird neuöer ort hinzugefügt
 		// orte können nicht upgedated werden etweder gefunden oder neu
-		if (!found) {
-			Ort ortDb = ortRO.add(new Ort(plz, ort));
-			kontaktupdate.setOrt(ortDb);
-		}
+//		if (!found) {
+//			Ort ortDb = Main.getFeuerungsRapportService().add(new Ort(plz, ort));
+//			kontaktupdate.setOrt(ortDb);
+//		}
 
-		return kontaktupdate;
+		return null;
 	}
 
 }

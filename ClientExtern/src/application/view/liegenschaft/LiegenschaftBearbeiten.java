@@ -2,7 +2,8 @@ package application.view.liegenschaft;
 
 import java.util.ArrayList;
 import java.util.List;
-import application.WsUtil;
+
+import application.Main;
 import entitys.Brenner;
 import entitys.Feuerungsanlage;
 import entitys.Kontakt;
@@ -21,12 +22,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import rmi.interfaces.BrennerRO;
-import rmi.interfaces.FeuerungsanlageRO;
-import rmi.interfaces.KontaktRO;
-import rmi.interfaces.LiegenschaftRO;
-import rmi.interfaces.OrtRO;
-import rmi.interfaces.WaermeerzeugerRO;
 
 /**
  * Dies ist die Dokumentation der Klasse LiegenschaftBearbeiten. Mit ihr können
@@ -67,27 +62,8 @@ public class LiegenschaftBearbeiten {
 	static String strassel, ortl, plzl, infovorort, feuerungsleistung, vorname, nachname, brennertyp, brennerart,
 			brennerjahr, waermetyp, waermeart, waermejahr;
 
-	KontaktRO kontaktRO;
-	LiegenschaftRO liegenschaftRO;
-	WaermeerzeugerRO waermeerzeugerRO;
-	BrennerRO brennerRO;
-	OrtRO ortRO;
-	FeuerungsanlageRO feuerungsanlageRO;
 
 	public void initialize() throws Exception {
-
-		/*---------------RMI Verbindung---------------*/
-
-		/* Lookup */
-		kontaktRO = WsUtil.getKontaktRO();
-		brennerRO = WsUtil.getBrennerRO();
-		feuerungsanlageRO = WsUtil.getFeuerungsanlageRO();
-		kontaktRO = WsUtil.getKontaktRO();
-		liegenschaftRO = WsUtil.getLiegenschaftRO();
-		ortRO = WsUtil.getOrtRO();
-		waermeerzeugerRO = WsUtil.getWaermeerzeugerRO();
-
-		/*----------------------------------------------*/
 
 		// Kontaktanzeigen
 		ArrayList<Kontakt> setkontakt = new ArrayList<Kontakt>();
@@ -240,15 +216,15 @@ public class LiegenschaftBearbeiten {
 
 			int leistungint = Integer.parseInt(leistung);
 
-			try {
-				Liegenschaft newliegenschaft = updateLiegenschaft(strasse, plzint, ort, infovorort, brennertyp,
-						brennerA, brennerJ, waermetyp, waermeA, waermeJ, leistungint);
-				liegenschaftRO.update(newliegenschaft);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				lblRueckmeldung.setText("Liegenschaft konnte nicht gespeichert werden");
-				e.printStackTrace();
-			}
+//			try {
+//				Liegenschaft newliegenschaft = updateLiegenschaft(strasse, plzint, ort, infovorort, brennertyp,
+//						brennerA, brennerJ, waermetyp, waermeA, waermeJ, leistungint);
+//				Main.getFeuerungsRapportService().update(newliegenschaft);
+//			} catch (Exception e) {
+//				// TODO Auto-generated catch block
+//				lblRueckmeldung.setText("Liegenschaft konnte nicht gespeichert werden");
+//				e.printStackTrace();
+//			}
 			((Stage) leaf.getScene().getWindow()).close();
 		}
 	}
@@ -266,22 +242,22 @@ public class LiegenschaftBearbeiten {
 
 		} else {
 
-			try {
-				List<Kontakt> list = kontaktRO.findByNameVorname(nameK, vornameK);
-				ObservableList<Kontakt> list2 = FXCollections.observableList(list);
-
-				tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
-				tblNachname.setCellValueFactory(new PropertyValueFactory<>("nachname"));
-				tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
-				tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
-				tblTelefon.setCellValueFactory(new PropertyValueFactory<>("tel"));
-				tblEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
-
-				tvKundentbl.setItems(list2);
-
-			} catch (Exception e) {
-				lblRueckmeldung.setText("Kontakt wurde nicht gefunden");
-			}
+//			try {
+//				List<Kontakt> list = Main.getFeuerungsRapportService().findByNameVorname(nameK, vornameK);
+//				ObservableList<Kontakt> list2 = FXCollections.observableList(list);
+//
+//				tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
+//				tblNachname.setCellValueFactory(new PropertyValueFactory<>("nachname"));
+//				tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
+//				tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
+//				tblTelefon.setCellValueFactory(new PropertyValueFactory<>("tel"));
+//				tblEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+//
+//				tvKundentbl.setItems(list2);
+//
+//			} catch (Exception e) {
+//				lblRueckmeldung.setText("Kontakt wurde nicht gefunden");
+//			}
 		}
 	}
 
@@ -310,7 +286,7 @@ public class LiegenschaftBearbeiten {
 
 		liegupdate.setStrasse(strasse);
 
-		ortsliste = ortRO.findByOrtPlz(plz);
+//		ortsliste = Main.getFeuerungsRapportService().findByOrtPlz(plz);
 
 		// durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die
 		// gleiche ist.
@@ -325,29 +301,29 @@ public class LiegenschaftBearbeiten {
 		}
 		// wenn nicht gefunden wird neuöer ort hinzugefügt
 		// orte können nicht upgedated werden etweder gefunden oder neu
-		if (!found) {
-			Ort ortDb = ortRO.add(new Ort(plz, ortbez));
-			liegupdate.setOrt(ortDb);
-		}
+//		if (!found) {
+//			Ort ortDb = Main.getFeuerungsRapportService().add(new Ort(plz, ortbez));
+//			liegupdate.setOrt(ortDb);
+//		}
 
 		liegupdate.setInfoVorOrt(info);
 
 		// neues Brenenrobjekt erstellen und speicher
 		Brenner brenner = liegupdate.getFeuerungsanlage().getBrenner();
 
-		Brenner brenner2 = brennerRO.update(brenner);
+//		Brenner brenner2 = Main.getFeuerungsRapportService().update(brenner);
 
 		// neues Waermeerzeugerobjekt erstellen und speicher
 		Waermeerzeuger waermeerzeuger = liegupdate.getFeuerungsanlage().getWaermeerzeuger();
 
-		Waermeerzeuger waermeerzeuger2 = waermeerzeugerRO.update(waermeerzeuger);
+//		Waermeerzeuger waermeerzeuger2 = Main.getFeuerungsRapportService().update(waermeerzeuger);
 
 		// Feuerungsanlageobjekt erstellen, speichern und Liegenschaft
 		// hinzufügen
 		Feuerungsanlage feuera = liegupdate.getFeuerungsanlage();
 
-		Feuerungsanlage feuera2 = feuerungsanlageRO.update(feuera);
-		liegupdate.setFeuerungsanlage(feuera2);
+//		Feuerungsanlage feuera2 = Main.getFeuerungsRapportService().updatLiegenschaft(feuera);
+//		liegupdate.setFeuerungsanlage(feuera2);
 
 		// Kontakt nehmen und hinzufügen
 		Kontakt indSelected = (Kontakt) tvKundentbl.getSelectionModel().getSelectedItem();

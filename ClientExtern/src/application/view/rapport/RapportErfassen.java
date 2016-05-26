@@ -2,7 +2,8 @@ package application.view.rapport;
 
 
 import java.util.GregorianCalendar;
-import application.WsUtil;
+
+import application.Main;
 import entitys.Auftrag;
 import entitys.Feuerungsanlage;
 import entitys.Liegenschaft;
@@ -14,9 +15,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import rmi.interfaces.AuftragRO;
-import rmi.interfaces.MessungRO;
-import rmi.interfaces.OrtRO;
 
 /**
  * Dies ist die Dokumentation der Klasse RapportErfassen. Hier werden neue
@@ -30,9 +28,7 @@ import rmi.interfaces.OrtRO;
 public class RapportErfassen {
 
 	static Auftrag ausgewaehlterauftrag;
-	MessungRO messungRO;
-	AuftragRO auftragRO;
-	OrtRO ortRO;
+
 
 	@FXML
 	private Button btnNeu;
@@ -81,15 +77,6 @@ public class RapportErfassen {
 	private Stage leaf;
 
 	public void initialize() throws Exception {
-
-		/*---------------RMI Verbindung---------------*/
-
-		/* Lookup */
-		messungRO = WsUtil.getMessungRO();
-		auftragRO = WsUtil.getAuftragRO();
-		ortRO = WsUtil.getOrtRO();
-
-		/*----------------------------------------------*/
 
 		// Kundenfelder setzen
 		txtName.setText(kundenname);
@@ -247,44 +234,44 @@ public class RapportErfassen {
 		try {
 
 			messung1stufe1 = this.createMessung1Stufe1();
-			if (messung1stufe1 != null) {
-				messung1stufe1.setAbgasverlusteNotOk(checkS1M1Abgas.isSelected());
-				messung1stufe1.setRusszahlNotOk(checkS1M1Russzahl.isSelected());
-				messung1stufe1.setCoMgNotOk(checkS1M1Co2.isSelected());
-				messung1stufe1.setNoMgNotOk(checkS1M1No2.isSelected());
-				messung1stufe1.setOelanteilenNotOk(checkS1M1Oel.isSelected());
-				messungRO.add(messung1stufe1);
-			}
+//			if (messung1stufe1 != null) {
+//				messung1stufe1.setAbgasverlusteNotOk(checkS1M1Abgas.isSelected());
+//				messung1stufe1.setRusszahlNotOk(checkS1M1Russzahl.isSelected());
+//				messung1stufe1.setCoMgNotOk(checkS1M1Co2.isSelected());
+//				messung1stufe1.setNoMgNotOk(checkS1M1No2.isSelected());
+//				messung1stufe1.setOelanteilenNotOk(checkS1M1Oel.isSelected());
+//				messungRO.add(messung1stufe1);
+//			}
 
 			messung1stufe2 = this.createMessung1Stufe2();
-			if (messung1stufe2 != null) {
-				messung1stufe2.setAbgasverlusteNotOk(checkS2M1Abgas.isSelected());
-				messung1stufe2.setRusszahlNotOk(checkS2M1Russzahl.isSelected());
-				messung1stufe2.setCoMgNotOk(checkS2M1Co2.isSelected());
-				messung1stufe2.setNoMgNotOk(checkS2M1No2.isSelected());
-				messung1stufe2.setOelanteilenNotOk(checkS2M1Oel.isSelected());
-				messungRO.add(messung1stufe2);
-			}
+//			if (messung1stufe2 != null) {
+//				messung1stufe2.setAbgasverlusteNotOk(checkS2M1Abgas.isSelected());
+//				messung1stufe2.setRusszahlNotOk(checkS2M1Russzahl.isSelected());
+//				messung1stufe2.setCoMgNotOk(checkS2M1Co2.isSelected());
+//				messung1stufe2.setNoMgNotOk(checkS2M1No2.isSelected());
+//				messung1stufe2.setOelanteilenNotOk(checkS2M1Oel.isSelected());
+//				Main.getFeuerungsRapportService().add(messung1stufe2);
+//			}
 
 			messung2stufe1 = this.createMessung2Stufe1();
-			if (messung2stufe1 != null) {
-				messung2stufe1.setAbgasverlusteNotOk(checkS1M2Abgas.isSelected());
-				messung2stufe1.setRusszahlNotOk(checkS1M2Russzahl.isSelected());
-				messung2stufe1.setCoMgNotOk(checkS1M2Co2.isSelected());
-				messung2stufe1.setNoMgNotOk(checkS1M2No2.isSelected());
-				messung2stufe1.setOelanteilenNotOk(checkS1M2Oel.isSelected());
-				messungRO.add(messung2stufe1);
-			}
+//			if (messung2stufe1 != null) {
+//				messung2stufe1.setAbgasverlusteNotOk(checkS1M2Abgas.isSelected());
+//				messung2stufe1.setRusszahlNotOk(checkS1M2Russzahl.isSelected());
+//				messung2stufe1.setCoMgNotOk(checkS1M2Co2.isSelected());
+//				messung2stufe1.setNoMgNotOk(checkS1M2No2.isSelected());
+//				messung2stufe1.setOelanteilenNotOk(checkS1M2Oel.isSelected());
+//				Main.getFeuerungsRapportService().add(messung2stufe1);
+//			}
 
 			messung2stufe2 = this.createMessung2Stufe2();
-			if (messung2stufe2 != null) {
-				messung2stufe2.setAbgasverlusteNotOk(checkS2M2Abgas.isSelected());
-				messung2stufe2.setRusszahlNotOk(checkS2M2Russzahl.isSelected());
-				messung2stufe2.setCoMgNotOk(checkS2M2Co2.isSelected());
-				messung2stufe2.setNoMgNotOk(checkS2M2No2.isSelected());
-				messung2stufe1.setOelanteilenNotOk(checkS2M2Oel.isSelected());
-				messungRO.add(messung2stufe2);
-			}
+//			if (messung2stufe2 != null) {
+//				messung2stufe2.setAbgasverlusteNotOk(checkS2M2Abgas.isSelected());
+//				messung2stufe2.setRusszahlNotOk(checkS2M2Russzahl.isSelected());
+//				messung2stufe2.setCoMgNotOk(checkS2M2Co2.isSelected());
+//				messung2stufe2.setNoMgNotOk(checkS2M2No2.isSelected());
+//				messung2stufe1.setOelanteilenNotOk(checkS2M2Oel.isSelected());
+//				Main.getFeuerungsRapportService().add(messung2stufe2);
+//			}
 
 		} catch (Exception e1) {
 			lblRueckmeldung.setText("Messungen abspeichern fehlgeschlagen");
@@ -308,11 +295,11 @@ public class RapportErfassen {
 		ausgewaehlterauftrag.setEinregulierungInnert30(cb30Tage.isSelected());
 		ausgewaehlterauftrag.setEinregulierungNichtMoeglich(cbEinregulierung.isSelected());
 
-		try {
-			auftragRO.update(ausgewaehlterauftrag);
-		} catch (Exception e) {
-			lblRueckmeldung.setText("Auftrag konnte nicht gespeichert werden");
-		}
+//		try {
+//			Main.getFeuerungsRapportService().update(ausgewaehlterauftrag);
+//		} catch (Exception e) {
+//			lblRueckmeldung.setText("Auftrag konnte nicht gespeichert werden");
+//		}
 
 	}
 

@@ -25,7 +25,7 @@
                      <children>
                         <ImageView fitHeight="250.0" fitWidth="476.0" layoutX="-3.0" layoutY="-1.0" pickOnBounds="true">
                            <image>
-                              <Image url="@../../../../../../../Desktop/Bilder%20GUI/Background/Background_weiss_hor.jpg" />
+                              <Image url="@logobanner.jpg" />
                            </image>
                         </ImageView>
                      </children></Pane>

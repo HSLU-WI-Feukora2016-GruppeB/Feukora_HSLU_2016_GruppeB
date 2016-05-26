@@ -14,7 +14,7 @@
          <children>
             <ImageView fitHeight="552.0" fitWidth="640.0" pickOnBounds="true">
                <image>
-                  <Image url="@../../../../../../../Desktop/Bilder%20GUI/Background/Background_weiss_ver.jpg" />
+                  <Image url="@Background_weiss_hor.jpg" />
                </image>
             </ImageView>
             <VBox prefHeight="552.0" prefWidth="640.0">
@@ -27,7 +27,7 @@
                            <graphic>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../../Desktop/Bilder%20GUI/Icons/clock.png" />
+                                    <Image url="@clock.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -35,18 +35,18 @@
                               <Font size="13.0" />
                            </font>
                         </Button>
-                        <Pane prefHeight="200.0" prefWidth="40.0" />
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <Pane prefHeight="180.0" prefWidth="41.0" />
+                        <ImageView fitHeight="150.0" fitWidth="147.0" pickOnBounds="true">
                            <image>
-                              <Image url="@../../../../../../../Desktop/Bilder%20GUI/Icons/nature.png" />
+                              <Image url="@logo.JPG" />
                            </image>
                         </ImageView>
-                        <Pane prefHeight="200.0" prefWidth="40.0" />
+                        <Pane prefHeight="180.0" prefWidth="44.0" />
                         <Button fx:id="btnRapportUebersicht" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#rapportVerwalten" prefHeight="150.0" prefWidth="150.0" text="Aufträge">
                            <graphic>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../../Desktop/Bilder%20GUI/Icons/check.png" />
+                                    <Image url="@check.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -54,7 +54,6 @@
                               <Font size="13.0" />
                            </font>
                         </Button>
-                        <Pane prefHeight="200.0" prefWidth="50.0" />
                      </children>
                   </HBox>
                   <HBox prefHeight="197.0" prefWidth="640.0">
@@ -64,7 +63,7 @@
                            <graphic>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../../Desktop/Bilder%20GUI/Icons/house.png" />
+                                    <Image url="@house.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -77,7 +76,7 @@
                            <graphic>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../../Desktop/Bilder%20GUI/Icons/two.png" />
+                                    <Image url="@two.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -90,7 +89,7 @@
                            <graphic>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../../Desktop/Bilder%20GUI/Icons/people.png" />
+                                    <Image url="@people.png" />
                                  </image>
                               </ImageView>
                            </graphic>

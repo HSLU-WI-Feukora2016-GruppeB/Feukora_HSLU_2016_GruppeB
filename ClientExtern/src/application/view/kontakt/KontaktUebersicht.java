@@ -1,7 +1,8 @@
 package application.view.kontakt;
 
 import java.util.List;
-import application.WsUtil;
+
+import application.Main;
 import entitys.Kontakt;
 import entitys.Mitarbeiter;
 import javafx.collections.FXCollections;
@@ -17,8 +18,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import rmi.interfaces.KontaktRO;
-import rmi.interfaces.OrtRO;
 
 /**
  *  Managed die Optionen für die Kontakte
@@ -48,32 +47,23 @@ public class KontaktUebersicht {
 	@FXML
 	private TableColumn tblName, tblVorname, tblStrasse, tblEMail, tblTelefon, tblOrt;
 
-	KontaktRO kontaktRO;
-	OrtRO ortRO;
 
 	public static Mitarbeiter mastatic;
 
-	public void initialize() throws Exception {
-
-		/*---------------RMI Verbindung---------------*/
-
-		/* Lookup */
-		kontaktRO = WsUtil.getKontaktRO();
-
-		/*----------------------------------------------*/
-
-		List<Kontakt> list = kontaktRO.findAll();
-		ObservableList<Kontakt> list2 = FXCollections.observableList(list);
-		tblName.setCellValueFactory(new PropertyValueFactory<>("nachname"));
-		tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
-		tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
-		tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
-		tblEMail.setCellValueFactory(new PropertyValueFactory<>("email"));
-		tblTelefon.setCellValueFactory(new PropertyValueFactory<>("tel"));
-
-		tabelle.setItems(list2);
-
-	}
+//	public void initialize() throws Exception {
+//
+//		List<Kontakt> list = Main.getFeuerungsRapportService().findAll();
+//		ObservableList<Kontakt> list2 = FXCollections.observableList(list);
+//		tblName.setCellValueFactory(new PropertyValueFactory<>("nachname"));
+//		tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
+//		tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
+//		tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
+//		tblEMail.setCellValueFactory(new PropertyValueFactory<>("email"));
+//		tblTelefon.setCellValueFactory(new PropertyValueFactory<>("tel"));
+//
+//		tabelle.setItems(list2);
+//
+//	}
 
 	/**
 	 * Manuelles suchen um den Kontakt in der Tableview anzuzeigen
@@ -89,14 +79,14 @@ public class KontaktUebersicht {
 
 		} else {
 
-			try {
-				List<Kontakt> list = kontaktRO.findByNameVorname(name, vorname);
-				ObservableList<Kontakt> list2 = FXCollections.observableList(list);
-				tabelle.setItems(list2);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+//			try {
+//				List<Kontakt> list = Main.getFeuerungsRapportService().findByNameVorname(name, vorname);
+//				ObservableList<Kontakt> list2 = FXCollections.observableList(list);
+//				tabelle.setItems(list2);
+//			} catch (Exception e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 
 		}
 
@@ -145,15 +135,15 @@ public class KontaktUebersicht {
 	/**
 	 * Diese Methode löscht das ausgewählte Objekt in der Tableview
 	 */
-	public void loeschen(){
-		Kontakt indSelected = (Kontakt) tabelle.getSelectionModel().getSelectedItem();
-		try {
-			kontaktRO.delete(indSelected);
-		} catch (Exception e) {
-			lblRueckmeldung2.setText("Mitarbeiter wurde nicht gelöscht");
-		}
-		lblRueckmeldung2.setText("Mitarbeiter gelöscht");
-	}
+//	public void loeschen(){
+//		Kontakt indSelected = (Kontakt) tabelle.getSelectionModel().getSelectedItem();
+//		try {
+//			Main.getFeuerungsRapportService().delete(indSelected);
+//		} catch (Exception e) {
+//			lblRueckmeldung2.setText("Mitarbeiter wurde nicht gelöscht");
+//		}
+//		lblRueckmeldung2.setText("Mitarbeiter gelöscht");
+//	}
 
 
 	/**

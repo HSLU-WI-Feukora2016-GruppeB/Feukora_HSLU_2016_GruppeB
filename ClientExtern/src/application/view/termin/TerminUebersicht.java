@@ -22,11 +22,6 @@ import java.util.Properties;
 
 import javax.imageio.ImageIO;
 
-import application.WsUtil;
-import rmi.interfaces.AuftragRO;
-import rmi.interfaces.KontaktRO;
-import rmi.interfaces.LiegenschaftRO;
-import rmi.interfaces.MitarbeiterRO;
 import entitys.Auftrag;
 import entitys.Benutzer;
 import entitys.Brenner;
@@ -84,30 +79,22 @@ public class TerminUebersicht {
 
 	private Stage TermStage = new Stage();
 
-	AuftragRO auftragRO;
-	MitarbeiterRO mitarbeiterRO;
+//	AuftragRO auftragRO;
+//	MitarbeiterRO mitarbeiterRO;
 
 
 	public void initialize() throws Exception {
 
-		/*---------------RMI Verbindung---------------*/
-
-		/* Lookup */
-		mitarbeiterRO = WsUtil.getMitarbeiterRO();
-		auftragRO = WsUtil.getAuftragRO();
-
-		/*----------------------------------------------*/
-
-		List<Mitarbeiter> list = mitarbeiterRO.findAllMitarbeiter();
-		List<String> list3 = new ArrayList<String>();
-		for (Mitarbeiter i : list) {
-			String rolle = i.getRolleIntern();
-			if (rolle.equalsIgnoreCase("Kontrolleur")) {
-				list3.add(i.getName());
-			}
-		}
-		ObservableList<String> list2 = FXCollections.observableList(list3);
-		ddFK.setItems(list2);
+//		List<Mitarbeiter> list = mitarbeiterRO.findAllMitarbeiter();
+//		List<String> list3 = new ArrayList<String>();
+//		for (Mitarbeiter i : list) {
+//			String rolle = i.getRolleIntern();
+//			if (rolle.equalsIgnoreCase("Kontrolleur")) {
+//				list3.add(i.getName());
+//			}
+//		}
+//		ObservableList<String> list2 = FXCollections.observableList(list3);
+//		ddFK.setItems(list2);
 
 	}
 
@@ -123,125 +110,125 @@ public class TerminUebersicht {
 
 		} else {
 
-			LocalDate vonDatum = startDatum.getValue();
-			LocalDate bisDatum = vonDatum.plusDays(4);
-			endDatum.setValue(bisDatum);
-			String fk = ddFK.getValue();
-			List<Mitarbeiter> mitlist = mitarbeiterRO.findByName(fk);
-			Mitarbeiter kontrolleur = mitlist.get(0);
+//			LocalDate vonDatum = startDatum.getValue();
+//			LocalDate bisDatum = vonDatum.plusDays(4);
+//			endDatum.setValue(bisDatum);
+//			String fk = ddFK.getValue();
+//			List<Mitarbeiter> mitlist = mitarbeiterRO.findByName(fk);
+//			Mitarbeiter kontrolleur = mitlist.get(0);
 
-			if (vonDatum.getDayOfWeek().name() != "MONDAY") {
-				lblRueckmeldung.setText("Bitte einen Montag anwählen!");
-
-			} else {
-				lblRueckmeldung.setText(" ");
-
-				txtMontag.setText(vonDatum.toString());
-				txtDienstag.setText(vonDatum.plusDays(1).toString());
-				txtMittwoch.setText(vonDatum.plusDays(2).toString());
-				txtDonnerstag.setText(vonDatum.plusDays(3).toString());
-				txtFreitag.setText(vonDatum.plusDays(4).toString());
-
-				int tag = vonDatum.getDayOfMonth();
-				int tag2 = vonDatum.plusDays(1).getDayOfMonth();
-				int tag3 = vonDatum.plusDays(2).getDayOfMonth();
-				int tag4 = vonDatum.plusDays(3).getDayOfMonth();
-				int tag5 = vonDatum.plusDays(4).getDayOfMonth();
-				int monat = vonDatum.getMonthValue();
-				int jahr = vonDatum.getYear();
-				GregorianCalendar gcal1 = new GregorianCalendar(jahr, monat, tag);
-				GregorianCalendar gcal2 = new GregorianCalendar(jahr, monat, tag2);
-				GregorianCalendar gcal3 = new GregorianCalendar(jahr, monat, tag3);
-				GregorianCalendar gcal4 = new GregorianCalendar(jahr, monat, tag4);
-				GregorianCalendar gcal5 = new GregorianCalendar(jahr, monat, tag5);
-
-				// Montag
-				Auftrag auftrag11 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1, kontrolleur, 1);
-				if( auftrag11 != null){
-				T1Z1.setText(auftrag11.getLiegenschaft().getStrasse());
-				}
-				Auftrag auftrag12 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1, kontrolleur, 2);
-				if(auftrag12 !=null){
-				T1Z2.setText(auftrag12.getLiegenschaft().toString());
-				}
-				Auftrag auftrag13 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1, kontrolleur, 3);
-				if(auftrag13 != null){
-				T1Z3.setText(auftrag13.getLiegenschaft().toString());
-				}
-				Auftrag auftrag14 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1, kontrolleur, 4);
-				if(auftrag14 != null){
-				T1Z4.setText(auftrag14.getLiegenschaft().toString());
-				}
-				// Dienstag
-				Auftrag auftrag21 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal2, kontrolleur, 1);
-				if(auftrag21 != null){
-				T2Z1.setText(auftrag21.getLiegenschaft().toString());
-				}
-				Auftrag auftrag22 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal2, kontrolleur, 2);
-				if(auftrag22 != null){
-				T2Z2.setText(auftrag22.getLiegenschaft().toString());
-				}
-				Auftrag auftrag23 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal2, kontrolleur, 3);
-				if(auftrag23 != null){
-				T2Z3.setText(auftrag23.getLiegenschaft().toString());
-				}
-				Auftrag auftrag24 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal2, kontrolleur, 4);
-				if(auftrag24 != null){
-				T2Z4.setText(auftrag24.getLiegenschaft().toString());
-				}
-				// Mittwoch
-				Auftrag auftrag31 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal3, kontrolleur, 1);
-				if(auftrag31 != null){
-				T3Z1.setText(auftrag31.getLiegenschaft().toString());
-				}
-				Auftrag auftrag32 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal3, kontrolleur, 2);
-				if(auftrag32 != null){
-				T3Z2.setText(auftrag32.getLiegenschaft().toString());
-				}
-				Auftrag auftrag33 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal3, kontrolleur, 3);
-				if(auftrag33 != null){
-				T3Z3.setText(auftrag33.getLiegenschaft().toString());
-				}
-				Auftrag auftrag34 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal3, kontrolleur, 4);
-				if(auftrag34 != null){
-				T3Z4.setText(auftrag34.getLiegenschaft().toString());
-				}
-
-				// Donnerstag
-				Auftrag auftrag41 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal4, kontrolleur, 1);
-				if(auftrag41 != null){
-				T4Z1.setText(auftrag41.getLiegenschaft().toString());
-				}
-				Auftrag auftrag42 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal4, kontrolleur, 2);
-				if(auftrag42 != null){
-				T4Z2.setText(auftrag42.getLiegenschaft().toString());
-				}
-				Auftrag auftrag43 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal4, kontrolleur, 3);
-				if(auftrag43 != null){
-				T4Z3.setText(auftrag43.getLiegenschaft().toString());
-				}
-				Auftrag auftrag44 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal4, kontrolleur, 4);
-				if(auftrag43 != null){
-				T4Z4.setText(auftrag44.getLiegenschaft().toString());
-				}
-
-				// Freitag
-				Auftrag auftrag51 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal5, kontrolleur, 1);
-				if(auftrag51 !=null){
-				T5Z1.setText(auftrag51.getLiegenschaft().toString());
-				}
-				Auftrag auftrag52 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal5, kontrolleur, 2);
-				if(auftrag52 != null){
-				T5Z2.setText(auftrag52.getLiegenschaft().toString());
-				}
-				Auftrag auftrag53 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal5, kontrolleur, 3);
-				if(auftrag53 != null){
-				T5Z3.setText(auftrag53.getLiegenschaft().toString());
-				}
-				Auftrag auftrag54 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal5, kontrolleur, 4);
-				if(auftrag54 != null){
-				T5Z4.setText(auftrag54.getLiegenschaft().toString());
-				}
+//			if (vonDatum.getDayOfWeek().name() != "MONDAY") {
+//				lblRueckmeldung.setText("Bitte einen Montag anwählen!");
+//
+//			} else {
+//				lblRueckmeldung.setText(" ");
+//
+//				txtMontag.setText(vonDatum.toString());
+//				txtDienstag.setText(vonDatum.plusDays(1).toString());
+//				txtMittwoch.setText(vonDatum.plusDays(2).toString());
+//				txtDonnerstag.setText(vonDatum.plusDays(3).toString());
+//				txtFreitag.setText(vonDatum.plusDays(4).toString());
+//
+//				int tag = vonDatum.getDayOfMonth();
+//				int tag2 = vonDatum.plusDays(1).getDayOfMonth();
+//				int tag3 = vonDatum.plusDays(2).getDayOfMonth();
+//				int tag4 = vonDatum.plusDays(3).getDayOfMonth();
+//				int tag5 = vonDatum.plusDays(4).getDayOfMonth();
+//				int monat = vonDatum.getMonthValue();
+//				int jahr = vonDatum.getYear();
+//				GregorianCalendar gcal1 = new GregorianCalendar(jahr, monat, tag);
+//				GregorianCalendar gcal2 = new GregorianCalendar(jahr, monat, tag2);
+//				GregorianCalendar gcal3 = new GregorianCalendar(jahr, monat, tag3);
+//				GregorianCalendar gcal4 = new GregorianCalendar(jahr, monat, tag4);
+//				GregorianCalendar gcal5 = new GregorianCalendar(jahr, monat, tag5);
+//
+//				// Montag
+//				Auftrag auftrag11 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1, kontrolleur, 1);
+//				if( auftrag11 != null){
+//				T1Z1.setText(auftrag11.getLiegenschaft().getStrasse());
+//				}
+//				Auftrag auftrag12 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1, kontrolleur, 2);
+//				if(auftrag12 !=null){
+//				T1Z2.setText(auftrag12.getLiegenschaft().toString());
+//				}
+//				Auftrag auftrag13 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1, kontrolleur, 3);
+//				if(auftrag13 != null){
+//				T1Z3.setText(auftrag13.getLiegenschaft().toString());
+//				}
+//				Auftrag auftrag14 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal1, kontrolleur, 4);
+//				if(auftrag14 != null){
+//				T1Z4.setText(auftrag14.getLiegenschaft().toString());
+//				}
+//				// Dienstag
+//				Auftrag auftrag21 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal2, kontrolleur, 1);
+//				if(auftrag21 != null){
+//				T2Z1.setText(auftrag21.getLiegenschaft().toString());
+//				}
+//				Auftrag auftrag22 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal2, kontrolleur, 2);
+//				if(auftrag22 != null){
+//				T2Z2.setText(auftrag22.getLiegenschaft().toString());
+//				}
+//				Auftrag auftrag23 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal2, kontrolleur, 3);
+//				if(auftrag23 != null){
+//				T2Z3.setText(auftrag23.getLiegenschaft().toString());
+//				}
+//				Auftrag auftrag24 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal2, kontrolleur, 4);
+//				if(auftrag24 != null){
+//				T2Z4.setText(auftrag24.getLiegenschaft().toString());
+//				}
+//				// Mittwoch
+//				Auftrag auftrag31 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal3, kontrolleur, 1);
+//				if(auftrag31 != null){
+//				T3Z1.setText(auftrag31.getLiegenschaft().toString());
+//				}
+//				Auftrag auftrag32 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal3, kontrolleur, 2);
+//				if(auftrag32 != null){
+//				T3Z2.setText(auftrag32.getLiegenschaft().toString());
+//				}
+//				Auftrag auftrag33 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal3, kontrolleur, 3);
+//				if(auftrag33 != null){
+//				T3Z3.setText(auftrag33.getLiegenschaft().toString());
+//				}
+//				Auftrag auftrag34 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal3, kontrolleur, 4);
+//				if(auftrag34 != null){
+//				T3Z4.setText(auftrag34.getLiegenschaft().toString());
+//				}
+//
+//				// Donnerstag
+//				Auftrag auftrag41 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal4, kontrolleur, 1);
+//				if(auftrag41 != null){
+//				T4Z1.setText(auftrag41.getLiegenschaft().toString());
+//				}
+//				Auftrag auftrag42 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal4, kontrolleur, 2);
+//				if(auftrag42 != null){
+//				T4Z2.setText(auftrag42.getLiegenschaft().toString());
+//				}
+//				Auftrag auftrag43 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal4, kontrolleur, 3);
+//				if(auftrag43 != null){
+//				T4Z3.setText(auftrag43.getLiegenschaft().toString());
+//				}
+//				Auftrag auftrag44 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal4, kontrolleur, 4);
+//				if(auftrag43 != null){
+//				T4Z4.setText(auftrag44.getLiegenschaft().toString());
+//				}
+//
+//				// Freitag
+//				Auftrag auftrag51 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal5, kontrolleur, 1);
+//				if(auftrag51 !=null){
+//				T5Z1.setText(auftrag51.getLiegenschaft().toString());
+//				}
+//				Auftrag auftrag52 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal5, kontrolleur, 2);
+//				if(auftrag52 != null){
+//				T5Z2.setText(auftrag52.getLiegenschaft().toString());
+//				}
+//				Auftrag auftrag53 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal5, kontrolleur, 3);
+//				if(auftrag53 != null){
+//				T5Z3.setText(auftrag53.getLiegenschaft().toString());
+//				}
+//				Auftrag auftrag54 = auftragRO.findByDateAndMitarbeiterAndZeitslot(gcal5, kontrolleur, 4);
+//				if(auftrag54 != null){
+//				T5Z4.setText(auftrag54.getLiegenschaft().toString());
+//				}
 
 				// Alternative Olivia:
 				// List<Auftrag> la = null;// =
@@ -271,7 +258,7 @@ public class TerminUebersicht {
 			}
 
 		}
-	}
+//	}
 
 	/**
 	 * Diese Methode erstellt ein neues Terminobjekt.

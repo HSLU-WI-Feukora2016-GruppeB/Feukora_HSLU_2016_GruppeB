@@ -1,7 +1,7 @@
-	package application;
-	
-import webservice.rmi.FeuerungsrapportService;
-import webservice.rmi.FeuerungsrapportServiceImplService;
+package application;
+
+import feukora.webservice.rmi.FeuerungsrapportService;
+import feukora.webservice.rmi.FeuerungsrapportServiceImplService;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,8 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import java.util.*;
-
 
 /**
  * Dies ist die Dokumentation der Klasse Main. Von hier aus wird das Programm
@@ -36,13 +34,15 @@ public class Main extends Application {
 
 	@FXML
 	private Label lblRueckmeldung;
-	
+
 	private static FeuerungsrapportServiceImplService service;
-	static FeuerungsrapportService proxy;
-	
+	private static FeuerungsrapportService proxy;
+
 	/**
 	 * Diese Methode öffnet das Login-Fenster zur Authentisierung des Users.
-	 * @param primaryStage Login-Fenster
+	 * 
+	 * @param primaryStage
+	 *            Login-Fenster
 	 */
 	@Override
 	public void start(Stage primaryStage) {
@@ -51,7 +51,8 @@ public class Main extends Application {
 
 			primaryStage.setTitle("Login");
 
-			primaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("view/login/Login.fxml"))));
+			primaryStage.setScene(new Scene(FXMLLoader.load(getClass()
+					.getResource("view/login/Login.fxml"))));
 
 			primaryStage.show();
 		} catch (Exception e) {
@@ -63,12 +64,16 @@ public class Main extends Application {
 	/**
 	 * Hier startet das Hauptprogramm
 	 */
-	public static void main(String[] args) throws Exception{
-		
-		service = new FeuerungsrapportServiceImplService();
-		
-		proxy = service.getFeuerungsrapportServiceImplPort()
+	public static void main(String[] args) throws Exception {
 
+		service = new FeuerungsrapportServiceImplService();
+
+		proxy = service.getFeuerungsrapportServiceImplPort();
 		launch(args);
 	}
+
+	public static FeuerungsrapportService getFeuerungsRapportService() {
+		return proxy;
+	}
+	
 }

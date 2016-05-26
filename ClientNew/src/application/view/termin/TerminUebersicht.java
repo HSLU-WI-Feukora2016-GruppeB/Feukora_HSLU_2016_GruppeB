@@ -312,12 +312,11 @@ public class TerminUebersicht {
 		BufferedImage screenShot = robot
 				.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
 		try {
-			ImageIO.write(screenShot, "png", new File("C:\\Users\\Alexandra Lengen\\Desktop\\screenshot.png"));
+			ImageIO.write(screenShot, "png", new File("C:\\temp\\screenshot.png"));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		lblDruckRueckmeldung.setText("Screenhot auf Desktop \n" + "wurde erstellt");
+		lblDruckRueckmeldung.setText("Screenhot in C:\temp \n" + "wurde erstellt");
 	}
 
 	/**

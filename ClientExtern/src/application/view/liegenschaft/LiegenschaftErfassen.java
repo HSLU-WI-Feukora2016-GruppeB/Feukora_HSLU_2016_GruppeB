@@ -3,7 +3,8 @@ package application.view.liegenschaft;
 
 import java.util.ArrayList;
 import java.util.List;
-import application.WsUtil;
+
+import application.Main;
 import entitys.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,12 +18,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import rmi.interfaces.BrennerRO;
-import rmi.interfaces.FeuerungsanlageRO;
-import rmi.interfaces.KontaktRO;
-import rmi.interfaces.LiegenschaftRO;
-import rmi.interfaces.OrtRO;
-import rmi.interfaces.WaermeerzeugerRO;
+//import rmi.interfaces.BrennerRO;
+//import rmi.interfaces.FeuerungsanlageRO;
+//import rmi.interfaces.KontaktRO;
+//import rmi.interfaces.LiegenschaftRO;
+//import rmi.interfaces.OrtRO;
+//import rmi.interfaces.WaermeerzeugerRO;
 
 /**
  * Dies ist die Dokumentation der Klasse LiegenschaftErfassen. Sie dient zur
@@ -56,28 +57,11 @@ public class LiegenschaftErfassen {
 	@FXML
 	private BorderPane leaf;
 
-	KontaktRO kontaktRO;
-	LiegenschaftRO liegenschaftRO;
-	WaermeerzeugerRO waermeerzeugerRO;
-	BrennerRO brennerRO;
-	OrtRO ortRO;
-	FeuerungsanlageRO feuerungsanlageRO;
 
 	String ort;
 
 	public void initialize() throws Exception {
 
-		/*---------------RMI Verbindung---------------*/
-
-		/* Lookup */
-		brennerRO = WsUtil.getBrennerRO();
-		feuerungsanlageRO = WsUtil.getFeuerungsanlageRO();
-		kontaktRO = WsUtil.getKontaktRO();
-		liegenschaftRO = WsUtil.getLiegenschaftRO();
-		ortRO = WsUtil.getOrtRO();
-		waermeerzeugerRO = WsUtil.getWaermeerzeugerRO();
-
-		/*----------------------------------------------*/
 
 		List<String> listbrennstoff = new ArrayList<String>();
 		listbrennstoff.add("Öl");
@@ -169,14 +153,14 @@ public class LiegenschaftErfassen {
 
 			int leistungint = Integer.parseInt(leistung);
 
-			try {
-				Liegenschaft newliegenschaft = createLiegenschaft(strasse, plzint, ort, infovorort, brennertyp,
-						brennerA, brennerJ, waermetyp, waermeA, waermeJ, leistungint);
-				liegenschaftRO.add(newliegenschaft);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				lblRueckmeldung.setText("Liegenschaft konnte nicht gespeichert werden");
-			}
+//			try {
+//				Liegenschaft newliegenschaft = createLiegenschaft(strasse, plzint, ort, infovorort, brennertyp,
+//						brennerA, brennerJ, waermetyp, waermeA, waermeJ, leistungint);
+//				Main.getFeuerungsRapportService().add(newliegenschaft);
+//			} catch (Exception e) {
+//				// TODO Auto-generated catch block
+//				lblRueckmeldung.setText("Liegenschaft konnte nicht gespeichert werden");
+//			}
 
 		}
 
@@ -195,22 +179,22 @@ public class LiegenschaftErfassen {
 
 		} else {
 
-			try {
-				List<Kontakt> list = kontaktRO.findByNameVorname(nameK, vornameK);
-				ObservableList<Kontakt> list2 = FXCollections.observableList(list);
-				tblNachname.setCellValueFactory(new PropertyValueFactory<>("Nachname"));
-				tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
-				tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
-				tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
-				tblTelefon.setCellValueFactory(new PropertyValueFactory<>("tel"));
-				tblEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
-
-				tvKundentbl.setItems(list2);
-
-
-			} catch (Exception e) {
-				lblRueckmeldung.setText("Kontakt wurde nicht gefunden");
-			}
+//			try {
+//				List<Kontakt> list = Main.getFeuerungsRapportService().findByNameVorname(nameK, vornameK);
+//				ObservableList<Kontakt> list2 = FXCollections.observableList(list);
+//				tblNachname.setCellValueFactory(new PropertyValueFactory<>("Nachname"));
+//				tblVorname.setCellValueFactory(new PropertyValueFactory<>("vorname"));
+//				tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
+//				tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
+//				tblTelefon.setCellValueFactory(new PropertyValueFactory<>("tel"));
+//				tblEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+//
+//				tvKundentbl.setItems(list2);
+//
+//
+//			} catch (Exception e) {
+//				lblRueckmeldung.setText("Kontakt wurde nicht gefunden");
+//			}
 		}
 	}
 
@@ -224,7 +208,7 @@ public class LiegenschaftErfassen {
 
 		liegenschaft.setStrasse(strasse);
 
-		ortsliste = ortRO.findByOrtPlz(plz);
+//		ortsliste = Main.getFeuerungsRapportService().findByOrtPlz(plz);
 
 		// durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die
 		// gleiche ist.
@@ -236,28 +220,28 @@ public class LiegenschaftErfassen {
 				break;
 			}
 		}
-		//wenn nicht gefunden wird neuöer ort hinzugefügt
-		//orte können nicht upgedated werden etweder gefunden oder neu
-		if(!found) {
-			Ort ortDb = ortRO.add(new Ort(plz, ort));
-			liegenschaft.setOrt(ortDb);
-		}
+//		//wenn nicht gefunden wird neuöer ort hinzugefügt
+//		//orte können nicht upgedated werden etweder gefunden oder neu
+//		if(!found) {
+//			Ort ortDb = Main.getFeuerungsRapportService().add(new Ort(plz, ort));
+//			liegenschaft.setOrt(ortDb);
+//		}
 
 		liegenschaft.setInfoVorOrt(info);
 
 		// neues Brenenrobjekt erstellen und speicher
-		Brenner brenner = new Brenner(bart, btyp, bjahr);
-		Brenner brenner2 = brennerRO.add(brenner);
+//		Brenner brenner = new Brenner(bart, btyp, bjahr);
+//		Brenner brenner2 = Main.getFeuerungsRapportService().add(brenner);
 
 		// neues Waermeerzeugerobjekt erstellen und speicher
-		Waermeerzeuger waermeerzeuger = new Waermeerzeuger(wart, wtyp, wjahr);
-		Waermeerzeuger waermeerzeuger2 = waermeerzeugerRO.add(waermeerzeuger);
+//		Waermeerzeuger waermeerzeuger = new Waermeerzeuger(wart, wtyp, wjahr);
+//		Waermeerzeuger waermeerzeuger2 = Main.getFeuerungsRapportService().add(waermeerzeuger);
 
 		// Feuerungsanlageobjekt erstellen, speichern und Liegenschaft
 		// hinzufügen
-		Feuerungsanlage feuera = new Feuerungsanlage(brenner2, waermeerzeuger2, leistung);
-		Feuerungsanlage feuera2 = feuerungsanlageRO.add(feuera);
-		liegenschaft.setFeuerungsanlage(feuera2);
+//		Feuerungsanlage feuera = new Feuerungsanlage(brenner2, waermeerzeuger2, leistung);
+//		Feuerungsanlage feuera2 = Main.getFeuerungsRapportService().add(feuera);
+//		liegenschaft.setFeuerungsanlage(feuera2);
 
 		// Kontakt nehmen und hinzufügen
 		Kontakt indSelected = (Kontakt) tvKundentbl.getSelectionModel().getSelectedItem();

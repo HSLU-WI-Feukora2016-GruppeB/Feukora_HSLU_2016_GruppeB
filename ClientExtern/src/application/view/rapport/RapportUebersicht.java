@@ -5,7 +5,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
-import application.WsUtil;
+
+import application.Main;
 import application.view.termin.TerminBearbeiten;
 import entitys.Auftrag;
 import entitys.Mitarbeiter;
@@ -25,8 +26,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import rmi.interfaces.AuftragRO;
-import rmi.interfaces.MitarbeiterRO;
 
 
 /**
@@ -82,8 +81,6 @@ public class RapportUebersicht {
 	@FXML
 	private DatePicker startDatum, endDatum;
 
-	AuftragRO auftragRO;
-	MitarbeiterRO mitarbeiterRO;
 
 
 	/**
@@ -93,20 +90,14 @@ public class RapportUebersicht {
 	 */
 	public void initialize() throws Exception {
 
-		/* Lookup */
-		auftragRO = WsUtil.getAuftragRO();
-		mitarbeiterRO = WsUtil.getMitarbeiterRO();
-
-		/*----------------------------------------------*/
-
 		// Alle Feuerungskontrolleure in der Combobox anzeigen lassen
 		List<Mitarbeiter> list = new ArrayList<Mitarbeiter>();
-		try {
-			list = mitarbeiterRO.findAllMitarbeiter();
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+//		try {
+//			list = Main.getFeuerungsRapportService().findAllMitarbeiter();
+//		} catch (Exception e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
 		List<String> list3 = new ArrayList<String>();
 		for (Mitarbeiter i : list) {
 			String rolle = i.getRolleIntern();
@@ -134,13 +125,13 @@ public class RapportUebersicht {
 			endDatum.setValue(bisDatum);
 			String fk = String.valueOf(ddFK.getValue());
 			List<Mitarbeiter> mitlist;
-			try {
-				mitlist = mitarbeiterRO.findByName(fk);
-				kontrolleur = mitlist.get(0);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+//			try {
+//				mitlist = Main.getFeuerungsRapportService().findByName(fk);
+//				kontrolleur = mitlist.get(0);
+//			} catch (Exception e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 
 			if (vonDatum.getDayOfWeek().name() != "MONDAY") {
 				lblRueckmeldung.setText("Bitte einen Montag anwählen!");
@@ -155,17 +146,17 @@ public class RapportUebersicht {
 				GregorianCalendar gcalstart = new GregorianCalendar(jahr, monat, tag);
 				GregorianCalendar gcalend = new GregorianCalendar(jahr, monat, tag5);
 
-				try {
-					List<Auftrag> auftragsliste = auftragRO.findByDateAndMitarbeiter(gcalstart, gcalend, kontrolleur);
-					ObservableList<Auftrag> listauftrag2 = FXCollections.observableList(auftragsliste);
-					tblKunde.setCellValueFactory(new PropertyValueFactory<>("kunde"));
-					tblLiegenschaft.setCellValueFactory(new PropertyValueFactory<>("liegenschaft"));
-					tblDatum.setCellValueFactory(new PropertyValueFactory<>("auftrag"));
-
-					tabelle.setItems(listauftrag2);
-				} catch (Exception e) {
-					lblRueckmeldung.setText("Auftragsliste nicht gefunden");
-				}
+//				try {
+//					List<Auftrag> auftragsliste = Main.getFeuerungsRapportService().findByDateAndMitarbeiter(gcalstart, gcalend, kontrolleur);
+//					ObservableList<Auftrag> listauftrag2 = FXCollections.observableList(auftragsliste);
+//					tblKunde.setCellValueFactory(new PropertyValueFactory<>("kunde"));
+//					tblLiegenschaft.setCellValueFactory(new PropertyValueFactory<>("liegenschaft"));
+//					tblDatum.setCellValueFactory(new PropertyValueFactory<>("auftrag"));
+//
+//					tabelle.setItems(listauftrag2);
+//				} catch (Exception e) {
+//					lblRueckmeldung.setText("Auftragsliste nicht gefunden");
+//				}
 
 			}
 		}
@@ -217,10 +208,10 @@ public class RapportUebersicht {
 	 *
 	 * @throws Exception
 	 */
-	public void loeschenAuftrag() throws Exception {
-		Auftrag indSelected = (Auftrag) tabelle.getSelectionModel().getSelectedItem();
-		auftragRO.delete(indSelected);
-	}
+//	public void loeschenAuftrag() throws Exception {
+//		Auftrag indSelected = (Auftrag) tabelle.getSelectionModel().getSelectedItem();
+//		Main.getFeuerungsRapportService().delete(indSelected);
+//	}
 
 
 	/**

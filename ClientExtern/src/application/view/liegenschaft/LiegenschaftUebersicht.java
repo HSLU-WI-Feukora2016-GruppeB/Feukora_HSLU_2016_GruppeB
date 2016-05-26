@@ -2,7 +2,6 @@ package application.view.liegenschaft;
 
 
 import java.util.List;
-import application.WsUtil;
 import entitys.Liegenschaft;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,7 +16,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import rmi.interfaces.LiegenschaftRO;
 
 /**
  * Dies ist die Dokumentation der Klasse Liegenschaften-Übersicht. Sie zeigt
@@ -46,24 +44,17 @@ public class LiegenschaftUebersicht {
 	@FXML
 	private TableColumn tblInfovorort, tblStrasse, tblOrt;
 
-	LiegenschaftRO liegenschaftRO;
+//	LiegenschaftRO liegenschaftRO;
 
 	public void initialize() throws Exception {
 
-		/*---------------RMI Verbindung---------------*/
-
-		/* Lookup */
-		liegenschaftRO = WsUtil.getLiegenschaftRO();
-
-		/*----------------------------------------------*/
-
-		List<Liegenschaft> list = liegenschaftRO.findAll();
-		ObservableList<Liegenschaft> list2 = FXCollections.observableList(list);
-		tblInfovorort.setCellValueFactory(new PropertyValueFactory<>("infoVorOrt"));
-		tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
-		tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
-
-		tabelle.setItems(list2);
+//		List<Liegenschaft> list = liegenschaftRO.findAll();
+//		ObservableList<Liegenschaft> list2 = FXCollections.observableList(list);
+//		tblInfovorort.setCellValueFactory(new PropertyValueFactory<>("infoVorOrt"));
+//		tblStrasse.setCellValueFactory(new PropertyValueFactory<>("strasse"));
+//		tblOrt.setCellValueFactory(new PropertyValueFactory<>("ort"));
+//
+//		tabelle.setItems(list2);
 
 	}
 
@@ -80,13 +71,13 @@ public class LiegenschaftUebersicht {
 
 		} else {
 
-			try {
-				List<Liegenschaft> list = liegenschaftRO.findByStrasse(strasse);
-				ObservableList<Liegenschaft> list2 = FXCollections.observableList(list);
-				tabelle.setItems(list2);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+//			try {
+//				List<Liegenschaft> list = liegenschaftRO.findByStrasse(strasse);
+//				ObservableList<Liegenschaft> list2 = FXCollections.observableList(list);
+//				tabelle.setItems(list2);
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
 		}
 	}
 
@@ -110,15 +101,15 @@ public class LiegenschaftUebersicht {
 	/**
 	 * Diese Methode löscht das ausgewählte Objekt in der Tableview
 	 */
-	public void loeschen(){
-		Liegenschaft indSelected = (Liegenschaft) tabelle.getSelectionModel().getSelectedItem();
-		try {
-			liegenschaftRO.delete(indSelected);
-		} catch (Exception e) {
-			lblRueckmeldung.setText("Liegenschaft wurde nicht gelöscht");
-		}
-		lblRueckmeldung.setText("Liegenschaft gelöscht");
-	}
+//	public void loeschen(){
+//		Liegenschaft indSelected = (Liegenschaft) tabelle.getSelectionModel().getSelectedItem();
+//		try {
+//			liegenschaftRO.delete(indSelected);
+//		} catch (Exception e) {
+//			lblRueckmeldung.setText("Liegenschaft wurde nicht gelöscht");
+//		}
+//		lblRueckmeldung.setText("Liegenschaft gelöscht");
+//	}
 
 	/**
 	 * Diese Methode öffnet die Übersicht zur Bearbeitung von Liegenschaften.

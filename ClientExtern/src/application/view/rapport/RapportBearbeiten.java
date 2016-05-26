@@ -2,7 +2,6 @@ package application.view.rapport;
 
 
 import java.util.ArrayList;
-import application.WsUtil;
 import entitys.Auftrag;
 import entitys.Feuerungsanlage;
 import entitys.Liegenschaft;
@@ -14,8 +13,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import rmi.interfaces.AuftragRO;
-import rmi.interfaces.MessungRO;
 
 /**
  *Diese Klasse zeigt einen Rapport mitsamt den erfassten Messdaten an
@@ -28,8 +25,7 @@ import rmi.interfaces.MessungRO;
 public class RapportBearbeiten {
 
 	static Auftrag ausgewaehlterauftrag;
-	MessungRO messungRO;
-	AuftragRO auftragRO;
+
 
 	@FXML
 	private Button btnNeu;
@@ -80,14 +76,6 @@ public class RapportBearbeiten {
 	Messung m;
 
 	public void initialize() throws Exception {
-
-		/*---------------RMI Verbindung---------------*/
-
-		/* Lookup */
-		messungRO = WsUtil.getMessungRO();
-		auftragRO = WsUtil.getAuftragRO();
-
-		/*----------------------------------------------*/
 
 		// Kundenfelder setzen
 		txtName.setText(kundenname);

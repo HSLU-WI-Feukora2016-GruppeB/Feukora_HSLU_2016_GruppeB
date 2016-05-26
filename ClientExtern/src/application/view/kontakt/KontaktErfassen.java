@@ -3,17 +3,20 @@ package application.view.kontakt;
 
 import java.util.ArrayList;
 import java.util.List;
-import application.WsUtil;
+
+import application.Main;
 import entitys.Kontakt;
 import entitys.Ort;
+import feukora.webservice.rmi.FeuerungsrapportService;
+import feukora.webservice.rmi.FeuerungsrapportServiceImplService;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import rmi.interfaces.KontaktRO;
-import rmi.interfaces.OrtRO;
+//import rmi.interfaces.KontaktRO;
+//import rmi.interfaces.OrtRO;
 
 /**
  * Dies ist die Dokumentation der Klasse KontaktErfassen. Hier werden neue
@@ -26,8 +29,7 @@ import rmi.interfaces.OrtRO;
 
 public class KontaktErfassen {
 
-	KontaktRO kontaktRO;
-	OrtRO ortRO;
+
 
 	@FXML
 	private TextField txtVorname, txtNachname, txtStrasse, txtOrt, txtPlz, txtTelnr, txtEmail;
@@ -41,15 +43,12 @@ public class KontaktErfassen {
 	@FXML
 	private Pane leaf;
 
+
 	public void initialize() throws Exception {
-		/*---------------RMI Verbindung---------------*/
 
-		/* Lookup */
-		kontaktRO = WsUtil.getKontaktRO();
-
-		/*----------------------------------------------*/
 	}
 
+	
 	/**
 	 * Diese Methode speichert einen neuen Kontakt in der Datenbank.
 	 * @throws Exception
@@ -84,12 +83,13 @@ public class KontaktErfassen {
 
 			Kontakt newkontakt = creatKontakt(name, vorname, strasse, ort, plzint, email, telnr);
 
-			try {
-				kontaktRO.add(newkontakt);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+//			try {
+//				Kontakt kontakt = newkontakt;
+//				Main.getFeuerungsRapportService().addKontakt(newkontakt);
+//			} catch (Exception e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 
 		}
 
@@ -143,7 +143,7 @@ public class KontaktErfassen {
 		kontakt.setTel(telnr);
 
 
-			ortsliste = ortRO.findByOrtPlz(plz);
+			//ortsliste = Main.getFeuerungsRapportService().findByOrtPlz(plz);
 
 
 		// durchgehe alle Ortsobjekte in der liste und schaue ob die OrtsBez die
@@ -157,12 +157,12 @@ public class KontaktErfassen {
 					break;
 				}
 			}
-			// wenn nicht gefunden wird neuöer ort hinzugefügt
-			// orte können nicht upgedated werden etweder gefunden oder neu
-			if (!found) {
-				Ort ortDb = ortRO.add(new Ort(plz, ort));
-				kontakt.setOrt(ortDb);
-			}
+//			// wenn nicht gefunden wird neuöer ort hinzugefügt
+//			// orte können nicht upgedated werden etweder gefunden oder neu
+//			if (!found) {
+//				Ort ortDb = Main.getFeuerungsRapportService().add(new Ort(plz, ort));
+//				kontakt.setOrt(ortDb);
+//			}
 
 
 		return kontakt;
