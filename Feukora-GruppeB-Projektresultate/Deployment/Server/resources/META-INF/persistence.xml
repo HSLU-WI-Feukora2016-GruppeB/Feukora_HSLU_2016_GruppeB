@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	<persistence-unit name="FeukoraB" transaction-type="RESOURCE_LOCAL">
+
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+		<class>entitys.Auftrag</class>
+		<class>entitys.Benutzer</class>
+		<class>entitys.Brenner</class>
+		<class>entitys.Feuerungsanlage</class>
+		<class>entitys.Kontakt</class>
+		<class>entitys.Liegenschaft</class>
+		<class>entitys.Messung</class>
+		<class>entitys.Mitarbeiter</class>
+		<class>entitys.Ort</class>
+		<class>entitys.Waermeerzeuger</class>
+
+
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:postgresql://localhost:5432/feukora-B-db" />
+			<property name="javax.persistence.jdbc.user" value="feukora-B" />
+			<property name="javax.persistence.jdbc.password" value="passwd-B" />
+			<property name="eclipselink.ddl-generation.output-mode"
+				value="database" />
+
+			<!--
+			<property name="eclipselink.logging.level" value="FINEST" />
+			<property name="eclipselink.logging.level.sql" value="FINE" />
+			<property name="eclipselink.logging.parameters" value="true" />
+			<property name="eclipselink.logging.logger" value="DefaultLogger"/>
+			-->
+
+			<!-- SQL-Statements nicht ausgeben -->
+			<property name="eclipselink.logging.level" value="off"/>
+			<!--
+		    <property name="eclipselink.logging.level" value="FINE"/>
+			-->
+
+			<!-- <property name="eclipselink.ddl-generation" value="drop-and-create-tables" /> 	"nur für Tests, sonst alternative unten"-->
+			<property name="eclipselink.ddl-generation" value="create-tables" /> 
+
+		</properties>
+
+	</persistence-unit>
+</persistence>
