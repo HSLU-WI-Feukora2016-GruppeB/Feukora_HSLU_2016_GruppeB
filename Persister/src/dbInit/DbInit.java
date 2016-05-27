@@ -82,6 +82,7 @@ public class DbInit {
 		lBenutzer.add(new Benutzer("dst", "101"));
 		lBenutzer.add(new Benutzer("mpe", "111"));
 		lBenutzer.add(new Benutzer("owa", "121"));
+		lBenutzer.add(new Benutzer("admin", "admin"));
 
 
 		//3 Brenner erstellen
@@ -146,6 +147,7 @@ public class DbInit {
 		lMitarbeiter.add(new Mitarbeiter("Pascal", "Steiner", "Musterstrasse 4", lOrt.get(2), "1234567678", "p.st@feukora.ch", 1, lBenutzer.get(2), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
 		lMitarbeiter.add(new Mitarbeiter("Luca", "Raneri", "Musterstrasse 5", lOrt.get(1), "1234567178", "l.r@feukora.ch", 1, lBenutzer.get(1), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
 		lMitarbeiter.add(new Mitarbeiter("Alexandra", "Lengen", "Musterstrasse 1", lOrt.get(0), "1234563678", "a.l@feukora.ch", 1, lBenutzer.get(5), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
+		lMitarbeiter.add(new Mitarbeiter("Feukora", "Admin", "Adminstrasse 1", lOrt.get(0), "1234563678", "admin@feukora.ch", 1, lBenutzer.get(6), 5000, new GregorianCalendar(2016, 05, 1), new GregorianCalendar(2018, 8, 11)));
 
 		//3 Aufträge erstellen
 		lAuftrag.add(new Auftrag(lKontakt.get(0), lLiegenschaft.get(0), lMessung.get(0), lMessung.get(1), lMessung.get(2), lMessung.get(0), true, false, "Keine", lMitarbeiter.get(0), new GregorianCalendar(2016, 6, 8), 1, 1));
